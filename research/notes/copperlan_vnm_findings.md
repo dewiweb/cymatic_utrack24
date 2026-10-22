@@ -74,3 +74,17 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - CPEth_StartReceive: segfault ctypes -> prototype callback probablement différent (à debugger)
 - Interface: '\DEVICE\{ACC16CDF-991B-4516-BD19-62A97674B485}' (Ethernet, MAC f8:0d:ac:2a:67:d3)
 - TODO: rx callback proto (probablement (ctx, buf, len) ou autre); test d'adoption VNM si relancé
+
+## Progression finale session RE (22/10)
+- CPEth_StartReceive retourne 1 = OK (signature cb à 4 args provoque segfault AU CALLBACK = trames reçues mais proto faux)
+- CPEth_Send OK (forged v0x20 beacons émis)
+- Le crash prouve la réception marche -> il faut le vrai prototype du cb (désassembler la thread rx dans la DLL)
+- Candidats signatures cb: (ctx,buf,len) / (handle,buf,len) / (buf,len) / (buf,len,ctx) / retour!=void
+- Reste CPVNM.exe tué actuellement -> le relancer pour tests VNM
+
+## CANAL CPOETH BIDIRECTIONNEL FONCTIONNEL (fin de session)
+- Callback signature: `CPEth_StartReceive(handle, destBuf, cb, ctx)` -> `cb(ctx, payloadLen, srcMacPtr)`, payload copié dans destBuf (arg2=buffer!)
+- Python reçoit les trames LIVE: uTrack24 (0007f50019a0) beacons 68B v0x24; AudioLAN (0007f5490030) beacons 68B v0x24 + TRAME 60B variante `01001c`/type `1210`
+- CPEth_Send OK -> on peut émettre ET recevoir du CPOETH en Python pur via la DLL officielle
+- CPVNM.exe actuellement tué (driver exclusif)
+- NEXT: décoder le handshake (envoyer trame type 0x11 avec v0x24 depuis PC -> les devices répondent-ils?); analyser trame 60B AudioLAN; relancer VNM pour test adoption
