@@ -201,3 +201,12 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - PROCHAINE ÉTAPE: Ghidra sur CPVNM.exe (decompile) OU radare2 -A; trouver le
   'call [vtable]' dans 0x1400777a0 qui appelle un sender après réception beacon
   -> la réponse d'adoption envoyée = spec du handshake à forger
+
+## CPVNM.exe — map définitive (radare2)
+fn rx 0x1400777a0: parse [CRC 0x140073cc0] -> loopback MAC check -> len check
+  -> dispatch type msg: 0x100->0x1400776d0 / 0x200->0x1400763e0 / 0x400 / 0xc00
+  -> erreurs->0x14008f600 ; itère membres->0x14001fd1c+0x14001f560+0x140006f50
+senders: 0x1400741a4 (petit=reply?) / 0x140074a9a (gros=beacon) — via vtable ctx
+le "Bad Version" vient des branches erreur (call [rax] edx=0x200/0x80/0x400/0x1000/0x2000)
+DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
+  = la trame d'adoption à forger. Ghidra recommandé.
