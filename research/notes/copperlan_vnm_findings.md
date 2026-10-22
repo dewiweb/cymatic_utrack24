@@ -137,3 +137,14 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - Conclusion: le VNM 1.0(1) est le goulot — les devices v0x24 n'entrent pas dans son réseau même si un client CHAI y arrive
 - La solution reste le package CopperLan récent (1.7.1) côté VNM, OU forger le protocole device-side
 - Scripts PS x86 validés: chai_member.ps1 (connect OK), chai_listen.ps1 (notification stubs OK)
+
+## Tentative forge VNM v0x24 (22/10 fin)
+- Beacon device rejoué avec src MAC = PC -> émis OK x20 broadcast
+- Device continue son annonce, pas de réaction visible -> beacon seul insuffisant pour déclencher la session
+- "Bad Version" log = uniquement loopback PC, PAS les devices -> VNM accepte leurs trames
+- Disasm zone beacon-building (fo 0x74c00-0x75200): champ version écrit via helper sérialisation, pas immédiat visible
+
+## État projet consolidé
+✅ CPoEth bidirectionnel | ✅ CHAI connecte au VNM | ✅ SDK complet | ✅ Telnet + AES67
+⏳ VNM↔device session = le blocage final (génération v0x20 vs v0x24)
+→ Solution réaliste: package CopperLan 1.4.5 (liens dans notes) OU patch CPVNM pour annoncer/accepter v0x24
