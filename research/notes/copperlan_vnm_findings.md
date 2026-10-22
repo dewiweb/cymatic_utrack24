@@ -97,3 +97,19 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - API découverte présente: ICHAI_RemoteDevice_Find_AsyncReturnHandler, SignalNotificationHandler, Timer
 - NEXT: identifier chaque méthode (disasm propre par fonction) + appeler avec bon ctx -> connexion TCP 55000 au device
 - Script invocable: research/tools/chai_vtable.ps1 (PS x86)
+
+## API CHAI débloquée par le tutoriel officiel (copperlan.blogspot + GitHub ludoviclaffineur/CopperLan-Tuto1)
+- `CreateCHAI(KEY)` : arg = **clé freeware** par application, ex. "@7ZSwec9Pk@Yg5vjw1hQekXiuih8wWn2&3&@"
+- Flux: `ichai->AddLocalDevice(cat, brand?, DuplicateMode, ?, ExtDevCaps, "name")` -> `dev->AddInput(caps,"n",sect)`/`AddOutput` -> `ichai->Connect()` => rejoint le réseau -> `Disconnect()`, `Destroy()`
+- Connect() rejoint le réseau CopperLan via le VNM local; les remote devices arrivent par notification
+- Vtable ICHAI: idx avec refs RTTI NotificationHandler = [4],[5],[8],[24] (Set*NotificationHandler)
+- Reste: identifier Connect()/Disconnect()/Destroy() dans la vtable (MSVC: [0]=dtor puis ordre de déclaration)
+- Repo cloné: research/assets/CopperLan-Tuto1 (Engine.cpp montre usage complet)
+
+## SDK COMPLET RÉCUPÉRÉ (FreewareSDK sourceforge ms812proxy)
+- research/assets/chai_sdk/ : 7 headers + CPTypes/ — ICHAI complet documenté
+- Vtable ICHAI (sans base, ~ICHAI en fin): [0]Destroy [1]GetVersion [2]GetVersionString [3]GetMachineUniqueDuplicateNumber [4]GetRandom [5]CHAILock [6]CHAIUnlock [7]SetThreadPriority [8]SetFlowControlIncomingCapacity [9]CheckAsync [10]CancelAsync [11]RegNotifHandler [12]UnregNotifHandler [13]GetGlobalSyncTime [14]RedeclareAllDevices [15]AddLocalDevice [16]AddPluginLocalDevice [17]AddMIDI2CP [18]AddCP2MIDI [19]AddHybridMIDI [20]GetLocalDevice [21]RemoveLocalDevice **[22]Connect [23]Disconnect [24]IsConnected** [25]SetCHAIGroups [26]GetCHAIGroups [27+]RemoteDevice_Find*... ~ICHAI dernier
+- CreateCHAI prend la clé freeware "@7ZSwec9Pk@Yg5vjw1hQekXiuih8wWn2&3&@" (tuto github ludoviclaffineur/CopperLan-Tuto1)
+- Appels testés via PS x86: CreateCHAI OK, Connect[22] -> 1 (ERR_Failed), IsConnected[24] garbage(?), AddLocalDevice -> NULL
+- Échecs possibles: clé expirée | device requis d'abord | génération VNM | signature devCaps (classe non-POD)
+- ATTENTION: [0]=Destroy — l'appeler tue l'objet
