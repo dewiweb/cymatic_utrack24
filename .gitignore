@@ -1,0 +1,7 @@
+# Proprietary binaries & third-party docs (kept locally, not published)
+research/assets/
+research/pages/
+research/tools/
+__pycache__/
+*.log
+nul

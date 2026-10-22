@@ -1,0 +1,49 @@
+{
+    "ArchwaveAES67": {
+        "version": 1,
+        "config": {
+            "name": "uT24-AudioLan-49-00-30",
+            "DHCPenable": true,
+            "currentIPaddress": "192.168.10.176",
+            "currentIPmask": "255.255.255.0",
+            "currentIPgateway": "192.168.10.1",
+            "IPaddress": "192.168.100.220",
+            "IPmask": "255.255.255.0",
+            "IPgateway": "192.168.100.254",
+            "IPDNS1": "",
+            "IPDNS2": "",
+            "MACaddress": "00:07:F5:49:00:30",
+            "samplingRate": 1,
+            "resolution": 24,
+            "audioMode": 1,
+            "syntonizedMode": false,
+            "playoutDelay": {
+                "min": 1,
+                "max": 24000,
+                "msPerSample": 0.0226757,
+                "delayInSamples": 4800
+            },
+            "PTP": {
+                "domain": 0,
+                "preferredMaster": false,
+                "clockClass": 255,
+                "logAnnounceInterval": 1,
+                "logSyncInterval": 0,
+                "ipTTL": 1,
+                "slaveOnly": true
+            },
+            "SIPreceivers": {
+                "SIPusername": "receiver",
+                "SIPpassword": "",
+                "SIPserver": ""
+            },
+            "SAP": {
+                "MulticastAddress": "239.255.255.255",
+                "Port": 9875,
+                "SessionTimeout": 3600,
+                "SessionAnnouncementEnabled": true,
+                "BrowsingEnabled": false
+            }
+        }
+    }
+}

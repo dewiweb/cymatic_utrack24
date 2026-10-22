@@ -1,0 +1,8097 @@
+      
+          
+                          
+                                
+        <requestedExecutionLevel level="asInvoker" uiAccess="false"></requestedExecutionLevel>
+      </requestedPrivileges>
+      <requestedPrivileges>
+    </security>
+    <security>
+    [0x%8p]%04x (ID%u)(HC%u)
+   & 0 2 9 < D p t 
+  </trustInfo>
+  <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
+  Dropout
+  Dropouts 
+  Marker
+ !"#$%&'()*+,-./01234
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ABCDEFGHIJKLMNOPQRSTUVWXYZ{|}~
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ !"#$%&'()*+,-./0123456789:;<=>?@abcdefghijklmnopqrstuvwxyz[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+ " & 0 3 : < D p y 
+ "@^@h
+ #o9h3G9
+ $8*+9&
+ '$kgm
+ (Host 
+ (TID:
+ * ; L ^ o 
+ /:~M0
+ 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+ 0'3A3
+ 0@P`p
+ 2010-2011, Google Corporation.Open SansBoldAscender - Open Sans Bold Build 100Version 1.10OpenSans-BoldOpen Sans is a trademark of Google and may be registered in certain jurisdictions.Ascender Corporationhttp://www.ascendercorp.com/http://www.ascendercorp.com/typedesigners.htmlLicensed under the Apache License, Version 2.0http://www.apache.org/licenses/LICENSE-2.0
+ 2010-2011, Google Corporation.Open SansRegularAscender - Open Sans Build 100Version 1.10OpenSansOpen Sans is a trademark of Google and may be registered in certain jurisdictions.Ascender Corporationhttp://www.ascendercorp.com/http://www.ascendercorp.com/typedesigners.htmlLicensed under the Apache License, Version 2.0http://www.apache.org/licenses/LICENSE-2.0
+ 3.01J-@
+ 9# 9//Y-,E#E`#E`#E`#vh
+ 9/Y-,KSX 
+ ;V}wF
+ < C O [ c
+ >>8FY
+ >Wk@c~
+ >^,/.M2;&O63
+ B6NM+C>D?t
+ Base Class Array'
+ Base Class Descriptor at (
+ C\(#Y^>1N]+*J
+ Capacity:
+ Class Hierarchy Descriptor'
+ Complete Object Locator'
+ FAuPXf
+ Firmware: 
+ HV%:B
+ M:4?O>(
+ RJ~bFFM>
+ Size:
+ Tk avJ 
+ Type Descriptor'
+ VNM: 
+ as bold
+ as bold+italic
+ as italic
+ at hinted size 
+ but running with 
+ delayed messages pending...
+ delete
+ delete[]
+ http://crl.verisign.com/pca3.crl0)
+ nL?cy
+ names
+ new[]
+ objects). Please check application source code for missing Release() on hooked object!
+ tasks). Please check application source code for missing Reply to Request!
+ tvct!
+ ur9~$~m
+ using zstream
+ with flags=
+ {}RS=
+! !"!&!.!["
+! !"!&!.!^"
+! $54675&&
+! $54675&54$32
+! $54675&54632
+! 54&#
+!! killing thread by force !!
+!!!!!!
+!!!!!Y-,
+!!!!Y-,
+!!!Y-,
+!!!Y-, 
+!!Y-,E
+!!Y-,I
+!!Y-,KQX 
+!!Y-,KQXED
+!!Y-,KS#KQZX8
+!!Y-,KTX E
+!""!JY
+!"$546
+!"&54654&#"
+!"&5467&&5467&&54632
+!#532654&#"
+!&&'5!
+!&&'53
+!(!8!H!X!i!z"
+!(sOnr
+!.!GY+.
+!1&'|5
+!1AQaq
+!2654&#
+!2654&##
+!26554&# 
+!4*4Y4c4t4
+!5!5!5!
+!5#535#53
+!5655#53
+!5655#535#53546
+!56655#53546
+!5667#535#53546
+!576654&#"
+!654&'&&\
+!6654&'$
+!6654&'&&\
+!7 k{8
+!9}Mem
+!;|"wz
+!>Gr&O
+!?tXgT
+!F !F$^
+!F:d0<
+!G>0I<
+!Mr.;*/
+!R'@,M
+!SW<qw
+!Tacffi
+!This program cannot be run in DOS mode.
+!Y!!!!!!!-,
+!Y-,KRX}
+!\nkcy
+!`M:;t
+!g=QeQ
+!kBR{b
+!rR4XN
+!wJ8]'uE
+!w~?r>
+!|ge~v
+"  "FY
+"!"!FY
+"!"1"A"R"c"t"
+""""UUUU
+"##"GY##
+"$r I"
+"&54$!3
+"&54632
+"&54676654&##532654&#"
+"&5473
+"&SYNX
+"("4"<"Da
+"+"H"`"d%
+"+"H"`"e%
+"03191
+"0E0h0
+"2BRbr
+"6@6c6H7
+"6zENr
+"9}n2~
+":fT:pw
+":u]G%&A
+"AIG@@GIA
+"B <1=
+"E-soeK
+"Q][OO[\RV
+"VeriSign Time Stamping Services CA
+"VeriSign Time Stamping Services CA0
+"W:cR|~
+"_#[k'W
+"b:+b":
+"cFhHl
+"cs`@n
+"fZ7LD 
+"http://crl.verisign.com/tss-ca.crl0
+"~ -F>
+"~d>x9#,
+#"$5467&&54$
+#"$5467&&54632
+#"&%432
+#"&%4632
+#"&&'!
+#"&'%".
+#"&'&&
+#"&'5!
+#"&'667!
+#"&+_;ECNI
+#"&54%&&546
+#"&54&##5
+#"&54&##53 54&#"
+#"&543!632
+#"&5463!6632
+#"&54632
+#"&54632654&##532654&#"
+#"&5467$54&##53 54#"
+#"&5467&&546
+#"&5467&546
+#"&54673
+#"&54675&&54632
+#"&5467665
+#"&54676655
+#"&546774#"
+#"&5467754#"
+#"&5467754&#"
+#"&5473
+#"&54>
+#"&55!
+#"&55#535#5773
+#"&uZVS[\RT\
+#"&uZVS[\RT\ZVS[]QT\
+#"&uZVS[]QT\
+#"'&&#"
+#"54673
+#"FuTFIMG
+##C5  @+1
+#$\_24OWs
+#%26554&#"
+#%32654&##
+#%4&##
+#%6673
+#%]n?2_
+#&&'53
+#'4632
+#'6654#"
+#'6654&#"
+#*+.+-#
+#/#?#O#`#
+#3CScs
+#3erlh
+#3f{DWN
+#5!7#5!
+#5"&'5
+#5#"&5
+#53'57#53
+#532654&#"
+#54632
+#546632
+#56673
+#5754632
+#57673
+#5p.<o
+#654&'&&54>
+#6654&&'&&5
+#6654&'&&54675&5467
+#7#&'53
+#:,g()&} 3)
+#=33s?
+#@Y6eA
+#AHH??HHA
+#AJ03D
+#B;R#B
+#D-, E
+#D3r,X;|
+#GA7A?+CS
+#L8#)G
+#Max Objects: %d
+#N>s5'
+#Objects: %d
+#PLAYLISTS
+#YOf4)Jb
+#\#g#w#
+#http://logo.verisign.com/vslogo.gif0
+#ks07t
+#ux&76
+#wi#:=
+#zc2G2v
+#{eWcc~^'
+#~y&R/
+$$&& +k!
+$&$&FY
+$&$&IY
+$&R(`!B=3a
+$)>"Sq
+$,$<$M$]$
+$-meim+M_7A[
+$.I)<;5\x
+$0T0|0
+$1'2D=G>(A+B
+$2{)3<*HwQ@j17P.<Qi`
+$3a.IO
+$4DTdt
+$N5y;w_
+$Pj0YQQ
+$Y;G4r
+$Y;G@r
+$Y;Gpr
+$Zq\D#
+$cSsKk[{
+$e=gQUx
+$hmtx$
+$identifier
+$jby,7
+$l_eIY
+$literal
+$ltuou+
+$u},,%
+$wViX~0
+%!FontType
+%!PS-Adobe-3.0 Resource-CIDFont
+%!PS-AdobeFont
+%!PS-TrueTypeFont
+%#&'53
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+%-%;>y
+%-%<=y
+%-&6ua1;4
+%-12..21-
+%-LG.::+4ZrbMi=
+%.[MqEj
+%0%@%Q%a%r%
+%02d:%02d:%02d
+%02dh%02dm
+%2%6%:%>%B%F%J%N%R%V0
+%32654&##
+%5EUeu
+%6-+8$
+%7.}cuZ
+%754&#"
+%9A`u 9
+%ADOBeginFontDict
+%CH!!!-,E# E
+%EH!!!!-,
+%EiSXD
+%Id#Ei
+%TVXRQYX
+%Y5C,{^
+%_T9&G
+%bqobcpob
+%en!}}
+%fSR1(2
+%fuR\VO
+%oT]`n
+%pb%bX
+%r%v%z%~%
+%{me4GGm
+%}c`SL
+&#&QY#!PY #
+&#HH-,
+&#HH-,E#F#a
+&#HH-,E#F`
+&& OY&
+&&!MY&
+&&##53 54#"
+&&' 5473
+&&54$!!
+&&5463!
+&&54632
+&&546753
+&&Co.%
+&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz
+&'L[9!Q1
+&)%&%FY&
+&+prep
+&+prepC
+&._|3f>
+&050M0
+&0O0x0
+&2&6&:&>&B&F&J&N&R&V0
+&2@UUUUUU
+&484y6
+&54632
+&5:;6'
+&686C9
+&6FVfv
+&7#6sK
+&:&K&[&l&|&
+&=ls(a
+&>Ks-X
+&?~YK|
+&FKPH<
+&NGA%;
+&f{? \
+&r&v&z&~&
+&wlC;FDHz
+&wn~Qm
+&|4,bh3\H{W
+&}T)I~
+' '$'(','0'4'8'<'@0
+' 5473
+' with style '
+'!$J$N$R$V$Z$^$b$f$j$n0
+'#53&57#536
+'$5473
+'%>-OLy~.1
+'&&546753
+''"&&*
+'*';'G'W'h'y'
+'*_FcXO
+'+/=X9
+'26754&#"
+'667&'53
+'667''53
+'67&''53
+'67&'53
+'7#5!7!5!
+'7GWgw
+'7zs%4
+':E{WD
+'>'O'`'p'
+'>ke(v
+'>u`w}
+'L%q,y
+'Lu7:k
+'VeriSign Class 3 Code Signing 2009-2 CA
+'VeriSign Class 3 Code Signing 2009-2 CA0
+'ZKaop"
+'\'`'d'h'l'p't'x'|'
+'dIBOhP
+'i'qM$[!
+'k:mr6
+'k@tr6
+'ls<$]
+'o!p5o:x
+'s CHAI
+'tag'Mj
+'uAGJ{@c
+'va8'Qe
+'w}F _Mz
+( ($(((,(0(4(8(<(@0
+("(3(D(U(f(w(
+(%]e~R
+('('JY
+('('JY((
+((,"@E
+((1FY(
+(*2//<
+(++SQQ
+(.(?(K(S(
+(.C>DA
+(.SU@[>9UlK
+(0f3u364E4
+(27-JrvJ
+(6`$-9&6\wW
+(7-C:;-_&3
+(8HXhx
+(:;Ic0I
+(Disabled)
+(Z(^(b(f(j(n(r(v(z1
+(ZVS[]QT\
+(_4z)9
+(jdw(/
+(no choices)
+(not connected)
+(null)
+(vTOZ$=
+(wRmOQ}
+) ) KY))
+) has no Reply for its Request after 60 seconds.
+) is running for 
+)$)0)<)M)])n)~)
+)'}@X#
+))M=$U
+)*)4);
+)200//)
+)2=2T2
+)3~2%LN
+)5W_X`
+)5~8>O
+)9568877
+)9IYiy
+)9u'03"J
+)<#;+{
+)E ;} v
+)E*WP{
+)L)])n)y)
+)O~wn7
+)S~,cx
+)TT\8B
+)VN/R|=
+)Z='L+
+)\ZEo^m/
+)^0uB;
+)^e\Vz
+)b|ziY
+)sM@Wn
+)sv7fn
+)u|YY;
+)|?N/W
+)}T[Qz
+*!k~|]f
+**1- GY-
+**M?<C<JY
+*,{A~@
+*-*>*N*Z*e*v*
+*..&FY.
+*/*,2',MY'
+*03)*6
+*090P0
+*0Sje@
+*2d;R`
+*2l9p9t9x9|9
+*3'h36p
+*3*GY3
+*:JZjz
+*=f_Qr
+*@*$PY
+*@J@*5B
+*I*T*e*l*u
+*NN~}*
+*xX>h 
+*y0CX8ohol
+*{?o@6
++#+4+K+W+c+t+
++#D-,KRXED
++#O?'s
++%0+0.2(.FY((
++&>yOM|r?
++&rl$>llEb
++'+8+H+Y+i+{+
++**zD>4
++,!'FY$!
++/3-,6
++050N0V0n0
++2/310
++3.t7;
++3G8u^s9H
++6hsgV
++9[;JKV
++;K[k{
++@A i|
++D$(YY3
++H>}3/
++N,*;[
++ROI"23
++Tg(]c
++VeriSign Time Stamping Services Signer - G20
++Z+^+b7
++\_mb3
++_;ECNI
++jqn-Y
++n Ox(
++s!.Le)*^
++s!.MRg
++t HHt
++uyu(wz
++zGl0[P
++zds<r*
++}k#]|
+, ?, # 
+, IndexItems, # 
+, SelectorItems, # 
+,(6h78.p
+,,%3/"(
+,,)/Yif\
+,-,9,E,Q,
+,5irf_
+,6,:,>,B,F,J,N,R,V,Z0
+,<L\l|
+,=CrN,c:
+,?J{<&MDJ
+,Nu{x0
+,QoqfN
+,R]0]d
+,VyfZXmrJBS\RNkTbuGXBwgh
+,[LVi'c%.(
+,hH=_X
+,o{sdy
+,t,x,|,
+,{3LkULH+' 3
+- Attempt to initialize the CRT more than once.
+- Attempt to use MSIL code from this assembly during native code initialization
+- CRT not initialized
+- floating point support not loaded
+- not enough space for _onexit/atexit table
+- not enough space for arguments
+- not enough space for environment
+- not enough space for locale information
+- not enough space for lowio initialization
+- not enough space for stdio initialization
+- not enough space for thread data
+- pure virtual function call
+- unable to initialize heap
+- unable to open console device
+- unexpected heap error
+- unexpected multithread lock error
+-!V~K\
+-#7<RJq
+-&}\tI
+-+'1Zif]-+'1Zif]
+--------
+-.-2-6-:->-B-F-J-N-R0
+-.->-I-T-e-u-
+-/-)/##(
+-0A0|0
+-0ZYK$
+-2255).0138(
+-2``2-
+-4mO[a
+-76.6iF^
+-8N\t(
+-=M]m}
+->GD==DG>
+-De;@^'
+-fkE|/
+-j'j2j>jU
+-nsGY9(w>
+-o?Ha>
+-s4.)h
+-v-z-~-
+-{fexyde|lB33B<94A
+.%.6.F.W.g.y.
+.%Ii,)Ce41_m$
+.0F0v0
+.6::LUz
+.=ltuou
+.>?r/.V
+.>N^n~
+.?AU?$DataReleaser@UDummy@OpenGLFrameBufferImage@juce@@UWriter@23@@OpenGLFrameBufferImage@juce@@
+.?AU?$DataReleaser@UReader@OpenGLFrameBufferImage@juce@@UDummy@23@@OpenGLFrameBufferImage@juce@@
+.?AU?$DataReleaser@UReader@OpenGLFrameBufferImage@juce@@UWriter@23@@OpenGLFrameBufferImage@juce@@
+.?AUAudioDeviceSelectorComponentMethods@ExtraLookAndFeelBaseClasses@juce@@
+.?AUCTransportInterface@CPG@@
+.?AUCachedImageList@OpenGLRendering@juce@@
+.?AUCallTimersMessage@TimerThread@Timer@juce@@
+.?AUCurrentThreadHolder@juce@@
+.?AUCustomCommandMessage@?1??postCommandMessage@Component@juce@@QAEXH@Z@
+.?AUDummyComponent@NativeContext@OpenGLContext@juce@@
+.?AUExternalDragAndDropMessage@DragImageComponent@DragAndDropContainer@juce@@
+.?AUID2D1SimplifiedGeometrySink@@
+.?AUIDWritePixelSnapping@@
+.?AUIDWriteTextRenderer@@
+.?AUIDataObject@@
+.?AUIDropSource@@
+.?AUIDropTarget@@
+.?AUIEnumFORMATETC@@
+.?AUIUnknown@@
+.?AUKeyMappingEditorComponentMethods@ExtraLookAndFeelBaseClasses@juce@@
+.?AULassoComponentMethods@ExtraLookAndFeelBaseClasses@juce@@
+.?AUListener@ImagePixelData@juce@@
+.?AULookAndFeelMethods@AlertWindow@juce@@
+.?AULookAndFeelMethods@BubbleComponent@juce@@
+.?AULookAndFeelMethods@Button@juce@@
+.?AULookAndFeelMethods@CallOutBox@juce@@
+.?AULookAndFeelMethods@ComboBox@juce@@
+.?AULookAndFeelMethods@ConcertinaPanel@juce@@
+.?AULookAndFeelMethods@DocumentWindow@juce@@
+.?AULookAndFeelMethods@FileBrowserComponent@juce@@
+.?AULookAndFeelMethods@FilenameComponent@juce@@
+.?AULookAndFeelMethods@GroupComponent@juce@@
+.?AULookAndFeelMethods@ImageButton@juce@@
+.?AULookAndFeelMethods@Label@juce@@
+.?AULookAndFeelMethods@PopupMenu@juce@@
+.?AULookAndFeelMethods@ProgressBar@juce@@
+.?AULookAndFeelMethods@PropertyComponent@juce@@
+.?AULookAndFeelMethods@ResizableWindow@juce@@
+.?AULookAndFeelMethods@ScrollBar@juce@@
+.?AULookAndFeelMethods@Slider@juce@@
+.?AULookAndFeelMethods@StretchableLayoutResizerBar@juce@@
+.?AULookAndFeelMethods@TabbedButtonBar@juce@@
+.?AULookAndFeelMethods@TableHeaderComponent@juce@@
+.?AULookAndFeelMethods@TextEditor@juce@@
+.?AULookAndFeelMethods@Toolbar@juce@@
+.?AULookAndFeelMethods@TooltipWindow@juce@@
+.?AULookAndFeelMethods@TreeView@juce@@
+.?AUMultipleInstanceHandler@JUCEApplicationBase@juce@@
+.?AUOverlayShaderProgram@?6??copyTexture@OpenGLContext@juce@@QAEXABV?$Rectangle@H@3@0HH_N@Z@
+.?AURefCountedArray@VariantType_Array@var@juce@@
+.?AUSourceList@MouseInputSource@juce@@
+.?AUStackArrayStream@NumberToStringConverters@juce@@
+.?AUctype_base@std@@
+.?AV?$CPList@VCBaseTask@CPG@@@CPG@@
+.?AV?$CPListItem@VCBaseTask@CPG@@@CPG@@
+.?AV?$CPListItem@VCCPContainerMessageBlob@CPG@@@CPG@@
+.?AV?$CPListItem@VCCPMessage_Generic@CPG@@@CPG@@
+.?AV?$CPListItem@VCGlobalTimerItem@CPCHAI@@@CPG@@
+.?AV?$CPListItem@VCThread@CPG@@@CPG@@
+.?AV?$CPListItem@VCTimer@CPCHAI@@@CPG@@
+.?AV?$CPListItem@VDelayedMessage@CCHAIPort@CPCHAI@@@CPG@@
+.?AV?$CPListItem@VToBeNotified@CWatchersToBeNotified@CPCHAI@@@CPG@@
+.?AV?$CSortedDynamicArray@VSectionID@CPNS@@VSectionNameItem@CPCHAI@@@CPG@@
+.?AV?$CachedGlyphEdgeTable@VSavedState@OpenGLRendering@juce@@@RenderingHelpers@juce@@
+.?AV?$CachedGlyphEdgeTable@VSoftwareRendererSavedState@RenderingHelpers@juce@@@RenderingHelpers@juce@@
+.?AV?$ComBaseClassHelper@UID2D1SimplifiedGeometrySink@@@juce@@
+.?AV?$ComBaseClassHelper@UIDWriteTextRenderer@@@juce@@
+.?AV?$ComBaseClassHelper@UIDataObject@@@juce@@
+.?AV?$ComBaseClassHelper@UIDropSource@@@juce@@
+.?AV?$ComBaseClassHelper@UIDropTarget@@@juce@@
+.?AV?$ComBaseClassHelper@UIEnumFORMATETC@@@juce@@
+.?AV?$ComBaseClassHelperBase@UID2D1SimplifiedGeometrySink@@@juce@@
+.?AV?$ComBaseClassHelperBase@UIDWriteTextRenderer@@@juce@@
+.?AV?$ComBaseClassHelperBase@UIDataObject@@@juce@@
+.?AV?$ComBaseClassHelperBase@UIDropSource@@@juce@@
+.?AV?$ComBaseClassHelperBase@UIDropTarget@@@juce@@
+.?AV?$ComBaseClassHelperBase@UIEnumFORMATETC@@@juce@@
+.?AV?$ComponentCaller1@VComboBox@juce@@@ModalCallbackFunction@juce@@
+.?AV?$ComponentCaller1@VTextEditor@juce@@@ModalCallbackFunction@juce@@
+.?AV?$ComponentCaller2@VMenuBarComponent@juce@@H@ModalCallbackFunction@juce@@
+.?AV?$DrawableTypeHandler@VDrawableComposite@juce@@@juce@@
+.?AV?$DrawableTypeHandler@VDrawableImage@juce@@@juce@@
+.?AV?$DrawableTypeHandler@VDrawablePath@juce@@@juce@@
+.?AV?$DrawableTypeHandler@VDrawableRectangle@juce@@@juce@@
+.?AV?$DrawableTypeHandler@VDrawableText@juce@@@juce@@
+.?AV?$GlyphCache@V?$CachedGlyphEdgeTable@VSavedState@OpenGLRendering@juce@@@RenderingHelpers@juce@@VSavedState@OpenGLRendering@3@@RenderingHelpers@juce@@
+.?AV?$GlyphCache@V?$CachedGlyphEdgeTable@VSoftwareRendererSavedState@RenderingHelpers@juce@@@RenderingHelpers@juce@@VSoftwareRendererSavedState@23@@RenderingHelpers@juce@@
+.?AV?$Positioner@VDrawableComposite@juce@@@Drawable@juce@@
+.?AV?$Positioner@VDrawableImage@juce@@@Drawable@juce@@
+.?AV?$Positioner@VDrawableRectangle@juce@@@Drawable@juce@@
+.?AV?$Positioner@VDrawableText@juce@@@Drawable@juce@@
+.?AV?$StackBasedLowLevelGraphicsContext@VSavedState@OpenGLRendering@juce@@@RenderingHelpers@juce@@
+.?AV?$StackBasedLowLevelGraphicsContext@VSoftwareRendererSavedState@RenderingHelpers@juce@@@RenderingHelpers@juce@@
+.?AV?$TypedAsyncReturnManager@VICHAI_RemoteDevice_Find_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetControllerInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetIndexListItem_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetInputInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetModifierDataTypeInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetOutputInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetParameterInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetParameterPath_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetProperty_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedAsyncReturnManager@VIRemoteDevice_GetSelectorParameterValueText_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedNotificationManager@VICHAI_NotificationHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedNotificationManager@VIRemoteDevice_WatcherNotificationHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VICHAI_NotificationHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VICHAI_RemoteDevice_Find_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetControllerInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetIndexListItem_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetInputInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetModifierDataTypeInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetOutputInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetParameterInfo_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetParameterPath_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetProperty_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_GetSelectorParameterValueText_AsyncReturnHandler@CPNS@@@CPCHAI@@
+.?AV?$TypedQueuedNotification@VIRemoteDevice_WatcherNotificationHandler@CPNS@@@CPCHAI@@
+.?AV?$_Iosb@H@std@@
+.?AV?$basic_ios@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_ostream@DU?$char_traits@D@std@@@std@@
+.?AV?$basic_streambuf@DU?$char_traits@D@std@@@std@@
+.?AV?$ctype@D@std@@
+.?AV?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@
+.?AV?$numpunct@D@std@@
+.?AVAboutBox@@
+.?AVActionBroadcaster@juce@@
+.?AVActionListener@juce@@
+.?AVActionMessage@ActionBroadcaster@juce@@
+.?AVAdd@Helpers@Expression@juce@@
+.?AVAlertWindow@juce@@
+.?AVAnimatedWaitComponent@@
+.?AVAppIntCtrlMsgPayload_CHAIInfo@CPCHAI@@
+.?AVAppIntCtrlMsgPayload_Hello@CPCHAI@@
+.?AVAppIntCtrlMsgPayload_HelloReturn@CPCHAI@@
+.?AVAppIntCtrlMsgPayload_SmartConnect_Source@CPCHAI@@
+.?AVAppIntCtrlMsgPayload_SmartConnect_Target@CPCHAI@@
+.?AVApplicationCommandManagerListener@juce@@
+.?AVApplicationCommandTarget@juce@@
+.?AVAsyncDropMessage@DragHelpers@juce@@
+.?AVAsyncFunctionCallback@juce@@
+.?AVAsyncUpdater@juce@@
+.?AVAsyncUpdaterMessage@AsyncUpdater@juce@@
+.?AVAttachment@OpenGLContext@juce@@
+.?AVAutoPlayChoice@@
+.?AVAvailableDeviceList@@
+.?AVBase@?$ClipRegions@VSavedState@OpenGLRendering@juce@@@RenderingHelpers@juce@@
+.?AVBase@?$ClipRegions@VSoftwareRendererSavedState@RenderingHelpers@juce@@@RenderingHelpers@juce@@
+.?AVBaseAppIntCtrlMsgPayload_Audio@CPCHAI@@
+.?AVBaseBinaryData@CPNS@@
+.?AVBaseNotificationManager@CPCHAI@@
+.?AVBasePopup@@
+.?AVBaseQueuedNotification@CPCHAI@@
+.?AVBaseView@@
+.?AVBase_OnDemandNotificationHandler@CPNS@@
+.?AVBinaryTerm@Helpers@Expression@juce@@
+.?AVBitmapDataReleaser@BitmapData@Image@juce@@
+.?AVBlinkTimer@PushButton@@
+.?AVBlockingMessage@MessageManagerLock@juce@@
+.?AVBrowserListener@uTrack@@
+.?AVButton@juce@@
+.?AVButtonListenerProxy@DocumentWindow@juce@@
+.?AVCAppDataTransferMessage@CPCHAI@@
+.?AVCAppEventMessage@CPCHAI@@
+.?AVCAppInternalControlMessage@CPCHAI@@
+.?AVCAppMIDISysex@CPCHAI@@
+.?AVCAppModifierMessage@CPCHAI@@
+.?AVCAppSelectorMessage@CPCHAI@@
+.?AVCAppTextMessage@CPCHAI@@
+.?AVCAutoStartTimer@CPG@@
+.?AVCBaseAppMessage@CPCHAI@@
+.?AVCBaseLocalDevice@CPCHAI@@
+.?AVCBaseMessageLinkCHAI@CPG@@
+.?AVCBaseOutput@CPCHAI@@
+.?AVCBaseTask@CPG@@
+.?AVCBaseTaskProcess@CPCHAI@@
+.?AVCBaseTaskQuery@CPCHAI@@
+.?AVCCHAICore@CPCHAI@@
+.?AVCCHAIDevice@CPCHAI@@
+.?AVCCHAIObject@CPCHAI@@
+.?AVCCHAIPort@CPCHAI@@
+.?AVCCLPCHAIMsgLinkTransportProtocol@CPG@@
+.?AVCCLPMessageLinkCHAI@CPG@@
+.?AVCCP2MIDILocalDevice@CPCHAI@@
+.?AVCCPContainerMessageBlob@CPG@@
+.?AVCCPMessage_APP_Generic@CPG@@
+.?AVCCPMessage_APP_Generic_Reply@CPG@@
+.?AVCCPMessage_Diag_Timing@CPG@@
+.?AVCCPMessage_Generic@CPG@@
+.?AVCCPMessage_Generic_Reply@CPG@@
+.?AVCCPMessage_Generic_Reply_Request@CPG@@
+.?AVCCPMessage_HM_Warning@CPG@@
+.?AVCCPMessage_LM_DeviceDeclaredOrModified@CPG@@
+.?AVCCPMessage_LM_DeviceIdentityChanged@CPG@@
+.?AVCCPMessage_LM_DeviceLostOrNotFound@CPG@@
+.?AVCCPMessage_LM_DeviceRemoved@CPG@@
+.?AVCCPMessage_LM_GetVNMInfoReply@CPG@@
+.?AVCCPMessage_LM_GetVNMInfoRequest@CPG@@
+.?AVCCPMessage_LM_GlobalSynchronizedClock@CPG@@
+.?AVCCPMessage_LM_NetworkModified@CPG@@
+.?AVCCPMessage_LM_RootDeviceDuplicateResolutionReply@CPG@@
+.?AVCCPMessage_LM_RootDeviceDuplicateResolutionRequest@CPG@@
+.?AVCCPMessage_LM_SetFitness@CPG@@
+.?AVCCPMessage_LM_SetGlobalClockTime@CPG@@
+.?AVCCPMessage_LM_SubDeviceDeclared@CPG@@
+.?AVCCPMessage_LM_TransportFlowControl@CPG@@
+.?AVCCPMessage_LM_VNMTray_AddEthernetInterfaceReply@CPG@@
+.?AVCCPMessage_LM_VNMTray_AddEthernetInterfaceRequest@CPG@@
+.?AVCCPMessage_LM_VNMTray_GetFitnessReply@CPG@@
+.?AVCCPMessage_LM_VNMTray_GetFitnessRequest@CPG@@
+.?AVCCPMessage_LM_VNMTray_GetInterfacesReply@CPG@@
+.?AVCCPMessage_LM_VNMTray_GetInterfacesRequest@CPG@@
+.?AVCCPMessage_LM_VNMTray_GetStatisticsReply@CPG@@
+.?AVCCPMessage_LM_VNMTray_GetStatisticsRequest@CPG@@
+.?AVCCPMessage_LM_VNMTray_RemEthernetInterfaceRequest@CPG@@
+.?AVCCPMessage_LM_VNMTray_ResetStatistics@CPG@@
+.?AVCCPMessage_LM_VNMTray_SetTCPIPPort@CPG@@
+.?AVCCPMessage_LM_VerifyKey_Reply@CPG@@
+.?AVCCPMessage_LM_VerifyKey_Request@CPG@@
+.?AVCCPMessage_NCM_DevicePresenceReply@CPG@@
+.?AVCCPMessage_NCM_DevicePresenceRequest@CPG@@
+.?AVCCPMessage_NCM_Duplicate_CheckDeviceExists@CPG@@
+.?AVCCPMessage_NCM_Duplicate_DeviceExists@CPG@@
+.?AVCCPMessage_NCM_Duplicate_Fixed_Mismatch@CPG@@
+.?AVCCPMessage_NCM_Duplicate_Restart@CPG@@
+.?AVCCPMessage_NCM_NetworkLatencyReply@CPG@@
+.?AVCCPMessage_NCM_NetworkLatencyRequest@CPG@@
+.?AVCCPMessage_NCM_NetworkModified@CPG@@
+.?AVCCPMessage_NCM_Ping@CPG@@
+.?AVCCPMessage_NCM_WhereIsDeviceIDReply@CPG@@
+.?AVCCPMessage_NCM_WhereIsDeviceIDRequest@CPG@@
+.?AVCCPMessage_SM_B_RecordingControl@CPG@@
+.?AVCCPMessage_SM_D_AssignController@CPG@@
+.?AVCCPMessage_SM_D_CollectSetupDataReply@CPG@@
+.?AVCCPMessage_SM_D_CollectSetupDataRequest@CPG@@
+.?AVCCPMessage_SM_D_RecordingControl@CPG@@
+.?AVCCPMessage_SM_D_RestoreSetupDataReply@CPG@@
+.?AVCCPMessage_SM_D_RestoreSetupDataRequest@CPG@@
+.?AVCCPMessage_SM_DeviceDeclarationXXX@CPG@@
+.?AVCCPMessage_SM_DeviceDiscarded@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationContinueRequest@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationDoneReply@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationFindFirstRequest@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationFindLastRequest@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationFindNextRequest@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationFindPreviousRequest@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationReply@CPG@@
+.?AVCCPMessage_SM_DeviceEnumerationStartRequest@CPG@@
+.?AVCCPMessage_SM_DeviceIdentityChanged@CPG@@
+.?AVCCPMessage_SM_FilteredDeviceSearchDoneReply@CPG@@
+.?AVCCPMessage_SM_FilteredDeviceSearchReply@CPG@@
+.?AVCCPMessage_SM_FilteredDeviceSearchRequest@CPG@@
+.?AVCCPMessage_SM_GetDeviceInfoReply@CPG@@
+.?AVCCPMessage_SM_GetDeviceInfoRequest@CPG@@
+.?AVCCPMessage_SM_Learn@CPG@@
+.?AVCCPMessage_SM_MachineInformationReply@CPG@@
+.?AVCCPMessage_SM_MachineInformationRequest@CPG@@
+.?AVCCPMessage_SM_MachineNeighbourhoodReply@CPG@@
+.?AVCCPMessage_SM_MachineNeighbourhoodRequest@CPG@@
+.?AVCCPMessage_SM_Remote_Destination@CPG@@
+.?AVCCPMessage_SM_Remote_GenericChange@CPG@@
+.?AVCCPMessage_SM_ServiceDevice@CPG@@
+.?AVCCPMessage_SM_SetGlobalClockTime@CPG@@
+.?AVCCPMessage_SM_Signal@CPG@@
+.?AVCCerbere@CPCHAI@@
+.?AVCClockIDData@CPG@@
+.?AVCComputerCHAI@CPCHAI@@
+.?AVCController@CPCHAI@@
+.?AVCDeviceEnumerationContext@CPCHAI@@
+.?AVCFakeIAsync@CPCHAI@@
+.?AVCGlobalTimerItem@CPCHAI@@
+.?AVCHAI_DeviceDeclaration@NotificationManager_CHAI@CPCHAI@@
+.?AVCHAI_DeviceDiscarded@NotificationManager_CHAI@CPCHAI@@
+.?AVCHAI_DeviceIdentityChanged@NotificationManager_CHAI@CPCHAI@@
+.?AVCHAI_Notification@NotificationManager_CHAI@CPCHAI@@
+.?AVCHAI_RemoteDevice_Find_Return@NotificationManager_CHAI_RemoteDevice_Find@CPCHAI@@
+.?AVCHAI_Warning@NotificationManager_CHAI@CPCHAI@@
+.?AVCHybridMIDILocalDevice@CPCHAI@@
+.?AVCIndexList@CPCHAI@@
+.?AVCInput@CPCHAI@@
+.?AVCListID@CPCHAI@@
+.?AVCLocalDevice@CPCHAI@@
+.?AVCMIDI2CPLocalDevice@CPCHAI@@
+.?AVCMIDITranslator@CPCHAI@@
+.?AVCModifierParameter@CPCHAI@@
+.?AVCOutput@CPCHAI@@
+.?AVCParameter@CPCHAI@@
+.?AVCPipe@CPCHAI@@
+.?AVCRemoteDevice@CPCHAI@@
+.?AVCSelectorItemList@CPCHAI@@
+.?AVCSelectorParameter@CPCHAI@@
+.?AVCSharedDisplayClientLocalDevice@CPCHAI@@
+.?AVCSharedDisplayLocalDevice@CPCHAI@@
+.?AVCTaskCHAIDevice_SignalQuery@CPCHAI@@
+.?AVCTaskCHAIFindFirstDevice@CPCHAI@@
+.?AVCTaskCHAIFindForeignDevice@CPCHAI@@
+.?AVCTaskCollectCHAIInformation@CPCHAI@@
+.?AVCTaskCollectMachineInformation@CPCHAI@@
+.?AVCTaskCollectSnapshotData@CPCHAI@@
+.?AVCTaskDeviceInfoGetDestination@CPCHAI@@
+.?AVCTaskDeviceInfoGetInfo@CPCHAI@@
+.?AVCTaskDeviceInfoGetInputOutputControllerInfo@CPCHAI@@
+.?AVCTaskDeviceInfoGetName@CPCHAI@@
+.?AVCTaskDeviceInfoGetPerfMsgInfo@CPCHAI@@
+.?AVCTaskDeviceInfoGetProperty@CPCHAI@@
+.?AVCTaskFilteredDeviceSearch@CPCHAI@@
+.?AVCTaskFindFirstDevice@CPG@@
+.?AVCTaskFindForeignDevice@CPG@@
+.?AVCTaskGetDeviceInfo@CPG@@
+.?AVCTaskManager@CPG@@
+.?AVCTaskProcessSIGConnectedDevices@CPCHAI@@
+.?AVCTaskProcessSMCollectSnapshotData@CPCHAI@@
+.?AVCTaskProcessSMGetDeviceInfo@CPCHAI@@
+.?AVCTaskProcessSMRestoreSnapshotData@CPCHAI@@
+.?AVCTaskRemoteDeviceDelayedNotification@CPCHAI@@
+.?AVCTaskRestoreSnapshotData@CPCHAI@@
+.?AVCTaskSmartConnectInitiator@CPCHAI@@
+.?AVCTaskSmartConnectTarget@CPCHAI@@
+.?AVCTextParameter@CPCHAI@@
+.?AVCThread@CPG@@
+.?AVCThreadManager@CPG@@
+.?AVCTimer@CPCHAI@@
+.?AVCTimer@CPG@@
+.?AVCTransportAddress@CPG@@
+.?AVCTrashCanItem@CPG@@
+.?AVCVMIDILinkHybridLocalDevice@CPCHAI@@
+.?AVCVMIDILinkInLocalDevice@CPCHAI@@
+.?AVCVMIDILinkOutLocalDevice@CPCHAI@@
+.?AVCWin32TCPIPSocket@CPG@@
+.?AVCWin32Thread@CPG@@
+.?AVCWin32UDPSocket@CPG@@
+.?AVCWin32Winsocks@CPG@@
+.?AVCachedComponentImage@juce@@
+.?AVCachedImage@OpenGLContext@juce@@
+.?AVCallback@ModalComponentManager@juce@@
+.?AVCallbackHelper@Button@juce@@
+.?AVCallbackMessage@juce@@
+.?AVCaretComponent@juce@@
+.?AVChangeBroadcaster@juce@@
+.?AVChangeBroadcasterCallback@ChangeBroadcaster@juce@@
+.?AVClockSourceChoice@@
+.?AVCloseSubPath@RelativePointPath@juce@@
+.?AVComboBox@juce@@
+.?AVCommandMessage@ApplicationCommandTarget@juce@@
+.?AVComponent@juce@@
+.?AVComponentAnimator@juce@@
+.?AVComponentBoundsConstrainer@juce@@
+.?AVComponentBuilder@juce@@
+.?AVComponentDragger@juce@@
+.?AVComponentListener@juce@@
+.?AVComponentMovementWatcher@juce@@
+.?AVComponentPeer@juce@@
+.?AVComponentScope@RelativeCoordinatePositionerBase@juce@@
+.?AVConfirmDialog@@
+.?AVConstant@Helpers@Expression@juce@@
+.?AVCredits@AboutBox@@
+.?AVCubicTo@RelativePointPath@juce@@
+.?AVCurrentDateTime@@
+.?AVCursor@FaderMeter@@
+.?AVCursor@MySlider@@
+.?AVCursor@PanCtrl@@
+.?AVCustomComponent@PopupMenu@juce@@
+.?AVCustomDirectWriteTextRenderer@DirectWriteTypeLayout@juce@@
+.?AVCustomTypeface@juce@@
+.?AVDSPMChannelStrip@@
+.?AVDSPMViewport@@
+.?AVDSPMixerPanel@@
+.?AVDelayedJob@DelayedJobManager@CPCHAI@@
+.?AVDelayedJobManager@CPCHAI@@
+.?AVDelayedMessage@CCHAIPort@CPCHAI@@
+.?AVDeletedAtShutdown@juce@@
+.?AVDependencyFinderScope@RelativeCoordinatePositionerBase@juce@@
+.?AVDesktop@juce@@
+.?AVDeviceFirmware@@
+.?AVDeviceIP@@
+.?AVDeviceName@@
+.?AVDeviceSelectionButton@@
+.?AVDeviceSelectionPanel@@
+.?AVDirectoryContentsDisplayComponent@juce@@
+.?AVDisplayLayout@@
+.?AVDivide@Helpers@Expression@juce@@
+.?AVDocumentWindow@juce@@
+.?AVDotOperator@Helpers@Expression@juce@@
+.?AVDragAndDropContainer@juce@@
+.?AVDragAndDropTarget@juce@@
+.?AVDragImageComponent@DragAndDropContainer@juce@@
+.?AVDrawable@juce@@
+.?AVDrawableButton@juce@@
+.?AVDrawableComposite@juce@@
+.?AVDrawableImage@juce@@
+.?AVDrawablePath@juce@@
+.?AVDrawableRectangle@juce@@
+.?AVDrawableShape@juce@@
+.?AVDrawableText@juce@@
+.?AVDropShadower@juce@@
+.?AVDynamicBinaryData@CPNS@@
+.?AVDynamicObject@juce@@
+.?AVEdgeTableRegion@?$ClipRegions@VSavedState@OpenGLRendering@juce@@@RenderingHelpers@juce@@
+.?AVEdgeTableRegion@?$ClipRegions@VSoftwareRendererSavedState@RenderingHelpers@juce@@@RenderingHelpers@juce@@
+.?AVElementBase@RelativePointPath@juce@@
+.?AVEvaluationError@Helpers@Expression@juce@@
+.?AVEvaluationVisitor@DotOperator@Helpers@Expression@juce@@
+.?AVExitModalStateMessage@?9??exitModalState@Component@juce@@QAEXH@Z@
+.?AVFaderMeter@@
+.?AVFileDragAndDropTarget@juce@@
+.?AVFilePanel@@
+.?AVFindVNMThread@CComputerCHAI@CPCHAI@@
+.?AVFootswitchChoice@@
+.?AVFormatDisk@@
+.?AVFreeTypeFace@?A0x8dc14c2d@@
+.?AVFreeTypeFacesImplementation@?A0x8dc14c2d@@
+.?AVFreeTypeHintedFace@?A0x8dc14c2d@@
+.?AVFreeTypeLibrary@?A0x8dc14c2d@@
+.?AVFunction@Helpers@Expression@juce@@
+.?AVGIFImageFormat@juce@@
+.?AVGZIPDecompressorInputStream@juce@@
+.?AVGlassWindowButton@LookAndFeel_V2@juce@@
+.?AVHWNDComponentPeer@juce@@
+.?AVHeaderItemComponent@HelperClasses@PopupMenu@juce@@
+.?AVHomePanel@@
+.?AVIAsync@CPNS@@
+.?AVIBaseLocalDevice@CPNS@@
+.?AVIBaseLocalDevice_SignalNotificationHandler@CPNS@@
+.?AVIBaseMessage@CPNS@@
+.?AVIBaseOutput@CPNS@@
+.?AVICHAI@CPNS@@
+.?AVICHAI_GlobalTimer_NotificationHandler@CPNS@@
+.?AVICHAI_NotificationHandler@CPNS@@
+.?AVICHAI_OnDemandNotificationHandler@CPNS@@
+.?AVICHAI_RemoteDevice_Find_AsyncReturnHandler@CPNS@@
+.?AVICHAI_Timer_NotificationHandler@CPNS@@
+.?AVICP2MIDILocalDevice@CPNS@@
+.?AVIController@CPNS@@
+.?AVIDataTransferMessage@CPNS@@
+.?AVIDeviceEnumerationContext@CPNS@@
+.?AVIEventMessage@CPNS@@
+.?AVIHookedObject@CPNS@@
+.?AVIHybridMIDILocalDevice@CPNS@@
+.?AVIIndexList@CPNS@@
+.?AVIInput@CPNS@@
+.?AVIInput_ClockListenerControlNotificationHandler@CPNS@@
+.?AVIInput_NotificationHandler@CPNS@@
+.?AVIListID@CPNS@@
+.?AVILocalDevice@CPNS@@
+.?AVIMIDI2CPLocalDevice@CPNS@@
+.?AVIMIDISysexMessage@CPNS@@
+.?AVIMessageLinkCHAI@CPG@@
+.?AVIMessageLinkCHAINotificationHandler@CPG@@
+.?AVIMessageLinkTransportProtocolHandler@CPG@@
+.?AVIModifierMessage@CPNS@@
+.?AVIObject@CPNS@@
+.?AVIOutput@CPNS@@
+.?AVIOutput_ClockGeneratorNotificationHandler@CPNS@@
+.?AVIOutput_NotificationHandler@CPNS@@
+.?AVIParameter@CPNS@@
+.?AVIPipe@CPNS@@
+.?AVIPipe_NotificationHandler@CPNS@@
+.?AVIRemoteDevice@CPNS@@
+.?AVIRemoteDevice_GetControllerInfo_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetIndexListItem_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetInputInfo_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetModifierDataTypeInfo_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetOutputInfo_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetParameterInfo_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetParameterPath_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetProperty_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_GetSelectorParameterValueText_AsyncReturnHandler@CPNS@@
+.?AVIRemoteDevice_NotificationHandler2@CPNS@@
+.?AVIRemoteDevice_WatcherNotificationHandler@CPNS@@
+.?AVISelectorItemList@CPNS@@
+.?AVISelectorMessage@CPNS@@
+.?AVISerializable@CPNS@@
+.?AVISharedDisplayClientLocalDevice@CPNS@@
+.?AVISharedDisplayLocalDevice@CPNS@@
+.?AVITCPIPSocket@CPG@@
+.?AVITaskManagerHandler@CPG@@
+.?AVITextMessage@CPNS@@
+.?AVIThreadNotificationHandler@CPG@@
+.?AVITimer@CPNS@@
+.?AVIVMIDILinkHybridLocalDevice@CPNS@@
+.?AVIVMIDILinkInLocalDevice@CPNS@@
+.?AVIVMIDILinkOutLocalDevice@CPNS@@
+.?AVIVNMEnterBootloaderHandler@CPG@@
+.?AVImageFileFormat@juce@@
+.?AVImagePixelData@juce@@
+.?AVImageType@juce@@
+.?AVInputStream@juce@@
+.?AVInsertAction@TextEditor@juce@@
+.?AVIntermediateMainComponent@@
+.?AVItem@DeviceSelectionPanel@@
+.?AVItemComponent@HelperClasses@PopupMenu@juce@@
+.?AVJPEGImageFormat@juce@@
+.?AVJUCEApplication@juce@@
+.?AVJUCEApplicationBase@juce@@
+.?AVJuceDataObject@DragAndDropHelpers@juce@@
+.?AVJuceDropSource@DragAndDropHelpers@juce@@
+.?AVJuceDropTarget@HWNDComponentPeer@juce@@
+.?AVJuceEnumFormatEtc@DragAndDropHelpers@juce@@
+.?AVKeyListener@juce@@
+.?AVKeyboardFocusTraverser@juce@@
+.?AVLabel@juce@@
+.?AVLabelKeyboardFocusTraverser@juce@@
+.?AVLineTo@RelativePointPath@juce@@
+.?AVListBox@juce@@
+.?AVListBoxModel@juce@@
+.?AVListViewport@ListBox@juce@@
+.?AVListener@AvailableDeviceList@@
+.?AVListener@Button@juce@@
+.?AVListener@ComboBox@juce@@
+.?AVListener@ConfirmDialog@@
+.?AVListener@FaderMeter@@
+.?AVListener@Label@juce@@
+.?AVListener@MarkerList@juce@@
+.?AVListener@MenuBarModel@juce@@
+.?AVListener@MySlider@@
+.?AVListener@PanCtrl@@
+.?AVListener@PushButton@@
+.?AVListener@ScrollBar@juce@@
+.?AVListener@SwitchButton@@
+.?AVListener@TextEditor@juce@@
+.?AVListener@Value@juce@@
+.?AVListener@ValueTree@juce@@
+.?AVLogScale@@
+.?AVLogos@AboutBox@@
+.?AVLookAndFeel@juce@@
+.?AVLookAndFeel_V2@juce@@
+.?AVLookAndFeel_V3@juce@@
+.?AVLookAndFeel_V3_DocumentWindowButton@juce@@
+.?AVLoopModeManager@@
+.?AVLowLevelGraphicsContext@juce@@
+.?AVLowLevelGraphicsSoftwareRenderer@juce@@
+.?AVMADI48kOutChoice@@
+.?AVMADI96kOutChoice@@
+.?AVMADIFrameChoice@@
+.?AVMADIInputAssignmentChoice@@
+.?AVMADIInputChoice@@
+.?AVMADIModeChoice@@
+.?AVMIDIOffsetSlider@@
+.?AVMainComponent@@
+.?AVMainWindow@@
+.?AVMarkerListButton@@
+.?AVMarkerListPanel@@
+.?AVMarkerListScope@juce@@
+.?AVMemoryInputStream@juce@@
+.?AVMemoryOutputStream@juce@@
+.?AVMenuBarComponent@juce@@
+.?AVMenuBarModel@juce@@
+.?AVMenuWindow@HelperClasses@PopupMenu@juce@@
+.?AVMenusPanel@@
+.?AVMessageBase@MessageManager@juce@@
+.?AVMeter@@
+.?AVMeterBridge@@
+.?AVMeteringPanel@@
+.?AVMetersListener@uTrack@@
+.?AVMixerListener@uTrack@@
+.?AVModalComponentManager@juce@@
+.?AVModalItem@ModalComponentManager@juce@@
+.?AVMouseInputSourceInternal@juce@@
+.?AVMouseListener@juce@@
+.?AVMouseSourceState@HelperClasses@PopupMenu@juce@@
+.?AVMultiply@Helpers@Expression@juce@@
+.?AVMultitrackOutputsPostFaderChoice@@
+.?AVMyItem@RemoteDisplay@@
+.?AVMyLookAndFeel@@
+.?AVMySlider@@
+.?AVMyTextEditor@CurrentDateTime@@
+.?AVMyTextEditor@DeviceName@@
+.?AVMyView@MarkerListPanel@@
+.?AVMyView@RemoteDisplay@@
+.?AVNativeImageType@juce@@
+.?AVNegate@Helpers@Expression@juce@@
+.?AVNonShaderContext@OpenGLRendering@juce@@
+.?AVNotificationManager_CHAI@CPCHAI@@
+.?AVNotificationManager_CHAI_RemoteDevice_Find@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetControllerInfo@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetIndexListItem@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetInputInfo@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetModifierDataTypeInfo@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetOutputInfo@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetParameterInfo@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetParameterPath@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetProperty@CPCHAI@@
+.?AVNotificationManager_RemoteDevice_GetSelectorParameterValueText@CPCHAI@@
+.?AVOpenGLFrameBufferImage@juce@@
+.?AVOpenGLImageType@juce@@
+.?AVOutputAttSlider@@
+.?AVOutputStream@juce@@
+.?AVOverloadBar@@
+.?AVPNGImageFormat@juce@@
+.?AVPanCtrl@@
+.?AVPathGeometrySink@WindowsDirectWriteTypeface@juce@@
+.?AVPimpl@ImageCache@juce@@
+.?AVPlatformEmulation@@
+.?AVPlaybackModeChoice@@
+.?AVPopupInfo@StatusHeader@@
+.?AVPopupMenuCompletionCallback@juce@@
+.?AVPositioner@Component@juce@@
+.?AVPreRecordingChoice@@
+.?AVPress2ToExit@MainComponent@@
+.?AVProgressAnimation@@
+.?AVProgressBarPanel@@
+.?AVPropertyInfo@CBaseLocalDevice@CPCHAI@@
+.?AVPropertyInfoBinary@CBaseLocalDevice@CPCHAI@@
+.?AVPropertyInfoNumeric@CBaseLocalDevice@CPCHAI@@
+.?AVPropertyInfoText@CBaseLocalDevice@CPCHAI@@
+.?AVProxyComponent@AnimationTask@ComponentAnimator@juce@@
+.?AVPushButton@@
+.?AVPushButtonTransport@@
+.?AVQuadraticTo@RelativePointPath@juce@@
+.?AVQuitMessage@MessageManager@juce@@
+.?AVRectangleListRegion@?$ClipRegions@VSavedState@OpenGLRendering@juce@@@RenderingHelpers@juce@@
+.?AVRectangleListRegion@?$ClipRegions@VSoftwareRendererSavedState@RenderingHelpers@juce@@@RenderingHelpers@juce@@
+.?AVReferenceCountedObject@juce@@
+.?AVRelativeCoordinatePositionerBase@juce@@
+.?AVRelativePositioner@DrawablePath@juce@@
+.?AVRelativePositioner@DrawableShape@juce@@
+.?AVRelativeRectangleLocalScope@juce@@
+.?AVRemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_GetControllerInfo_Return@NotificationManager_RemoteDevice_GetControllerInfo@CPCHAI@@
+.?AVRemoteDevice_GetIndexListItem_Return@NotificationManager_RemoteDevice_GetIndexListItem@CPCHAI@@
+.?AVRemoteDevice_GetInputInfo_Return@NotificationManager_RemoteDevice_GetInputInfo@CPCHAI@@
+.?AVRemoteDevice_GetModifierDataTypeInfo_Return@NotificationManager_RemoteDevice_GetModifierDataTypeInfo@CPCHAI@@
+.?AVRemoteDevice_GetOutputInfo_Return@NotificationManager_RemoteDevice_GetOutputInfo@CPCHAI@@
+.?AVRemoteDevice_GetParameterInfo_Modifier_Return@NotificationManager_RemoteDevice_GetParameterInfo@CPCHAI@@
+.?AVRemoteDevice_GetParameterInfo_NoData_Return@NotificationManager_RemoteDevice_GetParameterInfo@CPCHAI@@
+.?AVRemoteDevice_GetParameterInfo_Selector_Return@NotificationManager_RemoteDevice_GetParameterInfo@CPCHAI@@
+.?AVRemoteDevice_GetParameterInfo_Text_Return@NotificationManager_RemoteDevice_GetParameterInfo@CPCHAI@@
+.?AVRemoteDevice_GetParameterPath_Return@NotificationManager_RemoteDevice_GetParameterPath@CPCHAI@@
+.?AVRemoteDevice_GetPropertyBinary_Return@NotificationManager_RemoteDevice_GetProperty@CPCHAI@@
+.?AVRemoteDevice_GetPropertyNumeric_Return@NotificationManager_RemoteDevice_GetProperty@CPCHAI@@
+.?AVRemoteDevice_GetPropertyString_Return@NotificationManager_RemoteDevice_GetProperty@CPCHAI@@
+.?AVRemoteDevice_GetSelectorParameterValueText_Return@NotificationManager_RemoteDevice_GetSelectorParameterValueText@CPCHAI@@
+.?AVRemoteDevice_Watcher_ControllerAssignmentChange@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_DestinationChange@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_Lost@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_PropertyChanged@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_Redeclared@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_SmartConnectOpenSession@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_SmartConnectOperationCompleted@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDevice_Watcher_SourceChange@RemoteDeviceWatcherNotificationManager@CPCHAI@@
+.?AVRemoteDisplay@@
+.?AVRemoveAction@TextEditor@juce@@
+.?AVResizableBorderComponent@juce@@
+.?AVResizableCornerComponent@juce@@
+.?AVResizableWindow@juce@@
+.?AVResolutionChoice@@
+.?AVRowComponent@ListBox@juce@@
+.?AVSIngleFaderMeterPanel@@
+.?AVSampleRateChoice@@
+.?AVScope@Expression@juce@@
+.?AVScreenSaverDefeater@juce@@
+.?AVScriptedAnimation@@
+.?AVScrollBar@juce@@
+.?AVScrollbarButton@ScrollBar@juce@@
+.?AVSectionNameCollection@CPCHAI@@
+.?AVSectionNameItem@CPCHAI@@
+.?AVSetPropertyAction@SharedObject@ValueTree@juce@@
+.?AVSettableTooltipClient@juce@@
+.?AVSettingsListener@uTrack@@
+.?AVShaderContext@OpenGLRendering@juce@@
+.?AVShaderPrograms@OpenGLRendering@juce@@
+.?AVShadowWindow@DropShadower@juce@@
+.?AVSharedFontInternal@Font@juce@@
+.?AVSharedObject@ValueTree@juce@@
+.?AVSharedPointer@?$WeakReference@VActionBroadcaster@juce@@VReferenceCountedObject@2@@juce@@
+.?AVSharedPointer@?$WeakReference@VApplicationCommandTarget@juce@@VReferenceCountedObject@2@@juce@@
+.?AVSharedPointer@?$WeakReference@VComponent@juce@@VReferenceCountedObject@2@@juce@@
+.?AVSharedPointer@?$WeakReference@VLookAndFeel@juce@@VReferenceCountedObject@2@@juce@@
+.?AVSimpleValueSource@juce@@
+.?AVSingleThreadedReferenceCountedObject@juce@@
+.?AVSliderLabelComp@LookAndFeel_V2@juce@@
+.?AVSmartConnectSourceManager@CPCHAI@@
+.?AVSmartConnectTargetManager@CPCHAI@@
+.?AVSoftwareImageType@juce@@
+.?AVSoftwarePixelData@juce@@
+.?AVSplashScreen@juce@@
+.?AVStartSubPath@RelativePointPath@juce@@
+.?AVStaticBinaryData@CPNS@@
+.?AVStatusFooter@@
+.?AVStatusHeader@@
+.?AVStatusListener@uTrack@@
+.?AVStereoOutputsChoice@@
+.?AVStripLabel@@
+.?AVSubsectionPixelData@juce@@
+.?AVSubtract@Helpers@Expression@juce@@
+.?AVSwipeComponent@@
+.?AVSwipeComponentContent@@
+.?AVSwitchButton@@
+.?AVSymbolRenamingVisitor@DotOperator@Helpers@Expression@juce@@
+.?AVSymbolTerm@Helpers@Expression@juce@@
+.?AVSymbolVisitingVisitor@DotOperator@Helpers@Expression@juce@@
+.?AVTabbedButtonBar@juce@@
+.?AVTemporaryImage@HWNDComponentPeer@juce@@
+.?AVTerm@Expression@juce@@
+.?AVTextButton@juce@@
+.?AVTextDragAndDropTarget@juce@@
+.?AVTextEditor@juce@@
+.?AVTextEditorViewport@juce@@
+.?AVTextHolderComponent@TextEditor@juce@@
+.?AVTextInputTarget@juce@@
+.?AVTextScroller@PushButton@@
+.?AVThread@juce@@
+.?AVTimeBubble@@
+.?AVTimer@juce@@
+.?AVTimerThread@CPCHAI@@
+.?AVTimerThread@Timer@juce@@
+.?AVToBeNotified@CWatchersToBeNotified@CPCHAI@@
+.?AVTooltipClient@juce@@
+.?AVTopLevelWindow@juce@@
+.?AVTopLevelWindowManager@juce@@
+.?AVTrackCountChoice@@
+.?AVTransportKeys@@
+.?AVTransportThread@CComputerCHAI@CPCHAI@@
+.?AVTypeHandler@ComponentBuilder@juce@@
+.?AVTypeface@juce@@
+.?AVTypefaceCache@juce@@
+.?AVUndoManager@juce@@
+.?AVUndoableAction@juce@@
+.?AVVP@SwipeComponent@@
+.?AVValueSource@Value@juce@@
+.?AVVariantType@var@juce@@
+.?AVVariantType_Array@var@juce@@
+.?AVVariantType_Binary@var@juce@@
+.?AVVariantType_Bool@var@juce@@
+.?AVVariantType_Double@var@juce@@
+.?AVVariantType_Int64@var@juce@@
+.?AVVariantType_Int@var@juce@@
+.?AVVariantType_Method@var@juce@@
+.?AVVariantType_Object@var@juce@@
+.?AVVariantType_String@var@juce@@
+.?AVVariantType_Undefined@var@juce@@
+.?AVVariantType_Void@var@juce@@
+.?AVView@FilePanel@@
+.?AVView@MenusPanel@@
+.?AVViewItem@FilePanel@@
+.?AVViewItem@MenusPanel@@
+.?AVViewItemElement@FilePanel@@
+.?AVViewItemElement@MenusPanel@@
+.?AVViewItemElementCombo@@
+.?AVViewItemElementSlider@@
+.?AVViewItemElementSwitch@@
+.?AVViewSelection@@
+.?AVViewSelectionButton@@
+.?AVViewport@juce@@
+.?AVVisitor@Scope@Expression@juce@@
+.?AVWindowClassHolder@HWNDComponentPeer@juce@@
+.?AVWindowsBitmapImage@juce@@
+.?AVWindowsDirectWriteTypeface@juce@@
+.?AVWindowsTypeface@juce@@
+.?AV_Locimp@locale@std@@
+.?AV__non_rtti_object@std@@
+.?AVbad_alloc@std@@
+.?AVbad_cast@std@@
+.?AVbad_exception@std@@
+.?AVbad_typeid@std@@
+.?AVexception@std@@
+.?AVfacet@locale@std@@
+.?AVfailure@ios_base@std@@
+.?AVios_base@std@@
+.?AVlength_error@std@@
+.?AVlogic_error@std@@
+.?AVout_of_range@std@@
+.?AVruntime_error@std@@
+.?AVtype_info@@
+.?AVuTrack24RemoteApplication@@
+.?AVuTrack@@
+.ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+
+.AppleDouble/
+.B.F.J.N.R.V.Z.^2
+.Class 3 Public Primary Certification Authority0
+.FTdi."4
+.Fc:#\{
+.Zw'cE
+.^8}xe9u
+.an/[Q
+.l}Vkn
+.notdef
+.resource/
+/ ,LY 
+/ -r0*
+/"/&/*0
+/+/;/L/]/n/~/
+/..namedfork/rsrc
+/.Gq&*
+/////++
+//99//
+//_^]++
+/0%*JY%
+/0R0^0
+/2/39/3
+/2/9/3
+/2/C/S/_/k/|/
+/2A1R~X
+/3/310
+/32}/33
+/33/]3
+/33322
+/333333333/333333333
+/8ezJp
+/: 2}m
+/>OZ&<KI= M
+/>jDO>]
+/B/F/J/N/R/V/Z/^/b0
+/B8r94,
+/ED-,E# E
+/Jc}Qs2
+/LoX<7]
+/TVp<W
+/\9~{3
+/]d$4.
+/_6/JGz
+/_^]3+
+/i,g`X*](
+/ik0P,[
+/p)4*ZY
+/sfnts
+/srGx-s
+/v %RnOb
+/whSAWg=Jm
+/{FR`X
+/{m<r+
+0 0$0(0,0004080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,0004080<0@0D0H0L0P0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,0004080<0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,0004080@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,00080<0@0D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0 0$0(0,00080P0T0l0p0
+0 0$04080H0L0\0`0p0t0
+0 0$0\0`0d0h0l0p0t0x0|0
+0 0(0,0P0t0
+0 0(0@0D0\0`0x0
+0 0,0L0X0x0
+0 00040D0H0L0P0X0p0
+0 000@0P0`0p0
+0 080H0L0P0X0p0
+0 0=0G0Z0d0~0
+0 0@0H0P0X0`0h0t0
+0 0@0H0P0X0d0
+0 0@0L0l0t0
+0 0@0\0
+0 151b1q1
+0!0%0)0-014
+0!0,0A0H0N0d0
+0"0)000
+0"0,060@0J0U0a0k0u0
+0"0/0;0E0M0X0
+0#0$3@3[3w3
+0#0*01080>0s0
+0#070M0a0n0
+0#070T0
+0#0;0E0g0q0z0
+0#0x152Z2
+0#q3&j
+0$0(080<0@0H0`0p0t0
+0$0(080<0L0P0T0X0\0`0d0l0
+0$0(080<0L0P0T0X0\0`0h0
+0$0(080<0L0P0T0X0\0d0|0
+0$0,040<0D0L0T0\0d0l0x0
+0$0,040<0D0L0T0`0
+0$000P0X0`0l0
+0$000P0X0d0
+0$000P0\0|0
+0$040D0H0L0P0T0X0\0`0d0h0l0p0t0x0|0
+0$080R0a0z0
+0$0<0L0P0`0d0h0l0t0
+0$0@0L0h0
+0$0D0L0T0\0h0
+0$1(1`1
+0$=Us5
+0%090f0z0
+0%1,121
+0%1K1n1
+0&070A0R0\0m0w0
+0&131c1
+0&181Y1
+0&RB)=9Jb
+0(0,0004080<0D0\0l0p0
+0(0,0<0@0P0T0d0h0x0|0
+0(040T0\0d0p0
+0(0H0P0X0`0l0
+0(0H0P0X0d0
+0(0K0n0
+0(0L0p0
+0(1-1v1{1
+0)0@0T034M4
+0+1B1S1
+0+5Y7$8
+0, 100
+0,000@0D0H0L0P0T0\0t0x0
+0,000@0D0H0L0T0l0|0
+0,000@0D0H0P0h0x0|0
+0,0<0@0P0T0d0h0x0|0
+0,1L1|1
+0-0?0\0f0
+0-1!3A3
+0.0?0~0
+0/E#Ea`
+00003333
+000<0\0h0
+001.000
+001.001
+001.002
+001.003
+00:00:00
+00I0V0c0p0
+010D0f0s0
+0123456789ABCDEF
+0123456789abcdef
+031204000000Z
+03IDAT
+04080P0`0d0t0x0
+040@0X0d0|0
+040@0`0l0
+040D0H0X0\0d0|0
+040F0g0
+040T0\0d0l0t0|0
+050G0T0h0
+0585@5P5X5`5p5x5
+060E062C2
+060H0U0i0
+061E1V3h3F7X7
+062E2&353_3l3y3
+062E2v3
+070615000000Z
+070A0]0d0
+070D0t0
+071H1Y1
+080D0d0l0t0
+080[0~0
+081D1N1{1
+08Yh~p
+090521000000Z
+091V1s1
+0:0[0m0
+0<0D0L0X0x0
+0<0H0h0t0
+0<0X0t0
+0=1}1l2
+0@0D0H0L0P0T0X0\0`0d0t0x0
+0@@BOu
+0A1o1w1
+0A@@Ju
+0C/LfN
+0C1W1a1}1
+0E%-%NGNT
+0F1U1m1
+0F2U2v3
+0GX'?~
+0Gty~r
+0H0R0z1
+0K0O0S0W0[0_0c0g0k0o0
+0O1+2j2Z3
+0Q0j0o0
+0R1i1~1Y2b2
+0R?--<;s
+0SSSSS
+0TT^7a
+0V1c1{1
+0WWWWW
+0ZV(=c
+0\0f0o0y0
+0c223D3
+0f162E215
+0g3W4G576.7
+0http://crl.verisign.com/ThawteTimestampingCA.crl0
+0i132W2
+0l3&_c
+0m0t0z0
+0qn46D;
+0x%02x
+0x%04x
+0x%08x
+0|<O'8
+0}Bj0X
+0}oj0Y
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1
+1 1$1(1,1014181<1@1D1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1 1$1(1,10181P1`1d1t1x1
+1 1$1,1D1T1X1h1l1|1
+1 1$14181<1@1H1`1p1t1
+1 1$14181H1L1P1T1X1\1`1h1
+1 1(10181@1H1P1X1`1h1p1x1
+1 1(10181@1L1l1x1
+1 1,1L1T1\1d1l1t1|1
+1 1,1L1T1`1
+1 1014181<1@1D1H1L1P1X1p1t1
+1 101@1P1`1p1
+1 1@1H1T1t1
+1 1D1`1
+1 2D2h2
+1 2H2p2
+1"3jsD
+1#171K1
+1#1:1_1v1+286K6\6
+1#2J2_2t2
+1#QNAN
+1#SNAN
+1$1(1,10141<1T1d1h1x1|1
+1$1(1,10181P1`1d1t1x1|1
+1$1(181<1D1\1l1p1
+1$1(181<1L1P1`1d1t1x1
+1$1,141<1D1L1T1\1d1l1t1|1
+1$1,141@1`1h1t1
+1$101P1X1`1l1
+1$14181H1L1P1T1X1\1d1|1
+1$1D1L1X1x1
+1$1H1l1
+1%''".,,
+1%1=1O1l1v1
+1%1]2q2
+1&121^1|1
+1&1@1F1L1|2
+1&282E2Y2
+1'131?1K1U1a1k1w1
+1'161X1
+1'181I1Y1d1o1
+1'3+3/33373;3?3C3G3K3O3S3W3[3_3c3g3k3o3s3w3{3
+1(1,10181P1`1d1t1x1|1
+1(1,1<1@1D1H1P1h1x1|1
+1(1,1<1@1P1T1X1\1`1d1h1l1p1t1x1|1
+1(101<1\1d1l1t1|1
+1(121>1H1R1^1h1t1~1
+1(141P1\1h1
+1(141T1`1
+1(1H1T1t1
+1)-2Q)
+1)1L1o1
+1)1O1p1
+1)1O1u1
+1)1W1a1u1
+1)2/2@2p5
+1)747,848D8
+1*1V1[0
+1*4:6g6
+1+1V1y1
+1,1014181@1X1h1l1p1x1
+1,1014181@1X1h1l1|1
+1,101@1H1L1P1T1X1\1`1d1h1l1p1t1x1|1
+1,181X1`1h1p1|1
+1,1<1@1P1T1X1\1d1|1
+1,1<1@1P1T1\1t1
+1,1<1N1_1q1
+1-1?1M1_1m1
+1-2:2N2
+1.2.009
+1.22262:2>2B2F2J2N2R2V2Z2^2d2o2
+1.3;3I3
+1.z~c=y
+100, 0
+100729000000Z
+101@1D1T1X1h1l1p1t1x1
+1024282<2@2D2H2L2
+110505165508Z0#
+110505165510Z0#
+111:1C1P1v1
+111Q1`1
+120614235959Z0\1
+120808235959Z0
+12191U1\1x1
+122r2y2>:B:F:J:N:R:V:Z:^:b:
+123456789
+1234567890.
+127.0.0.1
+131203235959Z0S1
+13gJMA
+14181<1@1D1H1L1P1T1X1\1
+14181d1
+141<1D1P1p1x1
+141<1D1P1p1|1
+141<1H1h1p1x1
+141@1`1l1
+141D1Q1U1Z1d1n1x1
+142Z2}2
+16-bit
+161C1[1
+161E1]1p1
+161E1{1
+162E2]2
+16v)wm9
+16x~H5
+181@1L1l1x1
+181D1d1p1
+181X1|1
+190520235959Z0
+192.168.1.20
+192^@n
+1:1>1B1F1J1N1R0
+1;2M2`2p2Q5
+1<1D1L1X1x1
+1<1D1L1`1h1l1p1x1
+1<1\1d1l1t1|1
+1=1N1P2f2
+1=1_1r1
+1>2R2\2
+1?A/|D
+1B183E3m3
+1B2R2j2z2
+1B2V2k2
+1F2U2m2
+1F_Uf#'
+1GY8$'
+1I2Y2k2v2
+1M2E3U3k3{3Q5t5{5
+1M2]2k5
+1N2U2~2
+1O7Y7c7r7}7
+1P2X2{2
+1RNp2DSa
+1YBN\Wob>
+1_[d^7>
+1_|$H_t
+1a143?3G3]3z3
+1f|~pS
+1k.V?0
+1m/?ks
+1p7V9e9
+1r2w2&383
+1u2A3S3f3
+1vuI62<g+
+1{p>oC
+1}sn]`
+1~K~*q
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2t2x2|2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2x2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2l2p2x2|2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2\2`2d2h2p2t2x2|2
+2 2$2(2,2024282<2@2D2H2L2P2T2X2`2d2h2l2p2t2x2|2
+2 2$2(2,2024282<2@2D2H2L2P2|2
+2 2$2(2,20242<2T2d2h2x2|2
+2 2$2(2,242L2\2`2p2t2x2
+2 2$2(202H2L2d2t2x2
+2 2$2,2D2T2X2h2l2p2t2|2
+2 2$2,2D2T2X2h2l2p2x2
+2 2(20282@2H2P2X2\2`2d2 :$:(:,:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+2 2(20282@2H2P2X2`2h2p2x2
+2 2(242T2\2d2l2t2|2
+2 2(2@2P2T2d2h2l2t2
+2 2,2024282<2@2D2H2L2P2T2X2\2
+2 2,2L2T2\2h2
+2 2,2P2p2x2
+2 20242D2H2X2\2`2d2h2l2t2
+2 20242D2H2X2\2l2p2
+2 202@2P2`2p2
+2 232=2
+2 282<2T2d2h2x2|2
+2 282H2L2\2`2p2t2
+2 2@2H2T2t2|2
+2 2@2L2l2x2
+2 333?3J3V3
+2 3C3f3
+2!3(3B3T3
+2"2&2*2.22262e:
+2"2,2:2?2I2W2\2f2t2y2
+2"212N2Z2c2{2
+2"232D2T2~2
+2"2=2o2
+2#242Q2
+2#252B2V2c2w2
+2#2;2]2
+2$2(282<2L2P2`2d2t2x2
+2$2,242<2D2L2T2\2d2l2t2|2
+2$2,242<2D2L2T2\2h2
+2$2,242<2D2P2p2|2
+2$2,242<2H2h2t2
+2$2,242<2H2l2
+2$202P2\2|2
+2$2<2L2P2T2X2`2x2
+2$2<2L2P2`2d2h2p2
+2$2D2P2p2x2
+2$2N2`2}2
+2%2E2m2r2
+2&2,2:2?2D2P2Z2f2l2|2
+2&2I2l2
+2'3-3m3v3
+2'3W3z3
+2'3}3_5
+2'Gp)r
+2(2,2<2@2P2T2d2h2l2p2t2x2|2
+2(2,2<2@2P2T2d2h2p2
+2(2H2P2X2d2
+2(2H2T2t2|2
+2(2H2h2
+2(2K293@3G3M3X3^3e3o3z3
+2(3,3\3
+2(30343L3P3l3p3x3
+2)202<2U2e2
+2)222<2F2O2{2
+2)31393A3I3g3o3
+2*30353;3B3T3
+2+2P2X2
+2+B pf
+2,2024282<2@2D2H2L2T2l2p2
+2,202@2D2H2L2T2l2|2
+2,242<2D2L2T2`2
+2,2<2@2P2T2d2h2l2p2t2|2
+2,2t2E3
+2-2?2M2_2m2
+2-2?2\2f2
+2./vh 
+2.5S5h5
+2/sh$_U
+2014:09:02 16:45:50
+2014:09:02 16:46:03
+20282@2L2l2t2|2
+20282D2d2p2
+202<2\2h2
+210!'#
+21074632
+212D2e2
+213B3]3p3v3
+22/*/$$
+220+0%%
+23F3[3o3|3
+24-bit
+242<2D2L2T2\2d2l2t2|2
+242<2D2L2X2x2
+24[byH
+262E2o2
+262Y2|2
+2654&#"
+267&&#"
+26:E:o:|:
+26:E:v;
+27&&#"
+272K2f2w2
+292P2Y2a2k2z2
+2:2O2W2a2
+2;2C2W2
+2;2P2e2
+2;2S2s2
+2;fNxu
+2<3E3l3|4
+2???33
+2A2T2]2k2~2
+2Ah$ 0Ah
+2Ah$@0Ah
+2B%,%NGNT
+2C1:9D?[yX6
+2E3'6P7
+2F7U7m7}7
+2J2^2r2
+2P/}Cr.
+2P3T3X3\3`3
+2Q3]3d3k3
+2S2[2l2}2
+2Terms of use at https://www.verisign.com/rpa (c)09100.
+2V2c2{2
+2V3e3}3
+2V3h3K4
+2VC?pj,v
+2Wp`xs
+2[1ub1
+2\2f2p2y2
+2](s:e
+2_{D<|
+2fl)=.
+2gQRK@8g
+2rT~O?&
+2uihWv/JRCwItYfFAZUqzHx1BeVSkYctdhQ4Og5fX+jK5EIn4blT114E0ViW2nw1X5XS6DGOOwoJ1l34Ud6+Bn5pW1y2YXXw9XBet23jmUIbDS7zwYqwmCS19FYsVrw1m/u6Xi+xnXXwwh22Zdh9nW/qti6paf50ojcjSPRGDVh6zZJBtIADi6PE/6Slx75QvlTxm23WynDWhEOtIqjEu+Ou8zUkKj65+kL1imTVfOccNjHkVLfAPLe+FSOHPq2GEQ0QPoGNttqh7lT/iWr9tjU8vhgsuC/Uer4kguBnT6mU44FSsZxUeQAPx9ne/bo/dPISTeUsv8gq6XYziDkF4Q==
+2v,A5r~}
+2~*M0x
+3 3$3(3,3034383<3@3D3H3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3$3(3,3034383<3@3D3H3L3P3T3`3d3h3l3p3t3x3|3
+3 3$3(3,3034383<3@3D3H3L3P3X3\3`3d3h3l3p3t3x3|3
+3 3$3(3,3034383<3@3D3H3P3T3X3\3`3d3h3l3p3t3x3|3
+3 3$3(303H3X3\3l3p3t3|3
+3 3$34383<3@3D3L3d3t3x3
+3 3$34383H3L3P3T3X3\3d3|3
+3 3(30383@3H3P3X3`3h3
+3 3(343T3`3
+3 3,3L3X3|3
+3 3,3P3p3x3
+3 343<34484<4@4X4\4`4d4h4l4
+3 383H3L3P3T3X3\3`3d3l3
+3 383H3L3\3`3d3l3
+3 3=3G3Z3d3
+3 3@3L3l3t3
+3 3@3L3l3x3
+3 4@4H4P4X4`4h4t4
+3 4D4s4
+3 54!"
+3 54&#
+3 54&##532654&#"
+3!5467#
+3!5:5H5X5
+3!{/]S
+3"3'313?3D3N3\3a3k3y3~3
+3"464H4
+3#383U3o3
+3#474A4
+3$3(383<3@3D3H3P3h3x3|3
+3$3(383<3@3D3L3d3t3x3
+3$3(383<3L3P3`3d3h3l3p3t3|3
+3$3(3@3P3T3X3\3d3|3
+3$3(3@3P3T3d3h3x3|3
+3$3,343<3D3L3
+3$3,343<3D3L3T3\3d3l3x3
+3$3,343<3D3P3p3x3
+3$3,343<3H3h3t3
+3$3,343@3`3h3t3
+3$3,383X3d3
+3$303P3X3d3
+3$323@3S3j3p3
+3$34383H3L3T3l3|3
+3$3<3L3P3T3X3\3`3d3h3l3p3t3x3|3
+3$3D3P3p3|3
+3$3L3x3
+3$434?4E4
+3$4[4m4
+3%3.3<3I3X3f3
+3%343C3R3a3s3
+3%365E5
+3%3F4U4v5
+3%3t3~3
+3%4-545;5
+3%5,5@5J5
+3&333G3[3
+3&3=3F3R3[3o3{3
+3&3@3J3
+3&55!5!5!
+3&55!5!53
+3'/s0'F
+3'313;3l3
+3'313B3L3]3g3x3
+3'L>c(V9e0E=a G;
+3(3,343L3\3`3p3t3x3
+3(3,3<3@3P3T3X3\3`3h3
+3(3.3?3V3]3J4,5
+3(343T3\3d3l3x3
+3(383<3D3\3l3p3
+3(383<3L3P3`3d3h3l3p3t3|3
+3(3H3P3X3`3h3p3x3
+3(3H3T3t3
+3(4.444
+3(4=4N4
+3(5,5054585<5@5D5H5L5
+3)323A3O3
+3)3;3d3v3
+3)4D4V4f4
+3)>r(u
+3*3M3\3y3
+3,30383P3`3d3t3x3
+3,303@3D3T3X3h3l3|3
+3,343@3`3h3t3
+3,383X3d3
+3,424A4y4
+3--;OQOmXn7
+3-424\5l5
+3-xjCA|
+3.3P3r3
+3.4`4g4j5
+3/3F3P3f3l3r3%4O4d4
+3/>|_>M~
+303@3D3T3X3\3d3|3
+30G0Q0
+30Pf H39
+310!!'
+310!!5
+310!!57
+310!'#
+310%2$7
+310%265
+310%26554&# 
+310%267
+310%267!
+310%2673
+310%26754&#"
+310%27
+310%273
+310%77
+31035!
+31074632
+313T3w3
+3210%$
+3232FY&#33#&
+3232MY33@
+3254#"
+3254#"%"&54632
+3254#"%32
+3254##532654&#"
+3254&#"
+3254&##532654&#"
+3254&&'&&54632
+3254&&'&&54676654&#"
+3254&&'&&7
+3254&&'.
+3254&'&&54676654&# 
+3254'73
+32557#
+32654!
+32654!#5
+32654#
+32654#"
+32654&
+32654&#"
+32654&##
+32654&##"
+32654&##5
+32654&##532654#"
+32654&##532654&
+32654&##532654&#"
+32654&&#"
+32654&&'&&54632
+32654&&'.
+32654&'
+32654&'!
+32654&'#"
+32654&''
+32654&'.
+32654&'3
+32654&'73
+32654&+
+32654'
+32655!
+32655'&$&54632
+326553
+326554&#!
+326654&&
+3266554&#!
+32667#
+3267!5!&&
+3267!5!&&#"
+3267&54632
+32677&#"
+327&&54632
+327632
+33)wEyw
+3310!!
+3310!!5
+3310!#
+3310%!
+3310%26754&#"
+3310%27
+3310%3
+33310!
+33310!!
+333310
+333333
+333333333
+33333333310
+333399
+333E3R3f3s3
+336$32
+3376632
+343h3n4
+344H4\4p4
+344O4T4b4
+354<;f<u<
+364E4V5e5
+364I4S4
+38#/fB17z
+383@3H3P3X3`3l3
+384a5v5
+38r6WF
+39"~fqV
+3:3D3F4S4k4u4
+3:3D3W3a3
+3;1bt6&-&
+3<3C3J3Q3X3_3f3m3t3{3
+3<3D3L3T3\3d3l3t3
+3<3F3`3j3
+3<3[3k3x3
+3=1OG|s.
+3>3S3h3~3
+3@3D3H3L3P3T3X3\3`3d3
+3@4J4T4f4
+3@4T4h4|4]6q6
+3Cn}vlF
+3G2_sBO
+3H9s(c
+3K4Y4i4
+3N3_3g3x3
+3N6`6}6
+3Q4f4F5
+3R496g6
+3T4=5L5g5v5
+3V3h3v7
+3V4e446
+3Wy/O9
+3\;NTUBTR
+3_6c6g6k6o6s6w6{6
+3d,:wcby
+3http://csc3-2009-2-aia.verisign.com/CSC3-2009-2.cer0
+3http://csc3-2009-2-crl.verisign.com/CSC3-2009-2.crl0D
+3i3q3y3
+3j7?_,.X/
+3m2j.c<
+3qzVmqO
+3s6Gbn
+3sOg$g
+3xsbT2
+3{JoTg<
+4 4$4(4,404
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4x4|4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4\4`4d4h4p4t4x4|4
+4 4$4(4,4044484<4@4D4H4L4P4T4X4`4d4h4l4p4t4x4|4
+4 4$4(4,484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4$4(4044484<4@4D4H4L4P4T4X4\4`4d4h4l4p4t4x4|4
+4 4$4,4D4H4`4p4t4
+4 4&4/4;4@4U4j4
+4 4(40484
+4 4(40484@4L4l4x4
+4 4(4@4P4T4X4\4d4|4
+4 4,4L4T4\4d4l4x4
+4 4,4L4X4x4
+4 40444D4H4L4P4T4X4\4d4|4
+4 40444D4H4L4T4l4|4
+4 40444D4H4X4\4`4d4h4l4p4x4
+4 40444D4H4X4\4l4p4
+4 4D4n4
+4!#53 54&#"
+4!4(4,4044484<4@4D4
+4"4&858M8_8|8
+4"4*424
+4"4,444A4H4x4
+4"4-494N4U4i4p4
+4"464J4^4v4
+4#4*4L4
+4#5*505
+4$,+,-
+4$4(484<4@4D4H4L4T4l4p4
+4$4(484<4@4D4H4L4T4l4|4
+4$4,444<4D4L4T4\4d4l4t4|4
+4$4,444<4D4L4T4\4d4l4x4
+4$4,444<4D4L4X4|4
+4$4,444<4H4h4p4|4
+4$404P4X4`4h4t4
+4$404P4\4|4
+4$454?4P4Z4k4u4
+4$4<4L4P4`4d4t4x4|4
+4%4=4O4l4v4
+4%4=4W4
+4%4F5U5
+4&##53 54#"
+4&##532654&#"
+4&#52655
+4&#5665
+4&)17#&4
+4&4/4J4S4_4h4z4
+4'&$&54632
+4'4+555>5H5R5[5v6
+4'4,464D4I4S4a4f4p4~4
+4'494K4]4o4
+4'4:4D4^4p4
+4'4F5U5
+4'4k4q4w4}4
+4'5}5u6
+4(4,4044484<4@4D4H4L4l4p4t4x4|4
+4(4,4044484<4D4\4`4x4
+4(4,4<4@4D4H4L4P4X4p4
+4(4,4<4@4D4H4P4h4x4|4
+4(444T4\4d4l4t4|4
+4(484<4L4P4X4p4
+4(4G4W4
+4(4H4P4\4|4
+4(4H4T4\4h4
+4(5=5[5
+4([bzN
+4)454A4
+4)464C4X4
+4)4O4u4
+4)5B5[5
+4*4a4o4v4}4
+4*5<5a5i5x5
+4*5M5p5
+4+5F5U5m5
+4,4O4r4
+4.4.21124.4.211
+4.494j4r4w4
+4.4q4&6<6
+4.5?5s6
+4/4?4J4U4
+4/4R4z4
+40484@4H4T4t4|4
+404<4\4h4
+404@4D4L4d4h4
+404@4D4T4X4\4d4|4
+404M4W4j4t4
+40<0a0i0
+41FL4E
+41SGQG
+434a4k4s4
+44.1 kHz
+44.1/48Khz 
+44/48kHz Out
+444<4D4P4p4x4
+444@4`4h4p4
+444@4`4l4
+444D4H4X4\4`4h4
+444D4H4X4\4d4|4
+44nNI-
+455Q5a5o5
+465E5k5
+465G5x5~5
+467&&54632
+467&54632
+4675&5467
+467754&#"
+4686<6@6D6H6L6P6T6X6\6`6
+47654&#"
+476[6j6i7
+47Tv,;Vi^f
+48 kHz
+484[4~4
+48kHz Frame
+49&2&(
+494J4T4q4
+4;2Ee>$&-&
+4<4@4D4t4
+4<4D4P4p4x4
+4<4[4.555<5
+4>5F5n5
+4?4]4w4
+4?5L5$6.6
+4@%,%NGNT
+4A4U4i4
+4C5U5a5
+4C}&-S
+4EyvDS
+4F5U5m5
+4F6S6k6
+4F6X627
+4F7U7f8u8
+4G5M5R7e7
+4H4R4l4v4
+4H6g6r6
+4H7L7P7T7j7.9
+4P4d4y4
+4U5]5e5
+4X7\7`7d7h7l7p7t7x7|7
+4]6s657
+4^5r5|506:6D6V6q6
+4^6h6o6
+4`9e9>:
+4`|Ot~n:
+4a]2wu
+4b4m4r4
+4f5u5f6u6V7e7f8u8F9U96:E:6;E;&<5<&=5=
+4hpphXxD
+4j4r4}4
+4mB<KP/g
+4p6x6|6
+4s4(6/6@6O6
+4stp*]
+4u9 S_
+5 5$5(5,5054585<5@5
+5 5$5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5$5(5,5054585<5@5H5`5d5|5
+5 5$5(5,5054585<5D5\5`5x5
+5 5$5(5,545L5\5`5p5t5
+5 5$5(5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5$5(5054585@5D5P5T5X5\5`5d5h5p5t5x5
+5 5$5(5V6e6
+5 5$5(5x5
+5 5(5,5054585<5@5D5H5L5P5T5X5\5`5d5h5l5p5t5x5|5
+5 5(50585@5H5P5X5`5l5
+5 5(50585@5H5P5\5|5
+5 5,5L5T5\5h5
+5 5,5L5X5x5
+5 50545<5T5X5p5
+5 50545D5H5X5\5l5p5t5x5|5
+5 585D5\5h5
+5 585H5L5\5`5h5
+5 585H5L5\5`5p5t5
+5 5@5L5l5x5
+5 }2//0
+5!5(5;5
+5!5,5F5R5Z5j5
+5!51565<5B5X5_5
+5"575_5|5
+5#5J5&656b6
+5$5(5,50585P5`5d5t5x5|5
+5$5(585<5@5D5H5L5P5X5p5
+5$5(585<5@5D5L5d5t5x5
+5$5(585<5L5P5T5X5\5`5h5
+5$5,545<5D5L5T5\5d5l5t5|5
+5$5,545<5D5L5T5\5d5l5x5
+5$5,545<5D5L5T5\5d5p5
+5$5,545<5D5L5T5`5
+5$505P5X5d5
+5$505P5\5|5
+5$5<5L5P5T5X5\5`5h5
+5$5<5L5P5`5d5t5x5|5
+5$5D5P5p5x5
+5$5D5P5p5|5
+5$5G5r5
+5$6X6~6
+5$eOWg
+5%5/555A5P5V5k5|5
+5%606_6
+5%6:6p6
+5%6B6[6j6w6
+5&515:5@5G5n5
+5&686E6Y6
+5&858F;U;f<u<
+5&A#b2
+5'5N5k5|5
+5'5Y5o5
+5'6>6x6
+5'6f6x6
+5(5,5<5@5D5L5d5t5x5
+5(525C5M5^5h5y5
+5(545T5`5
+5(585<5L5P5T5X5\5`5h5
+5(585<5L5P5T5X5`5x5
+5(5H5P5X5d5
+5(5H5T5t5
+5(5H5T5t5|5
+5*575V=e=
+5*6064686<6J7
+5*646v6
+5*6<6u6
+5*6h6z6
+5+585[5b5
+5+5C5l5
+5,505@5D5T5X5\5`5d5h5p5
+5,505@5D5T5X5h5l5p5t5x5|5
+5,515;5I5N5X5f5k5u5
+5,53585<5@5a5
+5,585X5d5
+5,595F5[5
+5,5K5j5
+5,6064686<6@6D6H6
+5,6=6[6
+5.5o5z5
+5.696K6b6
+5.6@6]6g6z6
+5/5L5V5p5z5
+50585@5L5l5t5|5
+505<5\5d5p5
+50g0y0
+515;5Q5
+518X8e8c:9>
+52585:6K6Q6
+525:5q5y5
+536G6Q6
+53O1_t`
+5454JY55
+545@5`5h5p5x5
+545D5H5L5P5T5X5`5x5
+545F5X5
+546$335!
+546632
+546633
+54675&'
+54676654&#"
+54686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+546=6`6
+546Y6`6
+547!57!
+55!&&#"
+55%&77&%5
+556=6q6
+556@6f6
+55e]z^
+56&,JY
+562&&,*$$)
+565E5q5{5
+56654.
+566E637
+56789:;<=>
+56ch (Std)
+56f@cHV=
+585@5H5P5\5|5
+585D5d5l5t5|5
+585[5~5
+58XJt$
+5:bfN\cf]
+5;wL;:
+5<5F5O5Y5c5l5
+5<5H5h5t5
+5<N4]r4}
+5=@;Xj0]
+5>)V^Ii
+5>8L8"9
+5?5L5Y5m5
+5@)77qv>
+5@5V5{6K7
+5B8;7FD
+5C6K6|6
+5D5[5f5p5
+5Digital ID Class 3 - Microsoft Software Validation v21
+5Digitized data copyright 
+5G6N63787
+5G6Y6m6
+5GEQ+T
+5H6h6X7
+5I6?7G7
+5KPk8Y
+5L5l5s5
+5M7V7]7g7
+5S6t6l9
+5SrE3?T
+5TVZT]Q
+5UW/4UV
+5VrcGo\82Oc
+5[oN<$
+5\7h7V8h8
+5]nl`akm^
+5_5i5p
+5aM[<6
+5bo>&%
+5e5l5t5|5
+5ezP^0e
+5g6n6u6F7
+5gD?b9
+5h5o5*717
+5j6n6r6v6
+5s3R6=
+5{O{?K
+5}fexxee~nB33B<95@
+5~Y;z>
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6t6x6|6
+6 6$6(6,6064686<6@6D6H6L6P6T6X6\6`6d6h6l6p6x6|6
+6 6$6(6,6064686<6@6D6H6L6P6X6\6`6d6h6l6p6t6x6|6
+6 6$6(6,6064686<6@6D6H6|6
+6 6$6(6,6064686@6X6h6l6|6
+6 6$6(6,60686<6@6D6L6P6T6`6p6t6x6
+6 6$6(6,60686P6`6d6t6x6
+6 6$6(606H6L6d6t6x6|6
+6 6$6,6D6H6`6p6t6|6
+6 6$6,6D6T6X6\6d6|6
+6 6(646T6\6h6
+6 6(646T6`6
+6 6(686@6H6P6X6`6h6p6x6
+6 6(6@6P6T6d6h6x6|6
+6 6,6L6T6\6d6p6
+6 60646D6H6L6P6T6\6t6
+6 656G6
+6 686H6L6\6`6d6l6
+6 6@6H6P6X6`6h6t6
+6 6@6H6P6X6d6
+6 6S6g6
+6!6.6:6B6K6Q6\6a6g6m6v6}6
+6"6(6/666=6D6J6=9P9W9^9d9k9r9y9
+6"6,6>6K6U6g6x6
+6"6,6L6l6
+6"6J6P6W6
+6"6Z6`6
+6"7I7x7
+6"7L7S7a7
+6"7O7r7
+6#61666@6N6S6]6k6p6z6
+6#747t8
+6$6(6,646L6\6`6p6t6x6
+6$6(6,646L6\6`6p6t6x6|6
+6$6(686<6L6P6T6X6\6d6|6
+6$6(686<6L6P6T6X6`6x6
+6$6,646<6D6L6T6\6d6l6t6|6
+6$6,646<6D6L6X6x6
+6$6,646<6D6P6p6|6
+6$606P6X6`6h6p6x6
+6$606P6\6|6
+6$686@6D6L6T6\6p6x6
+6$6<6L6P6`6d6h6p6
+6$6H6d6
+6%666@6Q6[6l6v6
+6&656M6`6y6
+6&757M7h7r7
+6'6:6D6f7u7
+6'6R6w6
+6'7,7q7v7}7
+6(6,60646<6T6d6h6x6|6
+6(6,6<6@6P6T6X6\6`6h6
+6(60686D6d6l6t6
+6(606<6\6d6p6
+6(606<6\6h6
+6(656E6P6`6v6
+6(6<6P6V7f7
+6(767<7_7f7
+6(7=7c7
+6**600*6
+6**710*6
+6*6.6[
+6*6:6B6S6e6
+6*6?6e6
+6*6G6d6
+6*6K6Y6`6*71787>7E7L7S7
+6*787?7F7
+6,606@6D6H6L6P6X6p6
+6,606@6D6L6d6t6x6
+6,6K6Z6}6
+6,RVYu
+6-6?6\6f6
+6.646;6
+6.7B7W7k7x7
+606<6J6W6d6
+606<6\6h6
+606M6]6j6z6
+606M6c6
+606P6X6`6h6p6x6
+60787<7X7\7d7l7p7
+607X7|7
+60Y0Y1*=4=?=J=U=`=k=v=
+616E6Y6
+617B7s7y7
+626F6Z6
+63mjLO
+646<6H6h6t6
+646@6`6l6
+646D6H6L6P6X6p6t6
+646D6H6X6\6l6p6t6x6|6
+646T6\6d6l6t6|6
+64ch (Ext)
+654&##
+656B6P6u6
+656E6Z6`6
+656U6l6
+656X6{6
+6654#"
+6654&#"
+6654&'
+6654&'3
+676^6p6
+678br}
+686<6p6t6
+686@6H6T6t6|6
+686D6d6p6
+687<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+697h;3
+6;y|1H
+6<2XEa/
+6<6K6v6
+6<7@7h7l7
+6?6I6S6e6
+6?k8<?
+6@6G6_6
+6@6p6t6x6
+6@8G8~95<{<
+6D6N6l6v6
+6E6g6o6
+6FR@/N>l
+6I6Y6h6
+6Mo-D 
+6S7`7y7
+6T7X7\7`7
+6Y,ad~&
+6Z6n6w6
+6\9`9d9h9l9p9
+6^bMRQ4q
+6_nmf9L
+6`7j7t7
+6f)laV
+6f~pdL
+6loca)
+6qUrZB
+6xsC'^
+6}F~QU
+6~6(7.747?7G7{7
+7 7$7(7,7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7
+7 7$7(7,7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7$7(7,7074787@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7$7(7,70747<7T7X7p7
+7 7$7(7,70787P7T7l7|7
+7 7$7(7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+7 7$7(707H7X7\7l7p7t7|7
+7 7$7,7D7T7X7h7l7|7
+7 7$787<7@7D7H7L7P7
+7 7(7@7P7T7d7h7l7p7x7
+7 7(7@7P7T7d7h7p7
+7 7*7v7
+7 7,7L7T7\7h7
+7 7,7L7T7`7
+7 70747D7H7X7\7`7d7h7p7
+7 707H7X7\7h7l7p7t7x7|7
+7 787H7L7\7`7d7h7p7
+7 7=7G7Z7d7~7
+7 7@7H7P7X7`7l7
+7 8*848F8a8s8
+7 8+8Y8g8p8
+7 8H8t8
+7!7+71777=7
+7!7J7O7f7
+7!7z7x:
+7"7>7z7
+7"8+8D8
+7#7'7+7
+7#777K7
+7#7F7i7
+7#7J7O7
+7$7(7,7074787<7D7\7`7x7|7
+7$7(787<7@7D7H7L7P7T7X7\7`7d7h7l7t7
+7$7,747<7D7L7T7\7d7l7x7
+7$7,747<7D7P7t7|7
+7$7,747@7`7h7p7x7
+7$7,787X7d7
+7$707P7X7`7h7t7
+7$707P7X7d7
+7$707P7\7|7
+7$7D7P7p7|7
+7$7D7p7
+7$8(9Z9
+7%7.7"8b8
+7%7G7]7o7-8
+7%7e7o7x7
+7%888M8f8
+7&7=7Q7
+7&7@7J7
+7&7\7}7
+7&8I8|8P9
+7'7;7O7F8U8
+7'7M7s7
+7(/lkk;
+7(7,7074787<7@7D7H7P7h7l7
+7(7,7<7@7D7H7L7T7l7|7
+7(7,7<7@7P7T7X7\7`7d7h7l7p7t7x7|7
+7(7-7b7
+7(767;7E7S7X7b7p7u7
+7(7H7P7\7|7
+7(7H7T7t7
+7(8,8d8h8
+7(8A8M8
+7)737D7N7_7i7z7
+7)7C7S7j7
+7+757u7
+7+7:7I7
+7+G+p3
+7,70747<7T7d7h7p7
+7,70747<7T7d7h7x7|7
+7,767?7I7S7\7
+7,787@7X7`7h7
+7,787X7d7
+7,787\7d7l7t7|7
+7,7@7W7
+7,7O7r7
+7-7P7s7
+7-7X09'R4!;A26+C&*
+7-7{7v8
+7.7O7l7
+7/757o7
+7/797C7U7|7
+7/7L7i7
+7/k4,H#
+7/kt3y
+7074787<7@7D7H7L7P7T7X7\7`7d7h7l7p7t7x7|7
+707@7D7T7X7\7d7|7
+707@7D7T7X7h7l7p7t7x7|7
+707T7x7
+707[7i7
+708l8p8
+70\Efm
+70]1p1
+717=7S7\7e7
+717>7R7|7
+718B8U8
+71C1I1R1
+727H7U7_7i7}7
+728F8Y8m8w8
+74787P7`7d7l7
+74787P7`7d7t7x7
+747<7D7L7T7\7h7
+747<7D7P7p7x7
+747@7`7h7p7|7
+747D7H7X7\7l7p7t7x7|7
+767>7F7N7V7
+767H7U7i7
+76<8YY
+787@7H7P7\7|7
+787\7`7
+787\7n7
+787c7s7
+7;#T(#=Z45-I2)5K6>
+7;(++;
+7;7S7^7
+7;8L8k8y8
+7;xq2R
+7<7D7L7T7\7d7p7
+7=7l788L8m8s8
+7?%g|0)
+7?}B27
+7@7D7H7L7P7T7X7\7`7d7h7l7p7t7
+7@8D8H8L8Z8
+7A7S7`7t7
+7B%+#%
+7F7U7m7
+7F7W7c
+7F9U9m9
+7H8L8P8T8g9n9
+7N/jML
+7N?g*)
+7N}}13
+7X8_8p8
+7Z8=:m:
+7\xVtF3
+7`7j7t7
+7b<kq<
+7d=2sBN
+7h6d,d:x6tw
+7k9xk9
+7oKoA]\-(
+7s{sY~8f/
+7uyRvL
+7y26vl
+7{Kllp
+7|>1oF
+7}sN<}
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8
+8 8$8(8,8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8x8|8
+8 8$8(8,848L8P8h8x8|8
+8 8$84888H8L8P8T8X8\8`8h8
+8 8(80888D8d8p8
+8 8(8@8P8T8d8h8l8t8
+8 8,8L8T8\8d8p8
+8 8,8L8T8`8
+8 8,8L8X8x8
+8 8084888<8@8D8H8L8T8l8p8
+8 8084888<8D8\8l8p8
+8 8@8L8l8t8|8
+8 9/9?9G9V98;=;
+8 9D9|9
+8!8(8,8084888<8@8D8
+8"8.8:8A8H8O8U8
+8"9K9W9
+8#8'8+8/83878;8?8C8G8K8O8S8W8[8_8c8g8k8o8s8w8{8
+8#8,8>9P9m9w9
+8#8-878E8R8\8p8
+8#8-8;8@8J8X8]8g8u8z8
+8#878K8
+8$8(888<8D8\8l8p8
+8$8(888<8L8P8T8X8\8`8h8
+8$8(8@8P8T8\8t8x8
+8$8*848
+8$8+82898@8G8N8U8\8c8j8q8x8
+8$8,848<8D8L8T8\8d8l8x8
+8$8,848<8D8P8p8|8
+8$808P8\8|8
+8$84888<8D8\8l8p8
+8$84888H8L8P8T8\8t8
+8$8<8L8P8`8d8h8l8p8x8
+8$8D8L8T8\8h8
+8$8D8L8T8`8
+8$8L8P8
+8$9(9D9`9d9
+8$919Y9
+8$929<9n9
+8$959R:
+8%868@8O8`8s8
+8%8=8r8
+8%8U8[8c8p8
+8%969=9D9J9T9
+8%9P9{9
+8&8-888>8I8N8b8r8
+8&838G8
+8&878A8R8\8m8w8
+8&8B8P8V8f8k8
+8&959o>
+8&9K9n9
+8&y<rKu
+8''uW?
+8'808N8U8\8b8h8
+8(8,8084888@8X8h8l8|8
+8(8,848<8@8\8`8h8p8t8
+8(8,8@8D8H8X8\8h8
+8(80888D8d8l8t8|8
+8(80888D8d8p8
+8)838<8F9U9m9
+8)858E8
+8)878D8N8X8{8
+8)8F8c8
+8*(::(*8
+8*90969@9
+8+8#949
+8+858?8S8
+8,808@8D8T8X8h8l8|8
+8,888X8d8
+8,8<8@8D8L8d8t8x8
+8,8<8@8P8T8X8`8x8
+8,8<8@8P8T8d8h8l8p8t8x8|8
+8,8P8l8
+8,8P8t8
+8,9D9v9
+8,:;:j:x:
+8-8?8\8f8
+8-8@8Y8
+8-8R8e8}8
+8.8F8U8
+8.8P9U9
+8/9@9V9
+8084888<8@8D8H8L8P8T8X8\8`8d8h8l8p8t8
+808<8`8
+808L8P8t8
+809L9U9
+818W8}8
+829F9[9o9|9
+838H8W8l8{8
+84888P8`8d8h8l8p8x8
+84888P8`8d8t8x8
+848<8H8h8t8
+848@8`8h8p8|8
+848@8`8l8
+848D8H8L8P8X8p8
+848D8H8X8\8`8h8
+849H9T9\9t9|9
+84<4@4D4
+868J8^8r8&959_9i9s9
+869E9k9
+869H9{9
+869S9p9#:*:0:
+879E9O9U9
+88.2 kHz
+88.2/96Khz 
+88.2/96kHz Out
+888D8d8p8
+88MqRC
+88~roO
+898H8U8a8q8x8
+8<8H8h8t8
+8<8f8u8
+8<9D9H9P9T9
+8<aM^v
+8=66%"
+8=66&!
+8>9R9_9v9
+8?9S9g9}9
+8@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+8A8S8`8t8
+8C8W8i8p8v8
+8D8L8q8y8
+8E8S8a8y8
+8F9U9m9
+8F:U:v;
+8G8t8O:
+8HB3QkFN
+8H{<?7
+8I9Z9m9
+8K9f9u9
+8Mz~Zb
+8P8Z8d8n8D:R:
+8Q][YY[]Q
+8V8^8f8n8
+8VVVVV
+8X:]:o:
+8Y;-=P=s=
+8Z8b8j8r8
+8Zw_l.
+8[W<YW
+8](t=;
+8^Au=8_
+8^Jt=9^tu88^Pt
+8_9E~#
+8_9k9w9
+8_JtLV
+8cN|yM
+8ckwL}
+8d9q9y9
+8f9u9F:U:6;E;&<5<
+8f;~,r
+8gLI;z
+8gO8G1
+8h8x8~8
+8l>+?=?
+8m8<9t9
+8o@=t>
+8to}7/
+8yq[o9
+9 1B]f
+9 9$9(9 :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:f;u;
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9 9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9p9t9x9|9
+9 9$9(9,9094989<9@9D9H9L9P9T9X9`9d9h9l9p9t9x9|9
+9 9$9(9,949L9\9`9p9t9x9|9
+9 9$9,9D9H9`9p9t9x9|9
+9 9$94989<9@9D9H9P9h9l9
+9 9$94989<9@9D9H9P9h9x9|9
+9 9$94989@9X9h9l9|9
+9 9$94989H9L9\9`9p9t9
+9 9$989<9@9D9X9\9`9d9h9l9p9t9x9|9
+9 9$9<9L9P9X9p9
+9 9$9D9d9
+9 9(949T9\9d9l9t9
+9 9*9f9u9
+9 989H9L9\9`9d9l9
+9 9@9L9l9t9
+9 9@9L9l9x9
+9 :.:5:R:l:~:
+9!9/9=9M9
+9"9,9c9
+9#9'9+9/93979;9?9C9G9K9O9S9W9[9_9c9g9k9o9s9
+9#9'9+9/93979;9D9
+9#9*9?9U9Z9
+9#9+92979?9H9T9Y9^9d9h9n9s9y9~9
+9#909=9
+9#989N9h9
+9$9(9,9094989<9@9D9H9L9P9T9X9\9`9d9h9l9p9t9x9|9
+9$9(9,9094989<9D9\9`9x9|9
+9$9(9,9094989@9X9h9l9|9
+9$9(9,949L9\9`9p9t9x9
+9$9,949<9D9L9T9\9d9l9t9|9
+9$9,949@9`9h9p9x9
+9$9,949@9`9h9t9
+9$9,949@9d9l9t9|9
+9$9,989X9`9h9p9x9
+9$909P9\9|9
+9$909T9\9d9l9t9|9
+9$94989H9L9P9T9X9\9`9h9
+9$94989H9L9T9l9|9
+9$9D9L9T9`9
+9$9D9P9p9x9
+9$:*:C:R:
+9$:@:P:v:
+9% #5 JY55
+9%9=9h9
+9%9=9r9
+9%9H9q9
+9%:=:R:);9;
+9&69(I~
+9&9@9J9
+9&:3:K:U:w:
+9'4~O2
+9'979D9/:t:
+9(9,9094989<9@9H9`9p9t9
+9(9,9<9@9P9T9d9h9x9|9
+9(9,9D9H9`9p9t9
+9(90989@9H9P9X9d9
+9(929C9M9^9h9y9
+9(949T9`9
+9(959I9s9
+9(989<9L9P9`9d9h9l9p9t9x9|9
+9(9H9P9X9`9h9p9|9
+9(9L9p9
+9(:,:T:X:
+9)929<9F9O9
+9)959:9D9P9U9_9k9p9z9
+9)9\9k9t9
+9):O:}:
+9*:0:4:8:<:
+9,909@9D9H9P9h9x9|9
+9,93989<9@9a9
+9,949<9D9L9T9\9d9l9t9|9
+9,989\9|9
+9,999F9[9
+9-9G9P9`9e9
+9->^>u>
+9.9<9F9\9
+9.9C9X9u9
+9.:5:.=_=
+9.:8:F:W:v:
+9.^jCt
+9////////
+9///_^]
+9/3/310
+9/33/3
+9/333+
+9/333/3
+9/]33+
+9/]]]3
+9/_^]+
+9/_^]3+
+9/zwc4
+9094989<9X9\9`9d9
+90989@9H9T9t9
+909@9D9L9d9h9
+90<N<6>
+90NC2[
+910!'#
+910%27
+919V9\9t9
+91AH8D^
+91~S9q
+929V:e:x<
+949<9D9L9T9\9d9l9t9|9
+949<9H9h9t9
+949D9H9X9\9`9h9
+949X9|9
+959X9{9
+959\9m9r9x9
+96 kHz
+9669777
+969G9o9
+96:E:]:
+96:E:]:o:
+96;E;];o;
+96kHz Frame
+979C9i9
+9854! 
+989@9H9T9t9|9
+99  Dropouts 
+99//++
+99//+++
+99//9+
+99//]]
+99//_^]+
+9910!!
+9910!#
+9910%#
+9910%26754&#"
+99222210!
+99~"CY
+9:9W9u9
+9;tzj(
+9<9F9`9j9
+9<9F9`9j9&:3:K:U:w:
+9<9H9h9t9
+9<9X9u9
+9<<97==
+9>9r91:A:
+9?:S:g:}:
+9?AnV^
+9@9Y9`9y9
+9A4u,P
+9B9,%$
+9C[<K;8'%]!
+9D$4}]
+9D9N9v9
+9DoO[W
+9F;U;v<
+9H87ZYx])V
+9J9a9~9G:U:
+9JJ9<G
+9Ku. jEn:y
+9O;V;];d;k;r;"<)<
+9R:A<O<z<
+9S8tE9S@t@9SDt;;
+9T$ tO
+9T$4t;
+9UQq=Q
+9V:h:b;l;s;@>
+9V;e;&<5<_<l<y<
+9Vv1Gw07
+9W>n>|>
+9Wk=vV
+9\$(v,
+9\$(v;
+9^ W~(
+9^$Y~ 
+9^(u09^,u+
+9^<YY~*
+9_Hv.3
+9_tu=8_4t
+9_|unh
+9cT8[Y
+9f:u:V;e;F<U<6=E=&>5>
+9hcDo?
+9iJu99*5
+9k:r:y:
+9n<~1SW
+9r:1;|;
+9t$@Y}3;
+9v9i:|:
+9vOKA\
+9zFX;7
+9{X~LV
+9|$,~-
+9~$trV
+9~<uk9
+9~<~!3
+: :$:(:,:0:4:8:<:@:D:H:L:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+: :$:(:,:0:4:8:<:@:D:H:L:P:T:X:`:d:h:l:p:t:x:|:
+: :$:(:,:0:4:8:<:@:D:H:L:P:X:\:`:d:h:l:p:t:x:|:
+: :$:(:,:0:4:8:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+: :$:(:,:0:4:8:@:X:h:l:|:
+: :$:(:0:H:L:d:t:x:
+: :$:,:D:T:X:h:l:p:x:
+: :$:4:8:<:@:D:H:P:h:x:|:
+: :(:0:<:\:d:l:t:|:
+: :(:0:<:\:h:
+: :(:@:P:T:d:h:l:p:x:
+: :(:@:P:T:d:h:x:|:
+: :):3:g:r:|:
+: :,:L:T:`:
+: :0:4:8:@:X:h:l:|:
+: :0:4:<:T:X:p:
+: :0:4:<:T:d:h:x:|:
+: :0:4:D:H:X:\:`:d:l:
+: :8:<:T:X:p:t:
+: :8:H:L:\:`:p:t:x:|:
+: :@:L:l:t:|:
+: :@:L:l:x:
+: ;;;t;
+: ;<;X;x;
+: ;D;h;
+: ;Z;M<a<
+: <C<p<
+:!:':C:v:
+:!:1:A:Q:b:t:
+:!;Q;b;
+:"<w>|>
+:#:;:O:
+:$:(:,:0:8:P:`:d:t:x:|:
+:$:(:0:H:X:\:l:p:x:
+:$:,:4:<:D:L:T:\:d:l:t:|:
+:$:,:8:\:d:l:t:|:
+:$:8:a:s:
+:$:D:P:p:x:
+:$:H:l:
+:$:V:f:t:
+:$:o:|:
+:$;J;p;
+:$;P;|;
+:%1ZYIV
+:%:6:@:Q:[:l:v:
+:%:9:f:z:
+:%:=:O:l:v:
+:%:=:W:
+:%:=:r:
+:%:O:k:
+:&:-:h:n:
+:&:::N:m:
+:&;<=N=`=
+:&;M;t;
+:&;O;x;
+:&>5>_>{>
+:':C:M:i:s:
+:':J:m:
+:'>9>s>y>
+:'k#=7
+:(:,:0:4:8:<:@:D:H:L:P:T:X:\:`:d:h:l:p:t:x:|:
+:(:=:[:p:
+:(:H:T:t:
+:(:H:h:
+:(;,;0;4;`;d;h;l;p;t;x;|;
+:)OwvL
+:*:>::;H;R;\;f;
+:,:0:4:8:<:D:\:l:p:
+:,:0:@:D:H:P:h:x:|:
+:,:0:@:D:T:X:h:l:|:
+:,:4:_:
+:,:6:?:I:S:\:{;
+:,:8:X:d:
+:-:7:A:U:
+:-:7:J:T:
+:-:<:F:x:
+:-:?:\:f:
+:-:P:}:
+:-;?;E;S;\;
+:.;B;L;
+:.Vv86EneL
+:/:U:{:
+:/:i:z:\;s;
+:0:8:@:H:P:\:|:
+:0:8:@:H:T:t:
+:0:8:@:L:l:t:|:
+:0:8:D:d:p:
+:0:<:\:d:p:
+:0:@:D:T:X:`:x:
+:0:P:p:
+:2:\:y:
+:4:<:D:L:T:\:d:l:x:
+:4:<:H:h:p:|:
+:4:@:`:l:
+:4:D:H:X:\:l:p:t:x:|:
+:676zc
+:8:@:L:l:t:|:
+:;;K;i;p;y;
+:<:D:L:T:\:d:l:t:|:
+:<:H:N:
+:=:6+*
+:>:H:`:g:
+:>:U:_:n:
+:?:L:Y:f:{:
+:A;d;u;
+:B%~{s"$
+:D:H:h:
+:D;W;};
+:F:S:k:
+:F;S;k;
+:G:N:a:{:
+:H:p:t:
+:HHAOED>LVcc\jf_Zm
+:J;Z;r;
+:K;_;s;
+:L:&?5?_?i?s?
+:N<s<y<
+:T:)<p<
+:U$J8R
+:U;%<7<
+:V;c;{;
+:Y-, E
+:]z#\q`?
+:`:q:w:~:
+:cjoQgw
+:h"?bC
+:kH;s{
+:ohR=m
+:rpn\0
+:t_|CC
+:x26kl
+:z;D=z=T>
+:{QWRB
+:{p}*ot
+:}SO_x
+:~L1*A%
+; ;$;(;,;0;4;
+; ;$;(;,;0;4;8;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;`;d;h;l;p;t;x;|;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;X;p;t;x;|;
+; ;$;(;,;0;4;8;<;@;D;H;L;P;T;\;t;x;
+; ;$;(;,;0;4;8;<;@;D;H;\;`;d;h;l;p;t;x;|;
+; ;$;(;,;0;4;8;<;P;T;X;\;`;d;h;
+; ;$;(;,;0;4;8;<;\;`;d;h;l;p;t;x;|;
+; ;$;(;,;0;4;8;b;j;v;
+; ;$;(;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;$;(;0;H;L;d;t;x;|;
+; ;$;,;D;H;`;p;t;|;
+; ;$;,;D;T;X;h;l;t;
+; ;$;4;8;<;@;D;L;d;t;x;
+; ;$;D;h;
+; ;(;,;0;4;8;<;@;D;H;L;P;T;X;\;`;d;h;l;p;t;x;|;
+; ;(;0;8;@;H;P;\;|;
+; ;(;0;8;D;d;l;t;|;
+; ;(;@;D;\;`;x;|;
+; ;,;L;T;`;
+; ;,;L;X;x;
+; ;0;4;D;H;X;\;`;d;h;l;p;t;x;
+; ;0;4;D;H;X;\;`;d;h;l;p;x;
+; ;0;4;D;H;X;\;`;d;h;l;t;
+; ;8;<;T;X;p;t;
+; ;>;T;|;
+; ;@;H;P;\;|;
+; ;@;H;T;t;
+; <%<S<
+; =)=m=]>
+;!<;<L<`<r<
+;"<E<~<
+;#;(;-;8;b;n;
+;#JZ"b+
+;$;(;,;0;4;<;T;X;p;
+;$;(;,;0;8;P;`;d;t;x;|;
+;$;(;8;<;L;P;T;X;\;`;d;l;
+;$;(;<;@;D;H;L;P;X;\;`;d;h;l;p;t;x;|;
+;$;+;G;Q;m;w;
+;$;,;4;<;D;L;T;\;d;l;t;|;
+;$;,;4;<;D;L;X;|;
+;$;,;4;@;`;l;
+;$;0;P;\;|;
+;$;4;8;H;L;P;X;p;
+;$;<;L;P;`;d;l;
+;$;<;L;P;`;d;t;x;
+;$;<;P;l;
+;$<:<B<J<S<a<
+;$<E<g<
+;$<P<t<
+;%;=;r;
+;%;b;k;w;
+;%;j;~;
+;%<s<H=O>
+;&;-;4;;;B;I;P;W;^;e;l;s;z;
+;&;/;<;G;Y;l;w;};
+;&;3;K;z;
+;&U?%`.
+;';1;B;L;];g;x;
+;';M;s;
+;(;,;<;@;D;H;P;h;x;|;
+;(;,;@;D;T;X;h;l;p;t;x;
+;(;0;8;@;H;T;t;|;
+;(;0;<;\;h;
+;(;1;?;];
+;*<4<Z<g<z<
+;+;Q;w;
+;+<=<J<^<
+;,;0;@;D;H;L;P;X;p;
+;,;L;T;\;d;l;t;|;
+;-2``2-
+;-;7;A;_;e;|;
+;-;?;\;f;
+;-;r;c>
+;.<?<$=4={=
+;.>a_b
+;0;P;p;
+;1<@<c<
+;2*1 6,!21p
+;2;e;z;
+;2<P<b<t<
+;2aRgD
+;3!3IY
+;4;8;P;T;l;p;
+;4;9=a=h=4>
+;4;<;D;L;T;`;
+;4;>;M;Y;c;o;y;
+;4;@;`;l;
+;4<A<Y<
+;4<P<l<
+;5HNBw
+;64:;34=;64:;34=
+;6;H;U;i;
+;7;T;q;
+;7JSg>r0~
+;8;@;H;T;t;|;
+;8;A;L;
+;8;D;d;p;
+;8t=("`=*
+;9;`;t;
+;:;A;J;S;Z;
+;:<p<v<}<
+;:Cx[g5
+;;*(::(*;
+;<;D;L;T;`;
+;<;D;L;X;x;
+;<;D;P;p;x;
+;<;H;h;p;x;
+;<;H;h;p;|;
+;=<K<u<|<
+;>Y;8u=
+;?;Q;^;r;
+;?<F<P<`<
+;?=Q=Q?
+;?=t"'/z,
+;@;D;d;
+;@<T7D
+;B;Q;^;==C=
+;C0sj3
+;ClVW~
+;D$$uM
+;F$_[|
+;F<S<k<
+;F?U?m?
+;FXs/;V\s*
+;GvT>=
+;I<c<y<
+;K;`;w;;<V>
+;L$,~-
+;L;V;_;i;s;|;
+;MY+++EY
+;N=`=}=
+;P;\;s;
+;PPs";
+;TnY*O8
+;V<e<}<
+;VXs(;N\s#
+;X{v}Z]
+;Y<_<u<
+;Zi}')
+;[</=*>D>c>v>
+;[<m<8=b=
+;^z\lS
+;a<X=j=m?
+;d-E=`[
+;fvbC8N
+;g_]snU
+;m{zkl{zl
+;pyFX{
+;s/&Ls
+;t$,v-
+;vT(d\
+;vs5/l)
+;~0tvQQ
+< <$<(<,<
+< <$<(<,<0<4<8<<<@<D<H<L<P<
+< <$<(<,<0<4<8<<<@<D<H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+< <$<(<,<0<4<8<<<@<D<H<P<T<X<\<`<d<h<l<p<t<x<|<
+< <$<(<,<0<8<P<`<d<t<x<
+< <(<0<<<\<h<
+< <(<@<P<T<d<h<x<|<
+< <0<4<8<<<@<D<H<L<T<l<p<
+< <0<4<D<H<X<\<l<p<
+< <8<H<L<\<`<d<h<p<
+< <8<H<L<\<`<h<
+< <@<L<l<x<
+< <C<T<\<v<
+< <H<L<P<T<X<\<`<d<h<l<p<t<x<|<
+< <u<Y=
+<!<+<5<?<I<S<6=H=
+<!<<<l<
+<!=G=Y=+>5>B>]>d>|>
+<"<,<6<?<+=5=
+<"<6<J<
+<#<,<:<H<T<[<i<
+<#<5<B<V<c<w<
+<#<D<~<
+<$<(<8<<<L<P<`<d<t<x<
+<$<,<4<<<D<L<T<\<d<l<t<|<
+<$<,<4<<<D<L<T<\<h<
+<$<,<4<<<H<h<p<x<
+<$<0<P<X<`<h<p<|<
+<$<0<P<X<`<l<
+<$<0<P<\<|<
+<$<4<8<H<L<P<X<p<
+<$<5<?<P<Z<k<u<
+<$<<<@<X<h<l<p<x<
+<$<B<V<j<~<
+<$<D<L<T<\<h<
+<$<D<P<t<
+<%<=<r<
+<%<[<e<
+<%<o<7=W=
+<%=@=J=Q=l=t=
+<&<B<I<O<
+<&<B<I<e<l<
+<&<I<l<
+<&=3=K=|=
+<'<1<:<D<M<W<`<
+<'<4<:<T<e<k<|<
+<'<<<m<
+<'=K=_=
+<(<,<0<4<8<<<D<\<l<p<
+<(<,<<<@<D<L<d<t<x<
+<(<,<<<@<P<T<d<h<x<|<
+<(<0<8<@<H<P<\<|<
+<(<0<<<\<h<
+<(<1<><
+<(<4<T<\<h<
+<(<8<<<L<P<T<X<\<`<d<h<l<p<t<|<
+<(<8<H<l<x<|<
+<(<D<d<
+<(<H<P<\<|<
+<(<H<T<t<
+<(<H<h<
+<(<L<l<
+<)=B=c=
+<**$JY*
+<*<5<P<Z<i<s<}<
+<*='>5><>C>J>
+<*=.=2=6=J=N=R=V=j=n=r=v=
+<*=6=I=[=v=~=
+<+<K<W<^<h<z<
+<+>2>7>a>f>x>}>
+<+t"<-t
+<+t(<-t$:
+<,<0<4<8<<<@<H<`<p<t<x<|<
+<,<0<@<D<H<P<h<x<|<
+<,<8<X<`<l<
+<,<<<@<P<T<\<t<
+<,<?<a<t<
+<,=8=g>}>
+<,=i=5>N>p>
+<-, E# 
+<-<?<\<f<
+<-AqqJ
+</<L<V<p<z<
+</<W<h<q<q?
+</assembly>PAPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGXXPADDINGPADDINGX
+</q*q_v
+<0<8<@<H<P<\<|<
+<0<<<\<h<
+<0<@<D<H<P<h<x<|<
+<0<T<t<
+<0N0`0v0~0
+<2<F<Z<n<
+<2<U<x<
+<2gQ"7s
+<3<S<X<
+<3F3O3Y3c3l3\5|5
+<3Gwk(2
+<3wtig-
+<4<8<P<`<d<l<
+<4<<<D<L<T<\<d<l<x<
+<4=H=\=p=
+<6<Y<|<
+<6F=#<
+<7<]<A=g=3>Y>A?g?
+<7=N=W=^=f=u=
+<8bunz8
+<9/G!6a9<
+<9<F<b<
+<9=M=s=
+<:7tNj
+<<<D<L<T<\<d<p<
+<<<D<n=
+<<<H<h<t<
+<=?:9@?
+<@&g \>
+<@;'Cf
+<@En[vP
+<C,72G
+<CONOUT$
+<Ct&<Mt
+<F=S=k=u=
+<F=U=m=
+<H=Z=z>
+<L<V<_<i<r<|<
+<L=\=l=
+<Monospaced>
+<Pe!!*
+<Regular>
+<S!u#k$>
+<Sans-Serif>
+<Serif>
+<U<`<k<y<
+<V=e=f>u>f?u?
+<Z=d=n=x=
+<assembly xmlns="urn:schemas-microsoft-com:asm.v1" manifestVersion="1.0">
+<at9<rt,<wt
+<cm'bw
+<h>v>|>
+<i8v.8
+<i=u=}=
+<o{&o_
+<program name unknown>
+<s$ydjy
+<t=x=|=
+<xtX<XtT
+<z/0"~FI:m#
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =$=(=,=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=x=|=
+= =$=(=,=0=4=8=<=@=D=H=L=P=X=\=`=d=h=l=p=t=x=|=
+= =$=(=,=0=4=8=<=@=D=H=\=`=d=h=l=p=t=x=|=
+= =$=(=,=0=4=8=<=@=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =$=(=0=4=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+= =$=,=D=T=X=h=l=p=x=
+= =$=,=D=T=X=h=l=|=
+= =$=4=8=<=D=\=l=p=
+= =$=4=8=H=L=P=T=X=`=x=
+= =$=<=L=P=T=\=t=
+= =(=0=8=@=H=P=X=`=h=p=x=
+= =(=0=8=@=H=P=X=`=h=p=|=
+= =(=4=T=\=d=l=t=
+= =(=@=D=\=l=p=t=x=
+= =,=L=X=x=
+= =,=P=p=x=
+= =0=4=D=H=X=\=`=d=h=l=p=t=x=
+= =8=H=L=P=X=p=
+= =@=H=T=t=
+= >->4>F>N>X>_>
+= >4>H>]>q>
+= >C>f>
+= ZYXt
+= baLt
+=!=1=:=J=U={=
+=!>4>V>c>{>
+=">E>j>
+=#=,=8=B=N=Y=
+=#=-=J=V=b=t=~=
+=#=5=B=V=c=w=
+=#=;=N=g=
+=#=Z=k=
+=#>6>J>^>r>
+=$=(=,=4=L=\=`=p=t=|=
+=$=(=8=<=@=D=H=P=h=l=
+=$=(=8=<=L=P=`=d=h=l=p=t=x=
+=$=(=@=P=T=X=\=`=h=
+=$=(=H=d=h=
+=$=,=4=<=D=L=T=\=d=l=t=|=
+=$=,=4=@=`=h=t=
+=$=,=8=X=`=h=t=
+=$=,=8=X=`=l=
+=$=4=8=H=L=P=X=p=
+=$=6=v=
+=$=<=@=X=h=l=|=
+=$=D=L=T=\=h=
+=$=D=L=X=x=
+=$=D=P=p=|=
+=$O$9Y['
+=%=,=c=q=
+=%===O=l=v=
+=%===r=
+=%>/>9>B>
+=%>7>D>X>
+=%>N>_>
+=&=,===D=K=l=
+=&=-=4=;=B=I=P=V=]=d=k=r=y=
+=&=-=4=;=B=I=P=W=^=e=l=s=z=
+=&=@=J=
+='=M=s=
+=(=,=<=@=H=`=p=t=
+=(=0=8=D=d=p=
+=(=2=C=M=^=h=y=
+=(=4=T=`=
+=(=5=?=I=]=
+=(=@=d=
+=(=H=T=t=|=
+=(=K=p=
+=(=Q=c=p=
+=(>,>d>
+=(>D>j>
+=(>`?}?
+=)=~=e>
+=*=M=p=
+=+=3===J=R=X=^=
+=+=F=i=
+=+=N=q=
+=,=0=@=D=H=L=P=T=\=t=
+=,=0=@=D=T=X=h=l=|=
+=,=4=@=`=h=t=
+=,=8=X=d=
+=,=9=F=[=
+=,=<=@=P=T=d=h=l=p=t=|=
+=,>F>S>k>~>
+=-=;=k=$>0>@>I>R>[>
+=->2>o>x>
+=->P>s>
+=.~I:k
+=/33323
+=/=<=I=V=k=
+=0=@=L=U=
+=1W93'
+=1pytt
+=3>G>Q>
+=3>T>e>
+=3>e>k>
+=4=@=`=h=p=|=
+=4=D=H=X=\=l=p=
+=4=V=e=\>H?
+=4w@OCl
+=6=E=q=
+=7=>=Z=d=
+=8=<=@=D=H=L=P=T=X=\=`=d=h=l=p=t=x=|=
+=8=@=H=T=t=|=
+=8=D=d=p=
+=8=X=|=
+=8>I>g>v>
+=8>W>_>
+=9:AB93CjCEECAF?
+=9:AB93Cv{B93CjCEECAF?
+=:>c>u>
+=;>O>c>w>
+=<=H=`=l=
+=>>Z>p>
+=>z}N_}
+=@>O>]>
+=@p-r&
+=A3GooP
+=A=T=v=
+=F>U>m>
+=F>X>2?7?
+=F?K?w?
+=G=\=b=t=
+=G>Y>3?>?E?v?}?
+=H=L=x=
+=I>Y>o>
+=J=R=q=
+=K,F<O
+=L=i=y=
+=M<sj1
+=M>W>u>
+=V>B?o?
+=V>[>m>
+=X>l>v>
+=\6_n+
+=^qo!v
+=aJ/|C
+=bwtcbsw^8==88==
+=dQq]g
+=e=%>^>l>
+=eurtt
+=kM;<{
+=kM;<{^V
+=l(d%3
+=ltuot
+=ltuou
+=pscat
+=rtrpt)=rncst"=capst
+=z9Q]:
+> 7<yFr
+> >$>(>,>
+> >$>(>,>0>4>8><>@>D>
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>(>,>0>4>8><>@>D>H>L>P>T>X>`>d>h>l>p>t>x>|>
+> >$>(>,>0>4>8><>@>D>H>L>P>X>\>`>d>h>l>p>t>x>|>
+> >$>(>,>0>4>8><>@>D>h>l>p>t>x>|>
+> >$>(>,>0>4>8><>@>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>(>,>0>4>8><>D>H>L>P>T>X>\>`>d>h>l>p>x>|>
+> >$>(>,>0>4>8><>D>\>`>x>
+> >$>(>,>0>4>8>H>`>d>h>l>p>t>x>|>
+> >$>(>,>0>8>P>`>d>t>x>
+> >$>(>,>4>L>\>`>p>t>
+> >$>(>0>H>L>d>t>x>
+> >$>(>H>L>P>T>X>\>`>d>h>l>p>t>x>|>
+> >$>,>D>T>X>h>l>p>t>|>
+> >$>4>8>H>L>P>T>X>\>`>d>h>l>p>x>
+> >,>L>T>`>
+> >,>L>X>x>
+> >0>@>P>`>p>
+> >@>L>l>t>|>
+> ?$?(?,?0?4?8?<?@?D?H?L?X?\?`?d?h?l?p?t?x?|?
+> ?.?<?X?
+>!?6?v?
+>!?G?m?
+>"?4?A?U?
+>#>.>6>>>G>P>^>l>
+>$>(>8><>@>D>H>L>T>l>|>
+>$>(>8><>L>P>T>X>\>`>h>
+>$>(>8><>L>P>T>X>\>d>|>
+>$>,>4><>D>L>T>`>
+>$>,>4><>D>L>X>x>
+>$>,>4><>D>P>p>x>
+>$>.>8>B>L>V>`>j>t>~>
+>$>0>P>X>d>
+>$>0>P>\>|>
+>$>4>8>H>L>T>l>|>
+>$><>L>P>`>d>h>l>t>
+>$><>L>P>`>d>t>x>
+>%>,>2>Y>
+>%>6>@>Q>[>l>v>
+>%>=>O>l>v>
+>%>G>Q>Z>d>n>w>
+>%>V?e?
+>%mWWvy
+>&>8>}>
+>&>V>`>l>u>
+>&?3?K?m?
+>'(Jxm
+>'>:>h>w>
+>'>G>v>#?-?
+>'?4?B?O?b?o?
+>(>,><>@>P>T>X>\>d>|>
+>(>,><>@>P>T>d>h>x>|>
+>(>,>D>T>X>h>l>|>
+>(>4>@>D>H>L>X>d>h>l>x>|>
+>(>8><>D>\>`>x>|>
+>(>8><>L>P>T>X>\>d>|>
+>(>8><>L>P>T>X>`>x>
+>(>H>T>t>
+>(>L>l>t>|>
+>(?<?F?
+>(?K?n?
+>)>g>x>
+>*>?>O>n>
+>*?M?{?
+>++^kv
+>+>7>?>G>S>w>
+>+?5?G?b?t?
+>,'1D=
+>,>4>@>`>h>p>x>
+>,>4>@>`>l>
+>,OBGo[s
+>->7>J>T>
+>->P>x>
+>.,,|j
+>.upF;
+>0>8>@>H>P>X>`>h>p>x>
+>0><>\>h>
+>0>@>D>T>X>h>l>|>
+>0>P>p>
+>0>T>l>
+>0?D?W?k?u?
+>1>W>}>
+>3>V>y>
+>4><>D>L>T>\>d>l>t>|>
+>4>>>H>Q>
+>4>@>d>
+>5Y>*b
+>6>E>o>|>
+>7>D>t>
+>7nr@o
+>89yOg
+>8:AB93C
+>:u8FV
+>;>E>a>k>
+>;>E>t>~>
+>;Aks2
+><>D>L>T>\>h>
+><>D>L>X>x>
+><>F>`>j>
+><>U>~>
+><?F?O?Y?b?l?v?
+>=Yt1j
+>?5gL^s
+>?>L>Y>k>
+>??_9!
+>@?J?T?f?
+>A>t>o?
+>B?G?`?e?
+>C>r>z>
+>D>j>z>
+>D?X?l?
+>If90t
+>L?gr>
+>M?]?s?
+>P?Y?d?q?z?
+>V4T~*#J
+>\>i>t
+>_0)<+z+1
+>a>f>&?B?
+>b4~H\
+>c:g$6B
+>cgS+^)
+>dQeOX+
+>i0o)^#{
+>oWj/#
+>p)Fvc
+>s#xZz
+>sI.0)
+>w(9YGtm
+>{\3Vi-
+? 7s/t
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?l?p?t?x?|?
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?h?p?t?x?|?
+? ?$?(?,?0?4?8?<?@?D?H?L?P?T?X?\?`?d?p?|?
+? ?$?(?,?0?h?l?p?t?x?|?
+? ?$?(?0?4?8?<?@?D?H?L?P?X?\?`?d?h?l?p?t?x?|?
+? ?$?(?0?H?L?d?h?
+? ?$?,?D?T?X?h?l?|?
+? ?$?4?8?@?X?h?l?|?
+? ?$?4?8?H?L?P?T?X?`?x?
+? ?$?4?8?H?L?\?`?p?t?x?|?
+? ?$?<?L?P?X?p?
+? ?'?.?5?<?
+? ?(?-
+? ?(?0?8?@?H?T?t?
+? ?(?0?8?@?H?T?t?|?
+? ?(?0?8?D?d?l?t?|?
+? ?(?0?<?\?d?l?t?|?
+? ?)?6?C?W?k?
+? ?,?L?X?x?
+? ?0?4?D?H?X?\?`?d?h?p?
+? ?0?4?D?H?X?\?l?p?
+? ?0?@?P?`?p?
+? ?4?8?H?L?\?`?d?h?l?t?
+? ?8?H?L?\?`?p?t?
+? ?<?C?_?i?
+? ?@?L?l?x?
+? ?@?`?
+?!?%?)?-?1?5?9?=?A?E?I?M?Q?U?Y?]?a?e?i?m?q?u?y?}?
+?!?+?4?
+?!?5?I?
+?!?5?I?]?
+?!?I?Z?
+?!w"w!
+?"?&?*?.?2?6?:?>?B?F?J?N?R?V?Z?^?b?f?j?n?r?v?z?~?
+?#%X.y
+?#?7?K?
+?$?(?8?<?L?P?`?d?t?x?
+?$?,?4?@?d?l?t?|?
+?$?,?8?X?`?l?
+?$?,?8?X?d?
+?$?0?P?X?d?
+?$?4?8?H?L?P?T?X?`?x?
+?$?4?8?H?L?\?`?d?h?l?p?x?
+?$?D?L?X?x?
+?$rxxx
+?%?Q?[?
+?%?R?u?
+?&?@?J?
+?(?,?0?8?P?`?d?t?x?
+?(?,?<?@?H?`?p?t?
+?(?0?8?D?d?l?t?
+?(?2?<?F?P?Z?d?n?x?
+?(?4?T?`?
+?(?8?<?L?P?X?p?
+?(?H?P?\?|?
+?(?L?T?\?d?l?t?|?
+?)?3?D?N?_?i?z?
+?)?S?e?r?
+?*?5?T?_?t?
+?*?7?L?U?]?g?
+?*?\?|?
+?,?0?@?D?T?X?h?l?|?
+?,?4?<?H?h?p?|?
+?,?4?@?`?l?
+?,?<?@?P?T?d?h?x?|?
+?,r{^*
+?.W}q%
+?/99//
+?/?<?V?e?
+?/?Q?d?
+?084<2:6>195=3;7
+?0?8?D?d?l?t?
+?0?<?\?d?p?
+?0?@?D?T?X?\?d?|?
+?1?;?v?
+?22?9/33+
+?2?33?3
+?2?39/]3
+?2?399
+?2?E?K?R?
+?2?]?k?
+?333333
+?3333?
+?3333??3
+?333?3
+?333??
+?33?33
+?33??+
+?33??3
+?33??3+
+?3?3?+
+?3?3??
+?3?3??+
+?4?@?`?h?p?|?
+?51/rN>p
+?5O~l8_
+?5Wg4p
+?7!Op1
+?765@Z
+?8?D?d?p?
+?8?X?x?
+?<;4788;
+?=;IO'
+?=?V?e?}?
+?=?\?{?
+??33?3
+??39/+
+??99//
+???L?Y?f?{?
+??R3k^
+?@ #03
+?B?M?_?r?
+?Blu]l
+?Dj0Q:W$=
+?E?W?d?x?
+?HI>@IH
+?HZN?0O
+?JPEGMEM
+?LC_TIME
+?UUUUUU
+?V?c?{?
+?X@o.b
+?ZEM-'^
+?^XXXx
+?_9woJ
+?a?r?{?
+?b2gUk'5
+?d`zk!
+?e')lW
+?f?l?s?
+?ffffff
+?g)([|X>=
+?h=:Msq
+?l{X}|
+?ni:pw
+?t29@o;"
+?t]?0q
+?uY/:y
+?uZEeu
+?y9gCw
+?zxP7]
+?{yK+;
+?|I7Z#
+@!I@A1@
+@,;F u
+@.Ht4Ht"HHt
+@.data
+@.reloc
+@/h,on||;W
+@1e@a]@~sj
+@8@C@N
+@9A\u39
+@;~@wa@o)
+@<#|cM>
+@An#K}
+@F@@:MY
+@GDAAN1
+@G[ZYXUTSRQPONMLKJIHGFEDCBA@?>=<;:9876510/.-,('&%$#"!
+@H#?43
+@HV=stibuB
+@Hltuo
+@Hpmoc
+@ICC_PROFILE
+@I_(DZ">
+@JP4,H,,
+@M>@C^
+@PLO=<TO@3HHOO
+@PPPPQQ
+@PX|Yh
+@RDH54MH+AAHH
+@X/xqw/D
+@Y#XeY
+@Z\>?^\
+@[YotVpGO%g
+@\ch#V
+@^1?h\
+@^;A@s
+@aL:0*
+@hfylg
+@ozY#<o5
+@u|hwEZt[Y^bSqYZ}a]VuAg^E
+@z}FefIVAv^
+@{@O\??b
+A unreachable destination has been automatically removed after 60 seconds.
+A$/ZVS[]QT\
+A$;A(w
+A.}<?I/
+A0;B s
+A0Z0b0
+A4;B$w"r
+A4??@95=<8<<@
+A8H;A$s
+A;AAA[
+A@=<10
+ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ADD_STYLE_NAME
+ADVAPI32.dll
+AEacute
+AEsmall
+AGWk`W
+AHbRL!
+ATEMuS
+AVERAGE_WIDTH
+AVG_CAPITAL_WIDTH
+AVG_LOWERCASE_WIDTH
+AZdQAl
+Aacute
+Aacutesmall
+Abreve
+Access violation - no RTTI data!
+Acircumflex
+Acircumflexsmall
+Acutesmall
+Added FreeType family '
+Adieresis
+Adieresissmall
+Adobe RGB (1998)
+AeE&jKQ>9
+Agrave
+Agravesmall
+Alphatonos
+Amacron
+AmlVlSxFf
+An application has made an attempt to load the C runtime library incorrectly.
+Analog 
+AoJjD>
+Aogonek
+AppEventMessage: %i
+AppModifierMessage: %i
+AppSelectorMessage: %i
+AppTextMessage: %i
+Application
+Application built with libpng-
+Archwave_Logo118_png
+Archwave_Logo1_png
+Archwave_Logo59_png
+Are you sure you want to delete the file?
+Are you sure you want to format the USB drive?
+Are you sure you want to stop playback?
+Are you sure you want to stop recording?
+Aringacute
+Aringsmall
+Ascender
+Asmall
+Atilde
+Atildesmall
+AttachThreadInput
+August
+Auto-Play
+Ax#?uN}*
+AxisLabel
+AxisType
+AyJ(K%
+A~]w,-
+B 02CV
+B"pNDXq
+B$;A$t
+B33B<95@
+B6pCApDi
+B<BDBLBTB\BdBlBtB
+BA>=21
+BDEFPRTZOQ
+BDELZOC
+BEEBAF?
+BFBQB[Bb
+BGc^t1
+BITMAP
+BKbhTb~XBK!;
+BYss++^stu+++++t+st+++++++++++++st+++
+BYss+ss+++++s^st++++t+++++++++++++
+BZF)L{,8
+Bad dynamic_cast!
+BaseAppMessage: %i
+BaseLocalDevice: %i
+BeginPaint
+Bg,}]o
+BhSVWj@
+Bit Depth
+Bitstream Vera Sans
+Bitstream Vera Sans Mono
+Bitstream Vera Serif
+BlendAxisTypes
+BlendDesignMap
+BlendDesignPositions
+BlueFuzz
+BlueScale
+BlueShift
+BlueValues
+Bm73nGLde
+Bold Italic
+Brevesmall
+Browser
+Bsmall
+BuildCharArray
+B}@K:/J?D?&1
+C =02CVu
+C PjPV
+C$PjQV
+C*PjTV
+C+PjUV
+C,PjVV
+C-"qL#,a
+C-PjWV
+C.PjRV
+C/PjSV
+C/fKjS
+C1o}AG
+C2!3?4">)>0>7>>>E>
+C2ot}~
+C8;C0s1;CTr
+C;\$ |
+C<]-F|
+CAP_HEIGHT
+CAppInternalControlMessage: %i
+CAppMIDISysex: %i
+CB@@;U
+CBDAPPh
+CCHAICore: %i
+CCHAIDevice: %i
+CCHAIObject: %i
+CCHAIPort: %i
+CCP2MIDILocalDevice: %i
+CController: %i
+CD^_[]
+CDestinationCollection: %i
+CDestinationItem: %i
+CDeviceIDDestinationCollection: %i
+CDeviceIDSourceCollection: %i
+CDeviceManager: %i
+CFlowControl: %i
+CFlowControlIncomingCollection: %i
+CFlowControlIncomingCollectionItem: %i
+CFlowControlIncomingCollectionItemKey: %i
+CFlowControlOutgoingCollection: %i
+CFlowControlOutgoingCollectionItem: %i
+CG9Ex~
+CGlobalTimer: %i
+CGlobalTimerItem: %i
+CH+~]W
+CH=pmoc
+CH=stib
+CH=stibt0=pmoct)
+CHAI Thread
+CHAI: 
+CHAICore
+CHARSET_COLLECTIONS
+CHARSET_ENCODING
+CHARSET_REGISTRY
+CHltuo
+CHltuo3
+CHltuo;
+CHltuof
+CHstib
+CHstibt
+CHybridMIDILocalDevice: %i
+CID Type 1
+CIDATx^
+CIDCount
+CIDFontName
+CIDFontType
+CIDFontVersion
+CIDMapOffset
+CIEmgR
+CIndexList: %i
+CK&>=*;
+CLPAckEvent
+CLPLink : Transport Connection state changed : %s
+CLPLink : Transport Protocol %s
+CLPLnkFIFOMtx
+CLPSendBufferMtx
+CLPSendMtx
+CLocalDevice: %i
+CMIDITranslator: %i
+COMMENT
+COPYRIGHT
+CPNS::DeviceID: %i
+CPNS::Endpoint: %i
+CPNS::ParameterID: %i
+CPNS::SectionID: %i
+CPNS::SelectorItem: %i
+CPNS::UTF8String: %i
+CPNS::Value: %i
+CP_BW_US_logo_white_png
+CParameter: %i
+CRC error
+CSelectorItemList: %i
+CSharedDisplayClientLocalDevice: %i
+CSharedDisplayLocalDevice: %i
+CSourceCollection: %i
+CSourceItem: %i
+CTXKS#KQZX8
+CT[X!#
+CTaskCHAIDevice_SignalQuery
+CTaskCollectCHAIInformation
+CTaskCollectMachineInformation
+CTaskCollectSnapshotData
+CTaskDeviceInfoGetDestination
+CTaskDeviceInfoGetInfo
+CTaskDeviceInfoGetInputOutputInformation
+CTaskDeviceInfoGetName
+CTaskDeviceInfoGetProperty
+CTaskFilteredDeviceSearch
+CTaskFindFirstDevice
+CTaskFindForeignDevice
+CTaskProcessSIGConnectedDevices
+CTaskProcessSMCollectSnapshotData
+CTaskProcessSMGetDeviceInfo
+CTaskProcessSMRestoreSnapshotData
+CTaskRemoteDeviceDelayedNotification
+CTaskRestoreSnapshotData
+CTaskSmartConnectInitiator
+CTaskSmartConnectTarget
+CTimer: %i
+CTimerCollection: %i
+CWatchers: %i
+CXb~gu
+C\;C`r
+C_mr|Y
+C`BYYYYYY
+CachedImages
+Cacute
+Can't set both read_data_fn and write_data_fn in the same structure
+Can't write sCAL (buffer too small)
+Can't write tRNS with an alpha channel
+CapHeight
+Caronsmall
+Ccaron
+Ccedilla
+Ccedillasmall
+Ccircumflex
+Cedillasmall
+Ch.9YD^1
+ChangeWindowMessageFilterEx
+CharStrings
+CharWidth
+CharacterSet
+Characters
+ChoosePixelFormat
+Christian
+Circumflexsmall
+Cl8}:B
+Class3CA2048-1-550
+Clock Source
+CloseClipboard
+CloseHandle
+CloseTouchInputHandle
+CnFu<G
+Cnfb)%
+CoTaskMemAlloc
+CoXI[19
+CombineRgn
+CompareStringA
+CompareStringW
+Connected
+Connected to CopperLan
+Continuous
+Controllers
+CopperLan
+CopperLan_Logo118_png
+CopperLan_Logo59_png
+Copyright (c) 1992-2004 by P.J. Plauger, licensed by Dinkumware, Ltd. ALL RIGHTS RESERVED.
+Copyright (c) 2015 Cymatic Technologies B.V. All Rights Reserved.
+Copyright 1999 Adobe Systems Incorporated
+CorExitProcess
+CpXM[-5
+CreateBitmap
+CreateCaret
+CreateCompatibleDC
+CreateDIBSection
+CreateEventA
+CreateEventW
+CreateFileA
+CreateFontIndirectW
+CreateIconIndirect
+CreateMutexW
+CreateRectRgn
+CreateRectRgnIndirect
+CreateThread
+CreateWindowExW
+Created FreeType face '
+Credits
+Csmall
+Current Date Time
+C}5+*X3
+C~w)dw
+D#Y!!-,  E
+D$ )Ct)Sp
+D$ +D$
+D$ +Ft
+D$ +|$
+D$ 1talj
+D$ 9D$L
+D$ ;D$
+D$ BODA3
+D$ CBDAj
+D$ EBDA@
+D$ SVW
+D$$9D$D
+D$$@;D$ 
+D$$t6Kt%Kt
+D$(+D$,W
+D$(j@P
+D$,;D$0
+D$,PPQ
+D$,PWV
+D$,PWWQQ
+D$,_^[
+D$,cinu
+D$,j@P
+D$09D$ 
+D$0SVW
+D$0YPQ
+D$4PPQ
+D$4PWW
+D$89D$
+D$8;D$
+D$8SVW
+D$@;D$ 
+D$@YPSQ
+D$@jlP
+D$H8CXuh
+D$H;D$
+D$PSVW
+D$tjHXf
+D&D7DHDzD
+D,5UGc
+D,e?sv
+D-Kh2=
+D. MYc
+D/)b3eW
+D2D1CreateFactory
+D3QUN~J
+D9AIAYAiAyA
+D9xk^i
+DBB@@F
+DCM<<I
+DDDDUUUU
+DEFAULT_CHAR
+DESTINATION
+DEVICE_FONT_NAME
+DFKai-SB
+DFKaiSho-SB
+DFKaiShu
+DJA,>85G
+DOMAIN error
+DQcXVUpj
+DRblRf
+DWDbDgD
+DWIDTH
+DWrite.dll
+DWriteCreateFactory
+Dc+@y;
+Dcaron
+Dcroat
+December
+DecodePointer
+DefWindowProcW
+DelayedJobManager
+Delete
+Delete file ?
+Delete file on release !
+DeleteCriticalSection
+DeleteDC
+DeleteObject
+Demo Mode
+Demonstration Playlist
+Descender
+DesignVector
+Desktop
+Destination #
+DestroyCaret
+DestroyCursor
+DestroyIcon
+DestroyWindow
+Device
+Device Name
+Device data & time not set!
+Df_j"c
+Dieresissmall
+Digital I/O
+Disconnected
+Disk Full! 
+DispatchMessageW
+Display mode
+Dl%kTg
+Dn,>,/h
+DoDragDrop
+Dotaccentsmall
+DqYBb/6
+Drawables
+Dsmall
+Durbanville1
+Dw9jN}
+DxN*%:
+D}n NB@
+D~@;F<s
+E''k}=O
+E+E\HTH\HfHrH
+E,66'<0B
+E1I1M1Q1U1Y1]1a1e1i1m1q1u1y1}1
+E2/;g#
+E2={E=
+E3EAEL
+E6%%%(--UM3UR
+E<y;f]
+E={h~//
+E@"#.6
+EAsF~7
+ED)(%$
+EFo5v[
+ENCODING
+ENDCHAR
+ENDFONT
+ENDPROPERTIES
+END_SPACE
+ETLPu;
+E]k#w~
+Eacute
+Eacutesmall
+Eb2]A=
+Ebreve
+Ecaron
+Ecircumflex
+Ecircumflexsmall
+Edieresis
+Edieresissmall
+Edotaccent
+Egrave
+Egravesmall
+Elapsed Time:
+Emacron
+EmptyClipboard
+EnableMenuItem
+EncodePointer
+Encoding
+EncodingScheme
+EndAxis
+EndCharMetrics
+EndComposites
+EndDirection
+EndFontMetrics
+EndKernData
+EndKernPairs
+EndPaint
+EndTrackKern
+EnterCriticalSection
+EnumChildWindows
+EnumDisplayMonitors
+EnumSystemLocalesA
+EnumWindows
+Eogonek
+Epsilon
+Epsilontonos
+Error reading drive!
+Error!
+EscChar
+Esmall
+EtRE_17
+Etatonos
+Ethsmall
+ExcludeClipRect
+Exit Playlist
+ExitProcess
+ExitThread
+ExpansionFactor
+Expected ")"
+Expected expression after "
+Expected expression after ","
+Expected parameters after "
+Expected symbol or function after "."
+ExpertEncoding
+Extra compressed data
+ExtractAssociatedIconW
+F puJQQ
+F#F`#Fa# 
+F$;F4~=
+F$SWPV
+F$x(S;~ s
+F'F2F>F\Fsa
+F(9F$u
+F,;F0~E
+F0$?3=1
+F0U0m0
+F0Z0o0
+F0u%8]
+F1N+_?>
+F1S1k1
+F4;F<uK
+F4;F<}4
+F8;F$|
+F8nMCh_
+F:1ZO<]
+F;t$ |
+F<;F$t
+F=14Un}
+F>5N[n
+F>KFg 
+FACE_NAME
+FAMILY_NAME
+FDArray
+FDBytes
+FG;|$,|
+FH=stibt
+FHstib
+FHstibt
+FIGURE_WIDTH
+FL9FLu!
+FONTBOUNDINGBOX
+FONTNAME_REGISTRY
+FONT_ASCENT
+FONT_DESCENT
+FOUNDRY
+FSType
+FUIWE6
+FULL_NAME
+FX0A$~
+FY!!''
+FYY;t$
+F^>#le
+Fa#E#aH-, E
+Failed !
+FamilyBlues
+FamilyName
+FamilyOtherBlues
+Fd9FXu
+Fdf;Ffu
+February
+Fh;F\r
+FiYR/Xt]
+File System not supported! 
+FindVNMThread
+Firmware Version
+Fl+Fp=
+FlsAlloc
+FlsFree
+FlsGetValue
+FlsSetValue
+FlushFileBuffers
+Fm0VRBwuy
+Fn7M_|
+Folder Mode
+FontBBox
+FontDirectory
+FontMatrix
+FontName
+FontType
+Foot Switch
+Footprint report:
+Foperator
+ForceBold
+ForceBoldThreshold
+Format USB drive
+Format drive failed!
+Format failed!
+Format successful
+Formatting drive
+Fq"ohY,
+FreeEnvironmentStringsA
+FreeEnvironmentStringsW
+FreeLibrary
+Friday
+Fs`do<{
+Fsmall
+FuTFIMG
+FullName
+Fw&4-AW.u
+Fx;F`s
+F{%w~]
+F||<##
+G!G)G1GdG
+G#G[GkG
+G$:F$u@
+G$Hwd%
+G$j(Y3
+G+GXGfGkGpGuG{G
+G-)rB=1bA3>b
+G.r%Gj
+G09_(u
+G0:F0u
+G7G;G@GEGJM
+G8;G<rI
+G:9JJ9:G
+G?6DjBT
+GAIsProcessorFeaturePresent
+GDBytes
+GDI32.dll
+GDNovV
+GDWjKY
+GEECCI
+GFBIHCHE
+GHCgP-
+GHltuo
+GHpmoc
+GIDATx^
+GIF87a
+GIF89a
+GL_ARB_multisample
+GQqF1#***
+GRichO
+GTf9pn
+GWJbs3
+GXh:BC
+GZ4OTz
+GZWS[\RU\
+G]Cyk4
+Galaxy S4
+Gapless recording error!
+Gbreve
+Gcircumflex
+Gcommaaccent
+Gczcy8k
+Gd9X4tfj
+GdF;p@
+GdR#^*
+General Settings
+GetACP
+GetActiveWindow
+GetAncestor
+GetAsyncKeyState
+GetCPInfo
+GetCapture
+GetClipboardData
+GetCommandLineA
+GetCommandLineW
+GetConsoleCP
+GetConsoleMode
+GetConsoleOutputCP
+GetCurrentProcess
+GetCurrentProcessId
+GetCurrentThread
+GetCurrentThreadId
+GetCursorPos
+GetDesktopWindow
+GetDeviceCaps
+GetDpiForMonitor
+GetEnvironmentStrings
+GetEnvironmentStringsW
+GetFileType
+GetFocus
+GetForegroundWindow
+GetGestureInfo
+GetGlyphIndicesW
+GetGlyphOutlineW
+GetKerningPairsW
+GetKeyboardState
+GetLastActivePopup
+GetLastError
+GetLocaleInfoA
+GetLocaleInfoW
+GetMessagePos
+GetMessageTime
+GetMessageW
+GetModuleFileNameA
+GetModuleFileNameW
+GetModuleHandleA
+GetModuleHandleW
+GetMonitorInfoW
+GetOEMCP
+GetOutlineTextMetricsW
+GetParent
+GetProcAddress
+GetProcessHeap
+GetProcessWindowStation
+GetRegionData
+GetStartupInfoA
+GetStdHandle
+GetStringTypeA
+GetStringTypeW
+GetSystemInfo
+GetSystemMenu
+GetSystemMetrics
+GetSystemTimeAsFileTime
+GetTextMetricsW
+GetTickCount
+GetTimeZoneInformation
+GetTouchInputInfo
+GetUpdateRgn
+GetUserDefaultLCID
+GetUserObjectInformationA
+GetVersionExA
+GetWindowInfo
+GetWindowLongW
+GetWindowPlacement
+GetWindowRect
+GetWindowTextW
+GetWindowThreadProcessId
+GhG*w{
+GlobalAlloc
+GlobalLock
+GlobalSize
+GlobalUnlock
+Global\
+GpQ?#6
+GraphicsContextPrograms
+Gravesmall
+Gray color space not permitted on RGB PNG
+GsBcLkAg^
+Gsmall
+G|3WsI
+G}HW=S
+H(;H$r
+H*0"ZOW
+H+-, E
+H0Q0_0h0
+H2Z2y3
+H8;H$s
+H=y}{?#7
+HE@F=_M
+HEE'hhL
+HEZLOCUS
+HH:mm:ss
+HHtXHHt
+HHtYHHt
+HIHQHuH}H
+HJwwwwwwwwwww
+HL;HHu"
+HYYtJHt9H
+HY_^t'Ht
+HYt8Hu_
+HZVS[\RT\
+H`$?h|
+Hcircumflex
+HeapAlloc
+HeapCreate
+HeapFree
+HeapReAlloc
+HeapSize
+Hnmu]3
+Hpww/RJ
+Hr|5~T
+Hsmall
+Ht;Ht*H
+Ht>Ht-HHt
+HtLHt$Ht
+Ht[HtUHt?Ht9Ht
+HtgHHtS
+HtkCw?p[i
+HtkHt%;N(u
+HtlHt]HtHHu
+HtvHtjj
+Ht{HtH
+HuaTianKaiTi?
+HuaTianSongTi?
+Hungarumlautsmall
+Hx)$4-N
+I&I,I:IJ
+I)O[L-K[I-M{
+I0a'_b
+I368b&
+I3a]s*
+I62<g+
+I<&G:Wu
+ICC profile tag outside profile
+ICC profile tag start not a multiple of 4
+ICHAI_NotificationHandler
+ICHAI_RemoteDevice_Find_AsyncReturnHandler
+IDAT^.
+IDATsD
+IDATx^
+IDATy0
+IDAT{M
+IE%-%?BCJ
+IJ.alt
+IMM32.dll
+IP Address
+IRemoteDevice_GetControllerInfo_AsyncReturnHandler
+IRemoteDevice_GetIndexListItem_AsyncReturnHandler
+IRemoteDevice_GetInputInfo_AsyncReturnHandler
+IRemoteDevice_GetModifierDataTypeInfo_AsyncReturnHandler
+IRemoteDevice_GetOutputInfo_AsyncReturnHandler
+IRemoteDevice_GetParameterInfo_AsyncReturnHandler
+IRemoteDevice_GetParameterPath_AsyncReturnHandler
+IRemoteDevice_GetProperty_AsyncReturnHandler
+IRemoteDevice_GetSelectorParameterValueText_AsyncReturnHandler
+IRemoteDevice_WatcherNotificationHandler
+ISOLatin1Encoding
+ITALIC_ANGLE
+IVWt/It
+I\`bMa
+Iacute
+Iacute.alt
+Iacutesmall
+Ibreve
+Ibreve.alt
+Icircumflex
+Icircumflex.alt
+Icircumflexsmall
+Idieresis
+Idieresis.alt
+Idieresissmall
+Idotaccent
+Idotaccent.alt
+Ignoring attempt to write 16-bit bKGD chunk when bit_depth is 8
+Ignoring attempt to write 16-bit tRNS chunk when bit_depth is 8
+Ignoring attempt to write bKGD chunk out-of-range for bit_depth
+Ignoring attempt to write tRNS chunk out-of-range for bit_depth
+Ignoring invalid time value
+Ignoring request to write a PLTE chunk in grayscale PNG
+Igrave
+Igrave.alt
+Igravesmall
+IiGM>nw
+Imacron
+Imacron.alt
+Image height exceeds user limit in IHDR
+Image height is zero in IHDR
+Image width exceeds user limit in IHDR
+Image width is zero in IHDR
+ImmGetCompositionStringW
+ImmGetContext
+ImmNotifyIME
+ImmReleaseContext
+ImmSetCandidateWindow
+In progress...
+InitializeCriticalSection
+InitializeCriticalSectionAndSpinCount
+Input: %i
+Inputs
+Inputs 
+Insufficient memory for hIST chunk data
+Insufficient memory for pCAL parameter
+Insufficient memory for pCAL params
+Insufficient memory for pCAL purpose
+Insufficient memory for pCAL units
+Insufficient memory to process text chunk
+Int. Clock
+Interlace handling should be turned on when using png_read_image
+InterlockedDecrement
+InterlockedExchange
+InterlockedIncrement
+Internal
+Internal Clock
+Invalid background palette index
+Invalid bit depth in IHDR
+Invalid color type in IHDR
+Invalid color type/bit depth combination in IHDR
+Invalid compression type specified
+Invalid filter method in IHDR
+Invalid filter type specified
+Invalid image height in IHDR
+Invalid image width in IHDR
+Invalid interlace type specified
+Invalid number of colors in palette
+Invalid number of histogram entries specified
+Invalid number of transparent colors specified
+Invalid palette
+Invalid palette length
+Invalid palette size, hIST allocation skipped
+Invalid sBIT depth specified
+Invalid sRGB rendering intent specified
+Invalid time specified for tIME chunk
+InvalidateRect
+IocnVr_!
+Iogonek
+Iogonek.alt
+Iota.alt
+Iotadieresis
+Iotadieresis.alt
+Iotatonos
+Iotatonos.alt
+IsBaseFont
+IsCIDFont
+IsChild
+IsDebuggerPresent
+IsFixedPitch
+IsFixedV
+IsValidCodePage
+IsValidLocale
+IsWindowVisible
+IsWow64Process
+Ismall
+It#ItSH
+Italic
+ItalicAngle
+Itilde
+Itilde.alt
+ItjItAIIt
+I{.N?p
+J%4jQF
+J0;H(v
+J0a0m0
+J0x0q1
+J1J7JU
+J4;H,r"w
+J73^Ku1^I
+J:D]-*
+JBBIJAAKJBCHJAAK
+JDigitized data copyright 
+JG_|fZ
+JJt]Jt
+JJtbJtMJuf
+JTTPPTTJ
+JWJ{nN
+JY))&&?KY&
+JanFebMarAprMayJunJulAugSepOctNovDec
+January
+JcEG.k
+Jcircumflex
+JffKF?
+Ji-Prk
+Jsmall
+JtxJt?J
+JuW90uS
+Juce Message Thread
+Juce Timer
+JvKsK}l
+Jx:P|"|>
+Jx^YRT
+K 9y4w
+K"K*K}K
+K$0U_*
+K$e,H*qa
+K$|`B"
+K%:C$t{:
+K&K8KFKQ
+K(**,j
+K)%eH9)y
+K0_0s0
+K1,onlte
+K6*"AJ
+K@BKLA@K
+K@f9{Du
+KERNEL32
+KERNEL32.dll
+KFe?UH
+KMQGFQN
+KNJLJI
+KQZX#8
+K[^O7t!b
+K]Zv8yc
+KcC{bx
+Kcommaaccent
+Kh1m)uf 
+KkFR{T?j59Z5PU
+KnqJ+y
+Ksf>SYyO
+Ksmall
+KtvKt;
+KtxKt;
+K}~7f{`c
+L$ ;L$0
+L$8;L$
+L$<;L$
+L$@+L$H
+L$@;L$
+L$D;L$$
+L$H;L$(
+L$L;L$
+L$P;L$
+L%bj4"
+L*>'e\-
+L0L:LA
+L0`0t0
+L8DgR 8
+L=XbK;
+L?e7e):`
+LCMapStringA
+LCMapStringW
+LC_ALL
+LC_COLLATE
+LC_CTYPE
+LC_MONETARY
+LC_NUMERIC
+LIDATx^
+LJ7B^u#=
+LKNIFRN
+LNFl]7
+LNPr[t`
+LRnTDA+
+LSWj0_W3
+LU6VRQ
+LZPFzO
+L]s6g~
+L^kuWC
+L_,~r!
+Lacute
+Lambda
+Landscape
+LanguageGroup
+Laszlo 'the Crasher'
+Lcaron
+Lcommaaccent
+LeaveCriticalSection
+Ledd*77G
+LoadCursorW
+LoadLibraryA
+LoadLibraryW
+Loading song failed
+Loading...
+Local\
+Lslash
+Lslashsmall
+Lsmall
+LtgLaQ1R
+Lucida Console
+Lv@prlo
+LxNAH=
+M 129.67349,464.27494 L 139.13334,494.53419 L 202.82478,384.61513 L 226.39096,381.40041 C 197.96959,422.05309 171.76814,470.03777 148.55176,516.78337 C 128.17196,557.81758 129.32648,525.71547 104.28828,478.34571 L 129.67349,464.27494 z
+M'Oc8g
+M'S{L'R
+M0.5,59.9766316 L13.8814746,59.9766316 L13.8814746,19.7674737 L0.5,19.7674737 L0.5,59.9766316 Z M22.2717458,59.9771053 L35.6525763,59.9771053 L35.6525763,0 L22.2717458,0 L22.2717458,59.9771053 Z M44.0430085,59.9771053 L57.423678,59.9771053 L57.423678,39.5349474 L44.0430085,39.5349474 L44.0430085,59.9771053 Z
+M0\0q0
+M23,27.2C12.9,40,13.7,58.7,25.4,70.5C31.6,76.8,39.8,80,48,80v-8.1    c-6.1,0-12.3-2.4-17-7.1c-9.2-9.3-9.3-24.3-0.6-33.8L23,27.2z
+M31.5933088,34.50215 L35.0624274,37.9133 L38.997563,34.04375 C38.7841562,32.15585 39.4091223,30.19445 40.8808511,28.7477 C42.3518172,27.3011 44.3466138,26.6867 46.265902,26.89595 L63.4719189,9.97655 L53.8342918,0.5 L36.6285799,17.41925 C36.8418342,19.30655 36.216563,21.26795 34.7452918,22.7153 C33.2740206,24.1622 31.279224,24.7763 29.3594783,24.56645 L25.4248003,28.4363 L28.8923935,31.8464 L11.8906308,48.5648 L11.2687155,47.9531 L8.00491893,50.53805 L2.51537656,59.06285 L3.9166308,60.4412 L12.5868342,55.04345 L15.2148342,51.83405 L14.5906308,51.22085 L31.5933088,34.50215 L31.5933088,34.50215 Z M56.0881054,56.47835 L52.9034783,57.31745 L50.3197155,54.77645 L51.1730376,51.6455 L54.3579698,50.80595 L56.9415799,53.34695 L56.0881054,56.47835 L56.0881054,56.47835 Z M40.5853766,32.1923 C40.4616647,32.729 40.4282579,33.2897 40.4920206,33.85415 L40.5730206,34.57175 L40.0534613,35.0825 L36.1190884,38.9525 L35.0384783,40.0142 L31.5702749,36.60365 L29.3574952,38.77955 L49.4360376,58.52435 C50.6740715,59.7413 52.2960545,60.34955 53.9184952,60.34955 C55.5401732,60.34955 57.1623088,59.7413 58.3994274,58.52435 C60.8754952,56.09 60.8754952,52.1438 58.3994274,49.71005 L40.5853766,32.1923 L40.5853766,32.1923 Z M18.1100884,27.7157 C18.1250376,27.73025 18.1375461,27.74675 18.1528003,27.7616 L24.4958172,33.99875 L26.7082918,31.82315 L24.3200884,29.47535 L23.2403935,28.4126 L28.775241,22.97015 L29.5053088,23.04995 C29.6914105,23.07095 29.8816308,23.08115 30.0709359,23.08115 C30.4532071,23.08115 30.8275461,23.03495 31.1915122,22.955 L27.1164952,18.94745 C27.0342749,18.8663 26.9453427,18.79505 26.8596138,18.71885 C28.1154952,14.27945 26.9721901,9.32135 23.4219189,5.83055 C19.8980376,2.36495 14.9039528,1.23245 10.4146308,2.42375 L18.0210037,9.9029 L16.0240715,17.23025 L8.57237656,19.1945 L0.965698593,11.71475 C-0.24625056,16.12985 0.906817237,21.04115 4.43069859,24.50615 C8.13107147,28.1453 13.4540376,29.21285 18.1100884,27.7157 L18.1100884,27.7157 Z
+M37.0034605,60 L37.0034605,33.0888834 L54.9174251,33.0888834 L27.4586376,0.0369230769 L0,33.0888834 L17.9144142,33.0888834 L17.9144142,60 L37.0034605,60
+M39.893625,0.0483950617 L11.210125,4.64345679 L11.2145,38.7148148 C9.714,38.1955556 7.914625,38.0997531 6.0845,38.5518519 C2.0185,39.5561728 -0.644625,42.868642 0.13575,45.9498765 C0.916625,49.0312346 4.84525,50.7146914 8.912375,49.7087654 C12.485,48.8259259 14.9745,46.1595062 14.99525,43.4346914 L14.999125,43.4340741 L14.999125,16.2035802 L36.10775,12.9349383 L36.10775,33.9940741 C34.58625,33.4608642 32.75775,33.3597531 30.896375,33.8193827 C26.78775,34.8349383 24.095625,38.1823457 24.884625,41.2954321 C25.674,44.4098765 29.644125,46.1106173 33.7535,45.0953086 C37.497375,44.17 40.062625,41.3091358 39.893625,38.452963 L39.893625,0.0483950617
+M393/t`
+M44.8956696,38.0729464 L29.3749554,22.5523661 L44.8951339,7.03191964 L37.9679464,0.104598214 L22.4475,15.6250446 L6.92758929,0.105133929 L0,7.03191964 L15.5203125,22.5520982 L0,38.0729464 L6.92758929,45 L22.4480357,29.4794196 L37.9682143,44.9994643 L44.8956696,38.0729464
+M48,24.4c6.1,0,12.3,2.5,17,7.4c9.2,9.6,9.3,25,0.6,34.8l7.4,3.8    c10.1-13.1,9.3-32.4-2.3-44.6C64.4,19.3,56.2,16,48,16V24.4z
+M53.0645161,54.9839521 L53.0645161,15 L93.6671912,34.9920958 L53.0645161,54.9839521 Z
+M58.0054503,7.21634349 C58.0054503,5.97257618 56.9970901,4.96481994 55.7526097,4.96481994 L27.256351,4.96481994 C26.3654965,4.94252078 25.6788915,3.32465374 25.6788915,2.70581717 L25.6793072,2.44224377 C25.6793072,1.1200831 24.6072055,0.0488919668 23.2848499,0.0488919668 L8.11496536,0.0488919668 C6.79247113,0.0488919668 5.72036952,1.1200831 5.72036952,2.44224377 L5.72092379,2.70581717 C5.72092379,3.32908587 5.02517321,4.96648199 4.12517321,4.96648199 L4.1465127,4.96648199 C2.92115473,4.98822715 1.93427252,5.98642659 1.93427252,7.21634349 L1.93427252,8.77077562 L58.0054503,8.77077562 L58.0054503,7.21634349 L58.0054503,7.21634349 Z M58.0054503,13.0767313 L58.0054503,13.0331025 L1.93427252,13.0331025 L1.93427252,13.0783934 C0.83182448,13.2929363 0,14.2621884 0,15.4267313 C0,15.4267313 0.787482679,27.4022161 0.932009238,31.7163435 C1.07681293,36.0303324 1.46466513,47.6065097 1.46466513,47.6065097 C1.46466513,48.9283934 1.73806005,50 3.06013857,50 L56.888037,50 C58.210254,50 58.4833718,48.9283934 58.4833718,47.6065097 C58.4833718,47.6065097 58.8719169,36.0303324 59.0161663,31.7163435 C59.1608314,27.4022161 59.9481755,15.4267313 59.9481755,15.4267313 C59.9481755,14.2588643 59.1120554,13.2880886 58.0054503,13.0767313 L58.0054503,13.0767313 Z
+M5a5u5
+M64.7727529,8.08230471 C64.7727529,6.68928532 63.6467506,5.56059834 62.2570808,5.56059834 L30.4362587,5.56059834 C29.4414711,5.53562327 28.6747621,3.72361219 28.6747621,3.03051524 L28.6752263,2.73531302 C28.6752263,1.25449307 27.4780462,0.0547590028 26.0014157,0.0547590028 L9.06171132,0.0547590028 C7.5849261,0.0547590028 6.38774596,1.25449307 6.38774596,2.73531302 L6.3883649,3.03051524 C6.3883649,3.72857618 5.61144342,5.56245983 4.60644342,5.56245983 L4.63027252,5.56245983 C3.26195612,5.5868144 2.15993764,6.70479778 2.15993764,8.08230471 L2.15993764,9.8232687 L64.7727529,9.8232687 L64.7727529,8.08230471 L64.7727529,8.08230471 Z M64.7727529,14.6459391 L64.7727529,14.5970748 L2.15993764,14.5970748 L2.15993764,14.6478006 C0.92887067,14.8880886 0,15.973651 0,17.2779391 C0,17.2779391 0.879355658,30.690482 1.04074365,35.5223047 C1.20244111,40.3539723 1.63554273,53.3192909 1.63554273,53.3192909 C1.63554273,54.7998006 1.94083372,56 3.41715473,56 L63.5249746,56 C65.0014503,56 65.3064319,54.7998006 65.3064319,53.3192909 C65.3064319,53.3192909 65.7403072,40.3539723 65.9013857,35.5223047 C66.0629284,30.690482 66.9421293,17.2779391 66.9421293,17.2779391 C66.9421293,15.969928 66.0084619,14.8826593 64.7727529,14.6459391 L64.7727529,14.6459391 Z
+M9.17092174,39.2448055 L9.17092174,60 L25.4646261,60 L25.4646261,41.1399542 L38.4733217,41.1399542 L38.4733217,60 L54.7673043,60 L54.7673043,39.2435698 L31.9727304,16.7478261 L9.17092174,39.2448055 L9.17092174,39.2448055 Z M31.9727304,0.0149656751 L0,31.5624714 L6.01405217,37.4984897 L31.9738435,11.8867277 L57.9240348,37.4968421 L63.9376696,31.5634325 L31.9727304,0.0149656751 L31.9727304,0.0149656751 Z
+M<4kH28s
+MADI In 
+MADI Input
+MAX_SPACE
+MDMLMTM{M
+MIDI Offset
+MIDI2CPLocalDevice: %i
+MIN_SPACE
+ML9H(t
+MM/dd/yy
+MNG features are not allowed in a PNG datastream
+MNX?9J:*
+MNk,_xb
+MO9@Qy"
+MRM\Mc
+MU&Nex
+MXM`MpM
+MYYt"Mt
+Macronsmall
+MapVirtualKeyW
+MappingScheme
+Marker
+MarkersX
+MarkersY
+Massachusetts1
+Max take number reached!
+Medium
+Memory allocation failed while processing sCAL
+MessageBeep
+MessageBoxA
+Meters
+Method
+MetricsSets
+Mg=r1j
+MgpWn7
+Mh_7\|
+Microsoft Visual C++ Runtime Library
+MinFeature
+MingLi43
+MingLiU
+Mirror
+MmLlHhVvCcSsQqTtAaZz
+Monday
+Monotype Imaging Inc.0
+Monotype Imaging Inc.1>0<
+Msmall
+MultiByteToWideChar
+MultiTrack
+Multitrack Outputs Post-Fader
+Multitrack song 1
+Multitrack song 2
+Multitrack song 3
+Multitrack song 4
+My*{mEK
+N'(wzC
+N.'Kca
+N/N@NRNdNuN
+N2_{eHY,
+N2nJ]g\
+N6{[O:?
+N;NHNQNkN
+N?6r_wt
+N?@{^e
+N?O0[t
+N@f9^Du
+NIQf%E2g
+NL;V\s+
+NM7AQy"
+NORM_SPACE
+NOSWIPE
+NOTICE
+NQW`H[
+NTcpp``ll
+NX@s&H
+N`r&VW
+Nacute
+Ncaron
+Ncommaaccent
+Nespresso
+Nexus 6
+Nexus 9
+NlZ=lZQ
+Nlf+Nd
+Nlf+Np
+No CopperLan network detected
+No disk space for recording!
+No space in chunk cache for sPLT
+No uTrack connected
+Norwegian-Nynorsk
+Notice
+November
+NrLw4Y6
+Nsmall
+NsqoQKu
+Ntilde
+Ntildesmall
+Nu?-HF
+Nx;N`r
+NyMkSiM
+N{sVq{
+N|bgOOLl
+O%DG:G{
+O%~^/J&
+O'8e:'
+O'pVr]\
+O-x`"}C
+O.yO@o~>
+O5OFO\OgO
+O<:?0B
+O=#]V8M
+OD)_p)_l
+OEsmall
+OI<gE~|
+OK for all
+OL7AQy"
+OLjm36
+OOtpOtROt6Ot
+OP2:?--6LB
+OPENGL32.dll
+OR_|I@
+OZw3(?
+OaBSXf
+OaMebNd
+Oacute
+Oacutesmall
+Object 0x
+Object list dump
+Oblique
+Obreve
+Ocircumflex
+Ocircumflexsmall
+October
+Odieresis
+Odieresissmall
+Og3)6&
+Ogoneksmall
+Ograve
+Ogravesmall
+Ohungarumlaut
+OleInitialize
+OleUninitialize
+Omacron
+Omegatonos
+Omicron
+Omicrontonos
+OnurrNR
+OnzkcgP
+Open Sans
+OpenClipboard
+OpenGL Renderer
+OpenGL Rendering
+OpenSansBold_ttf
+OpenSansRegular_ttf
+Optical
+OpticalSize
+Ordering
+Orientation
+Oslash
+Oslashacute
+Oslashsmall
+Osmall
+Ot*Ot,Ot,
+OtherBlues
+Otilde
+Otildesmall
+Ot~OtlOtK
+Ou$F_sw
+Out of memory
+Output Attenuation
+Output: %i
+OutputDebugStringA
+OutputDebugStringW
+Ox\_[7z
+O}YFPuIAxyqELIaSBA~or^
+P X#e#Y#h 
+P" kZB
+P(P;P`
+P,2``2,
+P,4TY8|
+P,NkP)L
+P,P,P15511;
+P0Z0d0v0
+P1T1X1
+P3T3X3`3d3h3l3p3t3x3|3
+P5<Z*#
+P60{oKu9
+P92v,G
+P9~H~C
+P:(1([
+P:/5K6DpJ;
+P:h/,Z
+P;T;X;\;`;d;h;l;p;t;x;|;
+P=t$aXC
+PC Z{p
+PCS illuminant is not D50
+PFkUO,|
+PIXEL_SIZE
+PK^:ADb
+PMingLiU
+PO+%jk
+POINT_SIZE
+POwer mode
+PPPPPPPP
+PQQSVW
+PQRRPQ
+PROPCPRP
+PROPERTIES
+PSVWjD
+PShtsopV
+PVh tvcW
+PVhravfW
+PVhravgW
+PVhxmdhS
+PaintType
+Paused
+Pch418
+Pdhj_O
+PeekMessageW
+Ph>FyT
+PhMLTP
+PhTSOP
+Philippe & Chetan
+Phtnfs
+Pipe: %i
+Play-Pause
+Playback
+Playback Mode
+Playback Mode:
+Playback Mode:  
+Playing
+Playlist:
+Please contact the application's support team for more information.
+Please format the drive
+Please plug USB drive or connect the device to a computer.
+PmXh]=b
+Portrait
+PostMessageW
+Potential overflow in png_zalloc()
+Powered by
+Pre-Recording
+PreRecording ON
+Preloaded
+Preparing Playback
+Preparing Recording
+Prerecording failed!
+Press twice to exit
+Private
+Program: 
+Psmall
+PyIDAT
+P|Mf2p
+Q!.KjPm=b
+Q$Q,Q4QWQ{Q
+Q'|KS9
+Q)Q7QWQ
+Q2?htF
+Q3Rp,R
+Q7*B\/
+Q<AMN@<Q
+Q>j1_G
+QC29f_
+QD.eri
+QD<_2.`?EP
+QG>\QL{
+QHI?tj
+QPhxtmvW
+QQSUVW
+QQSV;}
+QQSVWd
+QQSVWj
+QQSVWj02
+QQSVWjP
+QQVWQQ
+QSVWQQ
+QSVWj 
+QUAD_WIDTH
+QUU2sK
+QVW;\$
+QVhravaP
+QVhravcP
+QVhravgP
+Q_UWTsg
+QgLr7'up@%/kD;
+Qkkbal
+QmQuQ}Q
+QnTyv\
+Qot}j+fy
+Qsmall
+QueryPerformanceCounter
+QueryPerformanceFrequency
+Quits the application
+Q~0<o0=
+R%R<RqS
+R(pec&6
+R)BcZ.BkU"B
+R/-Z+uy
+R3v7+t
+R4U GK
+R6mL0g
+R;,hY4 
+R;p{P>
+R@H:"@:@IY(:
+RAW_ASCENT
+RAW_AVERAGE_WIDTH
+RAW_AVG_CAPITAL_WIDTH
+RAW_AVG_LOWERCASE_WIDTH
+RAW_CAP_HEIGHT
+RAW_DESCENT
+RAW_END_SPACE
+RAW_FIGURE_WIDTH
+RAW_MAX_SPACE
+RAW_MIN_SPACE
+RAW_NORM_SPACE
+RAW_PIXELSIZE
+RAW_PIXEL_SIZE
+RAW_POINTSIZE
+RAW_POINT_SIZE
+RAW_QUAD_WIDTH
+RAW_SMALL_CAP_SIZE
+RAW_STRIKEOUT_ASCENT
+RAW_STRIKEOUT_DESCENT
+RAW_SUBSCRIPT_SIZE
+RAW_SUBSCRIPT_X
+RAW_SUBSCRIPT_Y
+RAW_SUPERSCRIPT_SIZE
+RAW_SUPERSCRIPT_X
+RAW_SUPERSCRIPT_Y
+RAW_UNDERLINE_POSITION
+RAW_UNDERLINE_THICKNESS
+RAW_X_HEIGHT
+RC2.0(
+RC3.0(
+RELATIVE_SETWIDTH
+RELATIVE_WEIGHT
+RESOLUTION
+RESOLUTION_X
+RESOLUTION_Y
+RFRQR\Rf
+RGB color space not permitted on grayscale PNG
+RJbCX?
+RL}v\I
+RMN@NE
+RPCRT4.dll
+RRRRQP
+RUUUUU
+RX!!!!!
+R\#I_~F
+R\_^[Y
+R^^VV^^R
+R`%G[T-
+Racute
+RaiseException
+Rcaron
+Rcommaaccent
+Read palette index exceeding num_palette
+ReadFile
+Record
+Recording
+Recording error! Clock not in sync
+Recording error! Directory creation failed!
+Recording error! Encoders not ready
+Recording error! Max take number reached
+Recording error! Setup timed out
+Rectangle
+Recursive symbol references
+RedrawWindow
+RegCloseKey
+RegCreateKeyExW
+RegDeleteValueW
+RegOpenKeyExW
+RegQueryValueExW
+RegSetValueExW
+RegisterClassExW
+RegisterDragDrop
+RegisterTouchWindow
+Registry
+Regular
+ReleaseCapture
+ReleaseDC
+ReleaseMutex
+Remaining Time:
+Remaining Time:    
+RemoteDevice: %i
+RemoveFontMemResourceEx
+Repeat All
+Repeat One
+RestoreDC
+Resume
+ResumeThread
+RevokeDragDrop
+RhMLTP
+Ringsmall
+RmiC`V
+Rou5Zmh
+Rr$'<r
+RrqSTqr
+Rsmall
+RtlUnwind
+Runtime Error!
+S*:ktN
+S3sK+k
+S5,?"O
+S6^=~)
+S71%%V
+S98t[3
+S99b3O
+S:sAg_
+S>SOS`SqS
+S>aq5O
+S@,AHHEPEDD
+SD>)H0yy 
+SDBytes
+SETWIDTH_NAME
+SHCore.dll
+SHELL32.dll
+SHzx6-
+SING error
+SLSnSzS
+SMALL_CAP_SIZE
+SPACING
+SSgNINY451y
+STARTCHAR
+STARTFONT
+STARTPROPERTIES
+STRIKEOUT_ASCENT
+STRIKEOUT_DESCENT
+SUBSCRIPT_SIZE
+SUBSCRIPT_X
+SUBSCRIPT_Y
+SUPERSCRIPT_SIZE
+SUPERSCRIPT_X
+SUPERSCRIPT_Y
+SVhCLBEW
+SVhcolbW
+SWIDTH
+SWSSSSSSSf
+SWf;N,
+S[-v8'
+S][YY[]S
+S`;}ZG
+Sacute
+Sample Rate
+Saturday
+SaveDC
+Saving unknown chunk:
+Scaron
+Scaronsmall
+Scedilla
+Scircumflex
+Scommaaccent
+ScreenToClient
+SectionNameCollection: %i
+SectionNameItem: %i
+SedcuU`
+Select All
+Select a device
+SelectObject
+Semibold
+SendInput
+SendMessageTimeoutW
+SendMessageW
+Separate streams
+September
+SetCapture
+SetCaretPos
+SetClipboardData
+SetCursor
+SetCursorPos
+SetEndOfFile
+SetEnvironmentVariableA
+SetEvent
+SetFilePointer
+SetFocus
+SetForegroundWindow
+SetHandleCount
+SetLastError
+SetLayeredWindowAttributes
+SetMapMode
+SetMapperFlags
+SetPixelFormat
+SetProcessDPIAware
+SetProcessDpiAwareness
+SetStdHandle
+SetThreadAffinityMask
+SetThreadPriority
+SetUnhandledExceptionFilter
+SetWindowLongW
+SetWindowPos
+SetWindowTextW
+Settings
+Sh_^][
+ShellExecuteW
+ShowCaret
+ShowWindow
+Shuffle
+Single
+SlK_7D
+SmartConnectSourceManager: %i
+SmartConnectTargetManager: %i
+So:/{\\
+Software Renderer
+Song play error! Bit depth not supported
+Song play error! Clock not in sync
+Song play error! Decoders not ready
+Song play error! Incorrect number of channels in song
+Song play error! Loading timed out
+Song play error! Parsing problem
+Song play error! Playback failed
+Song play error! Samplerate mismatch
+Song play error! Settings file error
+Song playback aborted!
+Ssmall
+StandardEncoding
+Start recording failed!
+StartAxis
+StartCharMetrics
+StartComposites
+StartData
+StartDirection
+StartFontMetrics
+StartKernData
+StartKernPairs
+StartKernPairs0
+StartKernPairs1
+StartTrackKern
+Status
+StemSnapH
+StemSnapV
+Stereo
+Stereo Outputs
+Stereo song 1
+Stereo song 2
+StretchDIBits
+Stroke
+StrokeWidth
+SubrCount
+SubrMapOffset
+Successful !
+SunMonTueWedThuFriSat
+Sunday
+Supplement
+Suspend
+SwapBuffers
+SyKuyjzk
+Syntax error: "
+SystemParametersInfoW
+Sys|Clock
+T#T.Tk
+T$@;T$
+T'/U}YS
+T),,DM
+T+TLTkT
+T,vGB|
+T0fk;>
+T5'OWc
+T;&d$f
+T;F$YY
+T?X9;>x
+T@:35>7[ 
+TADIW9s4tN
+TADIu'
+TADIuU
+TC1{^h
+TETNTc
+THEZOCQS
+TLOSS error
+TNXHvkp`zg
+TSA1-20
+TSA2048-1-530
+TVXRO[Y
+TVXRO[YQTVXRO[YQTVXRO[Y
+TVXRQYX
+TZr#oDN
+Tahoma
+Task issue
+Task number seems to be growing out of control (
+TaskDeviceInfoGetPerfMsgInfo
+Tcaron
+Tcedilla
+Tcommaaccent
+TdSb6yo
+TerminateProcess
+TerminateThread
+Thawte Certification1
+Thawte Timestamping CA0
+Thawte1
+The CHAI has 
+The task 
+This application has requested the Runtime to terminate it in an unusual way.
+This indicates a bug in your application.
+This indicates a bug in your application. It is most likely the result of calling an MSIL-compiled (/clr) function from a native constructor or from DllMain.
+Thornsmall
+ThreadManagerMtx
+Thursday
+Tildesmall
+Timer Thread
+Times New Roman
+Tj)?*%
+TjC<9V
+TjKM8dq&0
+TlsAlloc
+TlsFree
+TlsGetValue
+TlsSetValue
+ToUnicode
+Toggle
+Too many IDATs found
+Too many delayed messages
+Too many destination
+Too many recording destination
+Too much image data
+TqoSUVP
+Track Count
+TrackKern
+TrackMouseEvent
+TranslateMessage
+TransportThread
+TrashCanMtx
+Trashcan issue
+Trashcan seems to be growing out of control (
+TrueType
+TryEnterCriticalSection
+Tsmall
+TstRfo%1
+Tuesday
+Tw |$4)
+Type 1
+Type 42
+Type Operations1
+Tzoi}`
+U"q?<2$
+U*QoVj3/
+U.H|ZNN4j8ks
+U6ZM//
+U<Bk9%
+UEUeUt
+UIDBase
+UJTLTNTPTRTTT
+UKUbUyU
+UNDERLINE_POSITION
+UNDERLINE_THICKNESS
+UNICODE
+UQPXY]Y[
+URPQQhpn[
+USER32.DLL
+USER32.dll
+US|3Nx
+UTF-16LE
+UUUT]PP
+UUUUUU
+UWp?R]
+UX{(7|
+Uacute
+Uacutesmall
+Ubreve
+Ucircumflex
+Ucircumflexsmall
+Udieresis
+Udieresissmall
+Ugrave
+Ugravesmall
+Uhungarumlaut
+Umacron
+UnderlinePosition
+UnderlineThickness
+UnhandledExceptionFilter
+UniqueID
+Unknown compression method in IHDR
+Unknown error 
+Unknown exception
+Unknown filter method in IHDR
+Unknown function: "
+Unknown interlace method in IHDR
+Unknown symbol: 
+Unknown(
+Unknown[%d]
+Unreachable Destination
+Unreachable Recording Destination
+Unrecognized unit type for oFFs chunk
+Unrecognized unit type for pHYs chunk
+UnregisterClassW
+Uogonek
+UpdateLayeredWindow
+Upsilon
+Upsilondieresis
+Upsilontonos
+Urs, NOSE Design Zurich
+Use System Time
+Usmall
+Utilde
+Utilities
+UuidCreate
+UzuTOO
+U}tMJE
+V,V7VB
+V-G:{6
+V0c0{0
+V0e0L1Q1f5u5
+V0e0}0
+V0h0C2H2
+V1e1}1
+V3.)f=
+V4Y9V0t!
+V5)%vUI
+V6c6{6f8s8
+V?    
+V@;Q s
+V@;Q(s
+VNCI> &E
+VNM Manager
+VNMINFO
+VNMSRCH
+VTVXRQYX
+VVVVVQRSSj
+VVector
+V_:X1:
+V_Zv#44
+V`cQCuBb
+VaL6DE&2Xo
+VcT^%F
+VerSetConditionMask
+Verdana
+VeriSign Trust Network1;09
+VeriSign, Inc.1
+VeriSign, Inc.1+0)
+VeriSign, Inc.1402
+VeriSign, Inc.1705
+VerifyVersionInfoW
+Version
+Version 
+Vh FFCS
+VhdaehS
+Vhltuo3
+VhpsagS
+VirtualAlloc
+VirtualFree
+Vn3X =
+Vsmall
+Vsxw^`
+VtGHtkH
+VttHt:H
+VvG'yz
+W pmC7
+W$W>WBWSW
+W2YsKC
+W7WfWrW
+W8VQcA'7
+W9^Du8j
+W<9:Go]
+WEIGHT
+WEIGHT_NAME
+WINMM.dll
+WP_]^Z]
+WQ?8m%
+WS2_32.dll
+WUU]XVV
+WW=G449==99B
+WWWW 99 Ch | 99.9 kHz | 24-bit | Int. Clock | 99h99m W
+WYaxxF
+Wacute
+WaitForSingleObject
+WaitForSingleObjectEx
+Waiting for the device to be ready.
+Warning!
+Wcircumflex
+Wdieresis
+Wednesday
+Weight
+WeightVector
+Western Cape1
+Wgrave
+Wh2/SOV
+WideCharToMultiByte
+Width is too large for libpng to process pixels
+WindowFromPoint
+Windows 2000
+Windows 7
+Windows 8
+Windows > 8
+Windows FNT
+Windows Vista
+Windows XP
+WmA}?3
+Woburn1
+Wordclock
+WriteConsoleA
+WriteConsoleW
+WriteFile
+Writing zero-length unknown chunk
+Wrote palette index exceeding num_palette
+Wsmall
+WtyF:N
+X$!x,!x0
+X'W~N@
+X,X>XPX}X
+X0l#2<
+X2s}4?}
+X721O21>3
+X:ZNK'
+X;|~\g{K
+XCXVXac
+XHeight
+XN&P28EE
+XNp\SQ23/T9e>
+XO%htb
+XXXh3!
+X^jB|-q
+X_HEIGHT
+X_^][Y
+XbP;O_
+Xd;Xdu
+Xh;Xhuv
+Xk=M_,
+XnAkDDySHRM-7
+Xq_xo.~c
+Xsmall
+X{Kl.{
+X{_0ON?
+Y!Q!t!
+Y!Y@YuY
+Y#`Z7d
+Y(I~'N
+Y+&'PI
+Y3?~;&
+Y3kE_c
+Y:/(A6>
+Y;\$0r
+Y=91w/
+Y?i&\1n'W4
+Y?x|Y+
+YBBZ[A@[
+YCr%O;
+YF;uh|
+YG;~<|
+YH)Cv~D
+YJ-\n7
+YR!P?4bEB
+YU_JaO
+YWWt=MP
+YY8^AuP8_
+YYYBBBBB-,E
+YYYG[XW
+YY_^[]
+YYhTADI
+YYj Y;
+YY~^SW
+Y\}kYEl
+Y]Ym[u[
+Y]rr?i
+Y`nLy2
+Yacute
+Yacutesmall
+YbLl9g
+Ycircumflex
+Ydieresis
+Ydieresissmall
+Yf4GGk
+Ygrave
+Yh:-,K#QX
+Ylm9WYO
+YqOKr2>
+Ysmall
+YuO{[]
+Z5)P+|"
+Z6mBYaNFjR|lLl\Rfq
+Z<Y/Z|
+Z>F%kV
+Z?>1HT;
+Z@.,00.*&&(
+ZDZUZ]Zj
+ZHOOLWLKK
+ZH|>yt
+ZI=lN_/
+ZL[Rg[4
+ZSwXpc
+ZVS[\RT\
+ZZW][YX
+ZZZ-YWV
+ZZZ-ZYW
+Z\l00Y
+Z]mz#a
+Z`=b|G
+Zacute
+Zcaron
+Zcaronsmall
+ZcyL'09X
+Zdotaccent
+Zf:D+5
+Zsmall
+[#[/[:[[[c[n
+['So^}],
+['['['['['['['['['['['['['['\q\
+[(_^Y]
+[)0s;7
+[*i9O<ssa
+[-&LMb#{'
+[/fKjS
+[0Y0W0U
+[1e1w1}1
+[1lu`[|
+[3@U)&
+[?O?T?Y?e
+[Array]
+[Gg[G%
+[MAC %02X:%02X:%02X:%02X:%02X:%02X F:%02x]
+[Root]
+[Unreachable]
+[XXYZZZ
+[Z:xEL
+[\?h>u
+[_WQ_U>ar
+[c_oC@
+[da]iWSj
+[hi\\ig\
+[ik77m
+[kjT`W|D\_Tx
+[newer(
+[s\cfP
+[sd gCD
+[vB0gF|$OZ\
+[vc:5J
+[weV0l
+[x>=N?
+[}y|J;
+[}}@@K
+\!&">};~)&
+\!\(\A\\\~\
+\$(8] tZ
+\$(9|$
+\$P8^$t.
+\$Pt]Ht:Ht
+\$l9\$
+\$p8^4t
+\(wc|0
+\0p0v0|0^4R5
+\1S0-?
+\2sMws
+\3":\p
+\;7>kyy
+\;se7sc
+\=:rcmO
+\=skt,
+\F2t9m
+\NLbg<
+\W}qq]I
+\Z:~jO
+\\7N>l
+\\M\..#
+\]c&vv
+\^tH?O
+\cU!ka
+\lgA}l
+\lkkl\
+\t\)AF>duulE=
+\wMp#>?
+])7k;S
+]-%P?a
+]-(mD# u
+]-8P8V$/&
+].rKgl
+]0"1Q1
+]11 \4
+]2??3+
+]5\tPw
+]9568877
+]GqunZ
+]IY\a9
+]U=c}e
+]ckN~5
+]m0KYVz
+]n'3>l
+]vQ<)8
+]x}}?A
+]}0'8H>
+^ E% ,+
+^ Ho8Q
+^!t$P#
+^$j%b,
+^(9^$u
+^-^9^E^W^
+^.e{dTC
+^09^4u(
+^0O__D
+^4X)`e
+^6GMcg
+^84oNb~
+^9+s/q
+^:bW2Wt]
+^<9^@u(
+^F<-uB
+^H9^LuT
+^L^S^\^r
+^Mb+g>I
+^SSSSS
+^T_I'i<
+^WWWWW
+^XPT^\UR_
+^Yob;w
+^ZVS[]QT\
+^`W9^\rN
+^arji^5p4
+^c'CVn
+^ccn,F
+^i:;;[G
+^pcra^5p4
+^tSsp1zI
+^w<./"
+^{M.AO
+_ n$L$z8N"|8U&dn
+_-.*!'()
+_-qn9w:
+_.6~L>&n
+_0#gbbG
+_1mJrd
+_@40$96>
+_C_k\E
+_M>9|2A
+_MULE_BASELINE_OFFSET
+_MULE_RELATIVE_COMPOSE
+_MvH/g
+_VVVVV
+_W_a_x_
+_XFREE86_GLYPH_RANGES
+_]lHdcDPzKH`E
+_^]29/
+_^rBon
+__based(
+__cdecl
+__clrcall
+__fastcall
+__ipc_k_
+__ipc_p_
+__ipc_st
+__pascal
+__ptr64
+__restrict
+__stdcall
+__thiscall
+__unaligned
+_f9D$ 
+_f9D$(
+_hypot
+_jexfo
+_kAGLe
+_nextafter
+_rCnOj
+_rem}9
+_toolbarItem_
+_x1[P[8
+`#B< X
+`'gs W
+`)nLvg
+`+?= Oh(
+`.rdata
+`0'qRb9
+`1`:`C`L`z`
+`2j2t2~2
+`67[eh
+`>&>%>
+`>*  ,
+`@yPMF}_
+`B`M`X
+`D-,E#E`D-,K#QX
+`D-,F#F`
+`D-,KS#KQZX E
+`DWJ{R
+`FCrL#q
+`GRQwKfe[cQCc]UkMMKgE
+`TTA2e!
+`\*a~*"k
+`cmap)
+`copy constructor closure'
+`default constructor closure'
+`dynamic atexit destructor for '
+`dynamic initializer for '
+`eh vector constructor iterator'
+`eh vector copy constructor iterator'
+`eh vector destructor iterator'
+`eh vector vbase constructor iterator'
+`eh vector vbase copy constructor iterator'
+`h````
+`h`hhh
+`i3K_WS
+`iD-,KQX
+`local static guard'
+`local static thread guard'
+`local vftable constructor closure'
+`local vftable'
+`managed vector constructor iterator'
+`managed vector copy constructor iterator'
+`managed vector destructor iterator'
+`nnS_^
+`omni callsig'
+`placement delete closure'
+`placement delete[] closure'
+`scalar deleting destructor'
+`string'
+`typeof'
+`udt returning'
+`v<?ra4+~y(5
+`vbase destructor'
+`vbtable'
+`vcall'
+`vector constructor iterator'
+`vector copy constructor iterator'
+`vector deleting destructor'
+`vector destructor iterator'
+`vector vbase constructor iterator'
+`vector vbase copy constructor iterator'
+`vftable'
+`virtual displacement map'
+`{o*t{
+`}yfn_
+a'aCaYb"b8b
+aAWCv+~
+aN:&LC
+aO/'c8
+aWu+`D^Z
+aY#XeY
+aYN+l?
+aacute
+abcdefghijklmnopqrstuvwxyz
+abreve
+acegmnopqrsuvwxy
+acircumflex
+acspAPPL
+ad'rI&
+adieresis
+adv(_{=
+aeacute
+afii00208
+afii08941
+afii10017
+afii10018
+afii10019
+afii10020
+afii10021
+afii10022
+afii10023
+afii10024
+afii10025
+afii10026
+afii10027
+afii10028
+afii10029
+afii10030
+afii10031
+afii10032
+afii10033
+afii10034
+afii10035
+afii10036
+afii10037
+afii10038
+afii10039
+afii10040
+afii10041
+afii10042
+afii10043
+afii10044
+afii10045
+afii10046
+afii10047
+afii10048
+afii10049
+afii10050
+afii10051
+afii10052
+afii10053
+afii10054
+afii10055
+afii10055.alt
+afii10056
+afii10056.alt
+afii10057
+afii10058
+afii10059
+afii10060
+afii10061
+afii10062
+afii10065
+afii10066
+afii10067
+afii10068
+afii10069
+afii10070
+afii10071
+afii10072
+afii10073
+afii10074
+afii10075
+afii10076
+afii10077
+afii10078
+afii10079
+afii10080
+afii10081
+afii10082
+afii10083
+afii10084
+afii10085
+afii10086
+afii10087
+afii10088
+afii10089
+afii10090
+afii10091
+afii10092
+afii10093
+afii10094
+afii10095
+afii10096
+afii10097
+afii10098
+afii10099
+afii10100
+afii10101
+afii10102
+afii10103
+afii10104
+afii10105
+afii10106
+afii10107
+afii10108
+afii10109
+afii10110
+afii10145
+afii10193
+afii61248
+afii61289
+afii61352
+agrave
+alphatonos
+alt + 
+amM]/xAe
+amacron
+america
+american
+american english
+american-english
+ampersand
+ampersandsmall
+anoteleia
+aogonek
+approxequal
+aringacute
+asciicircum
+asciitilde
+asterisk
+asuperior
+atilde
+atpyn]3
+attribute  vec2 position;uniform  vec2 screenSize;uniform  float textureBounds[4];uniform  vec2 vOffsetAndScale;varying  vec2 texturePos;void main(){ vec2 scaled = position / (0.5 * screenSize.xy);gl_Position = vec4 (scaled.x - 1.0, 1.0 - scaled.y, 0, 1.0);texturePos = (position - vec2 (textureBounds[0], textureBounds[1])) / vec2 (textureBounds[2], textureBounds[3]);texturePos = vec2 (texturePos.x, vOffsetAndScale.x + vOffsetAndScale.y * texturePos.y);}
+attribute vec2 position;attribute vec4 colour;uniform vec4 screenBounds;varying  vec4 frontColour;varying  vec2 pixelPos;void main(){frontColour = colour;vec2 adjustedPos = position - screenBounds.xy;pixelPos = adjustedPos;vec2 scaledPos = adjustedPos / screenBounds.zw;gl_Position = vec4 (scaledPos.x - 1.0, 1.0 - scaledPos.y, 0, 1.0);}
+australian
+autofitter
+axo]|l
+axubbuva9<<98==
+a{Qo~?!
+a{qvdf
+a{tg8Y
+b.pkK=
+b6GSij
+b:Q1eQ
+bKGD must be after
+bLp\{rq
+bO}*j4
+bS(gS&
+b\%MHB
+b][O>i
+b`#!-,KSX
+backslash
+backspace
+bad allocation
+bad cast
+bad compression info
+bad compression method
+bad exception
+bad height format
+bad keyword
+bad parameters to zlib
+bad width format
+belgian
+bi.l&2
+bm!l(d!(!
+bnMXAT
+bo*wc/Z
+bottom
+bottomLeft
+bq.BLD>t
+braceleft
+braceright
+bracketleft
+bracketright
+breveacutecomb
+brevegravecomb
+brevehookcomb
+brevetildecomb
+britain
+brokenbar
+bsO`HW
+bsuperior
+bs~]Gq
+btMHt@HH
+buffer error
+bullet
+bwubbsw^8==88==
+c#}]At
+c(?yL?X1
+c*k\#*:<C
+c/}Ai|
+c4$5m5
+cD~)n{
+cHRM chunk does not match sRGB
+cN>PuM
+cUD,GO
+cZcccqc
+c\cmcud
+c]cO[Z;Y|
+c^^arji^5p4
+c_T>jgG
+cacute
+canadian
+capStyle
+caroncommaaccent
+cbTz?k
+ccaron
+ccedilla
+ccircumflex
+cedilla
+centinferior
+centoldstyle
+centsuperior
+cfU8jV
+cfn!;W
+chinese
+chinese-hongkong
+chinese-simplified
+chinese-singapore
+chinese-traditional
+chn_38
+cinunmraBODA1tal
+cinuu'
+circumflex
+circumflexacutecomb
+circumflexgravecomb
+circumflexhookcomb
+circumflextildecomb
+ck>sn=
+click to browse for a different file
+closefile
+cnY-G6
+colonmonetary
+colour
+colours
+commaaccent
+commaaccentrotate
+commainferior
+command
+commasuperior
+compressed data too long
+continue
+control
+copyright
+copyright violation: edited ICC profile ignored
+coq4Ou
+cornerSize
+csqA(?
+ctrl + 
+currency
+cursor down
+cursor left
+cursor right
+cursor up
+curved
+cw_Jb|
+cxF/OM
+cyrillicbighookLC
+cyrillicbighookUC
+cyrillicbreve
+cyrillichookleft
+d#da\X
+d$ j$[
+d$,SWP
+d$0j$^
+d$4j![
+d$<j$^
+d$@SWP
+d0Ge0&d
+d2d1.dll
+d8VSao`hvP
+d? cf>
+d?dljOd
+d@1.>8388E
+dA|*8'
+dE@2?1@,8J7
+dFs 6B
+dL%IC>
+dV%AjU>
+dVD<Jm
+dY2&(X
+d]dbdpdyd
+da4)hZ^h
+daeht*
+dagger
+daggerdbl
+damaged LZ stream
+dasiaoxia
+data error
+dcaron
+dcroat
+dddd, MMMM dd, yyyy
+deGd*+2_
+deeddcc
+deflateEnd failed (ignored)
+degree
+dehbt"
+delete
+deleteByTabComp_
+dieresis
+dieresistonos
+divide
+dollar
+dollarinferior
+dollaroldstyle
+dollarsuperior
+dotaccent
+dotbelow
+dotlessi
+dotlessj
+dsuperior
+duplicate
+duplicate sRGB information ignored
+dutch-belgian
+e e%e.e=eM
+e+rGEw
+e/"_k-]
+e1C7f7l7
+e2b^w]
+e7?>4PW
+e9b1e%R
+e>~LFhD
+e@2%&&))#
+eK%IC>
+eKn[[5e
+e],,)/
+eacute
+ebegeq
+ebreve
+ecaron
+ecircumflex
+edieresis
+edotaccent
+egrave
+eight.os
+eightinferior
+eightoldstyle
+eightsuperior
+ellipsis
+em\t{.
+emacron
+emdash
+empty distance tree with lengths
+endash
+england
+english-american
+english-aus
+english-belize
+english-can
+english-caribbean
+english-ire
+english-jamaica
+english-nz
+english-south africa
+english-trinidad y tobago
+english-uk
+english-us
+english-usa
+eo6V<z|
+eogonek
+epsilon
+epsilontonos
+escape
+estimated
+esuperior
+etatonos
+etrefsre
+eu+-4&&2*
+ewh/?y
+exclam
+exclamdbl
+exclamdown
+exclamdownsmall
+exclamsmall
+extra compressed data
+eyqs5[UYU
+e|GBLym
+f!f=fEfwf
+f+NO&Ol
+f- 8f=
+f-00f=
+f2V`-g
+f90(Qc{
+f9D$Pu
+f9D$Tu
+f9D$Vu
+f;D$Rr
+f;HtsQf;PPsKV
+f;N,sc
+f;N,sy
+f;^PsWf;N,sQ
+f<II<?O
+fD~4kh^2{p^6g@n)
+fIyhBLK
+fN0Sf>
+fQWS{wTM
+f\,,)/Yi
+f\-+'1Zh
+f]-+'1Zif]-+'1Zi
+f^_v^K
+fast forward
+fcA2 6%3
+figuredash
+fijkdbh
+file error
+five.os
+fiveeighths
+fiveinferior
+fiveoldstyle
+fivesuperior
+florin
+fm\0=/N^
+fm{zkl{zl
+fontHScale
+fontHeight
+for Pizza when we needed it
+for a lot of great coding
+for all those endless caffeine shots
+for counting the beans
+for finding the bugs no one thought of yet
+for making it all possible. We owe you!
+for making it beautiful
+for setting the specification bar high & user perspective
+forcing save of an unhandled chunk; please call png_set_keep_unknown_chunks
+four.os
+fourinferior
+fouroldstyle
+foursuperior
+fpgm~a
+fraction
+french-belgian
+french-canadian
+french-luxembourg
+french-swiss
+fs-=5n
+function
+g )bkWv
+g"9+>{
+g"gNgdgug
+g#SGgBs'
+g(8~gOt
+g0$Gc?
+g0g8g@g
+g3euRN?
+g3z}2o
+g5g>gK
+g9u~n{
+g:{>E|
+gCvMBm
+gH9CM_V\q
+gNt4OVT
+gU?FD7
+gZgnhKhWhci
+g\k"Gcz
+g]^g]Sfs
+g]a^+^B^
+g]pgn<8
+g`Z'rnn
+g`d+WIaY
+gamma table being rebuilt
+gamma value does not match libpng estimate
+gamma value does not match sRGB
+gamma value out of range
+gbreve
+gbreve.alt
+gc8kb2
+gcircumflex
+gcircumflex.alt
+gcommaaccent
+gcommaaccent.alt
+gdot.alt
+german-austrian
+german-lichtenstein
+german-luxembourg
+german-swiss
+germandbls
+glActiveTexture
+glAttachShader
+glBindBuffer
+glBindFramebuffer
+glBindFramebufferEXT
+glBindRenderbuffer
+glBindRenderbufferEXT
+glBindTexture
+glBlendFunc
+glBufferData
+glBufferSubData
+glCheckFramebufferStatus
+glCheckFramebufferStatusEXT
+glClear
+glClearColor
+glCompileShader
+glCreateProgram
+glCreateShader
+glDeleteBuffers
+glDeleteFramebuffers
+glDeleteFramebuffersEXT
+glDeleteProgram
+glDeleteRenderbuffers
+glDeleteRenderbuffersEXT
+glDeleteShader
+glDeleteTextures
+glDisable
+glDisableVertexAttribArray
+glDrawArrays
+glDrawElements
+glEnable
+glEnableVertexAttribArray
+glFramebufferRenderbuffer
+glFramebufferRenderbufferEXT
+glFramebufferTexture2D
+glFramebufferTexture2DEXT
+glGenBuffers
+glGenFramebuffers
+glGenFramebuffersEXT
+glGenRenderbuffers
+glGenRenderbuffersEXT
+glGenTextures
+glGetAttribLocation
+glGetError
+glGetFramebufferAttachmentParameteriv
+glGetFramebufferAttachmentParameterivEXT
+glGetIntegerv
+glGetProgramInfoLog
+glGetProgramiv
+glGetRenderbufferParameteriv
+glGetRenderbufferParameterivEXT
+glGetShaderInfoLog
+glGetShaderiv
+glGetString
+glGetUniformLocation
+glIsFramebuffer
+glIsFramebufferEXT
+glIsRenderbuffer
+glIsRenderbufferEXT
+glLinkProgram
+glPixelStorei
+glReadPixels
+glRenderbufferStorage
+glRenderbufferStorageEXT
+glScissor
+glShaderSource
+glTexImage2D
+glTexParameteri
+glTexSubImage2D
+glUniform1f
+glUniform1fv
+glUniform1i
+glUniform2f
+glUniform3f
+glUniform4f
+glUniform4i
+glUniformMatrix2fv
+glUniformMatrix3fv
+glUniformMatrix4fv
+glUseProgram
+glVertexAttribPointer
+glViewport
+glyft8
+glyph-dict
+grT8k.
+gradient
+gradientInfo
+gradientTexture
+great britain
+greater
+greaterequal
+grj/xo
+grxz=s
+guillemotleft
+guillemotright
+guilsinglleft
+guilsinglright
+gzM\Ou
+gzlpPO
+g~7g~z
+h FDBW
+h"E:KB
+h#KQX# E d
+h/hghyh
+h3GFcz#
+h7f"dx
+h<X{#^
+hD-,E#F`
+hGo>b=
+hIST must be after
+hTDBEV
+hTLCPV
+hZ,,(0
+hZ-+'1Zhf\
+h^N~a/
+hacolV
+haehhV
+haehvV
+haga1/
+hcircumflex
+header crc mismatch
+height
+hemanP
+hfylgS
+hfylgV
+hgDGOR
+hmgpfV
+hnrekS
+holland
+hong-kong
+hpamcV
+hperpV
+hpxamP
+htadbV
+htsopV
+http://ocsp.verisign.com0
+http://ocsp.verisign.com01
+http://ocsp.verisign.com0?
+http://www.cymaticaudio.com
+https://www.verisign.com/cps0*
+https://www.verisign.com/rpa0
+hungarumlaut
+hxtmhW
+hyphen
+hypheninferior
+hyphensuperior
+h|v?|v
+h~]an{~
+i"*U^H
+i#?t}&"
+i&`%$+
+i(i4i:iP
+i-33--44
+i2N~JT
+iBhd(B5C
+iCCPICC Profile
+iC]"|c<k
+iK.p)pq
+iNPBfX
+iPhone 4
+iPhone 6
+iPhone 6+
+iU[3oQ
+i[)~pfK
+i[Mi,qw
+i[NOik
+i]m^rzn
+i^^?(>
+i`]n]5
+iacute
+ibreve
+icircumflex
+icon152_embedded_png
+icon76_embedded_png
+icon_png
+idieresis
+ig4&s{u
+ignored in grayscale PNG
+igrave
+ikm|k=
+il`fA;
+imacron
+image/gif0!0
+imageId
+imageLimits
+imageOpacity
+imageTexture
+imb o9
+in use by IDAT
+incompatible version
+incomplete distance tree
+incomplete dynamic bit lengths tree
+incomplete literal/length tree
+inconsistent chromaticities
+inconsistent rendering intents
+incorrect data check
+incorrect header check
+incorrect length check
+infinity
+info@copperlan.org
+insert
+insufficient memory
+insufficient memory to read chunk
+integral
+intent outside defined range
+invalid
+invalid ICC profile color space
+invalid after png_start_read_image or png_read_update_info
+invalid bit length repeat
+invalid block type
+invalid chromaticities
+invalid code lengths set
+invalid data
+invalid distance code
+invalid distance too far back
+invalid distances set
+invalid embedded Abstract ICC profile
+invalid index
+invalid length
+invalid literal/length code
+invalid literal/lengths set
+invalid parameter count
+invalid rendering intent
+invalid sRGB rendering intent
+invalid signature
+invalid stored block lengths
+invalid string position
+invalid unit
+invalid values
+invalid window size
+invalid with alpha channel
+iogonek
+iosUkl
+ios_base::badbit set
+ios_base::eofbit set
+ios_base::failbit set
+iotadieresis
+iotadieresistonos
+iotatonos
+irish-english
+isFixedPitch
+isuperior
+italian-swiss
+itilde
+iwIqR6
+j"^SSSSS
+j&X_[^
+j46*~p
+j@j ^V
+jEjHMyrh
+jQ^9u|s
+jSNdfE
+jWQPZ8DF
+j]$=cC
+j]kx7E
+j`X_^[]
+jbX_^[
+jcclr_
+jcircumflex
+jl=dqC
+jointStyle
+jpeg;jpg
+juceAppLock_
+juceGLComponentOverlayShader
+justification
+j{6E={}
+j|U0aV
+k k.k;m
+k,,,<Y
+k-&O.$Zp
+k.`}Z@
+k/Mf[vQOd
+k4VPWil
+k8(>,>0>4>8><>@>D>H>L>P>v?
+k:-u>X+
+k<}:7c
+k=sxW{
+k>{(N|
+kCd${]D<gMx*wUx
+kDR{e'
+kE@2?0A+7DA
+kOD=D+#Z-6w
+kS%MHB
+k]\k+G
+k^/7GNGL
+k^4CB1'
+k^VkVnod^WjgS``gIA;O7EE>LLZ
+k^}qM^s
+kcommaaccent
+kernT+
+kernel32
+kerning
+keyword "@1": bad character '0x@2'
+keyword truncated
+kgreenlandic
+kh@ee%
+kl>WC\
+knc_gae?`ie?ej
+known incorrect sRGB profile
+krZBWf
+ks1W{%
+kt^:<V}
+kw'<uOJz
+kwuwUWuu
+kyYwLj
+kz4FpGQ
+l,13gq
+l,P\X}z
+l,kg<i
+l/kdz9 
+l;~\s.
+lE^c65
+lElblrl
+lPaV]j
+lQ|{m[|
+laKYUON0
+lacute
+lambda
+lcaron
+lcommaaccent
+lenBuildCharArray
+length does not match profile
+lessequal
+lfp'7r
+lgIm'(4
+li=lXoj
+libpng does not support gamma+background+rgb_to_gray
+libpng error: %s
+libpng warning: %s
+llriKN
+logicalnot
+logo_cymatic_cmyk_png
+lozenge
+lslash
+lsuperior
+ltuou!
+m  7@9
+m 275.01403,577.33795 -11.99556,7.44987 m 11.99556,-7.44987 0,-19.06663 m 1.95025,19.13548 c 0,1.06019 -0.89943,1.91964 -2.00893,1.91964 -1.1095,0 -2.00893,-0.85945 -2.00893,-1.91964 0,-1.06019 0.89943,-1.91964 2.00893,-1.91964 1.1095,0 2.00893,0.85945 2.00893,1.91964 z m 23.05103,-0.0688 c 0,13.80782 -11.19345,25.00128 -25.00127,25.00128 -13.80782,0 -25.00128,-11.19346 -25.00128,-25.00128 0,-13.80782 11.19346,-25.00127 25.00128,-25.00127 13.80782,0 25.00127,11.19345 25.00127,25.00127 z
+m 529.28571,787.7193 10.35714,0 0,31.96429 -10.35714,0 z m -14.4643,0 10.53571,0 0,31.96429 -10.53571,0 z
+m-F!vr
+m4WT{i/
+m;N\s/
+m=~wvn\
+m??OUo=}M`
+mFJeU+
+mGhy'B'
+mLE1FU
+mLogH=
+mPQoqONo
+mRmom}m
+mTP03@MH
+m[S@{-
+m^mY7:
+macron
+mailto:
+malformed sPLT chunk
+maskBounds
+maskTexture
+matrix
+maximise
+mb9bv)c
+mb=}c-
+mc-7s{
+md^ddiX`m
+minimise
+minute
+missing LZ dictionary
+mj>zjZ
+mk6 /?l
+mkY6;Yv
+mntrRGB XYZ 
+mp.,;0m^
+mp.,=.m^
+ms7h+j
+ms7hKjT
+msuperior
+mtWcI62
+multi-masters
+multiply
+myby<U
+m{zkl{zl
+n :yQz
+n#YiuuGc
+n$V2$%
+n%'I~Hj
+n,>ork
+n-99-Q,,
+n6otjtl
+n:@ujmm
+n;XVNH
+n@g6As7BW
+nF>K|JL
+nWtp'T
+n^04Q=
+nacute
+napostrophe
+ncaron
+ncommaaccent
+need dictionary
+new-zealand
+nine.os
+nineinferior
+nineoldstyle
+ninesuperior
+nm;^x?*
+no space in chunk cache
+non-positive height
+non-positive width
+nonZeroWinding
+nonbreakingspace
+nonmarkingreturn
+norwegian
+norwegian-bokmal
+norwegian-nynorsk
+notequal
+nr|A7:
+nsuperior
+ntilde
+ntrIGLbi{
+numbersign
+numpad 
+n}\"dS<K
+o1.z{l
+o6q`2W
+o?utna
+oCV[|`q
+oEmK`IMoha
+oEoOoZoaozo
+oGN%-%D1~
+oMKV /
+oP<@Gb
+oSTmHsk%
+oV>f%d
+oXc=4/
+o]!pUKu
+oacute
+obreve
+ocircumflex
+odieresis
+ogPWH!
+ogonek
+ograve
+ohungarumlaut
+ole32.dll
+om,'X?
+omacron
+omegatonos
+omicron
+omicrontonos
+omn~d[
+one.os
+one.pnum
+onedotenleader
+oneeighth
+onefitted
+onehalf
+oneinferior
+oneoldstyle
+onequarter
+onesuperior
+onethird
+opacity
+option
+ordfeminine
+ordmasculine
+originalImageHadAlpha
+oslash
+oslashacute
+osuperior
+otilde
+our8R|s
+out of memory
+out of place
+out-of-date sRGB profile with no signature
+overlay
+overscore
+oversubscribed distance tree
+oversubscribed dynamic bit lengths tree
+oversubscribed literal/length tree
+o|&;<]
+p#p7pP
+p#u9`<u)`9m6p#u4x#
+p$9r$}
+p(<$`_xK
+p(AG-`
+p*pGP_
+p+@D) 
+p293%5
+p2gJ8b
+p7>8&=J
+p<S8qt
+p<pNp`p
+pE`h:-, 
+pFv<r'
+pJR<7#-
+pNmiO?0
+pZ!>]$
+page down
+page up
+paint.net 4.0.5
+paint.net 4.0.5e
+paragraph
+parenleft
+parenleftinferior
+parenleftsuperior
+parenright
+parenrightinferior
+parenrightsuperior
+parent
+partialdiff
+password
+paused
+pbf.3f
+percent
+period
+periodcentered
+periodinferior
+periodsuperior
+perpuaj
+perthousand
+peseta
+pfr-metrics
+pgqx O
+plusminus
+pnKI{sq
+png_do_encode_alpha: unexpected call
+png_do_rgb_to_gray found nongray pixel
+png_set_filler is invalid for low bit depth gray output
+png_set_filler: inappropriate color type
+png_set_sPLT: invalid sPLT
+png_set_unknown_chunks now expects a valid location
+png_start_read_image/png_read_update_info: duplicate call
+point1
+point2
+point3
+portuguese-brazilian
+position
+postscript-cmaps
+postscript-font-name
+postscript-info
+pr china
+pr-china
+pre-loading
+pre-recording
+product
+profile '
+profile matches sRGB but writing iCCP instead
+pshinter
+psnames
+puerto-rico
+q$;p$t
+q-dlst
+q4..421124..4211
+q4;q0|
+q4qIqQ
+q9568877
+q=`W,G
+qHn*kb
+qVT=.J,
+qYqaqnq
+qbgns^\
+qd!3}Y
+qhW"'x
+qj+t<rca
+qlitsjkr
+qm|Fb!
+qp85g$;
+question
+questiondown
+questiondownsmall
+questionsmall
+quotedbl
+quotedblbase
+quotedblleft
+quotedblright
+quoteleft
+quotereversed
+quoteright
+quotesinglbase
+quotesingle
+qw05VM/
+q|mkir
+r(;p(t
+r(ANNt(
+r*r4r;
+r-y1t}
+r-y1t~
+r0G<Cgu
+r0yO`QZl`Kzt`GZT
+r3*1mU
+r7Yr7=
+r;n;kk
+rCE 3t
+rNf-tl
+rS]Imv
+r_p48<'%-*JiF
+r_z/pX
+racute
+radial
+radical
+raster1
+raster5
+rcaron
+rcommaaccent
+rd'"t`9
+registered
+resource.frk/
+return
+rewind
+ri-Wg ]<
+rn}m #
+rpoZ1kc
+rsuperior
+runtime error 
+rupiah
+rvusspp
+s #l&R
+s ;\$0
+s&;\$0
+s.V?G|(U_
+s/<[)_
+s/mm;V
+s1s:sHsX
+s1s|pg
+s=.%d{
+s@?j@B
+sFC! *93_
+sFsTo}
+sI<Ppk
+sK%)$IV
+sL=s{h?
+sLaR4I
+sMc&?s$m
+sPLT chunk has bad length
+sPLT chunk requires too much memory
+sPLT chunk too long
+sPLT out of memory
+sU0&?W
+s[.VNH 10
+s[S;7|G;w
+sacute
+scaron
+scedilla
+scircumflex
+scommaaccent
+screenBounds
+screenSize
+second
+seconds. 
+section
+semicolon
+separator
+seven.os
+seveneighths
+seveninferior
+sevenoldstyle
+sevensuperior
+sfnt-table
+shift + 
+shortcut
+shortcut: '
+sigma1
+six.os
+sixinferior
+sixoldstyle
+sixsuperior
+slovak
+smf^Yg
+smooth
+smooth-lcd
+smooth-lcdv
+south africa
+south korea
+south-africa
+south-korea
+spacebar
+spanish-argentina
+spanish-bolivia
+spanish-chile
+spanish-colombia
+spanish-costa rica
+spanish-dominican republic
+spanish-ecuador
+spanish-el salvador
+spanish-guatemala
+spanish-honduras
+spanish-mexican
+spanish-modern
+spanish-nicaragua
+spanish-panama
+spanish-paraguay
+spanish-peru
+spanish-puerto rico
+spanish-uruguay
+spanish-venezuela
+splashscreen_jpg
+square
+ssDY"&s
+sssN^5
+ssuperior
+starting playback
+starting recording
+stats0;5;stats1;4;stats2;3;stats3;2;stats4;1;stats5;0
+stereo
+sterling
+stream end
+stream error
+string too long
+strokeWidth
+suQPsqRSs
+summation
+swedish-finland
+sx2glr
+syw=Eu
+s|ta;/
+s}So\F
+t /o~wY
+t VV9u
+t"SS9]
+t$(WSV
+t$=OTTOt
+t&Ht Ht#HumV
+t&t=s;Z
+t(</t$<(t <)t
+t(hravf
+t*9@EUk
+t*9_$u"
+t+PPPQ
+t+RRRQ
+t+WWVPV
+t,sFgA
+t.9w(t
+t/9F\t*9F
+t/tOtet
+t0</t,<(t(<)t$<<t <>t
+t0Ht$Ht
+t3Nt#Nt
+t49_$~
+t4Ht,Ht%Ht"Ht
+t5Ot2Ot(Ot
+t7Ht,Ht!Ht
+t8Ht!HuT
+t8I97?
+t:It+I
+t@Ht-Ht:Ht
+tAHHt5Ht-HHt$
+tBJt4Jt)Jt
+tBZN=8[
+tE99tA9y
+tEXtSoftware
+tEt..]Df~
+tGHt.Ht&
+tJIt It
+tLHt"Ht
+tN8^@uI
+tNIt?It0It 
+tQ97tM9u
+tR%N7i
+tR99u2
+tRHHt1Ht
+tRHtCHt4Ht%HtFHHt
+tRIIt1It
+tRNS chunk has out-of-range samples for bit_depth
+tRNS must be after
+tT8^At
+tW9W`tR
+tZIt<It*II
+t\f90tW9u
+t^Kt:Kt#Ku[
+t^Ot8Ot/Ouy
+t^f90tY3
+t`8S$t
+taHHtJHt2Ht
+taf9X t[f9X
+tag count too large
+tcaron
+tcedilla
+tcommaaccent
+tdF>;r
+text chunk: out of memory
+text compression mode is out of range
+textureBounds
+texture_orange_bottom_png
+tfJtKJt`Ju`9u
+tg8)sm0
+tgItXItDIt.Iup
+three.os
+threeeighths
+threeinferior
+threeoldstyle
+threequarters
+threequartersemdash
+threesuperior
+ti8S$t
+timeBeginPeriod
+timeGetTime
+tjHt8Ht
+tl9e~_
+tlSVW3
+toHtBHt)H
+too many length or distance symbols
+too many profiles
+too many sPLT chunks
+too many text chunks
+too many unknown chunks
+too short
+topLeft
+topRight
+tp9_ tk9_$tfj
+tr*V6:
+trHteHtIHt<Ht!Ht
+trademark
+trinidad & tobago
+truetype
+truetype-engine
+truncated
+tsuperior
+tt-cmaps
+tt-glyf
+tuj@X;
+tvo{=2v
+twItaItQIt<It+It
+two.os
+twodotenleader
+twoinferior
+twooldstyle
+twosuperior
+twothirds
+txHtMHt1H
+ty=rtnmt9
+type42
+tzHtEHt
+t{HtVHt3Ht
+t{JtYJt=Juz
+t{j@Y;
+u#;GL|
+u$9;} 
+u%f9>u f9~
+u&hfylg
+u'C;\$0
+u*b:g[
+u,VVWV
+u/*cwy
+u0G;~,v
+u<9Ghu.h
+u>~D|:
+u?^p?o4
+uH!FP!FT3
+uI9H@w2
+uK)}j=
+uRemote
+uTrack 
+uTrack 1-8
+uTrack in interface mode...
+uTrack in maintenance mode...
+uTrack-X32
+uTrack24
+uTrack24 Remote
+uVk>s/
+uWIZ;\J
+uX{8IL
+uY'kD?sm]](
+uZf9^ uTf9^0uNf9^@uHf9^PuBf9^`u<f9^pu6
+u[I_{`
+u]f9Z uWf9Z0uQf9Z@uKf9ZPuEf9Z`u?f9Zpu9
+u_8]2uZ8]:uU8]
+u`kx-v
+uacute
+ub@@AA@
+ubGzeWJ
+ubreve
+ucf9Y u]f9Y0uWf9Y@uQf9YPuKf9Y`uEf9Ypu?
+ucircumflex
+ud7f@II
+udieresis
+ugrave
+ugx\yv
+uhungarumlaut
+uij(PV
+umacron
+un%gG.8
+undefined
+underscore
+underscoredbl
+unexpected DeviceLink ICC profile class
+unexpected ICC PCS encoding
+unexpected NamedColor ICC profile class
+unexpected end of LZ stream
+unexpected zlib return
+unexpected zlib return code
+uni00AD
+uni01F0
+uni02BC
+uni02F3
+uni0300
+uni0301
+uni0303
+uni030F
+uni0394
+uni03A9
+uni03BC
+uni03D1
+uni03D2
+uni03D6
+uni0400
+uni040D
+uni0450
+uni045D
+uni0460
+uni0461
+uni0462
+uni0463
+uni0464
+uni0465
+uni0466
+uni0467
+uni0468
+uni0469
+uni046A
+uni046B
+uni046C
+uni046D
+uni046E
+uni046F
+uni0470
+uni0471
+uni0472
+uni0473
+uni0474
+uni0475
+uni0476
+uni0477
+uni0478
+uni0479
+uni047A
+uni047B
+uni047C
+uni047D
+uni047E
+uni047F
+uni0480
+uni0481
+uni0482
+uni0483
+uni0484
+uni0485
+uni0486
+uni0488
+uni0489
+uni048A
+uni048B
+uni048C
+uni048D
+uni048E
+uni048F
+uni0492
+uni0493
+uni0494
+uni0495
+uni0496
+uni0497
+uni0498
+uni0499
+uni049A
+uni049B
+uni049C
+uni049D
+uni049E
+uni049F
+uni04A0
+uni04A1
+uni04A2
+uni04A3
+uni04A4
+uni04A5
+uni04A6
+uni04A7
+uni04A8
+uni04A9
+uni04AA
+uni04AB
+uni04AC
+uni04AD
+uni04AE
+uni04AF
+uni04B0
+uni04B1
+uni04B2
+uni04B3
+uni04B4
+uni04B5
+uni04B6
+uni04B7
+uni04B8
+uni04B9
+uni04BA
+uni04BB
+uni04BC
+uni04BD
+uni04BE
+uni04BF
+uni04C0
+uni04C0.alt
+uni04C1
+uni04C2
+uni04C3
+uni04C4
+uni04C5
+uni04C6
+uni04C7
+uni04C8
+uni04C9
+uni04CA
+uni04CB
+uni04CC
+uni04CD
+uni04CE
+uni04CF
+uni04CF.alt
+uni04D0
+uni04D1
+uni04D2
+uni04D3
+uni04D4
+uni04D5
+uni04D6
+uni04D7
+uni04D8
+uni04D9
+uni04DA
+uni04DB
+uni04DC
+uni04DD
+uni04DE
+uni04DF
+uni04E0
+uni04E1
+uni04E2
+uni04E3
+uni04E4
+uni04E5
+uni04E6
+uni04E7
+uni04E8
+uni04E9
+uni04EA
+uni04EB
+uni04EC
+uni04ED
+uni04EE
+uni04EF
+uni04F0
+uni04F1
+uni04F2
+uni04F3
+uni04F4
+uni04F5
+uni04F6
+uni04F7
+uni04F8
+uni04F9
+uni04FA
+uni04FB
+uni04FC
+uni04FD
+uni04FE
+uni04FF
+uni0500
+uni0501
+uni0502
+uni0503
+uni0504
+uni0505
+uni0506
+uni0507
+uni0508
+uni0509
+uni050A
+uni050B
+uni050C
+uni050D
+uni050E
+uni050F
+uni0510
+uni0511
+uni0512
+uni0513
+uni1E00
+uni1E01
+uni1E3E
+uni1E3F
+uni1EA0
+uni1EA1
+uni1EA2
+uni1EA3
+uni1EA4
+uni1EA5
+uni1EA6
+uni1EA7
+uni1EA8
+uni1EA9
+uni1EAA
+uni1EAB
+uni1EAC
+uni1EAD
+uni1EAE
+uni1EAF
+uni1EB0
+uni1EB1
+uni1EB2
+uni1EB3
+uni1EB4
+uni1EB5
+uni1EB6
+uni1EB7
+uni1EB8
+uni1EB9
+uni1EBA
+uni1EBB
+uni1EBC
+uni1EBD
+uni1EBE
+uni1EBF
+uni1EC0
+uni1EC1
+uni1EC2
+uni1EC3
+uni1EC4
+uni1EC5
+uni1EC6
+uni1EC7
+uni1EC8
+uni1EC8.alt
+uni1EC9
+uni1ECA
+uni1ECA.alt
+uni1ECB
+uni1ECC
+uni1ECD
+uni1ECE
+uni1ECF
+uni1ED0
+uni1ED1
+uni1ED2
+uni1ED3
+uni1ED4
+uni1ED5
+uni1ED6
+uni1ED7
+uni1ED8
+uni1ED9
+uni1EDA
+uni1EDB
+uni1EDC
+uni1EDD
+uni1EDE
+uni1EDF
+uni1EE0
+uni1EE1
+uni1EE2
+uni1EE3
+uni1EE4
+uni1EE5
+uni1EE6
+uni1EE7
+uni1EE8
+uni1EE9
+uni1EEA
+uni1EEB
+uni1EEC
+uni1EED
+uni1EEE
+uni1EEF
+uni1EF0
+uni1EF1
+uni1EF4
+uni1EF5
+uni1EF6
+uni1EF7
+uni1EF8
+uni1EF9
+uni1F4D
+uni2000
+uni2001
+uni2002
+uni2003
+uni2004
+uni2005
+uni2006
+uni2007
+uni2008
+uni2009
+uni200A
+uni200B
+uni20AB
+uni2120
+uniFB01
+uniFB02
+uniFB03
+uniFB04
+uniFEFF
+uniFFFC
+uniFFFD
+uniform  vec2 imageLimits;uniform  float matrix[6];attribute vec2 position;attribute vec4 colour;uniform vec4 screenBounds;varying  vec4 frontColour;varying  vec2 texturePos;void main(){frontColour = colour;vec2 adjustedPos = position - screenBounds.xy;vec2 pixelPos = adjustedPos;texturePos = clamp ((mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])), vec2 (0, 0), imageLimits);vec2 scaledPos = adjustedPos / screenBounds.zw;gl_Position = vec4 (scaledPos.x - 1.0, 1.0 - scaledPos.y, 0, 1.0);}
+uniform sampler2D gradientTexture;uniform  vec4 gradientInfo;varying  vec4 frontColour;varying  vec2 pixelPos;uniform sampler2D maskTexture;uniform ivec4 maskBounds;void main(){ float gradientPos = (pixelPos.x - (gradientInfo.x + (gradientInfo.z * (pixelPos.y - gradientInfo.y)))) / gradientInfo.w;gl_FragColor = (frontColour.a * texture2D (gradientTexture, vec2 (gradientPos, 0.5))) * texture2D (maskTexture, vec2 ((pixelPos.x - float (maskBounds.x)) / float (maskBounds.z),1.0 - (pixelPos.y - float (maskBounds.y)) / float (maskBounds.w))).a;}
+uniform sampler2D gradientTexture;uniform  vec4 gradientInfo;varying  vec4 frontColour;varying  vec2 pixelPos;uniform sampler2D maskTexture;uniform ivec4 maskBounds;void main(){ float gradientPos = (pixelPos.y - (gradientInfo.y + (gradientInfo.z * (pixelPos.x - gradientInfo.x)))) / gradientInfo.w;gl_FragColor = (frontColour.a * texture2D (gradientTexture, vec2 (gradientPos, 0.5))) * texture2D (maskTexture, vec2 ((pixelPos.x - float (maskBounds.x)) / float (maskBounds.z),1.0 - (pixelPos.y - float (maskBounds.y)) / float (maskBounds.w))).a;}
+uniform sampler2D gradientTexture;uniform  vec4 gradientInfo;varying  vec4 frontColour;varying  vec2 pixelPos;void main(){ float gradientPos = (pixelPos.x - (gradientInfo.x + (gradientInfo.z * (pixelPos.y - gradientInfo.y)))) / gradientInfo.w;gl_FragColor = (frontColour.a * texture2D (gradientTexture, vec2 (gradientPos, 0.5)));}
+uniform sampler2D gradientTexture;uniform  vec4 gradientInfo;varying  vec4 frontColour;varying  vec2 pixelPos;void main(){ float gradientPos = (pixelPos.y - (gradientInfo.y + (gradientInfo.z * (pixelPos.x - gradientInfo.x)))) / gradientInfo.w;gl_FragColor = (frontColour.a * texture2D (gradientTexture, vec2 (gradientPos, 0.5)));}
+uniform sampler2D imageTexture;uniform  vec2 imageLimits;uniform  float matrix[6];varying  vec4 frontColour;varying  vec2 pixelPos;uniform sampler2D maskTexture;uniform ivec4 maskBounds;void main(){ vec2 texturePos = clamp ((mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])), vec2 (0, 0), imageLimits);gl_FragColor = frontColour.a * texture2D (imageTexture, vec2 (texturePos.x, 1.0 - texturePos.y)) * texture2D (maskTexture, vec2 ((pixelPos.x - float (maskBounds.x)) / float (maskBounds.z),1.0 - (pixelPos.y - float (maskBounds.y)) / float (maskBounds.w))).a;}
+uniform sampler2D imageTexture;uniform  vec2 imageLimits;uniform  float matrix[6];varying  vec4 frontColour;varying  vec2 pixelPos;uniform sampler2D maskTexture;uniform ivec4 maskBounds;void main(){ vec2 texturePos = mod ((mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])), imageLimits);gl_FragColor = frontColour.a * texture2D (imageTexture, vec2 (texturePos.x, 1.0 - texturePos.y)) * texture2D (maskTexture, vec2 ((pixelPos.x - float (maskBounds.x)) / float (maskBounds.z),1.0 - (pixelPos.y - float (maskBounds.y)) / float (maskBounds.w))).a;}
+uniform sampler2D imageTexture;uniform  vec2 imageLimits;uniform  float matrix[6];varying  vec4 frontColour;varying  vec2 pixelPos;void main(){ vec2 texturePos = (mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])); float roundingError = 0.00001;if (texturePos.x >= -roundingError&& texturePos.y >= -roundingError&& texturePos.x <= imageLimits.x + roundingError&& texturePos.y <= imageLimits.y + roundingError)gl_FragColor = frontColour * texture2D (imageTexture, vec2 (texturePos.x, 1.0 - texturePos.y)).a;else gl_FragColor = vec4 (0, 0, 0, 0);}
+uniform sampler2D imageTexture;uniform  vec2 imageLimits;uniform  float matrix[6];varying  vec4 frontColour;varying  vec2 pixelPos;void main(){ vec2 texturePos = mod ((mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])), imageLimits);gl_FragColor = frontColour.a * texture2D (imageTexture, vec2 (texturePos.x, 1.0 - texturePos.y));}
+uniform sampler2D imageTexture;varying  vec2 texturePos;void main(){gl_FragColor = texture2D (imageTexture, texturePos);}
+uniform sampler2D maskTexture;uniform ivec4 maskBounds;varying  vec4 frontColour;varying  vec2 pixelPos;void main() {gl_FragColor = frontColour * texture2D (maskTexture, vec2 ((pixelPos.x - float (maskBounds.x)) / float (maskBounds.z),1.0 - (pixelPos.y - float (maskBounds.y)) / float (maskBounds.w))).a;}
+united-kingdom
+united-states
+unknown chunk exceeds memory limits
+unknown chunk: out of memory
+unknown compression method
+unknown compression type
+unknown header flags set
+unrecognized ICC profile class
+unrecognized equation type
+unsupported zlib version
+uoXsX-/#%lH'
+uogonek
+upsilon
+upsilondieresis
+upsilondieresistonos
+upsilontonos
+us-cg*
+user32.dll
+utilde
+uu2}LMS<m
+uwgcPCBp8E?
+u|9\$htR
+v'x'%F
+v)OMJ$
+v+m*l-m2
+v/233u
+v3dD2N
+vGYCn5
+vOffsetAndScale
+vPf?]}
+varying  vec2 pixelPos;uniform sampler2D gradientTexture;uniform  float matrix[6];varying  vec4 frontColour;uniform sampler2D maskTexture;uniform ivec4 maskBounds;void main(){ float gradientPos = length ((mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])));gl_FragColor = (frontColour.a * texture2D (gradientTexture, vec2 (gradientPos, 0.5))) * texture2D (maskTexture, vec2 ((pixelPos.x - float (maskBounds.x)) / float (maskBounds.z),1.0 - (pixelPos.y - float (maskBounds.y)) / float (maskBounds.w))).a;}
+varying  vec2 pixelPos;uniform sampler2D gradientTexture;uniform  float matrix[6];varying  vec4 frontColour;void main(){ float gradientPos = length ((mat2 (matrix[0], matrix[3], matrix[1], matrix[4]) * pixelPos + vec2 (matrix[2], matrix[5])));gl_FragColor = (frontColour.a * texture2D (gradientTexture, vec2 (gradientPos, 0.5)));}
+varying  vec4 frontColour;uniform sampler2D imageTexture;varying  vec2 texturePos;void main(){gl_FragColor = frontColour.a * texture2D (imageTexture, vec2 (texturePos.x, 1.0 - texturePos.y));}
+varying  vec4 frontColour;void main() { gl_FragColor = frontColour; }
+vbzn3>s
+vcALk1
+version
+vkiLkq
+vre\0@y
+vt6m9fR[z
+v|90~.
+w+OQvr
+w-}w$S
+w.Gg-W
+w/mYJ[
+w12o|3
+w4;w(s
+w5#+oi
+w<SSSS
+w=4On.
+wDwNwYw`wy
+wFs1NrT
+wG[Agt
+wIti'x
+wNNKq7
+w]D<oMx
+wacute
+wcircumflex
+wdieresis
+wglChoosePixelFormatARB
+wglCreateContext
+wglDeleteContext
+wglGetCurrentContext
+wglGetProcAddress
+wglGetSwapIntervalEXT
+wglMakeCurrent
+wglShareLists
+wglSwapIntervalEXT
+wgrave
+wine_get_version
+winfonts
+wkIGWg9[
+woIGBBi{B|Y[|
+wp:in?
+wsm}%B
+wuQe7w
+wvtx;D2
+www.inkscape.org
+w{B9:=
+w{KtpcSRTM}fbEmaZIuUvAeK~N
+w}V{/?~
+w~_u@vokhZ
+x$ltuou
+x4x<xox
+x62Tx&R
+x:?@94D
+x>xoxyx~
+xAj.Y~hz
+xHstib
+xIxRx[xe
+xP?{f]
+xT["(P
+xV{eyG
+xY#~s4
+xck%s$
+xe+k}sp:qv
+xf+/<}tp:pw
+xf86-driver-name
+xhc(#r
+xk_:sg
+xppwpp
+xpxxxx
+xzroesc
+y .1OkA
+y$+$43
+y'y6y?yMa
+y/`?2%
+y0VqQV?
+y1~?|"
+y8"ex$2ix8*ad
+y957nY
+y:;}'tw
+y;>B73F
+y<<?93F
+y?v|w/
+yC8)|+
+yR&bQbF@F
+yRTWI_
+yX?^$k
+y\ba^kTUi
+y`ja/~
+yacute
+ycircumflex
+ydieresis
+yfo!."N
+ygrave
+yi?d+*=I,u
+ykCO.<
+yl@V7s
+yo9T$$
+yoB'?s
+yxLw\!
+yx}ISJ`
+z'&c4*
+z-`gN^5
+z1KTw.
+z1~pVr9
+z4O~]S
+z6{#/x
+z8(Een
+z<E^0q
+z<zRz_zvz
+z?2n1_kL;
+z?3q6{h
+zGHFk3G
+zHltuo
+zHstibV
+zP2?Cs
+zQvO"i
+zR9k`{
+zR@Y23
+z`=kC[
+zacute
+zcaron
+zd[3u@
+zdotaccent
+zero.os
+zeroinferior
+zerooldstyle
+zerosuperior
+zhoM<Y
+zjWs-u
+zkRg_Y
+zkWgm]O-
+zkyoxp{j
+zlib IO error
+zr%oGt)b
+zr5gb 
+zstream unclaimed
+zto6c`
+zx\'4y
+zz)fT_
+zzzz{vv
+{&<2,B&
+{+vcy.
+{-$h:)
+{-:p0a
+{/&.sr
+{0O2S3T9}:
+{4TADIu
+{;t[<;
+{B.$*/;J1%Z
+{BgK>R
+{C[auZ_iz
+{G}md/
+{H3"6TJ~
+{Hltuou(
+{Hltuou*
+{Hpmoct
+{Hpmocu
+{Hstib
+{IDAT*
+{J2-Wz
+{N\NA:
+{_G}z[
+{`25r|$>e
+{`rg^Z
+{a<\8K
+{aw8^,J
+{bLW~K
+{feyyee|mA33B<94@
+{k{zQw
+{qK6@k
+{s9-Vp
+{sZv1z
+{u"$+u
+{u6zPg
+{};A"}r<
+{~}bN`
+|">9Qg
+|$<+|$4
+|';~h}"
+|)P!?Ua0
+|,S;7r
+|-aLGp
+|/<+1'<-
+|<Wrl_pb
+|=|K|^|n|
+|>ZT~J
+|E6,Qc
+|E=c~F
+|cE!_|
+|jD119M=
+|j|{Pw
+|mY Bh
+|rS%;O
+|u?!u$
+||8Ois`
+|~F2k|4?y
+}#^r'o
+}%}.}I
+},4o,8
+}-Do_r
+}-W>~v
+}-}5}F}W}
+}1xbd^
+}4{gDn
+}5%%77%%5
+}7Hegg+;;
+}9S?=1
+};a^}|?
+}=vOQS
+}>xhu_UB,
+}@@#$$))
+}AFJ=<IF?FAH?=HA
+}Bm62mHLda
+}DK'yO7
+}Dj@Y3
+}G@@GDAAD
+}H;zsd
+}IK;;OK3
+}K<r-^y
+}N;>?B
+}O,d;^:
+}P;f&I
+}U50RW
+}V'V;y
+}VKkvk&2%1
+}\9Eht
+}]hMonNPnp
+}_0)!F
+}i^dzVn.
+}kmI4/P[
+}m!x\>
+}nbWv}
+}z<q>\
+}}kduullvvkVKKkk\
+}}u)fB.
+~!.kH>
+~(9~$u
+~-n{Dn
+~-~E~W~
+~4TADIu
+~;a`vN
+~?9T$4t'
+~@?'(#,##3--9?3??
+~D9~<w
+~J;6;5O=]8
+~N}YVb
+~Pt.Hu{S
+~Xh)|;
+~``<In
+~aJ^3`
+~h+V6#{
+~hxTL\brjzfvn~aqIYEeuM]
+~j^0X6
+~jw-7k
+~oy7q=
+~t}HtX+
+~z/FJFXg

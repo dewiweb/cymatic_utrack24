@@ -1,0 +1,30 @@
+### fs ls
+fs ls
+ERROR: no filesystem available
+sds://>
+
+### fs ls sub
+fs ls "Multitrack Songs"
+ERROR: no filesystem available
+sds://>
+
+### get path
+get cne/AppSettings/Global/uTrackName
+ Name="uTrackName",  Value= uTrack
+sds://>
+
+### get path2
+get /cne/AppSettings/Global/DeviceMode
+ Name="DeviceMode",  Value= 0
+sds://>
+
+### cd+get
+cd cne/AppSettings/Global
+sds://cne/AppSettings/Global/>get uTrackName
+ Name="uTrackName",  Value= uTrack
+sds://cne/AppSettings/Global/>get DeviceMode
+ Name="DeviceMode",  Value= 0
+sds://cne/AppSettings/Global/>get SampleRate
+ Name="SampleRate",  Value= 2
+sds://cne/AppSettings/Global/>cd /
+sds://>

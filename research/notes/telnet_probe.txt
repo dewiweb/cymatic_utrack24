@@ -1,0 +1,516 @@
+### tree
+ls -r
+  d. static
+  d. cne
+    d. DisplaySettings
+      l. V5_Ratio
+      l. LCD_Bias
+      l. Volume
+    d. AppSettings
+      d. Global
+        l. SwVersion
+        l. BusBySwitch
+        l. BusType
+        l. StreamingInterface
+        l. SampleRate
+        l. DigitalIOFormat
+        l. SyncMode
+        l. USBConfigurationId
+        l. EnableMIDI
+        l. FootSwitchFunction
+        l. ClockSourceStandAlone
+        l. ClockSourceSync
+        l. ClockSourceInterface
+        l. uTrackName
+        l. uRemoteId
+        l. DeviceMode
+      d. MixerControl
+        l. CH01_Fader_dB
+        l. CH01_Pan
+        l. CH01_Mute
+        l. CH02_Fader_dB
+        l. CH02_Pan
+        l. CH02_Mute
+        l. CH03_Fader_dB
+        l. CH03_Pan
+        l. CH03_Mute
+        l. CH04_Fader_dB
+        l. CH04_Pan
+        l. CH04_Mute
+        l. CH05_Fader_dB
+        l. CH05_Pan
+        l. CH05_Mute
+        l. CH06_Fader_dB
+        l. CH06_Pan
+        l. CH06_Mute
+        l. CH07_Fader_dB
+        l. CH07_Pan
+        l. CH07_Mute
+        l. CH08_Fader_dB
+        l. CH08_Pan
+        l. CH08_Mute
+        l. CH09_Fader_dB
+        l. CH09_Pan
+        l. CH09_Mute
+        l. CH10_Fader_dB
+        l. CH10_Pan
+        l. CH10_Mute
+        l. CH11_Fader_dB
+        l. CH11_Pan
+        l. CH11_Mute
+        l. CH12_Fader_dB
+        l. CH12_Pan
+        l. CH12_Mute
+        l. CH13_Fader_dB
+        l. CH13_Pan
+        l. CH13_Mute
+        l. CH14_Fader_dB
+        l. CH14_Pan
+        l. CH14_Mute
+        l. CH15_Fader_dB
+        l. CH15_Pan
+        l. CH15_Mute
+        l. CH16_Fader_dB
+        l. CH16_Pan
+        l. CH16_Mute
+        l. CH17_Fader_dB
+        l. CH17_Pan
+        l. CH17_Mute
+        l. CH18_Fader_dB
+        l. CH18_Pan
+        l. CH18_Mute
+        l. CH19_Fader_dB
+        l. CH19_Pan
+        l. CH19_Mute
+        l. CH20_Fader_dB
+        l. CH20_Pan
+        l. CH20_Mute
+        l. CH21_Fader_dB
+        l. CH21_Pan
+        l. CH21_Mute
+        l. CH22_Fader_dB
+        l. CH22_Pan
+        l. CH22_Mute
+        l. CH23_Fader_dB
+        l. CH23_Pan
+        l. CH23_Mute
+        l. CH24_Fader_dB
+        l. CH24_Pan
+        l. CH24_Mute
+        l. CH25_Fader_dB
+        l. CH25_Pan
+        l. CH25_Mute
+        l. CH26_Fader_dB
+        l. CH26_Pan
+        l. CH26_Mute
+        l. MonitorBoost
+      d. Recording
+        l. SampleSize
+        l. TrackCount
+        l. SampleRate
+        l. PreRecording
+      d. Playback
+        l. PlaybackMode
+        l. StereoOutputs96K
+        l. StereoOutputs
+        l. OutputAttenuation
+        l. AutoPlay
+        l. MultitrackOutputsPostFader
+        l. StereoOutputsPostFader
+        d. Midi
+          l. MidiThru
+          l. MidiOffset
+      d. AnalogInputs
+        l. Inputs00to07
+        l. Inputs08to15
+        l. Inputs16to23
+      d. AudioLan
+        l. InterfaceAsInput
+      d. Adat
+        l. Input
+        d. Output48k
+          l. Outgroup01_08
+          l. Outgroup09_16
+          l. Outgroup17_24
+        d. Output96k
+          l. Outgroup01_08
+      d. Madi
+        l. Input
+        l. Mode
+        l. Frame
+        d. Output48k
+          l. Outgroup00_07
+          l. Outgroup08_15
+          l. Outgroup16_23
+          l. Outgroup24_31
+          l. Outgroup32_39
+          l. Outgroup40_47
+          l. Outgroup48_55
+          l. Outgroup56_63
+        d. Output96k
+          l. Outgroup00_07
+          l. Outgroup08_15
+          l. Outgroup16_23
+          l. Outgroup24_31
+      d. SavedSettings
+        l. SampleSize
+        l. TrackCount
+        l. SyncMode
+        l. ClockSourceStandAlone
+        l. ClockSourceSync
+        l. ClockSourceInterface
+        l. SampleRate
+        l. PlaybackMode
+        l. StereoOutputs96K
+        l. StereoOutputs
+        l. MidiThru
+        l. MidiOffset
+        l. OutputAttenuation
+        l. FootSwitchFunction
+        l. PreRecording
+        l. AutoPlay
+        l. MultitrackOutputsPostFader
+        l. StereoOutputsPostFader
+        l. DeviceMode
+        l. StaticIP
+        l. SubnetMask
+      d. FileStreaming
+        l. MaxHeapSize
+        l. MaxNoOfEncoders
+        l. MaxNoOfDecoders
+      d. USBDecoder
+        l. PlayoutDelay
+        l. NoOfElementsInQueue
+        l. Name
+      d. StreamingRingbuffer
+        l. MaxDelay
+      d. DSP
+        l. HWPacketDelay_32kHz
+        l. HWPacketDelay_44.1_48kHz
+        l. HWPacketDelay_88.2_96kHz
+        l. HWPacketDelay_176.4_192kHz
+      d. Sync
+        l. Mode
+        l. GroupId
+        l. SlaveIndex
+        l. Slave_1_Id
+        l. Slave_2_Id
+        l. Slave_3_Id
+      d. CopperLan
+        l. Enabled
+        l. DuplicateNumber
+        l. DuplicateMode
+        l. BrandID
+        l. BrandName
+        l. ModelID
+        l. Contact
+        d. Midi
+          l. Enabled
+          l. Mode
+          l. Name
+          l. ControlEnabled
+          l. ControlMode
+          l. ControlName
+    d. USB
+      d. DeviceInfo
+        l. VendorId
+        l. ProductId
+        l. ManufacturerName
+        l. ProductName
+      d. DFU
+        l. WillDetach
+        l. DetachTimeOut
+    d. System
+      d. Threads
+        d. default
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. isoStateMachine
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. cmdline_setupThread
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. USBDrvRxThread
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. USBStackImpl
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. PTP
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. PTP Timer
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. PTP Forwarder
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. lwIP
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. EthernetReceive
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. EthernetTransmit
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. EthernetLink
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. USB Decoder
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. RTP Decoder
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. DSPProcess
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. Explicit Feedback
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. Main UI Timer
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. UI Main Control
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. HalUIControl
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+        d. FileAccessHandler
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+          l. MaxQueuedJobs
+          l. WaitTimeBetweenJobs
+        d. StreamingMessenger
+          l. stackSize
+          l. memType
+          l. priority
+          l. preemptThreshold
+          l. timeSlice
+          l. MaxQueuedMessages
+    d. Networking
+      d. IpCfg
+        l. DeviceName
+        d. Config0
+          l. DHCPClient
+          l. IP
+          l. Mask
+          l. DefGW
+          l. Proxy
+          l. ProxyServer
+          l. ProxyServerPort
+          l. DNSSrv1
+          l. DNSSrv2
+          l. Hostname
+          l. AppendMAC
+    d. FirmwareUpdate
+      l. KeepBootloader
+    d. Config
+      l. Name
+      l. Version
+sds://>
+
+### get uTrackName
+get uTrackName
+ No leaf name "uTrackName" found
+sds://>
+
+### get DeviceMode
+get DeviceMode
+ No leaf name "DeviceMode" found
+sds://>
+
+### get SwVersion
+get SwVersion
+ No leaf name "SwVersion" found
+sds://>
+
+### get SampleRate
+get SampleRate
+ No leaf name "SampleRate" found
+sds://>
+
+### fileplay ?
+fileplay ?
+---- OVERVIEW ----
+fileplay             - configures, starts and stops file play
+---- DESCRIPTION ----
+fileplay route [<destChannel>|*],[<destChannel>|*],... (* = no routing) or reset
+fileplay configure <id> <fileName> <firstChannel> <playoutDelay> <noOfBuffers> <bufferSize> <noOfBuffersToPreload> <notifySampleInterval> {autostart} {<fileId> {{<switchSampleNumber>} {pause}}}
+fileplay stop {<id>}
+fileplay stat
+fileplay mode
+fileplay start
+fileplay pause
+fileplay next <id> <fileName> {<mark-in> {<mark-out> {<fileId> {<switchSampleNumber> {pause}}}}}
+fileplay next [preload|select]
+fileplay mark <id> <mark-in> {{<mark-out>} {pause}}
+fileplay samplecounter [start|stop|reset] {<sample_counter>} {<id}}
+fileplay select <id> <fileId> : Select next file with <fileId>
+fileplay clear <id> : Clear next files
+fileplay eof <id> [pause|continue] : Set/clear pause at end of file
+
+sds://>
+
+### fileplay
+fileplay
+---- OVERVIEW ----
+fileplay             - configures, starts and stops file play
+---- DESCRIPTION ----
+fileplay route [<destChannel>|*],[<destChannel>|*],... (* = no routing) or reset
+fileplay configure <id> <fileName> <firstChannel> <playoutDelay> <noOfBuffers> <bufferSize> <noOfBuffersToPreload> <notifySampleInterval> {autostart} {<fileId> {{<switchSampleNumber>} {pause}}}
+fileplay stop {<id>}
+fileplay stat
+fileplay mode
+fileplay start
+fileplay pause
+fileplay next <id> <fileName> {<mark-in> {<mark-out> {<fileId> {<switchSampleNumber> {pause}}}}}
+fileplay next [preload|select]
+fileplay mark <id> <mark-in> {{<mark-out>} {pause}}
+fileplay samplecounter [start|stop|reset] {<sample_counter>} {<id}}
+fileplay select <id> <fileId> : Select next file with <fileId>
+fileplay clear <id> : Clear next files
+fileplay eof <id> [pause|continue] : Set/clear pause at end of file
+
+sds://>
+
+### filerec ?
+filerec ?
+---- OVERVIEW ----
+filerec              - configures, starts and stops file recording
+---- DESCRIPTION ----
+filerec maxlen <length>
+filerec configure <id> <fileName> <bitsPerSample> <firstChannel> <noOfChannels> <noOfBuffers> <bufferSize> <notifySampleInterval> {autostart}
+filerec stop
+filerec mode
+filerec start
+filerec pause
+filerec stat
+filerec cue
+filerec prerecord
+filerec next <id> <fileName>
+filerec switch
+filerec samplecounter [start|stop|switch|reset] {<sample_counter>} {<id}}
+
+sds://>
+
+### fs help
+fs help
+---- OVERVIEW ----
+fs                   - file system commands
+fs info              - 
+fs llperf            - 
+fs ls                - ls [dirname]
+fs mkdir             - mkdir <dirname>
+fs mkfs              - mkfs
+fs rename            - rename <oldname> <newname>
+fs rm                - rm <filename>
+fs setfftime         - setfftime <yyyy> <mm> <dd> <hh> <min> <sec>
+fs stat              - stat <filename>
+fs testperf          - test performance
+---- DESCRIPTION ----
+executes 'fs' command
+sds://>
+
+### mixer ?
+mixer ?
+---- OVERVIEW ----
+mixer                - show mixer status and internal variables
+---- DESCRIPTION ----
+mixer	levels
+mixer	querylevels
+mixer	stat
+mixer	get	<channel>
+mixer	set	<channel> <fader|pan|mute> <value>
+mixer	store
+sds://>
+
+### wavefile ?
+wavefile ?
+ERROR: FileAccessHandler::submitJobAndWaitForCompletion: Job failed with return code 3
+ERROR: WaveFileHeaderParser::getFullInfo: Could not open file ?
+sds://>
+
+### inputselect ?
+inputselect ?
+---- OVERVIEW ----
+inputselect          - set input selector
+---- DESCRIPTION ----
+inputselect	'1|2|3|all' 'analog|digital'
+
+sds://>
+
+### channelmode ?
+channelmode ?
+Change streaming channel mode returned true
+sds://>
+
+### cpsync
+cpsync
+UT24SyncCL State:
+  Mode: Standalone (Connected)
+  State: SS_Idle
+sds://>

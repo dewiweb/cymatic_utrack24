@@ -1,0 +1,530 @@
+== (other) ==
+   ??_7IAsync@CPNS@@6B@
+   ??_7IBaseLocalDevice@CPNS@@6B01@@
+   ??_7IBaseLocalDevice@CPNS@@6BIObject@1@@
+   ??_7IBaseLocalDevice_ExplorationNotificationHandler@CPNS@@6B@
+   ??_7IBaseLocalDevice_NotificationHandler@CPNS@@6B@
+   ??_7IBaseLocalDevice_SetupNotificationHandler@CPNS@@6B@
+   ??_7IBaseLocalDevice_SignalNotificationHandler@CPNS@@6B@
+   ??_7IBaseMessage@CPNS@@6B@
+   ??_7IBaseMessage@CPNS@@6BIHookedObject@1@@
+   ??_7IBaseMessage@CPNS@@6BIObject@1@@
+   ??_7ICHAI@CPNS@@6B@
+   ??_7ICHAI_GlobalTimer_NotificationHandler@CPNS@@6B@
+   ??_7ICHAI_NotificationHandler@CPNS@@6B@
+   ??_7ICHAI_RemoteDevice_Find_AsyncReturnHandler@CPNS@@6B@
+   ??_7ICHAI_SignalNotificationHandler@CPNS@@6B@
+   ??_7ICHAI_Timer_NotificationHandler@CPNS@@6B@
+   ??_7ICP2MIDILocalDevice@CPNS@@6B@
+   ??_7ICP2MIDILocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7ICP2MIDILocalDevice@CPNS@@6BIObject@1@@
+   ??_7ICP2MIDILocalDevice_NotificationHandler@CPNS@@6B@
+   ??_7IDataTransferMessage@CPNS@@6B01@@
+   ??_7IDataTransferMessage@CPNS@@6BIBaseMessage@1@@
+   ??_7IDataTransferMessage@CPNS@@6BIHookedObject@1@@
+   ??_7IDataTransferMessage@CPNS@@6BIObject@1@@
+   ??_7IDeviceEnumerationContext@CPNS@@6BIHookedObject@1@@
+   ??_7IDeviceEnumerationContext@CPNS@@6BIObject@1@@
+   ??_7IEventMessage@CPNS@@6B01@@
+   ??_7IEventMessage@CPNS@@6BIBaseMessage@1@@
+   ??_7IEventMessage@CPNS@@6BIHookedObject@1@@
+   ??_7IEventMessage@CPNS@@6BIObject@1@@
+   ??_7IHookedObject@CPNS@@6B01@@
+   ??_7IHookedObject@CPNS@@6BIObject@1@@
+   ??_7IHybridMIDILocalDevice@CPNS@@6B@
+   ??_7IHybridMIDILocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7IHybridMIDILocalDevice@CPNS@@6BIObject@1@@
+   ??_7IInput@CPNS@@6B01@@
+   ??_7IInput@CPNS@@6BIObject@1@@
+   ??_7IInput_ClockListenerControlNotificationHandler@CPNS@@6B@
+   ??_7IInput_NotificationHandler@CPNS@@6B@
+   ??_7ILocalDevice@CPNS@@6B@
+   ??_7ILocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7ILocalDevice@CPNS@@6BIObject@1@@
+   ??_7IMIDI2CPLocalDevice@CPNS@@6B@
+   ??_7IMIDI2CPLocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7IMIDI2CPLocalDevice@CPNS@@6BIObject@1@@
+   ??_7IMIDISysexMessage@CPNS@@6B01@@
+   ??_7IMIDISysexMessage@CPNS@@6BIBaseMessage@1@@
+   ??_7IMIDISysexMessage@CPNS@@6BIHookedObject@1@@
+   ??_7IMIDISysexMessage@CPNS@@6BIObject@1@@
+   ??_7IModifierMessage@CPNS@@6B01@@
+   ??_7IModifierMessage@CPNS@@6BIBaseMessage@1@@
+   ??_7IModifierMessage@CPNS@@6BIHookedObject@1@@
+   ??_7IModifierMessage@CPNS@@6BIObject@1@@
+   ??_7IObject@CPNS@@6B@
+   ??_7IObject_NotificationHandler@CPNS@@6B@
+   ??_7IOutput@CPNS@@6B01@@
+   ??_7IOutput@CPNS@@6BIObject@1@@
+   ??_7IOutput_ClockGeneratorNotificationHandler@CPNS@@6B@
+   ??_7IOutput_NotificationHandler@CPNS@@6B@
+   ??_7IPipe@CPNS@@6B01@@
+   ??_7IPipe@CPNS@@6BIObject@1@@
+   ??_7IPipe_NotificationHandler@CPNS@@6B@
+   ??_7IPluginLocalDevice@CPNS@@6B@
+   ??_7IPluginLocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7IPluginLocalDevice@CPNS@@6BIObject@1@@
+   ??_7IPluginLocalDevice_NotificationHandler@CPNS@@6B@
+   ??_7IRemoteDevice@CPNS@@6B@
+   ??_7IRemoteDevice@CPNS@@6BIHookedObject@1@@
+   ??_7IRemoteDevice@CPNS@@6BIObject@1@@
+   ??_7IRemoteDevice_CollectSetupData_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetDestination_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetDetailedDestination_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetIndexText_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetInputModifierCurrentValue_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetInputSelectorCurrentValue_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetInputSelectorValueText_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetInputTextCurrentValue_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetName_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetOutputModifierCurrentValue_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetOutputSelectorCurrentValue_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetOutputTextCurrentValue_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_GetProperty_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_NotificationHandler2@CPNS@@6B@
+   ??_7IRemoteDevice_NotificationHandler@CPNS@@6B@
+   ??_7IRemoteDevice_RestoreSetupData_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXInputInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXInputModifierInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXInputSelectorInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXInputTextInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXOutputInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXOutputModifierInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXOutputSelectorInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7IRemoteDevice_XXXOutputTextInfo_AsyncReturnHandler@CPNS@@6B@
+   ??_7ISelectorMessage@CPNS@@6B01@@
+   ??_7ISelectorMessage@CPNS@@6BIBaseMessage@1@@
+   ??_7ISelectorMessage@CPNS@@6BIHookedObject@1@@
+   ??_7ISelectorMessage@CPNS@@6BIObject@1@@
+   ??_7ISerializable@CPT@@6B@
+   ??_7ISharedDisplayClientLocalDevice@CPNS@@6B@
+   ??_7ISharedDisplayClientLocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7ISharedDisplayClientLocalDevice@CPNS@@6BIObject@1@@
+   ??_7ISharedDisplayClientLocalDevice_NotificationHandler@CPNS@@6B@
+   ??_7ISharedDisplayLocalDevice@CPNS@@6B@
+   ??_7ISharedDisplayLocalDevice@CPNS@@6BIBaseLocalDevice@1@@
+   ??_7ISharedDisplayLocalDevice@CPNS@@6BIObject@1@@
+   ??_7ISharedDisplayLocalDevice_NotificationHandler@CPNS@@6B@
+   ??_7ITextMessage@CPNS@@6B01@@
+   ??_7ITextMessage@CPNS@@6BIBaseMessage@1@@
+   ??_7ITextMessage@CPNS@@6BIHookedObject@1@@
+   ??_7ITextMessage@CPNS@@6BIObject@1@@
+   ??_7ITimer@CPNS@@6B01@@
+   ??_7ITimer@CPNS@@6BIObject@1@@
+   ??_7UTF8String@CPT@@6B@
+   ??_7Value@CPNS@@6B@
+   ??_8IBaseLocalDevice@CPNS@@7B@
+   ??_8IBaseMessage@CPNS@@7B01@@
+   ??_8IBaseMessage@CPNS@@7BIHookedObject@1@@
+   ??_8ICP2MIDILocalDevice@CPNS@@7B01@@
+   ??_8ICP2MIDILocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8IDataTransferMessage@CPNS@@7B@
+   ??_8IDataTransferMessage@CPNS@@7BIBaseMessage@1@@
+   ??_8IDataTransferMessage@CPNS@@7BIHookedObject@1@@
+   ??_8IDeviceEnumerationContext@CPNS@@7B01@@
+   ??_8IDeviceEnumerationContext@CPNS@@7BIHookedObject@1@@
+   ??_8IEventMessage@CPNS@@7B@
+   ??_8IEventMessage@CPNS@@7BIBaseMessage@1@@
+   ??_8IEventMessage@CPNS@@7BIHookedObject@1@@
+   ??_8IHookedObject@CPNS@@7B@
+   ??_8IHybridMIDILocalDevice@CPNS@@7B01@@
+   ??_8IHybridMIDILocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8IInput@CPNS@@7B@
+   ??_8ILocalDevice@CPNS@@7B01@@
+   ??_8ILocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8IMIDI2CPLocalDevice@CPNS@@7B01@@
+   ??_8IMIDI2CPLocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8IMIDISysexMessage@CPNS@@7B@
+   ??_8IMIDISysexMessage@CPNS@@7BIBaseMessage@1@@
+   ??_8IMIDISysexMessage@CPNS@@7BIHookedObject@1@@
+   ??_8IModifierMessage@CPNS@@7B@
+   ??_8IModifierMessage@CPNS@@7BIBaseMessage@1@@
+   ??_8IModifierMessage@CPNS@@7BIHookedObject@1@@
+   ??_8IOutput@CPNS@@7B@
+   ??_8IPipe@CPNS@@7B@
+   ??_8IPluginLocalDevice@CPNS@@7B01@@
+   ??_8IPluginLocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8IRemoteDevice@CPNS@@7B01@@
+   ??_8IRemoteDevice@CPNS@@7BIHookedObject@1@@
+   ??_8ISelectorMessage@CPNS@@7B@
+   ??_8ISelectorMessage@CPNS@@7BIBaseMessage@1@@
+   ??_8ISelectorMessage@CPNS@@7BIHookedObject@1@@
+   ??_8ISharedDisplayClientLocalDevice@CPNS@@7B01@@
+   ??_8ISharedDisplayClientLocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8ISharedDisplayLocalDevice@CPNS@@7B01@@
+   ??_8ISharedDisplayLocalDevice@CPNS@@7BIBaseLocalDevice@1@@
+   ??_8ITextMessage@CPNS@@7B@
+   ??_8ITextMessage@CPNS@@7BIBaseMessage@1@@
+   ??_8ITextMessage@CPNS@@7BIHookedObject@1@@
+   ??_8ITimer@CPNS@@7B@
+   ??_DIBaseLocalDevice@CPNS@@IAEXXZ
+   ??_DIBaseMessage@CPNS@@IAEXXZ
+   ??_DICP2MIDILocalDevice@CPNS@@IAEXXZ
+   ??_DIDataTransferMessage@CPNS@@IAEXXZ
+   ??_DIDeviceEnumerationContext@CPNS@@IAEXXZ
+   ??_DIEventMessage@CPNS@@IAEXXZ
+   ??_DIHookedObject@CPNS@@IAEXXZ
+   ??_DIHybridMIDILocalDevice@CPNS@@IAEXXZ
+   ??_DIInput@CPNS@@IAEXXZ
+   ??_DILocalDevice@CPNS@@IAEXXZ
+   ??_DIMIDI2CPLocalDevice@CPNS@@IAEXXZ
+   ??_DIMIDISysexMessage@CPNS@@IAEXXZ
+   ??_DIModifierMessage@CPNS@@IAEXXZ
+   ??_DIOutput@CPNS@@IAEXXZ
+   ??_DIPipe@CPNS@@IAEXXZ
+   ??_DIPluginLocalDevice@CPNS@@IAEXXZ
+   ??_DIRemoteDevice@CPNS@@IAEXXZ
+   ??_DISelectorMessage@CPNS@@IAEXXZ
+   ??_DISharedDisplayClientLocalDevice@CPNS@@IAEXXZ
+   ??_DISharedDisplayLocalDevice@CPNS@@IAEXXZ
+   ??_DITextMessage@CPNS@@IAEXXZ
+   ??_DITimer@CPNS@@IAEXXZ
+== CPNS::Constants ==
+   ACADEMIC_BRAND_NUMBER
+   COPPERLAN_BRAND_NAME
+   COPPERLAN_BRAND_NUMBER
+   COPPERLAN_CHAIDEVICE_MODELID
+   COPPERLAN_CHAIDEVICE_MODELNAME
+   COPPERLAN_VNMCONTROLLER_MODELID
+   COPPERLAN_VNMCONTROLLER_MODELNAME
+   TEST_BRAND_NAME
+   TEST_BRAND_NUMBER
+   operator=
+== CPNS::Enums ==
+   operator=
+== CPNS::Factory ==
+   CreateCHAI
+   operator=
+== CPNS::IAsync ==
+   IAsync
+   operator=
+   ~IAsync
+== CPNS::IBaseLocalDevice ==
+   IBaseLocalDevice
+   operator=
+   ~IBaseLocalDevice
+== CPNS::IBaseLocalDevice_ExplorationNotificationHandler ==
+   IBaseLocalDevice_ExplorationNotificationHandler
+   operator=
+== CPNS::IBaseLocalDevice_NotificationHandler ==
+   IBaseLocalDevice_NotificationHandler
+   operator=
+== CPNS::IBaseLocalDevice_SetupNotificationHandler ==
+   IBaseLocalDevice_SetupNotificationHandler
+   operator=
+== CPNS::IBaseLocalDevice_SignalNotificationHandler ==
+   IBaseLocalDevice_SignalNotificationHandler
+   operator=
+== CPNS::IBaseMessage ==
+   IBaseMessage
+   operator=
+   ~IBaseMessage
+== CPNS::ICHAI ==
+   ICHAI
+   operator=
+   ~ICHAI
+== CPNS::ICHAI_GlobalTimer_NotificationHandler ==
+   ICHAI_GlobalTimer_NotificationHandler
+   operator=
+== CPNS::ICHAI_NotificationHandler ==
+   ICHAI_NotificationHandler
+   operator=
+== CPNS::ICHAI_RemoteDevice_Find_AsyncReturnHandler ==
+   ICHAI_RemoteDevice_Find_AsyncReturnHandler
+   operator=
+== CPNS::ICHAI_SignalNotificationHandler ==
+   ICHAI_SignalNotificationHandler
+   operator=
+== CPNS::ICHAI_Timer_NotificationHandler ==
+   ICHAI_Timer_NotificationHandler
+   operator=
+== CPNS::ICP2MIDILocalDevice ==
+   ICP2MIDILocalDevice
+   operator=
+   ~ICP2MIDILocalDevice
+== CPNS::ICP2MIDILocalDevice_NotificationHandler ==
+   ICP2MIDILocalDevice_NotificationHandler
+   operator=
+== CPNS::IDataTransferMessage ==
+   IDataTransferMessage
+   operator=
+   ~IDataTransferMessage
+== CPNS::IDeviceEnumerationContext ==
+   IDeviceEnumerationContext
+   operator=
+   ~IDeviceEnumerationContext
+== CPNS::IEventMessage ==
+   IEventMessage
+   operator=
+   ~IEventMessage
+== CPNS::IHookedObject ==
+   IHookedObject
+   operator=
+   ~IHookedObject
+== CPNS::IHybridMIDILocalDevice ==
+   IHybridMIDILocalDevice
+   operator=
+   ~IHybridMIDILocalDevice
+== CPNS::IInput ==
+   IInput
+   operator=
+   ~IInput
+== CPNS::IInput_ClockListenerControlNotificationHandler ==
+   IInput_ClockListenerControlNotificationHandler
+   operator=
+== CPNS::IInput_NotificationHandler ==
+   IInput_NotificationHandler
+   operator=
+== CPNS::ILocalDevice ==
+   ILocalDevice
+   operator=
+   ~ILocalDevice
+== CPNS::IMIDI2CPLocalDevice ==
+   IMIDI2CPLocalDevice
+   operator=
+   ~IMIDI2CPLocalDevice
+== CPNS::IMIDISysexMessage ==
+   IMIDISysexMessage
+   operator=
+   ~IMIDISysexMessage
+== CPNS::IModifierMessage ==
+   IModifierMessage
+   operator=
+   ~IModifierMessage
+== CPNS::IObject ==
+   IObject
+   operator=
+   ~IObject
+== CPNS::IObject_NotificationHandler ==
+   IObject_NotificationHandler
+   operator=
+== CPNS::IOutput ==
+   IOutput
+   operator=
+   ~IOutput
+== CPNS::IOutput_ClockGeneratorNotificationHandler ==
+   IOutput_ClockGeneratorNotificationHandler
+   operator=
+== CPNS::IOutput_NotificationHandler ==
+   IOutput_NotificationHandler
+   operator=
+== CPNS::IPipe ==
+   IPipe
+   operator=
+   ~IPipe
+== CPNS::IPipe_NotificationHandler ==
+   IPipe_NotificationHandler
+   operator=
+== CPNS::IPluginLocalDevice ==
+   IPluginLocalDevice
+   operator=
+   ~IPluginLocalDevice
+== CPNS::IPluginLocalDevice_NotificationHandler ==
+   IPluginLocalDevice_NotificationHandler
+   operator=
+== CPNS::IRemoteDevice ==
+   IRemoteDevice
+   operator=
+   ~IRemoteDevice
+== CPNS::IRemoteDevice_CollectSetupData_AsyncReturnHandler ==
+   IRemoteDevice_CollectSetupData_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetDestination_AsyncReturnHandler ==
+   IRemoteDevice_GetDestination_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetDetailedDestination_AsyncReturnHandler ==
+   IRemoteDevice_GetDetailedDestination_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetIndexText_AsyncReturnHandler ==
+   IRemoteDevice_GetIndexText_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetInputModifierCurrentValue_AsyncReturnHandler ==
+   IRemoteDevice_GetInputModifierCurrentValue_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetInputSelectorCurrentValue_AsyncReturnHandler ==
+   IRemoteDevice_GetInputSelectorCurrentValue_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetInputSelectorValueText_AsyncReturnHandler ==
+   IRemoteDevice_GetInputSelectorValueText_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetInputTextCurrentValue_AsyncReturnHandler ==
+   IRemoteDevice_GetInputTextCurrentValue_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetName_AsyncReturnHandler ==
+   IRemoteDevice_GetName_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetOutputModifierCurrentValue_AsyncReturnHandler ==
+   IRemoteDevice_GetOutputModifierCurrentValue_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetOutputSelectorCurrentValue_AsyncReturnHandler ==
+   IRemoteDevice_GetOutputSelectorCurrentValue_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetOutputTextCurrentValue_AsyncReturnHandler ==
+   IRemoteDevice_GetOutputTextCurrentValue_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_GetProperty_AsyncReturnHandler ==
+   IRemoteDevice_GetProperty_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_NotificationHandler ==
+   IRemoteDevice_NotificationHandler
+   operator=
+== CPNS::IRemoteDevice_NotificationHandler2 ==
+   IRemoteDevice_NotificationHandler2
+   operator=
+== CPNS::IRemoteDevice_RestoreSetupData_AsyncReturnHandler ==
+   IRemoteDevice_RestoreSetupData_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXInputInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXInputInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXInputModifierInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXInputModifierInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXInputSelectorInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXInputSelectorInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXInputTextInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXInputTextInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXOutputInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXOutputInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXOutputModifierInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXOutputModifierInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXOutputSelectorInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXOutputSelectorInfo_AsyncReturnHandler
+   operator=
+== CPNS::IRemoteDevice_XXXOutputTextInfo_AsyncReturnHandler ==
+   IRemoteDevice_XXXOutputTextInfo_AsyncReturnHandler
+   operator=
+== CPNS::ISelectorMessage ==
+   ISelectorMessage
+   operator=
+   ~ISelectorMessage
+== CPNS::ISharedDisplayClientLocalDevice ==
+   ISharedDisplayClientLocalDevice
+   operator=
+   ~ISharedDisplayClientLocalDevice
+== CPNS::ISharedDisplayClientLocalDevice_NotificationHandler ==
+   ISharedDisplayClientLocalDevice_NotificationHandler
+   operator=
+== CPNS::ISharedDisplayLocalDevice ==
+   ISharedDisplayLocalDevice
+   operator=
+   ~ISharedDisplayLocalDevice
+== CPNS::ISharedDisplayLocalDevice_NotificationHandler ==
+   ISharedDisplayLocalDevice_NotificationHandler
+   operator=
+== CPNS::ITextMessage ==
+   ITextMessage
+   operator=
+   ~ITextMessage
+== CPNS::ITimer ==
+   ITimer
+   operator=
+   ~ITimer
+== CPNS::Value ==
+   GetBuffer
+   GetDataType
+   GetFloat32
+   GetFloat64
+   GetInt16
+   GetInt32
+   GetInt64
+   GetRawValue
+   GetUInt16
+   GetUInt32
+   GetUInt64
+   IsRawValueBipolar
+   SetFloat32
+   SetFloat64
+   SetInt16
+   SetInt32
+   SetInt64
+   SetRawValue
+   SetUInt16
+   SetUInt32
+   SetUInt64
+   SetValue
+   Value
+   operator=
+   operator==
+   ~Value
+== CPT::CDeviceID ==
+   CDeviceID
+   Clear
+   Compare
+   CompareRoot
+   GetRootIdentity
+   GetRootInstance
+   IsEmpty
+   IsIdentityMatching
+   IsRoot
+   IsRootMatching
+   NullDeviceID
+   RootIdentityCompare
+   SetRootPart
+   ToString
+   op9
+   opM
+   opO
+   operator=
+   operator==
+   ~CDeviceID
+== CPT::CEndPoint ==
+   CEndPoint
+   Clear
+   Compare
+   IsEmpty
+   NullEndPoint
+   ToString
+   op9
+   opM
+   opO
+   operator=
+   operator==
+   ~CEndPoint
+== CPT::CapabilitiesTools ==
+   CheckCapabilities
+   operator=
+== CPT::GroupsTools ==
+   CheckGroups
+   ToString
+   operator=
+== CPT::ISerializable ==
+   ISerializable
+   operator=
+   ~ISerializable
+== CPT::UTF8String ==
+   Clear
+   Compare
+   Concat
+   ConcatFloat32
+   ConcatHex
+   ConcatHex_0x02
+   ConcatHex_0x04
+   ConcatHex_0x08
+   ConcatInt
+   FromFloat32
+   FromFloat64
+   FromInt32
+   FromUInt32
+   Get
+   GetRawLength
+   Initialize
+   IsEmpty
+   Length
+   NullString
+   Set
+   SetFloat32
+   SetFloat64
+   SetInt32
+   SetUInt32
+   ToUnicode
+   UTF8String
+   opB
+   opH
+   opY
+   operator=
+   ~UTF8String

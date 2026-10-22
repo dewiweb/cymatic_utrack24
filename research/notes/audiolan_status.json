@@ -1,0 +1,152 @@
+{
+    "ArchwaveAES67": {
+        "version": 1,
+        "sources": [
+            {
+                "status": 4,
+                "SDP": "v=0\r\no=- 7 0 IN IP4 192.168.10.176\r\ns=uT24 channels 1-8 (49-00-30)\r\nt=0 0\r\na=clock-domain:PTPv2 0\r\nm=audio 5004 RTP/AVP 98\r\nc=IN IP4 239.69.101.220/1\r\na=rtpmap:98 L24/44100/8\r\na=recvonly\r\na=framecount:48\r\na=sync-time:0\r\na=ptime:1.09\r\na=ts-refclk:ptp=IEEE1588-2008:00-07-F5-FF-FE-49-00-30:0\r\na=mediaclk:direct=0\r\n"
+            },
+            {
+                "status": 4,
+                "SDP": "v=0\r\no=- 8 0 IN IP4 192.168.10.176\r\ns=uT24 channels 9-16 (49-00-30)\r\nt=0 0\r\na=clock-domain:PTPv2 0\r\nm=audio 5004 RTP/AVP 98\r\nc=IN IP4 239.69.102.220/1\r\na=rtpmap:98 L24/44100/8\r\na=recvonly\r\na=framecount:48\r\na=sync-time:0\r\na=ptime:1.09\r\na=ts-refclk:ptp=IEEE1588-2008:00-07-F5-FF-FE-49-00-30:0\r\na=mediaclk:direct=0\r\n"
+            },
+            {
+                "status": 4,
+                "SDP": "v=0\r\no=- 9 0 IN IP4 192.168.10.176\r\ns=uT24 channels 17-24 (49-00-30)\r\nt=0 0\r\na=clock-domain:PTPv2 0\r\nm=audio 5004 RTP/AVP 98\r\nc=IN IP4 239.69.103.220/1\r\na=rtpmap:98 L24/44100/8\r\na=recvonly\r\na=framecount:48\r\na=sync-time:0\r\na=ptime:1.09\r\na=ts-refclk:ptp=IEEE1588-2008:00-07-F5-FF-FE-49-00-30:0\r\na=mediaclk:direct=0\r\n"
+            }
+        ],
+        "outputs": [
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            },
+            {
+                "status": 0,
+                "minSampleBufferLevel": 0,
+                "SDP": ""
+            }
+        ],
+        "manufacturer": "cymatic audio",
+        "model": "uT24_AudioLan",
+        "iconPath": "/assets/images/devTypeRecorder.png",
+        "operatingMode": "ETHERNET",
+        "hideSamplingRateCombo": true,
+        "needsReboot": false,
+        "PTP": {
+            "state": "LISTENING",
+            "grandMasterID": "00-07-F5-FF-FE-49-00-30",
+            "currentOffset": 0
+        }
+    }
+}

@@ -1,0 +1,6 @@
+https://cymaticaudio.com/images/downloads/drivers_and_firmware/Release%20Notes%20Cymatic%20LP-16.pdf 20240511194326 404
+https://cymaticaudio.com/images/downloads/drivers_and_firmware/Release%20Notes%20Cymatic%20LR-16.pdf 20240616100151 404
+https://cymaticaudio.com/images/downloads/drivers_and_firmware/uRemote%20Release%20Notes.pdf 20240511142118 404
+http://cymaticaudio.com/images/downloads/drivers_and_firmware/uRemote_OSX_1.2.009.zip 20160424103037 200
+http://cymaticaudio.com/images/downloads/drivers_and_firmware/uRemote_win_1.2.009.zip 20160424103204 200
+http://cymaticaudio.com/images/downloads/drivers_and_firmware/uTool_Installer_1.1.46_Win.zip 20160424103106 200

@@ -1,0 +1,169 @@
+### dsp ?
+dsp ?
+Unknown frequency ?
+---- OVERVIEW ----
+dsp                  - DSP streaming commands
+---- DESCRIPTION ----
+start DSP:	dsp	'44.1|48|88.2|96|176.4|192'
+stop DSP: 	dsp	'stop'
+show stat:	dsp	'stat'
+
+sds://>
+
+### channelmode ?
+channelmode ?
+Change streaming channel mode returned true
+sds://>
+
+### channelmode
+channelmode
+channel modes: 0: 24 In / 26 Out
+               1: 24 In /  2 Out
+               2:  8 In / 26 Out
+               3:  8 In / 10 Out
+---- OVERVIEW ----
+channelmode          - change streaming channel mode:
+---- DESCRIPTION ----
+channelmode	 <mode>
+
+sds://>
+
+### inputselect
+inputselect
+---- OVERVIEW ----
+inputselect          - set input selector
+---- DESCRIPTION ----
+inputselect	'1|2|3|all' 'analog|digital'
+
+sds://>
+
+### audiolan
+audiolan
+---- OVERVIEW ----
+audiolan             - Test AudioLAN card on adapter
+---- DESCRIPTION ----
+audiolan	'stat|rec|play|44|48|88|96'
+
+sds://>
+
+### mixer stat
+mixer stat
+
+Mixer Status:
+=============
+
+Fader Values:
+  CH 00:	0x04090409
+  CH 00 output:	0x00002026
+
+  CH 01:	0x04090409
+  CH 01 output:	0x00002026
+
+  CH 02:	0x04090409
+  CH 02 output:	0x00002026
+
+  CH 03:	0x04090409
+  CH 03 output:	0x00002026
+
+  CH 04:	0x04090409
+  CH 04 output:	0x00002026
+
+  CH 05:	0x04090409
+  CH 05 output:	0x00002026
+
+  CH 06:	0x04090409
+  CH 06 output:	0x00002026
+
+  CH 07:	0x04090409
+  CH 07 output:	0x00002026
+
+  CH 08:	0x04090409
+  CH 08 output:	0x00002026
+
+  CH 09:	0x04090409
+  CH 09 output:	0x00002026
+
+  CH 10:	0x04090409
+  CH 10 output:	0x00002026
+
+  CH 11:	0x04090409
+  CH 11 output:	0x00002026
+
+  CH 12:	0x04090409
+  CH 12 output:	0x00002026
+
+  CH 13:	0x04090409
+  CH 13 output:	0x00002026
+
+  CH 14:	0x04090409
+  CH 14 output:	0x00002026
+
+  CH 15:	0x04090409
+  CH 15 output:	0x00002026
+
+  CH 16:	0x04090409
+  CH 16 output:	0x00002026
+
+  CH 17:	0x04090409
+  CH 17 output:	0x00002026
+
+  CH 18:	0x04090409
+  CH 18 output:	0x00002026
+
+  CH 19:	0x04090409
+  CH 19 output:	0x00002026
+
+  CH 20:	0x04090409
+  CH 20 output:	0x00002026
+
+  CH 21:	0x04090409
+  CH 21 output:	0x00002026
+
+  CH 22:	0x04090409
+  CH 22 output:	0x00002026
+
+  CH 23:	0x04090409
+  CH 23 output:	0x00002026
+
+
+Monitor fader Value: 0x00007FFF
+
+Bus fader Value: 0x00007FFF
+
+Level Meters:
+  CH 00:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 04:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 08:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 12:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 16:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 20:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 24:	0x00000000	0x00000000	0x00000000	0x00000000
+sds://>
+
+### mixer levels
+mixer levels
+
+Level Meters:
+  CH 00:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 04:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 08:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 12:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 16:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 20:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 24:	0x00000000	0x00000000	0x04090409	0x04090409
+sds://>
+
+### get cne/AppSettings/Global/DeviceMode
+get cne/AppSettings/Global/DeviceMode
+ Name="DeviceMode",  Value= 0
+sds://>
+
+### get cne/AppSettings/Global/StreamingInterface
+get cne/AppSettings/Global/StreamingInterface
+ Name="StreamingInterface",  Value= USB
+sds://>
+
+### get cne/AppSettings/Global/DigitalIOFormat
+get cne/AppSettings/Global/DigitalIOFormat
+ Name="DigitalIOFormat",  Value= 1
+sds://>
