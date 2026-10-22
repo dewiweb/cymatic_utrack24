@@ -210,3 +210,10 @@ senders: 0x1400741a4 (petit=reply?) / 0x140074a9a (gros=beacon) — via vtable c
 le "Bad Version" vient des branches erreur (call [rax] edx=0x200/0x80/0x400/0x1000/0x2000)
 DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
   = la trame d'adoption à forger. Ghidra recommandé.
+
+## RE rx fn 0x1400777a0 — structure révélée
+- Parse TLV: champs word-typés (max 0x480), boucle membres (allocs array ptr*8)
+- Helpers: 0x14001f3e8=alloc obj, 0x14001f560=populate, 0x140006f50=?, 0x14001fd1c=?
+- Senders via vtable ctx: 0x1400741a4 / 0x140074a9a (CRC seed 0xfdb98ace)
+- NEXT (dernier): Ghidra/r2 -A sur 0x1400777a0 -> trouver quelle branche d'adoption
+  appelle 0x1400741a4 (reply) = la trame à forger pour que le device rejoigne
