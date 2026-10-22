@@ -25,3 +25,27 @@
 - Settings CopperLanManager: créer réseau / ajouter lien TCP/IP 192.168.10.197:55000
 - Analyser CPoEthAPI.dll/CPoEthProt.sys pour le protocole de membership
 - uRemote connecté au VNM local -> capture session CHAI via pktmon (fonctionne!)
+
+## Session 22/10 suite — découverte majeure
+
+### La cause du blocage est CONFIRMÉE (Warnings.log)
+`a013;1000;;Ethernet Received Failed Bad Version;MAC[F8:0D:AC:2A:67:D3]F:40[LCL301201]`
+=> le VNM reçoit les trames mais rejette "Bad Version" (même les siennes en loopback)
+
+### Structure trame CPOETH décodée (EtherType 0x8927)
+`[type 4B][f0f0f0f0 magic][0700][dstMAC 6][0700][srcMAC 6][0100 VER][0001d0100100]`
+- type: PC=0x10... (4B), devices=0x11...
+- **champ version: `0100 20 00` (VNM 1.0 2011) vs `0100 24 00` (devices fw2018)** -> mismatch = cause du Bad Version
+
+### Arme trouvée: CPoEthAPI.dll (43Ko, 8 exports propres)
+`CPEth_Open, CPEth_Send, CPEth_StartReceive, CPEth_StopReceive, CPEth_GetInterfacesInfo, CPEth_GetInterfaceMac, CPEth_FreeInterfacesInfo, CPEth_Close`
+=> permet de FORGER des trames CPOETH depuis Python (ctypes) :
+   - rejouer beacon device avec version patchée 0x24->0x20 => si VNM adopte, session CHAI complète!
+   - ou envoyer des trames VNMINFO à uRemote
+
+### Pas trouvé de VNM plus récent (site live 403/404, wayback: seul 1.0(1) 2011 Windows + DMG Mac 1.2(7) 2014)
+
+## NEXT (priorité)
+1. Deviner signatures CPEth_* (désassembler la DLL, 43Ko) -> envoyer beacon patché
+2. Si adoption: tout le protocole CHAI s'ouvre (uRemote via VNM local)
+3. Fallback: patcher check version dans CPVNM.exe (r2 dispo)
