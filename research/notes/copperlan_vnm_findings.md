@@ -148,3 +148,9 @@ void   CPEth_FreeInterfacesInfo(ptr)
 ✅ CPoEth bidirectionnel | ✅ CHAI connecte au VNM | ✅ SDK complet | ✅ Telnet + AES67
 ⏳ VNM↔device session = le blocage final (génération v0x20 vs v0x24)
 → Solution réaliste: package CopperLan 1.4.5 (liens dans notes) OU patch CPVNM pour annoncer/accepter v0x24
+
+## Dernière passe forge (22/10 fin de session)
+- Forge v0x24 VNM-style (type 0x10, queue 1c00, MAC PC) -> émis x25 broadcast, device = aucune réaction
+- Conclusion: le handshake VNM↔device nécessite PLUS que le beacon (séquence d'adoption multi-trames inconnue)
+- Il manque la spec du handshake post-beacon -> à désassembler dans CPVNM.exe (fonction member-adopt) ou capturer d'un VNM récent
+- TOUS les acquis documentés: canal bidirectionnel, vtable 62 méthodes, SDK, structure trames
