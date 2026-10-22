@@ -1,0 +1,106 @@
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3)ˇ: SÇquence d'Çchappement non reconnue
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(2)ˇ: public class CH{
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(3): >>>  [DllImport("C:\Users\Administrateur\Document
+s\GitHub\cymatic_utrack24\research\assets\software\CHAIFreeware.dll",EntryPoint="?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2
+@QBD@Z",CharSet=CharSet.Ansi)]
+c:\Users\Administrateur\AppData\Local\Temp\gcwobg4v\gcwobg4v.0.cs(4):  public static extern IntPtr CreateCHAI(string 
+s);
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (Microsoft.Power...peCompilerError:AddTypeCompilerError) [Add-Type], Excep 
+   tion
+    + FullyQualifiedErrorId : SOURCE_CODE_ERROR,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+Add-Type : Impossible d'ajouter un type. Des erreurs de compilation se sont produites.
+Au caractäre C:\Users\Administrateur\Documents\GitHub\cymatic_utrack24\research\tools\chai_invoke.ps1:9 : 1
++ Add-Type -TypeDefinition $src -OutputAssembly "$env:TEMP\CH.dll" -Ref ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidData : (:) [Add-Type], InvalidOperationException
+    + FullyQualifiedErrorId : COMPILER_ERRORS,Microsoft.PowerShell.Commands.AddTypeCommand
+ 
+ERR Type [CH] introuvable.

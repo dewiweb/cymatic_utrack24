@@ -88,3 +88,12 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - CPEth_Send OK -> on peut émettre ET recevoir du CPOETH en Python pur via la DLL officielle
 - CPVNM.exe actuellement tué (driver exclusif)
 - NEXT: décoder le handshake (envoyer trame type 0x11 avec v0x24 depuis PC -> les devices répondent-ils?); analyser trame 60B AudioLAN; relancer VNM pour test adoption
+
+## CHAIFreeware.dll — accès direct à l'API CHAI (fin de session)
+- DLL **32-bit** => inutilisable depuis Python x64; **PowerShell x86 (SysWOW64) marche**
+- `?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2@QBD@Z` appelé via Add-Type P/Invoke => objet ICHAI créé (ptr valide)
+- Vtable concrète lue: 45+ méthodes (DLL load base 0x71640000; méthodes 0x7165a090-0x716ab470 = .text)
+- Candidats Connect/init: idx 14 (call edx + param), 18, 21, 27, 42 — signatures à confirmer
+- API découverte présente: ICHAI_RemoteDevice_Find_AsyncReturnHandler, SignalNotificationHandler, Timer
+- NEXT: identifier chaque méthode (disasm propre par fonction) + appeler avec bon ctx -> connexion TCP 55000 au device
+- Script invocable: research/tools/chai_vtable.ps1 (PS x86)
