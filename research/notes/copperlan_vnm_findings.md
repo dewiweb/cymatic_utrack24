@@ -193,3 +193,11 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - NEXT: soit r2 -A et chercher 'call [vtable]' dans 0x1400777a0 qui pointe vers
   0x1400741a4/0x140074a9a = l'envoi de la réponse d'adoption
 - Ou Ghidra decompiler CPVNM.exe pour pseudo-C complet
+
+## Point de reprise final RE CPVNM.exe
+- fn rx/adoption = 0x1400777a0 ; senders = 0x1400741a4 (petit, 254B - reply?) et 0x140074a9a (gros, 942B - beacon?)
+- Serializer magic f0f0f0f0 = helper partagé vers ~0x140075bxx
+- Les senders sont méthodes vtable du link controller
+- PROCHAINE ÉTAPE: Ghidra sur CPVNM.exe (decompile) OU radare2 -A; trouver le
+  'call [vtable]' dans 0x1400777a0 qui appelle un sender après réception beacon
+  -> la réponse d'adoption envoyée = spec du handshake à forger
