@@ -130,3 +130,10 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - IsConnected[24] retourne garbage-int = en fait boolean (byte bas=1=TRUE)
 - NEXT: RemoteDevice_FindFirst_Async[27] pour énumérer le uTrack24 -> IRemoteDevice -> méthodes device
 - SCRIPT clé: research/tools/chai_member.ps1 (PS x86, handlers+connect OK)
+
+## État final session CHAI (22/10)
+- Connect() marche: CPVNM actif + handlers + clé -> ERR_None, CHAI membre du VNM local
+- MAIS zéro notification/déclaration en 25s -> le uTrack24 ne rejoint toujours pas le réseau du VNM 2011
+- Conclusion: le VNM 1.0(1) est le goulot — les devices v0x24 n'entrent pas dans son réseau même si un client CHAI y arrive
+- La solution reste le package CopperLan récent (1.7.1) côté VNM, OU forger le protocole device-side
+- Scripts PS x86 validés: chai_member.ps1 (connect OK), chai_listen.ps1 (notification stubs OK)
