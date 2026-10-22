@@ -113,3 +113,11 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - Appels testés via PS x86: CreateCHAI OK, Connect[22] -> 1 (ERR_Failed), IsConnected[24] garbage(?), AddLocalDevice -> NULL
 - Échecs possibles: clé expirée | device requis d'abord | génération VNM | signature devCaps (classe non-POD)
 - ATTENTION: [0]=Destroy — l'appeler tue l'objet
+
+## Révision du raisonnement (revue projet)
+- **"Bad Version" = UNIQUEMENT notre loopback PC (F8:0D:AC), ZÉRO rejet device** → le VNM accepte les trames device; le blocage est ailleurs (génération VNM)
+- CopperLan **1.7.1 existe** (software.informer) — le VNM 1.0(1)/2011 qu'on a est trop vieux; voie propre = installer le package récent
+- CHAIFreeware.dll du repo cpdummyapp (sourceforge) = IDENTIQUE à la nôtre
+- cpdummyapp Source/: `CreateCHAI(NULL)` marche (identité par défaut, pas de clé requise!), `AddLocalDevice(DC_Performance)`, `dev->SetCustomName()`
+- Connect[22] → ERR_Failed qu'on ait VNM ou pas; AddLocalDevice → NULL (devCaps classe non-POD à transmettre correctement)
+- TODO: flux exact sample cpdummy (CreateCHAI NULL → AddLocalDevice → Initialize → Connect)
