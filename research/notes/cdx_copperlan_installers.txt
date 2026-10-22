@@ -1,0 +1,4 @@
+http://www.copperlan.org/media/zoo/elements/download/assets/images/download_type_zip.png 20190327153454
+http://www.copperlan.org/phocadownload/autoupdate/Package/CopperLanSetup%5B20140116_1.2(7)%5D.dmg 20161124184741
+http://www.copperlan.org/phocadownload/autoupdate/Package/CopperLanSetup_VistaSeven64%5B20110725_1.0(1)%5D.exe 20110725200346
+http://www.copperlan.org/phocadownload/CopperLan_logos_032009.zip 20110725200750

@@ -22,3 +22,15 @@ src/ptp_master.py (grandmaster domaine 0, ~150 lignes, réutilisable)
 - essayer a=mediaclk:asynchronous dans manualSDP
 - Dante Virtual Soundcard mode AES67 (test définitif Windows)
 - aes67-linux-daemon sur Linux = sender de référence
+
+## Capture CHAI (22/10) — pktmon marche!
+- pcapng OK: research/notes/chai_cap2.pcap (810 pkts cap1=PTP, cap2=tout)
+- uRemote broadcast `VNMSRCH` (12B: 564e4d53524348 0190e20200) -> 255.255.255.255
+  sur 4 ports dest: 42857, 51682, 52345, 65123 — en boucle, SANS réponse
+- Attendu côté fw: `VnmUdpListener` + `VNMINFO` (strings @0x45c64/0x45ca0) + `VnmTcpListener`
+- Device: CopperLan/Enabled=1, TCP 55000 ouvert, mais PAS de réponse VNMSRCH
+  (testé unicast+broadcast 192.168.10.255 sur ports 1-1024 + candidats -> rien)
+- Hypothèses: port discovery différent / module CHAIoNet partiel / magic ou payload
+  VNMSRCH incomplet / le device attend VNMINV au lieu de VNMSRCH
+- NEXT: désassembler VnmUdpListener dans fw (port bind) OU émuler VNMINFO vers
+  uRemote pour forcer la connexion TCP 55000 -> capture session complète
