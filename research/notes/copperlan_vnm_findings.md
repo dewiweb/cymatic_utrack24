@@ -154,3 +154,12 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - Conclusion: le handshake VNM↔device nécessite PLUS que le beacon (séquence d'adoption multi-trames inconnue)
 - Il manque la spec du handshake post-beacon -> à désassembler dans CPVNM.exe (fonction member-adopt) ou capturer d'un VNM récent
 - TOUS les acquis documentés: canal bidirectionnel, vtable 62 méthodes, SDK, structure trames
+
+## 🎯 Fonction de traitement des trames localisée (RE final)
+- `CPEth_StartReceive` thunk IAT @0x1400d7110, appelé depuis `0x140078d08`
+- **Le callback rx (frame processor) = 0x1400777a0** (`lea r8,[rip-0x155c]`)
+  → c'est LA fonction qui valide version/type/adopte un membre = la spec du handshake
+- Contexte VNM (obj) = [rsp+0x50]+0x660
+- rabin2/radare2 pour désassembler 0x1400777a0 -> logique version+adoption
+- PROCHAINE ÉTAPE: `r2 -A` CPVNM.exe, pdf @0x1400777a0 -> lire la décision d'adoption
+  et quelles trames elle attend/envoie -> forger la séquence complète
