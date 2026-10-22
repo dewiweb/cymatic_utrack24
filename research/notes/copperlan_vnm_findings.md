@@ -121,3 +121,12 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - cpdummyapp Source/: `CreateCHAI(NULL)` marche (identité par défaut, pas de clé requise!), `AddLocalDevice(DC_Performance)`, `dev->SetCustomName()`
 - Connect[22] → ERR_Failed qu'on ait VNM ou pas; AddLocalDevice → NULL (devCaps classe non-POD à transmettre correctement)
 - TODO: flux exact sample cpdummy (CreateCHAI NULL → AddLocalDevice → Initialize → Connect)
+
+## 🎉 CHAI CONNECTÉE AU RÉSEAU (session 22/10 fin)
+- Vtable map EXACTE confirmée (62 méthodes, ~ICHAI dernier): [22]Connect [23]Disconnect [24]IsConnected [15]AddLocalDevice [11]RegNotif [42]RegSignalNotif
+- **Connect[22] -> 0 (ERR_None) avec: CPVNM.exe tournant + handlers fake enregistrés + clé "@7ZSwec9Pk@..."**
+- Requis: VNM local actif (CPVNM mort = ERR_Failed); notification handlers PAS obligatoires pour connect mais recommandés (sample cpdummy)
+- Fake C++ obj technique: obj={vptr}->vtable[N delegates stub] via Marshal.AllocHGlobal + GetFunctionPointerForDelegate (PS x86 / .NET 32bit)
+- IsConnected[24] retourne garbage-int = en fait boolean (byte bas=1=TRUE)
+- NEXT: RemoteDevice_FindFirst_Async[27] pour énumérer le uTrack24 -> IRemoteDevice -> méthodes device
+- SCRIPT clé: research/tools/chai_member.ps1 (PS x86, handlers+connect OK)
