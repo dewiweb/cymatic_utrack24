@@ -181,3 +181,15 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - Fonction rx/adoption = 0x1400777a0: dispatch types 0x100/200/400/c00, boucle membres 0x480
 - NEXT: trouver thunks jmp ff25 vers CPEth_Send -> localiser la fonction qui ENVOIE l'adoption reply
 - Puis désasm la réponse envoyée = la spec du handshake = ce qu'il faut forger
+
+## RE CPVNM.exe — cartographie complète
+- CPEth_Send thunk=0x14002b9d6 ; 2 fonctions senders:
+  - 0x1400741a4 (send@0x252) — CRC seed 0xfdb98ace
+  - 0x140074a9a (send@0xdf8) — CRC seed 0xfdb98ace
+- Appelées indirectement (vtable) = méthodes du CpEth link controller
+- Fn rx/adoption = 0x1400777a0 (callback à StartReceive)
+  - signature: cb(ctx,len,srcMac,data)
+  - dispatch types: 0x100/200/400/c00/0x1000000 ; boucle membres 0x480
+- NEXT: soit r2 -A et chercher 'call [vtable]' dans 0x1400777a0 qui pointe vers
+  0x1400741a4/0x140074a9a = l'envoi de la réponse d'adoption
+- Ou Ghidra decompiler CPVNM.exe pour pseudo-C complet
