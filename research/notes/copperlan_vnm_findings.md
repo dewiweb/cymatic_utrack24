@@ -163,3 +163,15 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - rabin2/radare2 pour désassembler 0x1400777a0 -> logique version+adoption
 - PROCHAINE ÉTAPE: `r2 -A` CPVNM.exe, pdf @0x1400777a0 -> lire la décision d'adoption
   et quelles trames elle attend/envoie -> forger la séquence complète
+
+## Désassemblage fonction rx 0x1400777a0 (début)
+- Signature: cb(ctx=[rsp+8], len=[rsp+0x10 edx], srcMac=[rsp+0x18 r8], data=[rsp+0x1b0])
+- Vérifie: (1) srcMac != own MAC+0x668 (loopback -> err 0x1488) (2) len>=0xe (->err 0x1468) (3) len<=0x5dc (->err 0x146c) (4) copie payload en ctx+0x8a0
+- Check version + adoption = plus loin (>+0x300)
+- NEXT: continuer disasm de 0x140077a98+ (parse fields, version cmp, appel adoption)
+
+## Fin session — point de reprise RE
+- Fonction rx/adoption = 0x1400777a0 (CPVNM.exe)
+- Dispatch des types trouvé: cmp 0x100/0x200/0x400/0xc00/0x1000000 = types messages; boucle membres ~0x480
+- PROCHAINE ÉTAPE: désassembler avec radare2 -A (pas capstone linéaire -> désaligne) et suivre les sauts; chercher la fonction qui ENVOIE la réponse d'adoption (call CPEth_Send dans la fonction) -> la séquence complète du handshake
+- Alternative + rapide: installer Ghidra (décompilateur) sur CPVNM.exe -> C code de la fonction d'adoption
