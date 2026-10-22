@@ -175,3 +175,9 @@ void   CPEth_FreeInterfacesInfo(ptr)
 - Dispatch des types trouvé: cmp 0x100/0x200/0x400/0xc00/0x1000000 = types messages; boucle membres ~0x480
 - PROCHAINE ÉTAPE: désassembler avec radare2 -A (pas capstone linéaire -> désaligne) et suivre les sauts; chercher la fonction qui ENVOIE la réponse d'adoption (call CPEth_Send dans la fonction) -> la séquence complète du handshake
 - Alternative + rapide: installer Ghidra (décompilateur) sur CPVNM.exe -> C code de la fonction d'adoption
+
+## Handoff final RE
+- CPEth_Send IAT 0x1400d70f0 — appelée via thunk jmp (comme StartReceive), pas ff15 direct
+- Fonction rx/adoption = 0x1400777a0: dispatch types 0x100/200/400/c00, boucle membres 0x480
+- NEXT: trouver thunks jmp ff25 vers CPEth_Send -> localiser la fonction qui ENVOIE l'adoption reply
+- Puis désasm la réponse envoyée = la spec du handshake = ce qu'il faut forger
