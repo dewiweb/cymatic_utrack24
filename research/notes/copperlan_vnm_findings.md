@@ -49,3 +49,28 @@
 1. Deviner signatures CPEth_* (désassembler la DLL, 43Ko) -> envoyer beacon patché
 2. Si adoption: tout le protocole CHAI s'ouvre (uRemote via VNM local)
 3. Fallback: patcher check version dans CPVNM.exe (r2 dispo)
+
+## CPoEthAPI.dll — signatures décodées (session RE)
+```
+handle CPEth_Open(wchar_t *name)         // repne scasw = wide string
+int    CPEth_Send(handle, payload, len, dstMac*)  // DLL construit eth hdr (src=MAC iface, type=0x8927)
+int    CPEth_GetInterfaceMac(handle, macOut6)
+void*  CPEth_GetInterfacesInfo()         // liste {u32 n, ptr[16]->blocks{name wstr, \DEVICE\{GUID}, mac}}
+int    CPEth_StartReceive(handle, cb, a2, a3)     // crée thread rx
+void   CPEth_StopReceive(handle)
+void   CPEth_Close(handle)
+void   CPEth_FreeInterfacesInfo(ptr)
+```
+- Beacon device capturé (68B payload): `11000000 f0f0f0f0 0700 ffffffffffff 0700 0007f50019a0 0100 2400 0001d0100100 ...` version @~0x22 = 0x24 (patch->0x20 pour le VNM)
+- BLOQUÉ: CPEth_Open(NULL) sur tous formats testés: '\DEVICE\{GUID}', '/Device/NPF_{G}', '{G}', friendly 'Ethernet', 'VirtualBox...'
+  - crash sur arg non-string => bien une wchar*
+  - suspects: nom dans liste = exact '\DEVICE\{ACC16CDF...}' (testé NULL!) | privilèges admin? | le driver refuse open concurrent si CPVNM l'a déjà?
+- NEXT: hooker/tracer l'appel CPEth_Open réel de CPVNM.exe (il ouvre les interfaces au boot) -> voir l'argument exact; ou tester en tuant CPVNM d'abord
+
+## DÉBLOCAGE CPEth_Open + forge réussie (22/10)
+- **CPEth_Open retournait NULL car CPVNM.exe monopolisait le driver** (exclusif). Le tuer => Open OK.
+- Appel réel dans CPVNM.exe @0x140078c95: name = string '\DEVICE\{GUID}' issue de GetInterfacesInfo
+- **CPEth_Send FONCTIONNE**: beacon device (68B) patché 0x24->0x20 envoyé en broadcast x8 (ret=1)
+- CPEth_StartReceive: segfault ctypes -> prototype callback probablement différent (à debugger)
+- Interface: '\DEVICE\{ACC16CDF-991B-4516-BD19-62A97674B485}' (Ethernet, MAC f8:0d:ac:2a:67:d3)
+- TODO: rx callback proto (probablement (ctx, buf, len) ou autre); test d'adoption VNM si relancé
