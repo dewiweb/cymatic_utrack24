@@ -289,3 +289,13 @@ CLES POUR LA SUITE:
 - play.log montre valeur 28018400 pas un simple 1 -> envoye tel quel
 - si ca marche: le transport est un write avec valeur encodee (state machine)
 - si non: le membre handle ou autre champ differe
+
+## ETAT — play ne marche toujours pas
+- valeur 28018400 envoyee, uTrack ne reagit pas
+- routing prouve (reads marchent) mais writes inefficaces
+- le vrai play utilise probablement un autre endpoint ou membre handle
+- ou le transport n'est pas un write 8423 sur ca53d56b mais autre chose
+  (invoke 0x37c4, ou commande sur un autre endpoint device)
+- NEXT: capturer une action transport NETTE (record) pour comparer
+  le write exact bit-par-bit vs ce qu'on envoie; ou decompiler la
+  fonction uRemote qui envoie play (bouton UI -> commande)
