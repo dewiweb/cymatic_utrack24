@@ -354,3 +354,33 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
   CPEth_StartReceive @ IAT 0x1400d5120 → son call site → callback = arg
   de la fonction qui appelle le thunk; la comparaison ~`cmp reg,0x20` dans
   cette callback est à NOPer/patcher pour accepter 0x24)
+
+## Session 27/10 — PERCÉE: patch rx fonctionne! (815 received, 0 badver)
+
+### LE PATCH QUI MARCHE (CPVNM.exe 1.0.6.1)
+- `0x140075a65`: `74 24` -> `eb 24`  (skip reject byte3!=0&&!=1)
+- `0x140075a9a`: `74 24` -> `eb 24`  (accept any byte0/version)
+- Résultat console: **#Received: 0 -> 815**, BadVersion 414->0
+- Device table: 2 -> 50 entrées (membres locaux résolus)
+- Neighbour ring: PREVIOUS/NEXT/BOTTOM = Unknown[22] (anneau formé!)
+
+### CLoNet.clp fixé et CHARGÉ
+- 2 patches: imports `MSVCR80D.dll`->`msvcr80.dll` (+ map _malloc_dbg->malloc,
+  _free_dbg->free, _CRT_RTC_INITW/_CrtSetCheckCount/__crt_debugger_hook->_getpid)
+- manifest SxS: `Microsoft.VC80.DebugCRT v6195` -> `Microsoft.VC80.CRT v9680`
+- + copie msvcr80.dll dans CPVNM dir => CLoNet.clp se charge, VNM écoute
+  TCP 40987/40988/40989
+
+### RESTE: adoption incomplète
+- Aucune trame unicast échangée (tout reste broadcast)
+- VNM n'initie pas de directed frames vers les devices
+- Notre 1210 n'annonce pas d'endpoint TCP (1100 0100 0200)
+- Device table = locaux seulement, pas de noms appris
+- Manager: pas de NIC sélectionnable (lien Ethernet pas enregistré?)
+- Forge 1210 style-AL (feff/1000): aucun dial entrant
+
+### Hypothèses restantes
+- Devices rejettent nos v32 sortants (mur symétrique) -> patcher version
+  émise (dans l'objet lien, champ init - non localisé: pas un immédiat)
+- Ou la résolution membres passe par le lien TCP, jamais créé côté VNM
+  (le TCPIP link existe mais n'apparaît pas dans M)
