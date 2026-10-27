@@ -668,3 +668,10 @@ FUN_00547350 = keepalive d010 (param2-0x2ff0)
 - VNM echoit c842 quand le membre est accepte = signal d'adoption
 - NEXT: rendre le client interactif — repondre aux msgs VNM (echo/acks),
   tenir le lien, puis le membre reste visible en permanence
+
+## ✅ ADOPTION REUSSIE — membre visible dans CopperLan Manager
+- Replay de init_seq_fresh.txt → membre "uRemote" APPARAIT + lien vers uTrack
+- Session tient avec keepalives ef5100a0; VNM echoit les decls c842
+- Le membre est adopte: visible, routable (edge uRemote<->uTrack visible)
+- C'est notre client Python (src/chai_session.py), pas le vrai uRemote!
+- On a maintenant un client CHAI natif qui parle au VNM comme uRemote
