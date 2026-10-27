@@ -60,3 +60,10 @@ research/assets/software/uRemote.exe = binaire analyse
 La commande play a trouver par: decompiler les handlers boutons
 (QPushButton clicked -> slot) ou les fonctions qui envoient au device.
 La cle reste: trouver la fct qui construit la commande transport exacte.
+
+## TEST write+read (resultat a analyser)
+- write 8423 prop 0x0000 val 0xaa -> puis read 5423
+- reponse device recue (34b96e2e + membre) = routing fonctionne
+- la valeur lue n'etait pas visible clairement -> format read a affiner
+- NEXT: extraire la valeur proprement de la reponse read;
+  si write+read coherent => writes marchent, il faut juste les bonnes cmdes
