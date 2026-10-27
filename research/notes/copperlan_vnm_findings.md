@@ -660,3 +660,11 @@ FUN_00547350 = keepalive d010 (param2-0x2ff0)
 - LM_DeviceDeclaredOrModified::Serialize = FUN_00657890 (format decode)
 - uRemote enregistre: device "uTrack24 Remote" (0x6800000) + membre "uRemote"
   + 5 conteneurs: Status Meters Controllers Files Settings
+
+## ETAT FINAL SESSION — le membre APPARAIT puis disparait
+- Replay sequence fresh (init_seq_fresh.txt, 1073 msgs): "uRemote" VISIBLE dans Manager
+- Puis le VNM coupe (10054) — notre client ne repond pas aux requetes VNM
+- Session resiliente ecrite (reconnect auto) dans src/chai_session.py
+- VNM echoit c842 quand le membre est accepte = signal d'adoption
+- NEXT: rendre le client interactif — repondre aux msgs VNM (echo/acks),
+  tenir le lien, puis le membre reste visible en permanence
