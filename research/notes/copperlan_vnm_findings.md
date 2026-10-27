@@ -627,3 +627,11 @@ FUN_00547350 = keepalive d010 (param2-0x2ff0)
 => les commandes utilisateur passent par ce chemin; trouver l'envoyeur d'8423
    = chercher les callers de l'emission avec type 0x8423 ou les membres
    qui ecrivent les TLV 0e00/0123
+
+## Graphe d'appels commandes (Callers2)
+- mute FUN_51b610 <- FUN_547350 <- FUN_516c30 (handler UI/tache periodique)
+- c010 FUN_545200 <- FUN_5262c0 ; d010 <- FUN_516c30
+- senders 0x37c4: FUN_64dfe0<-FUN_665c60, FUN_64e1b0<-FUN_669dd0/6621f0
+- TLV 0x0123 ecrits par FUN_5834a0 (x4), 0x494351/4945f2 = serialiseur TLV
+- TLV 0x1040 @ 49b1c7, 54bf90 ; 0x0e00 @ 417900/417c60
+=> FUN_5834a0 = serialiseur proprietes 8423 (le vrai sender de commandes)
