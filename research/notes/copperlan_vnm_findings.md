@@ -565,3 +565,10 @@ FUN_0064dfe0/0064e1b0 = sendmsg type 0x37c4 (message controle interne)
   0xc8e0dc LM_DeviceDeclaredOrModified  0xc8e270 LM_SubDeviceDeclared
   0xc8dfc0/e0 LM_GetVNMInfoReply/Request
 => la phase d'adoption = SmartConnect_* puis LM_DeviceDeclared
+
+## Etat Ghidra (projet: C:\tools\ghidra_projects\uremote_v36)
+- RTTI TDs trouves mais COL introuvable par scan dword (packing ou autre layout)
+- Scripts fonctionnels dans C:\tools\ghidra_scripts\
+- Approche alternative: decompiler FUN_0064dfe0 (émet msg type 0x37c4) +
+  suivre les appels vers le handshake SmartConnect
+- La séquence init capturee (init_seq.txt/dewi.txt) permet deja une session stable
