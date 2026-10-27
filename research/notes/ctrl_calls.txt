@@ -1,0 +1,71 @@
+== FUN_00541c20 callers: FUN_00548860 
+   args(0xd009,0,0,0)
+== FUN_00541cc0 callers: FUN_00548860 
+   args(0xd088,0,1,0)
+== FUN_00543ab0 callers: FUN_00535750 
+   args(0xd002,0,0,uVar1)
+   args(0xd003,0,0)
+== FUN_00543c90 callers: FUN_005339e0 FUN_00533580 
+   args()
+== FUN_00544090 callers: FUN_005324b0 
+   args(0xb105,0,param_2 != '\0',0)
+== FUN_00544130 callers: FUN_005324f0 
+   args(0xb104,0,param_2,0)
+== FUN_005441d0 callers: FUN_00532550 
+   args(0xb103,0,param_2,0)
+== FUN_00544270 callers: FUN_005325b0 
+   args(0xb102,0,param_2,0)
+== FUN_00544310 callers: FUN_005318f0 
+   args(0xb207,0,param_2 != '\0',0)
+== FUN_005443b0 callers: FUN_00531950 
+   args(0xb205,0,param_2,0)
+== FUN_00544450 callers: FUN_00531950 
+   args(0xb204,0,param_2,0)
+== FUN_005444f0 callers: FUN_005319d0 
+   args(0xb203,0,param_2,0)
+== FUN_00544810 callers: FUN_005315d0 
+   args(0xb200,0,param_2 != '\0',0)
+== FUN_005448b0 callers: FUN_00530410 FUN_00530310 
+   args(0xb005,0,*param_2)
+== FUN_00544950 callers: FUN_00530720 FUN_00530820 
+   args(0xb004,0,*param_2)
+== FUN_005449f0 callers: FUN_00530b30 
+   args(0xb003,0,param_2 == 1,0)
+== FUN_00544b00 callers: FUN_0052e8a0 
+   args(param_2 + -0x4cd0,0,param_3,0)
+== FUN_00544ba0 callers: FUN_0052e6c0 
+   args(param_2 + -0x4ce0,0,param_3,0)
+== FUN_00544c40 callers: FUN_0052e720 
+   args(param_2 + -0x4cf0,0,param_3,0)
+== FUN_00544ce0 callers: FUN_0052e780 
+   args(0xb302,0,param_2,0)
+== FUN_00544d80 callers: FUN_0052e7e0 
+   args(0xb301,0,param_2,0)
+== FUN_00544e20 callers: FUN_0052e840 
+   args(0xb300,0,param_2,0)
+== FUN_00544ec0 callers: FUN_0052e2b0 
+   args(0xb001,0,param_2,0)
+== FUN_00544f60 callers: FUN_0052e520 
+   args(0xb000,0,param_2,0)
+== FUN_005450f0 callers: FUN_00537350 FUN_00528fa0 FUN_00547780 
+   args(0xd001,0,0,uVar1)
+== FUN_00545200 callers: FUN_005262c0 
+   args(0xc010,0,param_2,0)
+== FUN_00545290 callers: FUN_00526290 FUN_005261f0 
+   args(0xf060,0,*param_2)
+== FUN_00545320 callers: FUN_005262c0 
+   args(0xb211,0,0,0)
+== FUN_005453a0 callers: FUN_005262c0 
+   args(0xb212,0,0,0)
+== FUN_00545420 callers: FUN_005262c0 
+   args(0xb210,0,0,0)
+== FUN_00546ef0 callers: FUN_00520b70 
+   args(0xd008,0,param_2,0)
+== FUN_00546f80 callers: FUN_0051da00 FUN_00526180 
+   args(0xc003,0,param_2,0)
+== FUN_00547350 callers: FUN_00516c30 
+   args(param_2 + -0x2ff0,0,2,0)
+== FUN_00547400 callers: FUN_00516c30 
+   args(param_2 + -0x2fd0,0,2,0)
+== FUN_00547780 callers: FUN_00512810 FUN_005262c0 
+   args(0xd000,0,param_2,0)

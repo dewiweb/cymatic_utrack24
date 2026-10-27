@@ -81,3 +81,13 @@ La cle reste: trouver la fct qui construit la commande transport exacte.
    s'incremente a chaque message (numero de sequence/transaction), PAS un propID.
    "prop 6506" n'existe pas.
 Outil: research/tools/replay_action.py <log> <t0> <t1> = adopte + rejoue l'action re-framee.
+
+## TABLE COMPLETE DES COMMANDES DEVICE (Ghidra CtrlCalls.java -> research/notes/ctrl_calls.txt)
+Toutes via vtable[0x174](ctrlID,0,valeur,0) (0x17c = variante, ex 0xd001 seek avec position).
+Sur le fil: 8437 / TLV 4337 vers 0e00 0100 34b96e2e sous-session 04 (cf fresh_vnm.log t=36.13).
+Transport: 0xd000=valeur bouton (FUN_00512810; val 3 -> dialogue confirmation, probablement REC),
+  0xd001 locate (0x17c), 0xd002/0xd003, 0xd008, 0xd009, 0xd088
+Settings: 0xb000-0xb005, 0xb102-0xb105, 0xb200-0xb207, 0xb210-0xb212, 0xb300-0xb302,
+  0xc003, 0xc010, 0xf060 ; canaux: (id-0x2ff0)=mute val2, (id-0x2fd0) val2, (id-0x4cd0/4ce0/4cf0)
+Le play.log capturait un AUTRE client (src 0100 0100 3602 + dst MachineID ca53d56b=6bd553ca), pas uRemote.
+Outil: research/tools/send_ctrl.py d000=1 wait=10 d000=0
