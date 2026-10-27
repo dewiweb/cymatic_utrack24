@@ -96,3 +96,13 @@ Listes candidates: 0x2300-0x4200 (canaux), 0x5000-0xd000 (device/transport)
 Le play = probablement un controlID 0xd0xx ou 0xb2xx.
 NEXT: decompiler FUN_00547350 et ses freres pour mapper chaque controlID
 -> fonction de transport (play/stop/record) au bon controlID.
+
+## UPDATE — controlIDs confirmes (handlers decompiles)
+- 0x2ff0 = base mute canaux (FUN_547350 appelle vtable[0x174](id-0x2ff0))
+- 0x2fd0 = mute alternatif (FUN_51b6c0 toggle etat canal +envoie)
+- 0xd001 = controle transport (FUN_5450f0 vtable[0x17c] -> seek/transport?)
+- 0xb210 = controle device (FUN_545420)
+- 0xd000 = autre transport (FUN_547780)
+La valeur float 0x4cc = position/valeur du controle (fader?)
+NEXT: tester play = envoyer commande controlID 0xd001/0xd000 au uTrack;
+les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
