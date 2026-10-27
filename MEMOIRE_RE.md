@@ -71,3 +71,11 @@ Capturer les writes utilisateur ne marche pas (Manager parle ailleurs).
 Meilleur: notre session adoptee peut ENVOYER des 8423 au uTrack directement.
 8423 TLV 0123 0410 3400 <propID> <valeur> vers 34b96e2e = write propriete.
 Les propIDs du mixer (mutes/faders) a decouvrir en sondant (read 0123 vs write).
+
+## GHIDRA — chaine de commande (mise a jour)
+- FUN_00516c30 = dispatch evenements -> FUN_00547400 / FUN_00547350 (mute)
+- FUN_005262c0 = dispatch avec routes -> FUN_00547780/545420/5453a0/545320/545200
+- FUN_00585430 = encoder write propriete (flags +0x30 selectionne le type)
+- mute = FUN_0051b610 toggle canal ; session keepalive = FUN_00545200 (c010)
+- PropIDs transport vus en capture: 6306-6b06 (4023) et 6506 (8423 write)
+- le write play (6506/28018400) n'a PAS declenche la lecture = mauvais champ
