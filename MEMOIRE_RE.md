@@ -106,3 +106,13 @@ Outil: research/tools/send_ctrl.py d000=1 wait=10 d000=0
 python research/tools/send_ctrl.py d000=4@2  -> le uTrack24 passe en PLAY (confirme visuellement par l'user),
 uRemote ferme. Chaine complete OK: adoption (init_seq_fresh) + framing Adler + trame 8437/4337.
 => mecanisme de controle prouve. Reste: mapper les valeurs (stop/rec/...) et les autres ctrlIDs.
+
+## TRANSPORT (transport_all.log, uRemote port 43894) — ctrl 0xd000 @ sous-session 02
+Ordre user: Play, Pause, Stop, Rec(+confirm), Stop, autres boutons.
+  38.990 val=4  Play      (valide sur device)
+  53.241 val=4  Pause     -> meme valeur que Play (bouton bascule ?) a confirmer
+  59.875 val=3  Stop
+  65.991 val=5  Rec
+  89.323 val=3  Stop (apres dialogue: coherent avec FUN_00512810: val==3 && etat 0x288 in {3,6} -> dialogue)
+Les "autres boutons" n'ont emis AUCUN 0xd000 (passent probablement par 0xd001 locate via vtable[0x17c]).
+Test 17:55:14 play(4) puis 17:55:21 stop(3) envoye par notre client.
