@@ -592,3 +592,11 @@ Checksum FUN_00678cd0 <- FUN_0064c110 + FUN_0064bf70 (lecture/verif)
 'VNMINFO' @0xc23b98 <- FUN_00626b90 = handler discovery UDP
 'CHAI Thread' @0xc24168 <- FUN_0062e180 = thread CHAI
 => la pile d'envoi est identifiee; suivre ces fonctions = tout le flux
+
+## Ghidra — couche session décodée
+FUN_0062e180 = init thread CHAI ('CHAI Thread' @0xc24168, timer 0xfa)
+FUN_00626b90 = discovery VNM: UDP broadcast VNMSRCH -> attend VNMINFO
+  -> extrait adresse TCP -> connect() -> lien CHAI
+  (sockets UDP + parses reponse, timeout ~30 tries)
+Couche envoi complete cartographiee (11 senders vers FUN_0064c110)
+Logs decompiles: research/assets/cap/ghidra_d5_decompiled.log
