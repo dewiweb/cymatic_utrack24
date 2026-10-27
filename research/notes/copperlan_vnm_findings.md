@@ -236,3 +236,13 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
 - VNM local: client CHAI (Manager) connecté sur localhost:40987
 - 1210: AL=feff/1000 (lien!), uTrack=0100 (aucun) — AL signale son lien TCP
 - NEXT: Manager UI > add TCP-IP link manuel vers 192.168.10.197:55000
+
+## Session 27/10 — client CHAI natif en cours
+- uTrack24 de retour (.197, tous ports) après débranchement USB
+- AudioLAN = .175, shell sds complet + stack VNM
+- VNM mémoire: noms devices présents (uT24-AudioLan-49-00-30, #uTRACK24 MIDI)
+- Connect CHAI = OK, notification handler reçoit cb#1 (ptr device!)
+- RemoteDevice_FindFirst_Async[27] = signature 10 args non-POD → crash interop
+- SOLUTION PROPRE: compiler client C++ natif avec CHAIFreeware.lib (déjà téléchargée)
+  mais pas de compilateur x86 installé sur la machine → blocage outil
+- Ou: créer les objets CDeviceID/CombinedEnums correctement (layout connu: {vptr,_v})
