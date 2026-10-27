@@ -496,3 +496,14 @@ Endpoint IDs: 34b96e2e=uTrack, 69727160=uRemote PC member, ca53d56b=?, feff/broa
 - c842 = déclaration membre (nom "uRemote" + ID endpoint)
 - Réponses reçues mais mute non routé — probablement besoin que le membre soit adopté
   (le VNM nous assigne peut-être un ID, ou le membre doit d'abord être "resolved")
+
+## Séquence init uRemote COMPLÈTE (clean_130604.log — client unique)
+1. ef510180 01000000 <rand> = hello → ef510000 <rand> = accept
+2. c842 x3 = déclarations membres (noms, IDs endpoint)
+3. 5423 = subscriptions aux groupes
+4. ~50 writes 8423 (tag 0123 0410 34XX) = sync init des propriétés
+5. c437 = abonnements aux notifications de changement d'état
+6. 4423/c423 = polls périodiques, 4437 = flux metering continu
+
+Structure écriture 8423: 0100 <len> 00018423 <hdr> 0e00<idx><endpoint> 
+  0123 0410 34 <idx_prop> 01 00 0100 <membre> 0000 <type28|34|40> <valeur>
