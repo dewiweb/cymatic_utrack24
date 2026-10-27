@@ -464,3 +464,9 @@ Types:
   00018437 = subscribe PC->dev ; 0001c010/0001d010 = control/status
 TLV: 0e00<idx><id32>=endpoints (34b96e2e=uTrack src, 69727160=PC dst), 1a00=block, 8023/0123=propriété écrite
 Metering: trames 4437 répètent blocs 16B x24 (e000..e018) = vumètres uRemote
+
+## Snapshot .cps trouvé et décodé
+Fichier: AppData\Roaming\CopperLan Manager\QuickSaves\*.cps (copié research/assets/)
+Contenu: déclarations membres (VMidi/LCL/uRemote), MachineID 6bd553ca,
+records DISD_/8010/0e00 = mêmes TLV que le protocole réseau (endpoint 34b96e2e=uTrack)
+magic f1f2f3f4a1c2 = identique au blob Setup du registre MIDI2CP
