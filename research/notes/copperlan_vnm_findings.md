@@ -490,3 +490,9 @@ Endpoint IDs: 34b96e2e=uTrack, 69727160=uRemote PC member, ca53d56b=?, feff/broa
   - Le CRC des trames CPOETH dirigées = meme chose probablement
 
 => On peut forger des messages CHAI valides!
+
+## CLIENT CHAI NATIF — en cours (src/chai_client.py)
+- hello ef51018001000000<rand4B> → VNM répond ef510000<rand> + msgs d842 (negociation lien)
+- c842 = déclaration membre (nom "uRemote" + ID endpoint)
+- Réponses reçues mais mute non routé — probablement besoin que le membre soit adopté
+  (le VNM nous assigne peut-être un ID, ou le membre doit d'abord être "resolved")
