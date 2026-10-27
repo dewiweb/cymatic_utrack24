@@ -264,3 +264,32 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
 - PROCHAINE ÉTAPE: désassembler ces classes dans Ghidra/r2 -> le format exact
   du handshake CHAIoNet -> forger vers VnmTcpListener:55000
 - La session :55000 attend un Hello CHAIoNet -> trouver son template dans uRemote
+
+## Session 27/10 — pool d'agents + nouvelle version + RTTI résolu
+
+### Nouvelle version CopperLan (CNET)
+- 1.0.6.1 installée (Program Files\CopperLan, 64-bit) — TOUJOURS v0x20, même mur
+- 1.4.5 = probablement inexistante (informer agrège des versions fantaisistes)
+
+### Cartographie uRemote.exe (agents)
+- Chaîne: CFindVNMThread → UDP broadcast VNMSRCH → VNMINFO reply
+         → CTransportAddress(ip,55000) → CWin32TCPIPSocket → connect()
+         → CCLPCHAIMsgLinkTransportProtocol → 1er msg = AppIntCtrlMsgPayload_Hello
+         → HelloReturn → SmartConnect → CHAIInfo
+- uRemote en mode DEMO = aucune socket (découverte désactivée)
+- VNMSRCH forgé (UDP 40987/55000/9875...) → aucune réponse VNMINFO des devices
+
+### RTTI → vtable (méthode validée en Python, sans r2 -A)
+- Hello TD @ 0x955a14 → COL @ 0x92ac2c → vftable @ 0x5f0250
+  slots: 0x5abf70,0x54f5d0,0x5a76e0,0x505e20,0x56d150,0x56d190,0x56d1e0
+- Payloads = stubs; la sérialisation wire est dans l'enveloppe
+  CAppInternalControlMessage (RTTI @ .?AVCAppInternalControlMessage@CPCHAI@@)
+- 1210 field après 1100: AL=feff (BrandID 0xFFFE / "all"), uTrack=PC=0100
+- Warnings a013 = loopback PC uniquement — devices 0x24 ACCEPTÉS,
+  blocage = formation de lien, PAS version
+
+### Prochaine étape
+1. Sortir uRemote du mode demo → capturer VNMSRCH live → forger VNMINFO
+   → uRemote ouvre TCP:55000 → capture Hello sur le fil (vérité terrain)
+2. Ou désassembler CAppInternalControlMessage::Serialize via sa vftable
+   (même méthode RTTI→COL→vftable que ci-dessus)
