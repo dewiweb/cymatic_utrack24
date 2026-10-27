@@ -106,3 +106,12 @@ NEXT: decompiler FUN_00547350 et ses freres pour mapper chaque controlID
 La valeur float 0x4cc = position/valeur du controle (fader?)
 NEXT: tester play = envoyer commande controlID 0xd001/0xd000 au uTrack;
 les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
+
+## ETAT SESSION (reprendre ici)
+- Teste controlIDs transport: 0xd001, 0xd000, 0xb210 envoyes au uTrack
+- A verifier: le uTrack a-t-il joue? (user pas encore confirme)
+- Handlers transport = vtable[0x17c](controlID) / vtable[0x174](controlID)
+- Mute = 0x2fd0/0x2ff0 | Transport = 0xd000/0xd001 | Device = 0xb210
+- Session src/chai_session.py tient le lien (repond sondes)
+- NEXT: confirmer si play a marche; sinon decompiler les methodes
+  vtable[0x174]/[0x17c] pour le format exact de la commande transport
