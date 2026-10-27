@@ -240,3 +240,13 @@ FUN_006794b0 cree session depuis un buffer
    via un msg SmartConnect_Source vers l'endpoint uTrack, puis les writes passent
 NEXT: envoyer un SmartConnect source vers uTrack endpoint avant les writes;
 le contenu exact du payload dans les captures (chercher le connect uRemote)
+
+## C437 = OPEN SESSION (le message qui manque)
+uRemote envoie c437 a chaque endpoint uTrack (t=35.62):
+  src 0e00 0200 <membre> | dst 0e00 0100 <device> | reqID | TLV 0837
+VNM echoit c437 avec 8837 = session ACCEPTEE
+puis 8437 = abonnements metering actifs
+=> notre replay contient ces c437 (init_seq_fresh) donc la session s'ouvre
+   (edge visible dans Manager = preuve). Le probleme n'est PAS la session.
+=> les writes echouent car propID/valeur faux OU mauvais membre handle.
+   Le vrai test: lire une prop pour verifier le routing (read, pas write)
