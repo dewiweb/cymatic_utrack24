@@ -582,3 +582,13 @@ FUN_0064dfe0/0064e1b0 = sendmsg type 0x37c4 (message controle interne)
 - Prochaine approche: cartographier les ~16909 vftables trouvées et les
   associer aux classes RTTI par proximité mémoire, puis décompiler
   les sérialiseurs Hello/SmartConnect pour reproduire l'adoption
+
+## Arbre d'appels du protocole (Ghidra uremote_v36)
+Serialiseur trame FUN_0064c110 appele par:
+  FUN_0064c610, FUN_0064c3f0(x2), FUN_0062e7f0, FUN_0062e860,
+  FUN_0064bb00(x3), FUN_0064c660, FUN_0062edd0, FUN_0064c260,
+  FUN_0064c5c0, FUN_0064ba60  = la couche d'envoi complete
+Checksum FUN_00678cd0 <- FUN_0064c110 + FUN_0064bf70 (lecture/verif)
+'VNMINFO' @0xc23b98 <- FUN_00626b90 = handler discovery UDP
+'CHAI Thread' @0xc24168 <- FUN_0062e180 = thread CHAI
+=> la pile d'envoi est identifiee; suivre ces fonctions = tout le flux
