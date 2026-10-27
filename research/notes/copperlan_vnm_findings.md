@@ -649,3 +649,14 @@ FUN_00547350 = keepalive d010 (param2-0x2ff0)
 - LM_DeviceDeclaredOrModified::Serialize = FUN_00657890 (format complet decode)
 - Reste: le VNM assigne le membre ID; notre decl doit attendre/repondre
   aux requetes d'identite du VNM avant d'etre visible
+
+## CAPTURE VNM VIERGE (fresh_vnm.log) — vraie 1re session
+- Redemarrage CPVNM → capture → uRemote relance (session fraiche t=29.9)
+- uRemote utilise TOUJOURS membre ID 0x69727160, handle session c50a (nouveau)
+- L'ID n'est NI dans le binaire NI alloue par VNM → persistant uRemote
+  (registry/config non trouve, ou derive de la licence CHAI du client)
+- Handle session (c50a/1718) = alloue par VNM, change a chaque session
+- Membre ID (69727160) = identite stable du membre, fournie par le client
+- LM_DeviceDeclaredOrModified::Serialize = FUN_00657890 (format decode)
+- uRemote enregistre: device "uTrack24 Remote" (0x6800000) + membre "uRemote"
+  + 5 conteneurs: Status Meters Controllers Files Settings
