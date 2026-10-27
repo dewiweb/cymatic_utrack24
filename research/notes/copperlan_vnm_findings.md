@@ -572,3 +572,13 @@ FUN_0064dfe0/0064e1b0 = sendmsg type 0x37c4 (message controle interne)
 - Approche alternative: decompiler FUN_0064dfe0 (émet msg type 0x37c4) +
   suivre les appels vers le handshake SmartConnect
 - La séquence init capturee (init_seq.txt/dewi.txt) permet deja une session stable
+
+## Session — état Ghidra + protocole
+- Projet Ghidra uremote_v36 analysé (C:\tools\ghidra_projects)
+- Les RTTI TDs sont trouvés MAIS aucune ref croisée vers eux -> la table 
+  RTTI n'est pas liée automatiquement; il faut scanner la mémoire pour 
+  trouver les vftables (suite de pointeurs code) et remonter aux classes
+- Séquence init rejouée = session stable (chai_session.py)
+- Prochaine approche: cartographier les ~16909 vftables trouvées et les
+  associer aux classes RTTI par proximité mémoire, puis décompiler
+  les sérialiseurs Hello/SmartConnect pour reproduire l'adoption
