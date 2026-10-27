@@ -135,3 +135,14 @@ les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
 - NEXT: decompiler la creation du lien SmartConnect (CTaskSmartConnect*) OU
   envoyer le bon msg de lien membre->device avant les writes;
   regarder comment uRemote etablit l'edge vers uTrack au debut
+
+## ETAT FINAL — blocage sur le controle du device
+- Echo test non concluant: le VNM ne renvoie JAMAIS l'echo a l'emetteur
+- Read-back prop echoue: format read incorrect (4423 mal construit)
+- Le lien uRemote<->uTrack est visible dans Manager (edge) = decls OK
+- Le transport n'est PAS un write propriete classique:
+  probablement un "invoke" sur un controle (vtable[0x17c] dans le code)
+- Play.log montre: 4023 msgs (notifications etat) + 8423 write prop 6506
+- NEXT (priorite): trouver le format INVOKE-CONTROL exact dans Ghidra;
+  c'est probablement un autre type de message que 8423, ou un appel methode
+  sur l'objet transport du device. Chercher FUN qui construit le msg invoke.
