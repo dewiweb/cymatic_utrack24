@@ -125,3 +125,13 @@ les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
   ou un message invoke specifique
 - NEXT: decompiler la methode vtable[0x17c] (invoke control) pour le format;
   ou capturer un vrai "record" depuis uRemote (plus parlant que play)
+
+## BLOCAGE REEL TROUVE — nos writes ne sont pas routes
+- Test: write 8423 vers uTrack -> VNM n'echoit PAS (0 echo recu)
+- uRemote write -> VNM echoit (broadcast aux abonnes). Nous = refuse
+- Donc: notre membre n'a pas l'autorisation/le lien vers l'endpoint uTrack
+- Hypothese: il faut un SmartConnect/lien etabli membre<->device (l'edge
+  qu'on voyait = le routing). Ou une souscription 5423 explicite au device.
+- NEXT: decompiler la creation du lien SmartConnect (CTaskSmartConnect*) OU
+  envoyer le bon msg de lien membre->device avant les writes;
+  regarder comment uRemote etablit l'edge vers uTrack au debut
