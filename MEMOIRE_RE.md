@@ -161,3 +161,11 @@ les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
 - substring() : verifier length d'abord
 - TD ICHAI @ file 0x884de8 -> VA ~0xc84de8 (verifier offset section)
 - La fonction de send msg = FUN_0062edd0 (605 chars, decompilee)
+
+## FORMAT INVOKE-CONTROL decode (FUN_0064dfe0/64e1b0)
+Le transport = msg interne type 0x37c4 (meme type que SmartConnect):
+  +0x48 = msgID | +0x4c = 0x37c4 | +0x1c..0x2a = champs (flags/controlID/params)
+FUN_0062edd0 = le send: flag 0xb000 client / 0x2000 VNM, appelle FUN_0064c110 (frame)
+Le "play" = msg 0x37c4 avec controlID transport dans les champs +0x1c-0x2a.
+Les d842 VNM->client contiennent ces payloads 0x37c4 = negociation.
+NEXT: mapper les champs +0x1c-0x2a du msg 0x37c4 au transport play/stop.
