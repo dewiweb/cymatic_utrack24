@@ -293,3 +293,17 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
    → uRemote ouvre TCP:55000 → capture Hello sur le fil (vérité terrain)
 2. Ou désassembler CAppInternalControlMessage::Serialize via sa vftable
    (même méthode RTTI→COL→vftable que ci-dessus)
+
+## RE uRemote.exe — adresses clés extraites
+- Hello vftable @ 0x5f0250 (dtor 0x5abf70, GetSize 0x54f5d0, Serialize 0x5a76e0,
+  Deserialize 0x505e20, + 0x56d150/0x56d190/0x56d1e0)
+- CAppInternalControlMessage vftables @ 0x5ee8f8/0x5ee92c/0x5ee93c/0x5ee96c
+  (multi-héritage; Serialize enveloppe ~0x56b200, builder @ 0x56b240 écrit
+  const 0x37c4 = msg type-ID)
+- CCLPCHAIMsgLinkTransportProtocol vftables @ 0x5ef7b8/0x929d10
+- CCLPMessageLinkCHAI vftables @ 0x5edb40/0x5edb5c
+- Méthode: TD = nameVA-8 ; scan LE-dword(TD) -> COL ; scan LE-dword(COL) -> vftable-4
+- uRemote démo = 0 socket, ne touche pas VNM:40987 non plus; la connexion CHAI
+  au VNM est transient ou ne se fait qu'avec un device découvert
+- mDNS: uTrack annonce _http._tcp seul; AudioLAN _http+_rtsp; VNM annonce LCL301201
+- uRemote NE FAIT PAS de VNMSRCH observable en démo (0 socket UDP)
