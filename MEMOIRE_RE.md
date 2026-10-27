@@ -126,3 +126,11 @@ NEXT: 0xd001 locate (vtable[0x17c], autre TLV) pour ff/rew/position ; puis mixer
 
 ## CARTE COMMANDES (RTTI) -> research/notes/command_map.md
 Chaque ctrl relie a sa classe UI via RTTI (ClassOf.java). Ouvert: regle sous-session, slot 0x17c, mute vs solo.
+
+## A FAIRE DEMAIN (dans cet ordre)
+1. Lire dans le code la regle de sous-session (d000->2, b0xx->4 observes seulement).
+2. Valider une commande sans risque sur le device (0xb200 AutoPlay ou 0xb105 PreRecording).
+3. Decoder le builder 0x17c (FUN_0064de20) -> 0xd001 locate/ff/rew.
+4. Mixer: DSPMChannelStrip (+0x2b0 / +0x3c8) mute vs solo, ids par canal.
+NE PAS tester sans accord: 0xb003/b004/b005 (reseau), 0xb000 (horloge).
+Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_ctrl.py, Ghidra ClassOf/CtrlCalls/Truth.
