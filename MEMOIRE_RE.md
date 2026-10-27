@@ -58,3 +58,10 @@ mute1.log a les writes 8423 (sync etat ~22.8s) mais pas le toggle isole
 mute_off.log = aucun write 8423 -> uRemote n'envoyait pas (pas sur vue mixer?)
 NEXT: recapturer en gardant uRemote sur l'onglet mixer, toggle ch1 proprement.
 Les writes 8423 = TLV 0123 0410 3400 <propID u16> <valeur> vers device 34b96e2e
+
+## BLOQUE — capture des writes de controle
+- mute_off.log + prop_edit.log : QUE du trafic de fond (4437 metering, polls)
+- L'editeur CopperLan Manager n'envoie pas de 8423 sur :55000 capte
+- Le write de controle passe peut-etre par :40987 (service controle) ou
+  une session Manager differente qu'on ne capte pas sur loopback:55000
+- NEXT: capturer TOUS les ports CPVNM, ou les writes en live depuis notre session
