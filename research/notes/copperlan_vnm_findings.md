@@ -523,3 +523,9 @@ research/assets/chai_sdk/: tous les headers officiels
   => le VNM valide le membre: ID/endpoint doit probablement être alloué par VNM
   ou format du champ endpoint différent. Presque!
 SDK CHAI Freeware dispo dans research/assets/chai_sdk/ (headers + dll 32b + Engine.cpp référence)
+
+## Session 27/10 — membre presque visible dans Manager
+- Declarations passent MAIS le VNM coupe apres ~1-2s si on ne repond pas
+  aux msgs d842 (negociation de lien CHAIoNet) -> lien considere mort
+- Le champ 07 00 dans c842 = longueur du nom (corrige pour DewiTool=08)
+- Prochaine etape: decoder les d842 et repondre pour maintenir le lien
