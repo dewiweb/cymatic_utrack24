@@ -258,3 +258,11 @@ puis 8437 = abonnements metering actifs
 - La session s'ouvre bien (c437) + on peut lire les props
 - NEXT: enumere les props uTrack par read (5423) pour mapper les
   controlIDs -> trouver play/transport par leur valeur, ou le bon format write
+
+## ETAT FINAL — routing prouve, props capturees
+- READ 5423 vers uTrack marche (reponses 10-15KB avec le device)
+- prop_enum.bin = 14916B de reponses aux props transport/device
+- la session parle au uTrack. Reste a mapper les writes (format/propID)
+- le transport probablement = propID lisible dans prop_enum.bin
+- NEXT: decoder prop_enum.bin, identifier propIDs play/stop/transport
+  puis les writes correspondants pour controler le uTrack
