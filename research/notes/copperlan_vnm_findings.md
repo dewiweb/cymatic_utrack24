@@ -507,3 +507,10 @@ Endpoint IDs: 34b96e2e=uTrack, 69727160=uRemote PC member, ca53d56b=?, feff/broa
 
 Structure écriture 8423: 0100 <len> 00018423 <hdr> 0e00<idx><endpoint> 
   0123 0410 34 <idx_prop> 01 00 0100 <membre> 0000 <type28|34|40> <valeur>
+
+## SDK CHAI Freeware trouvé sur SourceForge (projet ms812proxy)!
+research/assets/chai_sdk/: tous les headers officiels
+  CHAIFreeware.h/_Data/_Enums/_Messages/_Remote/_Local/_Notifications
+  + CHAIFreeware.dll + .lib (l'implémentation!)
+  + ms812proxy/Engine.cpp = un client CHAI réel de référence
+=> l'API officielle est documentée — notre client n'a plus besoin de reverse-engineer!
