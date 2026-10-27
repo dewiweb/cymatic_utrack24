@@ -299,3 +299,13 @@ CLES POUR LA SUITE:
 - NEXT: capturer une action transport NETTE (record) pour comparer
   le write exact bit-par-bit vs ce qu'on envoie; ou decompiler la
   fonction uRemote qui envoie play (bouton UI -> commande)
+
+## PISTE FINALE — trouver le play
+Les fonctions 0x584xxx = encodage audio/metering, PAS transport.
+Le play = bouton UI qui envoie une commande device. Pour le trouver:
+1. la chaine 'Play' UI @ .rdata 0x2cc0ac — trouver la fct qui la lit
+   (l'handler du bouton play) puis ce qu'elle envoie
+2. OU le transport est un invoke 0x37c4 (msg controle) vers l'endpoint
+   transport du uTrack, avec controlID/methode play
+3. OU c'est un write 8423 vers un endpoint transport different de ca53d56b
+La reponse est dans le code qui lie le bouton Play UI au message envoye.
