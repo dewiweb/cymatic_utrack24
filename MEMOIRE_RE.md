@@ -146,3 +146,11 @@ les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
 - NEXT (priorite): trouver le format INVOKE-CONTROL exact dans Ghidra;
   c'est probablement un autre type de message que 8423, ou un appel methode
   sur l'objet transport du device. Chercher FUN qui construit le msg invoke.
+
+## PROCHAIN PAS PRECIS — resoudre invoke-control
+- TD .?AVICHAI @ file 0x884de8 | .?AVCComputerCHAI @ 0x88a4ec
+- ctor FUN_00627bd0: param_1[0x33b]=ICHAI::vftable (interface CHAI)
+- les appels transport = vtable[0x174]/[0x17c] sur objet +400 (ICHAI*)
+- Resoudre ICHAI::vftable VA (via TD->COL->vftable, ~offset -4 avant vft)
+- lire les u32 aux slots +0x174 et +0x17c = adresses fonctions invoke
+- decompiler ces fonctions = format exact du msg invoke-control (transport)
