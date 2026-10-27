@@ -212,3 +212,13 @@ visuelle que le device reagit. 3 hypotheses si ca ne marche pas:
 2. mauvais endpoint/propID pour le transport
 3. le transport utilise un autre type de message (invoke 0x37c4)
 Verifier dans Manager si l'edge uRemote<->uTrack est actif (vert) ou inactif.
+
+## BARRAGE TESTE — 414 msgs envoyes
+- writes 8423: propIDs 0x00-0x80 + transports 0x6300-0xb210, 3 endpoints
+- invocations 4023 TLV 1023/1223
+- Aucun bouton transport allume (confirmation user en attente)
+- Si rien: le lien SmartConnect vers le device est inactif — nos decls
+  creen le membre mais pas le ROUTING. uRemote fait un connect explicite
+  qu'on ne reproduit pas. C'est le vrai blocage.
+- NEXT: trouver le msg qui ACTIVE le lien (SmartConnect open-session)
+  classes: CTaskSmartConnectInitiator, RemoteDeviceWatcher_SmartConnectOpenSession
