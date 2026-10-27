@@ -217,3 +217,13 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
 - Senders via vtable ctx: 0x1400741a4 / 0x140074a9a (CRC seed 0xfdb98ace)
 - NEXT (dernier): Ghidra/r2 -A sur 0x1400777a0 -> trouver quelle branche d'adoption
   appelle 0x1400741a4 (reply) = la trame à forger pour que le device rejoigne
+
+## Session 27/10 — retour réseau + adoption partielle
+- uTrack24 = USB-only après reboot → Ethernet down (muet même L2). Débranché → beaconne à nouveau (.197, 23/80/55000 ouverts)
+- AudioLAN = .175 (changé), shell sds identique + stack VNM complète (CLPLnkCtlr/VnmTcpListener:55000/VNM Core/KeyVerif)
+- VNM mémoire: uTrack MAC ×2, AudioLAN record avec NOM "uT24-AudioLan-49-00-30", strings "#uTRACK24 MIDI"
+- 1210 frames: AL=feff/1000 (lien annoncé), uTrack=0100 (rien), PC=0100/0200
+- Ports MIDI PC: VMidi 1-4 + LCL301201 (id VNM)
+- AudioLAN CopperLan cfg: BrandID=0xFFFE, BrandName="Test", Enabled=1
+- État: VNM traque les devices (beacon-level) mais PAS de déclaration CHAI → invisible Manager
+- Le blocage final = session applicative CHAI (lien TCP:55000 jamais formé)
