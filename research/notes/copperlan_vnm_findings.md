@@ -448,3 +448,8 @@ Le lien TCP véhicule les mêmes messages que CPOETH, wrappés `abebafec<len>`.
 1. Décoder le format des trames dirigées 1104/1101
 2. Reproduire les commandes uRemote (transport/mixer/etc.) en Python
 3. Assembler le multitool: Telnet + CPOETH-CHAI + AES67 + USB
+
+## Capture dirigée analysée (directed_1224.log + directed_frames.pcap)
+- 1104=requête VNM->device, 1101=réponse, seq u32LE, keepalives 48B
+- Trames 1008B = messages TLV: 0100<sub><flags> <len/id> puis records 0e00/1a00
+- = protocole CHAIoNet complet, prêt à réimplémenter en Python
