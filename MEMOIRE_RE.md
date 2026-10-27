@@ -198,3 +198,9 @@ ou capturer le vrai invoke (record/mute plus parlant que play)
 - Question ouverte: nos writes atteignent-ils le device? (verifier visuellement)
 - Si ca ne marche pas: le lien membre->device est peut-etre incomplet
   (le SmartConnect etablit le routing; verifier qu'il est actif)
+
+## TEST TRANSPORT (en attente)
+- envoyes: play capturé + propIDs 0x6300-0x6b00 val=1 vers ca53d56b
+- les boutons play/rec sur le device s'allument si ca marche
+- si rien: nos writes n'atteignent pas le device (lien SmartConnect inactif)
+  ou mauvais endpoint/format
