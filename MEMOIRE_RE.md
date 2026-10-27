@@ -116,3 +116,10 @@ Ordre user: Play, Pause, Stop, Rec(+confirm), Stop, autres boutons.
   89.323 val=3  Stop (apres dialogue: coherent avec FUN_00512810: val==3 && etat 0x288 in {3,6} -> dialogue)
 Les "autres boutons" n'ont emis AUCUN 0xd000 (passent probablement par 0xd001 locate via vtable[0x17c]).
 Test 17:55:14 play(4) puis 17:55:21 stop(3) envoye par notre client.
+
+## ✅ TRANSPORT COMPLET VALIDE SUR LE DEVICE
+play(4) 17:50 / stop(3) 17:55 / rec(5)+stop 17:56 -> confirmes par l'user (prise ~8s creee).
+API: src/utrack_control.py  (UTrackControl().connect().play()/stop()/rec()/ctrl(id,val,sub))
+CLI: python src/utrack_control.py play|stop|rec|ctrl d000 4 2
+NEXT: 0xd001 locate (vtable[0x17c], autre TLV) pour ff/rew/position ; puis mixer/settings
+      (table ctrl_calls.txt) en capturant chaque action uRemote avec capture_loopback.py (port=).
