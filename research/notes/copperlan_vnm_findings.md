@@ -307,3 +307,28 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
   au VNM est transient ou ne se fait qu'avec un device découvert
 - mDNS: uTrack annonce _http._tcp seul; AudioLAN _http+_rtsp; VNM annonce LCL301201
 - uRemote NE FAIT PAS de VNMSRCH observable en démo (0 socket UDP)
+
+## Session 27/10 — percée décisive: BAD VERSION EST LE MUR
+
+### Console CPVNM (manual start) = debug complet!
+- `T` Transport: **#Received: 0, #Sent: 140, #BadVersion: 414**
+  → le VNM rejette TOUTES les trames entrantes (devices v0x24 incluses)
+- `N` Network Control: Neighbour/Bottom lists = VIDES (aucun voisin)
+- `D` Device table: 2 entrées locales seulement (VNMManager + MIDI)
+- `M` Link manager: seul "Internal message link" — PAS de lien Ethernet/TCP dans la liste
+- `Ethernet[Version: 16]` = version de lien 0x10
+
+### Autres découvertes
+- CLoNet.clp = DEBUG build → dépend de msvcr80d.dll (absente) → jamais chargé
+  → pas d'interface TCP-IP annoncée dans les 1210 → devices ne dial pas
+- Patch CLoNet.clp fait (imports msvcr80d->msvcr80 mappés) — pas encore chargé
+  (peut-être chargé on-demand, pas au startup)
+- Patch mémoire 0x20->0x24 sur 307 beacons = INUTILE (rebuild instantané
+  par le builder — version vit dans l'objet lien, pas le buffer)
+
+### PROCHAINE ÉTAPE
+- Patcher LE CODE: la comparaison version dans le rx path OU l'objet lien
+  (champ version stocké à l'init). Chercher `cmp reg,0x20`/`cmp reg,0x24`
+  autour de la rx callback du nouveau CPVNM.exe (même rôle que
+  0x1400777a0 de l'ancienne build)
+- Ou forcer le chargement CLoNet (copier msvcr80d.dll si trouvable)
