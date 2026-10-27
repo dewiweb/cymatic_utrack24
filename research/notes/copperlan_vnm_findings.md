@@ -635,3 +635,17 @@ FUN_00547350 = keepalive d010 (param2-0x2ff0)
 - TLV 0x0123 ecrits par FUN_5834a0 (x4), 0x494351/4945f2 = serialiseur TLV
 - TLV 0x1040 @ 49b1c7, 54bf90 ; 0x0e00 @ 417900/417c60
 => FUN_5834a0 = serialiseur proprietes 8423 (le vrai sender de commandes)
+
+## SESSION DEWI CAPTUREE (dewi_session.log) — analyse
+- VNM nous assigne handle session 0x3602 (vu dans ses reponses c423/5423)
+- Nos decls c842 partent (t=3.66/3.97/5.44/6.65), VNM ne coupe PAS -> accepte
+- MAIS pas de membre dans Manager -> il manque une etape d'activation
+- Le membre "uRemote" apparait car le VNM a son identite en cache;
+  un NOUVEAU membre doit completer la requete d'info (le VNM l'interroge)
+- FUN_00545da0 = le code qui enregistre le membre uRemote:
+    device = chai->vtable[0xb4](2,0,1,0, 0x6800000, "uTrack24 Remote")  // AddLocalDevice
+    member->SetName("uRemote")
+    +5 containers proprietes: Status/Meters/Controllers/Files/Settings (vtable+0xe4)
+- LM_DeviceDeclaredOrModified::Serialize = FUN_00657890 (format complet decode)
+- Reste: le VNM assigne le membre ID; notre decl doit attendre/repondre
+  aux requetes d'identite du VNM avant d'etre visible
