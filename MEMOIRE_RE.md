@@ -52,3 +52,9 @@ SDK v1.5 se connecte :40987 (autre service, rejete pour adoption)
 Format: 8423 | src membre | dst device uTrack (34b96e2e) | TLV 0123 0410 3400 | propID u16 | valeur
 La rafale a ~22.8s = sync etat (tous les canaux). Le mute ch1 = un write specifique.
 NEXT: comparer 2 captures (ch1 mute on vs off) pour isoler le propID du mute.
+
+## PENDING — mute off non capture
+mute1.log a les writes 8423 (sync etat ~22.8s) mais pas le toggle isole
+mute_off.log = aucun write 8423 -> uRemote n'envoyait pas (pas sur vue mixer?)
+NEXT: recapturer en gardant uRemote sur l'onglet mixer, toggle ch1 proprement.
+Les writes 8423 = TLV 0123 0410 3400 <propID u16> <valeur> vers device 34b96e2e
