@@ -246,3 +246,12 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
 - SOLUTION PROPRE: compiler client C++ natif avec CHAIFreeware.lib (déjà téléchargée)
   mais pas de compilateur x86 installé sur la machine → blocage outil
 - Ou: créer les objets CDeviceID/CombinedEnums correctement (layout connu: {vptr,_v})
+
+## Session 27/10 — fin de journée, état consolidé
+- uTrack24 back on LAN (.197, 23/80/55000 open) — beaconne CPOETH à nouveau
+- AudioLAN = .175, stack VNM complète + shell sds
+- VNM mémoire: uTrack ×1, AudioLAN ×3-4 (adoptée avec nom "uT24-AudioLan-49-00-30")
+- Forge 1210 spoof uTrack-MAC+champ-lien-AL -> aucune réaction VNM (pas de TCP init)
+- Diagnostic final: la déclaration se fait sur le lien TCP:55000, jamais initié par VNM v0x20
+- AudioLAN adoptée via son canal v0x1c natif (bilingue); uTrack24 v0x24-pur ignoré au-delà du beacon
+- Le verrou = génération de protocole au niveau liaison, pas au niveau beacon
