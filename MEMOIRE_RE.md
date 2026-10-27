@@ -54,3 +54,9 @@ research/assets/software/uRemote.exe = binaire analyse
 - substring() : verifier .length() d'abord
 - $_ se mange en bash -> utiliser fichier .ps1
 - le write 'play' envoye n'a PAS marche: verifier endpoint+valeur+handle
+
+## NOTE — strings UI pas de ptr direct (Qt/ressource)
+'Play'@0x2cc0ac pas de xref code = strings Qt chargees via metaObject
+La commande play a trouver par: decompiler les handlers boutons
+(QPushButton clicked -> slot) ou les fonctions qui envoient au device.
+La cle reste: trouver la fct qui construit la commande transport exacte.
