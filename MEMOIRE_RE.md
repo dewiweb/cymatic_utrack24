@@ -154,3 +154,10 @@ les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
 - Resoudre ICHAI::vftable VA (via TD->COL->vftable, ~offset -4 avant vft)
 - lire les u32 aux slots +0x174 et +0x17c = adresses fonctions invoke
 - decompiler ces fonctions = format exact du msg invoke-control (transport)
+
+## NOTE — script errors courantes a corriger
+- getScalars() n'existe pas sur Instruction -> utiliser getOpObjects()
+- getLabels() n'existe pas -> SymbolTable.getSymbols()
+- substring() : verifier length d'abord
+- TD ICHAI @ file 0x884de8 -> VA ~0xc84de8 (verifier offset section)
+- La fonction de send msg = FUN_0062edd0 (605 chars, decompilee)
