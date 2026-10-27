@@ -1,13 +1,14 @@
 """Client CHAI natif — membre visible dans CopperLan Manager.
-Protocole: TCP :55000, framing ef51<len8><flag><msg><crc32BE>
-flag: b0=client->VNM, 20=VNM->client, 10=keepalive, a0=ping, 0180=hello
+Protocole: TCP :55000, framing ef51 | u16 LE (flags<<12|len) | msg | cksum Adler-like (a LE, b LE)
+flags: b=client->VNM, 2=VNM->client, 1=keepalive, a=ping
 """
-import socket,struct,zlib,time,threading
+import socket,struct,time,threading
+from chai_session import frame as _frame
 
 VNM_HOST='127.0.0.1'; VNM_PORT=55000
 
 def frame(msg,flag=0xb0):
-    return b'\xef\x51'+bytes([len(msg)&0xff])+bytes([flag])+msg+struct.pack('>I',zlib.crc32(msg)&0xffffffff)
+    return _frame(msg,flag>>4)
 
 class ChaiClient:
     def __init__(self,name=b'DewiTool',member_id=0x6d795442,host=VNM_HOST,port=VNM_PORT):

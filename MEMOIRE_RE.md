@@ -67,3 +67,17 @@ La cle reste: trouver la fct qui construit la commande transport exacte.
 - la valeur lue n'etait pas visible clairement -> format read a affiner
 - NEXT: extraire la valeur proprement de la reponse read;
   si write+read coherent => writes marchent, il faut juste les bonnes cmdes
+
+## !!! CORRECTION MAJEURE — tous les tests de commande precedents etaient invalides
+1. Le framing construit utilisait zlib.crc32 : FAUX. Le VNM jetait toutes nos trames construites
+   (play, mute, barrage 414). Seul le replay verbatim (octets captures) passait.
+   VRAI format (verifie sur 706/710 trames de play.log):
+     ef51 | u16 LE = (flags<<12)|len | payload(len) | a(u16 LE) b(u16 LE)
+     a,b = 0x4c4d,0x5054 ; pour chaque octet de ef51+hdr+payload: a=(a+x)%0xfff1 ; b=(b+a)%0xfff1
+   Implemente dans src/chai_session.py (cksum/frame/parse). chai_client.py l'utilise.
+2. Les scripts d'analyse tronquaient les trames a l'affichage (l[:120]) et ces chaines
+   tronquees ont ete rejouees -> messages incomplets.
+3. Le champ apres "3400" (9c02, 9e02, a002 ... 6306, 6406, 6506) est un COMPTEUR qui
+   s'incremente a chaque message (numero de sequence/transaction), PAS un propID.
+   "prop 6506" n'existe pas.
+Outil: research/tools/replay_action.py <log> <t0> <t1> = adopte + rejoue l'action re-framee.
