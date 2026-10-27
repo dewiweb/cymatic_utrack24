@@ -483,3 +483,10 @@ Framing: ef51 <len8?> <flag> puis message CHAI nu (pas de CRC par trame!)
 Endpoint IDs: 34b96e2e=uTrack, 69727160=uRemote PC member, ca53d56b=?, feff/broadcast
 
 => Notre client peut faire TCP -> :55000, parler CHAI, le VNM route.
+
+## CRC32 CASSÉ! - framing TCP complet
+  ef51 <len:1B> <flag:1B> <message CHAI> <crc32(msg) BIG-ENDIAN>
+  - 2001/2001 messages verifient zlib.crc32(body) == BE-read tail
+  - Le CRC des trames CPOETH dirigées = meme chose probablement
+
+=> On peut forger des messages CHAI valides!
