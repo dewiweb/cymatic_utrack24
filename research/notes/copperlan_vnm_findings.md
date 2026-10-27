@@ -332,3 +332,25 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
   autour de la rx callback du nouveau CPVNM.exe (même rôle que
   0x1400777a0 de l'ancienne build)
 - Ou forcer le chargement CLoNet (copier msvcr80d.dll si trouvable)
+
+## Session 27/10 — BREAKTHROUGH: le check version est LE mur (confirmé console)
+
+### CPVNM console (manual) — état réel du VNM
+- `T`: #Received=0, #BadVersion=414, #Sent=140 → TOUT rejeté à l'entrée
+- `N`: Neighbour/Bottom vides — aucun pair formé
+- `D`: 2 entrées locales (VNMManager + MIDI) — les devices ne sont PAS membres
+- `M`: seul Internal link — pas de lien Ethernet ni TCP
+- `Ethernet[Version: 16]`
+
+### Verrous précis identifiés
+1. Check version CPOETH: devices v0x24 rejetés (version attendue par le VNM=0x20)
+2. CLoNet.clp = debug build → msvcr80d.dll manquante → jamais chargé →
+   pas de TCP-IP link annoncé → devices n'ouvrent pas de session :55000
+3. uRemote démo = stack CHAI jamais lancé (pas de socket)
+
+### Échec: patch mémoire 0x20→0x24 (307 beacons) — rebuild écrase instantanément
+### NEXT: patcher le CODE — la comparaison version dans le rx callback
+  (nouveau CPVNM.exe, rôle de l'ancien 0x1400777a0 — trouver via thunk
+  CPEth_StartReceive @ IAT 0x1400d5120 → son call site → callback = arg
+  de la fonction qui appelle le thunk; la comparaison ~`cmp reg,0x20` dans
+  cette callback est à NOPer/patcher pour accepter 0x24)
