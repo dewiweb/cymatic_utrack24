@@ -250,3 +250,11 @@ puis 8437 = abonnements metering actifs
    (edge visible dans Manager = preuve). Le probleme n'est PAS la session.
 => les writes echouent car propID/valeur faux OU mauvais membre handle.
    Le vrai test: lire une prop pour verifier le routing (read, pas write)
+
+## PERCEE — le READ fonctionne, le routing existe!
+- 5423 (subscribe/read) vers uTrack 34b96e2e -> 9964B de reponse avec le device
+- Donc notre session PEUT parler au uTrack. Routing OK.
+- Le probleme writes = format/propID, pas le routing
+- La session s'ouvre bien (c437) + on peut lire les props
+- NEXT: enumere les props uTrack par read (5423) pour mapper les
+  controlIDs -> trouver play/transport par leur valeur, ou le bon format write
