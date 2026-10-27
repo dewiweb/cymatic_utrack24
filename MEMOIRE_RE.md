@@ -115,3 +115,13 @@ les handlers montrent que le transport utilise vtable[0x17c] pas [0x174]
 - Session src/chai_session.py tient le lien (repond sondes)
 - NEXT: confirmer si play a marche; sinon decompiler les methodes
   vtable[0x174]/[0x17c] pour le format exact de la commande transport
+
+## ECHEC — play via 8423 ne marche pas
+- controlIDs 0xd001/0xd000/0xb210 envoyes en write 8423 -> uTrack n'a pas joue
+- Raison: vtable[0x174]/[0x17c] = appels INVOKE sur les controles,
+  pas des writes de propriete -> format de message different
+- Le transport utilise probablement un msg "invoke control" (type autre que 8423)
+- Dans play.log, le vrai play = probablement les msgs 4023 (propIDs 6306-6b06)
+  ou un message invoke specifique
+- NEXT: decompiler la methode vtable[0x17c] (invoke control) pour le format;
+  ou capturer un vrai "record" depuis uRemote (plus parlant que play)
