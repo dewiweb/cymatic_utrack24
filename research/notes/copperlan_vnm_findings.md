@@ -610,3 +610,11 @@ Logs decompiles: research/assets/cap/ghidra_d5_decompiled.log
   envoi     : FUN_0062edd0 -> FUN_0064c110, flags 0xb000 (client) ou 0x2000
 FUN_0062e860 = file d'envoi CCPContainerMessageBlob + SetEvent (async queue)
 FUN_0062e7f0 = drain queue quand transport dispo
+
+## Localisation du code par types de message (TypeScan)
+- 0xc010: FUN_00545200 (unique!) = construction message session c010
+- 0xd010: FUN_0051b610, FUN_00547350 = session d010
+- (les autres types n'apparaissent pas comme immediates -> construits dynamiquement)
+- Session TCP stable via replay: src/chai_session.py + init_seq.txt/dewi.txt
+- Projet Ghidra: C:\tools\ghidra_projects\uremote_v36  | scripts: C:\tools\ghidra_scripts\
+- Logs decompile: research/assets/cap/ghidra_*.log
