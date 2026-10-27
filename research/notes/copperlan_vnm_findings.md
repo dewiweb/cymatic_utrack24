@@ -453,3 +453,14 @@ Le lien TCP véhicule les mêmes messages que CPOETH, wrappés `abebafec<len>`.
 - 1104=requête VNM->device, 1101=réponse, seq u32LE, keepalives 48B
 - Trames 1008B = messages TLV: 0100<sub><flags> <len/id> puis records 0e00/1a00
 - = protocole CHAIoNet complet, prêt à réimplémenter en Python
+
+## Protocole CHAIoNet dirigé — décodé (capture labeled_122712, 16k trames)
+
+Frame CPOETH dirigée: 11<op:04=req,01=ack,45=relai> <fl2B> <seq u32LE> 07<fl><MACdst> 0700<MACsrc> <msg>
+Message: 0100 <len u16LE> <0001<type u16>> ... <CRC32 fin>
+Types:
+  0001c423/00014423/00018423 = requêtes/écritures PC->dev (fe/ff/19/18 = valeurs fader/mute!)
+  00014437 = réponses data dev->PC (980B = dump 24 canaux, blocs e0<idx>)
+  00018437 = subscribe PC->dev ; 0001c010/0001d010 = control/status
+TLV: 0e00<idx><id32>=endpoints (34b96e2e=uTrack src, 69727160=PC dst), 1a00=block, 8023/0123=propriété écrite
+Metering: trames 4437 répètent blocs 16B x24 (e000..e018) = vumètres uRemote
