@@ -230,3 +230,13 @@ uRemote ouvre une session au device (RemoteDeviceWatcher_SmartConnectOpenSession
 = le message qui cree le routing. C'est ce qu'il faut reproduire.
 PROCHAINE ETAPE: trouver la seq SmartConnect open-session dans les
 classes TD decompiles, ou capturer le connect uRemote->device exact.
+
+## SMARTCONNECT SESSION — format decode
+FUN_00679060 construit msg SmartConnect (0x120 octets):
+  params: u16 champs + u32 (endpoint IDs) + blob optionnel
+  envoie via FUN_00676560(8,0x80,payload)
+FUN_006794b0 cree session depuis un buffer
+=> le "play" n'est pas le souci; il faut d'abord OUVRIR la session au device
+   via un msg SmartConnect_Source vers l'endpoint uTrack, puis les writes passent
+NEXT: envoyer un SmartConnect source vers uTrack endpoint avant les writes;
+le contenu exact du payload dans les captures (chercher le connect uRemote)
