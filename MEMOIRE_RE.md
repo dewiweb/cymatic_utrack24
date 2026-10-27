@@ -65,3 +65,9 @@ Les writes 8423 = TLV 0123 0410 3400 <propID u16> <valeur> vers device 34b96e2e
 - Le write de controle passe peut-etre par :40987 (service controle) ou
   une session Manager differente qu'on ne capte pas sur loopback:55000
 - NEXT: capturer TOUS les ports CPVNM, ou les writes en live depuis notre session
+
+## APPROCHE — envoyer les writes depuis NOTRE session
+Capturer les writes utilisateur ne marche pas (Manager parle ailleurs).
+Meilleur: notre session adoptee peut ENVOYER des 8423 au uTrack directement.
+8423 TLV 0123 0410 3400 <propID> <valeur> vers 34b96e2e = write propriete.
+Les propIDs du mixer (mutes/faders) a decouvrir en sondant (read 0123 vs write).
