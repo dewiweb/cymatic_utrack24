@@ -204,3 +204,11 @@ ou capturer le vrai invoke (record/mute plus parlant que play)
 - les boutons play/rec sur le device s'allument si ca marche
 - si rien: nos writes n'atteignent pas le device (lien SmartConnect inactif)
   ou mauvais endpoint/format
+
+## POINT DE VERIFICATION EN COURS
+Les writes 8423 partent vers le uTrack mais on n'a pas encore de confirmation
+visuelle que le device reagit. 3 hypotheses si ca ne marche pas:
+1. le lien membre->device (SmartConnect) n'est pas actif -> writes rejetes
+2. mauvais endpoint/propID pour le transport
+3. le transport utilise un autre type de message (invoke 0x37c4)
+Verifier dans Manager si l'edge uRemote<->uTrack est actif (vert) ou inactif.
