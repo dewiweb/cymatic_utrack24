@@ -266,3 +266,21 @@ puis 8437 = abonnements metering actifs
 - le transport probablement = propID lisible dans prop_enum.bin
 - NEXT: decoder prop_enum.bin, identifier propIDs play/stop/transport
   puis les writes correspondants pour controler le uTrack
+
+## RESUME DE LA SESSION RE — ou on en est
+FAIT:
+- Protocole CHAI decode (framing ef51, checksum, handshake, adoption)
+- Notre client = membre visible dans CopperLan Manager + lien uTrack
+- c437 = open-session (s'ouvre, routing VERS device existe)
+- READ 5423 marche (reponses du uTrack, props lisibles)
+- Formats decodes: writes 8423 TLV, invoke 0x37c4, session c437
+
+BLOQUE:
+- Writes vers uTrack partent mais pas d'effet visible
+- propEnum depropIDs illisible dans la reponse brute
+- Le transport/play = format write encore a clarifier
+
+CLES POUR LA SUITE:
+- le routing fonctionne (reads passent) -> c'est le FORMAT write a fixer
+- comparer write uRemote vs notre octet-par-octet sur le meme endpoint
+- ou le transport utilise un message invoke 0x37c4 special
