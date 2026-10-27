@@ -514,3 +514,12 @@ research/assets/chai_sdk/: tous les headers officiels
   + CHAIFreeware.dll + .lib (l'implémentation!)
   + ms812proxy/Engine.cpp = un client CHAI réel de référence
 => l'API officielle est documentée — notre client n'a plus besoin de reverse-engineer!
+
+## Replay séquence membre — progression
+- hello accepté (268B resp) ✓
+- petites c842 acceptées (160B) ✓  
+- CHAI.1817 accepté (124B) ✓
+- déclaration membre nommé → VNM COUPE la connexion (10053)
+  => le VNM valide le membre: ID/endpoint doit probablement être alloué par VNM
+  ou format du champ endpoint différent. Presque!
+SDK CHAI Freeware dispo dans research/assets/chai_sdk/ (headers + dll 32b + Engine.cpp référence)
