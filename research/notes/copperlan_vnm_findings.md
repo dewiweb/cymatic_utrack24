@@ -384,3 +384,31 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
   émise (dans l'objet lien, champ init - non localisé: pas un immédiat)
 - Ou la résolution membres passe par le lien TCP, jamais créé côté VNM
   (le TCPIP link existe mais n'apparaît pas dans M)
+
+## Session 27/10 bis — FORMAT DU LIEN TCP DÉCODÉ (abebafec)
+
+### Capturé: stream :40987 du VNM (link CHAIoNet)
+```
+abebafec <len u16 LE> <message CPOETH-style>   -> trame de lien
+  abebafec1c00...30 42 00 10 07 00 00 00 6976ffaa   = keepalive v0x1c
+  abebafec3800...ffffffff0100 2000 ...0210...2300 101e 2200 = member dump v32
+  abebafec2400...0100 2100 ...4200 1010            = frame v0x24 (dialecte device!)
+```
+Le lien TCP véhicule les mêmes messages que CPOETH, wrappés `abebafec<len>`.
+`abebafec`=magic header, finit par `ffaa`-ish trailer.
+
+### Patch rx CONFIRMÉ: 815 reçus, 0 badver — le VNM accepte tout
+
+### Échecs session:
+- :55000 device ignore TOUS les formats testés (greeting, frames abebafec,
+  v24/v32) → n'accepte que des pairs appairés au CPOETH (adoption d'abord)
+- Aucun unicast TCP ni directed frame: le VNM n'initie jamais le lien
+- Notre 1210 n'annonce pas le endpoint TCP :40987
+- Manager connecte à :40987 (CHAI client) — capture loopback via pktmon
+  a donné métadonnées seulement (pas de payload)
+
+### Prochaine étape
+- La résolution membres doit passer par le lien CPOETH directement
+  (directed frames) — le VNM ne les envoie pas → trouver le déclencheur
+  de "link engage" dans CPVNM (SmartConnect?) OU forcer un directed frame
+  forgé à la main vers le device
