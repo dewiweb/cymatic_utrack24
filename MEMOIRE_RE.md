@@ -181,3 +181,13 @@ NEXT: mapper les champs +0x1c-0x2a du msg 0x37c4 au transport play/stop.
   +0x1c=flags +0x1e +0x20=u32 +0x24/0x28=u16 +0x2a=u8
 NEXT: trouver le msg 0x37c4 qui fait "play" — le controlID dans +0xf8/+0x1c
 ou capturer le vrai invoke (record/mute plus parlant que play)
+
+## ETAT — invoke-control en cours d'extraction
+- msg 0x37c4 = invoke-control (SmartConnect + transport/commands device)
+- envoi: FUN_0064dfe0/64e1b0 | reception: FUN_00630ce0
+- format: +0x48 msgID | +0x4c=0x37c4 | +0x1c..+0x2a = champs invoke
+- controlIDs: mute=0x2fd0/2ff0 | transport=0xd000/0xd001 | device=0xb210
+- strings transport (UI) a .rdata 0x2cc0a4-0x2cc13c (Play/Stop/Record)
+- le transport n'est PAS un write 8423 -> invoke sur controle du device
+- NEXT: decompiler FUN_00630ce0 complet (dispatch invoke) pour mapper
+  les controlIDs -> actions, ou trouver le msg play par son controlID
