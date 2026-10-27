@@ -169,3 +169,15 @@ FUN_0062edd0 = le send: flag 0xb000 client / 0x2000 VNM, appelle FUN_0064c110 (f
 Le "play" = msg 0x37c4 avec controlID transport dans les champs +0x1c-0x2a.
 Les d842 VNM->client contiennent ces payloads 0x37c4 = negociation.
 NEXT: mapper les champs +0x1c-0x2a du msg 0x37c4 au transport play/stop.
+
+## INVOKE-CONTROL — fonctions mappees (msg 0x37c4)
+- FUN_00665c60 -> FUN_0064dfe0 : envoie msg 0x37c4 (invoke) avec champs
+  +0xf8 (controlID?) +0x2c +0x9c — appele quand flags &0x8000
+- FUN_006621f0 -> FUN_0064e1b0 : msg invoke, lit l'objet +0xf0 (u16)
+  et +0x54 vtable[0x98] -> construit le msg
+- FUN_00669dd0 -> FUN_0064e1b0 : autre invoke
+- FUN_00630ce0 : handler reception msg 0x37c4 (dispatcher invoke)
+- Format msg 0x37c4 (FUN_0064dfe0): +0x48=msgID +0x4c=0x37c4
+  +0x1c=flags +0x1e +0x20=u32 +0x24/0x28=u16 +0x2a=u8
+NEXT: trouver le msg 0x37c4 qui fait "play" — le controlID dans +0xf8/+0x1c
+ou capturer le vrai invoke (record/mute plus parlant que play)
