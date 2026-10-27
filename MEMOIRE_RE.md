@@ -101,3 +101,8 @@ Outil: research/tools/send_ctrl.py d000=1 wait=10 d000=0
   4337 0010 1e00 1600 0000 [ctrl=00d0] 0000.. [val u32 = 04000000]
   => ctrl 0xd000, valeur 4, sous-session 02 (offsets sous-session 18 et 34)
 - send_ctrl.py reproduit octet pour octet les trames reelles (d000=4@2, b000=0@4).
+
+## ✅✅ PREMIERE COMMANDE VALIDEE SUR LE DEVICE (17:50:40)
+python research/tools/send_ctrl.py d000=4@2  -> le uTrack24 passe en PLAY (confirme visuellement par l'user),
+uRemote ferme. Chaine complete OK: adoption (init_seq_fresh) + framing Adler + trame 8437/4337.
+=> mecanisme de controle prouve. Reste: mapper les valeurs (stop/rec/...) et les autres ctrlIDs.
