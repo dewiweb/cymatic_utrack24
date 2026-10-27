@@ -529,3 +529,10 @@ SDK CHAI Freeware dispo dans research/assets/chai_sdk/ (headers + dll 32b + Engi
   aux msgs d842 (negociation de lien CHAIoNet) -> lien considere mort
 - Le champ 07 00 dans c842 = longueur du nom (corrige pour DewiTool=08)
 - Prochaine etape: decoder les d842 et repondre pour maintenir le lien
+
+## Session 27/10 — SDK exploitable
+- CHAIFreeware.dll exporte ?CreateCHAI@Factory@CPNS@@SAPAVICHAI@2@QBD@Z
+- Engine.cpp (ms812proxy): CreateCHAI("clef") -> AddMIDI2CPLocalDevice(DC_Performance) -> Connect()
+  = membre visible dans Manager garanti
+- MinGW 6.3.0 32-bit dispo a C:\MinGW\bin\g++.exe -> compiler un mini client C++
+- Interfaces CHAI = pure virtual -> appels vtable compatibles MinGW/MSVC en 32-bit
