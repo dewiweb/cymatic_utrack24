@@ -191,3 +191,10 @@ ou capturer le vrai invoke (record/mute plus parlant que play)
 - le transport n'est PAS un write 8423 -> invoke sur controle du device
 - NEXT: decompiler FUN_00630ce0 complet (dispatch invoke) pour mapper
   les controlIDs -> actions, ou trouver le msg play par son controlID
+
+## TESTS CONTROLE DEVICE (en attente verification)
+- mute ch1 envoye via write 8423 endpoint 34b96e2e prop 0000 val 1/0
+- play/stop transports envoyes (controlIDs) — pas confirmes
+- Question ouverte: nos writes atteignent-ils le device? (verifier visuellement)
+- Si ca ne marche pas: le lien membre->device est peut-etre incomplet
+  (le SmartConnect etablit le routing; verifier qu'il est actif)
