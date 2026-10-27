@@ -222,3 +222,11 @@ Verifier dans Manager si l'edge uRemote<->uTrack est actif (vert) ou inactif.
   qu'on ne reproduit pas. C'est le vrai blocage.
 - NEXT: trouver le msg qui ACTIVE le lien (SmartConnect open-session)
   classes: CTaskSmartConnectInitiator, RemoteDeviceWatcher_SmartConnectOpenSession
+
+## CONFIRMATION — writes non routés (aucun bouton)
+Barrage 414 msgs: aucun bouton device. Le membre existe dans Manager
+mais N'A PAS de lien data vers uTrack = SmartConnect non etabli.
+uRemote ouvre une session au device (RemoteDeviceWatcher_SmartConnectOpenSession)
+= le message qui cree le routing. C'est ce qu'il faut reproduire.
+PROCHAINE ETAPE: trouver la seq SmartConnect open-session dans les
+classes TD decompiles, ou capturer le connect uRemote->device exact.
