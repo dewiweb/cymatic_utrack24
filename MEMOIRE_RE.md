@@ -79,3 +79,11 @@ Les propIDs du mixer (mutes/faders) a decouvrir en sondant (read 0123 vs write).
 - mute = FUN_0051b610 toggle canal ; session keepalive = FUN_00545200 (c010)
 - PropIDs transport vus en capture: 6306-6b06 (4023) et 6506 (8423 write)
 - le write play (6506/28018400) n'a PAS declenche la lecture = mauvais champ
+
+## CLE — les commandes passent par control IDs (vtable[0x174])
+Handlers decompiles montrent des appels vtable[0x174](controlID, 0, param, 0):
+- 0x2fd0 = mute canal (base controleurs)
+- 0xd000 = controle (FUN_00547780 - probablement transport/seek)
+- 0xb210 = controle (FUN_00545420)
+Le "play" = un controlID specifique, pas un propID generique.
+NEXT: lister les controlIDs (0xXXXX) utilises dans les handlers -> carte des commandes
