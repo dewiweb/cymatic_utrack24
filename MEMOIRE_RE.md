@@ -47,3 +47,8 @@ SDK v1.5 se connecte :40987 (autre service, rejete pour adoption)
 1. Stabiliser membre (repondre a toutes sondes VNM) ou renommer DewiTool
 2. Capturer 1 action utilisateur seule (mute ch1) = isoler le msg 8423 exact
 3. Decoder le mapping propriete<->canal puis reproduire mixer complet
+
+## UPDATE — messages de controle 8423 decodes
+Format: 8423 | src membre | dst device uTrack (34b96e2e) | TLV 0123 0410 3400 | propID u16 | valeur
+La rafale a ~22.8s = sync etat (tous les canaux). Le mute ch1 = un write specifique.
+NEXT: comparer 2 captures (ch1 mute on vs off) pour isoler le propID du mute.
