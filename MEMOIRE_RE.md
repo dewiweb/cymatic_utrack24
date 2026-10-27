@@ -284,3 +284,8 @@ CLES POUR LA SUITE:
 - le routing fonctionne (reads passent) -> c'est le FORMAT write a fixer
 - comparer write uRemote vs notre octet-par-octet sur le meme endpoint
 - ou le transport utilise un message invoke 0x37c4 special
+
+## TEST play valeur reelle 28018400 envoye (pas 1)
+- play.log montre valeur 28018400 pas un simple 1 -> envoye tel quel
+- si ca marche: le transport est un write avec valeur encodee (state machine)
+- si non: le membre handle ou autre champ differe
