@@ -255,3 +255,12 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
 - Diagnostic final: la déclaration se fait sur le lien TCP:55000, jamais initié par VNM v0x20
 - AudioLAN adoptée via son canal v0x1c natif (bilingue); uTrack24 v0x24-pur ignoré au-delà du beacon
 - Le verrou = génération de protocole au niveau liaison, pas au niveau beacon
+
+## uRemote.exe = carte complète du protocole CHAI (RTTI riche)
+- Contient l'implémentation CHAI statique complète: classes RemoteDevice_*
+  (GetControllerInfo/GetIndexListItem/GetInputInfo/GetOutputInfo/GetParameter*/GetProperty)
+- Handshake: AppIntCtrlMsgPayload_Hello / HelloReturn / SmartConnect_*
+- TypedNotificationManager/TypedQueuedNotification = modèle notif complet
+- PROCHAINE ÉTAPE: désassembler ces classes dans Ghidra/r2 -> le format exact
+  du handshake CHAIoNet -> forger vers VnmTcpListener:55000
+- La session :55000 attend un Hello CHAIoNet -> trouver son template dans uRemote
