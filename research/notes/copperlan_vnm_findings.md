@@ -536,3 +536,10 @@ SDK CHAI Freeware dispo dans research/assets/chai_sdk/ (headers + dll 32b + Engi
   = membre visible dans Manager garanti
 - MinGW 6.3.0 32-bit dispo a C:\MinGW\bin\g++.exe -> compiler un mini client C++
 - Interfaces CHAI = pure virtual -> appels vtable compatibles MinGW/MSVC en 32-bit
+
+## GHIDRA a décodé le framing officiel (FUN_0064c110 @ 0x64c110)
+  word0 = 0x51ef (magic ef51 lu LE)
+  word1 = (type ^ len) & 0xFFF ^ type   -> len dans 12 bits bas, type dans 4 bits haut
+  puis payload aligné 4 + crc32
+  FUN_00678cd0 = la fonction crc
+FUN_0064dfe0/0064e1b0 = sendmsg type 0x37c4 (message controle interne)
