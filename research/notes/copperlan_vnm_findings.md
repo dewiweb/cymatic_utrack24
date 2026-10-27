@@ -553,3 +553,15 @@ FUN_0064dfe0/0064e1b0 = sendmsg type 0x37c4 (message controle interne)
 - Protocole découverte: VNMSRCH UDP bcast -> VNMINFO -> TCP:55000
 - Projet Ghidra réutilisable: C:\tools\ghidra_projects\uremote_v36
 - Scripts dans C:\tools\ghidra_scripts\: FindCHAI.java Decomp*.java DeepScan.java
+
+## RTTI localise les classes du handshake (adresses TD dans uRemote.exe)
+  0xc8f69c AppIntCtrlMsgPayload_Hello
+  0xc8f6cc AppIntCtrlMsgPayload_HelloReturn
+  0xc8f61c AppIntCtrlMsgPayload_SmartConnect_Target
+  0xc8f65c AppIntCtrlMsgPayload_SmartConnect_Source
+  0xc8e760 AppIntCtrlMsgPayload_CHAIInfo
+  0xc8f410 CTaskSmartConnectInitiator  0xc8f85c CTaskSmartConnectTarget
+  0xc8f464/494 SmartConnectTarget/SourceManager
+  0xc8e0dc LM_DeviceDeclaredOrModified  0xc8e270 LM_SubDeviceDeclared
+  0xc8dfc0/e0 LM_GetVNMInfoReply/Request
+=> la phase d'adoption = SmartConnect_* puis LM_DeviceDeclared
