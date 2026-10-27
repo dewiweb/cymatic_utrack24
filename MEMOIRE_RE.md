@@ -87,3 +87,12 @@ Handlers decompiles montrent des appels vtable[0x174](controlID, 0, param, 0):
 - 0xb210 = controle (FUN_00545420)
 Le "play" = un controlID specifique, pas un propID generique.
 NEXT: lister les controlIDs (0xXXXX) utilises dans les handlers -> carte des commandes
+
+## CARTE DES CONTROLS (controlIDs vtable[0x174])
+Plages de controle identifiees dans uRemote:
+0x2fd0 = base controles canaux (mute+)
+0xd000 / 0xb210 = controles transport/device (handlers FUN_547780/545420)
+Listes candidates: 0x2300-0x4200 (canaux), 0x5000-0xd000 (device/transport)
+Le play = probablement un controlID 0xd0xx ou 0xb2xx.
+NEXT: decompiler FUN_00547350 et ses freres pour mapper chaque controlID
+-> fonction de transport (play/stop/record) au bon controlID.
