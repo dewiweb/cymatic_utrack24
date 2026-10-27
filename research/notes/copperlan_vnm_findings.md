@@ -430,3 +430,21 @@ Le lien TCP véhicule les mêmes messages que CPOETH, wrappés `abebafec<len>`.
 
 ### Cleaned: mes patches CPVNM/CLoNet écrasés par l'install 1.4.5,
   msvcr80.dll supprimés, ActiveEthernet restauré
+
+## Session 27/10 final — RÉUSSI: chaîne complète + trames dirigées capturées
+
+### Chaîne fonctionnelle complète
+- CPoEthProt.sys installé (DriversInstallation.exe) → Ethernet transport OK
+- VNM 1.4.5 → uTrack24 + AudioLAN ADOPTÉS sur le canvas Manager
+- uRemote connecte et contrôle le device
+- Trames dirigées 1104/1101 (CPOETH unicast VNM↔devices) = le canal contrôle
+
+### Capturé en live — le vrai protocole de contrôle
+  VNM→uTrack: 1104 0000 2f02... (msgs dirigés)
+  uTrack→VNM: 1101 0000 2f02... (réponses)
+  + member records avec noms (uT24-AudioLan-49-00-30, uTrack)
+
+### Plan boîte à outils (en cours)
+1. Décoder le format des trames dirigées 1104/1101
+2. Reproduire les commandes uRemote (transport/mixer/etc.) en Python
+3. Assembler le multitool: Telnet + CPOETH-CHAI + AES67 + USB
