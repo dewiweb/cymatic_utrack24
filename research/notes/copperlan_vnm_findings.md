@@ -600,3 +600,13 @@ FUN_00626b90 = discovery VNM: UDP broadcast VNMSRCH -> attend VNMINFO
   (sockets UDP + parses reponse, timeout ~30 tries)
 Couche envoi complete cartographiee (11 senders vers FUN_0064c110)
 Logs decompiles: research/assets/cap/ghidra_d5_decompiled.log
+
+## PARSEUR OFFICIEL DECODE (FUN_0064bf70) — format complet confirmé
+  scan magic: byte==0xef && next=='Q'(0x51)      → resync sur ef51
+  header u16: &0xF000 = flags/type nibble (b0=c->s, 20=s->c, 10/a0=ka)
+              &0x0FFF = longueur payload (max 0x58c=1420)
+  payload   : aligné 4 octets
+  checksum  : FUN_00678cd0 (Adler-like 0x4c4d/0x5054 mod 0xfff1) aux 4 derniers
+  envoi     : FUN_0062edd0 -> FUN_0064c110, flags 0xb000 (client) ou 0x2000
+FUN_0062e860 = file d'envoi CCPContainerMessageBlob + SetEvent (async queue)
+FUN_0062e7f0 = drain queue quand transport dispo
