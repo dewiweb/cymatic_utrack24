@@ -543,3 +543,13 @@ SDK CHAI Freeware dispo dans research/assets/chai_sdk/ (headers + dll 32b + Engi
   puis payload aligné 4 + crc32
   FUN_00678cd0 = la fonction crc
 FUN_0064dfe0/0064e1b0 = sendmsg type 0x37c4 (message controle interne)
+
+## Analyse Ghidra uRemote.exe COMPLÈTE (projet uremote_v36 dans C:\tools\ghidra_projects)
+- 16909 vftables trouvées dans .rdata → exécutable entièrement cartographié
+- FUN_0064c110 = sérialiseur trame: word0=0x51ef, word1=(type^len)&0xFFF^type, payload+checksum
+- FUN_00678cd0 = checksum Adler-like custom (seeds 0x4c4d/0x5054, mod 0xfff1) — ni CRC32 ni Adler32
+- FUN_0064dfe0/0064e1b0 = émetteur msg contrôle 0x37c4
+- Classes handshake: AppIntCtrlMsgPayload_Hello/HelloReturn/SmartConnect_*/CHAIInfo
+- Protocole découverte: VNMSRCH UDP bcast -> VNMINFO -> TCP:55000
+- Projet Ghidra réutilisable: C:\tools\ghidra_projects\uremote_v36
+- Scripts dans C:\tools\ghidra_scripts\: FindCHAI.java Decomp*.java DeepScan.java
