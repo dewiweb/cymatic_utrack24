@@ -1,0 +1,876 @@
+FUN_00548860 -> .?AVViewSelection@@ slot+0xc
+
+void __thiscall FUN_00548860(int param_1,int param_2)
+
+{
+  int iVar1;
+  
+  iVar1 = *(int *)(param_2 + 0x110);
+  if (iVar1 == 5) {
+    FUN_00541c20();
+    FUN_00528b10(0);
+    return;
+  }
+  if (iVar1 == 6) {
+    FUN_00541cc0();
+                    /* WARNING: Could not recover jumptable at 0x005488ad. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    (**(code **)(*(int *)(param_1 + -0x70) + 0x28))();
+    return;
+  }
+  FUN_00528b10(iVar1);
+  return;
+}
+
+
+FUN_00535750 -> (via FUN_005378d0) .?AVProgressBarPanel@@ slot+0x4
+
+void __thiscall FUN_00535750(int param_1,int param_2)
+
+{
+  int *piVar1;
+  int iVar2;
+  void *local_9c;
+  void *local_7c;
+  void *local_5c;
+  void *local_3c;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_006967f4;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  iVar2 = *(int *)(param_1 + 0x10);
+  FUN_00536250();
+  *(int *)(param_1 + 0x10) = param_2 % 5;
+  FUN_0040a310();
+  local_8 = 0;
+  FUN_0040a310();
+  local_8 = CONCAT31(local_8._1_3_,1);
+  piVar1 = *(int **)(param_1 + 8);
+  FUN_005b2e40();
+  piVar1[0x35] = 0;
+  FUN_005b2e40();
+  piVar1[0x3e] = -0x4c80;
+  piVar1[0x3f] = 0;
+  (**(code **)(*piVar1 + 0x84))();
+  FUN_006144f0(&stack0xffffff44);
+  FUN_00602c70(1);
+  FID_conflict__free(local_3c);
+  FID_conflict__free(local_5c);
+  local_8 = 0xffffffff;
+  FID_conflict__free(local_7c);
+  FID_conflict__free(local_9c);
+  switch(*(undefined4 *)(param_1 + 0x10)) {
+  case 0:
+    *(undefined1 *)(*(int *)(param_1 + 4) + 0x40c) = 0;
+    FUN_00537240();
+    FUN_006144f0(&stack0xffffff44);
+    FUN_00602c70(1);
+    *(undefined4 *)(param_1 + 0x20) = 0;
+    *(undefined4 *)(param_1 + 0x24) = 0;
+    if (iVar2 != 4) break;
+    goto LAB_00535975;
+  case 1:
+  case 2:
+    *(undefined1 *)(*(int *)(param_1 + 4) + 0x40c) = 1;
+    FUN_00537240();
+    FUN_006144f0(&stack0xffffff44);
+    FUN_00602c70(1);
+    if (*(int *)(param_1 + 0x20) == 0) {
+      iVar2 = *(int *)(*(int *)(
+FUN_005324b0 -> .?AVVI_PreRecordingChoice@@ slot+0x4
+
+void FUN_005324b0(void)
+
+{
+  FUN_00544090();
+  return;
+}
+
+
+FUN_005324f0 -> .?AVVI_TrackCountChoice@@ slot+0x4
+
+void FUN_005324f0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544130(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_00532550 -> .?AVVI_ResolutionChoice@@ slot+0x4
+
+void FUN_00532550(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_005441d0(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_005325b0 -> .?AVVI_SampleRateChoice@@ slot+0x4
+
+void FUN_005325b0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544270(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_005318f0 -> .?AVVI_MultitrackOutPostFaderChoice@@ slot+0x4
+
+void FUN_005318f0(void)
+
+{
+  FUN_00544310();
+  return;
+}
+
+
+FUN_00531950 -> .?AVVI_StereoOutputsChoice@@ slot+0x4
+
+void __fastcall FUN_00531950(int param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    if (*(char *)(param_1 + 0xd8) != '\0') {
+      uVar2 = FUN_00604cf0();
+      FUN_00544450(uVar2);
+      return;
+    }
+    uVar2 = FUN_00604cf0();
+    FUN_005443b0(uVar2);
+  }
+  return;
+}
+
+
+FUN_005319d0 -> .?AVVI_PlaybackModeChoice@@ slot+0x4
+
+void FUN_005319d0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_005444f0(iVar1 + -10);
+  }
+  return;
+}
+
+
+FUN_005315d0 -> .?AVVI_AutoPlayChoice@@ slot+0x4
+
+void FUN_005315d0(void)
+
+{
+  FUN_00544810();
+  return;
+}
+
+
+FUN_00530310 -> .?AVVI_SubnetMask@@ slot+0x10
+
+void __fastcall FUN_00530310(void *param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  int *_Memory;
+  void *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00695d19;
+  local_10 = ExceptionList;
+  uVar1 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_14 = param_1;
+  if (DAT_00c911a8 == 0) {
+    local_14 = operator_new(0x300);
+    local_8 = 0;
+    DAT_00c911a8 = FUN_00524240();
+  }
+  local_8 = 0xffffffff;
+  if (*(int *)(DAT_00c911a8 + 0x58) != 2) {
+    iVar2 = FUN_00409e10(uVar1);
+    iVar3 = FUN_00409e50();
+    if ((iVar2 != 0) && (iVar3 != 0)) {
+      FUN_00510df0();
+    }
+  }
+  if (*(char *)((int)param_1 + 8) != '\0') {
+    uVar4 = FUN_006068b0(&local_14);
+    local_8 = 1;
+    FUN_005448b0(uVar4);
+    _Memory = (int *)((int)local_14 + -8);
+    if (_Memory != &DAT_00c1b4c4) {
+      LOCK();
+      iVar2 = *_Memory;
+      *_Memory = *_Memory + -1;
+      UNLOCK();
+      if (iVar2 == 0) {
+        FID_conflict__free(_Memory);
+      }
+    }
+  }
+  *(undefined1 *)((int)param_1 + 8) = 0;
+  ExceptionList = local_10;
+  return;
+}
+
+
+FUN_00530410 -> .?AVVI_SubnetMask@@ slot+0x8
+
+void __fastcall FUN_00530410(int param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  undefined4 uVar3;
+  int *_Memory;
+  int local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00695d3c;
+  local_10 = ExceptionList;
+  uVar2 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_14 = param_1;
+  if (*(char *)(param_1 + 8) != '\0') {
+    uVar3 = FUN_006068b0(&local_14);
+    local_8 = 0;
+    FUN_005448b0(uVar3);
+    local_8 = 0xffffffff;
+    _Memory = (int *)(local_14 + -8);
+    if (_Memory != &DAT_00c1b4c4) {
+      LOCK();
+      iVar1 = *_Memory;
+      *_Memory = *_Memory + -1;
+      UNLOCK();
+      if (iVar1 == 0) {
+        FID_conflict__free(_Memory);
+      }
+    }
+  }
+  if (DAT_00c911e8 != 0) {
+    FUN_006003c0(uVar2);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+FUN_00530720 -> .?AVVI_StaticIP@@ slot+0x10
+
+void __fastcall FUN_00530720(void *param_1)
+
+{
+  uint uVar1;
+  int iVar2;
+  int iVar3;
+  undefined4 uVar4;
+  int *_Memory;
+  void *local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00695de5;
+  local_10 = ExceptionList;
+  uVar1 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_14 = param_1;
+  if (DAT_00c911a8 == 0) {
+    local_14 = operator_new(0x300);
+    local_8 = 0;
+    DAT_00c911a8 = FUN_00524240();
+  }
+  local_8 = 0xffffffff;
+  if (*(int *)(DAT_00c911a8 + 0x58) != 2) {
+    iVar2 = FUN_00409e10(uVar1);
+    iVar3 = FUN_00409e50();
+    if ((iVar2 != 0) && (iVar3 != 0)) {
+      FUN_00510df0();
+    }
+  }
+  if (*(char *)((int)param_1 + 8) != '\0') {
+    uVar4 = FUN_006068b0(&local_14);
+    local_8 = 1;
+    FUN_00544950(uVar4);
+    _Memory = (int *)((int)local_14 + -8);
+    if (_Memory != &DAT_00c1b4c4) {
+      LOCK();
+      iVar2 = *_Memory;
+      *_Memory = *_Memory + -1;
+      UNLOCK();
+      if (iVar2 == 0) {
+        FID_conflict__free(_Memory);
+      }
+    }
+  }
+  *(undefined1 *)((int)param_1 + 8) = 0;
+  ExceptionList = local_10;
+  return;
+}
+
+
+FUN_00530820 -> .?AVVI_StaticIP@@ slot+0x8
+
+void __fastcall FUN_00530820(int param_1)
+
+{
+  int iVar1;
+  uint uVar2;
+  undefined4 uVar3;
+  int *_Memory;
+  int local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00695e08;
+  local_10 = ExceptionList;
+  uVar2 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_14 = param_1;
+  if (*(char *)(param_1 + 8) != '\0') {
+    uVar3 = FUN_006068b0(&local_14);
+    local_8 = 0;
+    FUN_00544950(uVar3);
+    local_8 = 0xffffffff;
+    _Memory = (int *)(local_14 + -8);
+    if (_Memory != &DAT_00c1b4c4) {
+      LOCK();
+      iVar1 = *_Memory;
+      *_Memory = *_Memory + -1;
+      UNLOCK();
+      if (iVar1 == 0) {
+        FID_conflict__free(_Memory);
+      }
+    }
+  }
+  if (DAT_00c911e8 != 0) {
+    FUN_006003c0(uVar2);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+FUN_00530b30 -> .?AVVI_DHCPChoice@@ slot+0x4
+
+void FUN_00530b30(void)
+
+{
+  FUN_005449f0();
+  return;
+}
+
+
+FUN_0052e8a0 -> .?AVVI_MADIInputAssignmentChoice@@ slot+0x4
+
+void __fastcall FUN_0052e8a0(int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544b00(*(undefined4 *)(param_1 + 0xd8),iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e6c0 -> .?AVVI_MADI96kOutChoice@@ slot+0x4
+
+void __fastcall FUN_0052e6c0(int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544ba0(*(undefined4 *)(param_1 + 0xd8),iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e720 -> .?AVVI_MADI48kOutChoice@@ slot+0x4
+
+void __fastcall FUN_0052e720(int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544c40(*(undefined4 *)(param_1 + 0xd8),iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e780 -> .?AVVI_MADIFrameChoice@@ slot+0x4
+
+void FUN_0052e780(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544ce0(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e7e0 -> .?AVVI_MADIModeChoice@@ slot+0x4
+
+void FUN_0052e7e0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544d80(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e840 -> .?AVVI_MADIInputChoice@@ slot+0x4
+
+void FUN_0052e840(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544e20(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e2b0 -> .?AVVI_FootswitchChoice@@ slot+0x4
+
+void FUN_0052e2b0(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544ec0(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_0052e520 -> .?AVVI_ClockSourceChoice@@ slot+0x4
+
+void FUN_0052e520(void)
+
+{
+  int iVar1;
+  
+  iVar1 = FUN_00604cf0();
+  if (iVar1 != 0) {
+    iVar1 = FUN_00604cf0();
+    FUN_00544f60(iVar1 + -1);
+  }
+  return;
+}
+
+
+FUN_00528fa0 -> .?AVMarkerListPanel@@ slot+0xc
+
+void __thiscall FUN_00528fa0(int param_1,int param_2)
+
+{
+  int iVar1;
+  int *piVar2;
+  undefined4 uVar3;
+  
+  iVar1 = *(int *)(*(int *)(param_1 + 4) + 0x7c);
+  if (*(int **)(iVar1 + 400) != (int *)0x0) {
+    (**(code **)(**(int **)(iVar1 + 400) + 0x28))();
+  }
+  if (*(uint *)(param_2 + 0x110) < *(uint *)(iVar1 + 0x2a8)) {
+    uVar3 = *(undefined4 *)(*(int *)(iVar1 + 0x2a0) + *(uint *)(param_2 + 0x110) * 4);
+  }
+  else {
+    uVar3 = 0;
+  }
+  piVar2 = *(int **)(*(int *)(*(int *)(param_1 + 4) + 0x7c) + 400);
+  if (piVar2 != (int *)0x0) {
+    (**(code **)(*piVar2 + 0x2c))();
+  }
+  FUN_005276f0();
+  iVar1 = *(int *)(*(int *)(*(int *)(param_1 + 4) + 0x7c) + 0x288);
+  if ((iVar1 != 0) && (iVar1 != 1)) {
+    FUN_005450f0(uVar3);
+    return;
+  }
+  FUN_00545070(uVar3);
+  return;
+}
+
+
+FUN_00537350 -> .?AVProgressBarPanel@@ slot+0x18
+
+void __thiscall FUN_00537350(int param_1,int param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  char cVar3;
+  float fVar4;
+  undefined1 auStack_18 [8];
+  undefined4 uStack_10;
+  int iStack_c;
+  
+  if ((*(byte *)(param_1 + 0x69) & 0x10) == 0) {
+    if (*(int *)(param_1 + 0xc) != 0) {
+      iStack_c = 0x53736c;
+      cVar3 = FUN_00614300();
+      if (cVar3 == '\0') {
+        return;
+      }
+    }
+    iVar1 = *(int *)(*(int *)(param_1 + 0x88) + 0x7c);
+    iVar2 = *(int *)(iVar1 + 0x288);
+    if (((((iVar2 == 0) || (iVar2 == 1)) || (iVar2 == 2)) || ((iVar2 == 4 || (iVar2 == 5)))) &&
+       ((iVar1 = *(int *)(iVar1 + 0x294), iVar1 != 2 && (iVar1 != 3)))) {
+      if (*(int *)(param_1 + 0x408) == 1) {
+        fVar4 = ((float)*(int *)(param_2 + 8) - *(float *)(param_1 + 0x9c)) /
+                *(float *)(param_1 + 0xa0);
+        iStack_c = (int)((float)*(int *)(param_1 + 0xd8) * fVar4);
+        uStack_10 = 0x537401;
+        FUN_00537b10();
+        *(int *)(param_1 + 0xc0) = (int)fVar4;
+        iVar1 = *(int *)(*(int *)(*(int *)(param_1 + 0x88) + 0x7c) + 0x288);
+        if (((iVar1 == 2) || (iVar1 == 4)) || (iVar1 == 5)) {
+          iStack_c = (int)((float)*(int *)(param_1 + 0xd8) * fVar4);
+          uStack_10 = 0x537447;
+          FUN_005450f0();
+        }
+      }
+      *(undefined4 *)(param_1 + 0x408) = 0;
+      FUN_006144f0(auStack_18);
+      FUN_00602c70(1);
+    }
+    iStack_c = 0x537470;
+    FUN_00536250();
+  }
+  return;
+}
+
+
+FUN_005262c0 -> .?AVMainComponent@@ slot+0x4
+
+void __thiscall FUN_005262c0(int param_1,int *param_2,char param_3)
+
+{
+  int *piVar1;
+  
+  piVar1 = (int *)(param_1 + 0x3628);
+  if ((param_2 == piVar1) || (piVar1 = (int *)(param_1 + 0x3d98), param_2 == piVar1)) {
+    (**(code **)(*piVar1 + 0x28))(0);
+    if (param_3 != '\0') {
+      FUN_00547780(3);
+      return;
+    }
+  }
+  else if (param_2 == (int *)(param_1 + 0x4508)) {
+    (**(code **)(*(int *)(param_1 + 0x4508) + 0x28))(0);
+    if (param_3 != '\0') {
+      FUN_00545420();
+      return;
+    }
+  }
+  else if (param_2 == (int *)(param_1 + 0x4c78)) {
+    (**(code **)(*(int *)(param_1 + 0x4c78) + 0x28))(0);
+    if (param_3 != '\0') {
+      FUN_005453a0();
+      return;
+    }
+  }
+  else if (param_2 == (int *)(param_1 + 0x53e8)) {
+    (**(code **)(*(int *)(param_1 + 0x53e8) + 0x28))(0);
+    if (param_3 != '\0') {
+      FUN_00545320();
+      return;
+    }
+  }
+  else if ((param_2 != (int *)(param_1 + 0x5b58)) && (param_2 == (int *)(param_1 + 0x62c8))) {
+    (**(code **)(*(int *)(param_1 + 0x62c8) + 0x28))(0);
+    if (param_3 != '\0') {
+      FUN_00545200(*(undefined4 *)(param_1 + 0x6a38));
+    }
+  }
+  return;
+}
+
+
+FUN_00526290 -> .?AVMainComponent@@ slot+0x8
+
+void __fastcall FUN_00526290(int param_1)
+
+{
+  (**(code **)(*(int *)(param_1 + 0x5b58) + 0x28))(0);
+  FUN_00545290(param_1 + 0x6c78);
+  return;
+}
+
+
+FUN_005261f0 -> .?AVMainComponent@@ slot+0xc
+
+void __fastcall FUN_005261f0(int param_1)
+
+{
+  int iVar1;
+  int *_Memory;
+  int local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_0069476b;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_14 = param_1;
+  (**(code **)(*(int *)(param_1 + 0x5b58) + 0x28))(0,DAT_00c82070 ^ (uint)&stack0xfffffffc);
+  FUN_00419230("[ALL]");
+  local_8 = 0;
+  FUN_00545290(&local_14);
+  _Memory = (int *)(local_14 + -8);
+  if (_Memory != &DAT_00c1b4c4) {
+    LOCK();
+    iVar1 = *_Memory;
+    *_Memory = *_Memory + -1;
+    UNLOCK();
+    if (iVar1 == 0) {
+      FID_conflict__free(_Memory);
+    }
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+FUN_00520b70 -> .?AVMyItem@RemoteDisplay@@ slot+0xb4
+
+void __fastcall FUN_00520b70(int param_1)
+
+{
+  FUN_00546ef0(*(undefined2 *)(param_1 + 0x184));
+  return;
+}
+
+
+FUN_00526180 -> .?AVMainComponent@@ slot+0x6c
+
+undefined4 __thiscall FUN_00526180(int param_1,int *param_2)
+
+{
+  if ((*param_2 == 0x1b) && ((*(byte *)(param_2 + 1) & 7) == 0)) {
+    if (*(int *)(param_1 + 0x6cd4) == 3) {
+      if (*(int *)(param_1 + 0x16f0) != 0) {
+        FUN_00546f80(*(undefined4 *)(*(int *)(param_1 + 0x16f0) + 0x88));
+        return 1;
+      }
+      FUN_00528b10(*(undefined4 *)(param_1 + 0x6cd8));
+      return 1;
+    }
+    if (*(int *)(param_1 + 0x6cd4) == 4) {
+      FUN_00528b10(*(undefined4 *)(param_1 + 0x6cd8));
+    }
+  }
+  return 0;
+}
+
+
+FUN_0051da00 -> .?AVViewItemElement@FilePanel@@ slot+0x18
+
+void __fastcall FUN_0051da00(int param_1)
+
+{
+  int iVar1;
+  char cVar2;
+  int iVar3;
+  undefined1 auStack_20 [8];
+  undefined4 uStack_18;
+  undefined4 uStack_14;
+  
+  if ((*(byte *)(param_1 + 0x69) & 0x10) != 0) {
+    return;
+  }
+  if (*(int *)(param_1 + 0xc) != 0) {
+    uStack_14 = 0x51da1e;
+    cVar2 = FUN_00614300();
+    if (cVar2 == '\0') {
+      return;
+    }
+  }
+  if ((*(char *)(param_1 + 0x91) == '\0') || (**(char **)(param_1 + 0x8c) == '\0')) {
+    if (-1 < *(int *)(param_1 + 0x98)) {
+      if ((*(char *)(param_1 + 0x90) == '\0') && (**(char **)(param_1 + 0x8c) != '\0')) {
+        uStack_14 = 0x51daa2;
+        iVar3 = FUN_00406fd0();
+        if ((iVar3 != 0) && (*(int *)(param_1 + 0x94) != 0x7000)) {
+          uStack_14 = 20000;
+          uStack_18 = 0x51daca;
+          FUN_005097e0();
+          uStack_14 = *(undefined4 *)(param_1 + 0x88);
+          uStack_18 = 0x51dadb;
+          FUN_00546f80();
+          iVar1 = *(int *)(param_1 + 0x94);
+          if (((iVar1 == 0x2000) || (iVar1 == 0x3000)) || (iVar1 == 0x4000)) {
+            uStack_14 = *(undefined4 *)(*(int *)(iVar3 + 0x798) + 0x6cd8);
+          }
+          else {
+            if (iVar1 != 0x5000) goto LAB_0051db18;
+            uStack_14 = 0;
+          }
+          uStack_18 = 0x51db18;
+          FUN_00528b10();
+        }
+      }
+      goto LAB_0051db18;
+    }
+  }
+  else {
+    uStack_14 = 0x51da41;
+    iVar3 = FUN_00406fd0();
+    if (iVar3 != 0) {
+      iVar3 = *
+FUN_00516c30 -> .?AVDSPMChannelStrip@@ slot+0x4
+
+void __thiscall FUN_00516c30(int param_1,int param_2)
+
+{
+  char cVar1;
+  undefined4 *puVar2;
+  int *local_24 [2];
+  undefined1 local_1c [8];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_00692e36;
+  local_10 = ExceptionList;
+  local_14 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (*(char *)(param_1 + 0x664) == '\0') {
+    if (param_2 == param_1 + 0x3c8) {
+      local_8 = 0;
+      puVar2 = (undefined4 *)FUN_0056d870(local_24);
+      cVar1 = (**(code **)(*(int *)*puVar2 + 0x14))(puVar2 + 2);
+      (**(code **)(*local_24[0] + 0x54))(local_1c);
+      local_8 = 0xffffffff;
+      if (cVar1 == '\0') {
+        FUN_00547400(*(undefined4 *)(param_1 + 0xc));
+      }
+    }
+    else if (param_2 == param_1 + 0x2b0) {
+      cVar1 = FUN_00402ad0(local_14);
+      if (cVar1 == '\0') {
+        FUN_00547350(*(undefined4 *)(param_1 + 0xc));
+      }
+    }
+  }
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+FUN_00512810 -> .?AVTransportKeys@@ slot+0xc
+
+void __thiscall FUN_00512810(int param_1,int param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  
+  iVar1 = *(int *)(param_2 + 0x180);
+  iVar2 = *(int *)(param_1 + 4);
+  if (iVar1 == 3) {
+    iVar3 = *(int *)(*(int *)(iVar2 + 0x7c) + 0x288);
+    if ((iVar3 == 3) || (iVar3 == 6)) {
+                    /* WARNING: Could not recover jumptable at 0x00512878. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*(int *)(iVar2 + 0x3e10) + 0x28))();
+      return;
+    }
+    iVar3 = *(int *)(*(int *)(iVar2 + 0x7c) + 0x294);
+    if ((iVar3 == 2) || (iVar3 == 3)) {
+                    /* WARNING: Could not recover jumptable at 0x0051285f. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*(int *)(iVar2 + 0x36a0) + 0x28))();
+      return;
+    }
+  }
+  FUN_00547780(iVar1);
+  if (iVar1 == 3) {
+    FUN_00535750(0);
+  }
+  return;
+}
+
+

@@ -123,3 +123,6 @@ API: src/utrack_control.py  (UTrackControl().connect().play()/stop()/rec()/ctrl(
 CLI: python src/utrack_control.py play|stop|rec|ctrl d000 4 2
 NEXT: 0xd001 locate (vtable[0x17c], autre TLV) pour ff/rew/position ; puis mixer/settings
       (table ctrl_calls.txt) en capturant chaque action uRemote avec capture_loopback.py (port=).
+
+## CARTE COMMANDES (RTTI) -> research/notes/command_map.md
+Chaque ctrl relie a sa classe UI via RTTI (ClassOf.java). Ouvert: regle sous-session, slot 0x17c, mute vs solo.

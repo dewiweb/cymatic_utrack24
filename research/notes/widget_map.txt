@@ -1,0 +1,106 @@
+### handler FUN_00541c20
+   FUN_00548860: FUN_00541c20();
+### handler FUN_00541cc0
+   FUN_00548860: FUN_00541cc0();
+### handler FUN_00543ab0
+   FUN_00535750: FUN_00543ab0();
+### handler FUN_00544090
+   FUN_005324b0: FUN_00544090();
+### handler FUN_00544130
+   FUN_005324f0: FUN_00544130(iVar1 + -1);
+### handler FUN_005441d0
+   FUN_00532550: FUN_005441d0(iVar1 + -1);
+### handler FUN_00544270
+   FUN_005325b0: FUN_00544270(iVar1 + -1);
+### handler FUN_00544310
+   FUN_005318f0: FUN_00544310();
+### handler FUN_005443b0
+   FUN_00531950: FUN_005443b0(uVar2);
+### handler FUN_00544450
+   FUN_00531950: FUN_00544450(uVar2);
+### handler FUN_005444f0
+   FUN_005319d0: FUN_005444f0(iVar1 + -10);
+### handler FUN_00544810
+   FUN_005315d0: FUN_00544810();
+### handler FUN_005448b0
+   FUN_00530310: FUN_005448b0(uVar4);
+   FUN_00530410: FUN_005448b0(uVar3);
+### handler FUN_00544950
+   FUN_00530720: FUN_00544950(uVar4);
+   FUN_00530820: FUN_00544950(uVar3);
+### handler FUN_005449f0
+   FUN_00530b30: FUN_005449f0();
+### handler FUN_00544b00
+   FUN_0052e8a0: FUN_00544b00(*(undefined4 *)(param_1 + 0xd8),iVar1 + -1);
+### handler FUN_00544ba0
+   FUN_0052e6c0: FUN_00544ba0(*(undefined4 *)(param_1 + 0xd8),iVar1 + -1);
+### handler FUN_00544c40
+   FUN_0052e720: FUN_00544c40(*(undefined4 *)(param_1 + 0xd8),iVar1 + -1);
+### handler FUN_00544ce0
+   FUN_0052e780: FUN_00544ce0(iVar1 + -1);
+### handler FUN_00544d80
+   FUN_0052e7e0: FUN_00544d80(iVar1 + -1);
+### handler FUN_00544e20
+   FUN_0052e840: FUN_00544e20(iVar1 + -1);
+### handler FUN_00544ec0
+   FUN_0052e2b0: FUN_00544ec0(iVar1 + -1);
+### handler FUN_00544f60
+   FUN_0052e520: FUN_00544f60(iVar1 + -1);
+### handler FUN_005450f0
+   FUN_00528fa0: FUN_005450f0(uVar3);
+   FUN_00537350: FUN_005450f0();
+   FUN_00547780: FUN_005450f0((int)*(float *)(param_1 + 0x4cc));
+### handler FUN_00545200
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4508)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4c78)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x53e8)) {
+   FUN_005262c0: else if ((param_2 != (int *)(param_1 + 0x5b58)) && (param_2 == (int *)(param_1 + 0x62c8))) {
+   FUN_005262c0: FUN_00545200(*(undefined4 *)(param_1 + 0x6a38));
+### handler FUN_00545290
+   FUN_00526290: FUN_00545290(param_1 + 0x6c78);
+   FUN_005261f0: FUN_00545290(&local_14);
+### handler FUN_00545320
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4508)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4c78)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x53e8)) {
+   FUN_005262c0: FUN_00545320();
+   FUN_005262c0: else if ((param_2 != (int *)(param_1 + 0x5b58)) && (param_2 == (int *)(param_1 + 0x62c8))) {
+### handler FUN_005453a0
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4508)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4c78)) {
+   FUN_005262c0: FUN_005453a0();
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x53e8)) {
+   FUN_005262c0: else if ((param_2 != (int *)(param_1 + 0x5b58)) && (param_2 == (int *)(param_1 + 0x62c8))) {
+### handler FUN_00545420
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4508)) {
+   FUN_005262c0: FUN_00545420();
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4c78)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x53e8)) {
+   FUN_005262c0: else if ((param_2 != (int *)(param_1 + 0x5b58)) && (param_2 == (int *)(param_1 + 0x62c8))) {
+### handler FUN_00546ef0
+   FUN_00520b70: FUN_00546ef0(*(undefined2 *)(param_1 + 0x184));
+### handler FUN_00546f80
+   FUN_00526180: FUN_00546f80(*(undefined4 *)(*(int *)(param_1 + 0x16f0) + 0x88));
+   FUN_0051da00: FUN_00546f80();
+### handler FUN_00547350
+   FUN_00516c30: if (param_2 == param_1 + 0x3c8) {
+   FUN_00516c30: else if (param_2 == param_1 + 0x2b0) {
+   FUN_00516c30: FUN_00547350(*(undefined4 *)(param_1 + 0xc));
+### handler FUN_00547400
+   FUN_00516c30: if (param_2 == param_1 + 0x3c8) {
+   FUN_00516c30: FUN_00547400(*(undefined4 *)(param_1 + 0xc));
+   FUN_00516c30: else if (param_2 == param_1 + 0x2b0) {
+### handler FUN_00547780
+   FUN_005262c0: FUN_00547780(3);
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4508)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x4c78)) {
+   FUN_005262c0: else if (param_2 == (int *)(param_1 + 0x53e8)) {
+   FUN_005262c0: else if ((param_2 != (int *)(param_1 + 0x5b58)) && (param_2 == (int *)(param_1 + 0x62c8))) {
+   FUN_00512810: FUN_00547780(iVar1);
+
+##### offset widget -> chaines proches (constructeurs) #####
+0x184 FUN_00513a20 00513a46 : [?[@]
+0x184 FUN_00514e80 00514ea6 : [p[@]
+0x184 FUN_00520b90 00520bc1 : [0r@, ]s@]
+0x5b58 FUN_005261f0 00526216 : [[ALL]]
+0x5b58 FUN_005261f0 0052621c : [[ALL]]
