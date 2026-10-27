@@ -470,3 +470,16 @@ Fichier: AppData\Roaming\CopperLan Manager\QuickSaves\*.cps (copié research/ass
 Contenu: déclarations membres (VMidi/LCL/uRemote), MachineID 6bd553ca,
 records DISD_/8010/0e00 = mêmes TLV que le protocole réseau (endpoint 34b96e2e=uTrack)
 magic f1f2f3f4a1c2 = identique au blob Setup du registre MIDI2CP
+
+## LIEN TCP :55000 uRemote<->VNM DÉCODÉ (capture chai2_125803, 1779 msgs)
+
+Framing: ef51 <len8?> <flag> puis message CHAI nu (pas de CRC par trame!)
+  flag b0 = client->VNM msg | 20 = VNM->client | 10/a0 = keepalive/ping
+- Le VNM relaie le même message vers le device en CPOETH dirigé (1104)
+- 00014437 = flux metering continu VNM->uR (vumètres ~10Hz)
+- 00018423 = ÉCRITURES: rafales avec octet variable fe,ff,00..05 = mute ch1-8!
+- 00015423 = subscriptions (2205...)
+- 00014423/0001c423 = polls, c010/d010 = ctrl session
+Endpoint IDs: 34b96e2e=uTrack, 69727160=uRemote PC member, ca53d56b=?, feff/broadcast
+
+=> Notre client peut faire TCP -> :55000, parler CHAI, le VNM route.
