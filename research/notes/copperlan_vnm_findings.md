@@ -227,3 +227,12 @@ DERNIER PAS: dans 0x1400777a0 trouver quel chemin mène à 0x1400741a4 (reply)
 - AudioLAN CopperLan cfg: BrandID=0xFFFE, BrandName="Test", Enabled=1
 - État: VNM traque les devices (beacon-level) mais PAS de déclaration CHAI → invisible Manager
 - Le blocage final = session applicative CHAI (lien TCP:55000 jamais formé)
+
+## Session 27/10 — lien TCP jamais formé
+- uTrack24 de retour après débranchement USB (.197, ports ouverts)
+- AudioLAN=.175 même stack (VnmTcpListener:55000 + shell sds + threads VNM)
+- VNM mémoire: traque les 2 MACs + noms ("uT24-AudioLan-49-00-30", "#uTRACK24 MIDI")
+- VNM↔device TCP:55000 JAMAIS établi (pas de handshake observé en 15s sniff)
+- VNM local: client CHAI (Manager) connecté sur localhost:40987
+- 1210: AL=feff/1000 (lien!), uTrack=0100 (aucun) — AL signale son lien TCP
+- NEXT: Manager UI > add TCP-IP link manuel vers 192.168.10.197:55000
