@@ -412,3 +412,21 @@ Le lien TCP véhicule les mêmes messages que CPOETH, wrappés `abebafec<len>`.
   (directed frames) — le VNM ne les envoie pas → trouver le déclencheur
   de "link engage" dans CPVNM (SmartConnect?) OU forcer un directed frame
   forgé à la main vers le device
+
+## Session 27/10 ter — LA 1.4.5 TROUVÉE ET INSTALLÉE
+
+### CopperLan 1.4.5 existe (sept 2017, Klavis) — téléchargée depuis
+  https://alyseum.com/copperlanmanager.html (pcloud)
+  → research/assets/software/CopperLanSetup_1.4.5.exe
+- VNM v36 natif → AudioLAN ADOPTÉE (uT24-AudioLan-49-00-30's CHAI en mémoire!)
+- Plugins: CHAIoNet.clp + CLoNet.clp + CLoUSB.clp tous chargés
+- Lien TCP format: abebafec <len u16> <msg CPOETH> (keepalive/member dump/v36)
+
+### Bloqué: driver CPoEthProt non installé
+- 'T' = "No transport interfaces"; Manager = aucune NIC
+- Driver présent: C:\Program Files\CopperLan\Drivers\CPoEthProt.inf/.sys
+- + CPVMidi.sys + CHAILinkOverUSB.sys + DriversInstallation.exe
+- User relance Windows pour activer le driver
+
+### Cleaned: mes patches CPVNM/CLoNet écrasés par l'install 1.4.5,
+  msvcr80.dll supprimés, ActiveEthernet restauré
