@@ -91,3 +91,13 @@ Settings: 0xb000-0xb005, 0xb102-0xb105, 0xb200-0xb207, 0xb210-0xb212, 0xb300-0xb
   0xc003, 0xc010, 0xf060 ; canaux: (id-0x2ff0)=mute val2, (id-0x2fd0) val2, (id-0x4cd0/4ce0/4cf0)
 Le play.log capturait un AUTRE client (src 0100 0100 3602 + dst MachineID ca53d56b=6bd553ca), pas uRemote.
 Outil: research/tools/send_ctrl.py d000=1 wait=10 d000=0
+
+## VERITE TERRAIN (play_true.log, capture corrigee)
+- capture_loopback.py jetait les paquets >1600B et ne loggait pas le port -> corrige (port=).
+- port 35614 = CopperLanManager (verifie Get-NetTCPConnection). TOUTES les anciennes captures
+  "play" etaient le trafic du Manager (handle 3602, dst MachineID ca53d56b). uRemote = port 58587.
+- Play uRemote reel (t=45.207) = UNE trame:
+  00018437 00000000 0e000200 06972716 0000 0200 | 0000 0100 0e000100 34b96e2e 0000 0200 | 01000000
+  4337 0010 1e00 1600 0000 [ctrl=00d0] 0000.. [val u32 = 04000000]
+  => ctrl 0xd000, valeur 4, sous-session 02 (offsets sous-session 18 et 34)
+- send_ctrl.py reproduit octet pour octet les trames reelles (d000=4@2, b000=0@4).
