@@ -618,3 +618,12 @@ FUN_0062e7f0 = drain queue quand transport dispo
 - Session TCP stable via replay: src/chai_session.py + init_seq.txt/dewi.txt
 - Projet Ghidra: C:\tools\ghidra_projects\uremote_v36  | scripts: C:\tools\ghidra_scripts\
 - Logs decompile: research/assets/cap/ghidra_*.log
+
+## CODE SESSION + MUTE localises (ghidra_d7)
+FUN_0051b610 = TOGGLE MUTE par canal! *(obj+0x104+ch*2)=!etat, envoie msg
+  (local_c = param2 - 0x2ff0 -> id base canal, puVar2 = table etats)
+FUN_00545200 = keepalive session c010 (throttle 0xfa=250ms, timeGetTime)
+FUN_00547350 = keepalive d010 (param2-0x2ff0)
+=> les commandes utilisateur passent par ce chemin; trouver l'envoyeur d'8423
+   = chercher les callers de l'emission avec type 0x8423 ou les membres
+   qui ecrivent les TLV 0e00/0123
