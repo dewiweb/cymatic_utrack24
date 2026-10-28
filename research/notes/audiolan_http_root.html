@@ -1,0 +1,46 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="aes67App" ng-controller="AppCtrl"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" ng-app="aes67App" ng-controller="AppCtrl"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" ng-app="aes67App" ng-controller="AppCtrl"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" ng-app="aes67App" ng-controller="AppCtrl"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-Cache">
+    <meta http-equiv="pragma" content="no-Cache">
+    <meta http-equiv="expires" content="0">
+    <title ng-bind="pageTitle"></title>
+    <meta name="description" content="AES67 Device">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- compiled CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/aes67-0.1.2.css"/>
+    
+
+</head>
+<body ng-post-message>
+<!--[if lt IE 9]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<div ui-view="main"></div>
+
+<!-- compiled JavaScript -->
+<script type="text/javascript" src="assets/aes67-0.1.2.js"></script>
+
+
+<script>
+    function onIFrameLoad() {
+        window.iframeLoaded = true;
+    }
+</script>
+</body>
+</html>
