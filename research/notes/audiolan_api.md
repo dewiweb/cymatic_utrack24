@@ -9,7 +9,7 @@ Carte : `uT24-AudioLan-49-00-30` @ `192.168.10.175` (MAC `00:07:F5:49:00:30`), f
 | 23 | telnet (accepte, pas de bannière spontanée — à explorer) |
 | 80 | HTTP — API JSON ci-dessous |
 | 554 | RTSP (`Public: DESCRIBE, SETUP, TEARDOWN, PLAY`) — contrôle de sessions RTP AES67 |
-| 55000 | CopperLan VNM embarqué (la carte est un membre CopperLan, pilotée par le uTrack ?) |
+| 55000 | CopperLan VNM embarqué — **vérifié** : répond en CHAI (`CHAI.ac5`), annonce le uTrack (`34b96e2e`) dans ses membres. La carte est un membre CopperLan du même réseau ; le uTrack la pilote probablement ainsi (config AudioLAN/routing). |
 
 ## API JSON « ArchwaveAES67 » (GET, vérifiés en lecture)
 
