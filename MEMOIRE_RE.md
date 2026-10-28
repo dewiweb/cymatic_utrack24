@@ -171,3 +171,9 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - 0xb202 = MIDI offset (-11ms), pas un delay monitor.
 - Mode USB: 0 controle CopperLan; SDS toujours actif.
 - Etat courant inputselect: pas d attribut cne dedie trouve -> probablement interne DSP/UI.
+
+## inputselect - verite firmware (FUN_6013dc64/6017d894/6017ee88)
+- inputselect "1|2|3|all" -> bitmask blocs (1,2,4,7); "analog"=0 "digital"=1.
+- Etat = bits 24,25,26 du u32 ctx+0x7c (1 bit par bloc de 8; (mode^1)).
+- ctx obtenu via FUN_601cca98(900, DAT_6017eedc) -> proxy id 900; ptr stocke a DAT_6017eedc.
+- Lecture possible: rd <DAT_6017eedc contenu> puis rd <ctx+0x7c> bits24-26; ou get sur l attribut id 900.

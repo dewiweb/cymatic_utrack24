@@ -1,0 +1,45 @@
+=========== FUN_6017d894 @ 6017d894
+
+undefined4 FUN_6017d894(int param_1,int param_2,uint param_3)
+
+{
+  if (param_2 == 0) {
+    *(uint *)(param_1 + 0x7c) = *(uint *)(param_1 + 0x7c) & 0xfeffffff | ((param_3 ^ 1) & 1) << 0x18
+    ;
+  }
+  else if (param_2 == 1) {
+    *(uint *)(param_1 + 0x7c) = *(uint *)(param_1 + 0x7c) & 0xfdffffff | ((param_3 ^ 1) & 1) << 0x19
+    ;
+  }
+  else {
+    if (param_2 != 2) {
+      return 0;
+    }
+    *(uint *)(param_1 + 0x7c) = *(uint *)(param_1 + 0x7c) & 0xfbffffff | ((param_3 ^ 1) & 1) << 0x1a
+    ;
+  }
+  return 1;
+}
+
+
+=========== FUN_6017ee88 @ 6017ee88
+
+int FUN_6017ee88(void)
+
+{
+  int iVar1;
+  
+  if (*DAT_6017eedc == 0) {
+    iVar1 = FUN_601cca98(900,DAT_6017eee0);
+    if (iVar1 == 0) {
+      iVar1 = 0;
+    }
+    else {
+      iVar1 = FUN_6017f290(iVar1);
+    }
+    *DAT_6017eedc = iVar1;
+  }
+  return *DAT_6017eedc;
+}
+
+

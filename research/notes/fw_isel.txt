@@ -1,0 +1,4 @@
+inputselect
+set input selector
+analog
+digital
