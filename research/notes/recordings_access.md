@@ -14,6 +14,13 @@
 - `TakeNNNN.set` : XML `<song_settings>` (nom, sample count, format, et par voie : output_level/mute/channel, track_name, monitor_volume/mute/pan). Exemple : `research/notes/Take0012.set`.
 - Attention : `file open` sans argument a fait fermer la connexion par l'appareil (le uTrack reste joignable). Ne pas appeler les sous-commandes `file` sans connaître leur syntaxe. Le shell garde la ligne en cours entre connexions : envoyer des backspaces pour la vider si l'invite est polluée.
 
+## Écriture (vérifié le 2026-10-28)
+- `fs mkdir <chemin complet>` : crée un dossier vide (probé : `/MultiTrack/_DevinTest`).
+- `fs rename <oldname> <newname>` : chemins complets acceptés, pour dossiers ET fichiers ; sortie silencieuse en cas de succès (pas de message "done").
+- `fs rm <chemin>` : supprime un fichier, et aussi un dossier **vide** (probé). Sortie silencieuse en cas de succès.
+- Renommer une prise : renommer le dossier puis chaque fichier préfixé `<old>` (wav, .set) — ne pas toucher reclog.txt ni le contenu du .set.
+- Supprimer une prise : `fs rm` chaque fichier puis le dossier ; vérifier par `fs ls`.
+
 ## CopperLan
 - node 3 : `0xc000` fichier chargé, `0xc001` dossier courant ; node 0 : `0xf000` nom de la prise, `0xf003`–`0xf005` format.
 - uRemote s'abonne à d'autres contrôles (liste construite dans `FUN_005412d0` : 0xb000, 0xb001, 0xf00b, 0xd008, 0xf00a, 0xc003, 0xc004…) traités par `FUN_00541080` ; 0xc003/0xc004/0xf00a/0xf00b n'apparaissent pas dans nos sessions → mécanisme d'abonnement (navigateur de fichiers, compteur de marqueurs) à capturer.

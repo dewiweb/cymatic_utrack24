@@ -4,7 +4,7 @@ from PySide6.QtCore import QTimer,Qt
 from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
     QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox,
-    QTreeWidget,QTreeWidgetItem,QPlainTextEdit)
+    QTreeWidget,QTreeWidgetItem,QPlainTextEdit,QInputDialog)
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
@@ -34,7 +34,7 @@ class Win(QMainWindow):
         super().__init__()
         self.setWindowTitle('uTrack24 Remote');self.resize(1400,620)
         self.u=u or UTrackControl();self._pend={};self._conn=None
-        self.tel=tel;self._takes_data=None;self._reclog=None
+        self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
         v=QVBoxLayout();root=QWidget();root.setLayout(v);self.setCentralWidget(root)
         hd=QHBoxLayout();self.hdr={}
         for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date')):
@@ -156,7 +156,11 @@ class Win(QMainWindow):
 
     def _takes(self):
         w=QWidget();v=QVBoxLayout(w)
-        self.btn_ref=QPushButton('Rafraîchir');self.btn_ref.clicked.connect(self._takes_refresh);v.addWidget(self.btn_ref)
+        hb=QHBoxLayout()
+        self.btn_ref=QPushButton('Rafraîchir');self.btn_ref.clicked.connect(self._takes_refresh);hb.addWidget(self.btn_ref)
+        self.btn_ren=QPushButton('Renommer…');self.btn_ren.setEnabled(False);self.btn_ren.clicked.connect(self._take_rename);hb.addWidget(self.btn_ren)
+        self.btn_del=QPushButton('Supprimer');self.btn_del.setEnabled(False);self.btn_del.clicked.connect(self._take_delete);hb.addWidget(self.btn_del)
+        v.addLayout(hb)
         self.tree=QTreeWidget();self.tree.setHeaderLabels(['Prise','Date','Format','Durée','Marqueurs'])
         self.tree.currentItemChanged.connect(self._take_sel);v.addWidget(self.tree)
         self.reclog=QPlainTextEdit(readOnly=True);v.addWidget(self.reclog)
@@ -175,6 +179,8 @@ class Win(QMainWindow):
 
     def _take_sel(self,it,prev):
         t=it.data(0,Qt.UserRole) if it else None
+        en=bool(t) and t['name']!=self._loaded
+        self.btn_ren.setEnabled(en);self.btn_del.setEnabled(en)
         if not t or self.tel is None:return
         self.reclog.setPlainText('Chargement…')
         def run():
@@ -195,6 +201,28 @@ class Win(QMainWindow):
             it.setData(0,Qt.UserRole,t);self.tree.addTopLevelItem(it)
         self.statusBar().showMessage('Prises : %d'%len(d))
 
+    def _take_rename(self):
+        it=self.tree.currentItem();t=it.data(0,Qt.UserRole) if it else None
+        if not t:return
+        new,ok=QInputDialog.getText(self,'Renommer','Nouveau nom :',text=t['name'])
+        if ok and new.strip() and new.strip()!=t['name']:self._take_op('rename',t['name'],new.strip())
+
+    def _take_delete(self):
+        it=self.tree.currentItem();t=it.data(0,Qt.UserRole) if it else None
+        if t and QMessageBox.question(self,'Supprimer','Supprimer %s ? (irréversible)'%t['name'])==QMessageBox.Yes:
+            self._take_op('delete',t['name'])
+
+    def _take_op(self,op,name,new=None):
+        self.btn_ref.setEnabled(False);self.btn_ren.setEnabled(False);self.btn_del.setEnabled(False)
+        self.statusBar().showMessage('%s %s…'%(op,name))
+        def run():
+            try:
+                if op=='rename':self.tel.rename_take(name,new,loaded=self._loaded)
+                else:self.tel.delete_take(name,loaded=self._loaded)
+                self._takes_data=self.tel.takes()
+            except Exception as e:self._take_err=e
+        threading.Thread(target=run,daemon=True).start()
+
     def _refresh(self):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
@@ -205,8 +233,14 @@ class Win(QMainWindow):
             d,self._takes_data=self._takes_data,None;self.btn_ref.setEnabled(True)
             if isinstance(d,Exception):self.statusBar().showMessage('Erreur prises : %s'%d)
             else:self._fill_takes(d)
+        if self._take_err is not None:
+            e,self._take_err=self._take_err,None;self.btn_ref.setEnabled(True)
+            QMessageBox.warning(self,'Prises','Erreur : %s'%e)
+            self.statusBar().showMessage('Erreur : %s'%e)
         u=self.u
         with u.slock:st=dict(u.state)
+        e=st.get(0xc000) or st.get(0xf000)
+        if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
         for ch,s in enumerate(self.strips):
             e=st.get(0xe000+ch)

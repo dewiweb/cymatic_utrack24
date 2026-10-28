@@ -187,6 +187,38 @@ class UTrack24:
             out.append(t)
         return out
 
+    def _chk(self, out: str) -> str:
+        if re.search(r'fail|error', out, re.I):
+            raise RuntimeError(out.strip().splitlines()[-1] if out.strip() else 'erreur')
+        return out
+
+    def _valid_take_name(self, name: str, loaded=None):
+        if name == (loaded or '').split('/')[-1]:
+            raise ValueError('prise actuellement chargée')
+        if not name or len(name) > 64 or not re.fullmatch(r'[A-Za-z0-9_-]+', name) or name[0] == '_':
+            raise ValueError('nom invalide: %r' % name)
+
+    def rename_take(self, old: str, new: str, loaded=None):
+        """Renomme la prise <old> : dossier puis fichiers prefixes <old>."""
+        self._valid_take_name(old, loaded)
+        self._valid_take_name(new)
+        if any(e['name'] == new for e in self.list_dir('/MultiTrack')):
+            raise ValueError('%r existe deja' % new)
+        self._chk(self.cmd('fs rename /MultiTrack/%s /MultiTrack/%s' % (old, new), 2.0))
+        for f in self.list_dir('/MultiTrack/' + new):
+            if f['name'].startswith(old):
+                self._chk(self.cmd('fs rename /MultiTrack/%s/%s /MultiTrack/%s/%s'
+                                   % (new, f['name'], new, new + f['name'][len(old):]), 2.0))
+
+    def delete_take(self, name: str, loaded=None):
+        """Supprime la prise <name> : fichiers puis dossier ; verifie par fs ls."""
+        self._valid_take_name(name, loaded)
+        for f in self.list_dir('/MultiTrack/' + name):
+            self._chk(self.cmd('fs rm /MultiTrack/%s/%s' % (name, f['name']), 2.0))
+        self._chk(self.cmd('fs rm /MultiTrack/' + name, 2.0))
+        if any(e['name'] == name for e in self.list_dir('/MultiTrack')):
+            raise RuntimeError('dossier toujours present')
+
     # ---------- misc ----------
     def device_info(self) -> dict:
         g = self.get
