@@ -88,9 +88,10 @@ class Win(QMainWindow):
         self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
         self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
-        gb=QGroupBox('Transport');gb.setLayout(tr);v.addWidget(gb)
-        tabs=QTabWidget();v.addWidget(tabs)
-        tabs.addTab(self._mixer(),'Mixer');tabs.addTab(self._settings(),'Réglages');tabs.addTab(self._takes(),'Prises')
+        self.gb_tr=QGroupBox('Transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
+        self.tabs=QTabWidget();v.addWidget(self.tabs)
+        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises')
+        self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
         self.tm=QTimer(self);self.tm.timeout.connect(self._refresh);self.tm.start(100)
         self.rate=QTimer(self);self.rate.timeout.connect(self._flush);self.rate.start(40)
         if connected:self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
@@ -271,6 +272,7 @@ class Win(QMainWindow):
     def _refresh(self):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
+            self.gb_tr.setEnabled(True);self.tabs.setEnabled(True)
         elif self._conn not in (None,'done'):
             self.statusBar().showMessage('Erreur : %s'%self._conn);self._conn='done'
         if self._reclog is not None:self.reclog.setPlainText(self._reclog);self._reclog=None
