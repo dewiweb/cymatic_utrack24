@@ -1,0 +1,780 @@
+Cymatic Audio
+   uRemote
+
+            Version 1.0
+          User's Manual
+
+                                      Copyright 2015 Cymatic Audio
+
+                                              UREMOTE V1.0 USER'S MANUAL 1
+Table of Contents
+
+Introduction ............................................................................................................................... 3
+   Compatibility........................................................................................................................................ 4
+   How to Use this Manual Effectively .............................................................................................. 4
+
+Where to Use uRemote ........................................................................................................... 5
+   Remote Placement of Hardware ................................................................................................... 5
+   Easy Adjustment of Internal Monitor Mix..................................................................................5
+   Stage Playback ..................................................................................................................................... 5
+
+uRemote Setup...........................................................................................................................6
+   Network Setup ..................................................................................................................................... 6
+   Setup Diagram ..................................................................................................................................... 7
+   Installation ............................................................................................................................................ 8
+      OS X ......................................................................................................................................................................8
+      Windows ............................................................................................................................................................8
+      iOS ......................................................................................................................................................................... 8
+   Launching uRemote for the First Time ....................................................................................... 9
+
+uRemote User Interface..........................................................................................................9
+   Information Strip:............................................................................................................................ 10
+   Transport Section:........................................................................................................................... 10
+   Information Strip............................................................................................................................. 11
+   Transport Section ............................................................................................................................ 12
+   Using the uRemote Transport Section ..................................................................................... 15
+   The Home Screens ........................................................................................................................... 17
+      Recording Home Screen ........................................................................................................................... 17
+      Playback Home Screen..............................................................................................................................18
+      Playlist Home Screen ................................................................................................................................. 19
+   Mixer .................................................................................................................................................... 21
+   Meters .................................................................................................................................................. 23
+   Browser ............................................................................................................................................... 24
+   Settings ................................................................................................................................................ 25
+
+   2 UREMOTE V1.0 USER'S MANUAL
+Introduction
+
+uRemote is a standalone application that allows you to both control and monitor
+your uTrack 24 hardware from a remote location. It runs on different hardware
+platforms, including iPhone, iPad, and both OS X and Windows desktop and laptop
+machines.
+uRemote gives you a much deeper amount of control and visual feedback than the
+uTrack 24's front panel hardware alone, with the following features:
+
+     A comprehensive "home screen" that displays all of your recording's key
+         settings at a glance. Individual, customized home screens are tailored to the
+         unique capabilities of recording, song style playback, and playlist playback.
+
+     A dedicated metering page that displays recording and playback levels for all
+         24 channels using large, full-screen, multi-segment meters. Now you have a
+         professional-level meter bridge for your uTrack 24, using the phone / tablet
+         /computer hardware you already own!
+
+     Dedicated screen controls for creating and using playback loop points
+     Dedicated popup window for displaying all song markers, complete with
+
+         exact timeline locations
+     Full analog-style mixer screen for controlling uTrack 24's internal digital
+
+         mixer.
+     File browser screen allows for quick and easy selection and loading of files
+
+         for playback
+     Settings page allows easy access to all uTrack 24 hardware settings "at a
+
+         glance"
+
+                                                             UREMOTE V1.0 USER'S MANUAL 3
+Compatibility
+
+OS X
+     Versions 10.8 and higher
+
+Microsoft Windows
+     Windows 7 32-bit / 64-bit
+     Windows 8 / 8.1
+
+iOS
+     iOS version 7 and higher (iPhone and iPad)
+
+uRemote contains a unique, custom layout optimized for whichever platform you
+run it on. For example:
+
+     OS X or Windows laptop/desktop: The interface is optimized for a larger
+         computer screen and mouse-driven operation
+
+     iPhone: The interface is optimized for a smaller, phone-sized screen and
+         touch operation
+
+     iPad: The interface is optimized for larger, tablet-sized screen, and touch
+         operation
+
+How to Use this Manual Effectively
+
+uTrack 24 Documentation
+uRemote is a software remote control for the uTrack 24 hardware, thus its
+operation assumes a certain level of knowledge of the uTrack 24 hardware itself and
+its various features and capabilities.
+
+If you are not yet familiar with the uTrack 24 and its features, please read through
+both its quick start guide and its users manual, both of which are available at
+http://www.cymaticaudio.com/downloads
+
+uRemote Desktop/Tablet/Phone Interface Conventions
+uRemote is available as both a phone/tablet version (using a touch interface) and as
+a standard desktop computer application (which uses a mouse interface).
+
+uRemote's interface is very similar between the tablet and desktop version, with the
+main difference being that on the desktop, instead of tapping a control, you click it
+with the mouse. Whenever you see an instruction to "tap" a control in this manual,
+this means to "click" it if you are using the desktop version.
+
+   4 UREMOTE V1.0 USER'S MANUAL
+Where to Use uRemote
+
+Although the uTrack 24 can be operated easily with its own front panel controls,
+uRemote makes it even easier to take advantage of its capabilities, due to the larger
+color interface, as well as the ability to wirelessly separate the controls from the
+hardware itself.
+
+Remote Placement of Hardware
+In many situations, the uTrack 24 will be used to record a live concert, and will be
+physically placed in a cramped and crowded environment. Placement of the
+hardware may be less than ideal, making it difficult to work with the front panel
+controls.
+
+By using uRemote to wirelessly control any and all functions of the uTrack 24, you
+can now comfortably interact with your unit, from anywhere in the venue within the
+range of your Wi-Fi reception.
+
+Easy Adjustment of Internal Monitor Mix
+The uTrack 24 contains a full internal 24x2 monitor mixer, allowing you to craft a
+custom stereo mix of your recording with no external mixer required. This is
+extremely handy for monitoring recorded tracks, and making any adjustments
+(microphone position, etc.) that are necessary to perfect your recording.
+
+The front panel controls of the uTrack 24 allow you to make all of the mixer
+adjustments for all 24 channels (level, panning, muting and soloing); however, these
+adjustments can be made much faster using the large color screen and touch based
+interface of a smartphone or tablet.
+
+Presented with a traditional analog mixer style interface, you can quickly touch a
+fader or pan controls to adjust them, tap the mute and solo buttons, and bank
+between multiple banks of mixer faders.
+
+You can even connect a transmitter for a set of in-ear monitors to the uTrack 24's
+control room outputs, allowing you to wirelessly hear the output of the internal
+mixer without being physically near the unit. This allows you to take your
+smartphone, tablet, or laptop computer to the stage, and monitor the sound of any
+microphone adjustments you make, in real-time.
+
+Stage Playback
+Another popular use for the uTrack 24 is to provide live, multi-track pre-recorded
+material for stage accompaniment. The uTrack 24's playlist capabilities allow for
+quick and spontaneous selection of file playback, in real time while a current file is
+already playing.
+
+uRemote makes this even easier by presenting a large and intuitive "playlist" screen,
+where you can see all of the upcoming files that will be played back, as well as
+quickly select new files to add to the playlist.
+
+                                                             UREMOTE V1.0 USER'S MANUAL 5
+uRemote Setup
+
+uRemote works by placing your smartphone, tablet, or computer on the same
+computer network as your uTrack 24 hardware.
+
+By doing so, the device running uRemote (computer, tablet, or smartphone) and the
+uTrack 24 can communicate with each other.
+
+Since your smartphone, tablet, or laptop computer can connect to this network
+wirelessly, using standard "Wi-Fi" protocols, this allows you to have wireless control
+of the uRemote, no cables required!
+
+All communication between uRemote and the uTrack 24 is always bi-directional.
+For example, if you start playback of the uTrack 24 with its front panel buttons, you
+will see this reflected on the uRemote interface. If you stop playback on uRemote's
+interface, you will see playback stop on the front panel hardware.
+
+Network Setup
+
+     Set up a wireless router, to create a local wireless network. For stage use, one
+         popular choice is a "travel wireless router" where the router is very compact
+         and has a built in power plug, no external power cables required.
+
+     Connect a standard RJ-45 network cable between the network port on the
+         rear panel of your uTrack 24, and one of the LAN (Local Area Network) ports
+         of your router. Your router will automatically assign an IP (Internet Protocol)
+         address to the attached uTrack 24.
+
+     Connect your computer, tablet, or smartphone to the network that is being
+         provided by the router. Note that multiple devices may all run uRemote at
+         the same time and all control a single uTrack 24 simultaneously.
+
+             o With a laptop or desktop computer, the connection to the router's
+                  network can be wired or wireless.
+
+             o With a smartphone or tablet, the connection would be wireless.
+
+     If you have set up everything correctly, upon the first launch of uRemote, the
+         software will automatically discover your uTrack 24 interface and display
+         uRemote's "home screen".
+
+     You are now ready to start using uRemote, no further steps required!
+
+   6 UREMOTE V1.0 USER'S MANUAL
+Setup Diagram          iPad
+      Laptop
+
+                                 iPhone
+
+                       Wi-Fi
+                       Signal
+
+                Wi-Fi
+               Router
+
+                       Ethernet
+                         Cable
+
+                       uTrack 24
+                                    UREMOTE V1.0 USER'S MANUAL 7
+Installation
+Follow the steps below to install uRemote for your desired operating system:
+OS X
+
+     Download the OS X version of uRemote from
+         http://www.cymaticaudio.com/downloads
+
+     Double click the downloaded installer, then follow the onscreen instructions
+         to complete the installation process.
+
+Note that since uRemote is a 3rd party application, you may need to:
+             o Visit the preferences application on your OS X computer
+             o Click on the "Security and Privacy" icon preferences pane
+             o Click on the "General" tab
+             o In the "Allow App downloaded from" section, click on "anywhere"
+
+Windows
+     Download the Windows version of uRemote from
+         http://www.cymaticaudio.com/downloads
+     Double click the downloaded installer, then follow the onscreen instructions
+         to complete the installation process.
+
+iOS
+     Search for "uRemote" on the iOS app store
+     Tap the uRemote icon in the app store to download and install it onto your
+         iPhone or iPad.
+
+Your iOS device or computer will automatically discover any uTrack 24 units on
+your network. This is thanks to the innovative and powerful "Copperlan" audio
+networking technology, that is at the heart of the uRemote software.
+Additionally, uRemote is a "universal" app that will be optimized to run on your
+iPhone or iPad, there is no need to download separate versions.
+
+   8 UREMOTE V1.0 USER'S MANUAL
+Launching uRemote for the First Time
+Once uRemote is launched, it will poll the local network for any connected uTrack
+24 units.
+When the uTrack 24 is found, the uRemote software will switch to its "home page";
+the name of the connected uTrack 24 is displayed in the upper left corner of the
+interface, and uRemote is now ready to use.
+If more than one uTrack 24 is connected to the network, uRemote will connect to a
+single unit, and you can tap on the machine name in the upper left corner to switch
+control to any machine on the network.
+If no uTrack 24 units are found, uRemote will still switch to the home page, but will
+instead run in "demo" mode.
+In demo mode, you can switch among the different uRemote screens and get a feel
+for the application, even when no hardware is connected and being controlled.
+
+uRemote User Interface
+
+uRemote offers a unique, customized user interface layout that is optimized for the
+following environments:
+
+     OS X / Windows Desktop
+     iPad (Landscape Orientation)
+     iPad ( Portrait Orientation)
+     iPhone (Landscape Orientation)
+     iPhone ( Portrait Orientation)
+uRemote's user interface contains three main sections. From top to bottom, they
+are:
+
+                                                             UREMOTE V1.0 USER'S MANUAL 9
+Information Strip: Located at the top of the screen and always present, this strip
+displays key settings for the attached uTrack device. This allows you to always see
+the most important information "at a glance".
+
+Main Screen: The main screen is variable; it offers different variants that let you
+concentrate on different aspects of the uTrack 24's operation.
+Press the "screen selector" button in the lower left hand corner to bring up a popup
+menu, where you can select from the following screens:
+
+                                   Home Screen
+                                   Mixer
+                                   Meters
+                                   Browser
+                                   Settings
+                                   Exit Playlist Mode
+
+Transport Section:
+Also present at all times, it allows you to:
+
+     Operate the transport (stop, play, etc.)
+     Skip to a different section of the loaded song
+     Navigate among markers
+     Create loop points to repeat playback of a certain section of your song or
+
+         playhead position.
+
+  10 UREMOTE V1.0 USER'S MANUAL
+Information Strip
+The information strip contains the following elements:
+
+1  2  3 4 5 6 78
+
+   3
+
+1. uRemote Logo: Tap this logo to be taken to the app's "about" screen, where you
+will see information about the uRemote software version.
+
+2. uTrack 24 Machine Display: This title displays the specific uTrack machine that
+has been selected by the user and is now being controlled by the app.
+
+Tap the machine display to show a menu of all other uTrack 24 units currently on
+the network, as well as the demo mode. You can then tap any machine name in the
+list, to switch control to a different machine instead.
+
+3. Track Count: Displays the number of tracks that are currently being recorded or
+will be recorded, as specified in the settings menu. During playback, the track count
+shows the number of tracks being played back.
+
+4. Sample Rate: Displays the sample rate for the take being recorded or the song
+being played back.
+
+5. Bit Depth: Displays the bit rate for the take that is currently being recorded or
+the song being played back.
+
+6. Clock Source: Displays the digital clock source that the uTrack 24 is currently set
+to, as specified in the settings menu.
+
+7. Available Recording Time: Displays the total amount of available record time,
+on the USB hard drive that is attached to the uTrack 24.
+
+The counter dynamically updates as a recording progresses, always showing how
+much available recording time remains in the disk.
+
+The counter also updates when you change the track count, bit depth, and sample
+rate in the settings menu (since all of those settings affect available record time).
+
+      UREMOTE V1.0 USER'S MANUAL 11
+8. Information Popup Window:
+
+The info icon displays the recorder settings, playback parameters, clock source and
+IP address of your uTrack 24 in one single pop up menu.
+
+Tap the "Info" triangle at the upper right corner to display the popup window, and
+then tap it again to hide the window when you are done.
+
+Transport Section
+The transport section contains the following elements:
+
+                                   3
+
+1                              2
+
+                               3
+
+1. Screen Selector: Tap this icon to reveal a popup menu for the following screens:
+
+ Home
+ Mixer
+ Meters
+ Browser
+ Settings
+ Exit Playlist Mode
+
+12 UREMOTE V1.0 USER'S MANUAL
+Tap any of the options above to switch the main screen to that selection; the popup
+menu will automatically close once you have made your selection.
+
+2. Transport Keys: The transport keys emulate the uTrack 24's hardware transport
+keys, including:
+
+     Skip Back
+     Skip Forward
+     Stop
+     Play
+     Record
+
+3. Playback Bar: This horizontal bar represents the playback position of the file
+playing back. It works in the same fashion as the playback bar on the front panel
+display of the uTrack 24, allowing you to quickly navigate to any position of the
+currently loaded song.
+
+The white circle on the playback bar represents the current position of the "play
+head", the position in the song where playback will begin from, when the play
+button is pressed.
+
+     Tap and drag the circle to any position on the playback bar you wish to play
+         back from; as you do so a white popup window will show you the exact time
+         position you are dragging the play head to.
+
+     When you have dragged the playhead to the desired location, release it and
+         press the play button. The song will start playing from that position.
+
+Playback Bar Popup Window
+When dragging the play head to a new position, uRemote allows you to control the
+"resolution" with which you can navigate among the timeline. This is done using the
+Playback Bar Popup Window.
+
+When you first tap the playhead, a white window appears showing the play head's
+current time position in hours, minutes, and seconds. To the right of the time display
+is a square with three lines in it.
+
+Tap this square repeatedly to toggle through four different levels of scrolling
+resolution:
+
+     "Normal" scrolling resolution (scrolling resolution is dependent on the length
+         of the recorded sing and the resolution of your device's screen
+
+     Hours
+
+                                                             UREMOTE V1.0 USER'S MANUAL 13
+    Minutes
+    Seconds
+
+   As you select what time value you would like, a circle appears each choice, showing
+   you which resolution you have chosen
+
+   As you tap the play head and scroll, it will now do so with the hour, minute, or
+   seconds resolution you have chosen
+
+   4
+
+5                                                                                       6
+
+      7                           8
+
+   4. Marker Indicators: If any markers are present within the currently loaded song,
+   they will display along the play bar as small black "pushpin" indicators.
+
+   5. Elapsed Time Counter: When playing back a song, this counter shows how much
+   time has elapsed since the take has begun playback.
+
+   6. Remaining Time Counter: When playing back a song, this counter shows how
+   much time remains until the song reaches its end point.
+
+   7. Loop Button: Tap the loop button to create loop in / loop out points, then cycle
+   playback between them. See the "Using the Transport" section for details.
+
+   8. Markers List: Tap this button to display a popup list of all markers that reside
+   within the currently loaded song.
+
+   14 UREMOTE V1.0 USER'S MANUAL
+Using the uRemote Transport Section
+
+Stopping a Recording: uRemote is designed to prevent any accidental interruption
+of a recording in progress. To prevent accidents, the "record stop" operation works
+as follows:
+
+     You must press and hold the stop button before stopping will occur. A
+         "progress circle" appears around the stop button until you have held it long
+         enough.
+
+     Once the stop button is held long enough, an "Are You Sure" message
+         appears.
+
+             o Tap "No" to continue the recording
+             o Tap "Yes" to actually stop recording
+
+Thus, a recording can only be stopped if the stop button is pressed and held for a
+few moments, AND you then confirms with a "Yes" command. At this point we
+assume you really meant it!
+
+Pre-Recording: If the pre-recording option is switched on in the uTrack settings,
+the uTrack 24 is continuously storing the recording in its internal memory.
+
+     When the pre-recording starts, the record button blinks red.
+
+     Once the recording has started, the record button turns solid white. In this
+         case, when a recording is started, the USB storage device will contain the
+         recording from a few seconds before the actual button press.
+
+         This is helpful if you forgot to press record until a moment after a
+         performance has started, since you will still have recorded the beginning of
+         the performance.
+
+Pre-Loading Song: If the pre-recording option is switched off, the current song on
+display is automatically pre-loaded.
+
+     While the pre-loading takes place, the play button blinks green
+
+     After the preload, the button turns solid white.
+
+Note: When playing back a playlist, pre-loading is always active, regardless of how
+the pre-recording option has been set.
+
+Adding Markers: As with the uTrack 24, you can add markers to a recording in
+progress, by pressing the Play button; a new marker will be added with each press.
+
+                                                             UREMOTE V1.0 USER'S MANUAL 15
+In the uRemote software, the markers are displayed visually along the playback bar,
+as small black "push-pin" indicator.
+Using Markers: When playing back a song, tap the markers list to display a popup
+list of all markers that reside within the currently loaded song.
+Then, tap any of the markers in the list; the markers list will close and the playhead
+will move to that marker location
+Looping Playback: uRemote offers the ability to set a loop in and loop out point,
+and then loop the playback between these points.
+This is done by repeatedly pressing the "loop" button in the lower left hand corner,
+as follows:
+
+     1st Tap: An "in" message appears in the loop icon; the next tap of the loop
+         button will set the in point.
+
+     2nd Tap: The loop in point is created at the current position of the play head,
+         and is visually indicated on the playback bar.
+         An "out" message appears in the loop icon; the next tap of the loop button
+         will set the out point.
+
+     3rd Tap: The loop out point is created at the current position of the play head
+         and is visually indicated on the playback bar.
+         At this point, the loop points can also be manually adjusted by tapping and
+         dragging the loop point markings.
+         A "play" icon message appears in the loop icon; the next tap of the loop
+         button will cycle playback between the loop points
+
+     4th Tap: Playback begins between the two loop points.
+         An "X" icon message appears in the loop icon; the next tap of the loop button
+         will clear the loop points.
+
+     5th Tap: Loop mode is exited and the loop points are cleared
+
+  16 UREMOTE V1.0 USER'S MANUAL
+The Home Screens
+The home screen is the main informational screen of the uRemote app; it displays
+key information when you are recording a take, or playing back a song or a playlist.
+The uRemote home screens are customized to display different information,
+depending on if the uTrack 24 is:
+
+     Currently recording a take
+     Currently playing back a song
+     Currently playing back a playlist
+Recording Home Screen
+This is the home screen that displays when a recording is currently in progress. It
+contains the following elements:
+
+                      1
+
+                                    2
+                                    3
+
+                                     3
+
+                                                                          4
+
+1. Level Meters: These "mini-meters" display in a smaller size than the ones on the
+dedicated meters page, but still allow you to keep an eye on the input levels of the
+material currently being recorded.
+If there are any inputs that are not active because you have set your track count to
+less than all 24 channels, these meters will display in a grey color.
+2. Take Title: Displays, in large text, the title of the current take being recorded.
+3. Recording Time Counter: Displays the amount of elapsed time of the current
+recording.
+4. Markers: As you add markers to the current, this display shows a count of the
+total amount of markers that have been saved so far.
+
+                                                             UREMOTE V1.0 USER'S MANUAL 17
+Playback Home Screen
+This is the home screen that displays when you are playing back a loaded song in
+the uTrack 24.
+The playback home screen contains the following elements:
+
+                        1
+
+                                  2
+                                  3
+                  3
+                  4
+
+                                                   5
+
+1. Level Meters: These "mini-meters" display in a smaller size than the ones on the
+dedicated meters page, but still allow you to keep an eye on the input levels of the
+material currently playing back.
+2. Song Title: Displays the title of the current song being played back.
+3. Next Song: Displays the next song that resides in the file tree, on the attached USB
+hard drive.
+4. Elapsed Time: Displays the amount of elapsed time of the song currently playing
+back.
+5. Remaining Time: Displays the amount of remaining time in the song currently
+playing back.
+Playback Mode (Stereo Mode Only): Displays the playback mode, as chosen in the
+settings menu.
+
+  18 UREMOTE V1.0 USER'S MANUAL
+Playlist Home Screen
+The playlist home screen enables you to quickly add new files to the playlist,
+reposition of their playback order, and more. It contains the following elements:
+
+1                     3     7
+                   2
+                   4     5
+
+4
+
+                  6
+
+1. Level Meters: These "mini-meters" display in a smaller size than the ones on the
+dedicated meters page, but still allow you to keep an eye on the input levels of the
+song currently playing back.
+
+2. Playlist Name: Displays the name of the currently loaded playlist.
+
+3. Current Song: Displays the title of the current song playing back from the
+playlist.
+
+4. Next Song: Display the title of the next song in the playlist that will be played,
+when the current song has completed playback.
+
+5. Next Song Playback Mode: Displays how the next song will play back, once the
+current one has completed.
+
+6. Remaining Songs List: This scrollable list displays the remaining songs in the
+currently loaded playlist. This allows you to view each and every song present in the
+playlist, before they are moved up to "next song" or "current song" status.
+
+During playback, press and hold an item in the remaining songs list; it will move up
+to "next song" status and vacate its current position in the list. In idle, doing the
+same will set the selected song as the current song.
+
+                                                             UREMOTE V1.0 USER'S MANUAL 19
+7. File Browser Button: Press the file browser button to go straight to the browser
+screen, where you can select a song to add to the "next" position of the playlist
+currently playing back.
+
+Protecting Against Accidental Stopping When Using Playlists
+When playing back songs in a playlist, it is very important that uRemote does not
+allow you to accidentally interrupt the playback of music in an unintended fashion.
+To insure this is the case, the following functions are disabled when in playlist
+mode:
+
+    · The LOOP button and its associated functions
+    · The SKIP FORWARDS & SKIP BACK transport button
+    · The RECORD transport button
+    · The ability to skip to a new position on the playback bar by dragging the play
+
+         head
+In addition, stopping the transport requires a "long press" of the stop button; This
+prevents accidental stopping of the transport, but still allow the stop command
+when it is actually wanted.
+Exiting The Playlist Home Screen
+When you are currently viewing the playlist home screen, you may wish to exit out
+of it, and return to the playback home screen instead.
+To do so, tap the screen selector in the lower left hand corner. You will see an option
+at the bottom of the list called "exit playlist". Tap this option to return to the
+standard playback home screen.
+The "exit playlist" option is only displayed if you are currently in the playlist home
+screen.
+
+  20 UREMOTE V1.0 USER'S MANUAL
+Mixer
+The mixer screen gives you quick and easy control of the uTrack 24's internal, 24­
+channel stereo digital mixer.
+With its traditional analog mixer style interface, making adjustments is as easy as
+grabbing a control on a conventional analog mixer.
+Switching Between Mixer Channels
+Since displaying all 24 channels at once would make the controls much too small,
+the mixer's channels are presented as "banks" of a few channels at a time.
+You can scroll between the banks, as follows:
+
+     To scroll to the next/previous bank of mixer channels, swipe left or right
+         using a single-finger swipe.
+         On the desktop version of uRemote, use the left/right arrow keys to switch
+         channel banks.
+
+     To scroll to the next/previous set of channels one channel at a time, swipe
+         left or right using a two-finger swipe. This allows you to configure exactly
+         which group of channels is visible on your screen, at any given moment.
+         On the desktop version of uRemote, use the command (OS X) or Control
+         (Windows) + left/right arrow keys to scroll channels one at a time.
+
+Note: When using uRemote on the iPhone, and operating in landscape mode, there
+is not enough vertical space on the screen to include faders on the main part of the
+mixer screen.
+To adjust levels in this scenario, simply tap the fader area of the desired channel,
+and you will be presented with a "popup fader" that uses the entire phone screen.
+When finished, tap any area outside the fader to return to the mixer page.
+
+                                                             UREMOTE V1.0 USER'S MANUAL 21
+Each individual mixer channel contains the following controls:
+
+                                    3
+                                                       5
+
+    4
+
+          2
+          4
+
+          1
+
+1. Level Fader: Drag the fader up or down to adjust the playback level of the
+channel, as it feeds the internal mixer's summing bus. Double tap the fader to return
+it to its unity gain position.
+2. Level Meter: Each channel contains a level meter, inset underneath the channel
+fader. This allows you to view the level meters for the recorded/playback material
+on the mixer screen as well, without having to switch to the meters page or home
+page.
+3. Panner: Drag the panner control left or right to adjust the channel's stereo
+panning position.
+4. Mute: Press the "M" button to toggle the channel's mute function on/off.
+5. Solo: Press the "S" button to toggle the channel's solo function on/off.
+
+  22 UREMOTE V1.0 USER'S MANUAL
+Meters
+The meters screen displays a large bank of level meters, showing input levels when
+recording, and playback levels when playing back.
+Each of the 24 meters shows the same expanded, 24-segment resolution that the
+uTrack 24 offers in its "channel focus" mode.
+
+Peak Display: The peak indicator lights up when the signal reaches -0.25dB.
+Resetting a Peak: Click on any peak display to reset all channel's peak indicators.
+Automatic Peak Reset: The peak indicators reset automatically when:
+
+     The current song finishes, or transport stops
+     The uTrack 24 switches between recording and playback mode
+
+                                                             UREMOTE V1.0 USER'S MANUAL 23
+Browser
+The browser screen works similarly to the browser screen on the uTrack 24 front
+panel, allowing you to select and load a song file or playlist for playback.
+It contains the following elements:
+
+Content List: This list displays the contents of the USB hard drive attached to the
+uTrack 24.
+
+     Scroll among the list of titles, tapping any folders you see to display the files
+         inside the folder.
+
+     Tap a file title to load the file, and automatically switch back to the home
+         screen.
+
+     Tap the "back" button to go back one level in the file tree.
+     Tap the "X" in the upper left corner to return to the previous screen you were
+
+         on.
+
+  24 UREMOTE V1.0 USER'S MANUAL
+Settings
+The settings screen allows you to adjust the various settings for the attached uTrack
+24.
+The settings screen contains the same settings as the settings menu on the uTrack
+24; please refer to the latest uTrack 24 documentation for detailed information on
+the different settings.
+
+     To adjust a specific setting, tap the parameter of the setting you wish to
+         adjust; for most items a drop down menu will appear with all of the
+         parameter choices.
+
+     The currently selected choice is marked with a check; tap a different choice
+         to select it instead. Upon doing so, the dropdown menu will close and the
+         new setting will be active.
+
+     When you are finished adjusting your settings, press the "close" (X) icon in
+         the upper right corner; you will return to the previous screen.
+
+                                                             UREMOTE V1.0 USER'S MANUAL 25
+

@@ -33,9 +33,11 @@ Format sur le fil (2 trames réelles reproduites octet pour octet) : `8437` / TL
 | 0xc003 | MainComponent, FilePanel::ViewItemElement | sélection fichier | |
 | 0xc010 | MainComponent | @+0x6a38 | |
 | 0xf060 | MainComponent | *(+0x6c78) | |
-| id-0x2ff0 / id-0x2fd0 | DSPMChannelStrip (2 boutons, +0x2b0 / +0x3c8) | 2 (bascule) | quel bouton = mute/solo : à décoder |
+| id-0x2ff0 = 0xd010+ch | DSPMChannelStrip (+0x2b0) | 2 (bascule) | Solo (par élimination, voir device_model.md) |
+| id-0x2fd0 = 0xd030+ch | DSPMChannelStrip (+0x3c8) | 2 (bascule) | **Mute prouvé** (écho appareil, mute1.log) |
+| 0xd050+ch / 0xd070+ch | mixer (TLV 4237 numérique) | u16 | Pan / Fader prouvés (chai2_125803.log) |
 
 ## Ouvert
-- Règle de sous-session : observé 0xd000→2, 0xb000/0xb001/0xb204/0xb205→4. La règle exacte n'est pas encore lue dans le code.
-- Format du slot 0x17c (0xd001 locate).
-- Correspondance index → libellé des listes (fréquences, résolutions…).
+- Sous-session : **résolu**, l'appareil annonce le node de chaque contrôle (voir `device_model.md`).
+- Format fil du slot 0x17c (texte : 0xd001 locate, 0xd002/0xd003 loop).
+- Valeurs brutes des listes : l'appareil les annonce avec leur libellé (`device_model_raw.txt`).
