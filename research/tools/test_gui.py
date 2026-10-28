@@ -20,6 +20,7 @@ class Fake:
                     0xf000:(None,'uTrack24',0),0xf003:(None,'48 kHz',0),0xf004:(None,'24-bit',0),
                     0xf005:(None,'24 Ch',0),0xf040:(None,'2026-10-28',0)}
     def __getattr__(self,n):
+        if n=='ensure_alive':return lambda *a:None
         def f(*a):self.calls.append((n,)+a)
         return f
 
@@ -30,6 +31,7 @@ class FakeTel:
                       'wave':{'sample_rate':44100,'bits':16,'channels':8,'samples':414672,'markers':[143912,277568]},
                       'duration':414672/44100,'markers_s':[143912/44100,277568/44100]},
                      {'name':'Take0013','date':'2026-10-28','time':'10:07:00','files':[],'wavs':[]}]
+    def cmd(self,c,t=1.0):self.calls.append(('cmd',c));return ''
     def takes(self):self.calls.append('takes');return self._takes
     def rename_take(self,old,new,loaded=None):self.calls.append(('rename',old,new,loaded))
     def delete_take(self,name,loaded=None):self.calls.append(('delete',name,loaded))
