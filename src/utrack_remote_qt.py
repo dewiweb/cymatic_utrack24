@@ -4,20 +4,57 @@ from PySide6.QtCore import QTimer,Qt
 from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
     QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox,
-    QTreeWidget,QTreeWidgetItem,QPlainTextEdit,QInputDialog)
+    QTreeWidget,QTreeWidgetItem,QPlainTextEdit,QInputDialog,QFrame,QHeaderView)
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
 TEL_HOST='192.168.10.197'
 
-DARK = """QMainWindow,QWidget{background:#1c1e22;color:#ddd;font:10pt Consolas}
-QPushButton{background:#2d3138;border:1px solid #555;border-radius:4px;padding:8px}
-QPushButton:hover{background:#3a4048} QPushButton:pressed{background:#ff8800;color:#000}
-QPushButton:checked{background:#ff8800;color:#000}
-QPlainTextEdit,QLineEdit{background:#14161a;border:1px solid #444;padding:4px}
-QProgressBar{border:1px solid #444;height:14px;text-align:center}
-QProgressBar::chunk{background:#3fa7ff} QGroupBox{border:1px solid #444;margin-top:10px}
-QTabBar::tab{background:#2d3138;padding:8px 20px} QTabBar::tab:selected{background:#ff8800;color:#000}"""
+DARK = """
+*{font-family:'Segoe UI';font-size:9.5pt;color:#e8eaed}
+QMainWindow,QWidget{background:#1e2126}
+QFrame#card,QGroupBox{background:#262a31;border:1px solid #383d45;border-radius:8px}
+QGroupBox{margin-top:14px;padding-top:10px;font-weight:600}
+QGroupBox::title{subcontrol-origin:margin;left:10px;padding:0 6px;color:#9aa0a8}
+QLabel#dim{color:#9aa0a8}
+QLabel#ch{font-weight:700;font-size:10pt;padding:2px}
+QLabel#raw{color:#9aa0a8;font-family:Consolas;font-size:8pt}
+QPushButton{background:#30353d;border:1px solid #4a5058;border-radius:5px;padding:6px 14px;font-weight:600}
+QPushButton:hover{background:#3a4048;border-color:#5a6169}
+QPushButton:pressed{background:#4a5058}
+QPushButton:disabled{color:#5a6067;background:#262a31;border-color:#33383f}
+QPushButton:checked{background:#f39c12;color:#000;border-color:#f39c12}
+QPushButton#solo:checked{background:#f1c40f}
+QPushButton#play{background:#1f6f43;border-color:#27a35e;color:#fff}
+QPushButton#play:hover{background:#27a35e}
+QPushButton#rec{background:#7e2b24;border-color:#c0392b;color:#fff}
+QPushButton#rec:hover{background:#c0392b}
+QComboBox,QSpinBox{background:#1a1d21;border:1px solid #4a5058;border-radius:4px;padding:4px 8px;min-width:120px}
+QComboBox:hover,QSpinBox:hover{border-color:#5a6169}
+QComboBox::drop-down{border:none;width:20px}
+QComboBox QAbstractItemView{background:#262a31;border:1px solid #4a5058;selection-background-color:#3fa7ff}
+QCheckBox{spacing:8px}
+QCheckBox::indicator{width:16px;height:16px;border:1px solid #4a5058;border-radius:3px;background:#1a1d21}
+QCheckBox::indicator:checked{background:#3fa7ff;border-color:#3fa7ff}
+QSlider::groove:vertical{background:#1a1d21;width:8px;border:1px solid #383d45;border-radius:4px}
+QSlider::handle:vertical{background:#3fa7ff;border:1px solid #5cb8ff;border-radius:6px;height:18px;margin:0 -6px}
+QSlider::handle:vertical:hover{background:#5cb8ff}
+QDial{background:#262a31}
+QProgressBar{background:#1a1d21;border:1px solid #383d45;border-radius:3px}
+QProgressBar::chunk{background:qlineargradient(x1:0,y1:1,x2:0,y2:0,stop:0 #27a35e,stop:0.75 #f1c40f,stop:1 #e74c3c);border-radius:2px}
+QTreeWidget{background:#1a1d21;border:1px solid #383d45;border-radius:6px;alternate-background-color:#21252c}
+QTreeWidget::item{padding:4px}
+QTreeWidget::item:selected{background:#3fa7ff;color:#fff}
+QHeaderView::section{background:#262a31;border:none;border-bottom:1px solid #383d45;padding:6px;font-weight:600;color:#9aa0a8}
+QPlainTextEdit{background:#1a1d21;border:1px solid #383d45;border-radius:6px;font-family:Consolas;font-size:9pt}
+QTabWidget::pane{border:1px solid #383d45;border-radius:6px;top:-1px}
+QTabBar::tab{background:#262a31;border:1px solid #383d45;border-bottom:none;border-top-left-radius:6px;border-top-right-radius:6px;padding:8px 24px;color:#9aa0a8}
+QTabBar::tab:selected{background:#3fa7ff;color:#fff}
+QTabBar::tab:hover:!selected{background:#30353d}
+QScrollArea{border:none}
+QStatusBar{background:#1a1d21;border-top:1px solid #383d45;color:#9aa0a8}
+QToolTip{background:#262a31;border:1px solid #4a5058;color:#e8eaed;padding:4px}
+"""
 
 class Dial(QDial):
     def mouseDoubleClickEvent(self,e):self.setValue(0x8000)
@@ -32,22 +69,23 @@ def _fmt(e):
 class Win(QMainWindow):
     def __init__(self,u=None,connected=False,tel=None):
         super().__init__()
-        self.setWindowTitle('uTrack24 Remote');self.resize(1400,620)
+        self.setWindowTitle('uTrack24 Remote');self.resize(1500,700)
         self.u=u or UTrackControl();self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
-        v=QVBoxLayout();root=QWidget();root.setLayout(v);self.setCentralWidget(root)
-        hd=QHBoxLayout();self.hdr={}
+        v=QVBoxLayout();v.setContentsMargins(10,8,10,8);v.setSpacing(8)
+        root=QWidget();root.setLayout(v);self.setCentralWidget(root)
+        hd=QFrame();hd.setObjectName('card');h=QHBoxLayout(hd);self.hdr={}
         for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date')):
-            l=QLabel('%s : —'%name);self.hdr[ctrl]=(l,name);hd.addWidget(l)
-        hd.addStretch(1);v.addLayout(hd)
-        tr=QHBoxLayout()
-        for label,fn in (('PLAY','play'),('STOP','stop'),('REC','rec')):
-            b=QPushButton(label)
+            l=QLabel('%s : —'%name);self.hdr[ctrl]=(l,name);h.addWidget(l);h.addSpacing(18)
+        h.addStretch(1);v.addWidget(hd)
+        tr=QHBoxLayout();tr.setSpacing(10)
+        for label,fn,oid in (('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec')):
+            b=QPushButton(label);b.setObjectName(oid);b.setMinimumHeight(38)
             if fn=='rec':b.clicked.connect(self._rec)
             elif fn=='stop':b.clicked.connect(self._stop)
             else:b.clicked.connect(lambda _,f=fn:self.u and getattr(self.u,f)())
             tr.addWidget(b)
-        self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False)
+        self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
         self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         gb=QGroupBox('Transport');gb.setLayout(tr);v.addWidget(gb)
@@ -75,18 +113,20 @@ class Win(QMainWindow):
 
     def _mixer(self):
         sc=QScrollArea();sc.setWidgetResizable(True)
-        row=QWidget();h=QHBoxLayout(row);self.strips=[]
+        row=QWidget();h=QHBoxLayout(row);h.setSpacing(6);h.setContentsMargins(8,8,8,8);self.strips=[]
         for ch in range(24):
-            w=QWidget();s=QVBoxLayout(w);s.setSpacing(2)
-            s.addWidget(QLabel('CH %d'%(ch+1),alignment=Qt.AlignCenter))
-            mid=QHBoxLayout()
-            m=QProgressBar();m.setOrientation(Qt.Vertical);m.setRange(0,65535);m.setFormat('');m.setMinimumHeight(110)
-            f=QSlider(Qt.Vertical);f.setRange(0,65535);f.setMinimumHeight(110)
-            mid.addWidget(m);mid.addWidget(f);s.addLayout(mid)
-            raw=QLabel('brut —',alignment=Qt.AlignCenter);s.addWidget(raw)
-            p=Dial();p.setRange(0,65535);s.addWidget(p,0,Qt.AlignCenter)
-            mb=QPushButton('M');mb.setCheckable(True);sb=QPushButton('S');sb.setCheckable(True)
-            mm=QHBoxLayout();mm.addWidget(mb);mm.addWidget(sb);s.addLayout(mm)
+            w=QFrame();w.setObjectName('card');s=QVBoxLayout(w);s.setSpacing(4);s.setContentsMargins(6,6,6,6)
+            s.addWidget(QLabel('CH %d'%(ch+1),alignment=Qt.AlignCenter,objectName='ch'))
+            mid=QHBoxLayout();mid.setAlignment(Qt.AlignCenter)
+            m=QProgressBar();m.setOrientation(Qt.Vertical);m.setRange(0,65535);m.setFormat('')
+            m.setFixedSize(14,120)
+            f=QSlider(Qt.Vertical);f.setRange(0,65535);f.setMinimumHeight(120)
+            mid.addWidget(m);mid.addSpacing(4);mid.addWidget(f);s.addLayout(mid)
+            raw=QLabel('brut —',alignment=Qt.AlignCenter,objectName='raw');s.addWidget(raw)
+            p=Dial();p.setRange(0,65535);p.setFixedSize(46,46);s.addWidget(p,0,Qt.AlignCenter)
+            mb=QPushButton('M');mb.setCheckable(True);mb.setFixedHeight(24)
+            sb=QPushButton('S');sb.setCheckable(True);sb.setObjectName('solo');sb.setFixedHeight(24)
+            mm=QHBoxLayout();mm.setSpacing(4);mm.addWidget(mb);mm.addWidget(sb);s.addLayout(mm)
             f.valueChanged.connect(lambda v,c=ch:self._mark('f',c,v))
             f.sliderReleased.connect(lambda c=ch:self._release('f',c))
             p.valueChanged.connect(lambda v,c=ch:self._mark('p',c,v))
@@ -125,15 +165,16 @@ class Win(QMainWindow):
         self.u.set(ctrl,val)
 
     def _settings(self):
-        w=QWidget();v=QVBoxLayout(w)
-        self.chk={}
-        for ctrl,label in ((0xb200,'Lecture auto (Auto-Play)'),(0xb105,'Pré-enregistrement'),
-                           (0xb207,'Sorties multipistes post-fader'),(0xb003,'DHCP')):
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(12)
+        g1=QGroupBox('Options');gr1=QGridLayout();gr1.setSpacing(8);self.chk={}
+        for i,(ctrl,label) in enumerate(((0xb200,'Lecture auto (Auto-Play)'),(0xb105,'Pré-enregistrement'),
+                           (0xb207,'Sorties multipistes post-fader'),(0xb003,'DHCP'))):
             cb=QCheckBox(label);cb.toggled.connect(lambda on,c=ctrl:self._set_ask(c,1 if on else 0))
-            self.chk[ctrl]=cb;v.addWidget(cb)
-        gr=QGridLayout();self.cmb={}
+            self.chk[ctrl]=cb;gr1.addWidget(cb,i//2,i%2)
+        g1.setLayout(gr1);v.addWidget(g1)
+        g2=QGroupBox('Réglages');gr=QGridLayout();gr.setSpacing(8);self.cmb={}
         for i,ctrl in enumerate((0xb000,0xb001,0xb102,0xb103,0xb104,0xb203,0xb204,0xb205)):
-            gr.addWidget(QLabel(self.COMBO_LABEL[ctrl]),i//2,(i%2)*2)
+            gr.addWidget(QLabel(self.COMBO_LABEL[ctrl],objectName='dim'),i//2,(i%2)*2)
             cb=QComboBox()
             for val,lab in SETTINGS[ctrl]:cb.addItem(lab,val)
             cb.activated.connect(lambda i,c=ctrl,b=cb:self._set_ask(c,b.itemData(i)))
@@ -142,28 +183,31 @@ class Win(QMainWindow):
         for ctrl,lab,rng,unit,to_raw in ((0xb201,'Atténuation de sortie',(-30,0),' dB',att_raw),
                                          (0xb202,'Délai',(-1000,1000),' ms',ms_raw)):
             i=len(self.cmb)+len(self.sp)
-            gr.addWidget(QLabel(lab),i//2,(i%2)*2)
+            gr.addWidget(QLabel(lab,objectName='dim'),i//2,(i%2)*2)
             sb=QSpinBox();sb.setRange(*rng);sb.setSuffix(unit)
             sb.editingFinished.connect(lambda c=ctrl,f=to_raw,s=sb:self.u and self.u.num(c,f(s.value())))
             self.sp[ctrl]=(sb,to_raw);gr.addWidget(sb,i//2,(i%2)*2+1)
-        v.addLayout(gr)
-        g=QGroupBox('Lecture seule');gr2=QGridLayout();self.ro={}
+        g2.setLayout(gr);v.addWidget(g2)
+        g=QGroupBox('Lecture seule');gr2=QGridLayout();gr2.setSpacing(8);self.ro={}
         for i,(ctrl,label) in enumerate(((0xb004,'IP'),(0xb005,'Masque'),(0xb002,'Date'),(0xb206,'b206'))):
-            gr2.addWidget(QLabel(label),i//2,(i%2)*2)
+            gr2.addWidget(QLabel(label,objectName='dim'),i//2,(i%2)*2)
             l=QLabel('—');self.ro[ctrl]=l;gr2.addWidget(l,i//2,(i%2)*2+1)
         g.setLayout(gr2);v.addWidget(g);v.addStretch(1)
         return w
 
     def _takes(self):
-        w=QWidget();v=QVBoxLayout(w)
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
         hb=QHBoxLayout()
         self.btn_ref=QPushButton('Rafraîchir');self.btn_ref.clicked.connect(self._takes_refresh);hb.addWidget(self.btn_ref)
         self.btn_ren=QPushButton('Renommer…');self.btn_ren.setEnabled(False);self.btn_ren.clicked.connect(self._take_rename);hb.addWidget(self.btn_ren)
         self.btn_del=QPushButton('Supprimer');self.btn_del.setEnabled(False);self.btn_del.clicked.connect(self._take_delete);hb.addWidget(self.btn_del)
-        v.addLayout(hb)
+        hb.addStretch(1);v.addLayout(hb)
         self.tree=QTreeWidget();self.tree.setHeaderLabels(['Prise','Date','Format','Durée','Marqueurs'])
-        self.tree.currentItemChanged.connect(self._take_sel);v.addWidget(self.tree)
-        self.reclog=QPlainTextEdit(readOnly=True);v.addWidget(self.reclog)
+        self.tree.setAlternatingRowColors(True);self.tree.header().setStretchLastSection(True)
+        self.tree.setSelectionMode(QTreeWidget.SingleSelection)
+        self.tree.currentItemChanged.connect(self._take_sel);v.addWidget(self.tree,2)
+        lg=QGroupBox('Journal (reclog.txt)');lv=QVBoxLayout(lg)
+        self.reclog=QPlainTextEdit(readOnly=True);lv.addWidget(self.reclog);v.addWidget(lg,1)
         return w
 
     def _takes_refresh(self):
@@ -199,6 +243,7 @@ class Win(QMainWindow):
             if 'markers_s' in t:mk='%d (%s)'%(len(t['markers_s']),', '.join('%.1f s'%s for s in t['markers_s']))
             it=QTreeWidgetItem([t['name'],t['date'],fmt,dur,mk])
             it.setData(0,Qt.UserRole,t);self.tree.addTopLevelItem(it)
+        for i in range(5):self.tree.resizeColumnToContents(i)
         self.statusBar().showMessage('Prises : %d'%len(d))
 
     def _take_rename(self):
