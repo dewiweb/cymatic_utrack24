@@ -1,0 +1,7120 @@
+
+#################### ROOT CDriverInterfaceClass @ 10007540
+
+=========== [0] CDriverInterfaceClass @ 10007540
+
+/* public: __thiscall CDriverInterfaceClass::CDriverInterfaceClass(wchar_t *) */
+
+CDriverInterfaceClass * __thiscall
+CDriverInterfaceClass::CDriverInterfaceClass(CDriverInterfaceClass *this,wchar_t *param_1)
+
+{
+                    /* 0x7540  1  ??0CDriverInterfaceClass@@QAE@PA_W@Z */
+  *(undefined ***)this = vftable;
+  FUN_10006e10(this + 4,param_1);
+  m_pThis = this;
+  return this;
+}
+
+
+
+=========== [1] FUN_10006e10 @ 10006e10
+
+void __thiscall FUN_10006e10(void *this,short *param_1)
+
+{
+  LPCLSID pCVar1;
+  OLECHAR *extraout_ECX;
+  OLECHAR *pOVar2;
+  CLSID local_24;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_1010e9bb;
+  local_10 = ExceptionList;
+  local_14 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  *(undefined ***)((int)this + 0x1c) = CArray<class_Device*,class_Device*>::vftable;
+  *(undefined4 *)((int)this + 0x20) = 0;
+  *(undefined4 *)((int)this + 0x2c) = 0;
+  *(undefined4 *)((int)this + 0x28) = 0;
+  *(undefined4 *)((int)this + 0x24) = 0;
+  local_8 = 0;
+  FUN_10006870(this);
+  pOVar2 = extraout_ECX;
+  FUN_10006ce0(&stack0xffffffc4,param_1);
+  pCVar1 = FUN_10006160(&local_24,pOVar2);
+  *(ulong *)this = pCVar1->Data1;
+  *(undefined4 *)((int)this + 4) = *(undefined4 *)&pCVar1->Data2;
+  *(undefined4 *)((int)this + 8) = *(undefined4 *)pCVar1->Data4;
+  *(undefined4 *)((int)this + 0xc) = *(undefined4 *)(pCVar1->Data4 + 4);
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] FUN_10006160 @ 10006160
+
+LPCLSID FUN_10006160(LPCLSID param_1,OLECHAR *param_2)
+
+{
+  OLECHAR *pOVar1;
+  int iVar2;
+  uint uVar3;
+  BSTR lpsz;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_1010e818;
+  local_10 = ExceptionList;
+  uVar3 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  lpsz = SysAllocStringLen(param_2,*(UINT *)(param_2 + -6));
+  if (lpsz == (BSTR)0x0) {
+    FUN_10001120();
+  }
+  CLSIDFromString(lpsz,param_1);
+  SysFreeString(lpsz);
+  local_8 = 0xffffffff;
+  pOVar1 = param_2 + -2;
+  LOCK();
+  iVar2 = *(int *)pOVar1;
+  *(int *)pOVar1 = *(int *)pOVar1 + -1;
+  UNLOCK();
+  if (iVar2 == 1 || iVar2 + -1 < 0) {
+    (**(code **)(**(int **)(param_2 + -8) + 4))(param_2 + -8,uVar3);
+  }
+  ExceptionList = local_10;
+  return param_1;
+}
+
+
+
+=========== [2] FUN_10006870 @ 10006870
+
+void __fastcall FUN_10006870(GUID *param_1)
+
+{
+  undefined4 uVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int iVar4;
+  HDEVINFO pvVar5;
+  void *pvVar6;
+  int *piVar7;
+  undefined4 local_58 [3];
+  undefined1 local_4c [56];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  int local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e97e;
+  local_10 = ExceptionList;
+  local_14 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  piVar7 = (int *)0x0;
+  if ((void *)param_1[2].Data1 != (void *)0x0) {
+    FUN_100085b9((void *)param_1[2].Data1);
+    param_1[2].Data1 = 0;
+  }
+  param_1[2].Data4[0] = '\0';
+  param_1[2].Data4[1] = '\0';
+  param_1[2].Data4[2] = '\0';
+  param_1[2].Data4[3] = '\0';
+  param_1[2].Data2 = 0;
+  param_1[2].Data3 = 0;
+  uVar1._0_2_ = param_1->Data2;
+  uVar1._2_2_ = param_1->Data3;
+  iVar4 = FUN_10002000(&DAT_10164a28,param_1->Data1,uVar1,*(undefined4 *)param_1->Data4,
+                       *(undefined4 *)(param_1->Data4 + 4));
+  if (iVar4 == 0) {
+    iVar4 = FUN_10004550(&DAT_10164a28);
+    if (iVar4 == 0) {
+      pvVar5 = SetupDiGetClassDevsA(param_1,(PCSTR)0x0,(HWND)0x0,0x12);
+      if (DAT_10164a60 < 1) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      uVar2._0_2_ = param_1->Data2;
+      uVar2._2_2_ = param_1->Data3;
+      FUN_100065e0(local_58,(undefined4 *)*DAT_10164a5c,param_1->Data1,uVar2,
+                   *(undefined4 *)param_1->Data4,*(undefined4 *)(param_1->Data4 + 4));
+      local_8 = 0;
+      pvVar6 = FUN_1000858a(0xbc);
+      local_8._0_1_ = 1;
+      if (pvVar6 != (void *)0x0) {
+        uVar3._0_2_ = param_1->Data2;
+        uVar3._2_2_ = param_1->Data3;
+        piVar7 = FUN_10003650(pvVar6,param_1->Data1,uVar3,*(undefined4 *)param_1->Data4,
+                              *(undefined4 *)(param_1->Data4 + 4));
+      }
+      local_8._0_1_ = 0;
+      iVar4 = (**(code **)(*piVar7 + 8))(0,pvVar5,local_4c);
+      if (iVar4 == 0) {
+        pvVar6 = FUN_1000858a(0x114);
+        local_8._0_1_ = 2;
+        if (pvVar6 == (void *)0x0) {
+          pvVar6 = (void *)0x0;
+        }
+        else {
+          pvVar6 = FUN_10006510(pvVar6,piVar7,param_1,(int)local_58);
+        }
+        local_8 = (uint)local_8._1_3_ << 8;
+        FUN_10005a70((int)pvVar6);
+        iVar4 = *(int *)&param_1[2].Data2;
+        if (iVar4 < 0) {
+                    /* WARNING: Subroutine does not return */
+          FUN_10009068();
+        }
+        FUN_10005790(param_1[1].Data4 + 4,iVar4 + 1,-1);
+        *(void **)(param_1[2].Data1 + iVar4 * 4) = pvVar6;
+      }
+      local_8 = 0xffffffff;
+      FUN_10006060(local_58);
+    }
+  }
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] FUN_10006ce0 @ 10006ce0
+
+int * __thiscall FUN_10006ce0(void *this,short *param_1)
+
+{
+  short sVar1;
+  uint uVar2;
+  undefined **ppuVar3;
+  int iVar4;
+  HMODULE pHVar5;
+  short *psVar6;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e938;
+  local_10 = ExceptionList;
+  uVar2 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  ppuVar3 = FUN_1000ad47();
+  if (ppuVar3 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar4 = (**(code **)(*ppuVar3 + 0xc))(uVar2);
+  *(int *)this = iVar4 + 0x10;
+  local_8 = 0;
+  if (param_1 == (short *)0x0) {
+    iVar4 = 0;
+  }
+  else {
+    if (((uint)param_1 & 0xffff0000) == 0) {
+      pHVar5 = (HMODULE)FUN_1000ac62();
+      if (pHVar5 == (HMODULE)0x0) {
+        ExceptionList = local_10;
+        return this;
+      }
+      FUN_10006200(this,pHVar5,(uint)param_1 & 0xffff);
+      ExceptionList = local_10;
+      return this;
+    }
+    psVar6 = param_1;
+    do {
+      sVar1 = *psVar6;
+      psVar6 = psVar6 + 1;
+    } while (sVar1 != 0);
+    iVar4 = (int)psVar6 - (int)(param_1 + 1) >> 1;
+  }
+  FUN_10002180(this,param_1,iVar4);
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== [2] __security_check_cookie @ 100f6e2a
+
+/* Library Function - Single Match
+    @__security_check_cookie@4
+   
+   Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release
+   __fastcall __security_check_cookie,4 */
+
+void __fastcall __security_check_cookie(int param_1)
+
+{
+  if (param_1 == DAT_10163564) {
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  ___report_gsfailure();
+}
+
+
+-- ext SysAllocStringLen
+-- ext CLSIDFromString
+
+=========== [3] FUN_10001120 @ 10001120
+
+void FUN_10001120(void)
+
+{
+                    /* WARNING: Subroutine does not return */
+  FUN_10001000((undefined4 *)0x8007000e);
+}
+
+
+-- ext SysFreeString
+
+=========== [3] FUN_10006510 @ 10006510
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void * __thiscall FUN_10006510(void *this,undefined4 param_1,undefined4 param_2,int param_3)
+
+{
+  uint uVar1;
+  undefined **ppuVar2;
+  int iVar3;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e8b3;
+  local_10 = ExceptionList;
+  uVar1 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  FUN_10006340(this,param_3);
+  local_8 = 0;
+  *(undefined4 *)((int)this + 0x44) = 0;
+  *(undefined4 *)((int)this + 0x4c) = 0;
+  *(undefined4 *)((int)this + 0x50) = 0;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))(uVar1);
+  *(int *)((int)this + 0x54) = iVar3 + 0x10;
+  *(undefined4 *)((int)this + 0x58) = param_2;
+  local_8 = CONCAT31(local_8._1_3_,1);
+  *(undefined4 *)((int)this + 0x94) = param_1;
+  FUN_10004990((undefined4 *)((int)this + 0x98));
+  *(undefined ***)((int)this + 0xfc) = CArray<unsigned_long,unsigned_long>::vftable;
+  *(undefined4 *)((int)this + 0x100) = 0;
+  *(undefined4 *)((int)this + 0x10c) = 0;
+  *(undefined4 *)((int)this + 0x108) = 0;
+  *(undefined4 *)((int)this + 0x104) = 0;
+  *(undefined4 *)((int)this + 0x110) = 0;
+  _DAT_10164af0 = this;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== [3] FUN_1000858a @ 1000858a
+
+void * __cdecl FUN_1000858a(size_t param_1)
+
+{
+  void *pvVar1;
+  
+  pvVar1 = _malloc(param_1);
+  if ((pvVar1 == (void *)0x0) && (PTR_thunk_FUN_10009030_1015f2c8 != (undefined *)0x0)) {
+    pvVar1 = (void *)(*(code *)PTR_thunk_FUN_10009030_1015f2c8)(param_1);
+    return pvVar1;
+  }
+  return pvVar1;
+}
+
+
+
+=========== [3] FUN_10005790 @ 10005790
+
+void __thiscall FUN_10005790(void *this,int param_1,int param_2)
+
+{
+  int iVar1;
+  void *pvVar2;
+  int iVar3;
+  int iVar4;
+  
+  iVar1 = param_1;
+  if (param_1 < 0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  if (-1 < param_2) {
+    *(int *)((int)this + 0x10) = param_2;
+  }
+  if (param_1 != 0) {
+    if (*(int *)((int)this + 4) == 0) {
+      if (param_1 <= *(int *)((int)this + 0x10)) {
+        param_1 = *(int *)((int)this + 0x10);
+      }
+      pvVar2 = (void *)FUN_100085c4(param_1 * 4);
+      *(void **)((int)this + 4) = pvVar2;
+      _memset(pvVar2,0,param_1 * 4);
+      *(int *)((int)this + 8) = iVar1;
+      *(int *)((int)this + 0xc) = param_1;
+      return;
+    }
+    iVar1 = *(int *)((int)this + 0xc);
+    if (iVar1 < param_1) {
+      iVar3 = *(int *)((int)this + 0x10);
+      if (iVar3 == 0) {
+        iVar3 = (int)(*(int *)((int)this + 8) + (*(int *)((int)this + 8) >> 0x1f & 7U)) >> 3;
+        if (iVar3 < 4) {
+          iVar3 = 4;
+        }
+        else if (0x400 < iVar3) {
+          iVar3 = 0x400;
+        }
+      }
+      iVar4 = param_1;
+      if (param_1 < iVar3 + iVar1) {
+        iVar4 = iVar3 + iVar1;
+      }
+      if (iVar4 < iVar1) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      pvVar2 = (void *)FUN_100085c4(iVar4 * 4);
+      FUN_10004cd0(pvVar2,iVar4 * 4,*(void **)((int)this + 4),*(int *)((int)this + 8) * 4);
+      _memset((void *)((int)pvVar2 + *(int *)((int)this + 8) * 4),0,
+              (param_1 - *(int *)((int)this + 8)) * 4);
+      FUN_100085b9(*(void **)((int)this + 4));
+      *(void **)((int)this + 4) = pvVar2;
+      *(int *)((int)this + 0xc) = iVar4;
+    }
+    else {
+      iVar1 = *(int *)((int)this + 8);
+      if (iVar1 < param_1) {
+        _memset((void *)(*(int *)((int)this + 4) + iVar1 * 4),0,(param_1 - iVar1) * 4);
+        *(int *)((int)this + 8) = param_1;
+        return;
+      }
+    }
+    *(int *)((int)this + 8) = param_1;
+    return;
+  }
+  if (*(void **)((int)this + 4) != (void *)0x0) {
+    FUN_100085b9(*(void **)((int)this + 4));
+    *(undefined4 *)((int)this + 4) = 0;
+  }
+  *(undefined4 *)((int)this + 0xc) = 0;
+  *(undefined4 *)((int)this + 8) = 0;
+  return;
+}
+
+
+-- ext SetupDiGetClassDevsA
+
+=========== [3] FUN_100085b9 @ 100085b9
+
+void FUN_100085b9(void *param_1)
+
+{
+  _free(param_1);
+  return;
+}
+
+
+
+=========== [3] FUN_10004550 @ 10004550
+
+void __fastcall FUN_10004550(void *param_1)
+
+{
+  uint uVar1;
+  DWORD DVar2;
+  CObject *pCVar3;
+  int iVar4;
+  undefined4 local_114;
+  uint local_110;
+  uint local_10c;
+  undefined4 auStack_108 [64];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  if (0 < *(int *)((int)param_1 + 0x38)) {
+    iVar4 = 0;
+    do {
+      if ((iVar4 < 0) || (*(int *)((int)param_1 + 0x38) <= iVar4)) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      FUN_100085b9(*(void **)(*(int *)((int)param_1 + 0x34) + iVar4 * 4));
+      iVar4 = iVar4 + 1;
+    } while (iVar4 < *(int *)((int)param_1 + 0x38));
+  }
+  CUIntArray::SetSize((CUIntArray *)((int)param_1 + 0x30),0,-1);
+  _memset(&local_10c,0,0x104);
+  DVar2 = FUN_100014d0(param_1,&local_10c);
+  uVar1 = local_110;
+  if (DVar2 == 0) {
+    local_110 = 0;
+    uVar1 = 0;
+    if (local_10c != 0) {
+      do {
+        local_114 = auStack_108[local_110];
+        pCVar3 = FUN_1000858a(0x200);
+        DVar2 = FUN_10001560(param_1,&local_114,pCVar3);
+        if (DVar2 == 0) {
+          CObArray::SetAtGrow((CObArray *)((int)param_1 + 0x30),*(int *)((int)param_1 + 0x38),pCVar3
+                             );
+        }
+        else {
+          FUN_100085b9(pCVar3);
+        }
+        local_110 = local_110 + 1;
+        uVar1 = local_110;
+      } while (local_110 < local_10c);
+    }
+  }
+  local_110 = uVar1;
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [3] FUN_10002000 @ 10002000
+
+void __thiscall
+FUN_10002000(void *this,ulong param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  HANDLE pvVar1;
+  DWORD DVar2;
+  LPOLESTR local_274;
+  IID local_270;
+  WCHAR local_260 [300];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  EnterCriticalSection(lpCriticalSection);
+  if (*(int *)((int)this + 0x1c) == 0) {
+    local_270._4_4_ = param_2;
+    local_270.Data4._0_4_ = param_3;
+    local_270.Data1 = param_1;
+    local_270.Data4._4_4_ = param_4;
+    StringFromCLSID(&local_270,&local_274);
+    wsprintfW(local_260,L"\\\\.\\%s",local_274);
+    pvVar1 = CreateFileW(local_260,0xc0000000,3,(LPSECURITY_ATTRIBUTES)0x0,3,0,(HANDLE)0x0);
+    *(HANDLE *)((int)this + 0x1c) = pvVar1;
+    if (pvVar1 == (HANDLE)0xffffffff) {
+      *(undefined4 *)((int)this + 0x1c) = 0;
+      GetLastError();
+    }
+    else {
+      DVar2 = FUN_10001240(this,&local_270.Data2);
+      if (DVar2 == 0) {
+        if ((char)local_270.Data2 != '\x03') {
+          FUN_10001090((int)this);
+        }
+      }
+      else {
+        EnterCriticalSection(lpCriticalSection);
+        if (*(HANDLE *)((int)this + 0x1c) != (HANDLE)0x0) {
+          CloseHandle(*(HANDLE *)((int)this + 0x1c));
+          *(undefined4 *)((int)this + 0x1c) = 0;
+        }
+        LeaveCriticalSection(lpCriticalSection);
+      }
+    }
+    LeaveCriticalSection(lpCriticalSection);
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  LeaveCriticalSection(lpCriticalSection);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [3] FUN_100065e0 @ 100065e0
+
+undefined4 * __thiscall
+FUN_100065e0(void *this,undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4
+            ,undefined4 param_5)
+
+{
+  uint uVar1;
+  undefined **ppuVar2;
+  int iVar3;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e912;
+  local_10 = ExceptionList;
+  uVar1 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  *(undefined ***)this = DEVICE_PROPS::vftable;
+  *(undefined4 *)((int)this + 4) = 0;
+  *(undefined4 *)((int)this + 8) = 0xffffffff;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))(uVar1);
+  *(int *)((int)this + 0x2c) = iVar3 + 0x10;
+  local_8 = 0;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))();
+  *(int *)((int)this + 0x30) = iVar3 + 0x10;
+  local_8._0_1_ = 1;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))();
+  *(int *)((int)this + 0x34) = iVar3 + 0x10;
+  local_8._0_1_ = 2;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))();
+  *(int *)((int)this + 0x38) = iVar3 + 0x10;
+  local_8._0_1_ = 3;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))();
+  *(int *)((int)this + 0x3c) = iVar3 + 0x10;
+  local_8._0_1_ = 4;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))();
+  *(int *)((int)this + 0x40) = iVar3 + 0x10;
+  *(undefined4 *)((int)this + 0xc) = param_2;
+  *(undefined4 *)((int)this + 0x10) = param_3;
+  *(undefined4 *)((int)this + 0x14) = param_4;
+  *(undefined4 *)((int)this + 0x18) = param_5;
+  *(undefined4 *)((int)this + 0x1c) = *param_1;
+  *(undefined4 *)((int)this + 0x20) = param_1[2];
+  *(undefined4 *)((int)this + 0x24) = param_1[3];
+  local_8 = CONCAT31(local_8._1_3_,5);
+  FUN_10006450((void *)((int)this + 0x2c),(LPCSTR)(param_1 + 4));
+  FUN_10006450((void *)((int)this + 0x30),(LPCSTR)(param_1 + 0xe));
+  FUN_10006450((void *)((int)this + 0x34),(LPCSTR)(param_1 + 0x18));
+  *(undefined4 *)((int)this + 0x28) = param_1[1];
+  FUN_10006450((void *)((int)this + 0x3c),(LPCSTR)(param_1 + 0x2c));
+  FUN_10006450((void *)((int)this + 0x38),(LPCSTR)(param_1 + 0x22));
+  FUN_10006450((void *)((int)this + 0x40),(LPCSTR)(param_1 + 0x6c));
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== [3] FUN_10003650 @ 10003650
+
+undefined4 * __thiscall
+FUN_10003650(void *this,undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_1010e671;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = CBcoUsbDevice::vftable;
+  *(undefined ***)((int)this + 4) =
+       CMap<int,int,struct_CBcoUsbDevice::FB_PARAMS,struct_CBcoUsbDevice::FB_PARAMS>::vftable;
+  *(undefined4 *)((int)this + 8) = 0;
+  *(undefined4 *)((int)this + 0xc) = 0x11;
+  *(undefined4 *)((int)this + 0x10) = 0;
+  *(undefined4 *)((int)this + 0x14) = 0;
+  *(undefined4 *)((int)this + 0x18) = 0;
+  *(undefined4 *)((int)this + 0x1c) = 10;
+  *(undefined4 *)((int)this + 0x28) = param_1;
+  *(undefined4 *)((int)this + 0x2c) = param_2;
+  *(undefined4 *)((int)this + 0x30) = param_3;
+  *(undefined4 *)((int)this + 0x34) = param_4;
+  local_8 = 0;
+  *(undefined4 *)((int)this + 0x20) = 0xffffffff;
+  *(undefined4 *)((int)this + 0x24) = 0;
+  InitializeCriticalSection((LPCRITICAL_SECTION)((int)this + 0x4c));
+  local_8._0_1_ = 1;
+  FUN_100026d0((void *)((int)this + 0x74),"");
+  local_8 = CONCAT31(local_8._1_3_,2);
+  *(undefined4 *)((int)this + 0x78) = 0;
+  *(undefined4 *)((int)this + 0x7c) = 0;
+  FUN_10002310((undefined4 *)((int)this + 0x80));
+  *(undefined4 *)((int)this + 0xb8) = 0;
+  *(undefined4 *)((int)this + 0x38) = 0;
+  *(undefined4 *)((int)this + 0x3c) = 0;
+  *(undefined4 *)((int)this + 0x40) = 0;
+  *(undefined4 *)((int)this + 0x44) = 0;
+  *(undefined4 *)((int)this + 0x48) = 0;
+  *(undefined4 *)((int)this + 100) = 0;
+  *(undefined4 *)((int)this + 0x68) = 0;
+  *(undefined4 *)((int)this + 0x6c) = 0;
+  *(undefined4 *)((int)this + 0x70) = 0;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== [3] FUN_10005a70 @ 10005a70
+
+undefined4 __fastcall FUN_10005a70(int param_1)
+
+{
+  int iVar1;
+  
+  if (*(int *)(param_1 + 0x94) != 0) {
+    iVar1 = FUN_100046b0(&DAT_10164a28);
+    if ((iVar1 != 0) || (DAT_10164a74 < 1)) {
+      return 0xe0000001;
+    }
+    if (DAT_10164a74 < 1) {
+                    /* WARNING: Subroutine does not return */
+      FUN_10009068();
+    }
+    iVar1 = *(int *)(*DAT_10164a70 + 8);
+    if (iVar1 != 0xd4) {
+      if (iVar1 == 0xd5) {
+        *(undefined4 *)(param_1 + 0x50) = 1;
+        return 0;
+      }
+      if (iVar1 == 0xd6) {
+        *(undefined4 *)(param_1 + 0x50) = 2;
+        return 0;
+      }
+    }
+    *(undefined4 *)(param_1 + 0x50) = 0;
+  }
+  return 0;
+}
+
+
+
+=========== [3] FUN_10009068 @ 10009068
+
+void FUN_10009068(void)
+
+{
+  undefined **local_8;
+  
+  local_8 = &PTR_vftable_1015f6b0;
+                    /* WARNING: Subroutine does not return */
+  __CxxThrowException_8(&local_8,&DAT_1014e0a4);
+}
+
+
+
+=========== [3] FUN_10006060 @ 10006060
+
+void __fastcall FUN_10006060(undefined4 *param_1)
+
+{
+  int *piVar1;
+  int iVar2;
+  undefined4 *puVar3;
+  
+  puVar3 = (undefined4 *)(param_1[0x10] + -0x10);
+  *param_1 = DEVICE_PROPS::vftable;
+  piVar1 = (int *)(param_1[0x10] + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 + -1 < 1) {
+    (**(code **)(*(int *)*puVar3 + 4))(puVar3);
+  }
+  puVar3 = (undefined4 *)(param_1[0xf] + -0x10);
+  piVar1 = (int *)(param_1[0xf] + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 + -1 < 1) {
+    (**(code **)(*(int *)*puVar3 + 4))(puVar3);
+  }
+  puVar3 = (undefined4 *)(param_1[0xe] + -0x10);
+  piVar1 = (int *)(param_1[0xe] + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 + -1 < 1) {
+    (**(code **)(*(int *)*puVar3 + 4))(puVar3);
+  }
+  puVar3 = (undefined4 *)(param_1[0xd] + -0x10);
+  piVar1 = (int *)(param_1[0xd] + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 + -1 < 1) {
+    (**(code **)(*(int *)*puVar3 + 4))(puVar3);
+  }
+  puVar3 = (undefined4 *)(param_1[0xc] + -0x10);
+  piVar1 = (int *)(param_1[0xc] + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 + -1 < 1) {
+    (**(code **)(*(int *)*puVar3 + 4))(puVar3);
+  }
+  puVar3 = (undefined4 *)(param_1[0xb] + -0x10);
+  piVar1 = (int *)(param_1[0xb] + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 == 1 || iVar2 + -1 < 0) {
+    (**(code **)(*(int *)*puVar3 + 4))(puVar3);
+  }
+  return;
+}
+
+
+
+=========== [3] FUN_1000ad47 @ 1000ad47
+
+undefined ** FUN_1000ad47(void)
+
+{
+  return &PTR_vftable_1015f978;
+}
+
+
+
+=========== [3] FUN_10002180 @ 10002180
+
+void __thiscall FUN_10002180(void *this,void *param_1,int param_2)
+
+{
+  int iVar1;
+  uint uVar2;
+  void *_Dst;
+  rsize_t _DstSize;
+  rsize_t _MaxCount;
+  uint uVar3;
+  
+  if (param_2 == 0) {
+    ATL::CSimpleStringT<wchar_t,0>::Empty(this);
+    return;
+  }
+  if (param_1 != (void *)0x0) {
+    iVar1 = *(int *)this;
+    uVar2 = *(uint *)(iVar1 + -0xc);
+    uVar3 = (int)param_1 - iVar1 >> 1;
+    if (param_2 < 0) {
+                    /* WARNING: Subroutine does not return */
+      FUN_10001000((undefined4 *)0x80070057);
+    }
+    if ((int)(1U - *(int *)(iVar1 + -4) | *(int *)(iVar1 + -8) - param_2) < 0) {
+      FUN_10001f40(this,param_2);
+    }
+    _Dst = *(void **)this;
+    _MaxCount = param_2 * 2;
+    _DstSize = *(int *)((int)_Dst + -8) * 2;
+    if (uVar2 < uVar3) {
+      _memcpy_s(_Dst,_DstSize,param_1,_MaxCount);
+    }
+    else {
+      _memmove_s(_Dst,_DstSize,(void *)((int)_Dst + uVar3 * 2),_MaxCount);
+    }
+    if (param_2 <= *(int *)(*(int *)this + -8)) {
+      *(int *)(*(int *)this + -0xc) = param_2;
+      *(undefined2 *)(_MaxCount + *(int *)this) = 0;
+      return;
+    }
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_10001000((undefined4 *)0x80070057);
+}
+
+
+
+=========== [3] FUN_10001000 @ 10001000
+
+void FUN_10001000(undefined4 *param_1)
+
+{
+  code *pcVar1;
+  
+  if (param_1 == (undefined4 *)0x8007000e) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10009030();
+  }
+  FUN_1000877f(param_1);
+  pcVar1 = (code *)swi(3);
+  (*pcVar1)();
+  return;
+}
+
+
+
+=========== [3] FUN_10006200 @ 10006200
+
+undefined4 __thiscall FUN_10006200(void *this,HMODULE param_1,uint param_2)
+
+{
+  wchar_t wVar1;
+  HRSRC pHVar2;
+  ushort *puVar3;
+  rsize_t _N;
+  wchar_t *pwVar4;
+  errno_t eVar5;
+  uint _N1;
+  
+  pHVar2 = FindResourceW(param_1,(LPCWSTR)((param_2 >> 4) + 1 & 0xffff),(LPCWSTR)0x6);
+  if ((pHVar2 != (HRSRC)0x0) &&
+     (puVar3 = (ushort *)FUN_10004e10(param_1,pHVar2,param_2), puVar3 != (ushort *)0x0)) {
+    _N1 = (uint)*puVar3;
+    if ((int)(1U - *(int *)(*(int *)this + -4) | *(int *)(*(int *)this + -8) - _N1) < 0) {
+      FUN_10001f40(this,_N1);
+    }
+    _N = (rsize_t)*puVar3;
+    if (_N == 0xffffffff) {
+      pwVar4 = (wchar_t *)(puVar3 + 1);
+      do {
+        wVar1 = *pwVar4;
+        pwVar4 = pwVar4 + 1;
+      } while (wVar1 != L'\0');
+      _N = ((int)pwVar4 - (int)(puVar3 + 2) >> 1) + 1;
+    }
+    eVar5 = _wmemcpy_s(*(wchar_t **)this,_N1,(wchar_t *)(puVar3 + 1),_N);
+    switch(eVar5) {
+    case 0:
+    case 0x50:
+      goto switchD_100062aa_caseD_0;
+    default:
+                    /* WARNING: Subroutine does not return */
+      FUN_10009068();
+    case 0xc:
+                    /* WARNING: Subroutine does not return */
+      FUN_10009030();
+    }
+  }
+  return 0;
+switchD_100062aa_caseD_0:
+  if (*(int *)(*(int *)this + -8) < (int)_N1) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80070057);
+  }
+  *(uint *)(*(int *)this + -0xc) = _N1;
+  *(undefined2 *)(*(int *)this + _N1 * 2) = 0;
+  return 1;
+}
+
+
+
+=========== [3] FUN_1000ac62 @ 1000ac62
+
+undefined4 FUN_1000ac62(void)
+
+{
+  AFX_MODULE_STATE *pAVar1;
+  
+  pAVar1 = AfxGetModuleState();
+  return *(undefined4 *)(pAVar1 + 0xc);
+}
+
+
+
+=========== [3] ___report_gsfailure @ 100ff2a4
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Library Function - Single Match
+    ___report_gsfailure
+   
+   Libraries: Visual Studio 2005 Release, Visual Studio 2008 Release, Visual Studio 2010 Release */
+
+void __cdecl ___report_gsfailure(void)
+
+{
+  undefined4 in_EAX;
+  HANDLE hProcess;
+  undefined4 in_ECX;
+  undefined4 in_EDX;
+  undefined4 unaff_EBX;
+  undefined4 unaff_EBP;
+  undefined4 unaff_ESI;
+  undefined4 unaff_EDI;
+  undefined2 in_ES;
+  undefined2 in_CS;
+  undefined2 in_SS;
+  undefined2 in_DS;
+  undefined2 in_FS;
+  undefined2 in_GS;
+  byte in_AF;
+  byte in_TF;
+  byte in_IF;
+  byte in_NT;
+  byte in_AC;
+  byte in_VIF;
+  byte in_VIP;
+  byte in_ID;
+  undefined4 unaff_retaddr;
+  UINT uExitCode;
+  undefined4 local_32c;
+  undefined4 local_328;
+  
+  _DAT_1016a2f8 =
+       (uint)(in_NT & 1) * 0x4000 | (uint)SBORROW4((int)&stack0xfffffffc,0x328) * 0x800 |
+       (uint)(in_IF & 1) * 0x200 | (uint)(in_TF & 1) * 0x100 | (uint)((int)&local_32c < 0) * 0x80 |
+       (uint)(&stack0x00000000 == (undefined1 *)0x32c) * 0x40 | (uint)(in_AF & 1) * 0x10 |
+       (uint)((POPCOUNT((uint)&local_32c & 0xff) & 1U) == 0) * 4 |
+       (uint)(&stack0xfffffffc < (undefined1 *)0x328) | (uint)(in_ID & 1) * 0x200000 |
+       (uint)(in_VIP & 1) * 0x100000 | (uint)(in_VIF & 1) * 0x80000 | (uint)(in_AC & 1) * 0x40000;
+  _DAT_1016a2fc = &stack0x00000004;
+  _DAT_1016a238 = 0x10001;
+  _DAT_1016a1e0 = 0xc0000409;
+  _DAT_1016a1e4 = 1;
+  local_32c = DAT_10163564;
+  local_328 = DAT_10163568;
+  _DAT_1016a1ec = unaff_retaddr;
+  _DAT_1016a2c4 = in_GS;
+  _DAT_1016a2c8 = in_FS;
+  _DAT_1016a2cc = in_ES;
+  _DAT_1016a2d0 = in_DS;
+  _DAT_1016a2d4 = unaff_EDI;
+  _DAT_1016a2d8 = unaff_ESI;
+  _DAT_1016a2dc = unaff_EBX;
+  _DAT_1016a2e0 = in_EDX;
+  _DAT_1016a2e4 = in_ECX;
+  _DAT_1016a2e8 = in_EAX;
+  _DAT_1016a2ec = unaff_EBP;
+  DAT_1016a2f0 = unaff_retaddr;
+  _DAT_1016a2f4 = in_CS;
+  _DAT_1016a300 = in_SS;
+  DAT_1016a230 = IsDebuggerPresent();
+  FUN_10109b1c();
+  SetUnhandledExceptionFilter((LPTOP_LEVEL_EXCEPTION_FILTER)0x0);
+  UnhandledExceptionFilter((_EXCEPTION_POINTERS *)&PTR_DAT_10141550);
+  if (DAT_1016a230 == 0) {
+    FUN_10109b1c();
+  }
+  uExitCode = 0xc0000409;
+  hProcess = GetCurrentProcess();
+  TerminateProcess(hProcess,uExitCode);
+  return;
+}
+
+
+
+=========== [4] FUN_10006340 @ 10006340
+
+undefined4 * __thiscall FUN_10006340(void *this,int param_1)
+
+{
+  int *piVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e877;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  *(undefined ***)this = DEVICE_PROPS::vftable;
+  *(undefined4 *)((int)this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)((int)this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)((int)this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)((int)this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  *(undefined4 *)((int)this + 0x14) = *(undefined4 *)(param_1 + 0x14);
+  *(undefined4 *)((int)this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)((int)this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  *(undefined4 *)((int)this + 0x20) = *(undefined4 *)(param_1 + 0x20);
+  *(undefined4 *)((int)this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  *(undefined4 *)((int)this + 0x28) = *(undefined4 *)(param_1 + 0x28);
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x2c) + -0x10));
+  *(int **)((int)this + 0x2c) = piVar1 + 4;
+  local_8 = 0;
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x30) + -0x10));
+  *(int **)((int)this + 0x30) = piVar1 + 4;
+  local_8._0_1_ = 1;
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x34) + -0x10));
+  *(int **)((int)this + 0x34) = piVar1 + 4;
+  local_8._0_1_ = 2;
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x38) + -0x10));
+  *(int **)((int)this + 0x38) = piVar1 + 4;
+  local_8._0_1_ = 3;
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x3c) + -0x10));
+  *(int **)((int)this + 0x3c) = piVar1 + 4;
+  local_8 = CONCAT31(local_8._1_3_,4);
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x40) + -0x10));
+  *(int **)((int)this + 0x40) = piVar1 + 4;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== [4] FUN_10004990 @ 10004990
+
+undefined4 * __fastcall FUN_10004990(undefined4 *param_1)
+
+{
+  HANDLE pvVar1;
+  
+  FUN_10001070(param_1);
+  *param_1 = CBcoUsbNotificator::vftable;
+  InitializeCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x10));
+  param_1[9] = 0;
+  param_1[10] = 0;
+  param_1[0xb] = 0;
+  param_1[0xc] = 0;
+  param_1[0xd] = 0;
+  pvVar1 = CreateEventW((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCWSTR)0x0);
+  param_1[0xe] = pvVar1;
+  pvVar1 = CreateEventW((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCWSTR)0x0);
+  param_1[0xf] = pvVar1;
+  return param_1;
+}
+
+
+
+=========== [4] _malloc @ 100f8de4
+
+/* Library Function - Single Match
+    _malloc
+   
+   Library: Visual Studio 2010 Release */
+
+void * __cdecl _malloc(size_t _Size)
+
+{
+  SIZE_T dwBytes;
+  LPVOID pvVar1;
+  int iVar2;
+  int *piVar3;
+  
+  if (_Size < 0xffffffe1) {
+    do {
+      if (DAT_1016a53c == (HANDLE)0x0) {
+        __FF_MSGBANNER();
+        __NMSG_WRITE(0x1e);
+        ___crtExitProcess(0xff);
+      }
+      dwBytes = _Size;
+      if (_Size == 0) {
+        dwBytes = 1;
+      }
+      pvVar1 = HeapAlloc(DAT_1016a53c,0,dwBytes);
+      if (pvVar1 != (LPVOID)0x0) {
+        return pvVar1;
+      }
+      if (DAT_1016ac7c == 0) {
+        piVar3 = __errno();
+        *piVar3 = 0xc;
+        break;
+      }
+      iVar2 = __callnewh(_Size);
+    } while (iVar2 != 0);
+    piVar3 = __errno();
+    *piVar3 = 0xc;
+  }
+  else {
+    __callnewh(_Size);
+    piVar3 = __errno();
+    *piVar3 = 0xc;
+  }
+  return (void *)0x0;
+}
+
+
+-- ext thunk_FUN_10009030
+
+=========== [4] FUN_10004cd0 @ 10004cd0
+
+void __cdecl FUN_10004cd0(void *param_1,rsize_t param_2,void *param_3,rsize_t param_4)
+
+{
+  errno_t eVar1;
+  
+  eVar1 = _memcpy_s(param_1,param_2,param_3,param_4);
+  switch(eVar1) {
+  case 0:
+  case 0x50:
+    return;
+  default:
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  case 0xc:
+                    /* WARNING: Subroutine does not return */
+    FUN_10009030();
+  }
+}
+
+
+
+=========== [4] _memset @ 100f6fd0
+
+/* Library Function - Single Match
+    _memset
+   
+   Libraries: Visual Studio 2010 Debug, Visual Studio 2010 Release */
+
+void * __cdecl _memset(void *_Dst,int _Val,size_t _Size)
+
+{
+  uint uVar1;
+  undefined1 (*pauVar2) [16];
+  uint uVar3;
+  size_t sVar4;
+  uint *puVar5;
+  
+  if (_Size == 0) {
+    return _Dst;
+  }
+  uVar1 = _Val & 0xff;
+  if ((((char)_Val == '\0') && (0x7f < _Size)) && (DAT_1016c0c0 != 0)) {
+    pauVar2 = __VEC_memzero(_Dst,_Size);
+    return pauVar2;
+  }
+  puVar5 = _Dst;
+  if (3 < _Size) {
+    uVar3 = -(int)_Dst & 3;
+    sVar4 = _Size;
+    if (uVar3 != 0) {
+      sVar4 = _Size - uVar3;
+      do {
+        *(char *)puVar5 = (char)_Val;
+        puVar5 = (uint *)((int)puVar5 + 1);
+        uVar3 = uVar3 - 1;
+      } while (uVar3 != 0);
+    }
+    uVar1 = uVar1 * 0x1010101;
+    _Size = sVar4 & 3;
+    uVar3 = sVar4 >> 2;
+    if (uVar3 != 0) {
+      for (; uVar3 != 0; uVar3 = uVar3 - 1) {
+        *puVar5 = uVar1;
+        puVar5 = puVar5 + 1;
+      }
+      if (_Size == 0) {
+        return _Dst;
+      }
+    }
+  }
+  do {
+    *(char *)puVar5 = (char)uVar1;
+    puVar5 = (uint *)((int)puVar5 + 1);
+    _Size = _Size - 1;
+  } while (_Size != 0);
+  return _Dst;
+}
+
+
+
+=========== [4] FUN_100085c4 @ 100085c4
+
+void __cdecl FUN_100085c4(size_t param_1)
+
+{
+  FUN_1000858a(param_1);
+  return;
+}
+
+
+
+=========== [4] _free @ 100f81f1
+
+/* Library Function - Single Match
+    _free
+   
+   Library: Visual Studio 2010 Release */
+
+void __cdecl _free(void *_Memory)
+
+{
+  BOOL BVar1;
+  int *piVar2;
+  DWORD DVar3;
+  int iVar4;
+  
+  if (_Memory != (void *)0x0) {
+    BVar1 = HeapFree(DAT_1016a53c,0,_Memory);
+    if (BVar1 == 0) {
+      piVar2 = __errno();
+      DVar3 = GetLastError();
+      iVar4 = __get_errno_from_oserr(DVar3);
+      *piVar2 = iVar4;
+    }
+  }
+  return;
+}
+
+
+
+=========== [4] FUN_10001560 @ 10001560
+
+DWORD __thiscall FUN_10001560(void *this,LPVOID param_1,LPVOID param_2)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892920,param_1,4,param_2,0x200,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [4] SetSize @ 1000a196
+
+/* Library Function - Single Match
+    public: void __thiscall CUIntArray::SetSize(int,int)
+   
+   Library: Visual Studio 2010 Release */
+
+void __thiscall CUIntArray::SetSize(CUIntArray *this,int param_1,int param_2)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  void *pvVar5;
+  
+  iVar2 = param_1;
+  pvVar5 = (void *)0x0;
+  if (param_1 < 0) goto LAB_1000a1a9;
+  if (-1 < param_2) {
+    *(int *)(this + 0x10) = param_2;
+  }
+  if (param_1 == 0) {
+    FUN_100085b9(*(void **)(this + 4));
+    *(undefined4 *)(this + 0xc) = 0;
+    *(undefined4 *)(this + 8) = 0;
+LAB_1000a2b2:
+    *(void **)(this + 4) = pvVar5;
+  }
+  else {
+    if (*(int *)(this + 4) == 0) {
+      pvVar5 = FUN_1000858a(param_1 << 2);
+      *(void **)(this + 4) = pvVar5;
+      _memset(pvVar5,0,param_1 << 2);
+      *(int *)(this + 0xc) = param_1;
+    }
+    else {
+      iVar1 = *(int *)(this + 0xc);
+      if (iVar1 < param_1) {
+        iVar4 = *(int *)(this + 0x10);
+        if (iVar4 == 0) {
+          iVar4 = (int)(*(int *)(this + 8) + (*(int *)(this + 8) >> 0x1f & 7U)) >> 3;
+          if (iVar4 < 4) {
+LAB_1000a24c:
+            iVar4 = 4;
+          }
+          else if (iVar4 < 0x401) {
+            if (iVar4 < 4) goto LAB_1000a24c;
+          }
+          else {
+            iVar4 = 0x400;
+          }
+        }
+        iVar3 = iVar4 + iVar1;
+        if (iVar4 + iVar1 <= param_1) {
+          iVar3 = param_1;
+        }
+        param_1 = iVar3;
+        if (param_1 < iVar1) {
+LAB_1000a1a9:
+                    /* WARNING: Subroutine does not return */
+          FUN_10009068();
+        }
+        pvVar5 = FUN_1000858a(param_1 << 2);
+        FUN_10004cd0(pvVar5,param_1 << 2,*(void **)(this + 4),*(int *)(this + 8) << 2);
+        _memset((void *)((int)pvVar5 + *(int *)(this + 8) * 4),0,(iVar2 - *(int *)(this + 8)) * 4);
+        FUN_100085b9(*(void **)(this + 4));
+        *(int *)(this + 8) = iVar2;
+        *(int *)(this + 0xc) = param_1;
+        goto LAB_1000a2b2;
+      }
+      iVar2 = *(int *)(this + 8);
+      if (iVar2 < param_1) {
+        _memset((void *)(*(int *)(this + 4) + iVar2 * 4),0,(param_1 - iVar2) * 4);
+      }
+    }
+    *(int *)(this + 8) = param_1;
+  }
+  return;
+}
+
+
+
+=========== [4] SetAtGrow @ 1000a2bc
+
+/* Library Function - Single Match
+    public: void __thiscall CObArray::SetAtGrow(int,class CObject *)
+   
+   Library: Visual Studio 2010 Release */
+
+void __thiscall CObArray::SetAtGrow(CObArray *this,int param_1,CObject *param_2)
+
+{
+  if (param_1 < 0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  if (*(int *)(this + 8) <= param_1) {
+    CUIntArray::SetSize((CUIntArray *)this,param_1 + 1,-1);
+  }
+  *(CObject **)(*(int *)(this + 4) + param_1 * 4) = param_2;
+  return;
+}
+
+
+
+=========== [4] FUN_100014d0 @ 100014d0
+
+DWORD __thiscall FUN_100014d0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892860,(LPVOID)0x0,0,param_1,0x104,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+-- ext LeaveCriticalSection
+-- ext CreateFileW
+-- ext EnterCriticalSection
+
+=========== [4] FUN_10001240 @ 10001240
+
+DWORD __thiscall FUN_10001240(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892804,(LPVOID)0x0,0,param_1,0xc,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [4] FUN_10001090 @ 10001090
+
+void __fastcall FUN_10001090(int param_1)
+
+{
+  EnterCriticalSection((LPCRITICAL_SECTION)(param_1 + 4));
+  if (*(HANDLE *)(param_1 + 0x1c) != (HANDLE)0x0) {
+    CloseHandle(*(HANDLE *)(param_1 + 0x1c));
+    *(undefined4 *)(param_1 + 0x1c) = 0;
+  }
+  LeaveCriticalSection((LPCRITICAL_SECTION)(param_1 + 4));
+  return;
+}
+
+
+-- ext wsprintfW
+-- ext CloseHandle
+-- ext StringFromCLSID
+-- ext GetLastError
+
+=========== [4] FUN_10006450 @ 10006450
+
+CSimpleStringT<wchar_t,0> * __thiscall FUN_10006450(void *this,LPCSTR param_1)
+
+{
+  int iVar1;
+  
+  if (param_1 != (LPCSTR)0x0) {
+    iVar1 = MultiByteToWideChar(3,0,param_1,-1,(LPWSTR)0x0,0);
+    iVar1 = iVar1 + -1;
+    if (0 < iVar1) {
+      if ((int)(1U - *(int *)(*(int *)this + -4) | *(int *)(*(int *)this + -8) - iVar1) < 0) {
+        FUN_10001f40(this,iVar1);
+      }
+      MultiByteToWideChar(3,0,param_1,-1,*(LPWSTR *)this,iVar1);
+      if (iVar1 <= *(int *)(*(int *)this + -8)) {
+        *(int *)(*(int *)this + -0xc) = iVar1;
+        *(undefined2 *)(*(int *)this + iVar1 * 2) = 0;
+        return this;
+      }
+                    /* WARNING: Subroutine does not return */
+      FUN_10001000((undefined4 *)0x80070057);
+    }
+  }
+  ATL::CSimpleStringT<wchar_t,0>::Empty(this);
+  return this;
+}
+
+
+-- ext InitializeCriticalSection
+
+=========== [4] FUN_10002310 @ 10002310
+
+undefined4 * __fastcall FUN_10002310(undefined4 *param_1)
+
+{
+  *param_1 = CPnPNotificator::vftable;
+  InitializeCriticalSection((LPCRITICAL_SECTION)(param_1 + 1));
+  *(undefined1 *)(param_1 + 7) = 0;
+  param_1[8] = 0;
+  param_1[9] = 0;
+  param_1[10] = 0;
+  param_1[0xb] = 0;
+  param_1[0xc] = 0;
+  param_1[0xd] = 0;
+  return param_1;
+}
+
+
+
+=========== [4] FUN_100026d0 @ 100026d0
+
+undefined4 * __thiscall FUN_100026d0(void *this,char *param_1)
+
+{
+  char cVar1;
+  int *this_00;
+  char *pcVar2;
+  uint uVar3;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e5fb;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  this_00 = FUN_1000858a(0xc);
+  local_8 = 0;
+  if (this_00 == (int *)0x0) {
+    this_00 = (int *)0x0;
+  }
+  else {
+    pcVar2 = param_1;
+    do {
+      cVar1 = *pcVar2;
+      pcVar2 = pcVar2 + 1;
+    } while (cVar1 != '\0');
+    uVar3 = (int)pcVar2 - (int)(param_1 + 1);
+    *this_00 = 0;
+    this_00[1] = 0;
+    this_00[2] = 0;
+    if (0x7fffffff < uVar3) {
+      uVar3 = 0x7fffffff;
+    }
+    FUN_10002610(this_00,uVar3,param_1);
+  }
+  *(int **)this = this_00;
+  *this_00 = *this_00 + 1;
+  ExceptionList = local_10;
+  return this;
+}
+
+
+
+=========== [4] FUN_100046b0 @ 100046b0
+
+void __fastcall FUN_100046b0(void *param_1)
+
+{
+  DWORD DVar1;
+  CObject *pCVar2;
+  int iVar3;
+  undefined4 local_118;
+  uint local_114;
+  DWORD local_110;
+  uint local_10c;
+  undefined4 auStack_108 [64];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  iVar3 = 0;
+  if (0 < *(int *)((int)param_1 + 0x4c)) {
+    do {
+      if ((iVar3 < 0) || (*(int *)((int)param_1 + 0x4c) <= iVar3)) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      FUN_100085b9(*(void **)(*(int *)((int)param_1 + 0x48) + iVar3 * 4));
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < *(int *)((int)param_1 + 0x4c));
+  }
+  CUIntArray::SetSize((CUIntArray *)((int)param_1 + 0x44),0,-1);
+  _memset(&local_10c,0,0x104);
+  DVar1 = FUN_100014d0(param_1,&local_10c);
+  if (DVar1 == 0) {
+    local_110 = 0;
+    local_114 = 0;
+    if (local_10c != 0) {
+      do {
+        local_118 = auStack_108[local_114];
+        pCVar2 = FUN_1000858a(0x338);
+        DVar1 = FUN_10001cc0(param_1,&local_118,pCVar2);
+        if (DVar1 == 0) {
+          CObArray::SetAtGrow((CObArray *)((int)param_1 + 0x44),*(int *)((int)param_1 + 0x4c),pCVar2
+                             );
+        }
+        else {
+          FUN_100085b9(pCVar2);
+          if (local_110 == 0) {
+            local_110 = DVar1;
+          }
+        }
+        local_114 = local_114 + 1;
+      } while (local_114 < local_10c);
+    }
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [4] __CxxThrowException@8 @ 100f8b1b
+
+/* Library Function - Single Match
+    __CxxThrowException@8
+   
+   Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release */
+
+void __CxxThrowException_8(undefined4 param_1,byte *param_2)
+
+{
+  int iVar1;
+  DWORD *pDVar2;
+  DWORD *pDVar3;
+  DWORD local_24 [4];
+  DWORD local_14;
+  ULONG_PTR local_10;
+  undefined4 local_c;
+  byte *local_8;
+  
+  pDVar2 = &DAT_10141444;
+  pDVar3 = local_24;
+  for (iVar1 = 8; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *pDVar3 = *pDVar2;
+    pDVar2 = pDVar2 + 1;
+    pDVar3 = pDVar3 + 1;
+  }
+  local_c = param_1;
+  local_8 = param_2;
+  if ((param_2 != (byte *)0x0) && ((*param_2 & 8) != 0)) {
+    local_10 = 0x1994000;
+  }
+  RaiseException(local_24[0],local_24[1],local_14,&local_10);
+  return;
+}
+
+
+
+=========== [4] _memmove_s @ 100f6eae
+
+/* Library Function - Single Match
+    _memmove_s
+   
+   Library: Visual Studio 2010 Release */
+
+errno_t __cdecl _memmove_s(void *_Dst,rsize_t _DstSize,void *_Src,rsize_t _MaxCount)
+
+{
+  int *piVar1;
+  errno_t eVar2;
+  
+  if (_MaxCount == 0) {
+LAB_100f6efc:
+    eVar2 = 0;
+  }
+  else {
+    if ((_Dst == (void *)0x0) || (_Src == (void *)0x0)) {
+      piVar1 = __errno();
+      eVar2 = 0x16;
+      *piVar1 = 0x16;
+    }
+    else {
+      if (_MaxCount <= _DstSize) {
+        FID_conflict__memcpy(_Dst,_Src,_MaxCount);
+        goto LAB_100f6efc;
+      }
+      piVar1 = __errno();
+      eVar2 = 0x22;
+      *piVar1 = 0x22;
+    }
+    FUN_100fe6d4();
+  }
+  return eVar2;
+}
+
+
+
+=========== [4] _memcpy_s @ 100f6e39
+
+/* Library Function - Single Match
+    _memcpy_s
+   
+   Library: Visual Studio 2010 Release */
+
+errno_t __cdecl _memcpy_s(void *_Dst,rsize_t _DstSize,void *_Src,rsize_t _MaxCount)
+
+{
+  errno_t eVar1;
+  int *piVar2;
+  
+  if (_MaxCount == 0) {
+LAB_100f6e46:
+    eVar1 = 0;
+  }
+  else {
+    if (_Dst == (void *)0x0) {
+LAB_100f6e50:
+      piVar2 = __errno();
+      eVar1 = 0x16;
+      *piVar2 = 0x16;
+    }
+    else {
+      if ((_Src != (void *)0x0) && (_MaxCount <= _DstSize)) {
+        FID_conflict__memcpy(_Dst,_Src,_MaxCount);
+        goto LAB_100f6e46;
+      }
+      _memset(_Dst,0,_DstSize);
+      if (_Src == (void *)0x0) goto LAB_100f6e50;
+      if (_MaxCount <= _DstSize) {
+        return 0x16;
+      }
+      piVar2 = __errno();
+      eVar1 = 0x22;
+      *piVar2 = 0x22;
+    }
+    FUN_100fe6d4();
+  }
+  return eVar1;
+}
+
+
+
+=========== [4] Empty @ 10001ed0
+
+/* Library Function - Single Match
+    public: void __thiscall ATL::CSimpleStringT<wchar_t,0>::Empty(void)
+   
+   Library: Visual Studio 2008 Release */
+
+void __thiscall ATL::CSimpleStringT<wchar_t,0>::Empty(CSimpleStringT<wchar_t,0> *this)
+
+{
+  undefined4 *puVar1;
+  int *piVar2;
+  int *piVar3;
+  int iVar4;
+  
+  iVar4 = *(int *)this;
+  puVar1 = (undefined4 *)(iVar4 + -0x10);
+  piVar3 = (int *)*puVar1;
+  if (*(int *)(iVar4 + -0xc) != 0) {
+    piVar2 = (int *)(iVar4 + -4);
+    if (*(int *)(iVar4 + -4) < 0) {
+      if (*(int *)(iVar4 + -8) < 0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10001000((undefined4 *)0x80070057);
+      }
+      *(undefined4 *)(iVar4 + -0xc) = 0;
+      **(undefined2 **)this = 0;
+      return;
+    }
+    LOCK();
+    iVar4 = *piVar2;
+    *piVar2 = *piVar2 + -1;
+    UNLOCK();
+    if (iVar4 == 1 || iVar4 + -1 < 0) {
+      (**(code **)(*(int *)*puVar1 + 4))(puVar1);
+    }
+    iVar4 = (**(code **)(*piVar3 + 0xc))();
+    *(int *)this = iVar4 + 0x10;
+  }
+  return;
+}
+
+
+
+=========== [4] FUN_10001f40 @ 10001f40
+
+void __thiscall FUN_10001f40(void *this,int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = *(int *)this;
+  if (param_1 < *(int *)(iVar1 + -0xc)) {
+    param_1 = *(int *)(iVar1 + -0xc);
+  }
+  if (1 < *(int *)(iVar1 + -4)) {
+    FUN_10001130(this,param_1);
+    return;
+  }
+  iVar1 = *(int *)(iVar1 + -8);
+  if (iVar1 < param_1) {
+    if (iVar1 < 0x40000001) {
+      iVar1 = iVar1 + iVar1 / 2;
+    }
+    else {
+      iVar1 = iVar1 + 0x100000;
+    }
+    if (iVar1 < param_1) {
+      iVar1 = param_1;
+    }
+    FUN_100011c0(this,iVar1);
+  }
+  return;
+}
+
+
+
+=========== [4] FUN_1000877f @ 1000877f
+
+/* WARNING: Function: __EH_prolog3 replaced with injection: EH_prolog3 */
+
+void FUN_1000877f(undefined4 *param_1)
+
+{
+  undefined4 *puVar1;
+  
+  puVar1 = FUN_1000858a(0xc);
+  if (puVar1 == (undefined4 *)0x0) {
+    puVar1 = (undefined4 *)0x0;
+  }
+  else {
+    FUN_100090b3((int)puVar1);
+    puVar1[2] = 0;
+    *puVar1 = COleException::vftable;
+  }
+  puVar1[2] = param_1;
+  param_1 = puVar1;
+                    /* WARNING: Subroutine does not return */
+  __CxxThrowException_8(&param_1,&DAT_1014df14);
+}
+
+
+
+=========== [4] FUN_10009030 @ 10009030
+
+void FUN_10009030(void)
+
+{
+  undefined **local_8;
+  
+  local_8 = &PTR_vftable_1015f480;
+                    /* WARNING: Subroutine does not return */
+  __CxxThrowException_8(&local_8,&DAT_1014e000);
+}
+
+
+-- ext FindResourceW
+
+=========== [4] _wmemcpy_s @ 100f8871
+
+/* Library Function - Single Match
+    _wmemcpy_s
+   
+   Library: Visual Studio 2010 Release */
+
+errno_t __cdecl _wmemcpy_s(wchar_t *_S1,rsize_t _N1,wchar_t *_S2,rsize_t _N)
+
+{
+  errno_t eVar1;
+  int *piVar2;
+  
+  if (_N == 0) {
+LAB_100f887e:
+    eVar1 = 0;
+  }
+  else {
+    if (_S1 == (wchar_t *)0x0) {
+LAB_100f8888:
+      piVar2 = __errno();
+      eVar1 = 0x16;
+      *piVar2 = 0x16;
+    }
+    else {
+      if ((_S2 != (wchar_t *)0x0) && (_N <= _N1)) {
+        FID_conflict__memcpy(_S1,_S2,_N * 2);
+        goto LAB_100f887e;
+      }
+      _wmemset(_S1,L'\0',_N1);
+      if (_S2 == (wchar_t *)0x0) goto LAB_100f8888;
+      if (_N <= _N1) {
+        return 0x16;
+      }
+      piVar2 = __errno();
+      eVar1 = 0x22;
+      *piVar2 = 0x22;
+    }
+    FUN_100fe6d4();
+  }
+  return eVar1;
+}
+
+
+
+=========== [4] FUN_10004e10 @ 10004e10
+
+uint __cdecl FUN_10004e10(HMODULE param_1,HRSRC param_2,uint param_3)
+
+{
+  HGLOBAL hResData;
+  ushort *puVar1;
+  DWORD DVar2;
+  ushort *puVar3;
+  uint uVar4;
+  
+  hResData = LoadResource(param_1,param_2);
+  if (hResData == (HGLOBAL)0x0) {
+    return 0;
+  }
+  puVar1 = LockResource(hResData);
+  if (puVar1 != (ushort *)0x0) {
+    DVar2 = SizeofResource(param_1,param_2);
+    puVar3 = (ushort *)(DVar2 + (int)puVar1);
+    for (uVar4 = param_3 & 0xf; uVar4 != 0; uVar4 = uVar4 - 1) {
+      if (puVar3 <= puVar1) {
+        return 0;
+      }
+      puVar1 = puVar1 + *puVar1 + 1;
+    }
+    if (puVar1 < puVar3) {
+      return -(uint)(*puVar1 != 0) & (uint)puVar1;
+    }
+  }
+  return 0;
+}
+
+
+
+=========== [4] AfxGetModuleState @ 1000ab77
+
+/* Library Function - Single Match
+    class AFX_MODULE_STATE * __stdcall AfxGetModuleState(void)
+   
+   Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release */
+
+AFX_MODULE_STATE * AfxGetModuleState(void)
+
+{
+  CNoTrackObject *pCVar1;
+  AFX_MODULE_STATE *pAVar2;
+  
+  pCVar1 = CThreadLocalObject::GetData
+                     ((CThreadLocalObject *)&DAT_10164b18,(_func_CNoTrackObject_ptr *)&LAB_10009084)
+  ;
+  if (pCVar1 == (CNoTrackObject *)0x0) {
+LAB_1000ab8a:
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  pAVar2 = *(AFX_MODULE_STATE **)(pCVar1 + 4);
+  if (pAVar2 == (AFX_MODULE_STATE *)0x0) {
+    pAVar2 = (AFX_MODULE_STATE *)
+             CProcessLocalObject::GetData
+                       ((CProcessLocalObject *)&DAT_10164b14,
+                        (_func_CNoTrackObject_ptr *)&LAB_1000ab23);
+    if (pAVar2 == (AFX_MODULE_STATE *)0x0) goto LAB_1000ab8a;
+  }
+  return pAVar2;
+}
+
+
+
+=========== [4] FUN_10109b1c @ 10109b1c
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_10109b1c(void)
+
+{
+  _DAT_1016af80 = 0;
+  return;
+}
+
+
+-- ext UnhandledExceptionFilter
+-- ext TerminateProcess
+-- ext IsDebuggerPresent
+-- ext SetUnhandledExceptionFilter
+-- ext GetCurrentProcess
+
+=========== [5] FUN_10005e30 @ 10005e30
+
+int * __cdecl FUN_10005e30(int *param_1)
+
+{
+  rsize_t _DstSize;
+  undefined4 *puVar1;
+  int *piVar2;
+  
+  puVar1 = (undefined4 *)(**(code **)(*(int *)*param_1 + 0x10))();
+  if ((-1 < param_1[3]) && (puVar1 == (undefined4 *)*param_1)) {
+    LOCK();
+    param_1[3] = param_1[3] + 1;
+    UNLOCK();
+    return param_1;
+  }
+  piVar2 = (int *)(**(code **)*puVar1)(param_1[1],2);
+  if (piVar2 == (int *)0x0) {
+    FUN_10001120();
+  }
+  piVar2[1] = param_1[1];
+  _DstSize = param_1[1] * 2 + 2;
+  _memcpy_s(piVar2 + 4,_DstSize,param_1 + 4,_DstSize);
+  return piVar2;
+}
+
+
+-- ext CreateEventW
+
+=========== [5] FUN_10001070 @ 10001070
+
+undefined4 * __fastcall FUN_10001070(undefined4 *param_1)
+
+{
+  *param_1 = CBcoUsbDriver::vftable;
+  InitializeCriticalSection((LPCRITICAL_SECTION)(param_1 + 1));
+  param_1[7] = 0;
+  return param_1;
+}
+
+
+
+=========== [5] __callnewh @ 10103b47
+
+/* Library Function - Single Match
+    __callnewh
+   
+   Library: Visual Studio 2010 Release */
+
+int __cdecl __callnewh(size_t _Size)
+
+{
+  code *pcVar1;
+  int iVar2;
+  
+  pcVar1 = DecodePointer(DAT_1016ac78);
+  if (pcVar1 != (code *)0x0) {
+    iVar2 = (*pcVar1)(_Size);
+    if (iVar2 != 0) {
+      return 1;
+    }
+  }
+  return 0;
+}
+
+
+
+=========== [5] __errno @ 100f916e
+
+/* Library Function - Single Match
+    __errno
+   
+   Library: Visual Studio 2010 Release */
+
+int * __cdecl __errno(void)
+
+{
+  _ptiddata p_Var1;
+  
+  p_Var1 = __getptd_noexit();
+  if (p_Var1 == (_ptiddata)0x0) {
+    return (int *)&DAT_101636e8;
+  }
+  return &p_Var1->_terrno;
+}
+
+
+
+=========== [5] __FF_MSGBANNER @ 10102891
+
+/* Library Function - Single Match
+    __FF_MSGBANNER
+   
+   Library: Visual Studio 2010 Release */
+
+void __cdecl __FF_MSGBANNER(void)
+
+{
+  int iVar1;
+  
+  iVar1 = __set_error_mode(3);
+  if (iVar1 != 1) {
+    iVar1 = __set_error_mode(3);
+    if (iVar1 != 0) {
+      return;
+    }
+    if (DAT_1016a18c != 1) {
+      return;
+    }
+  }
+  __NMSG_WRITE(0xfc);
+  __NMSG_WRITE(0xff);
+  return;
+}
+
+
+-- ext HeapAlloc
+
+=========== [5] __NMSG_WRITE @ 101026e2
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+/* Library Function - Single Match
+    __NMSG_WRITE
+   
+   Library: Visual Studio 2010 Release */
+
+void __cdecl __NMSG_WRITE(int param_1)
+
+{
+  wchar_t *pwVar1;
+  int iVar2;
+  errno_t eVar3;
+  DWORD DVar4;
+  size_t sVar5;
+  HANDLE hFile;
+  uint uVar6;
+  wchar_t **lpNumberOfBytesWritten;
+  LPOVERLAPPED lpOverlapped;
+  wchar_t *local_200;
+  char local_1fc [500];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  pwVar1 = __GET_RTERRMSG(param_1);
+  local_200 = pwVar1;
+  if (pwVar1 != (wchar_t *)0x0) {
+    iVar2 = __set_error_mode(3);
+    if ((iVar2 == 1) || ((iVar2 = __set_error_mode(3), iVar2 == 0 && (DAT_1016a18c == 1)))) {
+      hFile = GetStdHandle(0xfffffff4);
+      if ((hFile != (HANDLE)0x0) && (hFile != (HANDLE)0xffffffff)) {
+        uVar6 = 0;
+        do {
+          local_1fc[uVar6] = (char)pwVar1[uVar6];
+          if (pwVar1[uVar6] == L'\0') break;
+          uVar6 = uVar6 + 1;
+        } while (uVar6 < 500);
+        lpOverlapped = (LPOVERLAPPED)0x0;
+        lpNumberOfBytesWritten = &local_200;
+        local_1fc[499] = 0;
+        sVar5 = _strlen(local_1fc);
+        WriteFile(hFile,local_1fc,sVar5,(LPDWORD)lpNumberOfBytesWritten,lpOverlapped);
+      }
+    }
+    else if (param_1 != 0xfc) {
+      eVar3 = _wcscpy_s((wchar_t *)&DAT_1016a540,0x314,L"Runtime Error!\n\nProgram: ");
+      if (eVar3 == 0) {
+        _DAT_1016a77a = 0;
+        DVar4 = GetModuleFileNameW((HMODULE)0x0,(LPWSTR)&DAT_1016a572,0x104);
+        if ((DVar4 != 0) ||
+           (eVar3 = _wcscpy_s((wchar_t *)&DAT_1016a572,0x2fb,L"<program name unknown>"), eVar3 == 0)
+           ) {
+          sVar5 = _wcslen((wchar_t *)&DAT_1016a572);
+          if (0x3c < sVar5 + 1) {
+            sVar5 = _wcslen((wchar_t *)&DAT_1016a572);
+            eVar3 = _wcsncpy_s((wchar_t *)(&DAT_1016a4fc + sVar5 * 2),
+                               0x2fb - ((int)(sVar5 * 2 + -0x76) >> 1),L"...",3);
+            if (eVar3 != 0) goto LAB_101027a7;
+          }
+          eVar3 = _wcscat_s((wchar_t *)&DAT_1016a540,0x314,L"\n\n");
+          if ((eVar3 == 0) &&
+             (eVar3 = _wcscat_s((wchar_t *)&DAT_1016a540,0x314,local_200), eVar3 == 0)) {
+            ___crtMessageBoxW((LPCWSTR)&DAT_1016a540,L"Microsoft Visual C++ Runtime Library",0x12010
+                             );
+            goto LAB_10102882;
+          }
+        }
+      }
+LAB_101027a7:
+                    /* WARNING: Subroutine does not return */
+      __invoke_watson((wchar_t *)0x0,(wchar_t *)0x0,(wchar_t *)0x0,0,0);
+    }
+  }
+LAB_10102882:
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [5] ___crtExitProcess @ 100fadd5
+
+/* Library Function - Single Match
+    ___crtExitProcess
+   
+   Library: Visual Studio 2010 Release */
+
+void __cdecl ___crtExitProcess(int param_1)
+
+{
+  ___crtCorExitProcess(param_1);
+                    /* WARNING: Subroutine does not return */
+  ExitProcess(param_1);
+}
+
+
+
+=========== [5] __VEC_memzero @ 100ff43f
+
+/* Library Function - Single Match
+    __VEC_memzero
+   
+   Libraries: Visual Studio 2010 Debug, Visual Studio 2010 Release */
+
+undefined1 (*) [16] __fastcall __VEC_memzero(undefined1 (*param_1) [16],uint param_2)
+
+{
+  uint uVar1;
+  undefined1 (*pauVar2) [16];
+  uint uVar3;
+  
+  pauVar2 = param_1;
+  if (((uint)param_1 & 0xf) != 0) {
+    uVar3 = 0x10 - ((uint)param_1 & 0xf);
+    param_2 = param_2 - uVar3;
+    for (uVar1 = uVar3 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
+      (*pauVar2)[0] = 0;
+      pauVar2 = (undefined1 (*) [16])(*pauVar2 + 1);
+    }
+    for (uVar3 = uVar3 >> 2; uVar3 != 0; uVar3 = uVar3 - 1) {
+      *(undefined4 *)*pauVar2 = 0;
+      pauVar2 = (undefined1 (*) [16])(*pauVar2 + 4);
+    }
+  }
+  for (uVar1 = param_2 >> 7; uVar1 != 0; uVar1 = uVar1 - 1) {
+    *pauVar2 = (undefined1  [16])0x0;
+    pauVar2[1] = (undefined1  [16])0x0;
+    pauVar2[2] = (undefined1  [16])0x0;
+    pauVar2[3] = (undefined1  [16])0x0;
+    pauVar2[4] = (undefined1  [16])0x0;
+    pauVar2[5] = (undefined1  [16])0x0;
+    pauVar2[6] = (undefined1  [16])0x0;
+    pauVar2[7] = (undefined1  [16])0x0;
+    pauVar2 = pauVar2 + 8;
+  }
+  if ((param_2 & 0x7f) != 0) {
+    for (uVar1 = (param_2 & 0x7f) >> 4; uVar1 != 0; uVar1 = uVar1 - 1) {
+      *pauVar2 = (undefined1  [16])0x0;
+      pauVar2 = pauVar2 + 1;
+    }
+    if ((param_2 & 0xf) != 0) {
+      for (uVar1 = (param_2 & 0xf) >> 2; uVar1 != 0; uVar1 = uVar1 - 1) {
+        *(undefined4 *)*pauVar2 = 0;
+        pauVar2 = (undefined1 (*) [16])(*pauVar2 + 4);
+      }
+      for (uVar1 = param_2 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
+        (*pauVar2)[0] = 0;
+        pauVar2 = (undefined1 (*) [16])(*pauVar2 + 1);
+      }
+    }
+  }
+  return param_1;
+}
+
+
+
+=========== [5] __get_errno_from_oserr @ 100f912c
+
+/* Library Function - Single Match
+    __get_errno_from_oserr
+   
+   Library: Visual Studio 2010 Release */
+
+int __cdecl __get_errno_from_oserr(ulong param_1)
+
+{
+  uint uVar1;
+  
+  uVar1 = 0;
+  do {
+    if (param_1 == (&DAT_10163580)[uVar1 * 2]) {
+      return *(int *)(uVar1 * 8 + 0x10163584);
+    }
+    uVar1 = uVar1 + 1;
+  } while (uVar1 < 0x2d);
+  if (param_1 - 0x13 < 0x12) {
+    return 0xd;
+  }
+  return (-(uint)(0xe < param_1 - 0xbc) & 0xe) + 8;
+}
+
+
+-- ext HeapFree
+-- ext DeviceIoControl
+-- ext MultiByteToWideChar
+
+=========== [5] FUN_10002610 @ 10002610
+
+void __thiscall FUN_10002610(void *this,uint param_1,char *param_2)
+
+{
+  void *_Src;
+  size_t _Size;
+  int iVar1;
+  
+  _Src = *(void **)((int)this + 4);
+  if ((_Src == (void *)0x0) || (*(uint *)((int)this + 8) < param_1)) {
+    _Size = *(size_t *)((int)this + 8);
+    if (param_1 < 0x40) {
+      *(undefined4 *)((int)this + 8) = 0x3f;
+    }
+    else if (param_1 < 0x80) {
+      *(undefined4 *)((int)this + 8) = 0x7f;
+    }
+    else if (param_1 < 0x100) {
+      *(undefined4 *)((int)this + 8) = 0xff;
+    }
+    else if (param_1 < 0x200) {
+      *(undefined4 *)((int)this + 8) = 0x1ff;
+    }
+    else {
+      *(uint *)((int)this + 8) = param_1;
+    }
+    iVar1 = FUN_100085c4(*(int *)((int)this + 8) + 1);
+    *(int *)((int)this + 4) = iVar1;
+    *(undefined1 *)(iVar1 + *(int *)((int)this + 8)) = 0;
+    if (param_2 != (char *)0x0) {
+      _strncpy(*(char **)((int)this + 4),param_2,*(size_t *)((int)this + 8));
+      FUN_100085b9(_Src);
+      return;
+    }
+    if (_Src != (void *)0x0) {
+      FID_conflict__memcpy(*(void **)((int)this + 4),_Src,_Size);
+    }
+    FUN_100085b9(_Src);
+  }
+  return;
+}
+
+
+
+=========== [5] FUN_10001cc0 @ 10001cc0
+
+DWORD __thiscall FUN_10001cc0(void *this,LPVOID param_1,LPVOID param_2)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892900,param_1,4,param_2,0x338,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+-- ext RaiseException
+
+=========== [5] FUN_100fe6d4 @ 100fe6d4
+
+void FUN_100fe6d4(void)
+
+{
+  FUN_100fe6a7((wchar_t *)0x0,(wchar_t *)0x0,(wchar_t *)0x0,0,0);
+  return;
+}
+
+
+
+=========== [5] FID_conflict:_memcpy @ 100f7c00
+
+/* Library Function - Multiple Matches With Different Base Names
+    _memcpy
+    _memmove
+   
+   Libraries: Visual Studio 2010 Debug, Visual Studio 2010 Release */
+
+void * __cdecl FID_conflict__memcpy(void *_Dst,void *_Src,size_t _Size)
+
+{
+  undefined4 *puVar1;
+  uint uVar2;
+  uint uVar3;
+  undefined4 *puVar4;
+  
+  if ((_Src < _Dst) && (_Dst < (void *)(_Size + (int)_Src))) {
+    puVar1 = (undefined4 *)((_Size - 4) + (int)_Src);
+    puVar4 = (undefined4 *)((_Size - 4) + (int)_Dst);
+    if (((uint)puVar4 & 3) == 0) {
+      uVar2 = _Size >> 2;
+      uVar3 = _Size & 3;
+      if (7 < uVar2) {
+        for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+          *puVar4 = *puVar1;
+          puVar1 = puVar1 + -1;
+          puVar4 = puVar4 + -1;
+        }
+        switch(uVar3) {
+        case 0:
+          return _Dst;
+        case 2:
+          goto switchD_100f7ddf_caseD_2;
+        case 3:
+          goto switchD_100f7ddf_caseD_3;
+        }
+        goto switchD_100f7ddf_caseD_1;
+      }
+    }
+    else {
+      switch(_Size) {
+      case 0:
+        goto switchD_100f7ddf_caseD_0;
+      case 1:
+        goto switchD_100f7ddf_caseD_1;
+      case 2:
+        goto switchD_100f7ddf_caseD_2;
+      case 3:
+        goto switchD_100f7ddf_caseD_3;
+      default:
+        uVar2 = _Size - ((uint)puVar4 & 3);
+        switch((uint)puVar4 & 3) {
+        case 1:
+          uVar3 = uVar2 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+          puVar1 = (undefined4 *)((int)puVar1 + -1);
+          uVar2 = uVar2 >> 2;
+          puVar4 = (undefined4 *)((int)puVar4 - 1);
+          if (7 < uVar2) {
+            for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+              *puVar4 = *puVar1;
+              puVar1 = puVar1 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar3) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_100f7ddf_caseD_2;
+            case 3:
+              goto switchD_100f7ddf_caseD_3;
+            }
+            goto switchD_100f7ddf_caseD_1;
+          }
+          break;
+        case 2:
+          uVar3 = uVar2 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+          uVar2 = uVar2 >> 2;
+          *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+          puVar1 = (undefined4 *)((int)puVar1 + -2);
+          puVar4 = (undefined4 *)((int)puVar4 - 2);
+          if (7 < uVar2) {
+            for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+              *puVar4 = *puVar1;
+              puVar1 = puVar1 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar3) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_100f7ddf_caseD_2;
+            case 3:
+              goto switchD_100f7ddf_caseD_3;
+            }
+            goto switchD_100f7ddf_caseD_1;
+          }
+          break;
+        case 3:
+          uVar3 = uVar2 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+          *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+          uVar2 = uVar2 >> 2;
+          *(undefined1 *)((int)puVar4 + 1) = *(undefined1 *)((int)puVar1 + 1);
+          puVar1 = (undefined4 *)((int)puVar1 + -3);
+          puVar4 = (undefined4 *)((int)puVar4 - 3);
+          if (7 < uVar2) {
+            for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+              *puVar4 = *puVar1;
+              puVar1 = puVar1 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar3) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_100f7ddf_caseD_2;
+            case 3:
+              goto switchD_100f7ddf_caseD_3;
+            }
+            goto switchD_100f7ddf_caseD_1;
+          }
+        }
+      }
+    }
+    switch(uVar2) {
+    case 7:
+      puVar4[7 - uVar2] = puVar1[7 - uVar2];
+    case 6:
+      puVar4[6 - uVar2] = puVar1[6 - uVar2];
+    case 5:
+      puVar4[5 - uVar2] = puVar1[5 - uVar2];
+    case 4:
+      puVar4[4 - uVar2] = puVar1[4 - uVar2];
+    case 3:
+      puVar4[3 - uVar2] = puVar1[3 - uVar2];
+    case 2:
+      puVar4[2 - uVar2] = puVar1[2 - uVar2];
+    case 1:
+      puVar4[1 - uVar2] = puVar1[1 - uVar2];
+      puVar1 = puVar1 + -uVar2;
+      puVar4 = puVar4 + -uVar2;
+    }
+    switch(uVar3) {
+    case 1:
+switchD_100f7ddf_caseD_1:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+      return _Dst;
+    case 2:
+switchD_100f7ddf_caseD_2:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+      *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+      return _Dst;
+    case 3:
+switchD_100f7ddf_caseD_3:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+      *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+      *(undefined1 *)((int)puVar4 + 1) = *(undefined1 *)((int)puVar1 + 1);
+      return _Dst;
+    }
+switchD_100f7ddf_caseD_0:
+    return _Dst;
+  }
+  if (((0x7f < _Size) && (DAT_1016c0c0 != 0)) && (((uint)_Dst & 0xf) == ((uint)_Src & 0xf))) {
+    puVar1 = FUN_100ffcc3(_Size);
+    return puVar1;
+  }
+  puVar1 = _Dst;
+  if (((uint)_Dst & 3) == 0) {
+    uVar2 = _Size >> 2;
+    uVar3 = _Size & 3;
+    if (7 < uVar2) {
+      for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+        *puVar1 = *(undefined4 *)_Src;
+        _Src = (undefined4 *)((int)_Src + 4);
+        puVar1 = puVar1 + 1;
+      }
+      switch(uVar3) {
+      case 0:
+        return _Dst;
+      case 2:
+        goto switchD_100f7c59_caseD_2;
+      case 3:
+        goto switchD_100f7c59_caseD_3;
+      }
+      goto switchD_100f7c59_caseD_1;
+    }
+  }
+  else {
+    switch(_Size) {
+    case 0:
+      goto switchD_100f7c59_caseD_0;
+    case 1:
+      goto switchD_100f7c59_caseD_1;
+    case 2:
+      goto switchD_100f7c59_caseD_2;
+    case 3:
+      goto switchD_100f7c59_caseD_3;
+    default:
+      uVar2 = (_Size - 4) + ((uint)_Dst & 3);
+      switch((uint)_Dst & 3) {
+      case 1:
+        uVar3 = uVar2 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        *(undefined1 *)((int)_Dst + 1) = *(undefined1 *)((int)_Src + 1);
+        uVar2 = uVar2 >> 2;
+        *(undefined1 *)((int)_Dst + 2) = *(undefined1 *)((int)_Src + 2);
+        _Src = (void *)((int)_Src + 3);
+        puVar1 = (undefined4 *)((int)_Dst + 3);
+        if (7 < uVar2) {
+          for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+            *puVar1 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar1 = puVar1 + 1;
+          }
+          switch(uVar3) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_100f7c59_caseD_2;
+          case 3:
+            goto switchD_100f7c59_caseD_3;
+          }
+          goto switchD_100f7c59_caseD_1;
+        }
+        break;
+      case 2:
+        uVar3 = uVar2 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        uVar2 = uVar2 >> 2;
+        *(undefined1 *)((int)_Dst + 1) = *(undefined1 *)((int)_Src + 1);
+        _Src = (void *)((int)_Src + 2);
+        puVar1 = (undefined4 *)((int)_Dst + 2);
+        if (7 < uVar2) {
+          for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+            *puVar1 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar1 = puVar1 + 1;
+          }
+          switch(uVar3) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_100f7c59_caseD_2;
+          case 3:
+            goto switchD_100f7c59_caseD_3;
+          }
+          goto switchD_100f7c59_caseD_1;
+        }
+        break;
+      case 3:
+        uVar3 = uVar2 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        _Src = (void *)((int)_Src + 1);
+        uVar2 = uVar2 >> 2;
+        puVar1 = (undefined4 *)((int)_Dst + 1);
+        if (7 < uVar2) {
+          for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+            *puVar1 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar1 = puVar1 + 1;
+          }
+          switch(uVar3) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_100f7c59_caseD_2;
+          case 3:
+            goto switchD_100f7c59_caseD_3;
+          }
+          goto switchD_100f7c59_caseD_1;
+        }
+      }
+    }
+  }
+  switch(uVar2) {
+  case 7:
+    puVar1[uVar2 - 7] = *(undefined4 *)((int)_Src + (uVar2 - 7) * 4);
+  case 6:
+    puVar1[uVar2 - 6] = *(undefined4 *)((int)_Src + (uVar2 - 6) * 4);
+  case 5:
+    puVar1[uVar2 - 5] = *(undefined4 *)((int)_Src + (uVar2 - 5) * 4);
+  case 4:
+    puVar1[uVar2 - 4] = *(undefined4 *)((int)_Src + (uVar2 - 4) * 4);
+  case 3:
+    puVar1[uVar2 - 3] = *(undefined4 *)((int)_Src + (uVar2 - 3) * 4);
+  case 2:
+    puVar1[uVar2 - 2] = *(undefined4 *)((int)_Src + (uVar2 - 2) * 4);
+  case 1:
+    puVar1[uVar2 - 1] = *(undefined4 *)((int)_Src + (uVar2 - 1) * 4);
+    _Src = (void *)((int)_Src + uVar2 * 4);
+    puVar1 = puVar1 + uVar2;
+  }
+  switch(uVar3) {
+  case 1:
+switchD_100f7c59_caseD_1:
+    *(undefined1 *)puVar1 = *(undefined1 *)_Src;
+    return _Dst;
+  case 2:
+switchD_100f7c59_caseD_2:
+    *(undefined1 *)puVar1 = *(undefined1 *)_Src;
+    *(undefined1 *)((int)puVar1 + 1) = *(undefined1 *)((int)_Src + 1);
+    return _Dst;
+  case 3:
+switchD_100f7c59_caseD_3:
+    *(undefined1 *)puVar1 = *(undefined1 *)_Src;
+    *(undefined1 *)((int)puVar1 + 1) = *(undefined1 *)((int)_Src + 1);
+    *(undefined1 *)((int)puVar1 + 2) = *(undefined1 *)((int)_Src + 2);
+    return _Dst;
+  }
+switchD_100f7c59_caseD_0:
+  return _Dst;
+}
+
+
+
+=========== [5] FID_conflict:_memcpy @ 100f74b0
+
+/* Library Function - Multiple Matches With Different Base Names
+    _memcpy
+    _memmove
+   
+   Libraries: Visual Studio 2010 Debug, Visual Studio 2010 Release */
+
+void * __cdecl FID_conflict__memcpy(void *_Dst,void *_Src,size_t _Size)
+
+{
+  undefined4 *puVar1;
+  uint uVar2;
+  uint uVar3;
+  undefined4 *puVar4;
+  
+  if ((_Src < _Dst) && (_Dst < (void *)(_Size + (int)_Src))) {
+    puVar1 = (undefined4 *)((_Size - 4) + (int)_Src);
+    puVar4 = (undefined4 *)((_Size - 4) + (int)_Dst);
+    if (((uint)puVar4 & 3) == 0) {
+      uVar2 = _Size >> 2;
+      uVar3 = _Size & 3;
+      if (7 < uVar2) {
+        for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+          *puVar4 = *puVar1;
+          puVar1 = puVar1 + -1;
+          puVar4 = puVar4 + -1;
+        }
+        switch(uVar3) {
+        case 0:
+          return _Dst;
+        case 2:
+          goto switchD_100f768f_caseD_2;
+        case 3:
+          goto switchD_100f768f_caseD_3;
+        }
+        goto switchD_100f768f_caseD_1;
+      }
+    }
+    else {
+      switch(_Size) {
+      case 0:
+        goto switchD_100f768f_caseD_0;
+      case 1:
+        goto switchD_100f768f_caseD_1;
+      case 2:
+        goto switchD_100f768f_caseD_2;
+      case 3:
+        goto switchD_100f768f_caseD_3;
+      default:
+        uVar2 = _Size - ((uint)puVar4 & 3);
+        switch((uint)puVar4 & 3) {
+        case 1:
+          uVar3 = uVar2 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+          puVar1 = (undefined4 *)((int)puVar1 + -1);
+          uVar2 = uVar2 >> 2;
+          puVar4 = (undefined4 *)((int)puVar4 - 1);
+          if (7 < uVar2) {
+            for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+              *puVar4 = *puVar1;
+              puVar1 = puVar1 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar3) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_100f768f_caseD_2;
+            case 3:
+              goto switchD_100f768f_caseD_3;
+            }
+            goto switchD_100f768f_caseD_1;
+          }
+          break;
+        case 2:
+          uVar3 = uVar2 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+          uVar2 = uVar2 >> 2;
+          *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+          puVar1 = (undefined4 *)((int)puVar1 + -2);
+          puVar4 = (undefined4 *)((int)puVar4 - 2);
+          if (7 < uVar2) {
+            for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+              *puVar4 = *puVar1;
+              puVar1 = puVar1 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar3) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_100f768f_caseD_2;
+            case 3:
+              goto switchD_100f768f_caseD_3;
+            }
+            goto switchD_100f768f_caseD_1;
+          }
+          break;
+        case 3:
+          uVar3 = uVar2 & 3;
+          *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+          *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+          uVar2 = uVar2 >> 2;
+          *(undefined1 *)((int)puVar4 + 1) = *(undefined1 *)((int)puVar1 + 1);
+          puVar1 = (undefined4 *)((int)puVar1 + -3);
+          puVar4 = (undefined4 *)((int)puVar4 - 3);
+          if (7 < uVar2) {
+            for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+              *puVar4 = *puVar1;
+              puVar1 = puVar1 + -1;
+              puVar4 = puVar4 + -1;
+            }
+            switch(uVar3) {
+            case 0:
+              return _Dst;
+            case 2:
+              goto switchD_100f768f_caseD_2;
+            case 3:
+              goto switchD_100f768f_caseD_3;
+            }
+            goto switchD_100f768f_caseD_1;
+          }
+        }
+      }
+    }
+    switch(uVar2) {
+    case 7:
+      puVar4[7 - uVar2] = puVar1[7 - uVar2];
+    case 6:
+      puVar4[6 - uVar2] = puVar1[6 - uVar2];
+    case 5:
+      puVar4[5 - uVar2] = puVar1[5 - uVar2];
+    case 4:
+      puVar4[4 - uVar2] = puVar1[4 - uVar2];
+    case 3:
+      puVar4[3 - uVar2] = puVar1[3 - uVar2];
+    case 2:
+      puVar4[2 - uVar2] = puVar1[2 - uVar2];
+    case 1:
+      puVar4[1 - uVar2] = puVar1[1 - uVar2];
+      puVar1 = puVar1 + -uVar2;
+      puVar4 = puVar4 + -uVar2;
+    }
+    switch(uVar3) {
+    case 1:
+switchD_100f768f_caseD_1:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+      return _Dst;
+    case 2:
+switchD_100f768f_caseD_2:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+      *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+      return _Dst;
+    case 3:
+switchD_100f768f_caseD_3:
+      *(undefined1 *)((int)puVar4 + 3) = *(undefined1 *)((int)puVar1 + 3);
+      *(undefined1 *)((int)puVar4 + 2) = *(undefined1 *)((int)puVar1 + 2);
+      *(undefined1 *)((int)puVar4 + 1) = *(undefined1 *)((int)puVar1 + 1);
+      return _Dst;
+    }
+switchD_100f768f_caseD_0:
+    return _Dst;
+  }
+  if (((0x7f < _Size) && (DAT_1016c0c0 != 0)) && (((uint)_Dst & 0xf) == ((uint)_Src & 0xf))) {
+    puVar1 = FUN_100ffcc3(_Size);
+    return puVar1;
+  }
+  puVar1 = _Dst;
+  if (((uint)_Dst & 3) == 0) {
+    uVar2 = _Size >> 2;
+    uVar3 = _Size & 3;
+    if (7 < uVar2) {
+      for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+        *puVar1 = *(undefined4 *)_Src;
+        _Src = (undefined4 *)((int)_Src + 4);
+        puVar1 = puVar1 + 1;
+      }
+      switch(uVar3) {
+      case 0:
+        return _Dst;
+      case 2:
+        goto switchD_100f7509_caseD_2;
+      case 3:
+        goto switchD_100f7509_caseD_3;
+      }
+      goto switchD_100f7509_caseD_1;
+    }
+  }
+  else {
+    switch(_Size) {
+    case 0:
+      goto switchD_100f7509_caseD_0;
+    case 1:
+      goto switchD_100f7509_caseD_1;
+    case 2:
+      goto switchD_100f7509_caseD_2;
+    case 3:
+      goto switchD_100f7509_caseD_3;
+    default:
+      uVar2 = (_Size - 4) + ((uint)_Dst & 3);
+      switch((uint)_Dst & 3) {
+      case 1:
+        uVar3 = uVar2 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        *(undefined1 *)((int)_Dst + 1) = *(undefined1 *)((int)_Src + 1);
+        uVar2 = uVar2 >> 2;
+        *(undefined1 *)((int)_Dst + 2) = *(undefined1 *)((int)_Src + 2);
+        _Src = (void *)((int)_Src + 3);
+        puVar1 = (undefined4 *)((int)_Dst + 3);
+        if (7 < uVar2) {
+          for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+            *puVar1 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar1 = puVar1 + 1;
+          }
+          switch(uVar3) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_100f7509_caseD_2;
+          case 3:
+            goto switchD_100f7509_caseD_3;
+          }
+          goto switchD_100f7509_caseD_1;
+        }
+        break;
+      case 2:
+        uVar3 = uVar2 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        uVar2 = uVar2 >> 2;
+        *(undefined1 *)((int)_Dst + 1) = *(undefined1 *)((int)_Src + 1);
+        _Src = (void *)((int)_Src + 2);
+        puVar1 = (undefined4 *)((int)_Dst + 2);
+        if (7 < uVar2) {
+          for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+            *puVar1 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar1 = puVar1 + 1;
+          }
+          switch(uVar3) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_100f7509_caseD_2;
+          case 3:
+            goto switchD_100f7509_caseD_3;
+          }
+          goto switchD_100f7509_caseD_1;
+        }
+        break;
+      case 3:
+        uVar3 = uVar2 & 3;
+        *(undefined1 *)_Dst = *(undefined1 *)_Src;
+        _Src = (void *)((int)_Src + 1);
+        uVar2 = uVar2 >> 2;
+        puVar1 = (undefined4 *)((int)_Dst + 1);
+        if (7 < uVar2) {
+          for (; uVar2 != 0; uVar2 = uVar2 - 1) {
+            *puVar1 = *(undefined4 *)_Src;
+            _Src = (undefined4 *)((int)_Src + 4);
+            puVar1 = puVar1 + 1;
+          }
+          switch(uVar3) {
+          case 0:
+            return _Dst;
+          case 2:
+            goto switchD_100f7509_caseD_2;
+          case 3:
+            goto switchD_100f7509_caseD_3;
+          }
+          goto switchD_100f7509_caseD_1;
+        }
+      }
+    }
+  }
+  switch(uVar2) {
+  case 7:
+    puVar1[uVar2 - 7] = *(undefined4 *)((int)_Src + (uVar2 - 7) * 4);
+  case 6:
+    puVar1[uVar2 - 6] = *(undefined4 *)((int)_Src + (uVar2 - 6) * 4);
+  case 5:
+    puVar1[uVar2 - 5] = *(undefined4 *)((int)_Src + (uVar2 - 5) * 4);
+  case 4:
+    puVar1[uVar2 - 4] = *(undefined4 *)((int)_Src + (uVar2 - 4) * 4);
+  case 3:
+    puVar1[uVar2 - 3] = *(undefined4 *)((int)_Src + (uVar2 - 3) * 4);
+  case 2:
+    puVar1[uVar2 - 2] = *(undefined4 *)((int)_Src + (uVar2 - 2) * 4);
+  case 1:
+    puVar1[uVar2 - 1] = *(undefined4 *)((int)_Src + (uVar2 - 1) * 4);
+    _Src = (void *)((int)_Src + uVar2 * 4);
+    puVar1 = puVar1 + uVar2;
+  }
+  switch(uVar3) {
+  case 1:
+switchD_100f7509_caseD_1:
+    *(undefined1 *)puVar1 = *(undefined1 *)_Src;
+    return _Dst;
+  case 2:
+switchD_100f7509_caseD_2:
+    *(undefined1 *)puVar1 = *(undefined1 *)_Src;
+    *(undefined1 *)((int)puVar1 + 1) = *(undefined1 *)((int)_Src + 1);
+    return _Dst;
+  case 3:
+switchD_100f7509_caseD_3:
+    *(undefined1 *)puVar1 = *(undefined1 *)_Src;
+    *(undefined1 *)((int)puVar1 + 1) = *(undefined1 *)((int)_Src + 1);
+    *(undefined1 *)((int)puVar1 + 2) = *(undefined1 *)((int)_Src + 2);
+    return _Dst;
+  }
+switchD_100f7509_caseD_0:
+  return _Dst;
+}
+
+
+
+=========== [5] FUN_10001130 @ 10001130
+
+void __thiscall FUN_10001130(void *this,int param_1)
+
+{
+  int *piVar1;
+  rsize_t _DstSize;
+  void *_Src;
+  int iVar2;
+  undefined4 *puVar3;
+  int iVar4;
+  undefined4 *puVar5;
+  
+  _Src = *(void **)this;
+  iVar2 = *(int *)((int)_Src + -0xc);
+  puVar5 = (undefined4 *)((int)_Src + -0x10);
+  puVar3 = (undefined4 *)(**(code **)(*(int *)*puVar5 + 0x10))();
+  iVar4 = (**(code **)*puVar3)(param_1,2);
+  if (iVar4 == 0) {
+    FUN_10001120();
+  }
+  if (iVar2 < param_1) {
+    param_1 = iVar2;
+  }
+  _DstSize = param_1 * 2 + 2;
+  _memcpy_s((void *)(iVar4 + 0x10),_DstSize,_Src,_DstSize);
+  *(int *)(iVar4 + 4) = iVar2;
+  piVar1 = (int *)((int)_Src + -4);
+  LOCK();
+  iVar2 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar2 == 1 || iVar2 + -1 < 0) {
+    (**(code **)(*(int *)*puVar5 + 4))(puVar5);
+  }
+  *(void **)this = (void *)(iVar4 + 0x10);
+  return;
+}
+
+
+
+=========== [5] FUN_100011c0 @ 100011c0
+
+void __thiscall FUN_100011c0(void *this,int param_1)
+
+{
+  int iVar1;
+  
+  iVar1 = *(int *)this;
+  if ((*(int *)(iVar1 + -8) < param_1) && (0 < param_1)) {
+    iVar1 = (**(code **)(**(int **)(iVar1 + -0x10) + 8))(iVar1 + -0x10,param_1,2);
+    if (iVar1 != 0) goto LAB_100011f0;
+  }
+  iVar1 = FUN_10001120();
+LAB_100011f0:
+  *(int *)this = iVar1 + 0x10;
+  return;
+}
+
+
+
+=========== [5] FUN_100090b3 @ 100090b3
+
+void __fastcall FUN_100090b3(int param_1)
+
+{
+  *(undefined4 *)(param_1 + 4) = 1;
+  return;
+}
+
+
+
+=========== [5] __EH_prolog3 @ 100f8fe3
+
+/* WARNING: This is an inlined function */
+/* WARNING: Unable to track spacebase fully for stack */
+/* WARNING: Variable defined which should be unmapped: param_1 */
+/* Library Function - Single Match
+    __EH_prolog3
+   
+   Libraries: Visual Studio 2005, Visual Studio 2008, Visual Studio 2010, Visual Studio 2012 */
+
+void __cdecl __EH_prolog3(int param_1)
+
+{
+  int iVar1;
+  undefined4 unaff_EBX;
+  undefined4 unaff_ESI;
+  undefined4 unaff_EDI;
+  undefined4 unaff_retaddr;
+  uint auStack_1c [5];
+  undefined1 local_8 [8];
+  
+  iVar1 = -param_1;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0x10) = unaff_EBX;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 0xc) = unaff_ESI;
+  *(undefined4 *)((int)auStack_1c + iVar1 + 8) = unaff_EDI;
+  *(uint *)((int)auStack_1c + iVar1 + 4) = DAT_10163564 ^ (uint)&param_1;
+  *(undefined4 *)((int)auStack_1c + iVar1) = unaff_retaddr;
+  ExceptionList = local_8;
+  return;
+}
+
+
+
+=========== [5] _wmemset @ 100f8845
+
+/* Library Function - Single Match
+    _wmemset
+   
+   Library: Visual Studio 2010 Release */
+
+wchar_t * __cdecl _wmemset(wchar_t *_S,wchar_t _C,size_t _N)
+
+{
+  uint uVar1;
+  wchar_t *pwVar2;
+  
+  if (_N != 0) {
+    pwVar2 = _S;
+    for (uVar1 = _N >> 1; uVar1 != 0; uVar1 = uVar1 - 1) {
+      *(uint *)pwVar2 = CONCAT22(_C,_C);
+      pwVar2 = pwVar2 + 2;
+    }
+    for (uVar1 = (uint)((_N & 1) != 0); uVar1 != 0; uVar1 = uVar1 - 1) {
+      *pwVar2 = _C;
+      pwVar2 = pwVar2 + 1;
+    }
+  }
+  return _S;
+}
+
+
+-- ext LoadResource
+-- ext LockResource
+-- ext SizeofResource
+
+=========== [5] GetData @ 1000bcd7
+
+/* WARNING: Function: __EH_prolog3 replaced with injection: EH_prolog3 */
+/* WARNING: Function: __EH_epilog3 replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    public: class CNoTrackObject * __thiscall CThreadLocalObject::GetData(class CNoTrackObject *
+   (__stdcall*)(void))
+   
+   Library: Visual Studio 2010 Release */
+
+CNoTrackObject * __thiscall
+CThreadLocalObject::GetData(CThreadLocalObject *this,_func_CNoTrackObject_ptr *param_1)
+
+{
+  int iVar1;
+  CNoTrackObject *pCVar2;
+  
+  if (param_1 == (_func_CNoTrackObject_ptr *)0x0) {
+LAB_1000bcf1:
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  if (*(int *)this == 0) {
+    if (DAT_10164b74 == (CThreadSlotData *)0x0) {
+      DAT_10164b74 = (CThreadSlotData *)
+                     CThreadSlotData::CThreadSlotData((CThreadSlotData *)&DAT_10164b78);
+      if (DAT_10164b74 == (CThreadSlotData *)0x0) goto LAB_1000bcf1;
+    }
+    iVar1 = CThreadSlotData::AllocSlot(DAT_10164b74);
+    *(int *)this = iVar1;
+    if (iVar1 == 0) goto LAB_1000bcf1;
+  }
+  pCVar2 = CThreadSlotData::GetThreadValue(DAT_10164b74,*(int *)this);
+  if (pCVar2 == (CNoTrackObject *)0x0) {
+    pCVar2 = (*param_1)();
+    CThreadSlotData::SetValue(DAT_10164b74,*(int *)this,pCVar2);
+  }
+  return pCVar2;
+}
+
+
+
+=========== [5] GetData @ 1000b8d6
+
+/* WARNING: Function: __EH_prolog3_catch replaced with injection: EH_prolog3 */
+/* WARNING: Function: __EH_epilog3 replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    public: class CNoTrackObject * __thiscall CProcessLocalObject::GetData(class CNoTrackObject *
+   (__stdcall*)(void))
+   
+   Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release */
+
+CNoTrackObject * __thiscall
+CProcessLocalObject::GetData(CProcessLocalObject *this,_func_CNoTrackObject_ptr *param_1)
+
+{
+  CNoTrackObject *pCVar1;
+  
+  if (*(int *)this == 0) {
+    AfxLockGlobals(0x10);
+    if (*(int *)this == 0) {
+      pCVar1 = (*param_1)();
+      *(CNoTrackObject **)this = pCVar1;
+    }
+    AfxUnlockGlobals(0x10);
+  }
+  return *(CNoTrackObject **)this;
+}
+
+
+
+#################### ROOT ~CDriverInterfaceClass @ 10007570
+
+=========== [0] ~CDriverInterfaceClass @ 10007570
+
+/* public: virtual __thiscall CDriverInterfaceClass::~CDriverInterfaceClass(void) */
+
+void __thiscall CDriverInterfaceClass::~CDriverInterfaceClass(CDriverInterfaceClass *this)
+
+{
+                    /* 0x7570  2  ??1CDriverInterfaceClass@@UAE@XZ */
+  *(undefined ***)this = vftable;
+  m_pThis = this;
+  FUN_10005cc0((int)(this + 4));
+  return;
+}
+
+
+
+=========== [1] FUN_10005cc0 @ 10005cc0
+
+void __fastcall FUN_10005cc0(int param_1)
+
+{
+  *(undefined ***)(param_1 + 0x1c) = CArray<class_Device*,class_Device*>::vftable;
+  if (*(void **)(param_1 + 0x20) != (void *)0x0) {
+    FUN_100085b9(*(void **)(param_1 + 0x20));
+  }
+  return;
+}
+
+
+
+#################### ROOT GetNumberOfConnectedDevices @ 10007590
+
+=========== [0] GetNumberOfConnectedDevices @ 10007590
+
+/* public: int __thiscall CDriverInterfaceClass::GetNumberOfConnectedDevices(void) */
+
+int __thiscall CDriverInterfaceClass::GetNumberOfConnectedDevices(CDriverInterfaceClass *this)
+
+{
+  int iVar1;
+  
+                    /* 0x7590  16  ?GetNumberOfConnectedDevices@CDriverInterfaceClass@@QAEHXZ */
+  iVar1 = FUN_10005ce0((int)(this + 4));
+  return iVar1;
+}
+
+
+
+=========== [1] FUN_10005ce0 @ 10005ce0
+
+undefined4 __fastcall FUN_10005ce0(int param_1)
+
+{
+  return *(undefined4 *)(param_1 + 0x24);
+}
+
+
+
+#################### ROOT GetDriverInfo @ 100075a0
+
+=========== [0] GetDriverInfo @ 100075a0
+
+/* public: void __thiscall CDriverInterfaceClass::GetDriverInfo(struct _BCO_USB_DRIVER_INFO &) */
+
+void __thiscall
+CDriverInterfaceClass::GetDriverInfo(CDriverInterfaceClass *this,_BCO_USB_DRIVER_INFO *param_1)
+
+{
+                    /* 0x75a0  13
+                       ?GetDriverInfo@CDriverInterfaceClass@@QAEXAAU_BCO_USB_DRIVER_INFO@@@Z */
+  FUN_10005500(param_1);
+  return;
+}
+
+
+
+=========== [1] FUN_10005500 @ 10005500
+
+void FUN_10005500(LPVOID param_1)
+
+{
+  FUN_10001240(&DAT_10164a28,param_1);
+  return;
+}
+
+
+
+#################### ROOT GetAsioBufferConfiguration @ 100075b0
+
+=========== [0] GetAsioBufferConfiguration @ 100075b0
+
+/* public: struct _BCO_USB_ASIO_BUFFER_SETTINGS __thiscall
+   CDriverInterfaceClass::GetAsioBufferConfiguration(void) */
+
+void __thiscall CDriverInterfaceClass::GetAsioBufferConfiguration(CDriverInterfaceClass *this)
+
+{
+  undefined4 *puVar1;
+  undefined4 *in_stack_00000004;
+  
+                    /* 0x75b0  5
+                       ?GetAsioBufferConfiguration@CDriverInterfaceClass@@QAE?AU_BCO_USB_ASIO_BUFFER_SETTINGS@@XZ
+                        */
+  puVar1 = FUN_10005510((int)(this + 4));
+  *in_stack_00000004 = *puVar1;
+  return;
+}
+
+
+
+=========== [1] FUN_10005510 @ 10005510
+
+LPVOID __fastcall FUN_10005510(int param_1)
+
+{
+  FUN_10001920(&DAT_10164a28,(LPVOID)(param_1 + 0x11));
+  return (LPVOID)(param_1 + 0x11);
+}
+
+
+
+=========== [2] FUN_10001920 @ 10001920
+
+DWORD __thiscall FUN_10001920(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a88,(LPVOID)0x0,0,param_1,4,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT GetStreamBufferConfiguration @ 100075d0
+
+=========== [0] GetStreamBufferConfiguration @ 100075d0
+
+/* public: struct _BCO_USB_STREAM_BUFFER_SETTINGS __thiscall
+   CDriverInterfaceClass::GetStreamBufferConfiguration(void) */
+
+void __thiscall CDriverInterfaceClass::GetStreamBufferConfiguration(CDriverInterfaceClass *this)
+
+{
+  undefined4 *puVar1;
+  undefined4 *in_stack_00000004;
+  
+                    /* 0x75d0  20
+                       ?GetStreamBufferConfiguration@CDriverInterfaceClass@@QAE?AU_BCO_USB_STREAM_BUFFER_SETTINGS@@XZ
+                        */
+  puVar1 = FUN_10005530((int)(this + 4));
+  *in_stack_00000004 = *puVar1;
+  return;
+}
+
+
+
+=========== [1] FUN_10005530 @ 10005530
+
+LPVOID __fastcall FUN_10005530(int param_1)
+
+{
+  FUN_10001820(&DAT_10164a28,(LPVOID)(param_1 + 0x15));
+  return (LPVOID)(param_1 + 0x15);
+}
+
+
+
+=========== [2] FUN_10001820 @ 10001820
+
+DWORD __thiscall FUN_10001820(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a80,(LPVOID)0x0,0,param_1,4,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT SetStreamBufferConfiguration @ 100075f0
+
+=========== [0] SetStreamBufferConfiguration @ 100075f0
+
+/* public: void __thiscall CDriverInterfaceClass::SetStreamBufferConfiguration(enum
+   tagBcoUsbStreamingMode) */
+
+void __thiscall
+CDriverInterfaceClass::SetStreamBufferConfiguration
+          (CDriverInterfaceClass *this,tagBcoUsbStreamingMode param_1)
+
+{
+                    /* 0x75f0  29
+                       ?SetStreamBufferConfiguration@CDriverInterfaceClass@@QAEXW4tagBcoUsbStreamingMode@@@Z
+                        */
+  FUN_10005550(param_1);
+  return;
+}
+
+
+
+=========== [1] FUN_10005550 @ 10005550
+
+void FUN_10005550(undefined4 param_1)
+
+{
+  undefined4 local_8;
+  
+  FUN_10001820(&DAT_10164a28,&local_8);
+  local_8 = param_1;
+  FUN_100018a0(&DAT_10164a28,&local_8);
+  FUN_10001e50(0x10164a28);
+  FUN_10001dd0(0x10164a28);
+  return;
+}
+
+
+
+=========== [2] FUN_100018a0 @ 100018a0
+
+DWORD __thiscall FUN_100018a0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a84,param_1,4,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [2] FUN_10001e50 @ 10001e50
+
+DWORD __fastcall FUN_10001e50(DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 4);
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)(param_1 + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)(param_1 + 0x1c),0x80892a04,(LPVOID)0x0,0,(LPVOID)0x0,0,
+                          &local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [2] FUN_10001dd0 @ 10001dd0
+
+DWORD __fastcall FUN_10001dd0(DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 4);
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)(param_1 + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)(param_1 + 0x1c),0x80892a00,(LPVOID)0x0,0,(LPVOID)0x0,0,
+                          &local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT SetAsioBufferConfiguration @ 10007600
+
+=========== [0] SetAsioBufferConfiguration @ 10007600
+
+/* public: void __thiscall CDriverInterfaceClass::SetAsioBufferConfiguration(int) */
+
+void __thiscall
+CDriverInterfaceClass::SetAsioBufferConfiguration(CDriverInterfaceClass *this,int param_1)
+
+{
+                    /* 0x7600  24  ?SetAsioBufferConfiguration@CDriverInterfaceClass@@QAEXH@Z */
+  FUN_10005590(param_1);
+  return;
+}
+
+
+
+=========== [1] FUN_10005590 @ 10005590
+
+void FUN_10005590(undefined4 param_1)
+
+{
+  undefined4 local_8;
+  
+  FUN_10001920(&DAT_10164a28,&local_8);
+  local_8 = param_1;
+  FUN_100019a0(&DAT_10164a28,&local_8);
+  FUN_10001e50(0x10164a28);
+  FUN_10001dd0(0x10164a28);
+  return;
+}
+
+
+
+=========== [2] FUN_100019a0 @ 100019a0
+
+DWORD __thiscall FUN_100019a0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a8c,param_1,4,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT GetSampleRateSelectionMode @ 10007610
+
+=========== [0] GetSampleRateSelectionMode @ 10007610
+
+/* public: int __thiscall CDriverInterfaceClass::GetSampleRateSelectionMode(void) */
+
+int __thiscall CDriverInterfaceClass::GetSampleRateSelectionMode(CDriverInterfaceClass *this)
+
+{
+  int iVar1;
+  
+                    /* 0x7610  19  ?GetSampleRateSelectionMode@CDriverInterfaceClass@@QAEHXZ */
+  iVar1 = FUN_100055d0();
+  return iVar1;
+}
+
+
+
+=========== [1] FUN_100055d0 @ 100055d0
+
+undefined4 FUN_100055d0(void)
+
+{
+  FUN_10001bb0(&DAT_10164a28,&DAT_10164aa8);
+  return DAT_10164aa8;
+}
+
+
+
+=========== [2] FUN_10001bb0 @ 10001bb0
+
+DWORD __thiscall FUN_10001bb0(void *this,undefined4 *param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  undefined1 local_10 [4];
+  undefined4 local_c;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892888,(LPVOID)0x0,0,local_10,8,&local_8
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 == 0) {
+    DVar2 = GetLastError();
+  }
+  else {
+    DVar2 = 0;
+  }
+  LeaveCriticalSection(lpCriticalSection);
+  if (DVar2 == 0) {
+    *param_1 = local_c;
+  }
+  return DVar2;
+}
+
+
+
+#################### ROOT SetSampleRateSelectionMode @ 10007620
+
+=========== [0] SetSampleRateSelectionMode @ 10007620
+
+/* public: void __thiscall CDriverInterfaceClass::SetSampleRateSelectionMode(enum
+   _BCO_USB_SAMPLE_RATE_SELECTION_MODE) */
+
+void __thiscall
+CDriverInterfaceClass::SetSampleRateSelectionMode
+          (CDriverInterfaceClass *this,_BCO_USB_SAMPLE_RATE_SELECTION_MODE param_1)
+
+{
+                    /* 0x7620  28
+                       ?SetSampleRateSelectionMode@CDriverInterfaceClass@@QAEXW4_BCO_USB_SAMPLE_RATE_SELECTION_MODE@@@Z
+                        */
+  FUN_100055f0(param_1);
+  return;
+}
+
+
+
+=========== [1] FUN_100055f0 @ 100055f0
+
+void FUN_100055f0(DWORD param_1)
+
+{
+  DAT_10164aa8 = param_1;
+  FUN_10001c30(&DAT_10164a28,param_1);
+  return;
+}
+
+
+
+=========== [2] FUN_10001c30 @ 10001c30
+
+DWORD __thiscall FUN_10001c30(void *this,DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  undefined4 local_c;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_c = 0;
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  param_1 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x8089288c,&local_c,8,(LPVOID)0x0,0,&param_1
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT GetAsioDropouts @ 10007630
+
+=========== [0] GetAsioDropouts @ 10007630
+
+/* public: int __thiscall CDriverInterfaceClass::GetAsioDropouts(void) */
+
+int __thiscall CDriverInterfaceClass::GetAsioDropouts(CDriverInterfaceClass *this)
+
+{
+  int iVar1;
+  
+                    /* 0x7630  6  ?GetAsioDropouts@CDriverInterfaceClass@@QAEHXZ */
+  iVar1 = FUN_10005610();
+  return iVar1;
+}
+
+
+
+=========== [1] FUN_10005610 @ 10005610
+
+void FUN_10005610(void)
+
+{
+  undefined1 local_44 [60];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  FUN_10001a20(&DAT_10164a28,local_44);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] FUN_10001a20 @ 10001a20
+
+DWORD __thiscall FUN_10001a20(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892ac8,(LPVOID)0x0,0,param_1,0x3c,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT SetDeviceNickName @ 10007640
+
+=========== [0] SetDeviceNickName @ 10007640
+
+/* public: void __thiscall CDriverInterfaceClass::SetDeviceNickName(wchar_t *,int) */
+
+void __thiscall
+CDriverInterfaceClass::SetDeviceNickName(CDriverInterfaceClass *this,wchar_t *param_1,int param_2)
+
+{
+                    /* 0x7640  27  ?SetDeviceNickName@CDriverInterfaceClass@@QAEXPA_WH@Z */
+  FUN_10006b10(this + 4,param_1,param_2);
+  return;
+}
+
+
+
+=========== [1] FUN_10006b10 @ 10006b10
+
+void __thiscall FUN_10006b10(void *this,BSTR param_1,int param_2)
+
+{
+  OLECHAR OVar1;
+  UINT UVar2;
+  int iVar3;
+  BSTR pOVar4;
+  uint uVar5;
+  
+  uVar5 = 0;
+  UVar2 = SysStringLen(param_1);
+  if (UVar2 != 0) {
+    do {
+      if (((param_2 < 0) || (DAT_10164a60 <= param_2)) ||
+         (*(char *)(*(int *)(DAT_10164a5c + param_2 * 4) + 0x60 + uVar5) = (char)param_1[uVar5],
+         DAT_10164a60 <= param_2)) goto LAB_10006b86;
+      *(undefined1 *)(*(int *)(DAT_10164a5c + param_2 * 4) + 0x61 + uVar5) = 0;
+      uVar5 = uVar5 + 1;
+      UVar2 = SysStringLen(param_1);
+    } while (uVar5 < UVar2);
+  }
+  if ((-1 < param_2) && (param_2 < *(int *)((int)this + 0x24))) {
+    if (param_1 == (BSTR)0x0) {
+      iVar3 = 0;
+    }
+    else {
+      pOVar4 = param_1;
+      do {
+        OVar1 = *pOVar4;
+        pOVar4 = pOVar4 + 1;
+      } while (OVar1 != L'\0');
+      iVar3 = (int)pOVar4 - (int)(param_1 + 1) >> 1;
+    }
+    FUN_10002180((void *)(*(int *)(*(int *)((int)this + 0x20) + param_2 * 4) + 0x34),param_1,iVar3);
+    FUN_10004660(&DAT_10164a28);
+    return;
+  }
+LAB_10006b86:
+                    /* WARNING: Subroutine does not return */
+  FUN_10009068();
+}
+
+
+-- ext SysStringLen
+
+=========== [2] FUN_10004660 @ 10004660
+
+DWORD __fastcall FUN_10004660(void *param_1)
+
+{
+  DWORD DVar1;
+  DWORD DVar2;
+  int iVar3;
+  
+  DVar2 = 0;
+  if (0 < *(int *)((int)param_1 + 0x38)) {
+    iVar3 = 0;
+    do {
+      if ((iVar3 < 0) || (*(int *)((int)param_1 + 0x38) <= iVar3)) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      DVar1 = FUN_100015f0(param_1,*(LPVOID *)(*(int *)((int)param_1 + 0x34) + iVar3 * 4));
+      if ((DVar1 != 0) && (DVar2 == 0)) {
+        DVar2 = DVar1;
+      }
+      iVar3 = iVar3 + 1;
+    } while (iVar3 < *(int *)((int)param_1 + 0x38));
+  }
+  return DVar2;
+}
+
+
+
+=========== [3] FUN_100015f0 @ 100015f0
+
+DWORD __thiscall FUN_100015f0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892924,param_1,0x200,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT GetChanProp @ 10007650
+
+=========== [0] GetChanProp @ 10007650
+
+/* public: struct _BCO_USB_CHANNEL_PROPERTIES __thiscall CDriverInterfaceClass::GetChanProp(int,enum
+   _BCO_USB_DIRECTION,int) */
+
+int __thiscall
+CDriverInterfaceClass::GetChanProp
+          (CDriverInterfaceClass *this,int param_1,_BCO_USB_DIRECTION param_2,int param_3)
+
+{
+  int in_stack_00000010;
+  
+                    /* 0x7650  7
+                       ?GetChanProp@CDriverInterfaceClass@@QAE?AU_BCO_USB_CHANNEL_PROPERTIES@@HW4_BCO_USB_DIRECTION@@H@Z
+                       0x7650  34
+                       ?getChannelProperties@CDriverInterfaceClass@@QAE?AU_BCO_USB_CHANNEL_PROPERTIES@@HW4_BCO_USB_DIRECTION@@H@Z
+                        */
+  FUN_10005cf0((undefined4 *)param_1,param_2,param_3,in_stack_00000010);
+  return param_1;
+}
+
+
+
+=========== [1] FUN_10005cf0 @ 10005cf0
+
+void FUN_10005cf0(undefined4 *param_1,undefined4 param_2,int param_3,int param_4)
+
+{
+  undefined4 local_870;
+  undefined1 local_86c [4];
+  undefined4 auStack_868 [257];
+  undefined4 auStack_464 [256];
+  undefined4 local_64;
+  undefined4 local_60;
+  undefined4 local_5c;
+  char local_58 [40];
+  char local_30 [40];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  FUN_100012c0(&DAT_10164a28,&DAT_10164a48);
+  _memset(local_86c,0,0x808);
+  FUN_10001680(&DAT_10164a28,local_86c);
+  if (param_3 == 0) {
+    local_870 = auStack_868[param_4];
+  }
+  else if (param_3 == 1) {
+    local_870 = auStack_464[param_4];
+  }
+  FUN_10001710(&DAT_10164a28,&local_870,&local_64);
+  *param_1 = local_64;
+  param_1[1] = local_60;
+  param_1[2] = local_5c;
+  _strncpy_s((char *)(param_1 + 3),0x28,local_58,0x28);
+  _strncpy_s((char *)(param_1 + 0xd),0x28,local_30,0x28);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] _strncpy_s @ 100f8948
+
+/* Library Function - Single Match
+    _strncpy_s
+   
+   Library: Visual Studio 2010 Release */
+
+errno_t __cdecl _strncpy_s(char *_Dst,rsize_t _SizeInBytes,char *_Src,rsize_t _MaxCount)
+
+{
+  char cVar1;
+  int *piVar2;
+  char *pcVar3;
+  int iVar4;
+  rsize_t rVar5;
+  errno_t eStack_14;
+  
+  if (_MaxCount == 0) {
+    if (_Dst == (char *)0x0) {
+      if (_SizeInBytes == 0) {
+        return 0;
+      }
+    }
+    else {
+LAB_100f896e:
+      if (_SizeInBytes != 0) {
+        if (_MaxCount == 0) {
+          *_Dst = '\0';
+          return 0;
+        }
+        if (_Src != (char *)0x0) {
+          rVar5 = _SizeInBytes;
+          if (_MaxCount == 0xffffffff) {
+            iVar4 = (int)_Dst - (int)_Src;
+            do {
+              cVar1 = *_Src;
+              _Src[iVar4] = cVar1;
+              _Src = _Src + 1;
+              if (cVar1 == '\0') break;
+              rVar5 = rVar5 - 1;
+            } while (rVar5 != 0);
+          }
+          else {
+            pcVar3 = _Dst;
+            do {
+              cVar1 = pcVar3[(int)_Src - (int)_Dst];
+              *pcVar3 = cVar1;
+              pcVar3 = pcVar3 + 1;
+              if ((cVar1 == '\0') || (rVar5 = rVar5 - 1, rVar5 == 0)) break;
+              _MaxCount = _MaxCount - 1;
+            } while (_MaxCount != 0);
+            if (_MaxCount == 0) {
+              *pcVar3 = '\0';
+            }
+          }
+          if (rVar5 != 0) {
+            return 0;
+          }
+          if (_MaxCount == 0xffffffff) {
+            _Dst[_SizeInBytes - 1] = '\0';
+            return 0x50;
+          }
+          *_Dst = '\0';
+          piVar2 = __errno();
+          eStack_14 = 0x22;
+          *piVar2 = 0x22;
+          goto LAB_100f897f;
+        }
+        *_Dst = '\0';
+      }
+    }
+  }
+  else if (_Dst != (char *)0x0) goto LAB_100f896e;
+  piVar2 = __errno();
+  eStack_14 = 0x16;
+  *piVar2 = 0x16;
+LAB_100f897f:
+  FUN_100fe6d4();
+  return eStack_14;
+}
+
+
+
+=========== [2] FUN_100012c0 @ 100012c0
+
+DWORD __thiscall FUN_100012c0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892810,(LPVOID)0x0,0,param_1,4,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [2] FUN_10001680 @ 10001680
+
+DWORD __thiscall FUN_10001680(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892864,(LPVOID)0x0,0,param_1,0x808,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [2] FUN_10001710 @ 10001710
+
+DWORD __thiscall FUN_10001710(void *this,LPVOID param_1,LPVOID param_2)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892980,param_1,4,param_2,0x5c,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT GetCurrentAudioMode @ 10007680
+
+=========== [0] GetCurrentAudioMode @ 10007680
+
+/* public: enum E_SelectorPosAudioMode __thiscall CDriverInterfaceClass::GetCurrentAudioMode(int) */
+
+E_SelectorPosAudioMode __thiscall
+CDriverInterfaceClass::GetCurrentAudioMode(CDriverInterfaceClass *this,int param_1)
+
+{
+  int iVar1;
+  
+                    /* 0x7680  8
+                       ?GetCurrentAudioMode@CDriverInterfaceClass@@QAE?AW4E_SelectorPosAudioMode@@H@Z
+                        */
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  return *(E_SelectorPosAudioMode *)(iVar1 + 0x4c);
+}
+
+
+
+=========== [1] FUN_10006a20 @ 10006a20
+
+undefined4 __thiscall FUN_10006a20(void *this,int param_1)
+
+{
+  if (*(int *)((int)this + 0x24) == 0) {
+    FUN_10006870(this);
+  }
+  if (param_1 < *(int *)((int)this + 0x24)) {
+    if ((-1 < param_1) && (param_1 < *(int *)((int)this + 0x24))) {
+      return *(undefined4 *)(*(int *)((int)this + 0x20) + param_1 * 4);
+    }
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  return 0;
+}
+
+
+
+#################### ROOT GetCurrentSpdifInputDetectionStatus @ 100076a0
+
+=========== [0] GetCurrentSpdifInputDetectionStatus @ 100076a0
+
+/* public: class DigitalInputState __thiscall
+   CDriverInterfaceClass::GetCurrentSpdifInputDetectionStatus(int) */
+
+int __thiscall
+CDriverInterfaceClass::GetCurrentSpdifInputDetectionStatus(CDriverInterfaceClass *this,int param_1)
+
+{
+  void *this_00;
+  int in_stack_00000008;
+  undefined4 *puVar1;
+  
+                    /* 0x76a0  10
+                       ?GetCurrentSpdifInputDetectionStatus@CDriverInterfaceClass@@QAE?AVDigitalInputState@@H@Z
+                        */
+  *(undefined1 *)param_1 = 0;
+  *(undefined4 *)(param_1 + 4) = 0xf;
+  puVar1 = (undefined4 *)param_1;
+  this_00 = (void *)FUN_10006a20(this + 4,in_stack_00000008);
+  FUN_10005c40(this_00,puVar1);
+  return param_1;
+}
+
+
+
+=========== [1] FUN_10005c40 @ 10005c40
+
+undefined4 __thiscall FUN_10005c40(void *this,undefined4 *param_1)
+
+{
+  undefined4 *puVar1;
+  undefined1 local_c [8];
+  
+  if (*(int *)((int)this + 0x94) != 0) {
+    puVar1 = (undefined4 *)FUN_100051f0(this,(int)local_c,1);
+    *param_1 = *puVar1;
+    param_1[1] = puVar1[1];
+    return 0;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_100051f0 @ 100051f0
+
+void __thiscall FUN_100051f0(void *this,int param_1,undefined2 param_2)
+
+{
+  undefined1 local_820 [4];
+  undefined2 local_81c;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  undefined2 local_80e;
+  undefined4 local_80c;
+  undefined1 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_80e = param_2;
+  local_81c = 0;
+  local_80c = 0x20000;
+  local_818 = 1;
+  local_813 = 0;
+  local_817 = 2;
+  local_80f = 0x82;
+  local_808 = 0;
+  (**(code **)(**(int **)((int)this + 0x94) + 0x20))(&local_818,0x810,&local_81c,2,local_820);
+  *(uint *)(param_1 + 4) = (uint)local_81c._1_1_;
+  *(bool *)param_1 = (char)local_81c != '\0';
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT GetCurrentOpticalInputDetectionStatus @ 100076d0
+
+=========== [0] GetCurrentOpticalInputDetectionStatus @ 100076d0
+
+/* public: class DigitalInputState __thiscall
+   CDriverInterfaceClass::GetCurrentOpticalInputDetectionStatus(int) */
+
+int __thiscall
+CDriverInterfaceClass::GetCurrentOpticalInputDetectionStatus
+          (CDriverInterfaceClass *this,int param_1)
+
+{
+  void *this_00;
+  int in_stack_00000008;
+  undefined4 *puVar1;
+  
+                    /* 0x76d0  9
+                       ?GetCurrentOpticalInputDetectionStatus@CDriverInterfaceClass@@QAE?AVDigitalInputState@@H@Z
+                        */
+  *(undefined1 *)param_1 = 0;
+  *(undefined4 *)(param_1 + 4) = 0xf;
+  puVar1 = (undefined4 *)param_1;
+  this_00 = (void *)FUN_10006a20(this + 4,in_stack_00000008);
+  FUN_10005c80(this_00,puVar1);
+  return param_1;
+}
+
+
+
+=========== [1] FUN_10005c80 @ 10005c80
+
+undefined4 __thiscall FUN_10005c80(void *this,undefined4 *param_1)
+
+{
+  undefined4 *puVar1;
+  undefined1 local_c [8];
+  
+  if (*(int *)((int)this + 0x94) != 0) {
+    puVar1 = (undefined4 *)FUN_100051f0(this,(int)local_c,2);
+    *param_1 = *puVar1;
+    param_1[1] = puVar1[1];
+    return 0;
+  }
+  return 0xe0000001;
+}
+
+
+
+#################### ROOT GetLevelMeterData @ 10007700
+
+=========== [0] GetLevelMeterData @ 10007700
+
+/* public: bool __thiscall CDriverInterfaceClass::GetLevelMeterData(int,int,double *,unsigned long
+   *) */
+
+bool __thiscall
+CDriverInterfaceClass::GetLevelMeterData
+          (CDriverInterfaceClass *this,int param_1,int param_2,double *param_3,ulong *param_4)
+
+{
+  undefined1 uVar1;
+  int iVar2;
+  void *this_00;
+  double **ppdVar3;
+  ulong *puVar4;
+  
+                    /* 0x7700  15  ?GetLevelMeterData@CDriverInterfaceClass@@QAE_NHHPANPAK@Z */
+  iVar2 = FUN_10006a20(this + 4,param_1);
+  if (iVar2 != 0) {
+    *(int *)(iVar2 + 0x44) = param_2;
+    ppdVar3 = &param_3;
+    puVar4 = param_4;
+    this_00 = (void *)FUN_10006a20(this + 4,param_1);
+    uVar1 = FUN_100059b0(this_00,ppdVar3,(int *)puVar4);
+    return (bool)uVar1;
+  }
+  return false;
+}
+
+
+
+=========== [1] FUN_100059b0 @ 100059b0
+
+undefined1 __thiscall FUN_100059b0(void *this,undefined4 *param_1,int *param_2)
+
+{
+  undefined1 uVar1;
+  
+  if (*(int *)((int)this + 0x94) != 0) {
+    uVar1 = FUN_100052a0(this,param_1,param_2);
+    return uVar1;
+  }
+  return 0;
+}
+
+
+
+=========== [2] FUN_100052a0 @ 100052a0
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __thiscall FUN_100052a0(void *this,undefined4 *param_1,int *param_2)
+
+{
+  double dVar1;
+  double dVar2;
+  int iVar3;
+  double *pdVar4;
+  undefined1 local_8a4 [8];
+  int *local_89c;
+  undefined1 local_898;
+  undefined4 local_897;
+  undefined4 local_893;
+  undefined1 local_88f;
+  undefined4 local_88e;
+  short local_88a;
+  undefined1 local_888;
+  int local_88 [33];
+  
+  local_88[0x20] = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_89c = param_2;
+  if (*(int *)((int)this + 0x44) != 0) {
+    local_88[0] = 0;
+    local_88[1] = 0;
+    local_88[2] = 0;
+    local_88[3] = 0;
+    local_88[4] = 0;
+    local_88[5] = 0;
+    local_88[6] = 0;
+    local_88[7] = 0;
+    local_88[8] = 0;
+    local_88[9] = 0;
+    local_88[10] = 0;
+    local_88[0xb] = 0;
+    local_88[0xc] = 0;
+    local_88[0xd] = 0;
+    local_88[0xe] = 0;
+    local_88[0xf] = 0;
+    local_88[0x10] = 0;
+    local_88[0x11] = 0;
+    local_88[0x12] = 0;
+    local_88[0x13] = 0;
+    local_88[0x14] = 0;
+    local_88[0x15] = 0;
+    local_88[0x16] = 0;
+    local_88[0x17] = 0;
+    local_88[0x18] = 0;
+    local_88[0x19] = 0;
+    local_88[0x1a] = 0;
+    local_88[0x1b] = 0;
+    local_88[0x1c] = 0;
+    local_88[0x1d] = 0;
+    local_88[0x1e] = 0;
+    local_88[0x1f] = 0;
+    local_893 = 0;
+    local_888 = 0;
+    local_88a = (*(short *)((int)this + 0x44) + 1) * 4;
+    local_88e = 0;
+    local_898 = 1;
+    local_897 = 2;
+    local_88f = 0x81;
+    iVar3 = (**(code **)(**(int **)((int)this + 0x94) + 0x20))
+                      (&local_898,0x810,local_88,*(int *)((int)this + 0x44) * 4 + 4,local_8a4);
+    dVar2 = _DAT_1011d0b0;
+    if (iVar3 == 0) {
+      if (0 < *(int *)((int)this + 0x44)) {
+        iVar3 = 0;
+        pdVar4 = (double *)*param_1;
+        do {
+          dVar1 = (double)local_88[iVar3];
+          if (local_88[iVar3] < 0) {
+            dVar1 = dVar1 + _DAT_1011d0a8;
+          }
+          iVar3 = iVar3 + 1;
+          *pdVar4 = dVar1 / dVar2;
+          pdVar4 = pdVar4 + 1;
+        } while (iVar3 < *(int *)((int)this + 0x44));
+      }
+      *local_89c = local_88[*(int *)((int)this + 0x44)];
+      __security_check_cookie(local_88[0x20] ^ (uint)&stack0xfffffffc);
+      return;
+    }
+  }
+  __security_check_cookie(local_88[0x20] ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT GetFirmwareVersion @ 10007750
+
+=========== [0] GetFirmwareVersion @ 10007750
+
+/* public: unsigned int __thiscall CDriverInterfaceClass::GetFirmwareVersion(int) */
+
+uint __thiscall CDriverInterfaceClass::GetFirmwareVersion(CDriverInterfaceClass *this,int param_1)
+
+{
+  void *pvVar1;
+  uint uVar2;
+  
+                    /* 0x7750  14  ?GetFirmwareVersion@CDriverInterfaceClass@@QAEIH@Z */
+  pvVar1 = (void *)FUN_10006a20(this + 4,param_1);
+  uVar2 = FUN_100059d0(pvVar1);
+  return uVar2;
+}
+
+
+
+=========== [1] FUN_100059d0 @ 100059d0
+
+undefined4 __fastcall FUN_100059d0(void *param_1)
+
+{
+  int iVar1;
+  undefined4 local_8;
+  
+  local_8 = 0;
+  iVar1 = FUN_10005420(param_1,&local_8);
+  if (iVar1 != 0) {
+    return 0xffffffff;
+  }
+  return local_8;
+}
+
+
+
+=========== [2] FUN_10005420 @ 10005420
+
+void __thiscall FUN_10005420(void *this,undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 local_820;
+  undefined4 local_81c;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  undefined2 local_80e;
+  undefined4 local_80c;
+  undefined4 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_80e = 8;
+  local_813 = 0;
+  local_808 = 0;
+  local_81c = 0;
+  local_820 = 0;
+  local_80c = 0x20000;
+  local_818 = 1;
+  local_817 = 2;
+  local_80f = 0x82;
+  iVar1 = (**(code **)(**(int **)((int)this + 0x94) + 0x20))
+                    (&local_818,0x810,&local_81c,2,&local_820);
+  if (iVar1 != 0) {
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  *param_1 = local_81c;
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT ConnectDevice @ 10007770
+
+=========== [0] ConnectDevice @ 10007770
+
+/* public: bool __thiscall CDriverInterfaceClass::ConnectDevice(int) */
+
+bool __thiscall CDriverInterfaceClass::ConnectDevice(CDriverInterfaceClass *this,int param_1)
+
+{
+  int iVar1;
+  undefined1 *puVar2;
+  
+                    /* 0x7770  4  ?ConnectDevice@CDriverInterfaceClass@@QAE_NH@Z */
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  if (iVar1 != 0) {
+    puVar2 = FUN_10006da0(iVar1);
+    return (bool)('\x01' - (puVar2 != (undefined1 *)0x0));
+  }
+  return false;
+}
+
+
+
+=========== [1] FUN_10006da0 @ 10006da0
+
+undefined1 * __fastcall FUN_10006da0(int param_1)
+
+{
+  int *piVar1;
+  int iVar2;
+  undefined1 *puVar3;
+  
+  piVar1 = FUN_10005e30((int *)(*(int *)(param_1 + 0x38) + -0x10));
+  iVar2 = FUN_10006bc0(*(void **)(param_1 + 0x58),(int)(piVar1 + 4));
+  *(int *)(param_1 + 0x1c) = iVar2;
+  if (iVar2 == -1) {
+    return (undefined1 *)0xe0000001;
+  }
+  if (*(int *)(param_1 + 0x94) != 0) {
+    puVar3 = (undefined1 *)FUN_10005f00(param_1);
+    FUN_10005a70(param_1);
+    return puVar3;
+  }
+  FUN_10005a70(param_1);
+  return &stack0xffffffec;
+}
+
+
+
+=========== [2] FUN_10006bc0 @ 10006bc0
+
+undefined4 __thiscall FUN_10006bc0(void *this,int param_1)
+
+{
+  int *piVar1;
+  undefined4 *puVar2;
+  undefined4 uVar3;
+  bool bVar4;
+  uint uVar5;
+  int iVar6;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_1010e9e8;
+  local_10 = ExceptionList;
+  uVar5 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  iVar6 = FUN_10002000(&DAT_10164a28,*(ulong *)this,*(undefined4 *)((int)this + 4),
+                       *(undefined4 *)((int)this + 8),*(undefined4 *)((int)this + 0xc));
+  if (iVar6 == 0) {
+    iVar6 = FUN_10004550(&DAT_10164a28);
+    if (iVar6 == 0) {
+      SetupDiGetClassDevsA(this,(PCSTR)0x0,(HWND)0x0,0x12);
+      if (DAT_10164a60 < 1) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      puVar2 = (undefined4 *)*DAT_10164a5c;
+      bVar4 = FUN_10006a60((LPCSTR)(puVar2 + 0x22),(ushort *)&param_1);
+      if (bVar4) {
+        uVar3 = *puVar2;
+        local_8 = 0xffffffff;
+        piVar1 = (int *)(param_1 + -4);
+        LOCK();
+        iVar6 = *piVar1;
+        *piVar1 = *piVar1 + -1;
+        UNLOCK();
+        if (iVar6 == 1 || iVar6 + -1 < 0) {
+          (**(code **)(**(int **)(param_1 + -0x10) + 4))((undefined4 *)(param_1 + -0x10));
+        }
+        ExceptionList = local_10;
+        return uVar3;
+      }
+    }
+  }
+  local_8 = 0xffffffff;
+  piVar1 = (int *)(param_1 + -4);
+  LOCK();
+  iVar6 = *piVar1;
+  *piVar1 = *piVar1 + -1;
+  UNLOCK();
+  if (iVar6 == 1 || iVar6 + -1 < 0) {
+    (**(code **)(**(int **)(param_1 + -0x10) + 4))((undefined4 *)(param_1 + -0x10),uVar5);
+  }
+  ExceptionList = local_10;
+  return 0xffffffff;
+}
+
+
+
+=========== [2] FUN_10005f00 @ 10005f00
+
+undefined4 __fastcall FUN_10005f00(int param_1)
+
+{
+  ulong *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  HDEVINFO pvVar4;
+  
+  uVar2 = FUN_10002000(&DAT_10164a28,*(ulong *)(param_1 + 0xc),*(undefined4 *)(param_1 + 0x10),
+                       *(undefined4 *)(param_1 + 0x14),*(undefined4 *)(param_1 + 0x18));
+  iVar3 = FUN_10004550(&DAT_10164a28);
+  if (iVar3 != 0) {
+    return uVar2;
+  }
+  pvVar4 = SetupDiGetClassDevsA((GUID *)(param_1 + 0xc),(PCSTR)0x0,(HWND)0x0,0x12);
+  iVar3 = (**(code **)(**(int **)(param_1 + 0x94) + 8))(0,pvVar4,(GUID *)(param_1 + 0xc));
+  if (iVar3 != 0) {
+    iVar3 = (**(code **)(**(int **)(param_1 + 0x94) + 0x10))(1,100);
+    if (iVar3 != 0) {
+      return 0xe0000001;
+    }
+  }
+  FUN_100049e0((void *)(param_1 + 0x98),FUN_10005990);
+  puVar1 = *(ulong **)(param_1 + 0x58);
+  FUN_10004b20((void *)(param_1 + 0x98),*puVar1,puVar1[1],puVar1[2],puVar1[3]);
+  return 0;
+}
+
+
+
+=========== [3] FUN_10006a60 @ 10006a60
+
+bool __cdecl FUN_10006a60(LPCSTR param_1,ushort *param_2)
+
+{
+  int iVar1;
+  ushort uVar2;
+  int *piVar3;
+  undefined **ppuVar4;
+  ushort *puVar5;
+  int iVar6;
+  ushort *puVar7;
+  bool bVar8;
+  
+  puVar7 = param_2;
+  if ((*(int **)(*(int *)param_2 + -0x10) == (int *)0x0) ||
+     (piVar3 = (int *)(**(code **)(**(int **)(*(int *)param_2 + -0x10) + 0x10))(),
+     piVar3 == (int *)0x0)) {
+    ppuVar4 = FUN_1000ad47();
+    piVar3 = (int *)(**(code **)(*ppuVar4 + 0x10))();
+  }
+  FUN_100067d0(&param_2,param_1,piVar3);
+  puVar7 = *(ushort **)puVar7;
+  puVar5 = param_2;
+  if (puVar7 == (ushort *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  do {
+    uVar2 = *puVar5;
+    bVar8 = uVar2 < *puVar7;
+    if (uVar2 != *puVar7) {
+LAB_10006ad6:
+      iVar6 = (1 - (uint)bVar8) - (uint)(bVar8 != 0);
+      goto LAB_10006adb;
+    }
+    if (uVar2 == 0) break;
+    uVar2 = puVar5[1];
+    bVar8 = uVar2 < puVar7[1];
+    if (uVar2 != puVar7[1]) goto LAB_10006ad6;
+    puVar7 = puVar7 + 2;
+    puVar5 = puVar5 + 2;
+  } while (uVar2 != 0);
+  iVar6 = 0;
+LAB_10006adb:
+  puVar7 = param_2 + -2;
+  LOCK();
+  iVar1 = *(int *)puVar7;
+  *(int *)puVar7 = *(int *)puVar7 + -1;
+  UNLOCK();
+  if (iVar1 == 1 || iVar1 + -1 < 0) {
+    (**(code **)(**(int **)(param_2 + -8) + 4))(param_2 + -8);
+  }
+  return iVar6 == 0;
+}
+
+
+
+=========== [3] FUN_10004b20 @ 10004b20
+
+DWORD __thiscall
+FUN_10004b20(void *this,ulong param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  DWORD DVar1;
+  uintptr_t uVar2;
+  uint local_18;
+  LPCRITICAL_SECTION local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e7b8;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x40);
+  local_14 = lpCriticalSection;
+  EnterCriticalSection(lpCriticalSection);
+  local_8 = 0;
+  ResetEvent(*(HANDLE *)((int)this + 0x38));
+  ResetEvent(*(HANDLE *)((int)this + 0x3c));
+  DVar1 = FUN_10002000(this,param_1,param_2,param_3,param_4);
+  if (DVar1 == 0) {
+    DVar1 = FUN_100013c0(this,*(DWORD *)((int)this + 0x3c));
+    if (DVar1 == 0) {
+      uVar2 = __beginthreadex((void *)0x0,0,FUN_10004b10,this,0,&local_18);
+      *(uintptr_t *)((int)this + 0x34) = uVar2;
+      if (uVar2 == 0) {
+        FUN_10001090((int)this);
+        LeaveCriticalSection(lpCriticalSection);
+        ExceptionList = local_10;
+        return 0xe0000001;
+      }
+      LeaveCriticalSection(lpCriticalSection);
+      ExceptionList = local_10;
+      return 0;
+    }
+    FUN_10001090((int)this);
+  }
+  LeaveCriticalSection(lpCriticalSection);
+  ExceptionList = local_10;
+  return DVar1;
+}
+
+
+
+=========== [3] FUN_100049e0 @ 100049e0
+
+void __thiscall FUN_100049e0(void *this,undefined4 param_1)
+
+{
+  *(undefined4 *)((int)this + 0x20) = param_1;
+  return;
+}
+
+
+
+=========== [4] FUN_100067d0 @ 100067d0
+
+int * __thiscall FUN_100067d0(void *this,LPCSTR param_1,int *param_2)
+
+{
+  int iVar1;
+  HMODULE pHVar2;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e938;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  if (param_2 == (int *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar1 = (**(code **)(*param_2 + 0xc))(DAT_10163564 ^ (uint)&stack0xfffffffc);
+  *(int *)this = iVar1 + 0x10;
+  local_8 = 0;
+  if ((param_1 == (LPCSTR)0x0) || (((uint)param_1 & 0xffff0000) != 0)) {
+    FUN_10006450(this,param_1);
+  }
+  else {
+    pHVar2 = (HMODULE)FUN_1000ac62();
+    if (pHVar2 != (HMODULE)0x0) {
+      FUN_10006200(this,pHVar2,(uint)param_1 & 0xffff);
+    }
+  }
+  ExceptionList = local_10;
+  return this;
+}
+
+
+-- ext ResetEvent
+
+=========== [4] FUN_100013c0 @ 100013c0
+
+DWORD __thiscall FUN_100013c0(void *this,DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  param_1 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892820,&local_8,4,(LPVOID)0x0,0,&param_1
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [4] __beginthreadex @ 100f710f
+
+/* Library Function - Single Match
+    __beginthreadex
+   
+   Library: Visual Studio 2010 Release */
+
+uintptr_t __cdecl
+__beginthreadex(void *_Security,uint _StackSize,_StartAddress *_StartAddress,void *_ArgList,
+               uint _InitFlag,uint *_ThrdAddr)
+
+{
+  _StartAddress *p_Var1;
+  int *piVar2;
+  _ptiddata _Ptd;
+  _ptiddata p_Var3;
+  _StartAddress **lpThreadId;
+  HANDLE pvVar4;
+  DWORD DVar5;
+  
+  p_Var1 = _StartAddress;
+  DVar5 = 0;
+  if (_StartAddress == (_StartAddress *)0x0) {
+    piVar2 = __errno();
+    *piVar2 = 0x16;
+    FUN_100fe6d4();
+  }
+  else {
+    ___set_flsgetvalue();
+    _Ptd = __calloc_crt(1,0x214);
+    if (_Ptd != (_ptiddata)0x0) {
+      p_Var3 = __getptd();
+      __initptd(_Ptd,p_Var3->ptlocinfo);
+      _Ptd->_thandle = 0xffffffff;
+      _Ptd->_initarg = _ArgList;
+      _Ptd->_initaddr = p_Var1;
+      lpThreadId = (_StartAddress **)_ThrdAddr;
+      if (_ThrdAddr == (uint *)0x0) {
+        lpThreadId = &_StartAddress;
+      }
+      pvVar4 = CreateThread(_Security,_StackSize,__threadstartex_4,_Ptd,_InitFlag,
+                            (LPDWORD)lpThreadId);
+      if (pvVar4 != (HANDLE)0x0) {
+        return (uintptr_t)pvVar4;
+      }
+      DVar5 = GetLastError();
+    }
+    _free(_Ptd);
+    if (DVar5 != 0) {
+      __dosmaperr(DVar5);
+    }
+  }
+  return 0;
+}
+
+
+
+=========== [5] __dosmaperr @ 100f9194
+
+/* Library Function - Single Match
+    __dosmaperr
+   
+   Libraries: Visual Studio 2008 Release, Visual Studio 2010 Release */
+
+void __cdecl __dosmaperr(ulong param_1)
+
+{
+  ulong *puVar1;
+  int iVar2;
+  int *piVar3;
+  
+  puVar1 = ___doserrno();
+  *puVar1 = param_1;
+  iVar2 = __get_errno_from_oserr(param_1);
+  piVar3 = __errno();
+  *piVar3 = iVar2;
+  return;
+}
+
+
+
+=========== [5] __calloc_crt @ 100ffbd7
+
+/* Library Function - Single Match
+    __calloc_crt
+   
+   Library: Visual Studio 2010 Release */
+
+void * __cdecl __calloc_crt(size_t _Count,size_t _Size)
+
+{
+  LPVOID pvVar1;
+  uint dwMilliseconds;
+  
+  dwMilliseconds = 0;
+  while( true ) {
+    pvVar1 = __calloc_impl(_Count,_Size,(undefined4 *)0x0);
+    if (pvVar1 != (LPVOID)0x0) {
+      return pvVar1;
+    }
+    if (DAT_1016a518 == 0) break;
+    Sleep(dwMilliseconds);
+    dwMilliseconds = dwMilliseconds + 1000;
+    if (DAT_1016a518 < dwMilliseconds) {
+      dwMilliseconds = 0xffffffff;
+    }
+    if (dwMilliseconds == 0xffffffff) {
+      return (void *)0x0;
+    }
+  }
+  return (void *)0x0;
+}
+
+
+
+=========== [5] __getptd @ 100ff6f6
+
+/* Library Function - Single Match
+    __getptd
+   
+   Library: Visual Studio 2010 Release */
+
+_ptiddata __cdecl __getptd(void)
+
+{
+  _ptiddata p_Var1;
+  
+  p_Var1 = __getptd_noexit();
+  if (p_Var1 == (_ptiddata)0x0) {
+    __amsg_exit(0x10);
+  }
+  return p_Var1;
+}
+
+
+-- ext CreateThread
+
+=========== [5] ___set_flsgetvalue @ 100ff53b
+
+/* Library Function - Single Match
+    ___set_flsgetvalue
+   
+   Library: Visual Studio 2010 Release */
+
+LPVOID ___set_flsgetvalue(void)
+
+{
+  LPVOID lpTlsValue;
+  
+  lpTlsValue = TlsGetValue(DAT_10163724);
+  if (lpTlsValue == (LPVOID)0x0) {
+    lpTlsValue = DecodePointer(DAT_1016a50c);
+    TlsSetValue(DAT_10163724,lpTlsValue);
+  }
+  return lpTlsValue;
+}
+
+
+
+=========== [5] __initptd @ 100ff5c9
+
+/* WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4 */
+/* WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    __initptd
+   
+   Library: Visual Studio 2010 Release */
+
+void __cdecl __initptd(_ptiddata _Ptd,pthreadlocinfo _Locale)
+
+{
+  GetModuleHandleW(L"KERNEL32.DLL");
+  _Ptd->_pxcptacttab = &DAT_10141588;
+  _Ptd->_terrno = 0;
+  _Ptd->_holdrand = 1;
+  _Ptd->_ownlocale = 1;
+  *(undefined1 *)((_Ptd->_setloc_data)._cachein + 8) = 0x43;
+  *(undefined1 *)((int)(_Ptd->_setloc_data)._cachein + 0x93) = 0x43;
+  _Ptd->ptmbcinfo = (pthreadmbcinfo)&DAT_10163750;
+  __lock(0xd);
+  InterlockedIncrement(&_Ptd->ptmbcinfo->refcount);
+  FUN_100ff66b();
+  __lock(0xc);
+  _Ptd->ptlocinfo = _Locale;
+  if (_Locale == (pthreadlocinfo)0x0) {
+    _Ptd->ptlocinfo = (pthreadlocinfo)PTR_DAT_10163eb8;
+  }
+  ___addlocaleref(&_Ptd->ptlocinfo->refcount);
+  FUN_100ff674();
+  return;
+}
+
+
+
+#################### ROOT setChannelInputMonitorVol @ 100077a0
+
+=========== [0] setChannelInputMonitorVol @ 100077a0
+
+/* public: void __thiscall CDriverInterfaceClass::setChannelInputMonitorVol(int,int,enum
+   E_Channel,double) */
+
+void __thiscall
+CDriverInterfaceClass::setChannelInputMonitorVol
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,double param_4)
+
+{
+  void *this_00;
+  
+                    /* 0x77a0  41
+                       ?setChannelInputMonitorVol@CDriverInterfaceClass@@QAEXHHW4E_Channel@@N@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004ec0(this_00,param_2,param_3);
+  return;
+}
+
+
+
+=========== [1] FUN_10004ec0 @ 10004ec0
+
+undefined4 __thiscall FUN_10004ec0(void *this,undefined4 param_1,int param_2)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int **)((int)this + 0x94) != (int *)0x0) {
+    uVar1 = FUN_10003bb0(*(int **)((int)this + 0x94),param_1,param_1,param_2);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_10003bb0 @ 10003bb0
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __fastcall FUN_10003bb0(int *param_1,undefined4 param_2,uint param_3,int param_4)
+
+{
+  int *piVar1;
+  int iVar2;
+  ulonglong uVar3;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  short local_80e;
+  undefined2 local_80c;
+  undefined2 local_80a;
+  undefined2 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  uVar3 = FUN_100f8660(param_1,param_2);
+  piVar1 = FUN_10003930(param_1 + 1,param_3);
+  if (piVar1 != (int *)0x0) {
+    if (piVar1[param_4] != (int)uVar3) {
+      local_80e = (short)param_4 + 0x200;
+      local_813 = 1;
+      local_817 = 1;
+      local_80f = 1;
+      local_80a = 2;
+      local_80c = (undefined2)(param_3 << 8);
+      local_818 = 0;
+      local_808 = (undefined2)uVar3;
+      iVar2 = (**(code **)(*param_1 + 0x20))(&local_818,0x810,0,0,0);
+      if (iVar2 != 0) goto LAB_10003c48;
+      piVar1[param_4] = (int)uVar3;
+    }
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  AfxMessageBox(L"FeatureBlockID not defined",0,0);
+LAB_10003c48:
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [3] FUN_10003930 @ 10003930
+
+int * __thiscall FUN_10003930(void *this,uint param_1)
+
+{
+  uint uVar1;
+  uint uVar2;
+  int *piVar3;
+  void *_Dst;
+  void *local_8;
+  
+  uVar2 = param_1;
+  local_8 = this;
+  piVar3 = FUN_100035e0(this,param_1,(uint *)&local_8,&param_1);
+  if (piVar3 == (int *)0x0) {
+    if (*(int *)((int)this + 4) == 0) {
+      uVar1 = *(uint *)((int)this + 8);
+      _Dst = (void *)FUN_100085c4(-(uint)((int)((ulonglong)uVar1 * 4 >> 0x20) != 0) |
+                                  (uint)((ulonglong)uVar1 * 4));
+      *(void **)((int)this + 4) = _Dst;
+      if (_Dst == (void *)0x0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      _memset(_Dst,0,uVar1 * 4);
+      *(uint *)((int)this + 8) = uVar1;
+      if (*(int *)((int)this + 4) == 0) {
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+    }
+    piVar3 = (int *)FUN_10003880(this,uVar2);
+    piVar3[9] = param_1;
+    piVar3[8] = *(int *)(*(int *)((int)this + 4) + (int)local_8 * 4);
+    *(int **)(*(int *)((int)this + 4) + (int)local_8 * 4) = piVar3;
+  }
+  return piVar3 + 1;
+}
+
+
+
+=========== [3] FUN_100f8660 @ 100f8660
+
+ulonglong __fastcall FUN_100f8660(undefined4 param_1,undefined4 param_2)
+
+{
+  ulonglong uVar1;
+  uint uVar2;
+  float fVar3;
+  float10 in_ST0;
+  uint uStack_20;
+  float fStack_1c;
+  
+  if (DAT_1016c0c0 == 0) {
+    uVar1 = (ulonglong)ROUND(in_ST0);
+    uStack_20 = (uint)uVar1;
+    fStack_1c = (float)(uVar1 >> 0x20);
+    fVar3 = (float)in_ST0;
+    if ((uStack_20 != 0) || (fVar3 = fStack_1c, (uVar1 & 0x7fffffff00000000) != 0)) {
+      if ((int)fVar3 < 0) {
+        uVar1 = uVar1 + (0x80000000 < (uint)-(float)(in_ST0 - (float10)(longlong)uVar1));
+      }
+      else {
+        uVar2 = (uint)(0x80000000 < (uint)(float)(in_ST0 - (float10)(longlong)uVar1));
+        uVar1 = CONCAT44((int)fStack_1c - (uint)(uStack_20 < uVar2),uStack_20 - uVar2);
+      }
+    }
+    return uVar1;
+  }
+  return CONCAT44(param_2,(int)in_ST0);
+}
+
+
+
+=========== [3] AfxMessageBox @ 1000a0d4
+
+/* Library Function - Single Match
+    int __stdcall AfxMessageBox(wchar_t const *,unsigned int,unsigned int)
+   
+   Library: Visual Studio 2010 Release */
+
+int AfxMessageBox(wchar_t *param_1,uint param_2,uint param_3)
+
+{
+  AFX_MODULE_STATE *pAVar1;
+  int iVar2;
+  
+  pAVar1 = AfxGetModuleState();
+  if (*(int **)(pAVar1 + 4) != (int *)0x0) {
+                    /* WARNING: Could not recover jumptable at 0x1000a0ea. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+    iVar2 = (**(code **)(**(int **)(pAVar1 + 4) + 0xb4))();
+    return iVar2;
+  }
+  iVar2 = CWinApp::ShowAppMessageBox((CWinApp *)0x0,param_1,param_2,param_3);
+  return iVar2;
+}
+
+
+
+=========== [4] FUN_10003880 @ 10003880
+
+void __thiscall FUN_10003880(void *this,undefined4 param_1)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  undefined4 uVar3;
+  int iVar4;
+  
+  if (*(int *)((int)this + 0x10) == 0) {
+    iVar4 = FUN_10009d8b((undefined4 *)((int)this + 0x14),*(int *)((int)this + 0x18),0x28);
+    iVar1 = *(int *)((int)this + 0x18);
+    iVar4 = iVar4 + -0x24 + iVar1 * 0x28;
+    while (iVar1 = iVar1 + -1, -1 < iVar1) {
+      *(undefined4 *)(iVar4 + 0x20) = *(undefined4 *)((int)this + 0x10);
+      *(int *)((int)this + 0x10) = iVar4;
+      iVar4 = iVar4 + -0x28;
+    }
+  }
+  puVar2 = *(undefined4 **)((int)this + 0x10);
+  if (puVar2 == (undefined4 *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  *puVar2 = 0;
+  puVar2[1] = 0;
+  puVar2[2] = 0;
+  puVar2[3] = 0;
+  puVar2[4] = 0;
+  puVar2[5] = 0;
+  puVar2[6] = 0;
+  puVar2[7] = 0;
+  puVar2[9] = 0;
+  puVar2[8] = puVar2[8];
+  uVar3 = *(undefined4 *)(*(int *)((int)this + 0x10) + 0x20);
+  *(int *)((int)this + 0xc) = *(int *)((int)this + 0xc) + 1;
+  *(undefined4 *)((int)this + 0x10) = uVar3;
+  *puVar2 = param_1;
+  puVar2[1] = 0xffffffff;
+  puVar2[2] = 0xffffffff;
+  puVar2[3] = 0xffffffff;
+  puVar2[4] = 0xffffffff;
+  puVar2[5] = 0xffffffff;
+  puVar2[6] = 0xffffffff;
+  *(undefined2 *)(puVar2 + 7) = 0;
+  *(undefined1 *)((int)puVar2 + 0x1e) = 0;
+  return;
+}
+
+
+
+=========== [4] FUN_100035e0 @ 100035e0
+
+int * __thiscall FUN_100035e0(void *this,int param_1,uint *param_2,uint *param_3)
+
+{
+  int *piVar1;
+  uint uVar2;
+  ldiv_t lVar3;
+  
+  lVar3 = _ldiv(param_1,0x1f31d);
+  uVar2 = lVar3.rem * 0x41a7 + lVar3.quot * -0xb14;
+  if ((int)uVar2 < 0) {
+    uVar2 = uVar2 + 0x7fffffff;
+  }
+  *param_3 = uVar2;
+  uVar2 = uVar2 % *(uint *)((int)this + 8);
+  *param_2 = uVar2;
+  if ((*(int *)((int)this + 4) != 0) &&
+     (piVar1 = *(int **)(*(int *)((int)this + 4) + uVar2 * 4), piVar1 != (int *)0x0)) {
+    do {
+      if ((piVar1[9] == *param_3) && (*piVar1 == param_1)) {
+        return piVar1;
+      }
+      piVar1 = (int *)piVar1[8];
+    } while (piVar1 != (int *)0x0);
+  }
+  return (int *)0x0;
+}
+
+
+
+=========== [4] ShowAppMessageBox @ 10009f6f
+
+/* Library Function - Single Match
+    public: static int __cdecl CWinApp::ShowAppMessageBox(class CWinApp *,wchar_t const *,unsigned
+   int,unsigned int)
+   
+   Library: Visual Studio 2010 Release */
+
+int __cdecl CWinApp::ShowAppMessageBox(CWinApp *param_1,wchar_t *param_2,uint param_3,uint param_4)
+
+{
+  HWND__ *hWnd;
+  DWORD DVar1;
+  CWinApp *pCVar2;
+  int iVar3;
+  LPWSTR lpFilename;
+  DWORD local_21c;
+  int local_218;
+  HWND__ *local_214;
+  WCHAR local_210 [259];
+  undefined2 local_a;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  DoEnableModeless(0);
+  hWnd = CWnd::GetSafeOwner_((HWND__ *)0x0,&local_214);
+  if (hWnd != local_214) {
+    EnableWindow(hWnd,1);
+  }
+  local_21c = 0;
+  GetWindowThreadProcessId(hWnd,&local_21c);
+  if ((((hWnd == (HWND__ *)0x0) || (DVar1 = GetCurrentProcessId(), local_21c != DVar1)) ||
+      (pCVar2 = (CWinApp *)SendMessageW(hWnd,0x376,0,0), pCVar2 == (CWinApp *)0x0)) &&
+     (pCVar2 = (CWinApp *)0x0, param_1 != (CWinApp *)0x0)) {
+    pCVar2 = param_1 + 0x7c;
+  }
+  local_218 = 0;
+  if ((pCVar2 != (CWinApp *)0x0) && (local_218 = *(int *)pCVar2, param_4 != 0)) {
+    *(uint *)pCVar2 = param_4 + 0x30000;
+  }
+  if ((param_3 & 0xf0) == 0) {
+    if ((param_3 & 0xf) < 2) {
+      param_3 = param_3 | 0x30;
+    }
+    else if ((param_3 & 0xf) - 3 < 2) {
+      param_3 = param_3 | 0x20;
+    }
+  }
+  local_210[0] = L'\0';
+  if (param_1 == (CWinApp *)0x0) {
+    lpFilename = local_210;
+    DVar1 = GetModuleFileNameW((HMODULE)0x0,lpFilename,0x104);
+    if (DVar1 == 0x104) {
+      local_a = 0;
+    }
+  }
+  else {
+    lpFilename = *(LPWSTR *)(param_1 + 0x50);
+  }
+  AfxCtxMessageBoxW(hWnd,param_2,lpFilename,param_3);
+  if (pCVar2 != (CWinApp *)0x0) {
+    *(int *)pCVar2 = local_218;
+  }
+  if (local_214 != (HWND)0x0) {
+    EnableWindow(local_214,1);
+  }
+  DoEnableModeless(1);
+  iVar3 = __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return iVar3;
+}
+
+
+
+=========== [5] FUN_10009d8b @ 10009d8b
+
+void FUN_10009d8b(undefined4 *param_1,int param_2,int param_3)
+
+{
+  undefined4 *puVar1;
+  
+  if ((param_2 != 0) && (param_3 != 0)) {
+    puVar1 = FUN_1000858a(param_2 * param_3 + 4);
+    *puVar1 = *param_1;
+    *param_1 = puVar1;
+    return;
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_10009068();
+}
+
+
+
+=========== [5] _ldiv @ 100f85ce
+
+/* Library Function - Single Match
+    _ldiv
+   
+   Library: Visual Studio 2010 Release */
+
+ldiv_t __cdecl _ldiv(long _Numerator,long _Denominator)
+
+{
+  ldiv_t lVar1;
+  
+  lVar1.quot = _Numerator / _Denominator;
+  lVar1.rem = _Numerator % _Denominator;
+  return lVar1;
+}
+
+
+
+=========== [5] DoEnableModeless @ 10009e82
+
+/* Library Function - Single Match
+    public: static void __cdecl CWinApp::DoEnableModeless(int)
+   
+   Library: Visual Studio 2010 Release */
+
+void __cdecl CWinApp::DoEnableModeless(int param_1)
+
+{
+  CWnd *pCVar1;
+  int iVar2;
+  
+  pCVar1 = AfxGetMainWnd();
+  if (pCVar1 != (CWnd *)0x0) {
+    iVar2 = (**(code **)(*(int *)pCVar1 + 0x14c))();
+    if ((iVar2 != 0) && (*(int *)(pCVar1 + 0xa0) != 0)) {
+      (**(code **)(**(int **)(pCVar1 + 0xa0) + 100))(param_1);
+    }
+  }
+  return;
+}
+
+
+-- ext GetCurrentProcessId
+
+=========== [5] AfxCtxMessageBoxW @ 10009de0
+
+/* WARNING: Function: __SEH_prolog4 replaced with injection: SEH_prolog4 */
+/* WARNING: Function: __SEH_epilog4 replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    int __cdecl AfxCtxMessageBoxW(struct HWND__ *,wchar_t const *,wchar_t const *,unsigned int)
+   
+   Library: Visual Studio 2010 Release */
+
+int __cdecl AfxCtxMessageBoxW(HWND__ *param_1,wchar_t *param_2,wchar_t *param_3,uint param_4)
+
+{
+  AFX_MODULE_STATE *pAVar1;
+  BOOL BVar2;
+  ULONG_PTR *lpCookie;
+  ULONG_PTR local_24;
+  int local_20;
+  undefined4 uStack_c;
+  undefined *local_8;
+  
+  local_8 = &DAT_1014e2a0;
+  uStack_c = 0x10009dec;
+  local_24 = 0;
+  lpCookie = &local_24;
+  pAVar1 = AfxGetModuleState();
+  BVar2 = ActivateActCtx(*(HANDLE *)(pAVar1 + 0x80),lpCookie);
+  local_20 = 0;
+  if (BVar2 == 0) {
+    local_20 = 0;
+  }
+  else {
+    local_8 = (undefined *)0x0;
+    local_20 = MessageBoxW(param_1,param_2,param_3,param_4);
+    local_8 = (undefined *)0xfffffffe;
+    FUN_10009e3e();
+  }
+  return local_20;
+}
+
+
+-- ext GetModuleFileNameW
+-- ext EnableWindow
+-- ext GetWindowThreadProcessId
+
+=========== [5] GetSafeOwner_ @ 10009ebd
+
+/* Library Function - Single Match
+    public: static struct HWND__ * __stdcall CWnd::GetSafeOwner_(struct HWND__ *,struct HWND__ * *)
+   
+   Library: Visual Studio 2010 Release */
+
+HWND__ * CWnd::GetSafeOwner_(HWND__ *param_1,HWND__ **param_2)
+
+{
+  HWND hWnd;
+  CWnd *pCVar1;
+  uint uVar2;
+  HWND pHVar3;
+  HWND hWnd_00;
+  BOOL BVar4;
+  HWND hWnd_01;
+  
+  hWnd_01 = param_1;
+  if (param_1 != (HWND__ *)0x0) goto LAB_10009eed;
+  pCVar1 = (CWnd *)FUN_10009dd4();
+  if ((pCVar1 == (CWnd *)0x0) && (pCVar1 = AfxGetMainWnd(), pCVar1 == (CWnd *)0x0)) {
+    hWnd_01 = (HWND)0x0;
+    pHVar3 = hWnd_01;
+    hWnd_00 = hWnd_01;
+  }
+  else {
+    for (hWnd_01 = *(HWND *)(pCVar1 + 0x20); pHVar3 = hWnd_01, hWnd_00 = hWnd_01,
+        hWnd_01 != (HWND)0x0; hWnd_01 = GetParent(hWnd_01)) {
+LAB_10009eed:
+      uVar2 = GetWindowLongW(hWnd_01,-0x10);
+      pHVar3 = hWnd_01;
+      hWnd_00 = hWnd_01;
+      if ((uVar2 & 0x40000000) == 0) break;
+    }
+  }
+  while (hWnd = pHVar3, hWnd != (HWND)0x0) {
+    pHVar3 = GetParent(hWnd);
+    hWnd_01 = hWnd;
+  }
+  if ((param_1 == (HWND__ *)0x0) && (hWnd_00 != (HWND)0x0)) {
+    hWnd_00 = GetLastActivePopup(hWnd_00);
+  }
+  if (param_2 != (HWND__ **)0x0) {
+    if (((hWnd_01 == (HWND)0x0) || (BVar4 = ::IsWindowEnabled(hWnd_01), BVar4 == 0)) ||
+       (hWnd_01 == hWnd_00)) {
+      *param_2 = (HWND__ *)0x0;
+    }
+    else {
+      *param_2 = hWnd_01;
+      ::EnableWindow(hWnd_01,0);
+    }
+  }
+  return hWnd_00;
+}
+
+
+-- ext SendMessageW
+
+#################### ROOT SetCrossFader @ 100077d0
+
+=========== [0] SetCrossFader @ 100077d0
+
+/* public: void __thiscall CDriverInterfaceClass::SetCrossFader(int,int,enum E_Channel,int) */
+
+void __thiscall
+CDriverInterfaceClass::SetCrossFader
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,int param_4)
+
+{
+  int iVar1;
+  undefined4 extraout_EDX;
+  
+                    /* 0x77d0  26  ?SetCrossFader@CDriverInterfaceClass@@QAEXHHW4E_Channel@@H@Z */
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  FUN_10004f60(iVar1,extraout_EDX,param_2);
+  return;
+}
+
+
+
+=========== [1] FUN_10004f60 @ 10004f60
+
+undefined4 __fastcall FUN_10004f60(int param_1,undefined4 param_2,uint param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(int **)(param_1 + 0x94) != (int *)0x0) {
+    uVar1 = FUN_10003bb0(*(int **)(param_1 + 0x94),param_2,param_3,0);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+#################### ROOT getChannelInputMonitorVol @ 10007800
+
+=========== [0] getChannelInputMonitorVol @ 10007800
+
+/* public: void __thiscall CDriverInterfaceClass::getChannelInputMonitorVol(int,int,enum
+   E_Channel,double &) */
+
+void __thiscall
+CDriverInterfaceClass::getChannelInputMonitorVol
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,double *param_4)
+
+{
+  void *this_00;
+  
+                    /* 0x7800  33
+                       ?getChannelInputMonitorVol@CDriverInterfaceClass@@QAEXHHW4E_Channel@@AAN@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004ef0(this_00,param_2,param_3,param_4);
+  return;
+}
+
+
+
+=========== [1] FUN_10004ef0 @ 10004ef0
+
+undefined4 __thiscall FUN_10004ef0(void *this,uint param_1,int param_2,double *param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(void **)((int)this + 0x94) != (void *)0x0) {
+    uVar1 = FUN_10003d00(*(void **)((int)this + 0x94),param_1,param_2,param_3);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_10003d00 @ 10003d00
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __thiscall FUN_10003d00(void *this,uint param_1,int param_2,double *param_3)
+
+{
+  int iVar1;
+  undefined1 local_828 [4];
+  double *local_824;
+  int *local_820;
+  short local_81c [2];
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  short local_80e;
+  undefined2 local_80c;
+  undefined4 local_80a;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_824 = param_3;
+  local_820 = FUN_10003930((void *)((int)this + 4),param_1);
+  if (local_820 == (int *)0x0) {
+    AfxMessageBox(L"FeatureBlockID not defined",0,0);
+  }
+  else {
+    local_818 = 1;
+    local_813 = 1;
+    local_817 = 1;
+    local_80f = 1;
+    local_80e = (short)param_2 + 0x200;
+    local_80c = (undefined2)(param_1 << 8);
+    local_80a = 2;
+    iVar1 = (**(code **)(*(int *)this + 0x20))(&local_818,0x810,local_81c,2,local_828);
+    if (iVar1 == 0) {
+      local_820[param_2] = (int)local_81c[0];
+      local_820 = (int *)(int)local_81c[0];
+      *local_824 = (double)(int)local_820 * _DAT_1011cf30;
+      __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+      return;
+    }
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT setChannelInputMonitorPan @ 10007830
+
+=========== [0] setChannelInputMonitorPan @ 10007830
+
+/* public: void __thiscall CDriverInterfaceClass::setChannelInputMonitorPan(int,int,enum
+   E_Channel,long) */
+
+void __thiscall
+CDriverInterfaceClass::setChannelInputMonitorPan
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,long param_4)
+
+{
+  void *this_00;
+  
+                    /* 0x7830  40
+                       ?setChannelInputMonitorPan@CDriverInterfaceClass@@QAEXHHW4E_Channel@@J@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004f10(this_00,param_2,param_3,param_4);
+  return;
+}
+
+
+
+=========== [1] FUN_10004f10 @ 10004f10
+
+undefined4 __thiscall FUN_10004f10(void *this,uint param_1,int param_2,int param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(void **)((int)this + 0x94) != (void *)0x0) {
+    uVar1 = FUN_10003f30(*(void **)((int)this + 0x94),param_1,param_2,-param_3);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_10003f30 @ 10003f30
+
+void __thiscall FUN_10003f30(void *this,uint param_1,int param_2,int param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  undefined2 local_80e;
+  undefined2 local_80c;
+  undefined2 local_80a;
+  undefined2 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  piVar1 = FUN_10003930((void *)((int)this + 4),param_1);
+  if (piVar1 == (int *)0x0) {
+    AfxMessageBox(L"FeatureBlockID not defined",0,0);
+LAB_10003f71:
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  if (piVar1[param_2 + 3] != param_3) {
+    if (param_2 == 1) {
+      local_80e = 5;
+    }
+    else {
+      if (param_2 != 2) goto LAB_10003f71;
+      local_80e = 6;
+    }
+    local_808 = (undefined2)(param_3 << 8);
+    local_80c = (undefined2)param_1;
+    local_818 = 0;
+    local_813 = 0;
+    local_80a = 2;
+    local_817 = 2;
+    local_80f = 0x82;
+    iVar2 = (**(code **)(*(int *)this + 0x20))(&local_818,0x810,0,0,0);
+    if (iVar2 != 0) goto LAB_10003f71;
+    piVar1[param_2 + 3] = param_3;
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT getChannelInputMonitorPan @ 10007860
+
+=========== [0] getChannelInputMonitorPan @ 10007860
+
+/* public: void __thiscall CDriverInterfaceClass::getChannelInputMonitorPan(int,int,enum
+   E_Channel,long &) */
+
+void __thiscall
+CDriverInterfaceClass::getChannelInputMonitorPan
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,long *param_4)
+
+{
+  void *this_00;
+  
+                    /* 0x7860  32
+                       ?getChannelInputMonitorPan@CDriverInterfaceClass@@QAEXHHW4E_Channel@@AAJ@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004f40(this_00,param_2,param_3,param_4);
+  return;
+}
+
+
+
+=========== [1] FUN_10004f40 @ 10004f40
+
+undefined4 __thiscall FUN_10004f40(void *this,uint param_1,int param_2,int *param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(void **)((int)this + 0x94) != (void *)0x0) {
+    uVar1 = FUN_10003e10(*(void **)((int)this + 0x94),param_1,param_2,param_3);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_10003e10 @ 10003e10
+
+void __thiscall FUN_10003e10(void *this,uint param_1,int param_2,int *param_3)
+
+{
+  int iVar1;
+  undefined4 local_828;
+  int *local_824;
+  int *local_820;
+  undefined4 local_81c;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  undefined2 local_80e;
+  undefined2 local_80c;
+  undefined2 local_80a;
+  undefined2 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_820 = param_3;
+  local_824 = FUN_10003930((void *)((int)this + 4),param_1);
+  if (local_824 == (int *)0x0) {
+    AfxMessageBox(L"FeatureBlockID not defined",0,0);
+LAB_10003e58:
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  local_80c = (undefined2)param_1;
+  local_80a = 2;
+  local_818 = 1;
+  local_813 = 0;
+  local_817 = 2;
+  local_80f = 0x82;
+  if (param_2 == 1) {
+    local_80e = 5;
+  }
+  else {
+    if (param_2 != 2) goto LAB_10003e58;
+    local_80e = 6;
+  }
+  local_808 = 0;
+  local_81c = 0;
+  local_828 = 0;
+  iVar1 = (**(code **)(*(int *)this + 0x20))(&local_818,0x810,&local_81c,2,&local_828);
+  if (iVar1 == 0) {
+    *local_820 = (int)(short)local_81c >> 8;
+    local_824[param_2 + 3] = (int)(short)local_81c >> 8;
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT setChannelInputMonitorMute @ 10007890
+
+=========== [0] setChannelInputMonitorMute @ 10007890
+
+/* public: void __thiscall CDriverInterfaceClass::setChannelInputMonitorMute(int,int,enum
+   E_Channel,bool) */
+
+void __thiscall
+CDriverInterfaceClass::setChannelInputMonitorMute
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,bool param_4)
+
+{
+  void *this_00;
+  
+                    /* 0x7890  39
+                       ?setChannelInputMonitorMute@CDriverInterfaceClass@@QAEXHHW4E_Channel@@_N@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004f90(this_00,param_2,param_3,param_4);
+  return;
+}
+
+
+
+=========== [1] FUN_10004f90 @ 10004f90
+
+undefined4 __thiscall FUN_10004f90(void *this,uint param_1,int param_2,char param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(void **)((int)this + 0x94) != (void *)0x0) {
+    uVar1 = FUN_10003ac0(*(void **)((int)this + 0x94),param_1,param_2,param_3);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_10003ac0 @ 10003ac0
+
+void __thiscall FUN_10003ac0(void *this,uint param_1,int param_2,char param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  short local_80e;
+  undefined2 local_80c;
+  undefined2 local_80a;
+  char local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  piVar1 = FUN_10003930((void *)((int)this + 4),param_1);
+  if (piVar1 == (int *)0x0) {
+    AfxMessageBox(L"FeatureBlockID not defined",0,0);
+LAB_10003afd:
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  if (*(char *)(param_2 + 0x18 + (int)piVar1) != param_3) {
+    local_813 = 1;
+    local_817 = 1;
+    local_80f = 1;
+    local_80e = (short)param_2 + 0x100;
+    local_80a = 1;
+    local_808 = param_3;
+    local_80c = (undefined2)(param_1 << 8);
+    local_818 = 0;
+    iVar2 = (**(code **)(*(int *)this + 0x20))(&local_818,0x810,0,0,0);
+    if (iVar2 != 0) goto LAB_10003afd;
+    *(char *)(param_2 + 0x18 + (int)piVar1) = param_3;
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT getChannelInputMonitorMute @ 100078c0
+
+=========== [0] getChannelInputMonitorMute @ 100078c0
+
+/* public: void __thiscall CDriverInterfaceClass::getChannelInputMonitorMute(int,int,enum
+   E_Channel,bool &) */
+
+void __thiscall
+CDriverInterfaceClass::getChannelInputMonitorMute
+          (CDriverInterfaceClass *this,int param_1,int param_2,E_Channel param_3,bool *param_4)
+
+{
+  void *this_00;
+  
+                    /* 0x78c0  31
+                       ?getChannelInputMonitorMute@CDriverInterfaceClass@@QAEXHHW4E_Channel@@AA_N@Z
+                        */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004fb0(this_00,(byte)param_2,param_3,param_4);
+  return;
+}
+
+
+
+=========== [1] FUN_10004fb0 @ 10004fb0
+
+undefined4 __thiscall FUN_10004fb0(void *this,byte param_1,int param_2,undefined1 *param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (*(void **)((int)this + 0x94) != (void *)0x0) {
+    uVar1 = FUN_100039d0(*(void **)((int)this + 0x94),(uint)param_1,param_2,param_3);
+    return uVar1;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_100039d0 @ 100039d0
+
+void __thiscall FUN_100039d0(void *this,uint param_1,int param_2,undefined1 *param_3)
+
+{
+  undefined1 *puVar1;
+  int iVar2;
+  undefined1 local_824 [4];
+  undefined1 *local_820;
+  int *local_81c;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  short local_80e;
+  undefined2 local_80c;
+  undefined2 local_80a;
+  undefined1 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_820 = param_3;
+  local_81c = FUN_10003930((void *)((int)this + 4),param_1);
+  puVar1 = local_820;
+  if (local_81c == (int *)0x0) {
+    AfxMessageBox(L"FeatureBlockID not defined",0,0);
+  }
+  else {
+    local_80a = 1;
+    local_80c = (undefined2)(param_1 << 8);
+    local_80e = (short)param_2 + 0x100;
+    local_818 = 1;
+    local_813 = 1;
+    local_817 = 1;
+    local_80f = 1;
+    local_808 = 0;
+    iVar2 = (**(code **)(*(int *)this + 0x20))(&local_818,0x810,local_820,1,local_824);
+    if (iVar2 == 0) {
+      *(undefined1 *)(param_2 + 0x18 + (int)local_81c) = *puVar1;
+      __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+      return;
+    }
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT getSampleRate @ 100078f0
+
+=========== [0] getSampleRate @ 100078f0
+
+/* public: void __thiscall CDriverInterfaceClass::getSampleRate(int,unsigned long &) */
+
+void __thiscall
+CDriverInterfaceClass::getSampleRate(CDriverInterfaceClass *this,int param_1,ulong *param_2)
+
+{
+  int iVar1;
+  ulong uVar2;
+  
+                    /* 0x78f0  37  ?getSampleRate@CDriverInterfaceClass@@QAEXHAAK@Z */
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  uVar2 = FUN_10005110(iVar1);
+  *param_2 = uVar2;
+  return;
+}
+
+
+
+=========== [1] FUN_10005110 @ 10005110
+
+undefined4 __fastcall FUN_10005110(int param_1)
+
+{
+  if (*(int *)(param_1 + 0x94) != 0) {
+    FUN_10001aa0(&DAT_10164a28,&DAT_10164aac);
+    return DAT_10164ab0;
+  }
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_10001aa0 @ 10001aa0
+
+DWORD __thiscall FUN_10001aa0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x808928c0,(LPVOID)0x0,0,param_1,0x2c,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT setSampleRate @ 10007910
+
+=========== [0] setSampleRate @ 10007910
+
+/* public: void __thiscall CDriverInterfaceClass::setSampleRate(int,long) */
+
+void __thiscall
+CDriverInterfaceClass::setSampleRate(CDriverInterfaceClass *this,int param_1,long param_2)
+
+{
+  void *this_00;
+  
+                    /* 0x7910  42  ?setSampleRate@CDriverInterfaceClass@@QAEXHJ@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10004fe0(this_00,param_2);
+  return;
+}
+
+
+
+=========== [1] FUN_10004fe0 @ 10004fe0
+
+DWORD __thiscall FUN_10004fe0(void *this,DWORD param_1)
+
+{
+  AFX_MODULE_STATE *pAVar1;
+  DWORD DVar2;
+  AFX_MAINTAIN_STATE2 local_18 [8];
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e7e8;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  pAVar1 = (AFX_MODULE_STATE *)FUN_1000ab5e();
+  AFX_MAINTAIN_STATE2::AFX_MAINTAIN_STATE2(local_18,pAVar1);
+  local_8 = 0;
+  if (*(int *)((int)this + 0x94) != 0) {
+    DVar2 = FUN_10001b20(&DAT_10164a28,param_1);
+    local_8 = 0xffffffff;
+    FUN_1000a3b1((ULONG_PTR *)local_18);
+    ExceptionList = local_10;
+    return DVar2;
+  }
+  local_8 = 0xffffffff;
+  FUN_1000a3b1((ULONG_PTR *)local_18);
+  ExceptionList = local_10;
+  return 0xe0000001;
+}
+
+
+
+=========== [2] FUN_1000a3b1 @ 1000a3b1
+
+void __fastcall FUN_1000a3b1(ULONG_PTR *param_1)
+
+{
+  if (param_1[1] != 0) {
+    DeactivateActCtx(0,*param_1);
+  }
+  return;
+}
+
+
+
+=========== [2] FUN_10001b20 @ 10001b20
+
+DWORD __thiscall FUN_10001b20(void *this,DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  undefined4 local_c;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_c = 0;
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  param_1 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x808928c4,&local_c,8,(LPVOID)0x0,0,&param_1
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== [2] AFX_MAINTAIN_STATE2 @ 1000abc1
+
+/* Library Function - Single Match
+    public: __thiscall AFX_MAINTAIN_STATE2::AFX_MAINTAIN_STATE2(class AFX_MODULE_STATE *)
+   
+   Library: Visual Studio 2010 Release */
+
+AFX_MAINTAIN_STATE2 * __thiscall
+AFX_MAINTAIN_STATE2::AFX_MAINTAIN_STATE2(AFX_MAINTAIN_STATE2 *this,AFX_MODULE_STATE *param_1)
+
+{
+  AFX_MODULE_STATE *pAVar1;
+  BOOL BVar2;
+  
+  pAVar1 = AfxGetModuleState();
+  if ((*(int *)(pAVar1 + 0x7c) == 0) || (*(HANDLE *)(param_1 + 0x80) == (HANDLE)0xffffffff)) {
+    *(undefined4 *)(this + 4) = 0;
+  }
+  else {
+    BVar2 = ActivateActCtx(*(HANDLE *)(param_1 + 0x80),(ULONG_PTR *)this);
+    *(BOOL *)(this + 4) = BVar2;
+  }
+  return this;
+}
+
+
+
+=========== [2] FUN_1000ab5e @ 1000ab5e
+
+void FUN_1000ab5e(void)
+
+{
+  CNoTrackObject *pCVar1;
+  
+  pCVar1 = CProcessLocalObject::GetData
+                     ((CProcessLocalObject *)&DAT_10164b14,(_func_CNoTrackObject_ptr *)&LAB_1000ab23
+                     );
+  if (pCVar1 == (CNoTrackObject *)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10009068();
+  }
+  return;
+}
+
+
+-- ext DeactivateActCtx
+-- ext ActivateActCtx
+
+#################### ROOT setSyncSource @ 10007930
+
+=========== [0] setSyncSource @ 10007930
+
+/* public: void __thiscall CDriverInterfaceClass::setSyncSource(int,int,int,enum _DEVICE_SYNC_MODE)
+    */
+
+void __thiscall
+CDriverInterfaceClass::setSyncSource
+          (CDriverInterfaceClass *this,int param_1,int param_2,int param_3,_DEVICE_SYNC_MODE param_4
+          )
+
+{
+  void *this_00;
+  
+                    /* 0x7930  43
+                       ?setSyncSource@CDriverInterfaceClass@@QAEXHHHW4_DEVICE_SYNC_MODE@@@Z */
+  this_00 = (void *)FUN_10006a20(this + 4,param_1);
+  FUN_10005a00(this_00,param_2,param_3,param_4);
+  return;
+}
+
+
+
+=========== [1] FUN_10005a00 @ 10005a00
+
+void __thiscall FUN_10005a00(void *this,undefined4 param_1,int param_2,undefined4 param_3)
+
+{
+  undefined4 local_14;
+  undefined4 local_10;
+  int local_c;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  if (*(int *)((int)this + 0x94) != 0) {
+    local_14 = param_1;
+    local_10 = param_3;
+    local_c = param_2 + 0xd4;
+    FUN_10001d50(&DAT_10164a28,&local_14);
+    __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+    return;
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] FUN_10001d50 @ 10001d50
+
+DWORD __thiscall FUN_10001d50(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892904,param_1,0xc,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT getCurrentSyncSource @ 10007960
+
+=========== [0] getCurrentSyncSource @ 10007960
+
+/* public: void __thiscall CDriverInterfaceClass::getCurrentSyncSource(int,int &) */
+
+void __thiscall
+CDriverInterfaceClass::getCurrentSyncSource(CDriverInterfaceClass *this,int param_1,int *param_2)
+
+{
+  int iVar1;
+  
+                    /* 0x7960  35  ?getCurrentSyncSource@CDriverInterfaceClass@@QAEXHAAH@Z */
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  FUN_10005a70(iVar1);
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  *param_2 = *(int *)(iVar1 + 0x50);
+  return;
+}
+
+
+
+#################### ROOT GetSampleRateInfo @ 10007990
+
+=========== [0] GetSampleRateInfo @ 10007990
+
+/* public: struct _BCO_USB_SAMPLE_RATE_INFO __thiscall CDriverInterfaceClass::GetSampleRateInfo(int)
+    */
+
+int __thiscall CDriverInterfaceClass::GetSampleRateInfo(CDriverInterfaceClass *this,int param_1)
+
+{
+  int iVar1;
+  void *this_00;
+  int in_stack_00000008;
+  undefined4 *puVar2;
+  
+                    /* 0x7990  18
+                       ?GetSampleRateInfo@CDriverInterfaceClass@@QAE?AU_BCO_USB_SAMPLE_RATE_INFO@@H@Z
+                        */
+  iVar1 = FUN_10006a20(this + 4,in_stack_00000008);
+  FUN_10005080(iVar1);
+  puVar2 = (undefined4 *)param_1;
+  this_00 = (void *)FUN_10006a20(this + 4,in_stack_00000008);
+  FUN_100050f0(this_00,puVar2);
+  return param_1;
+}
+
+
+
+=========== [1] FUN_100050f0 @ 100050f0
+
+void __thiscall FUN_100050f0(void *this,undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 *puVar2;
+  
+  puVar2 = (undefined4 *)((int)this + 0x5c);
+  for (iVar1 = 0xb; iVar1 != 0; iVar1 = iVar1 + -1) {
+    *param_1 = *puVar2;
+    puVar2 = puVar2 + 1;
+    param_1 = param_1 + 1;
+  }
+  return;
+}
+
+
+
+=========== [1] FUN_10005080 @ 10005080
+
+undefined4 __fastcall FUN_10005080(int param_1)
+
+{
+  uint uVar1;
+  undefined4 *puVar2;
+  
+  if (*(int *)(param_1 + 0x94) != 0) {
+    FUN_10001aa0(&DAT_10164a28,&DAT_10164aac);
+    *(undefined4 *)(param_1 + 0x60) = DAT_10164ab0;
+    *(undefined4 *)(param_1 + 0x5c) = DAT_10164aac;
+    uVar1 = 0;
+    *(uint *)(param_1 + 100) = DAT_10164ab4;
+    if (DAT_10164ab4 != 0) {
+      puVar2 = (undefined4 *)(param_1 + 0x68);
+      do {
+        *puVar2 = (&DAT_10164ab8)[uVar1];
+        uVar1 = uVar1 + 1;
+        puVar2 = puVar2 + 1;
+      } while (uVar1 < DAT_10164ab4);
+    }
+    return 0;
+  }
+  return 0xe0000001;
+}
+
+
+
+#################### ROOT GetSyncMode @ 100079d0
+
+=========== [0] GetSyncMode @ 100079d0
+
+/* public: struct _BCO_USB_DEVICE_SYNCH_SOURCE __thiscall
+   CDriverInterfaceClass::GetSyncMode(int,int) */
+
+void __thiscall
+CDriverInterfaceClass::GetSyncMode(CDriverInterfaceClass *this,int param_1,int param_2)
+
+{
+  void *this_00;
+  undefined4 *puVar1;
+  int iVar2;
+  int in_stack_0000000c;
+  int *piVar3;
+  int local_340 [206];
+  uint local_8;
+  
+                    /* 0x79d0  21
+                       ?GetSyncMode@CDriverInterfaceClass@@QAE?AU_BCO_USB_DEVICE_SYNCH_SOURCE@@HH@Z
+                        */
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  piVar3 = local_340;
+  this_00 = (void *)FUN_10006a20(this + 4,param_2);
+  puVar1 = (undefined4 *)FUN_10005ae0(this_00,piVar3,in_stack_0000000c);
+  for (iVar2 = 0xc; puVar1 = puVar1 + 1, iVar2 != 0; iVar2 = iVar2 + -1) {
+    *(undefined4 *)param_1 = *puVar1;
+    param_1 = (int)(param_1 + 4);
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [1] FUN_10005ae0 @ 10005ae0
+
+void __thiscall FUN_10005ae0(void *this,int *param_1,int param_2)
+
+{
+  int *piVar1;
+  int iVar2;
+  int iVar3;
+  int *piVar4;
+  int *piVar5;
+  int *piVar6;
+  int local_44;
+  int local_3c;
+  int local_38 [2];
+  char local_30 [40];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_38[0] = 0;
+  local_38[1] = -1;
+  piVar4 = local_38;
+  piVar1 = param_1;
+  for (iVar2 = 0xc; piVar1 = piVar1 + 1, iVar2 != 0; iVar2 = iVar2 + -1) {
+    *piVar1 = *piVar4;
+    piVar4 = piVar4 + 1;
+  }
+  param_1[0xd] = 0;
+  if (*(int *)((int)this + 0x94) != 0) {
+    if (DAT_10164a74 < 1) {
+                    /* WARNING: Subroutine does not return */
+      FUN_10009068();
+    }
+    iVar2 = *DAT_10164a70;
+    if (param_2 + 1U <= *(uint *)(iVar2 + 0x34)) {
+      piVar1 = (int *)(iVar2 + 0x38 + param_2 * 0x30);
+      local_38[0] = *piVar1;
+      local_38[1] = param_2;
+      _strcpy_s(local_30,0x28,(char *)(piVar1 + 2));
+      piVar4 = local_38;
+      piVar1 = param_1;
+      for (iVar3 = 0xc; piVar1 = piVar1 + 1, iVar3 != 0; iVar3 = iVar3 + -1) {
+        *piVar1 = *piVar4;
+        piVar4 = piVar4 + 1;
+      }
+      *param_1 = *(int *)(*(int *)((int)this + 0x94) + 0x24);
+      piVar4 = (int *)(iVar2 + 0x98);
+      local_3c = 0;
+      piVar1 = param_1 + 0xe;
+      local_44 = 4;
+      do {
+        piVar5 = (int *)((iVar2 - (int)param_1) + (int)piVar1);
+        piVar6 = piVar1;
+        for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *piVar6 = *piVar5;
+          piVar5 = piVar5 + 1;
+          piVar6 = piVar6 + 1;
+        }
+        if (piVar1[1] != 0) {
+          local_3c = local_3c + 1;
+        }
+        piVar5 = piVar4 + -0xc;
+        piVar6 = piVar1 + 0xc;
+        for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *piVar6 = *piVar5;
+          piVar5 = piVar5 + 1;
+          piVar6 = piVar6 + 1;
+        }
+        if (piVar1[0xd] != 0) {
+          local_3c = local_3c + 1;
+        }
+        piVar5 = piVar4;
+        piVar6 = piVar1 + 0x18;
+        for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *piVar6 = *piVar5;
+          piVar5 = piVar5 + 1;
+          piVar6 = piVar6 + 1;
+        }
+        if (piVar1[0x19] != 0) {
+          local_3c = local_3c + 1;
+        }
+        piVar5 = piVar4 + 0xc;
+        piVar6 = piVar1 + 0x24;
+        for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
+          *piVar6 = *piVar5;
+          piVar5 = piVar5 + 1;
+          piVar6 = piVar6 + 1;
+        }
+        if (piVar1[0x25] != 0) {
+          local_3c = local_3c + 1;
+        }
+        piVar4 = piVar4 + 0x30;
+        piVar1 = piVar1 + 0x30;
+        local_44 = local_44 + -1;
+      } while (local_44 != 0);
+      param_1[0xd] = local_3c;
+    }
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] _strcpy_s @ 100f88e9
+
+/* Library Function - Single Match
+    _strcpy_s
+   
+   Library: Visual Studio 2010 Release */
+
+errno_t __cdecl _strcpy_s(char *_Dst,rsize_t _SizeInBytes,char *_Src)
+
+{
+  char cVar1;
+  int *piVar2;
+  int iVar3;
+  errno_t eStack_10;
+  
+  if ((_Dst != (char *)0x0) && (_SizeInBytes != 0)) {
+    if (_Src != (char *)0x0) {
+      iVar3 = (int)_Dst - (int)_Src;
+      do {
+        cVar1 = *_Src;
+        _Src[iVar3] = cVar1;
+        _Src = _Src + 1;
+        if (cVar1 == '\0') break;
+        _SizeInBytes = _SizeInBytes - 1;
+      } while (_SizeInBytes != 0);
+      if (_SizeInBytes != 0) {
+        return 0;
+      }
+      *_Dst = '\0';
+      piVar2 = __errno();
+      eStack_10 = 0x22;
+      *piVar2 = 0x22;
+      goto LAB_100f8908;
+    }
+    *_Dst = '\0';
+  }
+  piVar2 = __errno();
+  eStack_10 = 0x16;
+  *piVar2 = 0x16;
+LAB_100f8908:
+  FUN_100fe6d4();
+  return eStack_10;
+}
+
+
+
+#################### ROOT SetChannelNickName @ 10007a30
+
+=========== [0] SetChannelNickName @ 10007a30
+
+/* public: void __thiscall CDriverInterfaceClass::SetChannelNickName(int,wchar_t *,int,enum
+   _BCO_USB_DIRECTION,int) */
+
+void __thiscall
+CDriverInterfaceClass::SetChannelNickName
+          (CDriverInterfaceClass *this,int param_1,wchar_t *param_2,int param_3,
+          _BCO_USB_DIRECTION param_4,int param_5)
+
+{
+                    /* 0x7a30  25
+                       ?SetChannelNickName@CDriverInterfaceClass@@QAEXHPA_WHW4_BCO_USB_DIRECTION@@H@Z
+                        */
+  FUN_10005640(param_1,param_2,param_3,param_4,param_5);
+  return;
+}
+
+
+
+=========== [1] FUN_10005640 @ 10005640
+
+void FUN_10005640(undefined4 param_1,BSTR param_2,undefined4 param_3,undefined4 param_4,
+                 undefined4 param_5)
+
+{
+  UINT UVar1;
+  uint uVar2;
+  undefined4 local_64;
+  undefined4 local_60;
+  undefined4 local_5c;
+  undefined1 auStack_30 [40];
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_64 = param_3;
+  local_60 = param_5;
+  local_5c = param_4;
+  uVar2 = 0;
+  UVar1 = SysStringLen(param_2);
+  if (UVar1 != 0) {
+    do {
+      auStack_30[uVar2] = (char)param_2[uVar2];
+      auStack_30[uVar2 + 1] = 0;
+      uVar2 = uVar2 + 1;
+      UVar1 = SysStringLen(param_2);
+    } while (uVar2 < UVar1);
+  }
+  FUN_100017a0(&DAT_10164a28,&local_64);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== [2] FUN_100017a0 @ 100017a0
+
+DWORD __thiscall FUN_100017a0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892984,param_1,0x5c,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT PrependDeviceNameToDisplayName @ 10007a40
+
+=========== [0] PrependDeviceNameToDisplayName @ 10007a40
+
+/* public: void __thiscall CDriverInterfaceClass::PrependDeviceNameToDisplayName(bool) */
+
+void __thiscall
+CDriverInterfaceClass::PrependDeviceNameToDisplayName(CDriverInterfaceClass *this,bool param_1)
+
+{
+                    /* 0x7a40  22  ?PrependDeviceNameToDisplayName@CDriverInterfaceClass@@QAEX_N@Z
+                        */
+  FUN_100056c0(param_1);
+  return;
+}
+
+
+
+=========== [1] FUN_100056c0 @ 100056c0
+
+void FUN_100056c0(char param_1)
+
+{
+  FUN_100012c0(&DAT_10164a28,&DAT_10164a48);
+  DAT_10164a48 = (uint)(param_1 == '\x01');
+  FUN_10001340(&DAT_10164a28,&DAT_10164a48);
+  return;
+}
+
+
+
+=========== [2] FUN_10001340 @ 10001340
+
+DWORD __thiscall FUN_10001340(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892814,param_1,4,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+#################### ROOT GetPrependDeviceNameToDisplayName @ 10007a50
+
+=========== [0] GetPrependDeviceNameToDisplayName @ 10007a50
+
+/* public: bool __thiscall CDriverInterfaceClass::GetPrependDeviceNameToDisplayName(void) */
+
+bool __thiscall
+CDriverInterfaceClass::GetPrependDeviceNameToDisplayName(CDriverInterfaceClass *this)
+
+{
+  bool bVar1;
+  
+                    /* 0x7a50  17  ?GetPrependDeviceNameToDisplayName@CDriverInterfaceClass@@QAE_NXZ
+                        */
+  bVar1 = FUN_10005700();
+  return bVar1;
+}
+
+
+
+=========== [1] FUN_10005700 @ 10005700
+
+bool FUN_10005700(void)
+
+{
+  FUN_100012c0(&DAT_10164a28,&DAT_10164a48);
+  return DAT_10164a48 != 0;
+}
+
+
+
+#################### ROOT getDeviceMessage @ 10007a60
+
+=========== [0] getDeviceMessage @ 10007a60
+
+/* public: enum E_DEVICE_MESSAGE_ID __thiscall CDriverInterfaceClass::getDeviceMessage(int) */
+
+E_DEVICE_MESSAGE_ID __thiscall
+CDriverInterfaceClass::getDeviceMessage(CDriverInterfaceClass *this,int param_1)
+
+{
+  int iVar1;
+  E_DEVICE_MESSAGE_ID EVar2;
+  
+                    /* 0x7a60  36
+                       ?getDeviceMessage@CDriverInterfaceClass@@QAE?AW4E_DEVICE_MESSAGE_ID@@H@Z */
+  iVar1 = FUN_10006a20(this + 4,param_1);
+  EVar2 = FUN_10005140(iVar1);
+  return EVar2;
+}
+
+
+
+=========== [1] FUN_10005140 @ 10005140
+
+void __fastcall FUN_10005140(int param_1)
+
+{
+  undefined1 local_820 [4];
+  undefined4 local_81c;
+  undefined1 local_818;
+  undefined4 local_817;
+  undefined4 local_813;
+  undefined1 local_80f;
+  undefined2 local_80e;
+  undefined2 local_80c;
+  undefined2 local_80a;
+  undefined1 local_808;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  local_80c = 0;
+  local_80a = 1;
+  local_818 = 1;
+  local_80e = 7;
+  local_81c = 0;
+  local_813 = 0;
+  local_808 = 0;
+  local_817 = 2;
+  local_80f = 0x82;
+  (**(code **)(**(int **)(param_1 + 0x94) + 0x20))(&local_818,0x810,&local_81c,1,local_820);
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+#################### ROOT SetUsbNotificationCallback @ 10007a80
+
+=========== [0] SetUsbNotificationCallback @ 10007a80
+
+/* public: static void __cdecl CDriverInterfaceClass::SetUsbNotificationCallback(void
+   (__stdcall*)(unsigned int)) */
+
+void __cdecl CDriverInterfaceClass::SetUsbNotificationCallback(_func_void_uint *param_1)
+
+{
+                    /* 0x7a80  30  ?SetUsbNotificationCallback@CDriverInterfaceClass@@SAXP6GXI@Z@Z
+                        */
+  FUN_100054e0(param_1);
+  return;
+}
+
+
+
+=========== [1] FUN_100054e0 @ 100054e0
+
+void __cdecl FUN_100054e0(undefined4 param_1)
+
+{
+  DAT_10164af4 = param_1;
+  return;
+}
+
+
+
+#################### ROOT RemoveUsbNotificationCallback @ 10007a90
+
+=========== [0] RemoveUsbNotificationCallback @ 10007a90
+
+/* public: static void __cdecl CDriverInterfaceClass::RemoveUsbNotificationCallback(void) */
+
+void __cdecl CDriverInterfaceClass::RemoveUsbNotificationCallback(void)
+
+{
+  DAT_10164af4 = 0;
+  return;
+                    /* 0x7a90  23  ?RemoveUsbNotificationCallback@CDriverInterfaceClass@@SAXXZ */
+}
+
+
+
+#################### ROOT GetDeviceProps @ 10007d00
+
+=========== [0] GetDeviceProps @ 10007d00
+
+/* public: class DEVICE_PROPS __thiscall CDriverInterfaceClass::GetDeviceProps(int) */
+
+int __thiscall CDriverInterfaceClass::GetDeviceProps(CDriverInterfaceClass *this,int param_1)
+
+{
+  int iVar1;
+  int in_stack_00000008;
+  
+                    /* 0x7d00  11  ?GetDeviceProps@CDriverInterfaceClass@@QAE?AVDEVICE_PROPS@@H@Z */
+  iVar1 = FUN_10005fd0(this + 4,in_stack_00000008);
+  FUN_10006340((void *)param_1,iVar1);
+  return param_1;
+}
+
+
+
+=========== [1] FUN_10005fd0 @ 10005fd0
+
+undefined4 __thiscall FUN_10005fd0(void *this,int param_1)
+
+{
+  if ((-1 < param_1) && (param_1 < *(int *)((int)this + 0x24))) {
+    return *(undefined4 *)(*(int *)((int)this + 0x20) + param_1 * 4);
+  }
+                    /* WARNING: Subroutine does not return */
+  FUN_10009068();
+}
+
+
+
+#################### ROOT GetDeviceProps @ 10007e70
+
+=========== [0] GetDeviceProps @ 10007e70
+
+/* public: void __thiscall CDriverInterfaceClass::GetDeviceProps(int,class DEVICE_PROPS &) */
+
+void __thiscall
+CDriverInterfaceClass::GetDeviceProps(CDriverInterfaceClass *this,int param_1,DEVICE_PROPS *param_2)
+
+{
+  int iVar1;
+  
+                    /* 0x7e70  12  ?GetDeviceProps@CDriverInterfaceClass@@QAEXHAAVDEVICE_PROPS@@@Z
+                        */
+  iVar1 = FUN_10005fd0(this + 4,param_1);
+  FUN_10007d30(param_2,iVar1);
+  return;
+}
+
+
+
+=========== [1] FUN_10007d30 @ 10007d30
+
+int __thiscall FUN_10007d30(void *this,int param_1)
+
+{
+  *(undefined4 *)((int)this + 4) = *(undefined4 *)(param_1 + 4);
+  *(undefined4 *)((int)this + 8) = *(undefined4 *)(param_1 + 8);
+  *(undefined4 *)((int)this + 0xc) = *(undefined4 *)(param_1 + 0xc);
+  *(undefined4 *)((int)this + 0x10) = *(undefined4 *)(param_1 + 0x10);
+  *(undefined4 *)((int)this + 0x14) = *(undefined4 *)(param_1 + 0x14);
+  *(undefined4 *)((int)this + 0x18) = *(undefined4 *)(param_1 + 0x18);
+  *(undefined4 *)((int)this + 0x1c) = *(undefined4 *)(param_1 + 0x1c);
+  *(undefined4 *)((int)this + 0x20) = *(undefined4 *)(param_1 + 0x20);
+  *(undefined4 *)((int)this + 0x24) = *(undefined4 *)(param_1 + 0x24);
+  *(undefined4 *)((int)this + 0x28) = *(undefined4 *)(param_1 + 0x28);
+  FUN_10007c90((void *)((int)this + 0x2c),(undefined4 *)(param_1 + 0x2c));
+  FUN_10007c90((void *)((int)this + 0x30),(undefined4 *)(param_1 + 0x30));
+  FUN_10007c90((void *)((int)this + 0x34),(undefined4 *)(param_1 + 0x34));
+  FUN_10007c90((void *)((int)this + 0x38),(undefined4 *)(param_1 + 0x38));
+  FUN_10007c90((void *)((int)this + 0x3c),(undefined4 *)(param_1 + 0x3c));
+  FUN_10007c90((void *)((int)this + 0x40),(undefined4 *)(param_1 + 0x40));
+  return (int)this;
+}
+
+
+
+=========== [2] FUN_10007c90 @ 10007c90
+
+int * __thiscall FUN_10007c90(void *this,undefined4 *param_1)
+
+{
+  int *piVar1;
+  void *pvVar2;
+  int iVar3;
+  int *piVar4;
+  int *piVar5;
+  
+  pvVar2 = (void *)*param_1;
+  iVar3 = *(int *)this;
+  piVar4 = (int *)((int)pvVar2 + -0x10);
+  piVar5 = (int *)(iVar3 + -0x10);
+  if (piVar4 != piVar5) {
+    piVar1 = (int *)(iVar3 + -4);
+    if ((-1 < *(int *)(iVar3 + -4)) && (*piVar4 == *piVar5)) {
+      piVar4 = FUN_10005e30(piVar4);
+      LOCK();
+      iVar3 = *piVar1;
+      *piVar1 = *piVar1 + -1;
+      UNLOCK();
+      if (iVar3 == 1 || iVar3 + -1 < 0) {
+        (**(code **)(*(int *)*piVar5 + 4))(piVar5);
+      }
+      *(int **)this = piVar4 + 4;
+      return this;
+    }
+    FUN_10002180(this,pvVar2,*(int *)((int)pvVar2 + -0xc));
+  }
+  return this;
+}
+
+

@@ -1,0 +1,803 @@
+
+=========== FUN_10001240 @ 10001240 refs: FUN_10002000 FUN_10005500 
+
+DWORD __thiscall FUN_10001240(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892804,(LPVOID)0x0,0,param_1,0xc,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100014d0 @ 100014d0 refs: FUN_10004550 FUN_100046b0 
+
+DWORD __thiscall FUN_100014d0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892860,(LPVOID)0x0,0,param_1,0x104,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001560 @ 10001560 refs: FUN_10004550 
+
+DWORD __thiscall FUN_10001560(void *this,LPVOID param_1,LPVOID param_2)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892920,param_1,4,param_2,0x200,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001cc0 @ 10001cc0 refs: FUN_100046b0 
+
+DWORD __thiscall FUN_10001cc0(void *this,LPVOID param_1,LPVOID param_2)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892900,param_1,4,param_2,0x338,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100015f0 @ 100015f0 refs: FUN_10004660 
+
+DWORD __thiscall FUN_100015f0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892924,param_1,0x200,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001920 @ 10001920 refs: FUN_10005510 FUN_10005590 
+
+DWORD __thiscall FUN_10001920(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a88,(LPVOID)0x0,0,param_1,4,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001820 @ 10001820 refs: FUN_10005530 FUN_10005550 
+
+DWORD __thiscall FUN_10001820(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a80,(LPVOID)0x0,0,param_1,4,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100018a0 @ 100018a0 refs: FUN_10005550 
+
+DWORD __thiscall FUN_100018a0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a84,param_1,4,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001dd0 @ 10001dd0 refs: FUN_10005550 FUN_10005590 
+
+DWORD __fastcall FUN_10001dd0(DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 4);
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)(param_1 + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)(param_1 + 0x1c),0x80892a00,(LPVOID)0x0,0,(LPVOID)0x0,0,
+                          &local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001e50 @ 10001e50 refs: FUN_10005550 FUN_10005590 
+
+DWORD __fastcall FUN_10001e50(DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)(param_1 + 4);
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)(param_1 + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)(param_1 + 0x1c),0x80892a04,(LPVOID)0x0,0,(LPVOID)0x0,0,
+                          &local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100019a0 @ 100019a0 refs: FUN_10005590 
+
+DWORD __thiscall FUN_100019a0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892a8c,param_1,4,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001c30 @ 10001c30 refs: FUN_100055f0 
+
+DWORD __thiscall FUN_10001c30(void *this,DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  undefined4 local_c;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_c = 0;
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  param_1 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x8089288c,&local_c,8,(LPVOID)0x0,0,&param_1
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001aa0 @ 10001aa0 refs: FUN_10005080 FUN_10005110 
+
+DWORD __thiscall FUN_10001aa0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x808928c0,(LPVOID)0x0,0,param_1,0x2c,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100012c0 @ 100012c0 refs: FUN_10005cf0 FUN_100056c0 FUN_10005700 
+
+DWORD __thiscall FUN_100012c0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892810,(LPVOID)0x0,0,param_1,4,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001680 @ 10001680 refs: FUN_10005cf0 
+
+DWORD __thiscall FUN_10001680(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892864,(LPVOID)0x0,0,param_1,0x808,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001710 @ 10001710 refs: FUN_10005cf0 
+
+DWORD __thiscall FUN_10001710(void *this,LPVOID param_1,LPVOID param_2)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892980,param_1,4,param_2,0x5c,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100017a0 @ 100017a0 refs: FUN_10005640 
+
+DWORD __thiscall FUN_100017a0(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892984,param_1,0x5c,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001340 @ 10001340 refs: FUN_100056c0 
+
+DWORD __thiscall FUN_10001340(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892814,param_1,4,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001b20 @ 10001b20 refs: FUN_10004fe0 
+
+DWORD __thiscall FUN_10001b20(void *this,DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  undefined4 local_c;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_c = 0;
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  param_1 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x808928c4,&local_c,8,(LPVOID)0x0,0,&param_1
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001d50 @ 10001d50 refs: FUN_10005a00 
+
+DWORD __thiscall FUN_10001d50(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892904,param_1,0xc,(LPVOID)0x0,0,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_100013c0 @ 100013c0 refs: FUN_10004b20 
+
+DWORD __thiscall FUN_100013c0(void *this,DWORD param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = param_1;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  param_1 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892820,&local_8,4,(LPVOID)0x0,0,&param_1
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001bb0 @ 10001bb0 refs: FUN_100055d0 
+
+DWORD __thiscall FUN_10001bb0(void *this,undefined4 *param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  undefined1 local_10 [4];
+  undefined4 local_c;
+  DWORD local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = 0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892888,(LPVOID)0x0,0,local_10,8,&local_8
+                          ,(LPOVERLAPPED)0x0);
+  if (BVar1 == 0) {
+    DVar2 = GetLastError();
+  }
+  else {
+    DVar2 = 0;
+  }
+  LeaveCriticalSection(lpCriticalSection);
+  if (DVar2 == 0) {
+    *param_1 = local_c;
+  }
+  return DVar2;
+}
+
+
+
+=========== FUN_10001a20 @ 10001a20 refs: FUN_10005610 
+
+DWORD __thiscall FUN_10001a20(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892ac8,(LPVOID)0x0,0,param_1,0x3c,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10001450 @ 10001450 refs: FUN_100049f0 
+
+DWORD __thiscall FUN_10001450(void *this,LPVOID param_1)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  void *local_8;
+  
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 4);
+  local_8 = this;
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x1c) == (HANDLE)0x0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  local_8 = (void *)0x0;
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x1c),0x80892828,(LPVOID)0x0,0,param_1,0xc,
+                          (LPDWORD)&local_8,(LPOVERLAPPED)0x0);
+  if (BVar1 != 0) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0;
+  }
+  DVar2 = GetLastError();
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+
+
+=========== FUN_10003100 @ 10003100 refs: DATA@1011cec4 
+
+DWORD __thiscall
+FUN_10003100(void *this,DWORD param_1,LPVOID param_2,DWORD param_3,void *param_4,size_t param_5,
+            DWORD *param_6)
+
+{
+  LPCRITICAL_SECTION lpCriticalSection;
+  BOOL BVar1;
+  DWORD DVar2;
+  DWORD local_8;
+  
+  local_8 = 0;
+  if (param_6 != (DWORD *)0x0) {
+    *param_6 = 0;
+  }
+  _memset(param_4,0,param_5);
+  lpCriticalSection = (LPCRITICAL_SECTION)((int)this + 0x4c);
+  EnterCriticalSection(lpCriticalSection);
+  if (*(HANDLE *)((int)this + 0x20) == (HANDLE)0xffffffff) {
+    LeaveCriticalSection(lpCriticalSection);
+    return 0xe0000013;
+  }
+  BVar1 = DeviceIoControl(*(HANDLE *)((int)this + 0x20),param_1,param_2,param_3,param_4,param_5,
+                          &local_8,(LPOVERLAPPED)((int)this + 0x38));
+  if (BVar1 == 0) {
+    DVar2 = GetLastError();
+    if (DVar2 == 0x3e5) {
+      BVar1 = GetOverlappedResult(*(HANDLE *)((int)this + 0x20),(LPOVERLAPPED)((int)this + 0x38),
+                                  &local_8,1);
+      if (BVar1 == 0) {
+        DVar2 = GetLastError();
+      }
+      else {
+        DVar2 = 0;
+      }
+    }
+  }
+  else {
+    DVar2 = 0;
+  }
+  if (param_6 != (DWORD *)0x0) {
+    *param_6 = local_8;
+  }
+  LeaveCriticalSection(lpCriticalSection);
+  return DVar2;
+}
+
+

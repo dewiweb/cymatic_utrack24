@@ -31,7 +31,7 @@ Chaque contrôle annonce son node. Toutes les captures donnent : `0xf0xx`→0, `
 | 0xd002 / 0xd003 | texte | loop in / loop out (ProgressBarPanel, `FUN_00543ab0`) | code + manuel (bouton Loop) |
 | 0xd008 | liste | RemoteDisplay::MyItem | code |
 | 0xd009 / 0xd088 | bouton | ViewSelection items 5/6 | code |
-| 0xd010+ch | bouton 2=bascule | **Solo** voie ch | code : DSPMChannelStrip `id-0x2ff0` (u16 → 0xd010+ch) ; manuel : la tranche n'a que M et S ; Mute est prouvé ci-dessous → l'autre est S (par élimination) |
+| 0xd010+ch | bouton 2=bascule | **Solo** voie ch | code DSPMChannelStrip `id-0x2ff0` + manuel ; écho 1/0 vérifié sur l'appareil (verify_20261028.txt) |
 | 0xd030+ch | bouton 2=bascule | **Mute** voie ch (écho 1=On / 0=Off) | mute1.log, mute_off.log |
 | 0xd050+ch | numérique | **Pan** (0x8000 = centre, pas 0x100) | chai2_125803.log |
 | 0xd070+ch | numérique | **Fader niveau** (défaut 0xe7ce) | chai2_125803.log |
@@ -64,7 +64,13 @@ Attention : la valeur sur le fil est la valeur brute annoncée par l'appareil (e
 - node 1 : `0xe000`–`0xe019` = 26 vu-mètres.
 - node 3 : `0xc000` fichier chargé, `0xc001` dossier courant.
 
+## Vérification sur l'appareil (2026-10-28, `research/tools/verify_cmds.py`, `verify_20261028.txt`)
+PASS (écho de l'appareil puis restauration) : mute ch1, solo ch1, fader ch1 (0xd070), pan ch1 (0xd050), 0xb200, 0xb105, 0xb207, 0xb001.
+FAIL : 0xb201 et 0xb202 ignorent l'écriture numérique `4237` (pas d'écho, valeur inchangée).
+Non testés volontairement : transport (déjà validé), horloge 0xb000, réseau 0xb003-b005, listes à domaine inconnu (b102-b104, b203-b205).
+
 ## Reste ouvert
+- 0xb201 / 0xb202 : format d'écriture différent ou lecture seule.
 - Format fil de l'écriture texte (0xd001 locate, 0xd002/0xd003 loop) : une capture uRemote (glisser la barre de lecture, choisir un marqueur, Loop) le donnera.
 - Skip Back / Skip Forward : aucune trame dans transport_all.log ; valeur du bouton non trouvée (le champ +0x180 n'est pas écrit par une constante).
 - Unité des faders (0xd070) et de b201/b202 : la correspondance valeur→dB est à mesurer.

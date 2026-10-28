@@ -1,0 +1,26 @@
+ctrls connus apres 4s : 151
+connus : b000 b001 b002 b003 b004 b005 b102 b103 b104 b105 b200 b201 b202 b203 b204 b205 b206 b207 c000 d008 d010 d011 d012 d013 d014 d015 d016 d017 d018 d019 d01a d01b d01c d01d d01e d01f d020 d021 d022 d023 d024 d025 d026 d027 d030 d031 d032 d033 d034 d035 d036 d037 d038 d039 d03a d03b d03c d03d d03e d03f d040 d041 d042 d043 d044 d045 d046 d047 d050 d051 d052 d053 d054 d055 d056 d057 d058 d059 d05a d05b d05c d05d d05e d05f d060 d061 d062 d063 d064 d065 d066 d067 d070 d071 d072 d073 d074 d075 d076 d077 d078 d079 d07a d07b d07c d07d d07e d07f d080 d081 d082 d083 d084 d085 d086 d087 e000 e001 e002 e003 e004 e005 e006 e007 e008 e009 e00a e00b e00c e00d e00e e00f e010 e011 e012 e013 e014 e015 e016 e017 e018 e019 f000 f001 f003 f004 f005 f00c f022 f040 f050
+originaux : b001=1, b105=1, b200=1, b201=63350, b202=32408, b207=1, d010=0, d030=0, d050=32768, d070=59342
+mute ch1 on                                ctrl=d030 orig=0 sent=2(toggle) echo=1 -> PASS
+mute ch1 off                               ctrl=d030 orig=0 sent=2(toggle) echo=0 -> PASS
+solo ch1 on                                ctrl=d010 orig=0 sent=2(toggle) echo=1 -> PASS
+solo ch1 off                               ctrl=d010 orig=0 sent=2(toggle) echo=0 -> PASS
+fader ch1                                  ctrl=d070 orig=59342 sent=0xdfce echo=57294 -> PASS
+pan ch1                                    ctrl=d050 orig=32768 sent=0x9000 echo=36864 -> PASS
+enum b200                                  ctrl=b200 orig=1 sent=0 echo=0 -> PASS
+enum b105                                  ctrl=b105 orig=1 sent=0 echo=0 -> PASS
+enum b207                                  ctrl=b207 orig=1 sent=0 echo=0 -> PASS
+enum b001                                  ctrl=b001 orig=1 sent=0 echo=0 -> PASS
+num b201 (+0x100)                          ctrl=b201 orig=63350 sent=0xf876 echo=None -> FAIL
+num b202 (+0x100)                          ctrl=b202 orig=32408 sent=0x7f98 echo=None -> FAIL
+--- etat final vs original ---
+b001 orig=1 final=1 OK
+b105 orig=1 final=1 OK
+b200 orig=1 final=1 OK
+b201 orig=63350 final=63350 OK
+b202 orig=32408 final=32408 OK
+b207 orig=1 final=1 OK
+d010 orig=0 final=0 OK
+d030 orig=0 final=0 OK
+d050 orig=32768 final=32768 OK
+d070 orig=59342 final=59342 OK
