@@ -177,3 +177,7 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - Etat = bits 24,25,26 du u32 ctx+0x7c (1 bit par bloc de 8; (mode^1)).
 - ctx obtenu via FUN_601cca98(900, DAT_6017eedc) -> proxy id 900; ptr stocke a DAT_6017eedc.
 - Lecture possible: rd <DAT_6017eedc contenu> puis rd <ctx+0x7c> bits24-26; ou get sur l attribut id 900.
+ 
+- rd memoire OK: 0x6017eedc -> ctx 0x60404068, +0x7c = 0x00000004 STABLE apres inputselect all digital/analog -> ctx+7c nest PAS letat live.
+- Diff ls -e -r cne/AppSettings analog vs digital: aucun changement -> etat pas dans AppSettings (dump: utrack_appsettings_digital.txt).
+- Reste: persparam, etat UI/DSP, ou lecteurs de ctx+7c a trouver.
