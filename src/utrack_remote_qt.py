@@ -376,8 +376,10 @@ class Win(QMainWindow):
                     self.tel=Tel(TEL_HOST)
                 out=self.tel.cmd('mixer querylevels',1.5)
                 import re
-                self._meters={int(n):min(65535,int(v,16)>>12) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
-            except Exception:pass
+                d={int(n):min(65535,int(v,16)>>12) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
+                if d:self._meters=d
+            except Exception:
+                self.tel=None  # session morte : reconnexion au prochain tick
         threading.Thread(target=run,daemon=True).start()
 
     def _fill_matrix(self,st):
