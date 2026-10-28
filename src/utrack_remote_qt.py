@@ -1,5 +1,5 @@
 """utrack_remote_qt — telecommande Qt (PySide6) du uTrack24 via UTrackControl (VNM local :55000)."""
-import sys,os,subprocess,threading
+import sys,os,subprocess,threading,time
 from PySide6.QtCore import QTimer,Qt
 from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
@@ -479,7 +479,8 @@ class Win(QMainWindow):
         self._meters_tick()
         for ch,s in enumerate(self.strips):
             e=st.get(0xe000+ch)
-            v=e[0] if e and isinstance(e,(tuple,list)) else (e if e is not None else None)
+            fresh=e and isinstance(e,(tuple,list)) and len(e)>2 and time.time()-e[2]<2.0
+            v=e[0] if fresh else None
             if v is None:v=self._meters.get(ch)
             if v is not None:s['m'].setValue(v)
             e=st.get(0xd050+ch)
