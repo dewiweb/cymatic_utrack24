@@ -235,6 +235,8 @@ class Win(QMainWindow):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
         hb=QHBoxLayout()
         self.btn_alan=QPushButton('Rafraîchir');self.btn_alan.clicked.connect(self._alan_refresh);hb.addWidget(self.btn_alan)
+        self.btn_alan_apply=QPushButton('Appliquer');self.btn_alan_apply.setEnabled(False)
+        self.btn_alan_apply.clicked.connect(self._alan_apply);hb.addWidget(self.btn_alan_apply)
         self.alan_info=QLabel('—');hb.addWidget(self.alan_info);hb.addStretch(1);v.addLayout(hb)
         self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
         self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
@@ -262,9 +264,15 @@ class Win(QMainWindow):
             QTreeWidgetItem(g1,[lab,str(cfg.get(k,'—'))])
         self.atree.addTopLevelItem(g1);g1.setExpanded(True)
         g2=QTreeWidgetItem(['Sources (audio → réseau)',''])
-        for s in src.get('ArchwaveAES67',{}).get('sources',[]):
-            it=QTreeWidgetItem(g2,[s.get('name','?'),'%s — activé:%s auto:%s'%(s.get('multicastAddress','—'),s.get('streamEnable'),s.get('automaticConfigEnabled'))])
+        self._alan_src=src.get('ArchwaveAES67',{}).get('sources',[])
+        self._src_items=[]
+        for s in self._alan_src:
+            it=QTreeWidgetItem(g2,[s.get('name','?'),s.get('multicastAddress','—')])
+            it.setFlags(it.flags()|Qt.ItemIsUserCheckable|Qt.ItemIsEditable)
+            it.setCheckState(1,Qt.Checked if s.get('streamEnable') else Qt.Unchecked)
+            it.setData(0,Qt.UserRole,s);self._src_items.append(it)
         self.atree.addTopLevelItem(g2);g2.setExpanded(True)
+        self.btn_alan_apply.setEnabled(bool(self._alan_src))
         g3=QTreeWidgetItem(['Sorties (réseau → audio)',''])
         for o in out.get('ArchwaveAES67',{}).get('outputs',[]):
             sp=o.get('streamPath','') or '—'
@@ -276,6 +284,20 @@ class Win(QMainWindow):
         self.atree.addTopLevelItem(g4);g4.setExpanded(True)
         self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(
             len(src.get('ArchwaveAES67',{}).get('sources',[])),len(out.get('ArchwaveAES67',{}).get('outputs',[]))))
+
+    def _alan_apply(self):
+        if self.alan is None or not getattr(self,'_alan_src',None):return
+        for it,s in zip(self._src_items,self._alan_src):
+            s['streamEnable']=it.checkState(1)==Qt.Checked
+            if it.text(0)!=s.get('name'):s['name']=it.text(0)
+        if QMessageBox.question(self,'AudioLAN','Appliquer les modifications sur la carte ?')!=QMessageBox.Yes:return
+        self.btn_alan_apply.setEnabled(False);self.statusBar().showMessage('Écriture AudioLAN…')
+        def run():
+            try:
+                self.alan.set_sources([dict(s) for s in self._alan_src])
+                self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list())
+            except Exception as e:self._alan_data=e
+        threading.Thread(target=run,daemon=True).start()
 
     def _takes_refresh(self):
         self.btn_ref.setEnabled(False);self.statusBar().showMessage('Lecture des prises…')
