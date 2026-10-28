@@ -55,7 +55,10 @@ class UTrackControl:
     def _drain(self):
         d=b''
         try:
-            while True:d+=self.s.recv(65536)
+            while True:
+                r=self.s.recv(65536)
+                if not r:break
+                d+=r
         except socket.timeout:pass
         return d
 
