@@ -361,6 +361,7 @@ class Win(QMainWindow):
                 with self._tlock:self.tel.cmd('inputselect %d %s'%(blk+1,mode))
                 for i in range(8):self._matrix_state[blk*8+i]=mode
                 self._take_err=None
+            except OSError as e:self._take_err=e;self.tel=None
             except Exception as e:self._take_err=e
         threading.Thread(target=run,daemon=True).start()
 
@@ -398,6 +399,7 @@ class Win(QMainWindow):
                     from utrack_telnet import UTrack24 as Tel
                     self.tel=Tel(TEL_HOST)
                 with self._tlock:self._takes_data=self.tel.takes()
+            except OSError as e:self._takes_data=e;self.tel=None  # socket morte : reconnexion au prochain essai
             except Exception as e:self._takes_data=e
         threading.Thread(target=run,daemon=True).start()
 
@@ -410,6 +412,7 @@ class Win(QMainWindow):
         def run():
             try:
                 with self._tlock:self._reclog=self.tel.read_file('/MultiTrack/%s/reclog.txt'%t['name']).decode('latin-1').replace('\r\n','\n')
+            except OSError as e:self._reclog='Erreur : %s'%e;self.tel=None
             except Exception as e:self._reclog='Erreur : %s'%e
         threading.Thread(target=run,daemon=True).start()
 
@@ -476,6 +479,7 @@ class Win(QMainWindow):
         e=st.get(0xc000) or st.get(0xf000)
         if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
+        if self.u and hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         self._meters_tick()
         for ch,s in enumerate(self.strips):
             e=st.get(0xe000+ch)
