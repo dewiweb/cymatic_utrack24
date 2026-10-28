@@ -3,10 +3,10 @@ import sys,os,subprocess,threading
 from PySide6.QtCore import QTimer,Qt
 from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
-    QSlider,QDial,QCheckBox,QComboBox,QScrollArea,QGroupBox,QMessageBox)
+    QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox)
 
 sys.path.insert(0,os.path.dirname(__file__))
-from utrack_control import UTrackControl
+from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
 
 DARK = """QMainWindow,QWidget{background:#1c1e22;color:#ddd;font:10pt Consolas}
 QPushButton{background:#2d3138;border:1px solid #555;border-radius:4px;padding:8px}
@@ -98,24 +98,49 @@ class Win(QMainWindow):
             del self._pend[(kind,ch)]
             if self.u:(self.u.fader if kind=='f' else self.u.pan)(ch,v)
 
+    ASK={0xb000:'Changer l\'horloge peut faire perdre la synchro. Continuer ?',
+         0xb003:'Le DHCP peut changer l\'adresse IP et couper la liaison. Continuer ?',
+         0xb102:'Change le format d\'enregistrement. Continuer ?',
+         0xb103:'Change le format d\'enregistrement. Continuer ?',
+         0xb104:'Change le format d\'enregistrement. Continuer ?'}
+    COMBO_LABEL={0xb000:'Horloge',0xb001:'Commutateur au pied',0xb102:'Fréquence',0xb103:'Résolution',
+                 0xb104:'Pistes',0xb203:'Mode de lecture',0xb204:'Sorties stéréo 1',0xb205:'Sorties stéréo 2'}
+
+    def _set_ask(self,ctrl,val):
+        if not self.u:return
+        msg=self.ASK.get(ctrl)
+        if msg and QMessageBox.question(self,'Confirmation',msg)!=QMessageBox.Yes:
+            self._refresh();return
+        self.u.set(ctrl,val)
+
     def _settings(self):
         w=QWidget();v=QVBoxLayout(w)
         self.chk={}
-        for ctrl,label in ((0xb200,'Lecture auto (Auto-Play)'),(0xb105,'Pré-enregistrement'),(0xb207,'Sorties multipistes post-fader')):
-            cb=QCheckBox(label);cb.toggled.connect(lambda on,c=ctrl:self.u and self.u.set(c,1 if on else 0))
+        for ctrl,label in ((0xb200,'Lecture auto (Auto-Play)'),(0xb105,'Pré-enregistrement'),
+                           (0xb207,'Sorties multipistes post-fader'),(0xb003,'DHCP')):
+            cb=QCheckBox(label);cb.toggled.connect(lambda on,c=ctrl:self._set_ask(c,1 if on else 0))
             self.chk[ctrl]=cb;v.addWidget(cb)
-        row=QHBoxLayout();row.addWidget(QLabel('Commutateur au pied (0xb001) :'))
-        self.cmb=QComboBox();self.cmb.addItem('valeur 0',0);self.cmb.addItem('valeur 1',1)
-        self.cmb.activated.connect(lambda i:self.u and self.u.set(0xb001,i))
-        row.addWidget(self.cmb);row.addStretch(1);v.addLayout(row)
-        g=QGroupBox('Lecture seule (non vérifié en écriture)');gr=QGridLayout();self.ro={}
-        rows=((0xb000,'Horloge'),(0xb102,'Fréquence'),(0xb103,'Résolution'),(0xb104,'Pistes'),(0xb203,'Mode de lecture'),
-              (0xb204,'Sorties stéréo 1'),(0xb205,'Sorties stéréo 2'),(0xb201,'b201'),(0xb202,'b202'),
-              (0xb003,'DHCP'),(0xb004,'IP'),(0xb005,'Masque'),(0xb002,'Date'))
-        for i,(ctrl,label) in enumerate(rows):
-            gr.addWidget(QLabel(label),i//2,(i%2)*2)
-            l=QLabel('—');self.ro[ctrl]=l;gr.addWidget(l,i//2,(i%2)*2+1)
-        g.setLayout(gr);v.addWidget(g);v.addStretch(1)
+        gr=QGridLayout();self.cmb={}
+        for i,ctrl in enumerate((0xb000,0xb001,0xb102,0xb103,0xb104,0xb203,0xb204,0xb205)):
+            gr.addWidget(QLabel(self.COMBO_LABEL[ctrl]),i//2,(i%2)*2)
+            cb=QComboBox()
+            for val,lab in SETTINGS[ctrl]:cb.addItem(lab,val)
+            cb.activated.connect(lambda i,c=ctrl,b=cb:self._set_ask(c,b.itemData(i)))
+            self.cmb[ctrl]=cb;gr.addWidget(cb,i//2,(i%2)*2+1)
+        self.sp={}
+        for ctrl,lab,rng,unit,to_raw in ((0xb201,'Atténuation de sortie',(-30,0),' dB',att_raw),
+                                         (0xb202,'Délai',(-1000,1000),' ms',ms_raw)):
+            i=len(self.cmb)+len(self.sp)
+            gr.addWidget(QLabel(lab),i//2,(i%2)*2)
+            sb=QSpinBox();sb.setRange(*rng);sb.setSuffix(unit)
+            sb.editingFinished.connect(lambda c=ctrl,f=to_raw,s=sb:self.u and self.u.num(c,f(s.value())))
+            self.sp[ctrl]=(sb,to_raw);gr.addWidget(sb,i//2,(i%2)*2+1)
+        v.addLayout(gr)
+        g=QGroupBox('Lecture seule');gr2=QGridLayout();self.ro={}
+        for i,(ctrl,label) in enumerate(((0xb004,'IP'),(0xb005,'Masque'),(0xb002,'Date'),(0xb206,'b206'))):
+            gr2.addWidget(QLabel(label),i//2,(i%2)*2)
+            l=QLabel('—');self.ro[ctrl]=l;gr2.addWidget(l,i//2,(i%2)*2+1)
+        g.setLayout(gr2);v.addWidget(g);v.addStretch(1)
         return w
 
     def _refresh(self):
@@ -145,13 +170,18 @@ class Win(QMainWindow):
             e=st.get(ctrl)
             if e and e[0] is not None and cb.isChecked()!=(e[0]==1):
                 cb.blockSignals(True);cb.setChecked(e[0]==1);cb.blockSignals(False)
-        e=st.get(0xb001)
-        if e:
-            lab=e[1]
-            for i in (0,1):
-                if lab:self.cmb.setItemText(i,lab if i==e[0] else 'valeur %d'%i)
-            if e[0] in (0,1):
-                self.cmb.blockSignals(True);self.cmb.setCurrentIndex(e[0]);self.cmb.blockSignals(False)
+        for ctrl,cb in self.cmb.items():
+            e=st.get(ctrl)
+            if e and e[0] is not None:
+                cur=-1 if e[0]==0xffff else e[0];i=cb.findData(cur)
+                if i>=0:
+                    if e[1]:cb.setItemText(i,e[1])
+                    cb.blockSignals(True);cb.setCurrentIndex(i);cb.blockSignals(False)
+        for ctrl,(sb,to_raw) in self.sp.items():
+            e=st.get(ctrl)
+            if e and e[0] is not None and not sb.hasFocus():
+                disp=(att_db if ctrl==0xb201 else ms_val)(e[0])
+                sb.blockSignals(True);sb.setValue(disp);sb.blockSignals(False)
         for ctrl,l in self.ro.items():l.setText(_fmt(st.get(ctrl)))
 
     def closeEvent(self,e):

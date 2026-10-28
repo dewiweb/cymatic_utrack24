@@ -1,0 +1,39 @@
+ctrls connus : 151
+--- footswitch b001 ctrl=b001 orig=1 -> 3
+  envoi 3 lu=3 via echo -> PASS
+  restore 1 lu=1 via echo -> PASS
+--- playback b203 ctrl=b203 orig=65535 -> 0
+  envoi 0 lu=0 via echo -> PASS
+  restore -1 lu=65535 via echo -> PASS
+--- stereo1 b204 ctrl=b204 orig=1 -> 3
+  envoi 3 lu=3 via echo -> PASS
+  restore 1 lu=1 via echo -> PASS
+--- stereo2 b205 ctrl=b205 orig=1 -> 3
+  envoi 3 lu=3 via echo -> PASS
+  restore 1 lu=1 via echo -> PASS
+--- pistes b104 ctrl=b104 orig=24 -> 16
+  envoi 16 lu=16 via echo -> PASS
+  restore 24 lu=24 via echo -> PASS
+--- resolution b103 ctrl=b103 orig=24 -> 16
+  envoi 16 lu=16 via echo -> PASS
+  restore 24 lu=24 via echo -> PASS
+--- frequence b102 ctrl=b102 orig=2 -> 1
+  envoi 1 lu=1 via echo -> PASS
+  restore 2 lu=2 via echo -> PASS
+--- attenuation b201 -> -3dB ctrl=b201 orig=63350 -> 58981
+  envoi 58981 lu=58981 via echo -> PASS
+  restore 63350 lu=63350 via echo -> PASS
+--- delai b202 -> -5ms ctrl=b202 orig=32408 -> 32603
+  (reconnexion, 151 ctrls)
+  envoi 32603 lu=32572 via reconnect(lu=32572) -> FAIL
+  restore 32408 lu=32408 via echo -> PASS
+--- etat final ---
+b001 -> 1
+b203 -> 65535
+b204 -> 1
+b205 -> 1
+b104 -> 24
+b103 -> 24
+b102 -> 2
+b201 -> 63350
+b202 -> 32408

@@ -27,6 +27,20 @@ def node(ctrl):return NODE[ctrl>>12]
 TRANSPORT=0xd000
 STOP,PLAY,REC=3,4,5   # PLAY sert aussi de Pause (meme valeur emise par uRemote)
 
+# Domaines extraits de la decompilation uRemote (research/notes/device_model.md)
+SETTINGS={0xb000:[(0,'Internal'),(1,'Wordclock'),(2,'Digital I/O'),(3,'PTP')],
+          0xb001:[(0,'Play'),(1,'Play-Pause'),(2,'Record'),(3,'Play-Stop')],
+          0xb102:[(1,'44.1 kHz'),(2,'48 kHz'),(3,'88.2 kHz'),(4,'96 kHz')],
+          0xb103:[(16,'16-bit'),(24,'24-bit')],
+          0xb104:[(2,'Stereo')]+[(n,'%d Ch'%n) for n in (4,8,12,16,20,24)],
+          0xb203:[(-1,'Single'),(0,'Continuous'),(1,'Shuffle'),(2,'Repeat One'),(3,'Repeat All')],
+          0xb204:[(n,'%d-%d'%(n,n+1)) for n in range(1,32,2)],
+          0xb205:[(n,'%d-%d'%(n,n+1)) for n in range(1,32,2)]}
+def att_raw(db):return ((db+30)*0xffff)//30
+def att_db(raw):return round(raw*30/65535-30)
+def ms_raw(v):return ((v+1000)*0xffff)//2000
+def ms_val(raw):return round(raw*2000/65535-1000)
+
 def ctrl_msg(ctrl,val,sub=None):
     if sub is None:sub=node(ctrl)
     m=bytearray(CTRL_TEMPLATE)
