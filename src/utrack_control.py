@@ -101,11 +101,13 @@ class UTrackControl:
             except OSError:break
             frames,buf=parse(buf)
             for fl,body,ok in frames:
-                if fl==2 and body[:4]==b'\x00\x01\xc4\x23':
-                    resp=bytearray(body);resp[2:4]=b'\x44\x23'
-                    self._send(frame(bytes(resp)))
-                elif body[2:4]==b'\x44\x37':self._update(body)
-            if time.time()-last_hb>0.7:
+                try:
+                    if fl==2 and body[:4]==b'\x00\x01\xc4\x23':
+                        resp=bytearray(body);resp[2:4]=b'\x44\x23'
+                        self._send(frame(bytes(resp)))
+                    elif body[2:4]==b'\x44\x37':self._update(body)
+                except Exception:continue  # trame malformee : ne pas tuer la boucle
+            if time.time()-last_hb>0.5:
                 try:self._send(self.HB)
                 except OSError:break
                 last_hb=time.time()
@@ -116,7 +118,8 @@ class UTrackControl:
     def _update(self,m):
         o=40
         while o+8<=len(m):
-            t,f,L,l2=struct.unpack_from('<HHHH',m,o)
+            try:t,f,L,l2=struct.unpack_from('<HHHH',m,o)
+            except struct.error:break
             if f!=0x1000 or L<8:break
             pl=m[o+8:o+8+l2];o+=(L+3)&~3
             if t!=0x37c8 or len(pl)<16:continue
