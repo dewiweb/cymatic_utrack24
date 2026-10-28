@@ -7,6 +7,11 @@
 - `wavefile <chemin.wav>` : fréquence, bits, nombre de voies, nb d'échantillons, **marqueurs en échantillons**.
   Ex. Take0012 : 44100 Hz, 16 bits, 8 voies, 414672 échantillons, 2 marqueurs (143912, 277568) → les marqueurs créés par Play pendant REC sont bien écrits dans le WAV.
 - Réglages réels d'enregistrement : `/cne/AppSettings/Recording` (`SampleSize`, `TrackCount`, `SampleRate`, `PreRecording`) et `/cne/AppSettings/Global`.
+- Lecture d'un fichier (syntaxe tirée des textes d'aide du firmware 4218, `utrack24_fw_strings.txt` l.7825-7843 ; vérifié) :
+  `file open <chemin> ro` → `file size` → `file print <octets>` (dump hexa 16 o/ligne) → `file close`.
+  Autres : `file read <octets> {-a}`, `file seek <offset>`, `file tell`, `file stat <chemin>`, `file move <a> <b>`, `file remove <nom>`, `file write <octets> {<count>} {<buffer_offset>}` (modifient le disque : non utilisés).
+- `reclog.txt` : journal texte de la prise (format SR/bits/pistes, création de dossier, « Adding a Marker @:3 » en secondes, arrêt).
+- `TakeNNNN.set` : XML `<song_settings>` (nom, sample count, format, et par voie : output_level/mute/channel, track_name, monitor_volume/mute/pan). Exemple : `research/notes/Take0012.set`.
 - Attention : `file open` sans argument a fait fermer la connexion par l'appareil (le uTrack reste joignable). Ne pas appeler les sous-commandes `file` sans connaître leur syntaxe. Le shell garde la ligne en cours entre connexions : envoyer des backspaces pour la vider si l'invite est polluée.
 
 ## CopperLan
@@ -15,4 +20,5 @@
 - `0xc003` (FilePanel) = sélection/chargement d'un fichier.
 
 ## Constat
+Le passage en 44.1/16/8 a été fait par l'utilisateur avec la télécommande (confirmé) : les écritures de réglages fonctionnent.
 Les prises Take0011–Take0014 (28/10) sont en 44.1 kHz / 16 bits / 8 voies ; Take0010 (27/10) en 48 kHz / 24 bits / 24 voies. L'appareil est actuellement réglé en 44.1/16/8 (Telnet et CopperLan concordent), alors que verify_settings_20261028.txt annonce une restauration en 48/24/24 → origine du changement à établir.

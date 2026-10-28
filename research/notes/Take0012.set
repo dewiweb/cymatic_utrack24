@@ -1,0 +1,97 @@
+<song_settings>
+	<version>1</version>
+	<creator>cymatic audio uTrack24</creator>
+	<target_device>uTrack24</target_device>
+	<song_name>Take0012</song_name>
+	<sync_device>Standalone</sync_device>
+	<wave_file_count>1</wave_file_count>
+	<total_sample_count>396904</total_sample_count>
+	<sampling_rate>44100</sampling_rate>
+	<resolution>16</resolution>
+	<channel_count>8</channel_count>
+	<playback_type>multitrack</playback_type>
+	<channels>
+		<channel id="0">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>0</output_channel>
+			<track_name>Channel 1</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="1">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>1</output_channel>
+			<track_name>Channel 2</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="2">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>2</output_channel>
+			<track_name>Channel 3</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="3">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>3</output_channel>
+			<track_name>Channel 4</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="4">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>4</output_channel>
+			<track_name>Channel 5</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="5">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>5</output_channel>
+			<track_name>Channel 6</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="6">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>6</output_channel>
+			<track_name>Channel 7</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+		<channel id="7">
+			<output_level>0</output_level>
+			<output_mute>0</output_mute>
+			<output_channel>7</output_channel>
+			<track_name>Channel 8</track_name>
+			<monitor_volume>-12</monitor_volume>
+			<monitor_mute>0</monitor_mute>
+			<monitor_pan>0</monitor_pan>
+		</channel>
+	</channels>
+	<marker>
+		<global_time_in_samples>132300</global_time_in_samples>
+		<file_number>1</file_number>
+		<local_time_in_samples>132300</local_time_in_samples>
+	</marker>
+	<marker>
+		<global_time_in_samples>264600</global_time_in_samples>
+		<file_number>1</file_number>
+		<local_time_in_samples>264600</local_time_in_samples>
+	</marker>
+</song_settings>
