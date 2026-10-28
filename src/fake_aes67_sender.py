@@ -140,9 +140,11 @@ def main():
         ts = int(clk.now() * RATE)
         hdr = struct.pack('>BBHII', 0x80, 96, seq & 0xFFFF, ts & 0xFFFFFFFF, 0xDEADBEEF)
         p = bytearray()
-        env = 0.5 + 0.5 * math.sin(2 * math.pi * 0.5 * ts / RATE)
+        # sweep lineaire 20 Hz -> 20 kHz sur 4s, en boucle
+        per = 4.0
         for i in range(samples):
-            v = int(0.3 * env * 8388607 * math.sin(2 * math.pi * FREQ * (ts + i) / RATE))
+            f2 = 20 + (20000 - 20) * (((ts + i) / RATE) % per / per)
+            v = int(0.3 * 8388607 * math.sin(2 * math.pi * f2 * (ts + i) / RATE))
             for ch in range(NCH):
                 p += (v if ch < 2 else 0).to_bytes(3, 'big', signed=True)
         s.sendto(hdr + p, (a.ip, a.port))
