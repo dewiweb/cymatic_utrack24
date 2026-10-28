@@ -97,13 +97,18 @@ def sap_packet(src_ip, sdp_bytes):
 
 
 def main():
+    global RATE, SAP_ADDR
     ap = argparse.ArgumentParser()
     ap.add_argument('--ip', default='239.69.200.200')
     ap.add_argument('--port', type=int, default=5004)
     ap.add_argument('--src', default='192.168.10.81')
     ap.add_argument('--iface', default='192.168.10.81')
     ap.add_argument('--dur', type=float, default=0.0)
+    ap.add_argument('--rate', type=int, default=44100)
+    ap.add_argument('--sap-group', default=SAP_ADDR[0])
     a = ap.parse_args()
+    RATE = a.rate
+    SAP_ADDR = (a.sap_group, 9875)
 
     clk = PtpMaster(a.iface, domain=0)
     threading.Thread(target=clk.serve, daemon=True).start()
@@ -135,8 +140,9 @@ def main():
         ts = int(clk.now() * RATE)
         hdr = struct.pack('>BBHII', 0x80, 96, seq & 0xFFFF, ts & 0xFFFFFFFF, 0xDEADBEEF)
         p = bytearray()
+        env = 0.5 + 0.5 * math.sin(2 * math.pi * 0.5 * ts / RATE)
         for i in range(samples):
-            v = int(0.3 * 8388607 * math.sin(2 * math.pi * FREQ * (ts + i) / RATE))
+            v = int(0.3 * env * 8388607 * math.sin(2 * math.pi * FREQ * (ts + i) / RATE))
             for ch in range(NCH):
                 p += (v if ch < 2 else 0).to_bytes(3, 'big', signed=True)
         s.sendto(hdr + p, (a.ip, a.port))
