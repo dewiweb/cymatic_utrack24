@@ -1,0 +1,371 @@
+l ls ls  ls - ls -e ls -e  ls -e - ls -e -r ls -e -r  ls -e -r c ls -e -r cn ls -e -r cne 
+  d. DisplaySettings
+    l. V5_Ratio type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+    l. LCD_Bias type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+    l. Volume type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=46
+  d. AppSettings
+    d. Global
+      l. SwVersion type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0xFFFFFF
+      l. BusBySwitch type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. BusType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=USB
+      l. StreamingInterface type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=USB
+      l. SampleRate type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. DigitalIOFormat type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. SyncMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. USBConfigurationId type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+      l. EnableMIDI type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      l. FootSwitchFunction type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. ClockSourceStandAlone type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. ClockSourceSync type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+      l. ClockSourceInterface type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+      l. uTrackName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uTrack
+      l. uRemoteId type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. DeviceMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+    d. MixerControl
+      l. CH01_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH01_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH01_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH02_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH02_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH02_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH03_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH03_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH03_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH04_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH04_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH04_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH05_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH05_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH05_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH06_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH06_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH06_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH07_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH07_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH07_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH08_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH08_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH08_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH09_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH09_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH09_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH10_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH10_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH10_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH11_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH11_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH11_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH12_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH12_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH12_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH13_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH13_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH13_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH14_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH14_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH14_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH15_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH15_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH15_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH16_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH16_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH16_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH17_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH17_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH17_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH18_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH18_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH18_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH19_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH19_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH19_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH20_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH20_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH20_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH21_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH21_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH21_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH22_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH22_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH22_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH23_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH23_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH23_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH24_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-12.000000
+      l. CH24_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. CH24_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH25_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0.000000
+      l. CH25_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-127
+      l. CH25_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. CH26_Fader_dB type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0.000000
+      l. CH26_Pan type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-127
+      l. CH26_Mute type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. MonitorBoost type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0.0
+    d. Recording
+      l. SampleSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=16
+      l. TrackCount type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+      l. SampleRate type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. PreRecording type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+    d. Playback
+      l. PlaybackMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-1
+      l. StereoOutputs96K type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. StereoOutputs type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. OutputAttenuation type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-1
+      l. AutoPlay type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      l. MultitrackOutputsPostFader type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. StereoOutputsPostFader type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      d. Midi
+        l. MidiThru type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. MidiOffset type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-11
+    d. AnalogInputs
+      l. Inputs00to07 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+      l. Inputs08to15 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+      l. Inputs16to23 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+    d. AudioLan
+      l. InterfaceAsInput type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+    d. Adat
+      l. Input type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      d. Output48k
+        l. Outgroup01_08 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. Outgroup09_16 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. Outgroup17_24 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      d. Output96k
+        l. Outgroup01_08 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+    d. Madi
+      l. Input type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. Mode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. Frame type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      d. Output48k
+        l. Outgroup00_07 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. Outgroup08_15 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. Outgroup16_23 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+        l. Outgroup24_31 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+        l. Outgroup32_39 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+        l. Outgroup40_47 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+        l. Outgroup48_55 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=9
+        l. Outgroup56_63 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+      d. Output96k
+        l. Outgroup00_07 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. Outgroup08_15 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+        l. Outgroup16_23 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+        l. Outgroup24_31 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+    d. SavedSettings
+      l. SampleSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+      l. TrackCount type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+      l. SyncMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. ClockSourceStandAlone type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. ClockSourceSync type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+      l. ClockSourceInterface type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+      l. SampleRate type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+      l. PlaybackMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-1
+      l. StereoOutputs96K type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. StereoOutputs type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. MidiThru type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. MidiOffset type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-11
+      l. OutputAttenuation type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-1
+      l. FootSwitchFunction type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. PreRecording type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      l. AutoPlay type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      l. MultitrackOutputsPostFader type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      l. StereoOutputsPostFader type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=true
+      l. DeviceMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. StaticIP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3909396672
+      l. SubnetMask type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=16777215
+    d. FileStreaming
+      l. MaxHeapSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=25166848
+      l. MaxNoOfEncoders type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+      l. MaxNoOfDecoders type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+    d. USBDecoder
+      l. PlayoutDelay type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=96
+      l. NoOfElementsInQueue type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+      l. Name type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=USB Decoder
+    d. StreamingRingbuffer
+      l. MaxDelay type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=512
+    d. DSP
+      l. HWPacketDelay_32kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=220
+      l. HWPacketDelay_44.1_48kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=220
+      l. HWPacketDelay_88.2_96kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=220
+      l. HWPacketDelay_176.4_192kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=220
+    d. Sync
+      l. Mode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. GroupId type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. SlaveIndex type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. Slave_1_Id type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. Slave_2_Id type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      l. Slave_3_Id type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+    d. CopperLan
+      l. Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. DuplicateNumber type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=779008308
+      l. DuplicateMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      l. BrandID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0x000E
+      l. BrandName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Cymatic Audio
+      l. ModelID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0x0001
+      l. Contact type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=info@cymaticaudio.com
+      d. Midi
+        l. Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. Mode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. Name type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MIDI
+        l. ControlEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. ControlMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. ControlName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MIDI Control
+  d. USB
+    d. DeviceInfo
+      l. VendorId type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0x1511
+      l. ProductId type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0x0043
+      l. ManufacturerName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Archwave Switzerland
+      l. ProductName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uTRACK24
+    d. DFU
+      l. WillDetach type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=false
+      l. DetachTimeOut type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10000
+  d. System
+    d. Threads
+      d. default
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. isoStateMachine
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=14
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=14
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      d. cmdline_setupThread
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. USBDrvRxThread
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=9
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=9
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. USBStackImpl
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. PTP
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4096
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. PTP Timer
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. PTP Forwarder
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. lwIP
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4096
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. EthernetReceive
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. EthernetTransmit
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. EthernetLink
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=22
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=22
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. USB Decoder
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. RTP Decoder
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=20
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=20
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. DSPProcess
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. Explicit Feedback
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. Main UI Timer
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. UI Main Control
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4096
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=20
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=20
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. HalUIControl
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+      d. FileAccessHandler
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=21
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=21
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. MaxQueuedJobs type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=128
+        l. WaitTimeBetweenJobs type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      d. StreamingMessenger
+        l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+        l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+        l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=23
+        l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=23
+        l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. MaxQueuedMessages type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=128
+  d. Networking
+    d. IpCfg
+      l. DeviceName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uTrack24
+      d. Config0
+        l. DHCPClient type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. IP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192.168.4.233
+        l. Mask type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=255.255.255.0
+        l. DefGW type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+        l. Proxy type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. ProxyServer type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+        l. ProxyServerPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+        l. DNSSrv1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+        l. DNSSrv2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+        l. Hostname type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uTrack
+        l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+  d. FirmwareUpdate
+    l. KeepBootloader type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+  d. Config
+    l. Name type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uTRACK24
+    l. Version type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+sds://>
