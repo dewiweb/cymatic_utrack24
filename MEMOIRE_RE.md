@@ -189,3 +189,5 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - inputselect reste le seul chemin live prouve (metres prouvent le basculement).
  
 - PERCEE: input-select expose en CopperLan! 0xe000-0xe017 = source entree par canal (1=analog->0=digital quand inputselect all digital). 0xe018/19 tjrs 0 (canaux 25/26 monitor). Valeurs 2 sur e00f/e016 = 3e etat a decoder. Getter firmware FUN_6017da50 pack bits24-26 ctx+0x7c; publish via FUN_600fc794->FUN_600613bc (notif CopperLan, objet 0x60405aec tag AMES).
+ 
+- Ecriture 0xe000 par 8437/ctrl et 4237/num: refusee (lecture seule). Lecture OK, ecriture = SDS inputselect. Boucle matrice complete: read CopperLan e0xx + write SDS.
