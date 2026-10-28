@@ -1,0 +1,1902 @@
+ 
+ 
+User Manual 
+uTrack24 
+July 2017 
+
+ 
+ 
+Table of Contents 
+2 
+User Manual 
+uTrack24 
+July 2017 
+Table of Contents 
+Table of Contents ........................................................................................................................................................... 2 
+1. 
+WHAT’S IN THE BOX ........................................................................................................................................... 3 
+2. 
+SAFETY PRECAUTIONS ...................................................................................................................................... 4 
+3. 
+USAGE PRECAUTIONS ....................................................................................................................................... 5 
+4. 
+LIMITED WARRANTY ........................................................................................................................................... 5 
+5. 
+INTRODUCTION ................................................................................................................................................... 6 
+6. 
+FEATURE LIST ..................................................................................................................................................... 7 
+7. 
+FRONT PANEL ..................................................................................................................................................... 8 
+8. 
+REAR PANEL ...................................................................................................................................................... 10 
+9. 
+USE CASES ........................................................................................................................................................ 13 
+9.1. MIXER FOR LIVE CONCERT RECORDING ................................................................................................. 13 
+9.2. RECORDING SPLIT/OUTBOARD MIC PREAMPS ....................................................................................... 14 
+10. Preparing USB drive ............................................................................................................................................ 15 
+10.1. USB Hard Drives vs. USB Flash Drives ......................................................................................................... 15 
+11. Recording ............................................................................................................................................................ 16 
+11.1. Recording Signal Flow ................................................................................................................................... 16 
+12. Playback .............................................................................................................................................................. 17 
+12.1. File playback modes ...................................................................................................................................... 17 
+12.2. Switching between different playback modes: ............................................................................................... 17 
+12.3. Playing Back Audio ........................................................................................................................................ 18 
+12.4. Playback Signal Flow ..................................................................................................................................... 19 
+13. FILE FORMATS .................................................................................................................................................. 20 
+14. SETTINGS BAR .................................................................................................................................................. 21 
+15. RECORD PAGE .................................................................................................................................................. 22 
+16. MIX PAGE ........................................................................................................................................................... 23 
+16.1. Monitor Boost: ................................................................................................................................................ 24 
+16.2. Saving Mixer Parameters: .............................................................................................................................. 24 
+16.2.1. In Recording .......................................................................................................................................... 24 
+16.2.2. In Playback ............................................................................................................................................ 24 
+17. PLAY PAGE ........................................................................................................................................................ 25 
+18. uTrack24 SETTINGS MENUS ............................................................................................................................. 27 
+18.1. Clock Source Menu ........................................................................................................................................ 27 
+18.2. Footswitch Menu ............................................................................................................................................ 28 
+18.3. Device Mode .................................................................................................................................................. 28 
+
+ 
+ 
+WHAT’S IN THE BOX 
+3 
+User Manual 
+uTrack24 
+July 2017 
+18.4. Recording Menu ............................................................................................................................................. 28 
+18.5. Playback Menu .............................................................................................................................................. 29 
+18.6. Sync Menu ..................................................................................................................................................... 31 
+18.7. Inputs ............................................................................................................................................................. 31 
+18.8. MADI .............................................................................................................................................................. 32 
+18.9. ADAT ............................................................................................................................................................. 33 
+18.10. 
+AudioLan ................................................................................................................................................ 33 
+18.11. 
+Utilities Menu .......................................................................................................................................... 34 
+18.12. 
+Load Settings ......................................................................................................................................... 34 
+18.13. 
+Save Settings ......................................................................................................................................... 34 
+19. USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE ......................................................................... 35 
+19.1. Using the uTrack24 as an Audio Interface with Microsoft Windows ............................................................... 35 
+19.1.1. Minimum System Requirements ............................................................................................................ 35 
+19.1.2. WDM and ASIO driver installation ......................................................................................................... 35 
+19.2. Audio Interface Signal Flow ........................................................................................................................... 35 
+19.2.1. uTrack24 Mixer Control Panel for PC .................................................................................................... 36 
+19.3. Using the uTrack24 as an Audio Interface with an OS X ............................................................................... 41 
+19.3.1. Minimum System Requirements ............................................................................................................ 41 
+19.4. Using the uTrack24 as an Audio Interface with an Apple® iPad® ................................................................. 42 
+19.4.1. Minimum System Requirements ............................................................................................................ 42 
+19.5. Audio Interface Control Room Features ......................................................................................................... 42 
+20. UPDATING THE FIRMWARE OF uTrack24 ....................................................................................................... 43 
+20.1. Firmware update using a Network Connection (Windows & OS X) ................................................................ 43 
+20.2. Firmware update using the USB connection (Windows & OS X) ................................................................... 45 
+20.3. Firmware update using USB drive ................................................................................................................. 45 
+21. Legal Disclaimer .................................................................................................................................................. 46 
+ 
+ 
+ 
+1. WHAT’S IN THE BOX 
+Your uTrack24 comes with the following components:  
+ 
+uTrack24 unit 
+ 
+AC/DC power adapter, incl. UL and US power cables 
+ 
+19” rack ears (removable) 
+ 
+USB cable 
+ 
+Printed Quick Start Guide  
+ 
+
+ 
+ 
+SAFETY PRECAUTIONS 
+4 
+User Manual 
+uTrack24 
+July 2017 
+ 
+Note: It is recommended to update your uTrack24 to the latest firmware, available at the Cymatic website, to avail the 
+latest features and capabilities we added to uTrack24. See the chapter Updating the firmware of uTrack24.  
+2. SAFETY PRECAUTIONS 
+AC adapter 
+ 
+Be sure to use only the supplied 15 V DC, 1500 mA AC adapter, which is equipped with a “center-positive” 
+plug. The use of an adapter other than the specified type may damage the unit and could pose a safety 
+hazard.  
+ 
+Connect the AC adapter only to an AC outlet that supplies the rated voltage required by the adapter.  
+ 
+When disconnecting the AC adapter from the AC outlet, always grasp the adapter itself and do not pull at the 
+cable.  
+ 
+During lightning or when not using the unit for an extended period, disconnect the AC adapter from the AC 
+outlet. 
+Environment  
+To prevent the risk of fire, electric shock or malfunction, avoid using your uTrack24 in environments where it will be 
+exposed to: 
+ 
+Extreme temperatures  
+ 
+Heat sources 
+ 
+Excessive humidity or moisture 
+ 
+Excessive dust or sand 
+ 
+Excessive vibration or shock 
+Handling  
+ 
+Never place objects filled with liquids on the uTrack24, as this can cause electric shock. 
+ 
+Do not place an open flame source, such as a lighted candle, on the uTrack24 since this can cause fire. 
+ 
+The uTrack24 is a precision instrument. Do not exert undue pressure on the keys and other controls. Also 
+take care not to drop the unit, and do not subject it to shock or excessive pressure. 
+ 
+Take care that no foreign objects (coins, pins etc.) or liquids can enter the unit. 
+Connecting cables and input and output jacks 
+Always turn off the power to the uTrack24 and all other equipment before connecting or disconnecting the power 
+source. Make sure to disconnect all connection cables and the power cord before moving the uTrack24. 
+Alterations  
+Do not open the case of the uTrack24, or attempt to modify the product in any way. Doing so will void the warranty. 
+There are no serviceable parts inside the unit. 
+Volume  
+Do not use the uTrack24 at a loud volume for a long time since this can cause hearing impairment. 
+
+ 
+ 
+USAGE PRECAUTIONS 
+5 
+User Manual 
+uTrack24 
+July 2017 
+ 
+3. USAGE PRECAUTIONS 
+Electrical interference 
+For safety considerations, the uTrack24 has been designed to provide maximum protection against the emission of 
+electromagnetic radiation from inside the device, and protection from external interference. However, equipment that 
+is very susceptible to interference or that emits powerful electromagnetic waves should not be placed near the 
+uTrack24, as the possibility of interference cannot be ruled out entirely. With any type of digital control device, the 
+uTrack24 included, electromagnetic interference can cause malfunctioning and can corrupt or destroy data. Care 
+should be taken to minimize the risk of damage.  
+Cleaning 
+Use a soft, dry cloth to clean the uTrack24. If necessary, slightly moisten the cloth. Do not use abrasive cleanser, 
+wax, or solvents (such as paint thinner or cleaning alcohol), since these may dull the finish or damage the surface. 
+ 
+ 
+4. LIMITED WARRANTY 
+For the applicable warranty terms and conditions and additional information on Cymatic Audio’s Limited Warranty, 
+please see complete details online at www.cymaticaudio.com/warranty 
+ 
+ 
+ 
+This product complies with the European Union Council Directives and 
+Standards relating to Directive 2004/108/EC for Electromagnetic compatibility 
+(EMC) and Low Voltage Directive 2006/95/EC  
+ 
+This product is compliant with the EU Directive 2011/65/EU for the Restriction of 
+the use of Certain Hazardous Substances in Electrical and Electronic Equipment. 
+No lead (Pb), cadmium (Cd), mercury (Hg), hexavalent chromium (Cr+6), PBB or 
+PBDE is intentionally added to this device. Any traces of impurities of these 
+substances contained in the parts are below the RoHS specified threshold levels. 
+  
+This equipment has been tested and found to comply with the requirements of 47 
+CFR of PART 15 limit for radiation and conduction emission relating to FCC rules 
+Part 15B: 2010.  
+ 
+ 
+A NOTE ABOUT DISPOSAL:  
+This product must be disposed in accordance with the local recycling regulations. 
+The crossed out wheeled bin symbol informs you that the product should not be 
+disposed of along with municipal waste and invites you to use the appropriate 
+separate take-back systems licensed for the recycling of electrical and electronic 
+equipment (EEE). 
+CERTIFICATIONS 
+
+ 
+ 
+INTRODUCTION 
+6 
+User Manual 
+uTrack24 
+July 2017 
+5. INTRODUCTION 
+Congratulations on your purchase of the Cymatic Audio uTrack24! The uTrack24 is three powerful products in one:  
+ 
+A 24-track audio recorder  
+ 
+A 24-track digital audio file player  
+ 
+A 24-input, 24-output computer audio interface 
+The uTrack24 records to and plays back from standard, off-the-shelf USB drives, while offering a large complement 
+of professional features.  The display and dedicated front-panel hardware controls make it an intuitive and easy to 
+use device. Recording is never further away than a single push of the dedicated front panel “Record” button.  
+With the addition of the SYNC group feature, uTrack24 turns into a scalable recorder and player system, adding up to 
+up to 96 audio channels, or offering redundant channels. 
+ 
+Network / uRemote Control: 
+A network port allows for powerful control using the free uRemote software and app. In addition, the network port 
+enables synchronization of up to 4 units to create a 96-channel recorder/player with single point of control, either 
+through the local controls of the master unit or through the uRemote app. 
+uRemote application is available for iOS, Android, OS X and Windows. For more details, please check the “User 
+Manual” of uRemote at www.cymaticaudio.com/downloads.  
+ 
+uTool 
+uTool is a free application provided by Cymatic Audio that facilitates preparation and conversions of wave files 
+between the USB drive and your PC. uTool is available for Windows and OSX.  
+The recordings done on uTrack24 are stored as multi-channel wave files in the USB drive. uTool allows the 
+conversion of these files to mono wave files.  
+When using uTrack24 as a playback device, all the content, including songs and playlists has to be created and 
+exported from uTool.  
+For more details, please check the “User Manual” of uTool  at www.cymaticaudio.com/downloads. 
+ 
+ 
+
+ 
+ 
+FEATURE LIST 
+7 
+User Manual 
+uTrack24 
+July 2017 
+6. FEATURE LIST  
+ 
+Allows connection of 24 channels of balanced input/output through 25-pin D-Sub connectors  
+ 
+Large, easy to use illuminated front panel transport buttons  
+ 
+Detailed LCD screen, dedicated menu buttons, and rotary push control allow for fast and intuitive adjustment 
+of various settings  
+ 
+Up to 24-bit resolution, 96 kHz sample rate  
+ 
+BNC Word Clock Input/Output allows integration into larger digital systems  
+ 
+Synchronization of up to 4 units over Ethernet, to create a 96-channel system 
+ 
+Ethernet connection allows comprehensive control of uTrack24 using uRemote software, available for iOS, 
+Android, OS X and Windows 
+ 
+Optional digital I/O cards offer 24x24 I/O in digital formats such as MADI, ADAT and AES67/AUDIOLAN 
+ 
+Scalable recorder/player adding upto 96 Channels with the sync group feature.  
+ 
+24-Channel Multitrack Recorder  
+ 
+Records directly to standard USB 2.0 and USB 3.0 drives, attached to convenient front-panel USB port  
+ 
+3-color input level metering per input channel, also works as 24-segment full scale meter  
+ 
+Internal DSP mixer offers stereo monitor mix of all 24 inputs through front-panel headphone output and the 
+two channel balanced output (main out) on the rear panel, with dedicated level controls. Adjust level, 
+panning, mute, and solo for all 24-inputs while enjoying detailed 24-segment hardware input/output 
+metering, all with no external mixer required!  
+ 
+Pre-recording feature sets the uTrack24 to constantly buffer a minimum of 3 seconds of the incoming audio 
+signal 
+ 
+ 
+24-Channel Multi-Track Player  
+ 
+Play back 24 tracks of audio, perfect for virtual sound checks or expanding live performances with individual 
+pre-recorded tracks  
+ 
+Gapless playback of multitrack songs in playlist when the song parameters (channel count, sample rate and 
+bit depth) are same between the songs. Gapless playback also happens in continuous and repeat all 
+playback mode 
+ 
+Pre-load feature loads a song into the buffers so that it can be started instantaneously on a button press. 
+Pre-load feature is active in playlists and when pre-recording is switched off. uTrack24 also preloads the 
+next song while the current song is in playback 
+ 
+Playback Standard MIDI files synchronized with audio file playback  
+ 
+Edit song order on the fly, during playback, directly from the front panel or with uRemote 
+ 
+Playback start and stop via optional footswitch  
+ 
+On the fly loop playback with mark-in/mark-out points allows for easy looping  
+ 
+uTool software allows you to easily create custom audio playlists, with features like set pause times between 
+songs or assign songs to be played back continuously 
+  
+ 
+ 
+
+ 
+ 
+FRONT PANEL 
+8 
+User Manual 
+uTrack24 
+July 2017 
+7. FRONT PANEL  
+ 
+1. 
+USB Host Port 
+This port allows connection of a standard, off-the-shelf USB drive. The uTrack24 records and plays back up to 24 
+tracks of audio to/from the connected USB drive. The uTrack24 supports USB drives up to 16TB.  
+2. 
+Graphic Display 
+This LCD screen displays assorted useful information while recording and playing back audio, as well as when 
+working with the settings menus.  
+3. 
+Encoder Wheel  
+Rotate the encoder wheel to adjust various settings; it also contains a “push” function, allowing it to work as button.  
+4. 
+MENU/LOOP Button 
+Press the MENU/LOOP button to bring up the uTrack24 settings menus, allowing various adjustments to the 
+products’ settings. In playback mode, this button helps to setup the playback loop. 
+5. 
+BACK Button 
+Press the BACK button to navigate backwards through the menu tree until reaching the home screen. 
+6. 
+BROWSE Button 
+Switch the BROWSER screen on and off. In the BROWSER screen you navigate the files on the attached USB drive 
+and select them for playback. Long press brings you instantly to the top directory level (root). 
+7. 
+Skip Back/Forward Buttons 
+During playback, press the skip back/skip forward buttons to navigate among saved markers in an audio take 
+(recording). When playing back a playlist, press the buttons to navigate among the different songs in the playlist. 
+When recording, press these buttons to add a new marker at the current timeline location. 
+8. 
+STOP Button 
+Press to stop a current recording or playback. Long press in any state will send out a MIDI panic reset. 
+9. 
+PLAY Button 
+Press the PLAY button to begin playback of the currently loaded audio project. 
+When recording, press the PLAY button to add a new marker at the current timeline location. 
+10. RECORD Button 
+Press the RECORD button to begin a new recording without losing a sample. The uTrack24 is always ready to start a 
+new recording as soon as the RECORD button is pressed.  
+ 
+Note: The transport buttons are lit whenever they are active. In SYNC mode, most buttons on slave units are not 
+active and hence not lit up. 
+ 
+
+ 
+ 
+FRONT PANEL 
+9 
+User Manual 
+uTrack24 
+July 2017 
+ 
+ 
+11. Meters  
+The 24 separate LED meters display the signal strength for incoming signals during recording and display outgoing 
+signals during playback. The meter LEDs work in two different ways:  
+ 
+When recording or playing back audio, the 24 separate LEDs represent the input/output levels of channels 
+1-24. Each channel’s LED illuminates in three separate colors, acting as a 3-segment meter:  
+o 
+Green:  
+-40dB  
+o 
+Yellow:  
+-10dB  
+o 
+Red:  
+Overload  
+ 
+ 
+When working with the monitor mixer for recording or playback, the meter bridge operates as a single, 24-
+segment input/output meter for the currently selected channel. Click the rotary button to open the monitor 
+mixer settings.  
+12. Main Output Volume Control  
+Rotate to adjust the listening level of the rear panel’s main outputs, which carry the stereo signal of the monitor mixer 
+(standalone recorder/player mode) or outputs 1-2 of your DAW software (Computer Audio Interface).  
+13. Headphone Volume Control  
+Rotate to adjust the listening volume level of the front panel headphone output, which offers the same signal path as 
+the main outputs.  
+14. Headphone Connector  
+Connect a pair of headphones to listen to the onboard monitor mix or channels 1-2 of your DAW software.  
+15. Footswitch Connector  
+Connect a standard two-position footswitch to this connector for hands-free operation of various functions. For 
+specifics, see “footswitch” in the menus section of this document. 
+ 
+ 
+
+ 
+ 
+REAR PANEL 
+10 
+User Manual 
+uTrack24 
+July 2017 
+8. REAR PANEL  
+ 
+ 
+1. 
+Option Card Slot  
+The uTrack24 can be fitted with an optional 24-input, 24-output digital option card that provides an alternate audio I/O 
+path from the onboard analog I/O. The available digital I/O cards incluce MADI, ADAT and AudioLAN card..  
+This option brings a powerful level of flexibility to the uTrack24, allowing you to:  
+ 
+Expand the unit with 24 channels of digital I/O, and then use that I/O with your own A/D and D/A converters 
+of choice.  
+ 
+Add a digital I/O format to the uTrack24 that allows 24x24 channels of networked audio, allowing the unit to 
+conveniently integrate into large setups with a single cable.  
+ 
+Allows the use of external clock from the Digital I/O card to be used in the uTrack24. 
+ 
+2. 
+Analog Outputs 1-24  
+These 24 outputs carry 24 channels of audio either from:  
+ 
+A multi-track audio project from a USB drive connected to the front panel USB port  
+ 
+A multitrack DAW session running on a computer connected to the rear panel USB port  
+ 
+3. 
+Analog Inputs 1-24  
+Connect the 24 separate audio signals that you wish to record to these inputs; the 24 separate audio signals can then 
+be recorded to either:  
+ 
+A USB drive connected to the front panel USB port  
+ 
+DAW software running on a computer connected to the rear panel USB port  
+Both the analog inputs and outputs operate at balanced line level, +20dB, and are configured as three separate, 8-
+channel, 25-pin D-subminiature connectors. The D-sub connectors are wired to the “Tascam Standard” as shown 
+below. 
+ 
+ 
+
+ 
+ 
+REAR PANEL 
+11 
+User Manual 
+uTrack24 
+July 2017 
+ 
+ 
+4. 
+Main Outputs  
+The balanced stereo main outputs on ¼” tip-ring-sleeve (TRS) jacks can be sourced from either:  
+ 
+The stereo output of the onboard 24-channel monitor mixer. In this scenario, the main outputs allow you to 
+monitor a stereo mix of the 24 input or output channels.  
+ 
+Output channels 1-2 of your favorite DAW software. In this scenario, the main outputs allow you to monitor a 
+stereo mix of your DAW session, when using the uTrack24 as a computer audio interface in a recording 
+studio. 
+5. 
+Word Clock Input  
+The uTrack24 can be “slaved” to an external word clock signal by connecting it to the BNC word clock input. This 
+allows the uTrack24 to be integrated into a larger complement of digital audio equipment, where the clock signals of 
+all connected equipment need to be synchronized.  
+Adjust the uTrack24’s “Word Clock” menu to configure it to slave to an incoming external clock, as opposed to 
+running on its own internal clock. The settings bar at the top of the LCD screen will indicate whether the uTrack24 is 
+using an internal or external clock signal.  
+6. 
+Word Clock Output  
+This connector outputs a standard digital word clock signal, running at the sample rate that the uTrack24 is currently 
+set to. The word clock output is useful when you want to use the uTrack24 as a “clock master” and wish to slave 
+other digital equipment to its internal clock signal. It could also be used to loop the incoming word clock signal to 
+another device. 
+7. 
+Synchronization Connectors  
+These synchronization connectors are non-functional with the present firmware. Use the Ethernet-based SYNC 
+feature for syncing up to 4 uTrack24 units. 
+8. 
+MIDI Output Connector  
+The MIDI output connector outputs MIDI data from a SMF (Standard MIDI File) that is exported with a song using 
+uTool..  
+This allows the uTrack24 to output MIDI data to a software synthesizer, MIDI controlled lighting system, effects 
+switching system, etc., synchronized and in time with audio data that is played out of the uTrack24’s audio outputs.  
+9. 
+USB Connector  
+The rear panel USB connector can be connected to the USB port of a Windows or OS X computer, or an iPad 
+camera connection accessory. The uTrack24 acts as a 24-input, 24-output computer audio interface in this case.  
+The 24 separate outputs allow for great flexibility in routing outputs from a DAW session, such as sending many 
+separate headphone mixes to an external headphone amplifier, or sending 24 separate channels of audio to an 
+external analog mixer, for “mixing out of the box”. 
+ 
+
+ 
+ 
+REAR PANEL 
+12 
+User Manual 
+uTrack24 
+July 2017 
+ 
+ 
+ 
+10. Network Connector  
+This RJ45 connector allows connection of the uTrack24 to a standard Ethernet network. The network connection can 
+be used for two different functions:  
+ 
+Updating the uTrack24 firmware 
+ 
+Controlling the uTrack24 from the uRemote software 
+ 
+Synchronizing up to 4 uTrack24 units and control them through uRemote as one large multi-track device 
+ 
+11. Power Connector  
+Connect the included external power supply to this connector. Do not connect any other power supply except the one 
+that was supplied with your uTrack24. 
+ 
+Note: that the uTrack24 does not contain an “on/off” power switch; this is by design, as it reduces the possibility of 
+accidentally shutting down the unit during a critical recording from pressing a power switch.  
+Note: your uTrack24 is always powered on when connected to the power supply. 
+ 
+ 
+
+ 
+ 
+USE CASES 
+13 
+User Manual 
+uTrack24 
+July 2017 
+9. 
+USE CASES 
+ 
+9.1. 
+MIXER FOR LIVE CONCERT RECORDING 
+The uTrack24 is the perfect tool for capturing up to 24 individual tracks of a live concert, which can then be imported 
+into your DAW software of choice. The physical connections work as follows:  
+ 
+ 
+ 
+ 
+Connect 24 balanced, direct outs of an analog mixer to the analog inputs of the uTrack24 
+ 
+Connect a pair of headphones to the uTrack24’s front panel phones jack, or a set of monitors to the rear panel 
+main output; you can monitor and adjust an onboard stereo mix of the 24-track recording.  
+ 
+At the same time, the uTrack24 allows you to play back 24 channels of multi-track audio back into the live sound 
+console, perfect for performing a “virtual sound check” using recordings of previous performances, or for 
+expanding live performers with individual pre-recorded tracks.  
+ 
+Connect the analog outputs of the uTrack24 to the line inputs of the mixer. The FOH operator can switch to the 
+mixer channel’s line inputs to monitor the uTrack24’s 24 channels of playback.  
+ 
+ 
+ 
+
+ 
+ 
+USE CASES 
+14 
+User Manual 
+uTrack24 
+July 2017 
+9.2. 
+RECORDING SPLIT/OUTBOARD MIC PREAMPS  
+In some instances, you may wish to use the uTrack24 in a higher end remote recording setup, with a dedicated 
+recording split of the stage snake (as opposed to the mixer’s direct outputs).  
+In this case, the connections would work as follows:  
+ 
+ 
+ 
+ 
+The stage microphone signals are connected to a microphone splitter containing a dedicated split of recorder 
+outputs  
+ 
+Connect the recorder outputs (mic level signals) to the inputs of the microphone preamplifiers  
+ 
+Connect the line level outputs of the microphone preamps to the analog inputs of the uTrack24 
+ 
+Connect a pair of headphones to the front panel phones jack, to monitor a stereo mix of the uTrack24’s multi-
+track recording  
+ 
+If you are working in an acoustically separated space from the musicians themselves, you can also connect a 
+pair of powered monitors to the uTrack24’s rear panel main outputs. This will allow you to monitor the onboard 
+stereo mix on a pair of powered monitor speakers and also adjust the monitoring volume using the front panel 
+volume control. 
+ 
+ 
+ 
+
+ 
+ 
+Preparing USB drive 
+15 
+User Manual 
+uTrack24 
+July 2017 
+10. 
+Preparing USB drive  
+The uTrack24 records and playbacks using a USB drive with “Fat32” format.  
+Note: In order to ensure that the USB drive is optimally formatted, it advised that you format the drive using the 
+uTrack24’s “Format USB Drive” menu function. uTrack24 uses a cluster size of 64KB which gives the best 
+performance for reading and writing data.  
+Note: All existing data and partitions on the drive will be lost when formatting. 
+ 
+To format the drive, press MENU, scroll to “UTILITIES”, then press the encoder to select “Format USB Drive”  
+ 
+ 
+ 
+10.1. USB Hard Drives vs. USB Flash Drives  
+When recording audio with the uTrack24 and a connected USB drive, it is important to understand the difference 
+between the two key types of USB drives available in the marketplace  
+1. 
+USB Hard Drive  
+A USB hard drive is a traditional “moving parts” hard drive that records its data on spinning platters. This is the 
+recommended type of USB drive to use with the uTrack24, as its data read/ write speeds are the most reliable and 
+consistent  
+2. 
+USB Flash Drive  
+A USB Flash drive is a USB drive that uses flash memory and contains no moving parts. Thumb drives and Solid 
+State Drives(SSD) are flash drives.  
+These drives offer very fast data read/write speeds, but they are subject to occasional pauses in data writing which is 
+not practical for a device like the uTrack24 that needs to constantly write a data stream to the drive in order to avoid 
+dropouts. 
+To avoid recordings without dropouts, follows these steps:  
+ 
+Use a USB hard drive 
+ 
+Format the attached drive using the uTrack24 format utility only.  
+ 
+Perform a test recording using your planned USB hard drive, making sure the test recording is as long, or 
+longer than the event you plan to record. Check that you do not have any dropouts in the recordings.  
+ 
+Note: When using your uTrack24 solely for playback, thumb drives/SSD can be used. To ensure smooth playback, 
+make sure to test the complete playback of your material before the real performance.  
+ 
+
+ 
+ 
+Recording 
+16 
+User Manual 
+uTrack24 
+July 2017 
+11. 
+Recording 
+The uTrack24 uses the following default recording settings: 
+ 
+24 tracks  
+ 
+24-bit  
+ 
+48 kHz  
+To change any of the above settings, use the Recording menu from the Settings menu. 
+See section “Recording Menu” for more details.  
+1. 
+Starting a Recording 
+To begin a recording, simply press the front panel RECORD button. The display will switch to the RECORD screen. 
+For the first two seconds, the number of active recording channels is displayed on the screen and then it switches to 
+showing the recording name and time.  
+2. 
+Adding Markers  
+During recording the uTrack24 allows you to add markers to the take. Markers are locational references that help you 
+remember different spots in the recording (song 1, song 2, verse, chorus, etc.). Press the PLAY or SKIP buttons 
+during recording to add a new marker. Up to 99 markers are allowed per take.  
+If supported by your DAW, these markers will be visible in the DAW session after you have imported your files. The 
+markers can also be used to split your recordings at the marker points when using the uTool to copy the recording 
+from your USB device to your computer.  
+3. 
+Gapless Recording  
+While recording press the RECORD button to create a new take without losing a single audio sample. The recording 
+parameters are the same as for the previous take. Tracks created in this way will be played back gaplessly. A 
+gapless recording switch is only allowed after 1 minute of the current recording.  
+ 
+11.1. Recording Signal Flow  
+Inputs for recording can be selected in blocks of 8 channels when a digital card is present. The outputs are muted 
+when in recording mode.   
+ 
+ 
+ 
+ 
+
+ 
+ 
+Playback 
+17 
+User Manual 
+uTrack24 
+July 2017 
+12. 
+Playback  
+12.1. File playback modes 
+When playing back audio, the uTrack24 offers different playback “modes”. The uTrack24 switches to a given 
+playback mode depending on what type of audio folder is loaded for playback. The different modes are:  
+1. 
+Multitrack Mode  
+When a USB drive is attached to the uTrack24, the audio content in the folder labeled “MultiTrack” is automatically 
+loaded on the screen. uTool places all multitrack songs inside the “MultiTrack” folder. All recordings done on the 
+uTrack24 are also saved in the “MultiTrack” folder.   
+2. 
+Stereo Mode (not available in SYNC mode) 
+Stereo songs can be placed in “Music” folder or anywhere outside the “MultiTrack” folder. The stereo songs may be 
+used for walk-in music, break music, walk-out music, etc. The uTrack24 switches to stereo mode any time you select 
+a stereo song from the browser.  
+3. 
+Playlist Mode  
+A set of songs can be placed in a specific order inside a playlist file. Each song can be started with different delay 
+options. A playlist can be created using uTool application. When a playlist is loaded, the display shows the playlist 
+name along with the active song and the next song in the list.  
+ 
+12.2. Switching between different playback modes:  
+In the browser, three different item types are available for selection: multitrack songs, stereo songs and playlists.  
+        
+ 
+To switch between these modes: 
+ 
+Press the BROWSE button on the front panel to switch the display to the BROWSER screen. 
+ 
+Rotate the encoder to highlight a folder then press the encoder button to browse into the folder. You will see 
+a list of all of the different songs available in the folder.  
+ 
+Rotate the encoder to highlight a desired song or playlist, then press the encoder button select the song or 
+playlist to be loaded for playback.  
+ 
+Pressing the BACK button takes you one folder up. Long pressing the BACK button takes you to the root 
+folder of the attached drive.  
+ 
+Following screens appear when switching between stereo mode and multitrack mode: 
+ 
+ 
+ 
+ 
+Stereo Song   
+Playlist  
+Multitrack Song 
+
+ 
+ 
+Playback 
+18 
+User Manual 
+uTrack24 
+July 2017 
+The songs available in the currently loaded folder are displayed on the main screen. To navigate among the different 
+songs in the folder, use the rotary encoder or skip back and skip forward buttons.   
+ 
+12.3. Playing Back Audio 
+1. 
+Playing a Song 
+To playback a desired song, make sure that the song is present on the main screen. Press the PLAY button to start 
+playing the song.  
+2. 
+Changing Playback Head Position (not available in SYNC mode) 
+uTrack24 allows you to start playing back a song from another position. To do so, while a playback is ongoing, move 
+the rotary encoder to see a playback position cursor. Move the cursor to the desired location in the song and press 
+the encoder button to start playing back from the new location.  
+3. 
+Playback Loop (not available in SYNC mode) 
+uTrack24 allows you to loop between two points within a song. To setup a loop do the following when playback is 
+ongoing: 
+ 
+Press Menu/Loop Button to start the loop point overlay.  
+ 
+Rotate the encoder to the desired mark-in position for the loop. Click the encoder to select the mark-in 
+position.   
+ 
+Rotate the encoder again to the desired mark-out position for the loop. Click the encoder to select the mark-
+out position.  As soon as the mark-out position is chosen, the loop starts to playback between the two points.  
+ 
+To cancel the playback loop press the BACK button 
+ 
+Note: Pressing the skip backward button while in a loop will cause the playback to start from the loop mark-in point. 
+When markers are present, the skip buttons jump to the nearest available marker. 
+ 
+4. 
+Autoplay a Playlist on Startup 
+The uTrack24 has the ability to automatically playback a playlist upon powering up.  
+To set a playlist for automatic playback, follow these steps: 
+ 
+Within uTool, enable the “Auto” option for the playlist that should be played automatically on startup 
+ 
+In the uTrack24 Playback settings, set the “Autoplay on boot” option to ON 
+ 
+When exported, the playlist selected as “Auto” will be named as ‘autoplay.play’ and placed in the #PLAYLIST folder. 
+There can only be one autoplay playlist per drive. This playlist will automatically be loaded and begin playing back, 
+whenever the uTrack24 is powered up. If the USB drive has an autoplay playlist in both the “Music” folder (stereo) 
+and the “MultiTrack” folder, the multitrack playlist is the one that is loaded on startup.  
+Note: In SYNC mode, make sure all slaves are powered up BEFORE the master device is switched on. This 
+procedure will ensure synchronous playback upon startup. 
+
+ 
+ 
+Playback 
+19 
+User Manual 
+uTrack24 
+July 2017 
+ 
+5. 
+Midi File Playback 
+The uTrack24 contains a standard 5-pin MIDI output connector on its rear panel. This connector can be used to play 
+back MIDI data from a Standard MIDI File(SMF).  
+The midi file can be placed in uTrack24 multitrack audio project using uTool software. For complete details on the 
+operation, please refer to the latest version of the uTool user’s manual. The playback of the midi file is synchronized 
+with the audio files that are played back from the same project.  
+An offset for the midi file playback can be applied from the playback settings menu.  
+ 
+Note: When stopping or pausing a song, all notes off command is sent out on the midi port 
+Note: Long pressing the STOP button sends out a midi panic reset. In panic reset, all notes off commands for each 
+channel along with note off for each instrument of each channel is sent out.   
+ 
+12.4. Playback Signal Flow  
+A song is played back on both the Analog outputs and the Digital outputs (if a digital card is connected) 
+simultaneously. A stereo down mix for multitrack songs is available on the main outs and the headphone output. The 
+mix down is done using the mixer configured when creating the song in uTool.  
+The analog and digital output signals can be attenuated using the faders in the mixer. Choose the option “Post 
+faders” in the “Multitrack Mode Option” in the “Playback” settings menu to attenuate the outputs using the mixer fader.  
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+FILE FORMATS 
+20 
+User Manual 
+uTrack24 
+July 2017 
+13. 
+FILE FORMATS  
+The uTrack24 is specifically designed for continuous capturing of audio over longer periods of time. When recording, 
+the uTrack24 stores data from multiple input channels into a single multichannel wave file.  When the file size of this 
+multichannel wave file reaches 2GB, recording continues into a new multichannel wave file (chunk) without losing a 
+sample of the recording.  A recording “take” continues until 12 hours before starting a new take automatically. This 
+allows you to record without any time limit. 
+uTool allows easy conversion between mono wave files and multichannel wave file songs. Recordings can be 
+imported into the computer and songs and playlists can be exported to a drive using uTool. 
+ 
+A typical recording workflow looks as shown below: 
+ 
+ 
+ 
+ 
+The workflow for playback looks as shown below: 
+  
+ 
+When playing back a take, the uTrack24 performs seamless transitions from the end of one “chunk” of multi-channel 
+audio to the beginning of the next one. Multiple chunks inside a take are played back as if they were one long take. 
+ 
+ 
+
+ 
+ 
+SETTINGS BAR 
+21 
+User Manual 
+uTrack24 
+July 2017 
+14. 
+SETTINGS BAR  
+The uTrack24 contains a “settings bar” at the top of the screen that is always present on all recording and playback 
+screens. It shows important settings, at a glance.  
+ 
+1. 
+Home Page Mode  
+The Mode indicator displays current state of the uTrack24. The four possible modes are: 
+ 
+STOP: active when the unit is idle.  It is possible to enter any of the other modes from the stop mode.  
+ 
+RECORD: active when the uTrack24 is recording audio; it displays various parameters related to the 
+recording.  
+ 
+PLAY: active when the uTrack24 is playing back audio. It displays various parameters related to playback of 
+the currently playing song.  
+ 
+MIX: The MIX page displays, and allows control of, the settings for the built-in 24-channel internal mixer. For 
+more information, see the “MIX Page” section.  
+ 
+2. 
+Track Count  
+In STOP and RECORD mode, it displays the number of tracks (channels) the uTrack24 has been configured to 
+record. In PLAY mode it displays the number of tracks present in the playing song.   
+3. 
+Sample rate  
+In STOP and RECORD mode, displays the sample rate that the uTrack24 will record at. In PLAY mode, it displays 
+the sample rate of the playing back song. Available sample rates include 44.1, 48, 88.2, and 96 kHz.  
+4. 
+Bit-Depth  
+In STOP and RECORD mode, displays the resolution (bit-depth) that the uTrack24 will record at. In PLAY mode, it 
+displays the bit depth of the playing back song. Available bit depths include 16-bit and 24-bit.  
+5. 
+Markers  
+In STOP and PLAY mode, displays the number of markers present in the currently active song.  
+6. 
+Clock Source  
+Displays the digital clock source that the uTrack24 is using. Choices include internal (Int), Word Clock (Wck), Digital 
+I/O(Ext) and PTP(Ext).  
+7. 
+Folder Mode / Playlist 
+Displays the active folder playback mode or a playlist icon:  
+ 
+Single ( 
+ )   :     Only one song is played back and then the device stops. 
+ 
+Continuous ( 
+ )  : All songs are played back until the end of the folder  
+ 
+Repeat One ( 
+ ): The same song is repeatedly played back.   
+ 
+Repeat All ( 
+ ): All songs are played back until the end of the folder and playback starts again from first 
+song of the folder.  
+ 
+Shuffle ( 
+  ): All of the songs inside a folder are shuffled and played back one after the other.  
+ 
+Playlist ( 
+  ): When a playlist is loaded, the icon changes to reflect the playlist 
+1 
+3 4 
+5 
+2 
+6
+7 
+
+ 
+ 
+RECORD PAGE 
+22 
+User Manual 
+uTrack24 
+July 2017 
+15. 
+RECORD PAGE  
+The RECORD page is shown any time the uTrack24 is in recording mode; it displays important aspects of the 
+recording process and allows you to monitor your recording. 
+ 
+ 
+ 
+1. 
+Take Name and Number  
+Displays the name and number of the current ongoing recording. The name of the recording is in the format 
+“TakeNNNN”, where NNNN is the number of the recording.   
+2. 
+Elapsed Time Counter  
+Displays the elapsed time of the ongoing recording.  
+3. 
+Markers Display  
+Displays the number markers created for the ongoing recording. Markers can be created by pressing the PLAY 
+button during an ongoing recording.  
+4. 
+Droputs Display (If Applicable)  
+Displays the number of dropouts in a recording, if any have occurred.  
+Note: If the attached USB drive’s data transfer speed is too slow to keep up with the required data flow, dropouts may 
+occur. The dropouts display allows you to have a concrete verification if this has occurred. If dropouts occur, a log file 
+with details of the dropouts and their time of occurrence will be written in the song folder.  
+5. 
+Remaining time  
+Displays the amount of available recording time remaining on the attached USB drive. This figure will adjust 
+dynamically as you change the track count, bit-depth and sample rate you plan to use.  
+ 
+ 
+ 
+1 
+3 
+4 
+2 
+5 
+
+ 
+ 
+MIX PAGE 
+23 
+User Manual 
+uTrack24 
+July 2017 
+16. 
+MIX PAGE  
+The uTrack24 contains a built-in 24 channel stereo monitor mixer, allowing you to monitor a stereo mix of the 
+incoming or outgoing 24 channels of audio. The stereo mix can be monitored from both the front panel headphone 
+output as well as the rear panel’s main outputs; both outputs have their own dedicated volume level controls. The 
+mixer page also allows setting up of a Monitor boost of up to +12dB. 
+During Playback or when song is PreLoaded 
+ 
+The mixer parameters are taken from the settings file present in the song project.  
+ 
+For multitrack songs, the mixer parameters affect the outputs if outputs are chosen to be post-fader in 
+playback settings.  
+ 
+During Recording or PreRecording:  
+ 
+The mixer is active only for the currently active recording channels.  
+ 
+The adjustments made affect the monitor mix only; they have no effect on the actual recording taking place.  
+ 
+When playback stops, the previous mixer settings are loaded back.  
+ 
+To bring up the monitor mixer and adjust the parameters for each channel:  
+ 
+Press the front panel rotary encoder button. The display will switch to the “MIX” screen as shown below  
+ 
+Once in the “MIX” screen, press the rotary encoder button to move between the various parameters.  
+ 
+When on a parameter it will be highlighted and can by adjusted by rotating the encoder.  
+ 
+To exit the monitor mixer screen, press the BACK button  
+ 
+The MIX screen contains the following five parameters you can adjust:  
+ 
+1. 
+Channel Number  
+Represents the channel number for which the volume/mute/ solo, and panning can be adjusted. When in the MIX 
+page, the front panel metering LEDs act as a single 24-segment level meter for the currently selected channel.  
+2. 
+Channel Volume  
+Adjusts the relative listening volume of the currently selected channel in the stereo mix.    
+3. 
+Mute On/Off  
+Mutes the currently selected channel in the stereo mix.  
+4. 
+Solo On/Off  
+Solos the selected channel. While in the MIX screen, press and hold the rotary encoder button to instantly solo the 
+currently selected channel.  
+Note:  that soloing of a selected channel is temporary; it only lasts as long as the channel is selected. When a 
+different channel is selected, the solo status of the previous channel is cleared.  
+1 
+3 
+4 
+5 
+2 
+
+ 
+ 
+MIX PAGE 
+24 
+User Manual 
+uTrack24 
+July 2017 
+5. 
+Pan Control  
+Adjusts the selected channel’s pan position in the stereo mix.  
+ 
+16.1. Monitor Boost:  
+It is possible to boost the monitor volume by upto +12dB from the MIX page. Rotate the encoder beyond the last 
+available channel to reach the monitor boost setting. The monitor boost can be adjusted from 0dB to +12d 
+ 
+ 
+ 
+16.2. Saving Mixer Parameters:  
+16.2.1. In Recording 
+The device has one monitor mixer setting for recording. During recording or pre-recording, this mixer setting is 
+loaded. When the recorder mixer settings are changed, they are saved temporarily on the device. The change is valid 
+only until the next restart of the device. To save the changed mixer settings on the device, use the “Save Settings” 
+option in the Settings menu. The saved mixer settings are automatically loaded on the device on subsequent restarts.  
+16.2.2. In Playback 
+Each of the songs on the USB drive has a separate mixer setting for playback. The mixer for a song can be set when 
+creating song in uTool. The recording mixer is set to the song when a recording is complete.  
+ 
+When playing back a song or when it is preloaded, the song’s mixer setting is loaded. The mixer parameters can be 
+changed if needed. To save the changed mixer parameters to the song, click on the Menu button. If the mixer is 
+changed and you press the back button , you will be prompted to save the mixer settings.  
+ 
+ 
+ 
+
+ 
+ 
+PLAY PAGE 
+25 
+User Manual 
+uTrack24 
+July 2017 
+17. 
+PLAY PAGE  
+The play screen is shown when the uTrack24 is playing back a song or when the transport is stopped. When the 
+transport is stopped, you may use the rotary encoder or the skip forward/skip back buttons to change the songs on 
+the screen.  
+ 
+1. 
+Current Song  
+Displays the current song name in the folder that is loaded. 
+2. 
+Next Song 
+Displays the next song name in the folder that is loaded.  
+3. 
+Elapsed Time  
+Displays the elapsed time of the current song.  
+4. 
+Playback Location (not available in SYNC mode) 
+This horizontal black stripe represents the timeline of the current song, while the black square represents the 
+playback location of the current song.  
+Rotate the encoder to move the play head to a different position on the timeline, then press the encoder to start 
+playing back the take at the new time location you have moved the play head to.  
+5. 
+Time Remaining  
+Displays the remaining time of the take that is currently playing back.  
+6. 
+Folder mode  
+Displays the folder playback mode (single, repeat one, continuous, repeat all and shuffle)  
+ 
+PLAYLIST SCREEN  
+The playlist screen is shown any time the uTrack24 is currently playing back a “playlist” of song: a pre-configured list 
+of songs that automatically play one after the other. Playlists can be configured using uTool software. 
+The PLAYLIST screen displays various parameters that are unique to the playlist workflow:  
+ 
+ 
+1. 
+Playlist Name  
+Displays the title of the playlist that has been loaded for playing back.  
+1 
+3 
+4 
+5 
+2 
+6 
+1 
+3 
+4 
+5 
+2 
+6 
+7 
+
+ 
+ 
+PLAY PAGE 
+26 
+User Manual 
+uTrack24 
+July 2017 
+2. 
+Current Song  
+Displays the name of the currently active song in playlist. 
+3. 
+Next Song 
+Displays the name of the next song to be played back in the playlist  
+4. 
+Playback Mode  
+Indicates that the device is in Playlist Mode.  
+5. 
+Elapsed Time  
+Displays the amount of time that the current song has been playing for  
+6. 
+Remaining Time  
+Displays the amount of time left in the current song.  
+7. 
+Pause Mode  
+Displays the mode which is used to transition to the next song. The following icons are possible:  
+ 
+Wait for key press: he device waits for the user to press the play button or footswitch before the next song is 
+started  
+ 
+Wait period: the device waits the indicated number of seconds before starting the next song  
+ 
+No icon: there is no pause between the previous and the next song 
+ 
+ 
+ 
+ 
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+27 
+User Manual 
+uTrack24 
+July 2017 
+18. 
+uTrack24 SETTINGS MENUS  
+The uTrack24 contains settings menu that allow you to adjust various settings. 
+ 
+To adjust a menu setting:  
+ 
+While the transport is stopped, press the front panel MENU/LOOP button; the display will switch to the 
+Settings Menu page and show a scrollable list of settings  
+ 
+Rotate the encoder to highlight the specific set of settings menus you wish to adjust; the menu categories 
+include:  
+o 
+Clock Source  
+o 
+Foot Switch  
+o 
+Recording  
+o 
+Playback  
+o 
+Inputs (available only if digital module is installed)  
+o 
+MADI (available only if MADI module is installed)  
+o 
+Utilities  
+o 
+Load Settings  
+o 
+Save Settings  
+ 
+Rotate the encoder to highlight the desired menu, and push the encoder button to enter the menu  
+ 
+Rotate the encoder to navigate to the specific parameter you wish to adjust and press the encoder button to 
+highlight it for adjustment. The parameter highlight will flash on/off to show it is ready for adjustment.  
+ 
+Rotate the encoder to adjust the highlighted parameter, then push the encoder to save the new setting  
+ 
+Press the BACK button to navigate back one or more menu levels. 
+ 
+18.1. Clock Source Menu  
+This menu allows you to choose the clock source that the uTrack24 will utilize, offering choices appropriate for when 
+it is used on its own vs. when it is used as part of a larger system of digital audio devices.  
+Internal (Int): The uTrack24 will use its own internal sample clock.  
+Wordclock (Wck): The uTrack24 will slave to an external word clock signal that is connected to the “word clock in” 
+BNC connector on the rear panel.  
+Digital I/O (Ext): The uTrack24 will slave to the clock signal of the installed digital I/O card (MADI / ADAT / AudioLan).   
+PTP (PTP): The uTrack24 will utilize the precision time protocol clock which is also transferred over the network.   
+Note: If there is no valid clock, the label in will flash on and off, to reflect that the clock signal is missing and no 
+recording or playback will be allowed to take place.  
+Note: When set to External clock source, the uTrack24 does not automatically change its recording sample rate to the 
+rate of the incoming external clock. You must choose the proper sample rate that matches with the external clock you 
+have connected.  
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+28 
+User Manual 
+uTrack24 
+July 2017 
+18.2. Footswitch Menu  
+This menu allows you to configure what specific function occurs when you step on a footswitch attached to the front 
+panel footswitch connector. The settings allowed are 
+Play: Pressing the footswitch mimics the front panel PLAY button and begins playback.  
+Play-Pause: Pressing the footswitch toggles between Play and Pause of a song.  
+Play-Stop: Pressing the footswitch toggles between Play and Stop.  
+Record: Pressing the footswitch mimics the front panel RECORD button and begins a new recording. 
+ 
+18.3. Device Mode  
+The uTrack24 can be used as a recorder player or as a playback only device. Following device mode options are 
+available:  
+ 
+Rec & Play: This mode allows the users to the uTrack24 as both a recording as well as a playback device.  
+Play Only: Set this mode if you intend to use the uTrack24 only for playback purpose. In this mode, song preloading 
+is done automatically and the Recording button is permanently switched off.  
+ 
+18.4. Recording Menu  
+This menu contains various settings that determine the parameters of the uTrack24’s recordings.  
+ 
+Sample Rate: Selects the sample rate of the recording, when the uTrack24 is set to its internal clock. Choices 
+include:  
+ 
+44.1kHz  
+ 
+48 kHz  
+ 
+88.2kHz  
+ 
+96kHz  
+Note: When using sample rates of 88.2 kHz or 96 kHz, the uTrack24 is limited to recording a maximum of 8 tracks.. If 
+one these sample rates is selected the track count automatically switches to 8 it was previously more than 8. 
+ 
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+29 
+User Manual 
+uTrack24 
+July 2017 
+Bit Depth: sets the bit depth of the recording. Choices include: 16-bit and 24-bit.  
+Track Count: Determines how many tracks will be recorded in a recording. Choices include stereo (2 track), 4, 8, 12, 
+16, 20, and 24 tracks.  
+Pre-Recording: When the pre-recording option is turned ON, the uTrack24 constantly buffers at least 3 seconds or 
+more of incoming audio signal into its internal buffers. It will help you capture all of the first song even if you pressed 
+the RECORD button a few seconds too late. 
+Note: When Pre-Recording is switched OFF, the feature Pre-loading is activated. In this case the uTrack24 pre-loads 
+the active song into its buffers so that it can be started instantaneously on pressing the PLAY button. Pre-load feature 
+is always active in playlist mode.  
+Note: In SYNC mode the menu entry “Prepare Rec” is available. When enabled, all devices in the group are ready to 
+start a recording at the click of a button. 
+18.5. Playback Menu  
+This menu contains various settings that determine the playback parameters of the uTrack24 songs.  
+ 
+Folder Mode: determines how the songs in the currently loaded folder are played back. This menu option is 
+explained in detail in the Settings Bar section.  
+AutoPlay on Boot: Setting this option to ON starts playing back a pre-determined playlist automatically on startup. 
+The feature is explained in detail in the section Playing Back Audio.  
+Output Attenuation: The uTrack24’s analog outputs are configured at +20dBu, allowing them to feed the balanced 
+line inputs of a wide variety of professional audio equipment.  However, all 24 channels of analog output can be 
+attenuated (reduced in volume) by up to 30dB, in 1dB increments.  
+Multitrack Mode Options: This menu allows changing options for multitrack song playback: 
+ 
+ 
+Midi Offset: When playing back a midi file with an audio song, the start offset of the midi can be changed. 
+The offset can be between -1000msecs to +1000msecs with a granularity of 1 msec.  
+ 
+Outputs: The audio outputs can be chosen to be pre fader or post fader. When post fader is chosen, the 
+fader values in the mixer also impact the output levels of the signal. When pre fader is chosen, the outputs 
+are played out at the default levels.  
+Stereo Mode Options: This menu allows changing options for stereo song playback: 
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+30 
+User Manual 
+uTrack24 
+July 2017 
+ 
+When playing back a stereo audio file, the uTrack24 allows selecting a pair of rear-panel outputs on which the file will 
+be played out.  
+ 
+88/96K Output: For the 88.2/96 kHz sample rates you can select any pair between outputs 1-2 and 7-8  
+ 
+44/48K Output: For the 44.1/48 kHz sample rates you can select any pair between outputs 1-2 and 23-24 
+ 
+Note: In SYNC mode the Stereo Mode is not supported. 
+ 
+ 
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+31 
+User Manual 
+uTrack24 
+July 2017 
+18.6. Sync Menu  
+The sync menu helps you to form a sync group with more than one uTrack24. With a sync group, multiple devices 
+can record and playback synchronously. The transport can be started only on the Master device and the Slave 
+devices follow the master.  
+ 
+For more information about forming the sync group and sync related features, please refer to the dedicated sync 
+manual that can be downloaded at www.cymaticaudio.com/downloads 
+ 
+18.7. Inputs  
+The inputs menu appears only when a digital option card (MADI / ADAT / AudioLan) is installed in your uTrack24. 
+This menu allows you to select which inputs shall be recorded on the uTrack24. The selection of inputs is allowed in 
+blocks of 8 channels:  
+ 
+Inputs 1-8  
+ 
+Analog 01-08*  
+ 
+Allowed Digital Input (MADI 01-64 / ADAT In 1 / AudioLan 01-08)  
+Inputs 9-16  
+ 
+Analog 09-16*  
+ 
+Allowed Digital Input (MADI 01-64 / ADAT In 2 / AudioLan 09-16)  
+Inputs 17-24  
+ 
+Analog 17-24*  
+ 
+Allowed Digital Input (MADI 01-64 / ADAT In 3 / AudioLan 17-24 )  
+  
+Note: The values marked in * are the default values.  
+Note: In case of the MADI module, any block of MADI input can be chosen as the uTrack24 input.  
+ 
+ 
+ 
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+32 
+User Manual 
+uTrack24 
+July 2017 
+18.8. MADI  
+This menu will only be present if the MADI module is installed in the uTrack24. The default settings for the MADI 
+module, for each menu settings, are denoted with an asterisk (*).  
+ 
+MADI Input: Selects which of the two physical MADI inputs will be used for the incoming MADI stream:  
+ 
+Optical *  
+ 
+Coaxial (BNC) 
+Mode: Choose the channel mode that matches the channel count of the MADI system you are working with.  
+ 
+64ch (Ext)*  
+ 
+56ch (Std)  
+96K Format: Choose the frame type required for your MADI system at 96KHz 
+ 
+96k frame*  
+ 
+48k frame  
+Outputs 44/48 kHz: Choose which audio stream feeds the MADI output connector, when the uTrack24 system is 
+running at a sample rate of either 44.1 kHz or 48 kHz. The audio streams can be selected in groups of 8 channels 
+and can be the playback channels from uTrack24 or MADI input signals. 
+ 
+The options available for MADI outputs 1-8 is shown below. Outputs for the other channels(upto 64) are available in 
+the menu 
+Out 01-08  
+ 
+uTrack24 01-08*  
+ 
+uTrack24 09-16  
+ 
+uTrack24 17-24  
+ 
+MADI In 01-08  
+ 
+- - - - - - - -  
+ 
+MADI In 57-64  
+Outputs 88/96 kHz: This menu selects which audio stream feeds the MADI output connector, when the uTrack24 
+system is running at a sample rate of either 88 kHz or 96 kHz. The menu is similar to the Outputs 44/48 kHz except 
+that uTrack24 is restricted to 8-tracks of playback when running at 88.2 kHz or 96 kHz 
+The options available for MADI outputs 1-8 is shown below. Outputs for the other channels (up to 32) are available in 
+the menu 
+Out 01-08  
+ 
+uTrack24 01-08*  
+ 
+MADI In 01-08  
+ 
+- - - - - - - -  
+ 
+MADI In 25-32  
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+33 
+User Manual 
+uTrack24 
+July 2017 
+18.9. ADAT  
+This menu will only be present if the ADAT module is installed in the uTrack24. The default settings for the MADI 
+module, for each menu settings, are denoted with an asterisk (*).  
+        
+ 
+ 
+Sync Source: Selects which of the 3 ADAT input would be used as the sync source. The clock source should be set 
+to Digital I/O to have the device synced to the ADAT card.  
+ 
+Outputs 44/48 kHz: Choose which audio stream feeds the ADAT out port, when the uTrack24 system is running at a 
+sample rate of either 44.1 kHz or 48 kHz. The audio streams can either be playback channels from uTrack24 or 
+ADAT input signals. 
+ 
+The options available for ADAT outputs at 44/48 kHz are. 
+ 
+Adat Out 1 : uTrack 01-08* / Adat In 1 
+ 
+Adat Out 2 : uTrack 09-16* / Adat In 2 
+ 
+Adat Out 3 : uTrack 17-24* / Adat In 3 
+ 
+Outputs 88/96 kHz: Choose which audio stream feeds the ADAT out port, when the uTrack24 system is running at a 
+sample rate of either 88.2 kHz or 96 kHz. At 88/96 kHz the ADAT works in SMUX mode with 4 channel outputs on 
+each of the out ports 1 and 2.  
+The options available for ADAT outputs at 88/96 kHz are. 
+ 
+Adat Out 1/2 : uTrack 01-08* / SMUX In 1/2 
+ 
+18.10. 
+AudioLan  
+With AudioLan digital card, you can connect directly to any industry standard AES67 and Ravenna audio network.  
+When using the uTrack24 with a USB drive, the Audiolan card acts as a stream provider when the device is playing 
+back and it acts as a stream receiver when the device is recording. 
+When the uTrack24 is used as an interface device, the AudioLan option is available in the settings menu, allowing 
+you to choose if the card should work as Input or as Output.  
+ 
+ 
+
+ 
+ 
+uTrack24 SETTINGS MENUS 
+34 
+User Manual 
+uTrack24 
+July 2017 
+18.11. 
+Utilities Menu  
+The Utilities menu contains assorted global settings and functions, as follows:  
+ 
+Date/Time: Allows you to set your local date and time. The uTrack24 will use this to set a time-stamp metadata field 
+in the recorded take.  
+Delete Single Song: Allows you to delete a song from an attached USB drive. On clicking the Delete Single Song 
+menu option, the browser opens up and lets you select a song to delete. 
+Format USB: Lets you format (erase) the USB drive that is connected to the front panel USB port.  
+Note: Formatting an attached USB drive will ERASE all data AND partitions currently on the drive. Make sure you 
+have copied/backed up any data you do not wish to lose.  
+System Details: This menu displays various information about your uTrack24:  
+ 
+Firmware Version: Displays the version number of the firmware of your uTrack24.  
+ 
+IP Address: Displays the IP address of the uTrack24 when it has been connected to a local area network  
+ 
+Device Name: Displays the name assigned to your particular uTrack24. This name can be edited using the 
+uRemote software.  
+ 
+IP Settings: This menu is useful in a network setup where the uTrack24 needs to have a static IP address. The static 
+IP address and the subnet mask fields are visible only when the DHCP is disabled. The uTrack24 should be restarted 
+for and IP setting change to take effect.  
+ 
+ 
+18.12. 
+Load Settings  
+Selecting the “load settings” command will load all of the settings you last saved, using the “saved settings” 
+command. This command can be used to return the uTrack24 back to a familiar state that you had last saved it as. 
+ 
+18.13. 
+Save Settings  
+Selecting the “save settings” command will save all of the current menu settings as well as the mixer settings to an 
+onboard memory slot that can later be loaded back into uTrack24. The mixer settings are also saved. On boot-up the 
+mixer settings are automatically loaded up.  
+ 
+ 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+35 
+User Manual 
+uTrack24 
+July 2017 
+19. 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE  
+The uTrack24 can be connected to a personal computer or iOS device via its rear panel USB port, and operate as a 
+24-input, 24-output computer audio interface. 
+19.1. Using the uTrack24 as an Audio Interface with Microsoft Windows  
+ 
+19.1.1. Minimum System Requirements  
+Operating Systems (32- or 64bit):  
+ 
+Windows 7, Windows 8, Windows 10  
+Hardware:  
+ 
+Pentium® IV 1.2 GHz or better  
+ 
+512 MB Ram ( 1GB or more recommended)  
+ 
+Note: The speed of your computer’s processor, amount of RAM, and the capacity, size, and speed of your hard 
+drives will greatly affect the overall performance of your recording system. A faster processor and more RAM can 
+reduce signal latency (delay) and improve overall performance. 
+19.1.2. WDM and ASIO driver installation  
+Before connecting the uTrack24 to your PC, please download the driver package from 
+www.cymaticaudio.com/downloads   
+ 
+Double click the exe file and and follow the on-screen instructions.  
+ 
+When prompted by the installation program, connect the uTrack24 to your PC by connecting the supplied 
+USB cable to the uTrack24 USB 2.0 connector on the rear panel and an available USB2.0 port on your PC.  
+ 
+19.2. Audio Interface Signal Flow  
+When using  uTrack24 as an audio interface, the inputs/ouputs can be connected to the PC DAW. The headphone 
+outs can be adjusted using the uTrack24 mixer panel application on the PC. Change the DAW fader (only output 
+channel 1 and 2) and Line fader (stereo downmix of the inputs) to get the desired headphone/main output.   
+ 
+ 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+36 
+User Manual 
+uTrack24 
+July 2017 
+19.2.1. uTrack24 Mixer Control Panel for PC  
+The uTrack24 driver installation program will automatically install the uTrack24 Control panel on your PC. You can 
+launch it by clicking on the uTrack24 icon in the Windows task bar, or by locating the program in the Windows start 
+menu. The mixer control panel allows adjustment of the uTrack24’s internal mixer when operating as a USB interface.  
+Mixer View 
+ 
+ 
+1. 
+USB connection indicator  
+2. 
+Input level meters  
+3. 
+Faders  
+4. 
+Monitor panning  
+5. 
+Mute  
+6. 
+Solo  
+7. 
+Channel link  
+8. 
+Control room output level  
+9. 
+Display device settings 
+ 
+ 
+ 
+1 
+3 
+4 
+5 
+2 
+6
+7 
+9 
+8 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+37 
+User Manual 
+uTrack24 
+July 2017 
+Settings View: Synchronization Tab 
+ 
+Device Name: The device name field controls what device name will appear in your DAW software. The default 
+name is “uTrack24” but it can be modified to the name of your choosing.  
+Sample Rate: Click on this field to select what sample rate you wish to operate the uTrack24 at when using it as an 
+audio interface. Choices include:  
+ 
+44.1kHz  
+ 
+48kHz  
+ 
+88.2kHz  
+ 
+96kHz  
+Sync Source Display: This field displays the current synchronization source. Choices include:  
+ 
+Internal  
+ 
+Word Clock  
+ 
+Digital I/O 
+ 
+ 
+ 
+ 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+38 
+User Manual 
+uTrack24 
+July 2017 
+Settings View: Buffers Tab  
+ 
+The control panel’s buffers screen allows adjustment of the ASIO buffers used by your ASIO compatible software. 
+USB Streaming Mode: Adjust this value to set the basic mode of operation of the uTrack24 drivers.  
+ASIO Buffer Depth: Adjust this setting to configure the size of the ASIO buffer, measured in samples.  
+ASIO Dropout Statistics: This display field indicates how many “drop-outs” have occurred, if any, with the currently 
+selected buffer settings.  
+Dropouts indicate that your computer’s CPU cannot keep up with the demand that is placed on it by the current buffer 
+depth. If any dropouts occur, increase the size of the buffer depth and / or change the streaming mode until no more 
+dropouts are reported. 
+ 
+ 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+39 
+User Manual 
+uTrack24 
+July 2017 
+Settings View: Input Channels Tab 
+Double click an entry in the “channel name” column to modify the input channel names as they will appear in your 
+DAW.  
+ 
+ 
+Settings View: Output Channels Tab 
+Double click an entry in the “channel name” column to modify the output channel names as they will appear in your 
+DAW.  
+ 
+ 
+Click on the checkbox labeled ‘Include device name in ASIO display name’ if you wish to prepend the channel output 
+names with the device name. 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+40 
+User Manual 
+uTrack24 
+July 2017 
+Settings View: About Tab 
+ 
+Revision: Displays the revision number of the control panel.  
+uTrack24: Displays the connection-status for the uTrack24, indicating if the device is connected and recognized by 
+the computer.  
+Serial Number: Displays the serial number of the connected uTrack24 unit.  
+Driver Version: Displays the version number of the installed device driver  
+Firmware Version: Displays the current firmware version of the connected uTrack24 unit. 
+ 
+ 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+41 
+User Manual 
+uTrack24 
+July 2017 
+19.3. Using the uTrack24 as an Audio Interface with an OS X  
+ 
+19.3.1. Minimum System Requirements  
+Operating Systems:  
+ 
+Mac OS-X® 10.8 or higher  
+Hardware:  
+ 
+Any Mac hardware compatible with OS X 10.8 or higher  
+ 
+512 MB Ram (1GB or more recommended)  
+ 
+One available USB 2.0 compatible port  
+ 
+ 
+No driver installation is necessary for OS X computers. Simply connect your Mac® to the uTrack24 using the supplied 
+USB cable. The device shall be selectable in the “Audio MIDI Setup” application, which can be found in the 
+Applications/Utilities folder. 
+When working as an interface with OS X, the uTrack24 supports operating frequencies of 44.1 kHz, 48 kHz, 88.2 kHz 
+and 96 kHz.  
+To operate the uTrack24’s at 88.2/96 kHz, when the system is in 44.1/48 kHz, from the settings menu choose “MAC 
+96kHz” option. The UI prompts the user that the system will restart. After choosing YES, the uTrack24 restarts and 
+the OS X detects the uTrack24 in 88.2/96 kHz mode. At this point, all four sample rates are selectable from the 
+computer’s sound control panel.  
+Note: There is no custom uTrack24 mixer control panel available for OS X, as there is when using the uTrack24 with 
+Windows.  
+ 
+ 
+ 
+
+ 
+ 
+USING THE uTrack24 AS A COMPUTER AUDIO INTERFACE 
+42 
+User Manual 
+uTrack24 
+July 2017 
+19.4. Using the uTrack24 as an Audio Interface with an Apple® iPad®  
+ 
+19.4.1. Minimum System Requirements  
+Operating Systems:  
+ 
+iOS® 5 or higher 
+Hardware:  
+ 
+iPad® 2 or newer  
+ 
+Apple® iPad Camera Connection Kit (for iPads with 30-pin connector)  
+ 
+Apple Lightning to USB Camera Adapter (for iPads with Lightning connector)  
+ 
+ 
+ 
+There is no driver installation for the iPad® necessary. Simply connect the uTrack24 to your iPad® using supplied 
+USB cable. The uTrack24 can now be used as a 24-input, 24-output audio interface with the iPad® and appropriate 
+multi-channel iOS recording software. 
+ 
+ 
+19.5. Audio Interface Control Room Features  
+The uTrack24 contains a “main out” audio output path, which allows for monitoring your DAW mix over speakers and 
+headphones. 
+When streaming from a DAW, channels 1-24 will output to the 24 physical outputs of the rear panel d-sub connectors. 
+However, DAW outputs 1-2 are also output to both the 1/4” stereo main outs, as well as the front panel phones 
+connector. Both the main outs and the phones connector have their own dedicated volume control knobs.  
+ 
+ 
+
+ 
+ 
+UPDATING THE FIRMWARE OF uTrack24 
+43 
+User Manual 
+uTrack24 
+July 2017 
+20. 
+UPDATING THE FIRMWARE OF uTrack24 
+Please check www.cymaticaudio.com/downloads for available firmware updates for your uTrack24.  
+The uTrack24’s currently installed firmware version can be determined through the “Utilities/ System Details” menu. If 
+you determine that your uTrack24 firmware version number is lower than the version number of the downloadable 
+uTrack24 firmware on the Cymatic Audio website, please perform a firmware update. 
+ 
+20.1. Firmware update using a Network Connection (Windows & OS X)  
+Firmware updates can also be performed over the network. Connect the uTrack24 to your local network using the 
+rear panel RJ45 network connector.  
+ 
+Download the firmware update.  
+ 
+Open the “Utilities/System Details” Menu on the uTrack24 and note down the IP address shown on the 
+screen. (if the IP address reads 0.0.0.0 the device is not properly connected to the network) 
+ 
+Open a browser (e.g. Google Chrome) on your computer and type the IP address into the browsers address 
+bar and hit return. After a short moment, the following page should appear in your browser:  
+ 
+ 
+ 
+Drag and drop the firmware update file onto the orange SELECT FILE button. Alternatively click the SELECT FILE 
+button and select the file with the file browser that opens.  
+Click the green “UPLOAD FIRMWARE” button that appears. The update process starts and you will see a progress 
+bar indicating the upload progress. 
+
+ 
+ 
+UPDATING THE FIRMWARE OF uTrack24 
+44 
+User Manual 
+uTrack24 
+July 2017 
+ 
+ 
+ 
+After the image is successfully updated, the browser shall ask to reboot the device. Click the green “REBOOT” 
+button. The connected uTrack24 will reboot which concludes the update process. The screen will show the version 
+number of the updated firmware. 
+ 
+ 
+ 
+
+ 
+ 
+UPDATING THE FIRMWARE OF uTrack24 
+45 
+User Manual 
+uTrack24 
+July 2017 
+20.2. Firmware update using the USB connection (Windows & OS X)  
+With OS X or Windows Computer, you can perform the firmware update through USB, using the rear panel USB 
+connector on the uTrack24.  
+Before starting the update process, please make sure that the uTrack24 device drivers are installed on your system 
+(Windows only) and the uTrack24 is connected to your computer using the supplied USB cable.  
+Download the uTrack24 USB Updater Application from www.cymaticaudio.com/downloads. Both OS X and Windows 
+versions are available. Double click the downloaded application and follow the on-screen instructions. 
+ 
+20.3. Firmware update using USB drive 
+From firmware version 3017 and above, it is possible to update the uTrack24 firmware using a USB drive connected 
+on the front panel. Place the .bcd file into the root folder of a USB drive. Plug in the USB drive into the uTrack24 and 
+the update will happen automatically. A firmware upgrade screen will be shown on the uTrack24 display. If the 
+uTrack24 detects that it has the same firmware version as on the USB drive, the update is not performed again.  
+ 
+ 
+
+ 
+ 
+Legal Disclaimer 
+46 
+User Manual 
+uTrack24 
+July 2017 
+21. 
+Legal Disclaimer 
+ 
+Technical specifications and appearance are subject to change without notice and accuracy is not guaranteed. 
+Cymatic Audio accepts no liability for any loss which may be suffered by any person who relies either wholly or in part 
+upon any description, photograph or statement contained herein. Colors and specifications may vary from the actual 
+product.  
+Cymatic Audio products are sold through resellers only. Fulfillers and resellers are not agents of Cymatic Audio and 
+have absolutely no authority to bind Cymatic Audio by any express or implied undertaking or representation.  
+Apple Macintosh is a trademark of Apple Inc., registered in the U.S. and other countries. Windows is a registered 
+trademark of Microsoft Corporation in the United States and other countries. ASIO is a registered trademark of 
+Steinberg Media Technologies GmbH. All other trademarks, product names, and company names mentioned in this 
+document are the property of their respective owners.
+
+ 
+ 
+ 
+Cymatic Technologies B.V. 
+www.cymaticaudio.com 
+ 
+ 
+ 
+Support: 
+support@cymaticaudio.com 
+ 
+ 
+© copyright 2016 Cymatic Technologies B.V. 
+User Manual 
+uTrack24 
+July 2017 

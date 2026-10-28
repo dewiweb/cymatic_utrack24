@@ -1,0 +1,215 @@
+#### page 27
+ 
+ 
+uTrack24 SETTINGS MENUS 
+27 
+User Manual 
+uTrack24 
+July 2017 
+18. 
+uTrack24 SETTINGS MENUS  
+The uTrack24 contains settings menu that allow you to adjust various settings. 
+ 
+To adjust a menu setting:  
+ 
+While the transport is stopped, press the front panel MENU/LOOP button; the display will switch to the 
+Settings Menu page and show a scrollable list of settings  
+ 
+Rotate the encoder to highlight the specific set of settings menus you wish to adjust; the menu categories 
+include:  
+o 
+Clock Source  
+o 
+Foot Switch  
+o 
+Recording  
+o 
+Playback  
+o 
+Inputs (available only if digital module is installed)  
+o 
+MADI (available only if MADI module is installed)  
+o 
+Utilities  
+o 
+Load Settings  
+o 
+Save Settings  
+ 
+Rotate the encoder to highlight the desired menu, and push the encoder button to enter the menu  
+ 
+Rotate the encoder to navigate to the specific parameter you wish to adjust and press the encoder button to 
+highlight it for adjustment. The parameter highlight will flash on/off to show it is ready for adjustment.  
+ 
+Rotate the encoder to adjust the highlighted parameter, then push the encoder to save the new setting  
+ 
+Press the BACK button to navigate back one or more menu levels. 
+ 
+18.1. Clock Source Menu  
+This menu allows you to choose the clock source that the uTrack24 will utilize, offering choices appropriate for when 
+it is used on its own vs. when it is used as part of a larger system of digital audio devices.  
+Internal (Int): The uTrack24 will use its own internal sample clock.  
+Wordclock (Wck): The uTrack24 will slave to an external word clock signal that is connected to the “word clock in” 
+BNC connector on the rear panel.  
+Digital I/O (Ext): The uTrack24 will slave to the clock signal of the installed digital I/O card (MADI / ADAT / AudioLan).   
+PTP (PTP): The uTrack24 will utilize the precision time protocol clock which is also transferred over the network.   
+Note: If there is no valid clock, the label in will flash on and off, to reflect that the clock signal is missing and no 
+recording or playback will be allowed to take place.  
+Note: When set to External clock source, the uTrack24 does not automatically change its recording sample rate to the 
+rate of the incoming external clock. You must choose the proper sample rate that matches with the external clock you 
+have connected.  
+
+-----
+#### page 31
+ 
+ 
+uTrack24 SETTINGS MENUS 
+31 
+User Manual 
+uTrack24 
+July 2017 
+18.6. Sync Menu  
+The sync menu helps you to form a sync group with more than one uTrack24. With a sync group, multiple devices 
+can record and playback synchronously. The transport can be started only on the Master device and the Slave 
+devices follow the master.  
+ 
+For more information about forming the sync group and sync related features, please refer to the dedicated sync 
+manual that can be downloaded at www.cymaticaudio.com/downloads 
+ 
+18.7. Inputs  
+The inputs menu appears only when a digital option card (MADI / ADAT / AudioLan) is installed in your uTrack24. 
+This menu allows you to select which inputs shall be recorded on the uTrack24. The selection of inputs is allowed in 
+blocks of 8 channels:  
+ 
+Inputs 1-8  
+ 
+Analog 01-08*  
+ 
+Allowed Digital Input (MADI 01-64 / ADAT In 1 / AudioLan 01-08)  
+Inputs 9-16  
+ 
+Analog 09-16*  
+ 
+Allowed Digital Input (MADI 01-64 / ADAT In 2 / AudioLan 09-16)  
+Inputs 17-24  
+ 
+Analog 17-24*  
+ 
+Allowed Digital Input (MADI 01-64 / ADAT In 3 / AudioLan 17-24 )  
+  
+Note: The values marked in * are the default values.  
+Note: In case of the MADI module, any block of MADI input can be chosen as the uTrack24 input.  
+ 
+ 
+ 
+
+-----
+#### page 32
+ 
+ 
+uTrack24 SETTINGS MENUS 
+32 
+User Manual 
+uTrack24 
+July 2017 
+18.8. MADI  
+This menu will only be present if the MADI module is installed in the uTrack24. The default settings for the MADI 
+module, for each menu settings, are denoted with an asterisk (*).  
+ 
+MADI Input: Selects which of the two physical MADI inputs will be used for the incoming MADI stream:  
+ 
+Optical *  
+ 
+Coaxial (BNC) 
+Mode: Choose the channel mode that matches the channel count of the MADI system you are working with.  
+ 
+64ch (Ext)*  
+ 
+56ch (Std)  
+96K Format: Choose the frame type required for your MADI system at 96KHz 
+ 
+96k frame*  
+ 
+48k frame  
+Outputs 44/48 kHz: Choose which audio stream feeds the MADI output connector, when the uTrack24 system is 
+running at a sample rate of either 44.1 kHz or 48 kHz. The audio streams can be selected in groups of 8 channels 
+and can be the playback channels from uTrack24 or MADI input signals. 
+ 
+The options available for MADI outputs 1-8 is shown below. Outputs for the other channels(upto 64) are available in 
+the menu 
+Out 01-08  
+ 
+uTrack24 01-08*  
+ 
+uTrack24 09-16  
+ 
+uTrack24 17-24  
+ 
+MADI In 01-08  
+ 
+- - - - - - - -  
+ 
+MADI In 57-64  
+Outputs 88/96 kHz: This menu selects which audio stream feeds the MADI output connector, when the uTrack24 
+system is running at a sample rate of either 88 kHz or 96 kHz. The menu is similar to the Outputs 44/48 kHz except 
+that uTrack24 is restricted to 8-tracks of playback when running at 88.2 kHz or 96 kHz 
+The options available for MADI outputs 1-8 is shown below. Outputs for the other channels (up to 32) are available in 
+the menu 
+Out 01-08  
+ 
+uTrack24 01-08*  
+ 
+MADI In 01-08  
+ 
+- - - - - - - -  
+ 
+MADI In 25-32  
+
+-----
+#### page 33
+ 
+ 
+uTrack24 SETTINGS MENUS 
+33 
+User Manual 
+uTrack24 
+July 2017 
+18.9. ADAT  
+This menu will only be present if the ADAT module is installed in the uTrack24. The default settings for the MADI 
+module, for each menu settings, are denoted with an asterisk (*).  
+        
+ 
+ 
+Sync Source: Selects which of the 3 ADAT input would be used as the sync source. The clock source should be set 
+to Digital I/O to have the device synced to the ADAT card.  
+ 
+Outputs 44/48 kHz: Choose which audio stream feeds the ADAT out port, when the uTrack24 system is running at a 
+sample rate of either 44.1 kHz or 48 kHz. The audio streams can either be playback channels from uTrack24 or 
+ADAT input signals. 
+ 
+The options available for ADAT outputs at 44/48 kHz are. 
+ 
+Adat Out 1 : uTrack 01-08* / Adat In 1 
+ 
+Adat Out 2 : uTrack 09-16* / Adat In 2 
+ 
+Adat Out 3 : uTrack 17-24* / Adat In 3 
+ 
+Outputs 88/96 kHz: Choose which audio stream feeds the ADAT out port, when the uTrack24 system is running at a 
+sample rate of either 88.2 kHz or 96 kHz. At 88/96 kHz the ADAT works in SMUX mode with 4 channel outputs on 
+each of the out ports 1 and 2.  
+The options available for ADAT outputs at 88/96 kHz are. 
+ 
+Adat Out 1/2 : uTrack 01-08* / SMUX In 1/2 
+ 
+18.10. 
+AudioLan  
+With AudioLan digital card, you can connect directly to any industry standard AES67 and Ravenna audio network.  
+When using the uTrack24 with a USB drive, the Audiolan card acts as a stream provider when the device is playing 
+back and it acts as a stream receiver when the device is recording. 
+When the uTrack24 is used as an interface device, the AudioLan option is available in the settings menu, allowing 
+you to choose if the card should work as Input or as Output.  
+ 
+ 
+
+-----
