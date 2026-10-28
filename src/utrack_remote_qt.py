@@ -98,7 +98,7 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         self.gb_tr=QGroupBox('Transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
-        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AudioLAN')
+        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AudioLAN');self.tabs.addTab(self._matrix(),'Matrice')
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
         self.overlay=QWidget(root);self.overlay.setObjectName('overlay')
         ov=QVBoxLayout(self.overlay);ov.addStretch(2)
@@ -324,6 +324,53 @@ class Win(QMainWindow):
             except Exception as e:self._alan_data=e
         threading.Thread(target=run,daemon=True).start()
 
+    def _matrix(self):
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(10)
+        v.addWidget(QLabel('Source des entrées — lecture CopperLan 0xe000-0xe017, écriture SDS inputselect',objectName='info'))
+        self.mcells=[];self.mbtns=[]
+        grd=QGridLayout();grd.setSpacing(6)
+        for blk in range(3):
+            gb=QGroupBox('Canaux %d-%d'%(blk*8+1,blk*8+8));gg=QGridLayout(gb)
+            for i in range(8):
+                ch=blk*8+i
+                lb=QLabel('%d'%(ch+1));lb.setAlignment(Qt.AlignCenter);lb.setFixedSize(34,34)
+                lb.setStyleSheet('border:1px solid #444;border-radius:4px;background:#2a6e3a;')
+                gg.addWidget(lb,0,i);self.mcells.append(lb)
+            ba=QPushButton('Analog');bd=QPushButton('Digital');ba.setFixedHeight(26);bd.setFixedHeight(26)
+            ba.clicked.connect(lambda _,b=blk:self._matrix_set(b,'analog'))
+            bd.clicked.connect(lambda _,b=blk:self._matrix_set(b,'digital'))
+            gg.addWidget(ba,1,0,1,4);gg.addWidget(bd,1,4,1,4);self.mbtns+= [ba,bd]
+            grd.addWidget(gb,0,blk)
+        v.addLayout(grd)
+        self.mleg=QLabel('vert = analogique · bleu = digital (AES67) · orange = autre (valeur ?) — '
+                         'les 2 canaux monitoring 25/26 ne commutent pas',objectName='info')
+        v.addWidget(self.mleg);v.addStretch(1)
+        return w
+
+    def _matrix_set(self,blk,mode):
+        if not self.tel:
+            try:
+                from utrack_telnet import UTrack24 as Tel
+                self.tel=Tel(TEL_HOST)
+            except Exception as e:self.statusBar().showMessage('Erreur telnet : %s'%e);return
+        if QMessageBox.question(self,'Matrice','Basculer les canaux %d-%d en %s ?'%(blk*8+1,blk*8+8,mode))!=QMessageBox.Yes:return
+        self.statusBar().showMessage('inputselect %d %s…'%(blk+1,mode))
+        def run():
+            try:
+                self.tel.cmd('inputselect %d %s'%(blk+1,mode))
+                self._take_err=None
+            except Exception as e:self._take_err=e
+        threading.Thread(target=run,daemon=True).start()
+
+    def _fill_matrix(self,st):
+        for ch,lb in enumerate(self.mcells):
+            e=st.get(0xe000+ch)
+            v=e[0] if e else None
+            col='#2a6e3a' if v==1 else '#2a4e8e' if v==0 else '#8e5a2a' if v else '#333'
+            txt={1:'A',0:'D'}.get(v,'?')
+            lb.setStyleSheet('border:1px solid #444;border-radius:4px;background:%s;color:#fff;'%col)
+            lb.setText(txt)
+
     def _takes_refresh(self):
         self.btn_ref.setEnabled(False);self.statusBar().showMessage('Lecture des prises…')
         def run():
@@ -423,6 +470,7 @@ class Win(QMainWindow):
             e=st.get(0xd010+ch)
             if e and e[0] is not None and s['S'].isChecked()!=(e[0]==1):
                 s['S'].blockSignals(True);s['S'].setChecked(e[0]==1);s['S'].blockSignals(False)
+        self._fill_matrix(st)
         for ctrl,cb in self.chk.items():
             e=st.get(ctrl)
             if e and e[0] is not None and cb.isChecked()!=(e[0]==1):
