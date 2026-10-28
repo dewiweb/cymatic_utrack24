@@ -77,6 +77,7 @@ class Win(QMainWindow):
         self.setWindowTitle('uTrack24 Remote');self.resize(1500,700)
         self.u=u or UTrackControl();self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
+        self.alan=None;self._alan_data=None
         root=QWidget();rv=QVBoxLayout(root);rv.setContentsMargins(0,0,0,0)
         self.content=QFrame();v=QVBoxLayout(self.content)
         v.setContentsMargins(10,8,10,8);v.setSpacing(8)
@@ -97,7 +98,7 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         self.gb_tr=QGroupBox('Transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
-        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises')
+        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AudioLAN')
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
         self.overlay=QWidget(root);self.overlay.setObjectName('overlay')
         ov=QVBoxLayout(self.overlay);ov.addStretch(2)
@@ -230,6 +231,52 @@ class Win(QMainWindow):
         self.reclog=QPlainTextEdit(readOnly=True);lv.addWidget(self.reclog);v.addWidget(lg,1)
         return w
 
+    def _audiolan(self):
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
+        hb=QHBoxLayout()
+        self.btn_alan=QPushButton('Rafraîchir');self.btn_alan.clicked.connect(self._alan_refresh);hb.addWidget(self.btn_alan)
+        self.alan_info=QLabel('—');hb.addWidget(self.alan_info);hb.addStretch(1);v.addLayout(hb)
+        self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
+        self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
+        v.addWidget(self.atree)
+        return w
+
+    def _alan_refresh(self):
+        self.btn_alan.setEnabled(False);self.statusBar().showMessage('Lecture AudioLAN…')
+        def run():
+            try:
+                if self.alan is None:
+                    from audiolan_api import AudioLan
+                    self.alan=AudioLan()
+                self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list())
+            except Exception as e:self._alan_data=e
+        threading.Thread(target=run,daemon=True).start()
+
+    def _fill_alan(self,data):
+        g,src,out,sl=data
+        self.atree.clear()
+        cfg=g.get('ArchwaveAES67',{}).get('config',{})
+        self.alan_info.setText('%s — %s'%(cfg.get('name','?'),cfg.get('currentIPaddress','?')))
+        g1=QTreeWidgetItem(['Réseau',''])
+        for k,lab in (('DHCPenable','DHCP'),('currentIPaddress','IP'),('currentIPmask','Masque'),('currentIPgateway','Passerelle'),('IPaddress','IP statique')):
+            QTreeWidgetItem(g1,[lab,str(cfg.get(k,'—'))])
+        self.atree.addTopLevelItem(g1);g1.setExpanded(True)
+        g2=QTreeWidgetItem(['Sources (audio → réseau)',''])
+        for s in src.get('ArchwaveAES67',{}).get('sources',[]):
+            it=QTreeWidgetItem(g2,[s.get('name','?'),'%s — activé:%s auto:%s'%(s.get('multicastAddress','—'),s.get('streamEnable'),s.get('automaticConfigEnabled'))])
+        self.atree.addTopLevelItem(g2);g2.setExpanded(True)
+        g3=QTreeWidgetItem(['Sorties (réseau → audio)',''])
+        for o in out.get('ArchwaveAES67',{}).get('outputs',[]):
+            sp=o.get('streamPath','') or '—'
+            QTreeWidgetItem(g3,[o.get('name','?'),sp])
+        self.atree.addTopLevelItem(g3);g3.setExpanded(False)
+        g4=QTreeWidgetItem(['Streams actifs',''])
+        for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
+            QTreeWidgetItem(g4,[str(s)[:80],''])
+        self.atree.addTopLevelItem(g4);g4.setExpanded(True)
+        self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(
+            len(src.get('ArchwaveAES67',{}).get('sources',[])),len(out.get('ArchwaveAES67',{}).get('outputs',[]))))
+
     def _takes_refresh(self):
         self.btn_ref.setEnabled(False);self.statusBar().showMessage('Lecture des prises…')
         def run():
@@ -301,6 +348,10 @@ class Win(QMainWindow):
             d,self._takes_data=self._takes_data,None;self.btn_ref.setEnabled(True)
             if isinstance(d,Exception):self.statusBar().showMessage('Erreur prises : %s'%d)
             else:self._fill_takes(d)
+        if self._alan_data is not None:
+            d,self._alan_data=self._alan_data,None;self.btn_alan.setEnabled(True)
+            if isinstance(d,Exception):self.statusBar().showMessage('Erreur AudioLAN : %s'%d)
+            else:self._fill_alan(d)
         if self._take_err is not None:
             e,self._take_err=self._take_err,None;self.btn_ref.setEnabled(True)
             QMessageBox.warning(self,'Prises','Erreur : %s'%e)
