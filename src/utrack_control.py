@@ -61,7 +61,7 @@ class UTrackControl:
     def __init__(self,host='127.0.0.1',port=55000,seq_file=SEQ_FILE):
         self.addr=(host,port);self.seq_file=seq_file
         self.s=None;self.lock=threading.Lock();self.alive=False
-        self.slock=threading.Lock();self.state={}
+        self.slock=threading.Lock();self.state={};self._hbi=0
 
     def _send(self,data):
         with self.lock:self.s.sendall(data)
@@ -87,8 +87,26 @@ class UTrackControl:
         threading.Thread(target=self._loop,daemon=True).start()
         return self
 
-    # keepalive de souscription c423 (rejoue) — active le flux de notifications ~20Hz (vu-metres)
-    HB=bytes.fromhex('ef5130b00001c423ffffffff01000100f13f00000000000000000100feff01000386214e01800000010000009023001008000200c9588588')
+    # keepalives de souscription c423 (rejoues, en rotation comme uRemote)
+    HBS=[bytes.fromhex(h) for h in (
+        'ef5130b00001c4230000000001000100d01f000000000000000001000e00010034b96e2e00000000010000009023001008000200ad520aac',
+        'ef5130b00001c423000000000e0002000697271600000000000001000e00010034b96e2e00000000010000009023001008000100a5523aaa',
+        'ef5130b00001c423fffffffffeff2000f4de012f011000000000010001000200ca53d56b00000000010000009023001008000100af5a25de',
+        'ef5130b00001c423fffffffffeff2000f4de012f00100000000001000e00010034b96e2e00000000010000009023001008000100e659b6cf')]
+
+    def ensure_alive(self):
+        """Reconnecte la session si le thread de reception est mort."""
+        if self.alive:return
+        self.alive=True
+        threading.Thread(target=self._reconnect,daemon=True).start()
+
+    def _reconnect(self):
+        try:
+            try:self.s.close()
+            except Exception:pass
+            self.connect()
+        except Exception:
+            self.alive=False
 
     def _loop(self):
         buf=b'';last=0;last_hb=0
@@ -108,12 +126,14 @@ class UTrackControl:
                     elif body[2:4]==b'\x44\x37':self._update(body)
                 except Exception:continue  # trame malformee : ne pas tuer la boucle
             if time.time()-last_hb>0.5:
-                try:self._send(self.HB)
+                try:self._send(self.HBS[self._hbi%len(self.HBS)]);self._hbi+=1
                 except OSError:break
                 last_hb=time.time()
             if time.time()-last>0.4:
                 self._send(frame(b'',0xa));last=time.time()
         self.alive=False
+        try:self.s.close()
+        except Exception:pass
 
     def _update(self,m):
         o=40
