@@ -134,3 +134,11 @@ Chaque ctrl relie a sa classe UI via RTTI (ClassOf.java). Ouvert: regle sous-ses
 4. Mixer: DSPMChannelStrip (+0x2b0 / +0x3c8) mute vs solo, ids par canal.
 NE PAS tester sans accord: 0xb003/b004/b005 (reseau), 0xb000 (horloge).
 Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_ctrl.py, Ghidra ClassOf/CtrlCalls/Truth.
+
+## 2026-10-28 RE outils Cymatic
+- PROUVE: le uTrack annonce son modele de controles (4437/TLV c837): node=sous-session de chaque ctrl. Voir research/notes/device_model.md.
+- Ecriture: TLV 4337 (liste/bouton) et 4237 (numerique fader/pan), ctrl@2 valeur u16@20.
+- Mixer: 0xd030+ch Mute (prouve), 0xd010+ch Solo (elimination), 0xd050+ch Pan, 0xd070+ch Fader (prouves capture).
+- Reste: format fil ecriture texte (0xd001 locate, d002/d003 loop), Skip Back/Fwd.
+- Outils: radare2 6.2.4 C:/tools/radare2/bin ; ilspycmd 8.2 ; Mixerpanel .NET decompile dans C:/tools/ilspy_out (API USB BeBoB: CDriverInterface.cs, NE PAS commiter = code tiers).
+- Scripts RE: research/tools/*.py (gitignore!) + research/tools/ghidra/*.java ; Ghidra: analyzeHeadless C:/tools/ghidra_projects uremote_v36 -process uRemote.exe -noanalysis -readOnly -postScript X.java (JAVA_HOME=C:/tools/jdk21).
