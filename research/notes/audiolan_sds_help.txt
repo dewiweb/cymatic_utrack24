@@ -1,0 +1,41 @@
+h he hel help 
+### Available Commands ###
+help                 - displays all available commands
+bat                  - bat <batch-name>   executes commands written in <batch-name>
+cd                   - cd <dir> - changes current directory to <dir>
+cfg                  - Configuration commands
+clear                - clear shell history
+config               - set configuration
+dsp                  - starts dsp process
+fba                  - file allocator
+get                  - get [-e] <attributename> - reads value and type of <attributename>
+ls                   - ls [-r|-n|-e|-v] - shows content of (current) directory
+os                   - KnOS commands
+persparam            - persparam rd <name>             : read integer (name = 4 characters)
+          rds <name>            : read string (name = 4 characters)
+          rdss <name>           : read string (name = string)
+          wr <name> <value>     : write integer (name = 4 characters)
+          wrs <name> <value>    : write string (name = 4 characters)
+          wrss <name> <value>   : write string (name = string)
+          wrb <name> <hex-str>  : write binary string (name = 4 characters, hex-string eg. 0xafc9f0)
+          wrbs <name> <hex-str> : write binary string (name = string, hex-string eg. 0xafc9f0)
+          clr <name>            : clear integer (name = 4 characters)
+          clrs <name>           : clear string (name = 4 characters)
+          check                 : check and update default parameters
+          reset                 : reset parameters to default
+
+ptest                - execute production tests
+ptp                  - ptp shell command
+ptp_sync             - PTP sync
+ptpt                 - change PI values
+pwd                  - pwd - shows the complete currently used path
+rd                   - rd <addr> <count> [b|h] - reads <count> values starting at <addr> (b=8bit, h=16bit)
+set                  - set <attributename> <attributevalue> - writes <attributevalue> to config <attributename>
+shell                - shell [-b|-i|-o|-s] - shell configuration
+sync                 - switch to sync input:
+sys                  - System commands
+telnet               - telnet <start|stop>
+test                 - Test commands
+warp                 - warp commands
+wr                   - wr <addr> <value> [b|h] - writes <value> to <addr> (b=8bit, h=16bit)
+sds://>

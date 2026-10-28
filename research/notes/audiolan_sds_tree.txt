@@ -1,0 +1,552 @@
+l ls ls  ls - ls -e ls -e  ls -e - ls -e -r 
+  d. static
+  d. cne
+    d. AppSettings
+      d. Global
+        l. SwVersion type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0xFFFFFF
+        l. StreamingInterface type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=ETHERNET
+        l. SampleRate type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. GPIOUsage type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uNET
+        l. AvPortFormat type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+        l. AvPortAlign type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. AvPortLRCKPolarity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. AvMCLKRatio1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+        l. AvMCLKRatio2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. AvMCLKRatio4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. AvSamplingClkEdge1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. AvSamplingClkEdge2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. AvSamplingClkEdge4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. SyncMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+        l. Shell type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=enable
+        l. ModelName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24_AudioLan
+        l. ManufacturerName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=cymatic audio
+        l. WebIconPath type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=/assets/images/devTypeRecorder.png
+      d. Bonjour
+        l. SessionUpdateInterval type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+        l. RTSPReconnectionTime type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=60
+      d. RavennaConfiguration
+        l. User_SyntonizedMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. User_PlayoutDelay type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4800
+        l. User_SampleSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+        l. User_AudioMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. ValidSamplingRates type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1,2,3,4
+        l. MaxNoOfEncoders type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+        l. MaxNoOfDecoders type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+        l. PlayoutDelayMin type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. PlayoutDelayMax type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24000
+        l. InputDelay1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-24
+        l. InputDelay2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-48
+        l. InputDelay4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=-96
+        l. OutputDelay1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. OutputDelay2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. OutputDelay4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. MaxCPULoad type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=95
+        l. MeasurementIntervalCPULoad type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5000
+        d. PTP
+          l. DomainNumber type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          l. Priority1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=200
+          l. Priority2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=200
+          l. LogAnnounceInterval type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          l. LogSyncInterval type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          l. TTL type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          l. SlaveOnly type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. AudioModes
+          d. Mode0
+            l. AudioModeName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24CH InOut
+            l. AudioModeID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. ActiveStreams type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1,2,3,4,5
+            l. ActiveOutputGroups type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1,2,3
+            l. AVInChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+            l. AVOutChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+            l. DigitalIOFormat type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. MidiIO type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. ValidSamplingRates type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1,2,3,4
+        d. OutgoingStreams
+          d. Stream1
+            l. StreamID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_StreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24 channels 1-8
+            l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. User_AutomaticConfigEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. User_DestAddr type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=239.69.101.220
+            l. User_DestPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5004
+            l. User_SIPIdentity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=transmitter1
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. SamplesPerPacket1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=48
+            l. SamplesPerPacket2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=96
+            l. SamplesPerPacket4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192
+            l. NoOfChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+            l. ChannelRouting type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0-0,1-1,2-2,3-3,4-4,5-5,6-6,7-7
+            l. User_ChannelName0 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 1
+            l. User_ChannelName1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 2
+            l. User_ChannelName2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 3
+            l. User_ChannelName3 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 4
+            l. User_ChannelName4 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 5
+            l. User_ChannelName5 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 6
+            l. User_ChannelName6 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 7
+            l. User_ChannelName7 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 8
+            l. User_TTL type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          d. Stream2
+            l. StreamID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+            l. User_StreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24 channels 9-16
+            l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. User_AutomaticConfigEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. User_DestAddr type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=239.69.102.220
+            l. User_DestPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5004
+            l. User_SIPIdentity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=transmitter2
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. SamplesPerPacket1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=48
+            l. SamplesPerPacket2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=96
+            l. SamplesPerPacket4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192
+            l. NoOfChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+            l. ChannelRouting type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8-0,9-1,10-2,11-3,12-4,13-5,14-6,15-7
+            l. User_ChannelName0 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 9
+            l. User_ChannelName1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 10
+            l. User_ChannelName2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 11
+            l. User_ChannelName3 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 12
+            l. User_ChannelName4 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 13
+            l. User_ChannelName5 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 14
+            l. User_ChannelName6 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 15
+            l. User_ChannelName7 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 16
+            l. User_TTL type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          d. Stream3
+            l. StreamID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+            l. User_StreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24 channels 17-24
+            l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. User_AutomaticConfigEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. User_DestAddr type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=239.69.103.220
+            l. User_DestPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5004
+            l. User_SIPIdentity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=transmitter3
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. SamplesPerPacket1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=48
+            l. SamplesPerPacket2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=96
+            l. SamplesPerPacket4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192
+            l. NoOfChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+            l. ChannelRouting type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=16-0,17-1,18-2,19-3,20-4,21-5,22-6,23-7
+            l. User_ChannelName0 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 17
+            l. User_ChannelName1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 18
+            l. User_ChannelName2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 19
+            l. User_ChannelName3 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 20
+            l. User_ChannelName4 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 21
+            l. User_ChannelName5 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 22
+            l. User_ChannelName6 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 23
+            l. User_ChannelName7 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 24
+            l. User_TTL type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          d. Stream4
+            l. StreamID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+            l. User_StreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24 channels 1-4
+            l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_AutomaticConfigEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_DestAddr type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=239.8.4.201
+            l. User_DestPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5004
+            l. User_SIPIdentity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=transmitter4
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. SamplesPerPacket1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=48
+            l. SamplesPerPacket2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=96
+            l. SamplesPerPacket4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192
+            l. NoOfChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+            l. ChannelRouting type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0-0,1-1,2-2,3-3
+            l. User_ChannelName0 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 1
+            l. User_ChannelName1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 2
+            l. User_ChannelName2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 3
+            l. User_ChannelName3 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 4
+            l. User_TTL type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          d. Stream5
+            l. StreamID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+            l. User_StreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24 channels 5-8
+            l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_AutomaticConfigEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. User_DestAddr type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=239.8.4.201
+            l. User_DestPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5004
+            l. User_SIPIdentity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=transmitter5
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. SamplesPerPacket1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=48
+            l. SamplesPerPacket2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=96
+            l. SamplesPerPacket4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192
+            l. NoOfChannels type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+            l. ChannelRouting type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4-0,5-1,6-2,7-3
+            l. User_ChannelName0 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 5
+            l. User_ChannelName1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 6
+            l. User_ChannelName2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 7
+            l. User_ChannelName3 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 8
+            l. User_TTL type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. OutputGroups
+          l. User_SIPIdentity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=receiver
+          d. OutputGroup1
+            l. OutputGroupID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output1
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 1
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=v=0
+o=- 1 0 IN IP4 192.168.10.81
+s=devin-test
+t=0 0
+m=audio 5004 RTP/AVP 96
+c=IN IP4 239.69.200.200/32
+a=rtpmap:96 L24/44100/8
+a=sendonly
+a=framecount:48
+a=sync-time:0
+a=ptime:1.09
+a=mediaclk:asynchronous
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output2
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 2
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=v=0
+o=- 1 0 IN IP4 192.168.10.81
+s=devin-test
+t=0 0
+m=audio 5004 RTP/AVP 96
+c=IN IP4 239.69.200.200/32
+a=rtpmap:96 L24/44100/8
+a=sendonly
+a=framecount:48
+a=sync-time:0
+a=ptime:1.09
+a=mediaclk:asynchronous
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            d. Output3
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 3
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_065-072
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output4
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 4
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_065-072
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output5
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 5
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_065-072
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output6
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 6
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_065-072
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output7
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 7
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_065-072
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output8
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 8
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_065-072
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          d. OutputGroup2
+            l. OutputGroupID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output1
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 9
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=8
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output2
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 10
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=9
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output3
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 11
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=10
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output4
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 12
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=11
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output5
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 13
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output6
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 14
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output7
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 15
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=14
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output8
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 16
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_073-080
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=15
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          d. OutputGroup3
+            l. OutputGroupID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+            l. EnabledIn1xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+            l. EnabledIn2xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            l. EnabledIn4xFS type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output1
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 17
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=16
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output2
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 18
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=17
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output3
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 19
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=18
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output4
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 20
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output5
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 21
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=20
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output6
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 22
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=21
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output7
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 23
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=22
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+            d. Output8
+              l. User_OutputName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Channel 24
+              l. User_SourceStreamName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MC2_081-088
+              l. User_SourceChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+              l. OutputChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=23
+              l. ManualSDP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+              l. ManualSDPChannel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+      d. DSP
+        l. HWPacketDelay_32kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=200
+        l. HWPacketDelay_44.1_48kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=200
+        l. HWPacketDelay_88.2_96kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=200
+        l. HWPacketDelay_176.4_192kHz type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=200
+      d. ARC
+        l. Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. Transport type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=SPI
+        d. SPI
+          l. RequestPinGPIONumber type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4
+          l. RequestPinActiveLevel type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=high
+        d. UART
+          l. Interface type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          l. Baudrate type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19200
+          l. Parity type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=none
+      d. CopperLan
+        l. Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. DuplicateNumber type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1310819843
+        l. DuplicateMode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. BrandID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0xFFFE
+        l. BrandName type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=Test
+        l. ModelID type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0x0001
+        l. Contact type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=test@contact.info
+        d. Midi
+          l. Enabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          l. Mode type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          l. Name type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=MIDI
+          l. Device type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=/dev/uart0
+      d. SAP
+        l. MulticastAddress type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=239.255.255.255
+        l. Port type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=9875
+        l. AnnouncementEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        l. BrowsingEnabled type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        l. SessionTimeoutSeconds type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3600
+    d. System
+      d. Threads
+        d. default
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. isoStateMachine
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=14
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=14
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+        d. cmdline_setupThread
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=3072
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. PTP
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4096
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. PTP Timer
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. PTP Forwarder
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=19
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. lwIP
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1536
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=ahb
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=13
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. EthernetReceive
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. EthernetTransmit
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=7
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. EthernetLink
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=22
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=22
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. RTP Decoder
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=512
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=ahb
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=12
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. DSPProcess
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=ahb
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. CPU Load Supervisor
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4096
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=5
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. RavennaController
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=4096
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=21
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=21
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. TimerHandler
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1024
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+        d. StreamingMessenger
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=23
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=23
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          l. MaxQueuedMessages type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=128
+        d. ARCTransportSPI
+          l. stackSize type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=2048
+          l. memType type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=heap
+          l. priority type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. preemptThreshold type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=24
+          l. timeSlice type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+    d. Networking
+      d. IpCfg
+        d. Config0
+          l. DHCPClient type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+          l. IP type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192.168.100.220
+          l. Mask type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=255.255.255.0
+          l. DefGW type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=192.168.100.254
+          l. Proxy type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+          l. ProxyServer type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+          l. ProxyServerPort type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+          l. DNSSrv1 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+          l. DNSSrv2 type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=
+          l. Hostname type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24-AudioLan
+          l. AppendMAC type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=1
+    d. FirmwareUpdate
+      l. KeepBootloader type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=0
+    d. Config
+      l. Name type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=uT24_AudioLan
+      l. Version type="19CnE_SystemDataProxy" (No SysData, 0 Proxies), val=6
+sds://>
