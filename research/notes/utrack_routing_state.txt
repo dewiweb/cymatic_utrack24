@@ -1,0 +1,180 @@
+### inputselect
+i in inp inpu input inputs inputse inputsel inputsele inputselec inputselect 
+---- OVERVIEW ----
+inputselect          - set input selector
+---- DESCRIPTION ----
+inputselect	'1|2|3|all' 'analog|digital'
+
+sds://>
+### inputselect 1
+i in inp inpu input inputs inputse inputsel inputsele inputselec inputselect inputselect  inputselect 1 
+---- OVERVIEW ----
+inputselect          - set input selector
+---- DESCRIPTION ----
+inputselect	'1|2|3|all' 'analog|digital'
+
+sds://>
+### mixer stat
+m mi mix mixe mixer mixer  mixer s mixer st mixer sta mixer stat 
+
+Mixer Status:
+=============
+
+Fader Values:
+  CH 00:	0x00000000
+  CH 00 output:	0x00000000
+
+  CH 01:	0x00000000
+  CH 01 output:	0x00000000
+
+  CH 02:	0x00000000
+  CH 02 output:	0x00000000
+
+  CH 03:	0x00000000
+  CH 03 output:	0x00000000
+
+  CH 04:	0x00000000
+  CH 04 output:	0x00000000
+
+  CH 05:	0x00000000
+  CH 05 output:	0x00000000
+
+  CH 06:	0x00000000
+  CH 06 output:	0x00000000
+
+  CH 07:	0x00000000
+  CH 07 output:	0x00000000
+
+  CH 08:	0x00000000
+  CH 08 output:	0x00000000
+
+  CH 09:	0x00000000
+  CH 09 output:	0x00000000
+
+  CH 10:	0x00000000
+  CH 10 output:	0x00000000
+
+  CH 11:	0x00000000
+  CH 11 output:	0x00000000
+
+  CH 12:	0x00000000
+  CH 12 output:	0x00000000
+
+  CH 13:	0x00000000
+  CH 13 output:	0x00000000
+
+  CH 14:	0x00000000
+  CH 14 output:	0x00000000
+
+  CH 15:	0x00000000
+  CH 15 output:	0x00000000
+
+  CH 16:	0x00000000
+  CH 16 output:	0x00000000
+
+  CH 17:	0x00000000
+  CH 17 output:	0x00000000
+
+  CH 18:	0x00000000
+  CH 18 output:	0x00000000
+
+  CH 19:	0x00000000
+  CH 19 output:	0x00000000
+
+  CH 20:	0x00000000
+  CH 20 output:	0x00000000
+
+  CH 21:	0x00000000
+  CH 21 output:	0x00000000
+
+  CH 22:	0x00000000
+  CH 22 output:	0x00000000
+
+  CH 23:	0x00000000
+  CH 23 output:	0x00000000
+
+
+Monitor fader Value: 0x00007FFF
+
+Bus fader Value: 0x00007FFF
+
+Level Meters:
+  CH 00:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 04:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 08:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 12:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 16:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 20:	0x00000000	0x00000000	0x00000000	0x00000000
+  CH 24:	0x00000000	0x00000000	0x00000000	0x00000000
+sds://>
+### mixer get 1
+m mi mix mixe mixer mixer  mixer g mixer ge mixer get mixer get  mixer get 1 
+Mixer parameter for CH01:
+	Fader -4.625000 dB (mute on)
+	Pan   0
+sds://>
+### mixer querylevels
+m mi mix mixe mixer mixer  mixer q mixer qu mixer que mixer quer mixer query mixer queryl mixer queryle mixer querylev mixer queryleve mixer querylevel mixer querylevels 
+Level meters:
+CH 00: 0x00000000
+CH 01: 0x00000000
+CH 02: 0x00000000
+CH 03: 0x00000000
+CH 04: 0x00000000
+CH 05: 0x00000000
+CH 06: 0x00000000
+CH 07: 0x00000000
+CH 08: 0x00000000
+CH 09: 0x00000000
+CH 10: 0x00000000
+CH 11: 0x00000000
+CH 12: 0x00000000
+CH 13: 0x00000000
+CH 14: 0x00000000
+CH 15: 0x00000000
+CH 16: 0x00000000
+CH 17: 0x00000000
+CH 18: 0x00000000
+CH 19: 0x00000000
+CH 20: 0x00000000
+CH 21: 0x00000000
+CH 22: 0x00000000
+CH 23: 0x00000000
+sds://>
+### channelmode
+c ch cha chan chann channe channel channelm channelmo channelmod channelmode 
+channel modes: 0: 24 In / 26 Out
+               1: 24 In /  2 Out
+               2:  8 In / 26 Out
+               3:  8 In / 10 Out
+---- OVERVIEW ----
+channelmode          - change streaming channel mode:
+---- DESCRIPTION ----
+channelmode	 <mode>
+
+sds://>
+### get cne/AppSettings/AnalogInputs/Inputs00to07
+g ge get get  get c get cn get cne get cne/ get cne/A get cne/Ap get cne/App get cne/AppS get cne/AppSe get cne/AppSet get cne/AppSett get cne/AppSetti get cne/AppSettin get cne/AppSetting get cne/AppSettings get cne/AppSettings/ get cne/AppSettings/A get cne/AppSettings/An get cne/AppSettings/Ana get cne/AppSettings/Anal get cne/AppSettings/Analo get cne/AppSettings/Analog get cne/AppSettings/AnalogI get cne/AppSettings/AnalogIn get cne/AppSettings/AnalogInp get cne/AppSettings/AnalogInpu get cne/AppSettings/AnalogInput get cne/AppSettings/AnalogInputs get cne/AppSettings/AnalogInputs/ get cne/AppSettings/AnalogInputs/I get cne/AppSettings/AnalogInputs/In get cne/AppSettings/AnalogInputs/Inp get cne/AppSettings/AnalogInputs/Inpu get cne/AppSettings/AnalogInputs/Input get cne/AppSettings/AnalogInputs/Inputs get cne/AppSettings/AnalogInputs/Inputs0 get cne/AppSettings/AnalogInputs/Inputs00 get cne/AppSettings/AnalogInputs/Inputs00t get cne/AppSettings/AnalogInputs/Inputs00to get cne/AppSettings/AnalogInputs/Inputs00to0 get cne/AppSettings/AnalogInputs/Inputs00to07 
+ Name="Inputs00to07",  Value= 3
+sds://>
+### get cne/AppSettings/AnalogInputs/Inputs08to15
+g ge get get  get c get cn get cne get cne/ get cne/A get cne/Ap get cne/App get cne/AppS get cne/AppSe get cne/AppSet get cne/AppSett get cne/AppSetti get cne/AppSettin get cne/AppSetting get cne/AppSettings get cne/AppSettings/ get cne/AppSettings/A get cne/AppSettings/An get cne/AppSettings/Ana get cne/AppSettings/Anal get cne/AppSettings/Analo get cne/AppSettings/Analog get cne/AppSettings/AnalogI get cne/AppSettings/AnalogIn get cne/AppSettings/AnalogInp get cne/AppSettings/AnalogInpu get cne/AppSettings/AnalogInput get cne/AppSettings/AnalogInputs get cne/AppSettings/AnalogInputs/ get cne/AppSettings/AnalogInputs/I get cne/AppSettings/AnalogInputs/In get cne/AppSettings/AnalogInputs/Inp get cne/AppSettings/AnalogInputs/Inpu get cne/AppSettings/AnalogInputs/Input get cne/AppSettings/AnalogInputs/Inputs get cne/AppSettings/AnalogInputs/Inputs0 get cne/AppSettings/AnalogInputs/Inputs08 get cne/AppSettings/AnalogInputs/Inputs08t get cne/AppSettings/AnalogInputs/Inputs08to get cne/AppSettings/AnalogInputs/Inputs08to1 get cne/AppSettings/AnalogInputs/Inputs08to15 
+ Name="Inputs08to15",  Value= 4
+sds://>
+### get cne/AppSettings/AnalogInputs/Inputs16to23
+g ge get get  get c get cn get cne get cne/ get cne/A get cne/Ap get cne/App get cne/AppS get cne/AppSe get cne/AppSet get cne/AppSett get cne/AppSetti get cne/AppSettin get cne/AppSetting get cne/AppSettings get cne/AppSettings/ get cne/AppSettings/A get cne/AppSettings/An get cne/AppSettings/Ana get cne/AppSettings/Anal get cne/AppSettings/Analo get cne/AppSettings/Analog get cne/AppSettings/AnalogI get cne/AppSettings/AnalogIn get cne/AppSettings/AnalogInp get cne/AppSettings/AnalogInpu get cne/AppSettings/AnalogInput get cne/AppSettings/AnalogInputs get cne/AppSettings/AnalogInputs/ get cne/AppSettings/AnalogInputs/I get cne/AppSettings/AnalogInputs/In get cne/AppSettings/AnalogInputs/Inp get cne/AppSettings/AnalogInputs/Inpu get cne/AppSettings/AnalogInputs/Input get cne/AppSettings/AnalogInputs/Inputs get cne/AppSettings/AnalogInputs/Inputs1 get cne/AppSettings/AnalogInputs/Inputs16 get cne/AppSettings/AnalogInputs/Inputs16t get cne/AppSettings/AnalogInputs/Inputs16to get cne/AppSettings/AnalogInputs/Inputs16to2 get cne/AppSettings/AnalogInputs/Inputs16to23 
+ Name="Inputs16to23",  Value= 5
+sds://>
+### get -e cne/AppSettings/AudioLan/InterfaceAsInput
+g ge get get  get - get -e get -e  get -e c get -e cn get -e cne get -e cne/ get -e cne/A get -e cne/Ap get -e cne/App get -e cne/AppS get -e cne/AppSe get -e cne/AppSet get -e cne/AppSett get -e cne/AppSetti get -e cne/AppSettin get -e cne/AppSetting get -e cne/AppSettings get -e cne/AppSettings/ get -e cne/AppSettings/A get -e cne/AppSettings/Au get -e cne/AppSettings/Aud get -e cne/AppSettings/Audi get -e cne/AppSettings/Audio get -e cne/AppSettings/AudioL get -e cne/AppSettings/AudioLa get -e cne/AppSettings/AudioLan get -e cne/AppSettings/AudioLan/ get -e cne/AppSettings/AudioLan/I get -e cne/AppSettings/AudioLan/In get -e cne/AppSettings/AudioLan/Int get -e cne/AppSettings/AudioLan/Inte get -e cne/AppSettings/AudioLan/Inter get -e cne/AppSettings/AudioLan/Interf get -e cne/AppSettings/AudioLan/Interfa get -e cne/AppSettings/AudioLan/Interfac get -e cne/AppSettings/AudioLan/Interface get -e cne/AppSettings/AudioLan/InterfaceA get -e cne/AppSettings/AudioLan/InterfaceAs get -e cne/AppSettings/AudioLan/InterfaceAsI get -e cne/AppSettings/AudioLan/InterfaceAsIn get -e cne/AppSettings/AudioLan/InterfaceAsInp get -e cne/AppSettings/AudioLan/InterfaceAsInpu get -e cne/AppSettings/AudioLan/InterfaceAsInput 
+ Name="InterfaceAsInput", Index=0, Type="19CnE_SystemDataProxy" (NO Prop, 0 Proxies)
+ Value= true
+sds://>
+### get cne/AppSettings/DeviceMode
+g ge get get  get c get cn get cne get cne/ get cne/A get cne/Ap get cne/App get cne/AppS get cne/AppSe get cne/AppSet get cne/AppSett get cne/AppSetti get cne/AppSettin get cne/AppSetting get cne/AppSettings get cne/AppSettings/ get cne/AppSettings/D get cne/AppSettings/De get cne/AppSettings/Dev get cne/AppSettings/Devi get cne/AppSettings/Devic get cne/AppSettings/Device get cne/AppSettings/DeviceM get cne/AppSettings/DeviceMo get cne/AppSettings/DeviceMod get cne/AppSettings/DeviceMode 
+ No leaf name "cne/AppSettings/DeviceMode" found
+sds://>
+### get cne/AppSettings/USBConfigurationId
+g ge get get  get c get cn get cne get cne/ get cne/A get cne/Ap get cne/App get cne/AppS get cne/AppSe get cne/AppSet get cne/AppSett get cne/AppSetti get cne/AppSettin get cne/AppSetting get cne/AppSettings get cne/AppSettings/ get cne/AppSettings/U get cne/AppSettings/US get cne/AppSettings/USB get cne/AppSettings/USBC get cne/AppSettings/USBCo get cne/AppSettings/USBCon get cne/AppSettings/USBConf get cne/AppSettings/USBConfi get cne/AppSettings/USBConfig get cne/AppSettings/USBConfigu get cne/AppSettings/USBConfigur get cne/AppSettings/USBConfigura get cne/AppSettings/USBConfigurat get cne/AppSettings/USBConfigurati get cne/AppSettings/USBConfiguratio get cne/AppSettings/USBConfiguration get cne/AppSettings/USBConfigurationI get cne/AppSettings/USBConfigurationId 
+ No leaf name "cne/AppSettings/USBConfigurationId" found
+sds://>
