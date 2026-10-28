@@ -30,6 +30,15 @@ Source : `research/assets/cap/cpm_audiolan.log` (loopback TCP:55000, CopperLanMa
 
 Mêmes champs que l'API JSON `/sources` — cohérent : deux vues sur le même modèle.
 
+**Branche Settings** (panneau Settings de CopperLan Manager, lu à ~75.4s/88.5s) :
+- `Network Configuration` : DHCP Mode, Static IP Address, Static IP Mask, Static IP Gateway, Commit changes
+- `Audio Configuration` : Sampling Rate, Resolution, Commit changes
+- `Receiver Configuration` : Delay Samples, Delay Time, Syntonized Mode, Commit change
+- `PTP Configuration` : State, Grandmaster ID, Current Offset (ns), Domain, Preffered Master, Commit change
+- `Receivers SIP Identity (need reboot)` : SIP identity, Commit change
+
+Plus riche que l'API JSON (état PTP, offset, grandmaster, identité SIP, mode syntonisé).
+
 ## Format de requête `8423` (lecture)
 
 ```
