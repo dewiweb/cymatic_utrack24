@@ -78,6 +78,7 @@ class Win(QMainWindow):
         self.u=u or UTrackControl();self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
         self.alan=None;self._alan_data=None;self._matrix_state=[None]*24
+        self._meters={};self._meters_ts=0
         root=QWidget();rv=QVBoxLayout(root);rv.setContentsMargins(0,0,0,0)
         self.content=QFrame();v=QVBoxLayout(self.content)
         v.setContentsMargins(10,8,10,8);v.setSpacing(8)
@@ -363,6 +364,22 @@ class Win(QMainWindow):
             except Exception as e:self._take_err=e
         threading.Thread(target=run,daemon=True).start()
 
+    def _meters_tick(self):
+        """poll SDS mixer querylevels ~1 fois/s en tache de fond."""
+        import time as _t
+        if _t.time()-self._meters_ts<1.0:return
+        self._meters_ts=_t.time()
+        def run():
+            try:
+                if self.tel is None:
+                    from utrack_telnet import UTrack24 as Tel
+                    self.tel=Tel(TEL_HOST)
+                out=self.tel.cmd('mixer querylevels',1.5)
+                import re
+                self._meters={int(n):min(65535,int(v,16)>>12) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
+            except Exception:pass
+        threading.Thread(target=run,daemon=True).start()
+
     def _fill_matrix(self,st):
         for ch,lb in enumerate(self.mcells):
             m=self._matrix_state[ch]
@@ -455,11 +472,13 @@ class Win(QMainWindow):
         e=st.get(0xc000) or st.get(0xf000)
         if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
+        self._meters_tick()
         for ch,s in enumerate(self.strips):
             e=st.get(0xe000+ch)
-            if e:
+            v=self._meters.get(ch)
+            if v is None and e:
                 v=e[0] if isinstance(e,(tuple,list)) else e
-                if v is not None:s['m'].setValue(v)
+            if v is not None:s['m'].setValue(v)
             e=st.get(0xd050+ch)
             if e and e[0] is not None and not s['p'].isSliderDown():_bs(s['p'],e[0])
             e=st.get(0xd070+ch)
