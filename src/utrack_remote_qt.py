@@ -256,45 +256,70 @@ class Win(QMainWindow):
 
     def _fill_alan(self,data):
         g,src,out,sl=data
-        self.atree.clear()
+        self.atree.clear();self._edit_items=[]
         cfg=g.get('ArchwaveAES67',{}).get('config',{})
         self.alan_info.setText('%s — %s'%(cfg.get('name','?'),cfg.get('currentIPaddress','?')))
+        self._alan_cfg=cfg
         g1=QTreeWidgetItem(['Réseau',''])
-        for k,lab in (('DHCPenable','DHCP'),('currentIPaddress','IP'),('currentIPmask','Masque'),('currentIPgateway','Passerelle'),('IPaddress','IP statique')):
-            QTreeWidgetItem(g1,[lab,str(cfg.get(k,'—'))])
+        def leaf(par,lab,d,k,kind='str',ro=False):
+            v=d.get(k,'—');it=QTreeWidgetItem(par,[lab,('' if v is None else str(v))])
+            if ro:return it
+            it.setFlags(it.flags()|(Qt.ItemIsUserCheckable if kind=='bool' else Qt.ItemIsEditable))
+            if kind=='bool':
+                it.setCheckState(1,Qt.Checked if v else Qt.Unchecked);it.setText(1,'')
+            self._edit_items.append((it,d,k,kind));return it
+        leaf(g1,'DHCP',cfg,'DHCPenable','bool')
+        leaf(g1,'IP',cfg,'currentIPaddress',ro=True)
+        leaf(g1,'Masque',cfg,'currentIPmask',ro=True)
+        leaf(g1,'Passerelle',cfg,'currentIPgateway',ro=True)
+        leaf(g1,'IP statique',cfg,'IPaddress')
+        leaf(g1,'Masque statique',cfg,'IPmask')
+        leaf(g1,'Passerelle statique',cfg,'IPgateway')
+        leaf(g1,'Nom',cfg,'name')
         self.atree.addTopLevelItem(g1);g1.setExpanded(True)
         g2=QTreeWidgetItem(['Sources (audio → réseau)',''])
         self._alan_src=src.get('ArchwaveAES67',{}).get('sources',[])
-        self._src_items=[]
         for s in self._alan_src:
-            it=QTreeWidgetItem(g2,[s.get('name','?'),s.get('multicastAddress','—')])
-            it.setFlags(it.flags()|Qt.ItemIsUserCheckable|Qt.ItemIsEditable)
-            it.setCheckState(1,Qt.Checked if s.get('streamEnable') else Qt.Unchecked)
-            it.setData(0,Qt.UserRole,s);self._src_items.append(it)
+            it=QTreeWidgetItem(g2,[s.get('name','?'),''])
+            it.setFlags(it.flags()|Qt.ItemIsEditable)
+            self._edit_items.append((it,s,'name','text0'))
+            leaf(it,'Activé',s,'streamEnable','bool')
+            leaf(it,'Config auto',s,'automaticConfigEnabled','bool')
+            leaf(it,'Multicast',s,'multicastAddress')
+            leaf(it,'RTP TTL',s,'RTPTTL')
+            leaf(it,'SIP user',s,'SIPusername')
         self.atree.addTopLevelItem(g2);g2.setExpanded(True)
-        self.btn_alan_apply.setEnabled(bool(self._alan_src))
+        self.btn_alan_apply.setEnabled(bool(self._edit_items))
         g3=QTreeWidgetItem(['Sorties (réseau → audio)',''])
-        for o in out.get('ArchwaveAES67',{}).get('outputs',[]):
-            sp=o.get('streamPath','') or '—'
-            QTreeWidgetItem(g3,[o.get('name','?'),sp])
+        self._alan_out=out.get('ArchwaveAES67',{}).get('outputs',[])
+        for o in self._alan_out:
+            it=QTreeWidgetItem(g3,[o.get('name','?'),''])
+            leaf(it,'Stream assigné',o,'streamPath')
         self.atree.addTopLevelItem(g3);g3.setExpanded(False)
         g4=QTreeWidgetItem(['Streams actifs',''])
         for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
             QTreeWidgetItem(g4,[str(s)[:80],''])
         self.atree.addTopLevelItem(g4);g4.setExpanded(True)
-        self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(
-            len(src.get('ArchwaveAES67',{}).get('sources',[])),len(out.get('ArchwaveAES67',{}).get('outputs',[]))))
+        self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(len(self._alan_src),len(self._alan_out)))
 
     def _alan_apply(self):
-        if self.alan is None or not getattr(self,'_alan_src',None):return
-        for it,s in zip(self._src_items,self._alan_src):
-            s['streamEnable']=it.checkState(1)==Qt.Checked
-            if it.text(0)!=s.get('name'):s['name']=it.text(0)
+        if self.alan is None or not getattr(self,'_edit_items',None):return
+        import copy
+        src=copy.deepcopy(self._alan_src);cfg=copy.deepcopy(self._alan_cfg);out=copy.deepcopy(self._alan_out)
+        idmap={id(o):o for o in src};idmap.update({id(o):o for o in out});idmap[id(self._alan_cfg)]=cfg
+        for it,d,k,kind in self._edit_items:
+            t=idmap.get(id(d))
+            if t is None:continue
+            if kind=='bool':t[k]=it.checkState(1)==Qt.Checked
+            elif kind=='text0':t[k]=it.text(0)
+            else:
+                v=it.text(1)
+                t[k]=int(v) if isinstance(d.get(k),int) and v.lstrip('-').isdigit() else v
         if QMessageBox.question(self,'AudioLAN','Appliquer les modifications sur la carte ?')!=QMessageBox.Yes:return
         self.btn_alan_apply.setEnabled(False);self.statusBar().showMessage('Écriture AudioLAN…')
         def run():
             try:
-                self.alan.set_sources([dict(s) for s in self._alan_src])
+                self.alan.set_sources(src);self.alan.set_general(cfg);self.alan.set_outputs(out)
                 self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list())
             except Exception as e:self._alan_data=e
         threading.Thread(target=run,daemon=True).start()
