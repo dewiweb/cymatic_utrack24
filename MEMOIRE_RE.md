@@ -187,3 +187,5 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - FUN_6009b528 = chemin SDS->setter: ecrire AnalogInputs/InputsXXtoYY pousse shadow param_1+0x1f0; si valeur==index bloc -> FUN_6017d894(bloc,0=analog); sinon cVar1(param_1+0x1fc): 1->FUN_6017d870(offset canal), 2|3->FUN_6017d894(bloc,1=digital).
 - set Inputs00to07=0 accepte et relu=0; set=3 accepte. Vu-metres inchanges dans les 2 cas -> l attribut SDS est une config persistante, son application live non declenchee par le seul set (peut-etre au boot ou via autre proxy).
 - inputselect reste le seul chemin live prouve (metres prouvent le basculement).
+ 
+- PERCEE: input-select expose en CopperLan! 0xe000-0xe017 = source entree par canal (1=analog->0=digital quand inputselect all digital). 0xe018/19 tjrs 0 (canaux 25/26 monitor). Valeurs 2 sur e00f/e016 = 3e etat a decoder. Getter firmware FUN_6017da50 pack bits24-26 ctx+0x7c; publish via FUN_600fc794->FUN_600613bc (notif CopperLan, objet 0x60405aec tag AMES).
