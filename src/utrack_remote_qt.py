@@ -4,7 +4,8 @@ from PySide6.QtCore import QTimer,Qt
 from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
     QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox,
-    QTreeWidget,QTreeWidgetItem,QPlainTextEdit,QInputDialog,QFrame,QHeaderView)
+    QTreeWidget,QTreeWidgetItem,QPlainTextEdit,QInputDialog,QFrame,QHeaderView,
+    QGraphicsBlurEffect)
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
@@ -53,6 +54,10 @@ QTabBar::tab:selected{background:#3fa7ff;color:#fff}
 QTabBar::tab:hover:!selected{background:#30353d}
 QScrollArea{border:none}
 QStatusBar{background:#1a1d21;border-top:1px solid #383d45;color:#9aa0a8}
+QWidget#overlay{background:rgba(15,17,20,175)}
+QLabel#wait{color:#e8eaed;font-size:12pt;font-weight:600}
+QProgressBar#busy{height:6px;border:none;background:#383d45}
+QProgressBar#busy::chunk{background:#3fa7ff}
 QToolTip{background:#262a31;border:1px solid #4a5058;color:#e8eaed;padding:4px}
 """
 
@@ -72,8 +77,10 @@ class Win(QMainWindow):
         self.setWindowTitle('uTrack24 Remote');self.resize(1500,700)
         self.u=u or UTrackControl();self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
-        v=QVBoxLayout();v.setContentsMargins(10,8,10,8);v.setSpacing(8)
-        root=QWidget();root.setLayout(v);self.setCentralWidget(root)
+        root=QWidget();rv=QVBoxLayout(root);rv.setContentsMargins(0,0,0,0)
+        self.content=QFrame();v=QVBoxLayout(self.content)
+        v.setContentsMargins(10,8,10,8);v.setSpacing(8)
+        rv.addWidget(self.content);self.setCentralWidget(root)
         hd=QFrame();hd.setObjectName('card');h=QHBoxLayout(hd);self.hdr={}
         for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date')):
             l=QLabel('%s : —'%name);self.hdr[ctrl]=(l,name);h.addWidget(l);h.addSpacing(18)
@@ -92,6 +99,18 @@ class Win(QMainWindow):
         self.tabs=QTabWidget();v.addWidget(self.tabs)
         self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises')
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
+        self.overlay=QWidget(root);self.overlay.setObjectName('overlay')
+        ov=QVBoxLayout(self.overlay);ov.addStretch(2)
+        hb=QHBoxLayout();hb.addStretch(1)
+        box=QFrame();box.setObjectName('card');bv=QVBoxLayout(box)
+        lb=QLabel('Connexion au uTrack24…');lb.setObjectName('wait');lb.setAlignment(Qt.AlignCenter)
+        pb=QProgressBar();pb.setObjectName('busy');pb.setRange(0,0);pb.setTextVisible(False);pb.setFixedWidth(280)
+        bv.addWidget(lb);bv.addWidget(pb);hb.addWidget(box);hb.addStretch(1);ov.addLayout(hb);ov.addStretch(3)
+        self.blur=QGraphicsBlurEffect(self);self.blur.setBlurRadius(14)
+        self.blur.setBlurHints(QGraphicsBlurEffect.PerformanceHint)
+        if not connected:
+            self.content.setGraphicsEffect(self.blur)
+        else:self.overlay.hide()
         self.tm=QTimer(self);self.tm.timeout.connect(self._refresh);self.tm.start(100)
         self.rate=QTimer(self);self.rate.timeout.connect(self._flush);self.rate.start(40)
         if connected:self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
@@ -273,8 +292,10 @@ class Win(QMainWindow):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
             self.gb_tr.setEnabled(True);self.tabs.setEnabled(True)
+            self.overlay.hide();self.content.setGraphicsEffect(None)
         elif self._conn not in (None,'done'):
             self.statusBar().showMessage('Erreur : %s'%self._conn);self._conn='done'
+            self.overlay.hide();self.content.setGraphicsEffect(None)
         if self._reclog is not None:self.reclog.setPlainText(self._reclog);self._reclog=None
         if self._takes_data is not None:
             d,self._takes_data=self._takes_data,None;self.btn_ref.setEnabled(True)
@@ -321,6 +342,9 @@ class Win(QMainWindow):
                 disp=(att_db if ctrl==0xb201 else ms_val)(e[0])
                 sb.blockSignals(True);sb.setValue(disp);sb.blockSignals(False)
         for ctrl,l in self.ro.items():l.setText(_fmt(st.get(ctrl)))
+
+    def resizeEvent(self,e):
+        self.overlay.setGeometry(0,0,e.size().width(),e.size().height());super().resizeEvent(e)
 
     def closeEvent(self,e):
         self.u and self.u.close();e.accept()
