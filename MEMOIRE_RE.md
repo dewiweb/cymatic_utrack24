@@ -162,3 +162,12 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - Controle en mode USB = driver Windows (IOCTLs 0x8089xxxx, cf bebob_usb.md) + SDS telnet (usb drv, mixer, cne/AppSettings).
 - Enumeration OK apres debranchement de la cle stockage : VID_1511 PID_0043, driver WDM installe, 24 lignes + MIDI + PCM stereo.
 - AppSettings SDS: AnalogInputs/Inputs00to07=3,08to15=4,16to23=5 (inputselect par groupe de 8); AudioLan InterfaceAsInput=true; USBConfigurationId=2; DeviceMode=0; StreamingInterface=USB.
+
+## Matrice de routage - reconciliation doc/RE (28/10)
+- Doc AudioLAN confirme: inputs analog vs AudioLAN par blocs de 8 -> inputselect 1|2|3|all.
+- inputselect digital: vu-metres -> 0 (receveurs silencieux, pas de stream assigne). inputselect analog: retour signal. VERIFIE.
+- SDS mixer: get/set <ch> fader|pan|mute; MonitorBoost=0.0, Monitor fader 0x7FFF, Bus fader 0x7FFF.
+- AnalogInputs Inputs00to07=3/08to15=4/16to23=5 = descripteurs hardware, PAS la selection.
+- 0xb202 = MIDI offset (-11ms), pas un delay monitor.
+- Mode USB: 0 controle CopperLan; SDS toujours actif.
+- Etat courant inputselect: pas d attribut cne dedie trouve -> probablement interne DSP/UI.
