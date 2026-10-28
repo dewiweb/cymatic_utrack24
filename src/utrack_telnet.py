@@ -27,6 +27,33 @@ def _clean(t: str) -> str:
     return t
 
 
+def _parse_ls(out: str) -> list:
+    rows = []
+    for l in out.splitlines():
+        if '|' not in l:
+            continue
+        p = [x.strip() for x in l.split('|')]
+        if len(p) < 4 or not p[0] or p[0] == 'filename' or set(p[0]) <= set('-'):
+            continue
+        rows.append({'name': p[0], 'size': None if p[1] == '<DIR>' else int(p[1]),
+                     'date': p[2], 'time': p[3], 'is_dir': p[1] == '<DIR>'})
+    return rows
+
+
+def _parse_wave(out: str) -> dict:
+    keys = {'Sample rate': 'sample_rate', 'Bits per sample': 'bits',
+            'Number of channels': 'channels', 'No of samples': 'samples'}
+    d = {'markers': []}
+    for l in out.splitlines():
+        m = re.match(r'([A-Za-z ]+):\s*(\d+)', l)
+        if m and m.group(1).strip() in keys:
+            d[keys[m.group(1).strip()]] = int(m.group(2))
+        m2 = re.match(r'Marker\s+\d+:\s*(\d+)', l)
+        if m2:
+            d['markers'].append(int(m2.group(1)))
+    return d
+
+
 class UTrack24:
     def __init__(self, host: str, port: int = 23, timeout: float = 2.0):
         self.host, self.port, self.timeout = host, port, timeout
@@ -110,6 +137,55 @@ class UTrack24:
 
     def fs_ls(self, path: str = '') -> str:
         return self.fs('ls', path)
+
+    # ---------- recordings (read-only) ----------
+    def reset_line(self):
+        """Vide la ligne de commande conservee entre connexions (300 backspaces)."""
+        self._s.sendall(b'\x08' * 300)
+        self._drain(0.5)
+
+    def list_dir(self, path: str) -> list:
+        """fs ls <path> -> [{name,size(None=dir),date,time,is_dir}]."""
+        return _parse_ls(self.cmd('fs ls ' + path, 2.0))
+
+    def wave_info(self, path: str) -> dict:
+        """wavefile <path> -> {sample_rate,bits,channels,samples,markers}."""
+        return _parse_wave(self.cmd('wavefile ' + path, 2.0))
+
+    def read_file(self, path: str, maxlen: int = 65536) -> bytes:
+        """Lit un fichier via file open ro / size / print ; close garanti."""
+        self.cmd('file open ' + path + ' ro', 1.0)
+        try:
+            m = re.search(r'(\d+)\s*bytes', self.cmd('file size', 1.0))
+            size = min(int(m.group(1)), maxlen) if m else maxlen
+            data = b''; pos = 0
+            while pos < size:
+                n = min(4096, size - pos)
+                for h in re.findall(r'^\s*\d+: ([0-9A-F]+)', self.cmd('file print %d' % n, 1.0 + n / 2000), re.M):
+                    data += bytes.fromhex(h)
+                pos += n
+            return data[:size]
+        finally:
+            self.cmd('file close', 1.0)
+
+    def takes(self) -> list:
+        """Liste des prises /MultiTrack (hors _Temp) avec infos du 1er wav."""
+        self.reset_line()
+        out = []
+        for e in self.list_dir('/MultiTrack'):
+            if not e['is_dir'] or e['name'].startswith('_'):
+                continue
+            files = self.list_dir('/MultiTrack/' + e['name'])
+            wavs = [f for f in files if f['name'].lower().endswith('.wav')]
+            t = {'name': e['name'], 'date': e['date'], 'time': e['time'], 'files': files,
+                 'wavs': [(f['name'], f['size']) for f in wavs]}
+            if wavs:
+                wi = self.wave_info('/MultiTrack/%s/%s' % (e['name'], wavs[0]['name']))
+                t['wave'] = wi
+                t['duration'] = wi['samples'] / wi['sample_rate']
+                t['markers_s'] = [m / wi['sample_rate'] for m in wi['markers']]
+            out.append(t)
+        return out
 
     # ---------- misc ----------
     def device_info(self) -> dict:

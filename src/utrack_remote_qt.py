@@ -3,10 +3,12 @@ import sys,os,subprocess,threading
 from PySide6.QtCore import QTimer,Qt
 from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
-    QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox)
+    QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox,
+    QTreeWidget,QTreeWidgetItem,QPlainTextEdit)
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
+TEL_HOST='192.168.10.197'
 
 DARK = """QMainWindow,QWidget{background:#1c1e22;color:#ddd;font:10pt Consolas}
 QPushButton{background:#2d3138;border:1px solid #555;border-radius:4px;padding:8px}
@@ -28,10 +30,11 @@ def _fmt(e):
     return e[1] if e[1] else (str(e[0]) if e[0] is not None else '—')
 
 class Win(QMainWindow):
-    def __init__(self,u=None,connected=False):
+    def __init__(self,u=None,connected=False,tel=None):
         super().__init__()
         self.setWindowTitle('uTrack24 Remote');self.resize(1400,620)
         self.u=u or UTrackControl();self._pend={};self._conn=None
+        self.tel=tel;self._takes_data=None;self._reclog=None
         v=QVBoxLayout();root=QWidget();root.setLayout(v);self.setCentralWidget(root)
         hd=QHBoxLayout();self.hdr={}
         for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date')):
@@ -49,7 +52,7 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         gb=QGroupBox('Transport');gb.setLayout(tr);v.addWidget(gb)
         tabs=QTabWidget();v.addWidget(tabs)
-        tabs.addTab(self._mixer(),'Mixer');tabs.addTab(self._settings(),'Réglages')
+        tabs.addTab(self._mixer(),'Mixer');tabs.addTab(self._settings(),'Réglages');tabs.addTab(self._takes(),'Prises')
         self.tm=QTimer(self);self.tm.timeout.connect(self._refresh);self.tm.start(100)
         self.rate=QTimer(self);self.rate.timeout.connect(self._flush);self.rate.start(40)
         if connected:self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
@@ -151,11 +154,57 @@ class Win(QMainWindow):
         g.setLayout(gr2);v.addWidget(g);v.addStretch(1)
         return w
 
+    def _takes(self):
+        w=QWidget();v=QVBoxLayout(w)
+        self.btn_ref=QPushButton('Rafraîchir');self.btn_ref.clicked.connect(self._takes_refresh);v.addWidget(self.btn_ref)
+        self.tree=QTreeWidget();self.tree.setHeaderLabels(['Prise','Date','Format','Durée','Marqueurs'])
+        self.tree.currentItemChanged.connect(self._take_sel);v.addWidget(self.tree)
+        self.reclog=QPlainTextEdit(readOnly=True);v.addWidget(self.reclog)
+        return w
+
+    def _takes_refresh(self):
+        self.btn_ref.setEnabled(False);self.statusBar().showMessage('Lecture des prises…')
+        def run():
+            try:
+                if self.tel is None:
+                    from utrack_telnet import UTrack24 as Tel
+                    self.tel=Tel(TEL_HOST)
+                self._takes_data=self.tel.takes()
+            except Exception as e:self._takes_data=e
+        threading.Thread(target=run,daemon=True).start()
+
+    def _take_sel(self,it,prev):
+        t=it.data(0,Qt.UserRole) if it else None
+        if not t or self.tel is None:return
+        self.reclog.setPlainText('Chargement…')
+        def run():
+            try:self._reclog=self.tel.read_file('/MultiTrack/%s/reclog.txt'%t['name']).decode('latin-1').replace('\r\n','\n')
+            except Exception as e:self._reclog='Erreur : %s'%e
+        threading.Thread(target=run,daemon=True).start()
+
+    def _fill_takes(self,d):
+        self.tree.clear()
+        for t in d:
+            w=t.get('wave')
+            fmt=('%d Hz / %d bits / %d voies'%(w['sample_rate'],w['bits'],w['channels'])) if w else '—'
+            dur='—'
+            if 'duration' in t:dur='%d:%04.1f'%(int(t['duration'])//60,t['duration']%60)
+            mk='—'
+            if 'markers_s' in t:mk='%d (%s)'%(len(t['markers_s']),', '.join('%.1f s'%s for s in t['markers_s']))
+            it=QTreeWidgetItem([t['name'],t['date'],fmt,dur,mk])
+            it.setData(0,Qt.UserRole,t);self.tree.addTopLevelItem(it)
+        self.statusBar().showMessage('Prises : %d'%len(d))
+
     def _refresh(self):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
         elif self._conn not in (None,'done'):
             self.statusBar().showMessage('Erreur : %s'%self._conn);self._conn='done'
+        if self._reclog is not None:self.reclog.setPlainText(self._reclog);self._reclog=None
+        if self._takes_data is not None:
+            d,self._takes_data=self._takes_data,None;self.btn_ref.setEnabled(True)
+            if isinstance(d,Exception):self.statusBar().showMessage('Erreur prises : %s'%d)
+            else:self._fill_takes(d)
         u=self.u
         with u.slock:st=dict(u.state)
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
