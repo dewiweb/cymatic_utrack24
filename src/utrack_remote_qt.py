@@ -77,7 +77,7 @@ class Win(QMainWindow):
         self.setWindowTitle('uTrack24 Remote');self.resize(1500,700)
         self.u=u or UTrackControl();self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
-        self.alan=None;self._alan_data=None
+        self.alan=None;self._alan_data=None;self._matrix_state=[None]*24
         root=QWidget();rv=QVBoxLayout(root);rv.setContentsMargins(0,0,0,0)
         self.content=QFrame();v=QVBoxLayout(self.content)
         v.setContentsMargins(10,8,10,8);v.setSpacing(8)
@@ -326,7 +326,7 @@ class Win(QMainWindow):
 
     def _matrix(self):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(10)
-        v.addWidget(QLabel('Source des entrées — lecture CopperLan 0xe000-0xe017, écriture SDS inputselect',objectName='info'))
+        v.addWidget(QLabel("Source des entrées — écriture SDS inputselect ; l'état n'est pas lisible (suivi des commandes envoyées)",objectName='info'))
         self.mcells=[];self.mbtns=[]
         grd=QGridLayout();grd.setSpacing(6)
         for blk in range(3):
@@ -342,8 +342,8 @@ class Win(QMainWindow):
             gg.addWidget(ba,1,0,1,4);gg.addWidget(bd,1,4,1,4);self.mbtns+= [ba,bd]
             grd.addWidget(gb,0,blk)
         v.addLayout(grd)
-        self.mleg=QLabel('vert = analogique · bleu = digital (AES67) · orange = autre (valeur ?) — '
-                         'les 2 canaux monitoring 25/26 ne commutent pas',objectName='info')
+        self.mleg=QLabel("vert = analogique · bleu = digital (AES67) · '?' = inconnu (jamais commandé) — "
+                         "l'état de sélection n'est pas lisible sur l'appareil",objectName='info')
         v.addWidget(self.mleg);v.addStretch(1)
         return w
 
@@ -358,16 +358,16 @@ class Win(QMainWindow):
         def run():
             try:
                 self.tel.cmd('inputselect %d %s'%(blk+1,mode))
+                for i in range(8):self._matrix_state[blk*8+i]=mode
                 self._take_err=None
             except Exception as e:self._take_err=e
         threading.Thread(target=run,daemon=True).start()
 
     def _fill_matrix(self,st):
         for ch,lb in enumerate(self.mcells):
-            e=st.get(0xe000+ch)
-            v=e[0] if e else None
-            col='#2a6e3a' if v==1 else '#2a4e8e' if v==0 else '#8e5a2a' if v else '#333'
-            txt={1:'A',0:'D'}.get(v,'?')
+            m=self._matrix_state[ch]
+            col='#2a6e3a' if m=='analog' else '#2a4e8e' if m=='digital' else '#333'
+            txt={'analog':'A','digital':'D'}.get(m,'?')
             lb.setStyleSheet('border:1px solid #444;border-radius:4px;background:%s;color:#fff;'%col)
             lb.setText(txt)
 
@@ -457,7 +457,9 @@ class Win(QMainWindow):
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
         for ch,s in enumerate(self.strips):
             e=st.get(0xe000+ch)
-            if e and e[0] is not None:s['m'].setValue(e[0])
+            if e:
+                v=e[0] if isinstance(e,(tuple,list)) else e
+                if v is not None:s['m'].setValue(v)
             e=st.get(0xd050+ch)
             if e and e[0] is not None and not s['p'].isSliderDown():_bs(s['p'],e[0])
             e=st.get(0xd070+ch)
