@@ -152,6 +152,7 @@ class UTrackControl:
     def pause(self):self.ctrl(TRANSPORT,PLAY)
     def stop(self):self.ctrl(TRANSPORT,STOP)
     def rec(self):self.ctrl(TRANSPORT,REC)
+    def marker(self):self.ctrl(TRANSPORT,PLAY)   # Play pendant un enregistrement = nouveau marqueur (manuel uRemote p.15, verifie Take0012)
 
     def close(self):
         self.alive=False

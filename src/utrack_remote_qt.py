@@ -41,8 +41,12 @@ class Win(QMainWindow):
         for label,fn in (('PLAY','play'),('STOP','stop'),('REC','rec')):
             b=QPushButton(label)
             if fn=='rec':b.clicked.connect(self._rec)
+            elif fn=='stop':b.clicked.connect(self._stop)
             else:b.clicked.connect(lambda _,f=fn:self.u and getattr(self.u,f)())
             tr.addWidget(b)
+        self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False)
+        self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")
+        self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         gb=QGroupBox('Transport');gb.setLayout(tr);v.addWidget(gb)
         tabs=QTabWidget();v.addWidget(tabs)
         tabs.addTab(self._mixer(),'Mixer');tabs.addTab(self._settings(),'Réglages')
@@ -60,7 +64,11 @@ class Win(QMainWindow):
 
     def _rec(self):
         if QMessageBox.question(self,'REC','Lancer un enregistrement sur le disque du uTrack ?')==QMessageBox.Yes:
-            self.u and self.u.rec()
+            if self.u:self.u.rec();self.mk.setEnabled(True)
+
+    def _stop(self):
+        if self.u:self.u.stop()
+        self.mk.setEnabled(False)
 
     def _mixer(self):
         sc=QScrollArea();sc.setWidgetResizable(True)

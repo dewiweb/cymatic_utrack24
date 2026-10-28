@@ -1,0 +1,19 @@
+snapshot initial : 153 ctrls
+>>> REC
+>>> PLAY (marqueur 1)
+>>> PLAY (marqueur 2)
+>>> STOP
+snapshot final : 153 ctrls
+
+--- diagnostic post-mortem (meme sequence rec/stop, comptage des TLV recus) ---
+Pendant toute la sequence REC+PLAY+PLAY+STOP, l'appareil n'envoie QUE :
+  - op 0xc1 (numerique) sur 0xe000-0xe019 : vu-metres en continu (~91 trames/ctrl sur ~13 s)
+  - op 0xc3 (texte) sur 0xd002 et 0xd003 a t+4.4s apres REC : loop in/out remis a "0"
+    raw d002 : c3000200040002d000000000010030  (texte "0")
+    raw d003 : c3000200040003d000000000010030  (texte "0")
+AUCUN echo pour 0xd000 (transport), aucun ctrl d'etat d'enregistrement,
+de compteur de marqueurs, de positions ou de temps ecoule.
+Snapshots avant/apres (apres reconnexion) identiques sur les 153 ctrls.
+Conclusion : l'appareil a bien reagi a REC (reset d002/d003) mais ne pousse
+aucune donnee de marqueur/enregistrement sur cette session ; uRemote obtient
+probablement ces infos par un autre canal (requete ou sous-session a trouver).
