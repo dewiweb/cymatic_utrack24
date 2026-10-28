@@ -78,7 +78,7 @@ class Win(QMainWindow):
         self.u=u or UTrackControl();self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
         self.alan=None;self._alan_data=None;self._matrix_state=[None]*24
-        self._meters={};self._meters_ts=0
+        self._meters={};self._meters_ts=0;self._tlock=threading.Lock()
         root=QWidget();rv=QVBoxLayout(root);rv.setContentsMargins(0,0,0,0)
         self.content=QFrame();v=QVBoxLayout(self.content)
         v.setContentsMargins(10,8,10,8);v.setSpacing(8)
@@ -358,7 +358,7 @@ class Win(QMainWindow):
         self.statusBar().showMessage('inputselect %d %s…'%(blk+1,mode))
         def run():
             try:
-                self.tel.cmd('inputselect %d %s'%(blk+1,mode))
+                with self._tlock:self.tel.cmd('inputselect %d %s'%(blk+1,mode))
                 for i in range(8):self._matrix_state[blk*8+i]=mode
                 self._take_err=None
             except Exception as e:self._take_err=e
@@ -374,7 +374,7 @@ class Win(QMainWindow):
                 if self.tel is None:
                     from utrack_telnet import UTrack24 as Tel
                     self.tel=Tel(TEL_HOST)
-                out=self.tel.cmd('mixer querylevels',1.5)
+                with self._tlock:out=self.tel.cmd('mixer querylevels',1.5)
                 import re
                 d={int(n):min(65535,int(v,16)>>12) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
                 if d:self._meters=d
@@ -397,7 +397,7 @@ class Win(QMainWindow):
                 if self.tel is None:
                     from utrack_telnet import UTrack24 as Tel
                     self.tel=Tel(TEL_HOST)
-                self._takes_data=self.tel.takes()
+                with self._tlock:self._takes_data=self.tel.takes()
             except Exception as e:self._takes_data=e
         threading.Thread(target=run,daemon=True).start()
 
@@ -408,7 +408,8 @@ class Win(QMainWindow):
         if not t or self.tel is None:return
         self.reclog.setPlainText('Chargement…')
         def run():
-            try:self._reclog=self.tel.read_file('/MultiTrack/%s/reclog.txt'%t['name']).decode('latin-1').replace('\r\n','\n')
+            try:
+                with self._tlock:self._reclog=self.tel.read_file('/MultiTrack/%s/reclog.txt'%t['name']).decode('latin-1').replace('\r\n','\n')
             except Exception as e:self._reclog='Erreur : %s'%e
         threading.Thread(target=run,daemon=True).start()
 
@@ -442,9 +443,10 @@ class Win(QMainWindow):
         self.statusBar().showMessage('%s %s…'%(op,name))
         def run():
             try:
-                if op=='rename':self.tel.rename_take(name,new,loaded=self._loaded)
-                else:self.tel.delete_take(name,loaded=self._loaded)
-                self._takes_data=self.tel.takes()
+                with self._tlock:
+                    if op=='rename':self.tel.rename_take(name,new,loaded=self._loaded)
+                    else:self.tel.delete_take(name,loaded=self._loaded)
+                    self._takes_data=self.tel.takes()
             except Exception as e:self._take_err=e
         threading.Thread(target=run,daemon=True).start()
 
