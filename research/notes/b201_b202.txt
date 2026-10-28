@@ -1,0 +1,280 @@
+0051aad7 FUN_0051aa00 : MOV dword ptr [EBP + -0x28],0xb201
+00543363 FUN_005432f0 : SUB EAX,0xb201
+00544694 FUN_005445e0 : PUSH 0xb202
+005447b7 FUN_005446f0 : PUSH 0xb201
+
+=========== FUN_0051aa00 @ 0051aa00 consts [b201] callers [FUN_005446f0, FUN_0051cb60]
+
+void __thiscall FUN_0051aa00(int param_1,int param_2)
+
+{
+  void *_Memory;
+  uint uVar1;
+  int iVar2;
+  uint extraout_ECX;
+  void *pvVar3;
+  undefined4 local_40;
+  undefined4 local_3c;
+  undefined2 local_38;
+  undefined2 local_34;
+  undefined1 local_32;
+  undefined4 local_30;
+  undefined4 local_2c;
+  void *local_28;
+  undefined4 local_24;
+  ulonglong local_20;
+  undefined4 local_18;
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_006933bf;
+  local_10 = ExceptionList;
+  uVar1 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  *(int *)(param_1 + 0x164) = param_2;
+  local_28 = (void *)0x0;
+  iVar2 = 0;
+  if (param_2 < 1) {
+    iVar2 = param_2;
+  }
+  if (iVar2 < -0x1e) {
+    iVar2 = -0x1e;
+  }
+  iVar2 = (iVar2 + 0x1e) * 0xffff;
+  *(short *)(param_1 + 0x168) =
+       ((short)(iVar2 / 0x1e) + (short)(iVar2 >> 0x1f)) -
+       (short)((longlong)iVar2 * 0x88888889 >> 0x3f);
+  local_24 = 0;
+  local_8 = 0;
+  local_14 = uVar1;
+  FUN_00624830(param_2);
+  FUN_00624770(&DAT_006cd318);
+  _Memory = local_28;
+  pvVar3 = (void *)0x0;
+  if (local_24._2_2_ != 0) {
+    pvVar3 = local_28;
+  }
+  local_18 = 0;
+  local_30 = 0x40001;
+  local_20 = (ulonglong)*(ushort *)(param_1 + 0x168);
+  local_2c = 0xb201;
+  local_40 = 0;
+  local_3c = 0;
+  local_38 = 0;
+  local_34 = 0;
+  local_32 = 0;
+  (**(code **)(*(int *)(*(int *)(param_1 + 0x14) + 0x14) + 0x18))
+            (0,&local_40,&local_30,&local_20,pvVar3,extraout_ECX & 0xffff0000,uVar1);
+  if (_Memory != (void *)0x0) {
+    FID_conflict__free(_Memory);
+  }
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== FUN_005432f0 @ 005432f0 consts [b201] callers []
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __thiscall
+FUN_005432f0(int param_1,undefined4 param_2,short *param_3,int param_4,ushort *param_5)
+
+{
+  ushort uVar1;
+  int *piVar2;
+  int iVar3;
+  undefined4 *puVar4;
+  int iVar5;
+  undefined4 extraout_ECX;
+  undefined4 extraout_ECX_00;
+  undefined4 uVar6;
+  short sVar7;
+  uint uVar8;
+  short sVar9;
+  short local_10;
+  short local_e;
+  int local_c;
+  
+  if (*(int *)(param_1 + 0x198) != 0) {
+    piVar2 = *(int **)(*(int *)(param_1 + 0x198) + 0x48);
+    iVar5 = DAT_00c9148c;
+    sVar7 = DAT_00c9148a;
+    sVar9 = DAT_00c91488;
+    if (piVar2 != (int *)0x0) {
+      (**(code **)(*piVar2 + 8))(&local_10);
+      iVar5 = local_c;
+      sVar7 = local_e;
+      sVar9 = local_10;
+    }
+    if (((*param_3 == sVar9) && (param_3[1] == sVar7)) && (*(int *)(param_3 + 2) == iVar5)) {
+      uVar1 = *(ushort *)(param_4 + 4);
+      uVar8 = (uint)uVar1;
+      if (uVar8 == 0xb201) {
+        *(int *)(param_1 + 0x338) =
+             (int)(((float)*param_5 * DAT_00c3f230) / _DAT_00c3f2e4 - _DAT_00c3f234);
+        puVar4 = (undefined4 *)FUN_005683d0(0xffffffff);
+        uVar6 = *(undefined4 *)(param_1 + 0x33c);
+        *(undefined4 *)(param_1 + 0x33c) = *puVar4;
+      }
+      else {
+        if (uVar8 != 0xb202) {
+          if ((ushort)(uVar1 + 0x2000) < 0x22) {
+            iVar5 = uVar8 - 0xe000;
+            if (0x17 < iVar5) {
+              return;
+            }
+            iVar3 = FUN_004b7dc0(*param_5);
+            *(int *)(param_1 + 0x104 + iVar5 * 4) = iVar3;
+            uVar6 = extraout_ECX;
+            if ((iVar3 == 0) && (*(char *)((uVar8 - 0xdf14) + param_1) == '\0')) {
+              *(undefined1 *)((uVar8 - 0xdf14) + param_1) = 1;
+              FUN_0040bef0(extraout_ECX,iVar5);
+              uVar6 = extraout_ECX_00;
+            }
+            FUN_0040bf30(uVar6,iVar5,*(undefined4 *)(param_1 + 0x104 + iVar5 * 4),
+                         *(undefined1 *)((uVar8 - 0xdf14) + param_1));
+            return;
+          }
+          if ((ushort)(uVar1 + 0x2fb0) < 0x18) {
+            *(ushort *)(param_1 + -0x19ca8 + uVar8 * 2) = *param_5;
+            *(undefined1 *)((uVar8 - 0xcfe5) + param_1) = 1;
+            FUN_00570250();
+            return;
+          }
+          if (0x17 < (ushort)(uVar1 + 0x2f90)) {
+            return;
+          }
+          *(ushort *)(param_1 + -0x19ca8 + uVar8 * 2) = *param_5;
+          *(undefined1 *)((uVar8 - 0xcfed) + param_1) = 1;
+          FUN_00570250();
+          return;
+        }
+        *(int *)(param_1 + 0x340) =
+             (int)(((float)*param_5 * _DAT_00c3f2d4) / _DAT_00c3f2e4 - _DAT_00c3f2cc);
+        puVar4 = (undefined4 *)FUN_005683d0(0xffffffff);
+        uVar6 = *(undefined4 *)(param_1 + 0x344);
+        *(undefined4 *)(param_1 + 0x344) = *puVar4;
+      }
+      *puVar4 = uVar6;
+      param_5 = param_5 + -4;
+      if (param_5 != (ushort *)&DAT_00c1b4c4) {
+        LOCK();
+        iVar5 = *(int *)param_5;
+        *(int *)param_5 = *(int *)param_5 + -1;
+        UNLOCK();
+        if (iVar5 == 0) {
+          FID_conflict__free(param_5);
+        }
+      }
+      FUN_00543a30();
+    }
+  }
+  return;
+}
+
+
+
+=========== FUN_005445e0 @ 005445e0 consts [b202] callers [FUN_00531500]
+
+void __thiscall FUN_005445e0(int param_1,int param_2)
+
+{
+  DWORD DVar1;
+  int iVar2;
+  int iVar3;
+  ulonglong local_14;
+  undefined4 local_c;
+  uint local_8;
+  
+  local_8 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  DVar1 = timeGetTime();
+  if ((DAT_00c911b4 <= DVar1) || (DVar1 < DAT_00c911b4 - 1000)) {
+    DAT_00c911b4 = DVar1;
+  }
+  if (((0xfa < DVar1 - *(int *)(param_1 + 0x38)) && (*(int *)(param_1 + 0x4d0) == 0)) &&
+     (*(int **)(param_1 + 400) != (int *)0x0)) {
+    local_c = 0;
+    iVar2 = 1000;
+    if (param_2 < 0x3e9) {
+      iVar2 = param_2;
+    }
+    if (iVar2 < -1000) {
+      iVar2 = -1000;
+    }
+    iVar2 = (iVar2 + 1000) * 0xffff;
+    local_14 = (ulonglong)
+               (ushort)(((short)(iVar2 / 2000) + (short)(iVar2 >> 0x1f)) -
+                       (short)((longlong)iVar2 * 0x10624dd3 >> 0x3f));
+    iVar2 = (**(code **)(**(int **)(param_1 + 400) + 0x164))(0xb202,0,&local_14,0);
+    if (iVar2 == 0) {
+      iVar3 = 0;
+    }
+    else {
+      iVar3 = iVar2 + 4 + *(int *)(*(int *)(iVar2 + 4) + 0xc);
+    }
+    (**(code **)(**(int **)(param_1 + 0x1a8) + 0x6c))(iVar3);
+    (**(code **)(*(int *)(*(int *)(*(int *)(iVar2 + 4) + 8) + 4 + iVar2) + 4))();
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+
+
+=========== FUN_005446f0 @ 005446f0 consts [b201] callers [FUN_00531570]
+
+void __thiscall FUN_005446f0(int param_1,int param_2)
+
+{
+  DWORD DVar1;
+  int iVar2;
+  int iVar3;
+  ulonglong local_14;
+  undefined4 local_c;
+  uint local_8;
+  
+  local_8 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  DVar1 = timeGetTime();
+  if ((DAT_00c911b4 <= DVar1) || (DVar1 < DAT_00c911b4 - 1000)) {
+    DAT_00c911b4 = DVar1;
+  }
+  if (0xfa < DVar1 - *(int *)(param_1 + 0x38)) {
+    if (*(int *)(param_1 + 0x4d0) != 0) {
+      FUN_0051aa00(param_2);
+      __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+      return;
+    }
+    if (*(int **)(param_1 + 400) != (int *)0x0) {
+      local_c = 0;
+      iVar2 = 0;
+      if (param_2 < 1) {
+        iVar2 = param_2;
+      }
+      if (iVar2 < -0x1e) {
+        iVar2 = -0x1e;
+      }
+      iVar2 = (iVar2 + 0x1e) * 0xffff;
+      local_14 = (ulonglong)
+                 (ushort)(((short)(iVar2 / 0x1e) + (short)(iVar2 >> 0x1f)) -
+                         (short)((longlong)iVar2 * 0x88888889 >> 0x3f));
+      iVar2 = (**(code **)(**(int **)(param_1 + 400) + 0x164))(0xb201,0,&local_14,0);
+      if (iVar2 == 0) {
+        iVar3 = 0;
+      }
+      else {
+        iVar3 = iVar2 + 4 + *(int *)(*(int *)(iVar2 + 4) + 0xc);
+      }
+      (**(code **)(**(int **)(param_1 + 0x1a8) + 0x6c))(iVar3);
+      (**(code **)(*(int *)(*(int *)(*(int *)(iVar2 + 4) + 8) + 4 + iVar2) + 4))();
+    }
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+
+

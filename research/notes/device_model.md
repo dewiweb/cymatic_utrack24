@@ -74,3 +74,17 @@ Non testés volontairement : transport (déjà validé), horloge 0xb000, réseau
 - Format fil de l'écriture texte (0xd001 locate, 0xd002/0xd003 loop) : une capture uRemote (glisser la barre de lecture, choisir un marqueur, Loop) le donnera.
 - Skip Back / Skip Forward : aucune trame dans transport_all.log ; valeur du bouton non trouvée (le champ +0x180 n'est pas écrit par une constante).
 - Unité des faders (0xd070) et de b201/b202 : la correspondance valeur→dB est à mesurer.
+
+## Domaines de valeurs des réglages (décompilation uRemote, `settings_choices*.txt`, `settings_handlers.txt`, `b201_b202.txt`)
+Valeur envoyée = id de l'item JUCE − 1 (sauf mention). Cohérent avec les valeurs annoncées par l'appareil.
+| ctrl | valeurs |
+|---|---|
+| 0xb000 horloge | 0 Internal, 1 Wordclock, 2 Digital I/O, 3 PTP (uRemote ne propose que les sources supportées) |
+| 0xb001 footswitch | 0 Play, 1 Play-Pause, 2 Record, 3 Play-Stop |
+| 0xb102 fréquence | 1 = 44.1 kHz, 2 = 48 kHz, 3 = 88.2 kHz, 4 = 96 kHz |
+| 0xb103 résolution | 16, 24 |
+| 0xb104 pistes | 2 (Stereo), 4, 8, 12, 16, 20, 24 |
+| 0xb203 mode de lecture (id − 10) | -1 (0xffff) Single, 0 Continuous, 1 Shuffle, 2 Repeat One, 3 Repeat All |
+| 0xb204 / 0xb205 sorties stéréo (id envoyé tel quel) | n impair = paire n-(n+1) ; 1..7 en 88.2/96 kHz, 1..31 en 44.1/48 kHz |
+| 0xb201 Output Attenuation (slot 0x164, u64) | raw = (dB+30)·0xffff/30, dB entier −30..0 (−1 dB = 63350 ✓) |
+| 0xb202 (slot 0x164, u64) | raw = (v+1000)·0xffff/2000, v −1000..1000 ms (−11 ms = 32408 ✓) |
