@@ -149,3 +149,10 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - StrFile.java (research/tools/ghidra) + fw_strings_to_find.txt = trouve les users de chaines dans le firmware.
 - Prouve: file open ro/size/print/close lit le disque (reclog, .set, wav). rename/delete prises marche (fs rename/fs rm). markers = Play pendant REC (wav cue chunk).
 - Reste: file write syntax (buffer_offset?), file move, fs mkfs = volontairement exclus jusquici.
+
+## Session 2 — requetes parametres CopperLan depuis notre client
+- Member AudioLan = 253d (stable, vu dans annonces VNM PC).
+- Init Manager extrait : research/tools/cpm_init_seq.txt (71 msgs). Rejoue -> 0 reponse (identite membre occupee par Manager en cours).
+- 8423 verbatim uRemote (membre 3602) apres init -> aucun 4423 non plus. Donc: les requetes parametres echouent dans la session rejouee, quel que soit le membre. Manque: member-open/adoption avec cookies de session (4023 porte 9a430000/2e410e/06972716) ou type de session Manager.
+- Ecriture decodee OK (DevinTest): 8437 -> TLV 4437 [path 0400 1110][00000000 00000001 ...][len u16][str].
+- Piste B utilisable tout de suite : API JSON HTTP de la carte (sources/outputs/general).
