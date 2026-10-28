@@ -142,3 +142,10 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - Reste: format fil ecriture texte (0xd001 locate, d002/d003 loop), Skip Back/Fwd.
 - Outils: radare2 6.2.4 C:/tools/radare2/bin ; ilspycmd 8.2 ; Mixerpanel .NET decompile dans C:/tools/ilspy_out (API USB BeBoB: CDriverInterface.cs, NE PAS commiter = code tiers).
 - Scripts RE: research/tools/*.py (gitignore!) + research/tools/ghidra/*.java ; Ghidra: analyzeHeadless C:/tools/ghidra_projects uremote_v36 -process uRemote.exe -noanalysis -readOnly -postScript X.java (JAVA_HOME=C:/tools/jdk21).
+
+## 2026-10-28 fin de session - RE file write firmware
+- Base image bcd = 0x60005f84 (histogramme deltas). Projet ghidra: C:/tools/ghidra_projects/utrack_fw.
+- FUN_6002c4fc = table denregistrement des commandes shell `file` (research/notes/fw_file_cmds.txt). Chaque bloc enregistre une commande via tables DAT_6002cdxx: handlers a decompiler ensuite pour la syntaxe reelle de `file write`.
+- StrFile.java (research/tools/ghidra) + fw_strings_to_find.txt = trouve les users de chaines dans le firmware.
+- Prouve: file open ro/size/print/close lit le disque (reclog, .set, wav). rename/delete prises marche (fs rename/fs rm). markers = Play pendant REC (wav cue chunk).
+- Reste: file write syntax (buffer_offset?), file move, fs mkfs = volontairement exclus jusquici.

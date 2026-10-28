@@ -1,0 +1,10 @@
+write <bytes> {<count>} {<buffer_offset>}
+read <bytes> {-a}
+print <bytes>
+open <filename> {ro|rw|wo}
+file access handler shell commands
+seek <file offset>
+close file
+read file
+write file
+print file
