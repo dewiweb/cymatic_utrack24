@@ -479,9 +479,8 @@ class Win(QMainWindow):
         self._meters_tick()
         for ch,s in enumerate(self.strips):
             e=st.get(0xe000+ch)
-            v=self._meters.get(ch)
-            if v is None and e:
-                v=e[0] if isinstance(e,(tuple,list)) else e
+            v=e[0] if e and isinstance(e,(tuple,list)) else (e if e is not None else None)
+            if v is None:v=self._meters.get(ch)
             if v is not None:s['m'].setValue(v)
             e=st.get(0xd050+ch)
             if e and e[0] is not None and not s['p'].isSliderDown():_bs(s['p'],e[0])

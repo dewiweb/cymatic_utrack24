@@ -87,8 +87,11 @@ class UTrackControl:
         threading.Thread(target=self._loop,daemon=True).start()
         return self
 
+    # keepalive de souscription c423 (rejoue) — active le flux de notifications ~20Hz (vu-metres)
+    HB=bytes.fromhex('ef5130b00001c423ffffffff01000100f13f00000000000000000100feff01000386214e01800000010000009023001008000200c9588588')
+
     def _loop(self):
-        buf=b'';last=0
+        buf=b'';last=0;last_hb=0
         while self.alive:
             try:
                 d=self.s.recv(65536)
@@ -102,6 +105,10 @@ class UTrackControl:
                     resp=bytearray(body);resp[2:4]=b'\x44\x23'
                     self._send(frame(bytes(resp)))
                 elif body[2:4]==b'\x44\x37':self._update(body)
+            if time.time()-last_hb>0.7:
+                try:self._send(self.HB)
+                except OSError:break
+                last_hb=time.time()
             if time.time()-last>0.4:
                 self._send(frame(b'',0xa));last=time.time()
         self.alive=False
