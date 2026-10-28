@@ -124,7 +124,7 @@ def main():
     samples = 48
     seq, n = 0, 0
     ts0 = int(clk.now() * RATE)
-    t0 = time.time()
+    t0 = time.perf_counter()
     print(f'sending -> {a.ip}:{a.port} (ts locked to PTP)', flush=True)
     while a.dur == 0 or time.time() - t0 < a.dur:
         if n % 5000 == 0:
@@ -143,8 +143,6 @@ def main():
         seq += 1
         n += 1
         t_next = t0 + n*(48.0/RATE)
-        while time.perf_counter() < t_next:
-            pass
         while time.perf_counter() < t_next:
             pass  # busy-wait: Windows sleep() is ~15ms granularity
     print('done', n, 'pkts; ts drift', int(clk.now() * RATE) - ts0, 'samples')
