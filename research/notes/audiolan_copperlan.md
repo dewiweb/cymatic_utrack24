@@ -48,12 +48,29 @@ corps: 0100 0100 <membre:2> 0000 0000 0000 0000 0100 feff <local member:4> 0080 
 Réponses `4423` : même en-tête, `01 23 02 10 <len:1> <seq:2> <nodePath>` puis `19 01 7e/1e 18 <namelen:1> 00 <name>` + type/flags + valeur.
 Les index de nœud vus s'incrémentent (`0a e8`, `0a e9`, `0a ea`… = parcours de l'arbre ; sous-index `0200`/`0400`/`0200 1010`…).
 
-## Format d'écriture (à décoder finement)
+## Format d'écriture — décodé (edit « DevinTest » sur Channel name, ~505.7s)
 
-Trames `8437` broadcast `ffffffff` portant TLV internes :
-- `4837 0010 0a00 0200 8100 <u16>` — notification état/abonnement ?
-- `4437 0010 2b00 ... 0400 1110 <val>` — écriture paramètre (path `0400 1110`, type, valeur)
-- `4337 0010 1e00 16/23 ...` — écriture autre paramètre
+Écriture = trame `8437` (dest `ffffffff`), TLV interne **`4437`** :
+
+```
+8437 ... | 4437 0010 <len:2> <seq:2>
+           0400 1110            <- path param : groupe 0x0004, index 0x1011 (« Channel name »)
+           0000 0000            <- ?
+           0000 0001            <- type valeur ? (1 = chaîne)
+           0000 0000 0000 0000  <- flags
+           09 00 "DevinTest"    <- <len:2> + chaîne
+```
+
+La même trame part deux fois (l'UI envoie un doublon). Pas de message « Commit » séparé observé pour ce champ — l'écriture TLV suffit (le « Commit changes » est peut-être un autre param-path, ex. `0400 1210`, vu en `4837 ffff 0000`).
+
+Autres TLV d'écriture observés :
+- `4837 0010 <len> <seq> 0a00/8800 ... <path:4> <type:2> <val:2>` — enum/int (ex. `0400 1110 0200 0a00`, `0400 1210 ffff 0000`)
+- `4337 0010 <len> <seq> 0000 <path:2> <data>` — autre type (toggles ?)
+
+## Échos `c837` (notifications valeurs, trames `4437` VNM>uR)
+
+`c837 0010 <len> <seq> <c2|c3> 0000 <groupe:2> <index:2> <type/flags> <len:1?> <valeur>`
+Exemples lus : `0400 0050`→«192.168.100.220» (Static IP), `0200 0050`→«On» (DHCP), `0400 0110`→«4800» (Sampling Rate index), `0400 0010`→«109.090 ms» (Delay Time), `0400 3010`→«00-07-F5-FF-FE-49-00-30» (PTP Grandmaster), `0400 3110` (PTP State).
 
 ## À faire
 
