@@ -181,3 +181,5 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - rd memoire OK: 0x6017eedc -> ctx 0x60404068, +0x7c = 0x00000004 STABLE apres inputselect all digital/analog -> ctx+7c nest PAS letat live.
 - Diff ls -e -r cne/AppSettings analog vs digital: aucun changement -> etat pas dans AppSettings (dump: utrack_appsettings_digital.txt).
 - Reste: persparam, etat UI/DSP, ou lecteurs de ctx+7c a trouver.
+ 
+- .set = XML: monitor_volume/mute/pan + output_level/mute/channel par canal; PAS de champ input-select (reglage global, pas par prise). Piste restante: capture uRemote du panneau Inputs -> controle CopperLan non mappe.
