@@ -1,0 +1,67 @@
+### inputselect
+i in inp inpu input inputs inputse inputsel inputsele inputselec inputselect 
+---- OVERVIEW ----
+inputselect          - set input selector
+---- DESCRIPTION ----
+inputselect	'1|2|3|all' 'analog|digital'
+
+sds://>
+### channelmode
+c ch cha chan chann channe channel channelm channelmo channelmod channelmode 
+channel modes: 0: 24 In / 26 Out
+               1: 24 In /  2 Out
+               2:  8 In / 26 Out
+               3:  8 In / 10 Out
+---- OVERVIEW ----
+channelmode          - change streaming channel mode:
+---- DESCRIPTION ----
+channelmode	 <mode>
+
+sds://>
+### mixer
+m mi mix mixe mixer 
+---- OVERVIEW ----
+mixer                - show mixer status and internal variables
+---- DESCRIPTION ----
+mixer	levels
+mixer	querylevels
+mixer	stat
+mixer	get	<channel>
+mixer	set	<channel> <fader|pan|mute> <value>
+mixer	store
+sds://>
+### madi
+m ma mad madi 
+---- OVERVIEW ----
+madi                 - madi related functions
+---- DESCRIPTION ----
+madi	sync        < 1=master, 0=slave >
+madi	in          < 1=coax,   0=optical >
+madi	56ch        < 1=56Ch,   0=66Ch >
+madi	tx48k       < 1=48K,    0=96K >
+madi	input       < uTrackInputStartChannel,  madiInputStartChannel  >
+    	            < uTrackInputStartChannel>   --to analog --
+madi	output      < uTrackOutputStartChannel, madiOutputStartChannel >
+madi	thru        < madiInputStartChannel,    madiOutputStartChannel >
+madi	setfs       < 44, 48, 88, 96>
+madi	id          Read madi ID 
+madi	rev         Read madi Revision
+madi	getfs       Read madi FS 
+madi	getlock     Read madi Lock bit 
+madi	getconn     Read madi Conn bit 
+madi	get48k      Read madi rx48k bit 
+madi	get56ch     Read madi rx56ch bit 
+madi	info        read digital board ID from shift register
+madi	reg         read madi register(in hex) value
+
+sds://>
+### dsp
+d ds dsp 
+---- OVERVIEW ----
+dsp                  - DSP streaming commands
+---- DESCRIPTION ----
+start DSP:	dsp	'44.1|48|88.2|96|176.4|192'
+stop DSP: 	dsp	'stop'
+show stat:	dsp	'stat'
+
+sds://>

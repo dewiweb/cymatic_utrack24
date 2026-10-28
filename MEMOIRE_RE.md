@@ -156,3 +156,9 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - 8423 verbatim uRemote (membre 3602) apres init -> aucun 4423 non plus. Donc: les requetes parametres echouent dans la session rejouee, quel que soit le membre. Manque: member-open/adoption avec cookies de session (4023 porte 9a430000/2e410e/06972716) ou type de session Manager.
 - Ecriture decodee OK (DevinTest): 8437 -> TLV 4437 [path 0400 1110][00000000 00000001 ...][len u16][str].
 - Piste B utilisable tout de suite : API JSON HTTP de la carte (sources/outputs/general).
+
+## Mode USB interface audio (verifie 28/10)
+- uTrack annonce 0 controle CopperLan en mode USB (device present, arbre vide).
+- Controle en mode USB = driver Windows (IOCTLs 0x8089xxxx, cf bebob_usb.md) + SDS telnet (usb drv, mixer, cne/AppSettings).
+- Enumeration OK apres debranchement de la cle stockage : VID_1511 PID_0043, driver WDM installe, 24 lignes + MIDI + PCM stereo.
+- AppSettings SDS: AnalogInputs/Inputs00to07=3,08to15=4,16to23=5 (inputselect par groupe de 8); AudioLan InterfaceAsInput=true; USBConfigurationId=2; DeviceMode=0; StreamingInterface=USB.
