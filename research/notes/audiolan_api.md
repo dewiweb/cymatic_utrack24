@@ -60,3 +60,9 @@ Firmware update : `POST /api/fileupload` multipart, champ `uploadedFile`, ≤ 16
 - streamPath vide = desabonne le canal. Teste sur 24 canaux et 1/2 (pairs) : fonctionne.
 - sender: fake_aes67_sender.py --rtsp <port> --async-sdp + MdnsAdvertiser.
 - ROUTING: streamPath permet le mapping arbitraire streamch->cartech (y compris duplication d'un canal sur plusieurs sorties). Ex: carte1<-devin-test/2, carte2<-devin-test/1 = swap stereo OK.
+
+## CORRECTION table streamStatus (source officielle /parameter_strings)
+0=Idle 1=OK 2=Transmitting 3=Tx unicast 4=Disabled 5=Not enough Decoders
+6=Address Collision 7=Waiting 8=Rx no sync 9=Rx unicast no sync 10=Receiving
+11=Rx unicast 12=Rx sync error 13=Rx time step warning 14=Invalid SR 15=Invalid PTP Domain
+(13 = time step warning, PAS Invalid PTP Domain = 15 — corrige les notes RE precedentes)

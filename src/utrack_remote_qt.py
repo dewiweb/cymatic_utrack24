@@ -85,12 +85,12 @@ class Win(QMainWindow):
         v.setContentsMargins(10,8,10,8);v.setSpacing(8)
         rv.addWidget(self.content);self.setCentralWidget(root)
         hd=QFrame();hd.setObjectName('card');h=QHBoxLayout(hd);self.hdr={}
-        for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date')):
+        for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date'),(0xf010,'État'),(0xf006,'Restant'),(0xf060,'Err')):
             l=QLabel('%s : —'%name);self.hdr[ctrl]=(l,name);h.addWidget(l);h.addSpacing(18)
         self.hdr_status=QLabel('—');h.addWidget(self.hdr_status);h.addSpacing(6)
         h.addStretch(1);v.addWidget(hd)
         tr=QHBoxLayout();tr.setSpacing(10)
-        for label,fn,oid in (('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec')):
+        for label,fn,oid in (('|◄','prev','prev'),('►|','next','next'),('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec'),('SAVE','save','save')):
             b=QPushButton(label);b.setObjectName(oid);b.setMinimumHeight(38)
             if fn=='rec':b.clicked.connect(self._rec)
             elif fn=='stop':b.clicked.connect(self._stop)
@@ -146,9 +146,9 @@ class Win(QMainWindow):
     def _mixer(self):
         sc=QScrollArea();sc.setWidgetResizable(True)
         row=QWidget();h=QHBoxLayout(row);h.setSpacing(6);h.setContentsMargins(8,8,8,8);self.strips=[]
-        for ch in range(24):
+        for ch in range(26):
             w=QFrame();w.setObjectName('card');s=QVBoxLayout(w);s.setSpacing(4);s.setContentsMargins(6,6,6,6)
-            s.addWidget(QLabel('CH %d'%(ch+1),alignment=Qt.AlignCenter,objectName='ch'))
+            s.addWidget(QLabel({24:'MON',25:'BUS'}.get(ch,'CH %d'%(ch+1)),alignment=Qt.AlignCenter,objectName='ch'))
             mid=QHBoxLayout();mid.setAlignment(Qt.AlignCenter)
             m=QProgressBar();m.setOrientation(Qt.Vertical);m.setRange(0,65535);m.setFormat('')
             m.setFixedSize(14,120)
@@ -200,7 +200,7 @@ class Win(QMainWindow):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(12)
         g1=QGroupBox('Options');gr1=QGridLayout();gr1.setSpacing(8);self.chk={}
         for i,(ctrl,label) in enumerate(((0xb200,'Lecture auto (Auto-Play)'),(0xb105,'Pré-enregistrement'),
-                           (0xb207,'Sorties multipistes post-fader'),(0xb003,'DHCP'))):
+                           (0xb207,'Sorties multipistes post-fader'),(0xb206,'Sorties stéréo post-fader'),(0xb003,'DHCP'))):
             cb=QCheckBox(label);cb.toggled.connect(lambda on,c=ctrl:self._set_ask(c,1 if on else 0))
             self.chk[ctrl]=cb;gr1.addWidget(cb,i//2,i%2)
         g1.setLayout(gr1);v.addWidget(g1)
@@ -308,9 +308,20 @@ class Win(QMainWindow):
         for s in streams:
             for ch in range(1,int(s.get('channelCount',8))+1):
                 choices.append('%s/%d'%(s.get('name','?'),ch))
+        # table streamStatus officielle (GET /parameter_strings)
+        SS={0:'Idle',1:'OK',2:'Transmitting',3:'Transmitting (unicast)',4:'Disabled',5:'Not enough Decoders',
+            6:'Address Collision',7:'Waiting',8:'Receiving (no sync)',9:'Receiving (unicast, no sync)',
+            10:'Receiving',11:'Receiving (unicast)',12:'Receiving (sync error)',13:'Receiving (time step warning)',
+            14:'Invalid Sampling Rate',15:'Invalid PTP Domain'}
+        stat={}
+        try:stat={i:o.get('status') for i,o in enumerate(self.alan.status().get('ArchwaveAES67',{}).get('outputs',[]))}
+        except Exception:pass
         self._route_boxes=[]
-        for o in self._alan_out:
+        for i,o in enumerate(self._alan_out):
             it=QTreeWidgetItem(g3,[o.get('name','?'),''])
+            st=stat.get(i)
+            if st is not None:
+                QTreeWidgetItem(it,['statut','%d %s'%(st,SS.get(st,''))])
             cb=QComboBox();cb.addItems(choices)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
