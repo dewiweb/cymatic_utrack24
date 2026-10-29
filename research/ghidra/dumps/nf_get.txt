@@ -1,0 +1,27 @@
+=========== FUN_001b5b0c @ 001b5b0c
+
+undefined2 FUN_001b5b0c(int param_1)
+
+{
+  return *(undefined2 *)(DAT_001b5b1c + param_1);
+}
+
+
+=========== FUN_001b5b38 @ 001b5b38
+
+undefined4 FUN_001b5b38(int param_1)
+
+{
+  return *(undefined4 *)(param_1 + 0x158);
+}
+
+
+=========== FUN_001b5660 @ 001b5660
+
+undefined1 FUN_001b5660(int param_1)
+
+{
+  return *(undefined1 *)(param_1 + 0x102);
+}
+
+

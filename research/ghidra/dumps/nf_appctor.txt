@@ -1,0 +1,80 @@
+=========== FUN_000b0f18 @ 000b0f18
+
+undefined4 FUN_000b0f18(void)
+
+{
+  return *DAT_000b0f24;
+}
+
+
+=========== FUN_000b0f28 @ 000b0f28
+
+void FUN_000b0f28(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+                 undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
+                 undefined4 param_9)
+
+{
+  int *piVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  
+  piVar1 = (int *)FUN_00079408(param_1,param_2,0,param_3,param_4,param_5,param_6,param_7,param_8,
+                               param_9);
+  iVar3 = DAT_000b0fc8 + 0x80;
+  *piVar1 = DAT_000b0fc8;
+  piVar1[0x45] = iVar3;
+  *(undefined1 *)(piVar1 + 0x46) = 0;
+  puVar2 = (undefined4 *)FUN_000b1210(piVar1 + 0x47);
+  *puVar2 = DAT_000b0fcc;
+  puVar2 = (undefined4 *)FUN_000b1210(puVar2 + 3);
+  *puVar2 = DAT_000b0fd0;
+  puVar2 = (undefined4 *)FUN_000b1210(puVar2 + 3);
+  *puVar2 = DAT_000b0fd4;
+  puVar2 = (undefined4 *)FUN_000b1210(puVar2 + 3);
+  *puVar2 = DAT_000b0fd8;
+  puVar2[3] = 0;
+  puVar2[4] = 0;
+  puVar2[5] = 0;
+  puVar2[6] = 0;
+  puVar2[7] = 0;
+  puVar2[8] = 0;
+  *(undefined1 *)(puVar2 + 9) = 1;
+  *DAT_000b0fdc = puVar2 + -0x50;
+  return;
+}
+
+
+=========== FUN_000b0ff0 @ 000b0ff0
+
+void FUN_000b0ff0(int *param_1)
+
+{
+  undefined4 *puVar1;
+  int iVar2;
+  int iVar3;
+  
+  iVar2 = DAT_000b10a4 + 0x80;
+  *param_1 = DAT_000b10a4;
+  param_1[0x45] = iVar2;
+  FUN_00071c88(param_1);
+  iVar2 = FUN_001b6c4c(param_1 + 0x50);
+  if (iVar2 != 0) {
+    (**(code **)(*(int *)param_1[0x52] + 0x38))((int *)param_1[0x52],param_1 + 0x45);
+  }
+  *DAT_000b10a8 = 0;
+  iVar3 = param_1[0x53];
+  for (iVar2 = iVar3; iVar2 != param_1[0x54]; iVar2 = iVar2 + 0x20) {
+  }
+  FUN_00173a54(iVar3,param_1[0x55] - iVar3 >> 5,0);
+  iVar2 = FUN_000b1228(param_1 + 0x50);
+  iVar2 = FUN_000b1228(iVar2 + -0xc);
+  iVar2 = FUN_000b1228(iVar2 + -0xc);
+  iVar2 = FUN_000b1228(iVar2 + -0xc);
+  puVar1 = (undefined4 *)(iVar2 + -0x11c);
+  *puVar1 = DAT_00079484;
+  FUN_00071c88(puVar1);
+  FUN_000710f8(puVar1);
+  return;
+}
+
+

@@ -1,0 +1,52 @@
+00055850  cmp r0,r1
+00055854  str r0,[r5,#0x14]
+00055858  bls 0x00055868
+0005585c  ldr r1,[0x55cec]
+00055860  add r0,r0,r1
+00055864  str r0,[r5,#0x14]
+00055868  ldr r0,[r5,#0x1c]
+0005586c  mov r1,#0x0
+00055870  cmp r0,#0x0
+00055874  addne r0,r0,#0x1
+00055878  str r1,[r5,#0x18]
+0005587c  strne r0,[r5,#0x1c]
+00055880  add r0,r5,#0xc
+00055884  str r0,[sp,#0x20]
+00055888  ldr r0,[r5,#0xc]
+0005588c  ldr r0,[r0,#-0x4]
+00055890  add r0,r0,#0x18
+00055894  str r0,[sp,#0x18]
+00055898  ldr r2,[r6,#0x134]
+0005589c  mov r1,r0, lsl #0x10
+000558a0  mov r1,r1, lsr #0x10
+000558a4  cpy r0,r2
+000558a8  blx 0x0019d000
+000558ac  movs r1,r0
+000558b0  beq 0x00055998
+000558b4  ldrh r2,[r5,#0x8]
+000558b8  ldr r3,[r5,#0x1c]
+000558bc  orr r0,r2,#0x20000000
+000558c0  cmp r3,#0x0
+000558c4  orrne r0,r0,#0x4000000
+000558c8  mov r3,r0, lsr #0x18
+000558cc  and r12,r0,#0xff0000
+000558d0  orr r12,r3,r12, lsr #0x8
+000558d4  ldr r3,[sp,#0xc]
+000558d8  and r11,r0,#0xff00
+000558dc  str r3,[sp,#0x28]
+000558e0  orr r3,r12,r11, lsl #0x8
+000558e4  orr r0,r3,r0, lsl #0x18
+000558e8  add r12,r1,#0x8
+000558ec  str r12,[sp,#0x1c]
+000558f0  mov r3,r0, lsl #0x10
+000558f4  mov r12,r0, lsl #0x8
+000558f8  mov r3,r3, lsr #0x18
+000558fc  strb r0,[r1,#0x0]
+00055900  mov r12,r12, lsr #0x18
+00055904  strb r3,[r1,#0x1]
+00055908  mov r11,r0, lsr #0x18
+0005590c  strb r12,[r1,#0x2]
+00055910  add r2,r1,#0x4
+00055914  strb r11,[r1,#0x3]
+00055918  ldrb r1,[r6,#0x110]
+0005591c  strb r1,[r2,#0x0]

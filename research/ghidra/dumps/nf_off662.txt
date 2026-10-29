@@ -1,0 +1,49 @@
+000a20c4 FUN_000a1eb4 : str r2,[r4,#0x660]
+000a298c FUN_000a2858 : str r0,[r4,#0x664]
+000a2994 FUN_000a2858 : str r0,[r4,#0x660]
+000a2f68 FUN_000a2f2c : ldr r1,[r5,#0x660]
+000a2fcc FUN_000a2f2c : ldr r1,[r5,#0x664]
+000a2fe4 FUN_000a2f2c : ldrne r6,[r5,#0x660]
+000a3040 FUN_000a3004 : ldr r6,[r5,#0x660]
+000a310c FUN_000a3004 : ldr r1,[r5,#0x664]
+000a3128 FUN_000a3004 : ldr r6,[r5,#0x660]
+000a3184 FUN_000a3158 : ldr r1,[r4,#0x660]
+000a31bc FUN_000a3158 : ldr r1,[r4,#0x664]
+000a31d4 FUN_000a3158 : ldrne r5,[r4,#0x660]
+000a3ac4 FUN_000a3940 : str r5,[r4,#0x660]
+000a3ac8 FUN_000a3940 : str r5,[r4,#0x664]
+000aa6dc FUN_000aa6d0 : strb r5,[r4,#0x665]
+000aa7fc FUN_000aa7e0 : ldrb r0,[r4,#0x660]
+000aa808 FUN_000aa7e0 : ldrb r0,[r4,#0x660]
+000aa834 FUN_000aa7e0 : ldrb r0,[r4,#0x660]
+000aa868 FUN_000aa7e0 : strb r5,[r4,#0x660]
+000aad3c FUN_000aad30 : strb r5,[r4,#0x667]
+000aaec8 FUN_000aaebc : strb r5,[r4,#0x666]
+000aaee4 FUN_000aaebc : ldrb r0,[r4,#0x666]
+000aaef0 FUN_000aaebc : ldrb r0,[r4,#0x666]
+000ab5ec FUN_000ab3f8 : ldrb r0,[r4,#0x666]
+000ab5f8 FUN_000ab3f8 : ldrb r0,[r4,#0x666]
+000ad0b8 FUN_000ace70 : ldrb r0,[r5,#0x666]
+000ad0c4 FUN_000ace70 : ldrb r0,[r5,#0x666]
+000ad9e0 FUN_000ad9b8 : strb r0,[r4,#0x664]
+000ae41c FUN_000adab0 : ldrb r0,[r0,#0x660]
+000ae4ac FUN_000adab0 : ldrb r0,[r0,#0x666]
+000ae53c FUN_000adab0 : ldrb r0,[r0,#0x667]
+000ae5e0 FUN_000adab0 : ldrb r0,[r0,#0x665]
+000aeb80 FUN_000adab0 : ldrb r0,[r0,#0x664]
+000aebf4 FUN_000adab0 : strb r1,[r0,#0x664]
+instruction hits: 34 funcs: 14
+FUNC 000a1eb4 FUN_000a1eb4
+FUNC 000a2858 FUN_000a2858
+FUNC 000a2f2c FUN_000a2f2c
+FUNC 000a3004 FUN_000a3004
+FUNC 000a3158 FUN_000a3158
+FUNC 000a3940 FUN_000a3940
+FUNC 000aa6d0 FUN_000aa6d0
+FUNC 000aa7e0 FUN_000aa7e0
+FUNC 000aad30 FUN_000aad30
+FUNC 000aaebc FUN_000aaebc
+FUNC 000ab3f8 FUN_000ab3f8
+FUNC 000ace70 FUN_000ace70
+FUNC 000ad9b8 FUN_000ad9b8
+FUNC 000adab0 FUN_000adab0
