@@ -235,6 +235,9 @@ class Win(QMainWindow):
         self.btn_del=QPushButton('Supprimer');self.btn_del.setEnabled(False);self.btn_del.clicked.connect(self._take_delete);hb.addWidget(self.btn_del)
         self.btn_stat=QPushButton('Statut');self.btn_stat.clicked.connect(self._stat_refresh);hb.addWidget(self.btn_stat)
         self.stat_lbl=QLabel('—',objectName='info');hb.addWidget(self.stat_lbl)
+        self.btn_load=QPushButton('Charger');self.btn_load.setEnabled(False)
+        self.btn_load.setToolTip('Charge la prise selectionnee (CopperLan file-select 0xc010)')
+        self.btn_load.clicked.connect(self._take_load);hb.addWidget(self.btn_load)
         hb.addStretch(1);v.addLayout(hb)
         self.tree=QTreeWidget();self.tree.setHeaderLabels(['Prise','Date','Format','Durée','Marqueurs'])
         self.tree.setAlternatingRowColors(True);self.tree.header().setStretchLastSection(True)
@@ -468,7 +471,7 @@ class Win(QMainWindow):
     def _take_sel(self,it,prev):
         t=it.data(0,Qt.UserRole) if it else None
         en=bool(t) and t['name']!=self._loaded
-        self.btn_ren.setEnabled(en);self.btn_del.setEnabled(en)
+        self.btn_ren.setEnabled(en);self.btn_del.setEnabled(en);self.btn_load.setEnabled(en)
         if not t:return
         self.reclog.setPlainText('Chargement…')
         def run():
@@ -480,6 +483,13 @@ class Win(QMainWindow):
             except OSError as e:self._reclog='Erreur : %s'%e;self.tel=None
             except Exception as e:self._reclog='Erreur : %s'%e
         threading.Thread(target=run,daemon=True).start()
+
+    def _take_load(self):
+        it=self.tree.currentItem()
+        if not it:return
+        idx=self.tree.indexOfTopLevelItem(it)
+        if QMessageBox.question(self,'Prises','Charger %s sur le device ?'%it.text(0))!=QMessageBox.Yes:return
+        self.u and self.u.num(0xc010,idx)  # file-select par index (RE: 0xc010)
 
     def _stat_refresh(self):
         """filerec/fileplay stat + espace disque (RE ghidra_utrack_files.md)."""
