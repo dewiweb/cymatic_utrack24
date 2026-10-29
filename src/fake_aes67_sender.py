@@ -214,9 +214,9 @@ def main():
     def make_sdp():
         s = sdp(a.src, a.ip, a.port, clk.clock_id_hex)
         if a.async_sdp:
-            s = b''.join(l for l in s.split(b'\r\n')
-                         if not l.startswith((b'a=clock-domain', b'a=ts-refclk', b'a=sync-time', b'a=mediaclk')))
-            s += b'\r\n'
+            s = b'\r\n'.join(l for l in s.split(b'\r\n')
+                             if not l.startswith((b'a=clock-domain', b'a=ts-refclk', b'a=sync-time', b'a=mediaclk')))
+            if not s.endswith(b'\r\n'): s += b'\r\n'
         return s
     sdpb = make_sdp()
     sapb = sap_packet(a.src, sdpb)
