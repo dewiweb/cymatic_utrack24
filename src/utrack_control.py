@@ -197,6 +197,8 @@ class UTrackControl:
     def prev(self):self.ctrl(TRANSPORT,1)   # UI event 0x194
     def next(self):self.ctrl(TRANSPORT,2)   # UI event 0x195
     def save(self):self.ctrl(TRANSPORT,6)   # UI event 0x192 (Save/Back)
+    def playlist_song(self,idx):self.num(0xd008,int(idx))  # select song dans playlist (UI event 0x18)
+    def playlist_exit(self):self.num(0xd009,1)             # quitter mode playlist (UI event 0x16)
     def marker(self):self.ctrl(TRANSPORT,PLAY)   # Play pendant un enregistrement = nouveau marqueur (manuel uRemote p.15, verifie Take0012)
 
     def close(self):

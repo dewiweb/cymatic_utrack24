@@ -250,6 +250,7 @@ class Win(QMainWindow):
         self.btn_alan=QPushButton('Rafraîchir');self.btn_alan.clicked.connect(self._alan_refresh);hb.addWidget(self.btn_alan)
         self.btn_alan_apply=QPushButton('Appliquer');self.btn_alan_apply.setEnabled(False)
         self.btn_alan_apply.clicked.connect(self._alan_apply);hb.addWidget(self.btn_alan_apply)
+        self.btn_alan_reb=QPushButton('Redémarrer');self.btn_alan_reb.clicked.connect(self._alan_reboot);hb.addWidget(self.btn_alan_reb)
         self.alan_info=QLabel('—');hb.addWidget(self.alan_info);hb.addStretch(1);v.addLayout(hb)
         self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
         self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
@@ -289,6 +290,12 @@ class Win(QMainWindow):
         leaf(g1,'Masque statique',cfg,'IPmask')
         leaf(g1,'Passerelle statique',cfg,'IPgateway')
         leaf(g1,'Nom',cfg,'name')
+        leaf(g1,'Sample rate',cfg,'samplingRate','str',ro=True)
+        pd=cfg.get('playoutDelay') or {}
+        leaf(g1,'Playout delay (samples)',pd,'delayInSamples')
+        ptp=cfg.get('PTP') or {}
+        leaf(g1,'PTP domain',ptp,'domain')
+        self._alan_cfg['playoutDelay']=pd;self._alan_cfg['PTP']=ptp
         self.atree.addTopLevelItem(g1);g1.setExpanded(True)
         g2=QTreeWidgetItem(['Sources (audio → réseau)',''])
         self._alan_src=src.get('ArchwaveAES67',{}).get('sources',[])
@@ -337,6 +344,12 @@ class Win(QMainWindow):
         self.atree.addTopLevelItem(g4);g4.setExpanded(True)
         self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(len(self._alan_src),len(self._alan_out)))
 
+    def _alan_reboot(self):
+        if self.alan is None:return
+        if QMessageBox.question(self,'AudioLAN','Redémarrer la carte AudioLAN ?')!=QMessageBox.Yes:return
+        try:self.alan.reboot();self.statusBar().showMessage('AudioLAN : reboot envoyé')
+        except Exception as e:self.statusBar().showMessage('Erreur reboot : %s'%e)
+
     def _alan_apply(self):
         if self.alan is None or not getattr(self,'_edit_items',None):return
         import copy
@@ -344,6 +357,8 @@ class Win(QMainWindow):
         # map original->copie (les _edit_items/_route_boxes referencent les originaux)
         idmap={id(a):b for a,b in zip(self._alan_src,src)}
         idmap.update({id(a):b for a,b in zip(self._alan_out,out)});idmap[id(self._alan_cfg)]=cfg
+        for sub in ('playoutDelay','PTP'):  # sous-dicts editables
+            if isinstance(self._alan_cfg.get(sub),dict):idmap[id(self._alan_cfg[sub])]=cfg[sub]
         for it,d,k,kind in self._edit_items:
             t=idmap.get(id(d))
             if t is None:continue
