@@ -5,3 +5,4 @@ research/tools/
 __pycache__/
 *.log
 nul
+research/ghidra/utrack_fw_proj/
