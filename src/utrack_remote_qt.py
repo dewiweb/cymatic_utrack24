@@ -233,6 +233,8 @@ class Win(QMainWindow):
         self.btn_ref=QPushButton('Rafraîchir');self.btn_ref.clicked.connect(self._takes_refresh);hb.addWidget(self.btn_ref)
         self.btn_ren=QPushButton('Renommer…');self.btn_ren.setEnabled(False);self.btn_ren.clicked.connect(self._take_rename);hb.addWidget(self.btn_ren)
         self.btn_del=QPushButton('Supprimer');self.btn_del.setEnabled(False);self.btn_del.clicked.connect(self._take_delete);hb.addWidget(self.btn_del)
+        self.btn_stat=QPushButton('Statut');self.btn_stat.clicked.connect(self._stat_refresh);hb.addWidget(self.btn_stat)
+        self.stat_lbl=QLabel('—',objectName='info');hb.addWidget(self.stat_lbl)
         hb.addStretch(1);v.addLayout(hb)
         self.tree=QTreeWidget();self.tree.setHeaderLabels(['Prise','Date','Format','Durée','Marqueurs'])
         self.tree.setAlternatingRowColors(True);self.tree.header().setStretchLastSection(True)
@@ -462,6 +464,21 @@ class Win(QMainWindow):
             except Exception as e:self._reclog='Erreur : %s'%e
         threading.Thread(target=run,daemon=True).start()
 
+    def _stat_refresh(self):
+        """filerec/fileplay stat + espace disque (RE ghidra_utrack_files.md)."""
+        self.btn_stat.setEnabled(False)
+        def run():
+            try:
+                if self.tel is None:
+                    from utrack_telnet import UTrack24 as Tel
+                    self.tel=Tel(TEL_HOST)
+                with self._tlock:
+                    out=(self.tel.filerec('stat') or '')+'\n'+(self.tel.fileplay('stat') or '')+'\n'+(self.tel.cmd('file dir free') or '')
+                self._stat_txt='\n'.join(l.strip() for l in out.splitlines() if l.strip() and '###' not in l)[:300]
+            except OSError as e:self._stat_txt='Erreur : %s'%e;self.tel=None
+            except Exception as e:self._stat_txt='Erreur : %s'%e
+        threading.Thread(target=run,daemon=True).start()
+
     def _fill_takes(self,d):
         self.tree.clear()
         for t in d:
@@ -516,6 +533,10 @@ class Win(QMainWindow):
             self.statusBar().showMessage('Déconnecté — reconnexion…')
             if hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         if self._reclog is not None:self.reclog.setPlainText(self._reclog);self._reclog=None
+        if getattr(self,'_stat_txt',None) is not None:
+            self.stat_lbl.setText(self._stat_txt.splitlines()[0][:120] if self._stat_txt else '—')
+            self.reclog.setPlainText(self._stat_txt);self._stat_txt=None
+            self.btn_stat.setEnabled(True)
         if self._takes_data is not None:
             d,self._takes_data=self._takes_data,None;self.btn_ref.setEnabled(True)
             if isinstance(d,Exception):self.statusBar().showMessage('Erreur prises : %s'%d)
