@@ -144,15 +144,15 @@ class MdnsAdvertiser(threading.Thread):
         inst, host = _dn(self.inst), _dn(self.host)
         svc = _dn('_rtsp._tcp.local')
         sub = _dn('_ravenna_session._sub._rtsp._tcp.local')
-        def rec(n, t, data, fl=0):
-            return n + struct.pack('>HHIH', t, fl | 1, 120, len(data)) + data
+        def rec(n, t, data, flush=False):
+            return n + struct.pack('>HHIH', t, 1 | (0x8000 if flush else 0), 120, len(data)) + data
         ans = b''
         ans += rec(sub, rrtype_ptr, inst)                       # subtype PTR
         ans += rec(svc, rrtype_ptr, inst)                     # type PTR
         srvd = struct.pack('>HHH', 0, 0, self.port) + host
-        ans += rec(inst, rrtype_srv | cache_flush, srvd)
-        ans += rec(inst, rrtype_txt | cache_flush, b'\x00')
-        ans += rec(host, rrtype_a | cache_flush, socket.inet_aton(self.ip))
+        ans += rec(inst, rrtype_srv, srvd, True)
+        ans += rec(inst, rrtype_txt, b'\x00', True)
+        ans += rec(host, rrtype_a, socket.inet_aton(self.ip), True)
         return struct.pack('>HHHHHH', 0, 0x8400, 0, 5, 0, 0) + ans
 
     def run(self):
