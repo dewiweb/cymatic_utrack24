@@ -341,7 +341,9 @@ class Win(QMainWindow):
         if self.alan is None or not getattr(self,'_edit_items',None):return
         import copy
         src=copy.deepcopy(self._alan_src);cfg=copy.deepcopy(self._alan_cfg);out=copy.deepcopy(self._alan_out)
-        idmap={id(o):o for o in src};idmap.update({id(o):o for o in out});idmap[id(self._alan_cfg)]=cfg
+        # map original->copie (les _edit_items/_route_boxes referencent les originaux)
+        idmap={id(a):b for a,b in zip(self._alan_src,src)}
+        idmap.update({id(a):b for a,b in zip(self._alan_out,out)});idmap[id(self._alan_cfg)]=cfg
         for it,d,k,kind in self._edit_items:
             t=idmap.get(id(d))
             if t is None:continue
