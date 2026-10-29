@@ -1,0 +1,507 @@
+
+############ ARM range adb5c..adc9c
+  000adb5c  stmdb sp!,{r0,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  000adb60  sub sp,sp,#0x14
+  000adb64  cpy r5,r0
+  000adb68  add r0,sp,#0x50
+  000adb6c  ldmia r0,{r7,r10,r11}
+  000adb70  ldrd r8,r9,[sp,#0x48]
+  000adb74  mov r2,#0xc
+  000adb78  adr r1,0xadc50
+  000adb7c  cpy r0,r7
+  000adb80  bl 0x00003628   ; ref->00003628 = 0xe3520003  <OBJ/BSS>
+  000adb84  ldr r0,[sp,#0x1c]
+  000adb88  adr r1,0xadc5c
+  000adb8c  bl 0x00003960   ; ref->00003960 = 0xe3100003  <OBJ/BSS>
+  000adb90  cmp r0,#0x0
+  000adb94  moveq r4,#0x2
+  000adb98  beq 0x000adc04   ; ref->000adc04 = 0xe2850004  <OBJ/BSS>
+  000adb9c  ldr r0,[sp,#0x1c]
+  000adba0  adr r1,0xadc68
+  000adba4  bl 0x00003960   ; ref->00003960 = 0xe3100003  <OBJ/BSS>
+  000adba8  cmp r0,#0x0
+  000adbac  moveq r4,#0x3
+  000adbb0  beq 0x000adc04   ; ref->000adc04 = 0xe2850004  <OBJ/BSS>
+  000adbb4  ldr r0,[sp,#0x1c]
+  000adbb8  adr r1,0xadc74
+  000adbbc  bl 0x00003960   ; ref->00003960 = 0xe3100003  <OBJ/BSS>
+  000adbc0  cmp r0,#0x0
+  000adbc4  moveq r4,#0x4
+  000adbc8  beq 0x000adc04   ; ref->000adc04 = 0xe2850004  <OBJ/BSS>
+  000adbcc  ldr r0,[sp,#0x1c]
+  000adbd0  adr r1,0xadc80
+  000adbd4  bl 0x00003960   ; ref->00003960 = 0xe3100003  <OBJ/BSS>
+  000adbd8  cmp r0,#0x0
+  000adbdc  moveq r4,#0x5
+  000adbe0  beq 0x000adc04   ; ref->000adc04 = 0xe2850004  <OBJ/BSS>
+  000adbe4  ldr r0,[sp,#0x1c]
+  000adbe8  adr r1,0xadc8c
+  000adbec  bl 0x00003960   ; ref->00003960 = 0xe3100003  <OBJ/BSS>
+  000adbf0  cmp r0,#0x0
+  000adbf4  moveq r4,#0x1
+  000adbf8  movne r0,#0x0
+  000adbfc  addne sp,sp,#0x24
+  000adc00  ldmiane sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000adc04  add r0,r5,#0x4
+  000adc08  cpy r6,r0
+  000adc0c  mvn r1,#0x0
+  000adc10  bl 0x0017afd4   ; ref->0017afd4 = 0xe92d4070  <OBJ/BSS>
+  000adc14  add r1,sp,#0x18
+  000adc18  add r0,r5,#0x44
+  000adc1c  bl 0x001dafb8   ; ref->001dafb8 = 0xe92d41f0  <OBJ/BSS>
+  000adc20  strb r4,[r0,#0x0]
+  000adc24  cpy r0,r6
+  000adc28  bl 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000adc2c  add r1,sp,#0x8
+  000adc30  stmia r1,{r7,r10,r11}
+  000adc34  strd r8,r9,[sp,#0x0]
+  000adc38  add r12,sp,#0x18
+  000adc3c  ldmia r12,{r1,r2,r3}
+  000adc40  cpy r0,r5
+  000adc44  blx 0x0009b654   ; ref->0009b654 = 0xb090b57f  <OBJ/BSS>
+  000adc48  add sp,sp,#0x24
+  000adc4c  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000adc50  .word 0x646e692f '/ind'  <OBJ/BSS>
+  000adc54  .word 0x682e7865 'ex.h'  <OBJ/BSS>
+  000adc58  .word 0x6c6d74 'tml.'
+  000adc5c  .word 0x6d6f632f '/com'  <OBJ/BSS>
+  000adc60  .word 0x646e616d 'mand'  <OBJ/BSS>
+  000adc64  .word 0x0 '....'
+  000adc68  .word 0x6e65672f '/gen'  <OBJ/BSS>
+  000adc6c  .word 0x6c617265 'eral'  <OBJ/BSS>
+  000adc70  .word 0x0 '....'
+  000adc74  .word 0x756f732f '/sou'  <OBJ/BSS>
+  000adc78  .word 0x73656372 'rces'  <OBJ/BSS>
+  000adc7c  .word 0x0 '....'
+  000adc80  .word 0x74756f2f '/out'  <OBJ/BSS>
+  000adc84  .word 0x73747570 'puts'  <OBJ/BSS>
+  000adc88  .word 0x0 '....'
+  000adc8c  .word 0x6970612f '/api'  <OBJ/BSS>
+  000adc90  .word 0x6c69662f '/fil'  <OBJ/BSS>
+  000adc94  .word 0x6c707565 'eupl'  <OBJ/BSS>
+  000adc98  .word 0x64616f 'oad.'
+  000adc9c  .word 0xe92d4070  <OBJ/BSS>
+
+############ ARM range adc9c..ae064
+  000adc9c  stmdb sp!,{r4,r5,r6,lr}
+  000adca0  cpy r4,r0
+  000adca4  ldr r0,[r1,#0x14]
+  000adca8  sub sp,sp,#0xb8
+  000adcac  cmp r0,#0x1
+  000adcb0  cpy r5,r1
+  000adcb4  mov r6,#0x0
+  000adcb8  bne 0x000ade60   ; ref->000ade60 = 0xe5950014  <OBJ/BSS>
+  000adcbc  ldr r0,[0xadeac]
+  000adcc0  mvn r1,#0x0
+  000adcc4  bl 0x0017afd4   ; ref->0017afd4 = 0xe92d4070  <OBJ/BSS>
+  000adcc8  add r0,sp,#0x8
+  000adccc  bl 0x0009cdb8   ; ref->0009cdb8 = 0xe92d4010  <OBJ/BSS>
+  000adcd0  add r0,r0,#0x38
+  000adcd4  bl 0x0009cdb8   ; ref->0009cdb8 = 0xe92d4010  <OBJ/BSS>
+  000adcd8  mov r1,#0x0
+  000adcdc  str r1,[r0,#0x38]
+  000adce0  str r1,[r0,#0x3c]
+  000adce4  str r1,[r0,#0x40]
+  000adce8  str r1,[r0,#0x44]
+  000adcec  str r1,[r0,#0x48]
+  000adcf0  str r1,[r0,#0x4c]
+  000adcf4  strb r1,[r0,#0x50]
+  000adcf8  str r1,[r0,#0x54]
+  000adcfc  str r1,[r0,#0x58]
+  000add00  str r1,[r0,#0x5c]
+  000add04  str r1,[r0,#0x60]
+  000add08  str r1,[r0,#0x64]
+  000add0c  str r1,[r0,#0x68]
+  000add10  str r1,[r0,#0x6c]
+  000add14  str r1,[r0,#0x70]
+  000add18  add r0,r5,#0x8
+  000add1c  ldmia r0,{r0,r1}
+  000add20  mov r3,#0x1
+  000add24  add r2,sp,#0x8
+  000add28  bl 0x000c62ac   ; ref->000c62ac = 0xe92d4ff0  <OBJ/BSS>
+  000add2c  cmp r0,#0x1
+  000add30  beq 0x000add70   ; ref->000add70 = 0xeb005c0e  <OBJ/BSS>
+  000add34  sub r0,r0,#0x3
+  000add38  mvn r1,#0x0
+  000add3c  cmp r0,#0x9
+  000add40  str r1,[r5,#0x14]
+  000add44  ldrcc pc,[pc,r0,lsl #0x2]
+  000add48  b 0x000ade50   ; ref->000ade50 = 0xe5940040  <OBJ/BSS>
+  000add4c  .word 0x600b3d1c  (ptr add98)
+  000add50  .word 0x600b3d30  (ptr addac)
+  000add54  .word 0x600b3d44  (ptr addc0)
+  000add58  .word 0x600b3d58  (ptr addd4)
+  000add5c  .word 0x600b3d6c  (ptr adde8)
+  000add60  .word 0x600b3d80  (ptr addfc)
+  000add64  .word 0x600b3d94  (ptr ade10)
+  000add68  .word 0x600b3da8  (ptr ade24)
+  000add6c  .word 0x600b3dbc  (ptr ade38)
+  000add70  bl 0x000c4db0   ; ref->000c4db0 = 0xe92d41f0  <OBJ/BSS>
+  000add74  ldr r1,[0xadeb0]
+  000add78  add r3,sp,#0x8
+  000add7c  stmia sp,{r1,r4}
+  000add80  add r1,r5,#0x8
+  000add84  ldmia r1,{r1,r2}
+  000add88  bl 0x000c5fc4   ; ref->000c5fc4 = 0xe92d4ff0  <OBJ/BSS>
+  000add8c  movs r6,r0
+  000add90  moveq r0,#0x4
+  000add94  streq r0,[r5,#0x14]
+  000add98  b 0x000ade60   ; ref->000ade60 = 0xe5950014  <OBJ/BSS>
+  000add9c  .word 0xe5940040  <OBJ/BSS>
+  000adda0  .word 0xe28f2f43  <OBJ/BSS>
+  000adda4  .word 0xe28f1f46  <OBJ/BSS>
+  000adda8  .word 0xebff8af2  <OBJ/BSS>
+  000addac  .word 0xea00002b  <OBJ/BSS>
+  000addb0  .word 0xe5940040  <OBJ/BSS>
+  000addb4  .word 0xe28f2e11  <OBJ/BSS>
+  000addb8  .word 0xe28f1f41  <OBJ/BSS>
+  000addbc  .word 0xebff8aed  <OBJ/BSS>
+  000addc0  .word 0xea000026  <OBJ/BSS>
+  000addc4  .word 0xe5940040  <OBJ/BSS>
+  000addc8  .word 0xe28f2f43  <OBJ/BSS>
+  000addcc  .word 0xe28f10f0  <OBJ/BSS>
+  000addd0  .word 0xebff8ae8  <OBJ/BSS>
+  000addd4  .word 0xea000021  <OBJ/BSS>
+  000addd8  .word 0xe5940040  <OBJ/BSS>
+  000adddc  .word 0xe28f2f42  <OBJ/BSS>
+  000adde0  .word 0xe28f10dc  <OBJ/BSS>
+  000adde4  .word 0xebff8ae3  <OBJ/BSS>
+  000adde8  .word 0xea00001c  <OBJ/BSS>
+  000addec  .word 0xe5940040  <OBJ/BSS>
+  000addf0  .word 0xe28f2f42  <OBJ/BSS>
+  000addf4  .word 0xe28f10c8  <OBJ/BSS>
+  000addf8  .word 0xebff8ade  <OBJ/BSS>
+  000addfc  .word 0xea000017  <OBJ/BSS>
+  000ade00  .word 0xe5940040  <OBJ/BSS>
+  000ade04  .word 0xe28f2f43  <OBJ/BSS>
+  000ade08  .word 0xe28f10b4  <OBJ/BSS>
+  000ade0c  .word 0xebff8ad9  <OBJ/BSS>
+  000ade10  .word 0xea000012  <OBJ/BSS>
+  000ade14  .word 0xe5940040  <OBJ/BSS>
+  000ade18  .word 0xe28f2f43  <OBJ/BSS>
+  000ade1c  .word 0xe28f10a0  <OBJ/BSS>
+  000ade20  .word 0xebff8ad4  <OBJ/BSS>
+  000ade24  .word 0xea00000d  <OBJ/BSS>
+  000ade28  .word 0xe5940040  <OBJ/BSS>
+  000ade2c  .word 0xe28f2f43  <OBJ/BSS>
+  000ade30  .word 0xe28f108c  <OBJ/BSS>
+  000ade34  .word 0xebff8acf  <OBJ/BSS>
+  000ade38  .word 0xea000008  <OBJ/BSS>
+  000ade3c  .word 0xe5940040  <OBJ/BSS>
+  000ade40  .word 0xe28f2f42  <OBJ/BSS>
+  000ade44  .word 0xe28f1078  <OBJ/BSS>
+  000ade48  .word 0xebff8aca  <OBJ/BSS>
+  000ade4c  .word 0xea000003  <OBJ/BSS>
+  000ade50  ldr r0,[r4,#0x40]
+  000ade54  adr r2,0xadf64
+  000ade58  adr r1,0xadec4
+  000ade5c  bl 0x00090978   ; ref->00090978 = 0xe92d47f0  <OBJ/BSS>
+  000ade60  ldr r0,[r5,#0x14]
+  000ade64  cmp r0,#0x6
+  000ade68  ldrcc pc,[pc,r0,lsl #0x2]
+  000ade6c  b 0x000ae000   ; ref->000ae000 = 0xe3560000  <OBJ/BSS>
+  000ade70  .word 0x600b3e18  (ptr ade94)
+  000ade74  .word 0x600b3e08  (ptr ade84)
+  000ade78  .word 0x600b3f34  (ptr adfb0)
+  000ade7c  .word 0x600b3f48  (ptr adfc4)
+  000ade80  .word 0x600b3f5c  (ptr adfd8)
+  000ade84  .word 0x600b3f70  (ptr adfec)
+  000ade88  .word 0xe5940040  <OBJ/BSS>
+  000ade8c  .word 0xe28f20e0  <OBJ/BSS>
+  000ade90  .word 0xe28f10f8  <OBJ/BSS>
+  000ade94  .word 0xea000002  <OBJ/BSS>
+  000ade98  .word 0xe5940040  <OBJ/BSS>
+  000ade9c  .word 0xe28f20f0  <OBJ/BSS>
+  000adea0  .word 0xe28f101c  <OBJ/BSS>
+  000adea4  .word 0xebff8ab3  <OBJ/BSS>
+  000adea8  .word 0xea000054  <OBJ/BSS>
+  000adeac  .word 0x60405f30 '0_@`'  <OBJ/BSS>
+  000adeb0  .word 0x600b4194  (ptr ae210)
+  000adeb4  .word 0x65746e49 'Inte'  <OBJ/BSS>
+  000adeb8  .word 0x6c616e72 'rnal'  <OBJ/BSS>
+  000adebc  .word 0x72726520 ' err'  <OBJ/BSS>
+  000adec0  .word 0x726f 'or..'
+  000adec4  .word 0x6f727265 'erro'  <OBJ/BSS>
+  000adec8  .word 0x72 'r...'
+  000adecc  .word 0x61766e49 'Inva'  <OBJ/BSS>
+  000aded0  .word 0x2064696c 'lid '
+  000aded4  .word 0x746e6f63 'cont'  <OBJ/BSS>
+  000aded8  .word 0x746e65 'ent.'
+  000adedc  .word 0x61766e49 'Inva'  <OBJ/BSS>
+  000adee0  .word 0x2064696c 'lid '
+  000adee4  .word 0x72646461 'addr'  <OBJ/BSS>
+  000adee8  .word 0x737365 'ess.'
+  000adeec  .word 0x73616c46 'Flas'  <OBJ/BSS>
+  000adef0  .word 0x72652068 'h er'  <OBJ/BSS>
+  000adef4  .word 0x20657361 'ase '
+  000adef8  .word 0x6f727265 'erro'  <OBJ/BSS>
+  000adefc  .word 0x72 'r...'
+  000adf00  .word 0x73616c46 'Flas'  <OBJ/BSS>
+  000adf04  .word 0x72702068 'h pr'  <OBJ/BSS>
+  000adf08  .word 0x6172676f 'ogra'  <OBJ/BSS>
+  000adf0c  .word 0x6e696d6d 'mmin'  <OBJ/BSS>
+  000adf10  .word 0x72652067 'g er'  <OBJ/BSS>
+  000adf14  .word 0x726f72 'ror.'
+  000adf18  .word 0x73616c46 'Flas'  <OBJ/BSS>
+  000adf1c  .word 0x65762068 'h ve'  <OBJ/BSS>
+  000adf20  .word 0x79666972 'rify'  <OBJ/BSS>
+  000adf24  .word 0x72726520 ' err'  <OBJ/BSS>
+  000adf28  .word 0x726f 'or..'
+  000adf2c  .word 0x61766e49 'Inva'  <OBJ/BSS>
+  000adf30  .word 0x2064696c 'lid '
+  000adf34  .word 0x64726168 'hard'  <OBJ/BSS>
+  000adf38  .word 0x65726177 'ware'  <OBJ/BSS>
+  000adf3c  .word 0x0 '....'
+  000adf40  .word 0x61766e49 'Inva'  <OBJ/BSS>
+  000adf44  .word 0x2064696c 'lid '
+  000adf48  .word 0x656c6966 'file'  <OBJ/BSS>
+  000adf4c  .word 0x0 '....'
+  000adf50  .word 0x61766e49 'Inva'  <OBJ/BSS>
+  000adf54  .word 0x2064696c 'lid '
+  000adf58  .word 0x20435243 'CRC '
+  000adf5c  .word 0x66206e69 'in f'  <OBJ/BSS>
+  000adf60  .word 0x656c69 'ile.'
+  000adf64  .word 0x6e6b6e55 'Unkn'  <OBJ/BSS>
+  000adf68  .word 0x206e776f 'own '
+  000adf6c  .word 0x6f727265 'erro'  <OBJ/BSS>
+  000adf70  .word 0x72 'r...'
+  000adf74  .word 0x656c6946 'File'  <OBJ/BSS>
+  000adf78  .word 0x63757320 ' suc'  <OBJ/BSS>
+  000adf7c  .word 0x73736563 'cess'  <OBJ/BSS>
+  000adf80  .word 0x6c6c7566 'full'  <OBJ/BSS>
+  000adf84  .word 0x70752079 'y up'  <OBJ/BSS>
+  000adf88  .word 0x64616f6c 'load'  <OBJ/BSS>
+  000adf8c  .word 0x6465 'ed..'
+  000adf90  .word 0x6b6f 'ok..'
+  000adf94  .word 0x65746e49 'Inte'  <OBJ/BSS>
+  000adf98  .word 0x6c616e72 'rnal'  <OBJ/BSS>
+  000adf9c  .word 0x72726520 ' err'  <OBJ/BSS>
+  000adfa0  .word 0x752f726f 'or/u'  <OBJ/BSS>
+  000adfa4  .word 0x696e696e 'nini'  <OBJ/BSS>
+  000adfa8  .word 0x6c616974 'tial'  <OBJ/BSS>
+  000adfac  .word 0x64657a69 'ized'  <OBJ/BSS>
+  000adfb0  .word 0x0 '....'
+  000adfb4  .word 0xe5940040  <OBJ/BSS>
+  000adfb8  .word 0xe28f2058  <OBJ/BSS>
+  000adfbc  .word 0xe28f1064  <OBJ/BSS>
+  000adfc0  .word 0xebff8a6c  <OBJ/BSS>
+  000adfc4  .word 0xea00000d  <OBJ/BSS>
+  000adfc8  .word 0xe5940040  <OBJ/BSS>
+  000adfcc  .word 0xe28f205c  <OBJ/BSS>
+  000adfd0  .word 0xe28f1050  <OBJ/BSS>
+  000adfd4  .word 0xebff8a67  <OBJ/BSS>
+  000adfd8  .word 0xea000008  <OBJ/BSS>
+  000adfdc  .word 0xe5940040  <OBJ/BSS>
+  000adfe0  .word 0xe24f2f4d  <OBJ/BSS>
+  000adfe4  .word 0xe28f103c  <OBJ/BSS>
+  000adfe8  .word 0xebff8a62  <OBJ/BSS>
+  000adfec  .word 0xea000003  <OBJ/BSS>
+  000adff0  .word 0xe5940040  <OBJ/BSS>
+  000adff4  .word 0xe28f2058  <OBJ/BSS>
+  000adff8  .word 0xe28f1028  <OBJ/BSS>
+  000adffc  .word 0xebff8a5d  <OBJ/BSS>
+  000ae000  cmp r6,#0x0
+  000ae004  ldreq r0,[0xadeac]
+  000ae008  bleq 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000ae00c  cpy r0,r6
+  000ae010  add sp,sp,#0xb8
+  000ae014  ldmia sp!,{r4,r5,r6,pc}
+  000ae018  .word 0x65746e49 'Inte'  <OBJ/BSS>
+  000ae01c  .word 0x6c616e72 'rnal'  <OBJ/BSS>
+  000ae020  .word 0x6d656d20 ' mem'  <OBJ/BSS>
+  000ae024  .word 0x2079726f 'ory '
+  000ae028  .word 0x6f727265 'erro'  <OBJ/BSS>
+  000ae02c  .word 0x72 'r...'
+  000ae030  .word 0x6f727245 'Erro'  <OBJ/BSS>
+  000ae034  .word 0x65722072 'r re'  <OBJ/BSS>
+  000ae038  .word 0x76696563 'ceiv'  <OBJ/BSS>
+  000ae03c  .word 0x20676e69 'ing '
+  000ae040  .word 0x656c6966 'file'  <OBJ/BSS>
+  000ae044  .word 0x6142203a ': Ba'  <OBJ/BSS>
+  000ae048  .word 0x6f632064 'd co'  <OBJ/BSS>
+  000ae04c  .word 0x6e65746e 'nten'  <OBJ/BSS>
+  000ae050  .word 0x74 't...'
+  000ae054  .word 0x656c6946 'File'  <OBJ/BSS>
+  000ae058  .word 0x6a657220 ' rej'  <OBJ/BSS>
+  000ae05c  .word 0x65746365 'ecte'  <OBJ/BSS>
+  000ae060  .word 0x64 'd...'
+  000ae064  .word 0xe92d4070  <OBJ/BSS>
+
+############ ARM range ae064..ae220
+  000ae064  stmdb sp!,{r4,r5,r6,lr}
+  000ae068  sub sp,sp,#0x30
+  000ae06c  mov r0,#0x6
+  000ae070  cpy r6,r1
+  000ae074  str r0,[sp,#0x24]
+  000ae078  ldr r0,[0xae1ec]
+  000ae07c  add r1,sp,#0x28
+  000ae080  blx 0x001821e8   ; ref->001821e8 = 0xcb513
+  000ae084  add r2,sp,#0x24
+  000ae088  add r1,sp,#0x10
+  000ae08c  add r0,sp,#0x28
+  000ae090  blx 0x0018adc4   ; ref->0018adc4 = 0x5b570
+  000ae094  cmp r0,#0x0
+  000ae098  beq 0x000ae0a8   ; ref->000ae0a8 = 0xe59f0140  <OBJ/BSS>
+  000ae09c  mov r0,#0x0
+  000ae0a0  str r0,[sp,#0x10]
+  000ae0a4  str r0,[sp,#0x14]
+  000ae0a8  ldr r0,[0xae1f0]
+  000ae0ac  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae0b0  mov r4,#0x0
+  000ae0b4  add r5,sp,#0x10
+  000ae0b8  ldrb r1,[r5,r4]
+  000ae0bc  ldr r0,[0xae1f4]
+  000ae0c0  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae0c4  add r4,r4,#0x1
+  000ae0c8  cmp r4,#0x5
+  000ae0cc  blt 0x000ae0b8   ; ref->000ae0b8 = 0xe7d51004  <OBJ/BSS>
+  000ae0d0  ldrb r1,[sp,#0x15]
+  000ae0d4  ldr r0,[0xae1f8]
+  000ae0d8  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae0dc  cpy r0,r6
+  000ae0e0  blx 0x000034d0   ; ref->000034d0 = 0x1c44b530
+  000ae0e4  cmp r0,#0x11
+  000ae0e8  beq 0x000ae100   ; ref->000ae100 = 0xe28d0022  <OBJ/BSS>
+  000ae0ec  ldr r0,[0xae1fc]
+  000ae0f0  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae0f4  mov r0,#0x0
+  000ae0f8  add sp,sp,#0x30
+  000ae0fc  ldmia sp!,{r4,r5,r6,pc}
+  000ae100  add r0,sp,#0x22
+  000ae104  add r2,sp,#0x1c
+  000ae108  str r0,[sp,#0xc]
+  000ae10c  str r2,[sp,#0x0]
+  000ae110  add r1,sp,#0x1e
+  000ae114  add r3,sp,#0x20
+  000ae118  add r12,sp,#0x4
+  000ae11c  stmia r12,{r1,r3}
+  000ae120  add r4,sp,#0x18
+  000ae124  ldr r1,[0xae200]
+  000ae128  add r3,sp,#0x1a
+  000ae12c  cpy r2,r4
+  000ae130  cpy r0,r6
+  000ae134  blx 0x00002f10   ; ref->00002f10 = 0xb500b40f  <OBJ/BSS>
+  000ae138  cmp r0,#0x6
+  000ae13c  beq 0x000ae154   ; ref->000ae154 = 0xe59f00ac  <OBJ/BSS>
+  000ae140  ldr r0,[0xae204]
+  000ae144  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae148  mov r0,#0x0
+  000ae14c  add sp,sp,#0x30
+  000ae150  ldmia sp!,{r4,r5,r6,pc}
+  000ae154  ldr r0,[0xae208]
+  000ae158  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae15c  mov r6,#0x0
+  000ae160  add r0,r4,r6, lsl #0x1
+  000ae164  ldrsh r1,[r0,#0x0]
+  000ae168  ldr r0,[0xae1f4]
+  000ae16c  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae170  add r6,r6,#0x1
+  000ae174  cmp r6,#0x5
+  000ae178  blt 0x000ae160   ; ref->000ae160 = 0xe0840086  <OBJ/BSS>
+  000ae17c  ldrsh r1,[sp,#0x22]
+  000ae180  ldr r0,[0xae20c]
+  000ae184  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae188  ldrh r0,[sp,#0x18]
+  000ae18c  mov r1,#0x2
+  000ae190  strb r0,[sp,#0x10]
+  000ae194  ldrsh r0,[sp,#0x1a]
+  000ae198  ldrh r2,[r4,#0x4]!
+  000ae19c  subs r1,r1,#0x1
+  000ae1a0  strb r0,[r5,#0x1]
+  000ae1a4  ldrsh r0,[r4,#0x2]
+  000ae1a8  strb r2,[r5,#0x2]!
+  000ae1ac  bne 0x000ae198   ; ref->000ae198 = 0xe1f420b4  <OBJ/BSS>
+  000ae1b0  ldrh r0,[sp,#0x22]
+  000ae1b4  mov r2,#0x6
+  000ae1b8  add r1,sp,#0x10
+  000ae1bc  strb r0,[sp,#0x15]
+  000ae1c0  add r0,sp,#0x28
+  000ae1c4  blx 0x001ac42c   ; ref->001ac42c = 0x5b570
+  000ae1c8  cmp r0,#0x0
+  000ae1cc  moveq r0,#0x1
+  000ae1d0  addeq sp,sp,#0x30
+  000ae1d4  ldmiaeq sp!,{r4,r5,r6,pc}
+  000ae1d8  ldr r0,[0xae210]
+  000ae1dc  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000ae1e0  mov r0,#0x0
+  000ae1e4  add sp,sp,#0x30
+  000ae1e8  ldmia sp!,{r4,r5,r6,pc}
+  000ae1ec  .word 0x4d414330 '0CAM'
+  000ae1f0  .word 0x601edaa8  (ptr 1e7b24)
+  000ae1f4  .word 0x601edab8  (ptr 1e7b34)
+  000ae1f8  .word 0x601edac0  (ptr 1e7b3c)
+  000ae1fc  .word 0x601edac8  (ptr 1e7b44)
+  000ae200  .word 0x601edaf4  (ptr 1e7b70)
+  000ae204  .word 0x601edb14  (ptr 1e7b90)
+  000ae208  .word 0x601edb30  (ptr 1e7bac)
+  000ae20c  .word 0x601edb3c  (ptr 1e7bb8)
+  000ae210  .word 0x601edb44  (ptr 1e7bc0)
+  000ae214  .word 0xe59f0000  <OBJ/BSS>
+  000ae218  .word 0xea0333b4  <OBJ/BSS>
+  000ae21c  .word 0x60405f30 '0_@`'  <OBJ/BSS>
+  000ae220  .word 0xe92d41ff  <OBJ/BSS>
+
+############ ARM range ae220..ae318
+  000ae220  stmdb sp!,{r0,r1,r2,r3,r4,r5,r6,r7,r8,lr}
+  000ae224  ldr r1,[sp,#0x4]
+  000ae228  cpy r4,r0
+  000ae22c  cpy r6,r2
+  000ae230  blx 0x0009b6f8   ; ref->0009b6f8 = 0x9100b5f8  <OBJ/BSS>
+  000ae234  mov r0,#0x2f
+  000ae238  strb r0,[r6,#0x0]
+  000ae23c  mov r1,#0x0
+  000ae240  add r0,r4,#0x4
+  000ae244  strb r1,[r6,#0x1]
+  000ae248  cpy r5,r0
+  000ae24c  mvn r1,#0x0
+  000ae250  bl 0x0017afd4   ; ref->0017afd4 = 0xe92d4070  <OBJ/BSS>
+  000ae254  add r1,sp,#0x4
+  000ae258  add r0,r4,#0x44
+  000ae25c  bl 0x001dafb8   ; ref->001dafb8 = 0xe92d41f0  <OBJ/BSS>
+  000ae260  ldrb r7,[r0,#0x0]
+  000ae264  cpy r0,r5
+  000ae268  bl 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000ae26c  ldr r1,[sp,#0x4]
+  000ae270  cpy r0,r4
+  000ae274  blx 0x0009b6d0   ; ref->0009b6d0 = 0x4b573
+  000ae278  cmp r7,#0x6
+  000ae27c  cpy r5,r0
+  000ae280  ldrcc pc,[pc,r7,lsl #0x2]
+  000ae284  b 0x000ae2ac   ; ref->000ae2ac = 0xe28dd010  <OBJ/BSS>
+  000ae288  .word 0x600b422c  (ptr ae2a8)
+  000ae28c  .word 0x600b4270  (ptr ae2ec)
+  000ae290  .word 0x600b4220  (ptr ae29c)
+  000ae294  .word 0x600b4234  (ptr ae2b0)
+  000ae298  .word 0x600b4248  (ptr ae2c4)
+  000ae29c  .word 0x600b425c  (ptr ae2d8)
+  000ae2a0  .word 0xe1a01000  <OBJ/BSS>
+  000ae2a4  .word 0xe1a00004  <OBJ/BSS>
+  000ae2a8  .word 0xeb00001a  <OBJ/BSS>
+  000ae2ac  add sp,sp,#0x10
+  000ae2b0  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  000ae2b4  .word 0xe1a01000  <OBJ/BSS>
+  000ae2b8  .word 0xe1a00004  <OBJ/BSS>
+  000ae2bc  .word 0xeb000112  <OBJ/BSS>
+  000ae2c0  .word 0xe28dd010  <OBJ/BSS>
+  000ae2c4  .word 0xe8bd81f0  <OBJ/BSS>
+  000ae2c8  .word 0xe1a01000  <OBJ/BSS>
+  000ae2cc  .word 0xe1a00004  <OBJ/BSS>
+  000ae2d0  .word 0xeb000ad1  <OBJ/BSS>
+  000ae2d4  .word 0xe28dd010  <OBJ/BSS>
+  000ae2d8  .word 0xe8bd81f0  <OBJ/BSS>
+  000ae2dc  .word 0xe1a01000  <OBJ/BSS>
+  000ae2e0  .word 0xe1a00004  <OBJ/BSS>
+  000ae2e4  .word 0xeb000736  <OBJ/BSS>
+  000ae2e8  .word 0xe28dd010  <OBJ/BSS>
+  000ae2ec  .word 0xe8bd81f0  <OBJ/BSS>
+  000ae2f0  .word 0xe28f1018  <OBJ/BSS>
+  000ae2f4  .word 0xe1a00006  <OBJ/BSS>
+  000ae2f8  .word 0xeb02fda6  <OBJ/BSS>
+  000ae2fc  .word 0xe1a01005  <OBJ/BSS>
+  000ae300  .word 0xe1a00004  <OBJ/BSS>
+  000ae304  .word 0xebfffe64  <OBJ/BSS>
+  000ae308  .word 0xe28dd010  <OBJ/BSS>
+  000ae30c  .word 0xe8bd81f0  <OBJ/BSS>
+  000ae310  .word 0x7365722f '/res'  <OBJ/BSS>
+  000ae314  .word 0x746c75 'ult.'
+  000ae318  .word 0xe92d41f0  <OBJ/BSS>

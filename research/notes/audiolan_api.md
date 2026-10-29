@@ -53,3 +53,4 @@ Firmware update : `POST /api/fileupload` multipart, champ `uploadedFile`, ≤ 16
 - SDP async (sans clock-domain/ts-refclk/sync-time/mediaclk) passe la gate PTP -> reception (status 13 pendant resolve, puis flux).
 - streamPath vide = desabonne le canal. Teste sur 24 canaux et 1/2 (pairs) : fonctionne.
 - sender: fake_aes67_sender.py --rtsp <port> --async-sdp + MdnsAdvertiser.
+- ROUTING: streamPath permet le mapping arbitraire streamch->cartech (y compris duplication d'un canal sur plusieurs sorties). Ex: carte1<-devin-test/2, carte2<-devin-test/1 = swap stereo OK.
