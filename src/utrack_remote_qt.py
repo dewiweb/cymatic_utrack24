@@ -327,7 +327,7 @@ class Win(QMainWindow):
 
     def _matrix(self):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(10)
-        v.addWidget(QLabel("Source des entrées — écriture SDS inputselect ; l'état n'est pas lisible (suivi des commandes envoyées)",objectName='info'))
+        v.addWidget(QLabel("Source des entrées — état lu en live via CopperLan 0xf050 ; écriture SDS inputselect",objectName='info'))
         self.mcells=[];self.mbtns=[]
         grd=QGridLayout();grd.setSpacing(6)
         for blk in range(3):
@@ -384,8 +384,13 @@ class Win(QMainWindow):
         threading.Thread(target=run,daemon=True).start()
 
     def _fill_matrix(self,st):
+        sel=self.u.input_select() if self.u else None
         for ch,lb in enumerate(self.mcells):
-            m=self._matrix_state[ch]
+            blk=ch//8
+            if sel is not None:
+                m='digital' if sel[blk] else 'analog'
+            else:
+                m=self._matrix_state[ch]
             col='#2a6e3a' if m=='analog' else '#2a4e8e' if m=='digital' else '#333'
             txt={'analog':'A','digital':'D'}.get(m,'?')
             lb.setStyleSheet('border:1px solid #444;border-radius:4px;background:%s;color:#fff;'%col)

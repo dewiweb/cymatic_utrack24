@@ -21,6 +21,7 @@ class Fake:
                     0xf005:(None,'24 Ch',0),0xf040:(None,'2026-10-28',0)}
     def __getattr__(self,n):
         if n=='ensure_alive':return lambda *a:None
+        if n=='input_select':return lambda *a:None
         def f(*a):self.calls.append((n,)+a)
         return f
 

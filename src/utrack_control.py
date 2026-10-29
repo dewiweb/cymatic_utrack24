@@ -188,6 +188,22 @@ class UTrackControl:
         self.alive=False
         if self.s:self.s.close()
 
+    # status word 0xf050 "UTrack Operation Status" (cf ghidra_utrack_notify.md):
+    # bit0=sync lock, bits1-3=input-select mask (3 blocs de 8), bits4-5=channelmode,
+    # bits8-10=digital board id (1=MADI 2=ADAT 3=AudioLAN)
+    def op_status(self):
+        with self.slock:
+            v=self.state.get(0xf050)
+        if not v:return None
+        raw=v[1] if isinstance(v,(list,tuple)) and len(v)>1 else v
+        try:return int(str(raw))
+        except:return None
+    def input_select(self):
+        s=self.op_status()
+        if s is None:return None
+        m=(s>>1)&0x7
+        return [bool(m&1),bool(m&2),bool(m&4)]  # True=digital pour blocs 1,2,3
+
 if __name__=='__main__':
     a=sys.argv[1:]
     if not a:sys.exit(__doc__)
