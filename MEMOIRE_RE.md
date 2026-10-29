@@ -1,5 +1,24 @@
 # MEMOIRE RE — Cymatic uTrack24 / CopperLan (relire en entier apres reset)
 
+## !!! INDEX — rapports firmware de reference (nov 2026)
+Les analyses Ghidra des DEUX firmwares sont terminees et documentees dans research/notes/ :
+- ghidra_utrack_map.md      = carte globale uTrack (50 commandes SDS, CnE, ~90 controles
+                              CopperLan declares par FUN_000a6464, threads, boot)
+- ghidra_utrack_dsp.md      = handlers SDS, inputselect (*ctx+0x7c bits24-26, SPI shift-reg),
+                              metres e0xx = peak-detect ARM, MonitorBoost mixer+0x114,
+                              status word @0x60401A98 (bits1-3=input-select, 4-5=channelmode)
+- ghidra_utrack_recorder.md = FileStreamingInterface FUN_0012424c, WAV encoder (4 kernels,
+                              finalisation async), takes TakeNNNN/.set XML+segments wav,
+                              FAT32 uniquement, transport 0xd000=3stop/4play/5rec
+- ghidra_audiolan_map.md    = carte globale carte (SDS, CnE, HTTP, threads) + RTSP CLIENT
+                              DESCRIBE rtsp://<ip>/by-name/<StreamName> = souscription
+                              native + ARCProtocol/SPI = canal hote<->carte complet
+- ghidra_audiolan_thumb.md  = gating receveur AES67 (ordre: rate -> multicast -> domaine
+                              PTP -> codec -> decodeur libre), status 10=Waiting 12=Receiving
+                              13=Invalid PTP Domain, SDP sans lignes PTP = async (check saute)
+- hardware_analysis.md      = les DEUX tournent sur SoC BridgeCo BeBoB7 (ARM9 + moteurs
+                              WARP); AudioLAN = meme OS en esclave SPI + frontend AES67
+
 ## OBJECTIF
 Remplacer uRemote/uTool2 par notre outil (Qt GUI). Controle du uTrack24
 (transport, mixer 24ch, metering, monitoring, routing AES67).
@@ -170,7 +189,8 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - AnalogInputs Inputs00to07=3/08to15=4/16to23=5 = descripteurs hardware, PAS la selection.
 - 0xb202 = MIDI offset (-11ms), pas un delay monitor.
 - Mode USB: 0 controle CopperLan; SDS toujours actif.
-- Etat courant inputselect: pas d attribut cne dedie trouve -> probablement interne DSP/UI.
+- Etat inputselect: status word @0x60401A98 bits1-3 = masque blocs (push 4437);
+  getters CNE persparam AnalogInputs/InputsXXtoYY (mirror RAM). Voir ghidra_utrack_dsp.md.
 
 ## inputselect - verite firmware (FUN_6013dc64/6017d894/6017ee88)
 - inputselect "1|2|3|all" -> bitmask blocs (1,2,4,7); "analog"=0 "digital"=1.
@@ -182,7 +202,7 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
 - Diff ls -e -r cne/AppSettings analog vs digital: aucun changement -> etat pas dans AppSettings (dump: utrack_appsettings_digital.txt).
 - Reste: persparam, etat UI/DSP, ou lecteurs de ctx+7c a trouver.
  
-- .set = XML: monitor_volume/mute/pan + output_level/mute/channel par canal; PAS de champ input-select (reglage global, pas par prise). Piste restante: capture uRemote du panneau Inputs -> controle CopperLan non mappe.
+- .set = XML: monitor_volume/mute/pan + output_level/mute/channel par canal; PAS de champ input-select (reglage global, pas par prise). Etat live = status word 0x60401A98 bits1-3 (push 4437).
  
 - FUN_6009b528 = chemin SDS->setter: ecrire AnalogInputs/InputsXXtoYY pousse shadow param_1+0x1f0; si valeur==index bloc -> FUN_6017d894(bloc,0=analog); sinon cVar1(param_1+0x1fc): 1->FUN_6017d870(offset canal), 2|3->FUN_6017d894(bloc,1=digital).
 - set Inputs00to07=0 accepte et relu=0; set=3 accepte. Vu-metres inchanges dans les 2 cas -> l attribut SDS est une config persistante, son application live non declenchee par le seul set (peut-etre au boot ou via autre proxy).
@@ -190,4 +210,5 @@ Outils: src/utrack_control.py, research/tools/capture_loopback.py (port=), send_
  
 - PERCEE: input-select expose en CopperLan! 0xe000-0xe017 = source entree par canal (1=analog->0=digital quand inputselect all digital). 0xe018/19 tjrs 0 (canaux 25/26 monitor). Valeurs 2 sur e00f/e016 = 3e etat a decoder. Getter firmware FUN_6017da50 pack bits24-26 ctx+0x7c; publish via FUN_600fc794->FUN_600613bc (notif CopperLan, objet 0x60405aec tag AMES).
  
-- Ecriture 0xe000 par 8437/ctrl et 4237/num: refusee (lecture seule). Lecture OK, ecriture = SDS inputselect. Boucle matrice complete: read CopperLan e0xx + write SDS.
+- Ecriture 0xe0xx refusee (lecture seule). Selection se fait par SDS inputselect.
+  Boucle matrice complete: read CopperLan status word + write SDS.

@@ -13,7 +13,25 @@ Objet : État des lieux complet pour développer un logiciel de remplacement (uR
 
 ## 2. Architecture réelle du système (analyse des firmwares)
 
-Les deux firmwares `.bcd` (conteneur propriétaire `BcOd`, code **ARM 32 bits** en clair) ont été téléchargés et analysés par extraction de chaînes.
+**Analyse complète faite — voir les rapports détaillés dans `research/notes/`** :
+
+| Rapport | Contenu |
+|---|---|
+| `ghidra_utrack_map.md` | Carte globale uTrack24 — ~50 commandes SDS (nom→handler+usage), arbre CnE, ~90 contrôles CopperLan déclarés par `FUN_000a6464`, ~20 threads RTOS, boot, détection cartes optionnelles |
+| `ghidra_utrack_dsp.md` | Handlers SDS, état input-select (`*ctx+0x7c` bits 24-26 + status word `0x60401A98`), mètres `e0xx` (peak-detect ARM), MonitorBoost, mixer |
+| `ghidra_utrack_recorder.md` | Moteur d'enregistrement — `FileStreamingInterface` `FUN_0012424c`, encodeur WAV (4 kernels, finalisation async), structure takes (`TakeNNNN/` + `.set` XML + segments `_NNNN_.wav` 4 Go/12 h), FS = FAT32 uniquement, transport CopperLan (`0xd000`: 3=stop/4=play/5=rec) |
+| `ghidra_audiolan_map.md` | Carte globale AudioLAN — SDS, CnE, RTSP, HTTP, threads, classes, SPI |
+| `ghidra_audiolan_thumb.md` | Module RAVENNA Thumb — gating receveur (ordre : sample-rate → multicast → domaine PTP → codec → décodeur libre), codes statut décodés (10=Waiting, 12=Receiving, 13=Invalid PTP Domain), conditions d'acceptation des paquets |
+
+### Découvertes architecturales clés
+
+- **Les deux firmwares = même plateforme BridgeCo BeBoB 7** (SoC audio ARM9 + moteurs DSP propriétaires `WARP`) — l'AudioLAN n'est pas une carte étrangère mais le **même OS décliné en esclave SPI** du uTrack, avec frontend AES67 ajouté ;
+- **Souscription native RAVENNA résolue** : la carte est *cliente* RTSP — `DESCRIBE rtsp://<ip>/by-name/<StreamName>` → SDP → décodeur. La voie propre pour que nos flux soient découverts sans SDP manuel ;
+- **Canal hôte↔carte** : `ARCProtocol` sur `/dev/spiSlave` (trames checksum+cmd-code) — transporte tout (fichiers, rec/play, config réseau, firmware) ;
+- **AES67 « waiting » expliqué** : décodeur créé mais paquets hors fenêtre playout — les timestamps doivent être PTP-locked *ou* le SDP doit omettre les lignes PTP (→ flux *asynchrone*, check de domaine sauté) ;
+- **État input-select lisible** : status word `0x60401A98` (bits 1-3 = masque des 3 blocs) diffusé dans le flux `4437` — la lecture CopperLan qu'il manquait.
+
+Les deux firmwares `.bcd` (conteneur propriétaire `BcOd`, code **ARM 32 bits** en clair) ont été téléchargés et analysés par extraction de chaînes puis décompilation Ghidra complète.
 
 ### 2.1 Firmware hôte `uTRACK24_Release_4218.bcd` (build 25/09/2018, ~1,3 Mo)
 
@@ -216,11 +234,11 @@ uTool2 = app **JUCE**. Vocabulaire XML complet extrait : namespaces `cymaticaudi
 1. ~~Ports ouverts~~ → **fait** : 23 (Telnet sdsShell, no auth), 80 (HTTP fw-update), 55000 (CHAI binaire).
 2. ~~Rôle du WebSocket~~ → le WS n'est pas sur 55000 ; probablement côté carte AudioLAN ou non exposé sur l'hôte.
 3. ~~Telnet sds://~~ → **confirmé, accès total** : c'est la voie royale (voir §6bis).
-4. Format on-wire exact des trames CHAI (framing, endianness, séquencement) — nécessaire seulement pour les notifications/watchers en temps réel ; capture pcap d'une session uRemote ou désassemblage `CHAIFreeware.dll`/firmware.
+4. ~~Format on-wire CHAI~~ → **fait** : framing `ef51`/Adler, TLV 4337/4437, ~90 contrôles mappés via `FUN_000a6464`, notifications 4437 (~20 Hz mètres).
 5. Ember+ réellement présent ou non sur la carte (option payante Archwave).
 6. Interop AES67 à 24 canaux avec aes67-linux-daemon (limite 8ch du driver ALSA public — contournable via RTP brut ou build OEM Merging).
-7. Structure exacte des fichiers sur clé USB (nécessite une clé insérée — `fs` actuellement vide ; ou analyse des strings uTool2, déjà partielle).
-8. La carte AudioLAN a-t-elle sa propre IP/interface ? (web UI AES67 sur l'IP de la carte, pas celle de l'hôte — à scanner séparément).
+7. ~~Structure fichiers USB~~ → **fait** : `TakeNNNN/` + `<name>.set` XML + segments `_NNNN_.wav` (4 Go/12 h), FAT32 uniquement.
+8. ~~Carte AudioLAN propre IP~~ → **fait** : 192.168.10.175, web UI Angular sur :80, telnet :23, RTSP :554, CopperLan :55000.
 
 ## 8. Aspects légaux
 
@@ -228,14 +246,15 @@ uTool2 = app **JUCE**. Vocabulaire XML complet extrait : namespaces `cymaticaudi
 - L'entité Cymatic Technologies B.V. est liquidée ; l'IP appartient probablement à RIEDEL/cessionnaires — **réutiliser des binaires/strings dans un produit publié serait risqué, ré-implémenter un protocole propre non**.
 - Ne pas redistribuer les firmwares/installateurs Cymatic ; les garder en local comme référence.
 
-## 9. Feuille de route suggérée (révisée post-recon)
+## 9. Feuille de route suggérée (révisée post-recon — état nov 2026)
 
 1. ✅ **Recon réseau** — faite : 23/80/55000 ouverts, Telnet sdsShell non authentifié = accès total.
-2. **Client v0 en Telnet (jours, pas mois)** : wrapper Python/autre autour de `get/set sds://` + `fileplay`/`filerec`/`mixer`/`fs` — couvre 90 % de uRemote (transport, réglages, mixeur, navigation fichiers). Polling `fileplay stat`/`mixer levels` pour le monitoring.
-3. **Capture pcap uRemote↔uTrack24** (installer uRemote 1.2.009, Wireshark) → documenter le framing CHAI sur 55000 ; croiser avec `CHAIFreeware.dll` (radare2 dans `research/tools/`) pour les notifications/watchers temps réel.
-4. **uTool** : insérer une clé, `fs ls` pour voir la structure réelle + export uTool2 → spec XML complète (vocabulaire déjà extrait) → outil de création de songs/playlists.
-5. **AES67/AudioLAN** : scanner l'IP de la carte (web UI AES67), RTSP `DESCRIBE`, puis linuxptp + aes67-linux-daemon / GStreamer → flux 8ch puis 24ch.
-6. **Open source** : contacter `verstaerkermusic` (copperlan-Connect, a déjà ré-implémenté CopperLan) et/ou `not-nef` (placeholder open-uremote).
+2. ✅ **Client SDS** — fait : GUI Qt complète (`src/utrack_remote_qt.py`) couvrant transport, mixer 24ch, mètres, réglages, matrice routage, takes, AudioLAN.
+3. ✅ **Framing CHAI documenté** — fait : `ef51`/Adler, TLV 4337/4437, souscription `c423` → flux ~20 Hz. Voir `ghidra_utrack_map.md` + `MEMOIRE_RE.md`.
+4. ✅ **uTool/fichiers** — fait : structure takes complète via firmware RE (`ghidra_utrack_recorder.md`).
+5. 🔶 **AES67/AudioLAN** — chaîne prouvée (sender 48k L24 → carte → mixer → casque) ; reste : souscription native RTSP `by-name`, domaine PTP, 24ch.
+6. **Open source** — à faire : publier le repo nettoyé ; contacter `verstaerkermusic`/`not-nef` en référence.
+7. **RE restant** : Thumb non-analysé restant (décodeur RX validator, `invokeRequest` RTSP), intégration complète USB-control (IOCTLs `0x8089xxxx`), bus SPI hôte↔carte.
 
 ## 10. Annexe — API HTTP embarquée (extraite de l'app Angular `archWaveApp`)
 
