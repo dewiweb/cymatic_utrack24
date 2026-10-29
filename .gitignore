@@ -6,3 +6,4 @@ __pycache__/
 *.log
 nul
 research/ghidra/utrack_fw_proj/
+research/ghidra/projects/
