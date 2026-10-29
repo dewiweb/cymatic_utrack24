@@ -157,25 +157,35 @@ class MdnsAdvertiser(threading.Thread):
 
     def run(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         try:
-            s.bind(('', 5353))
-            s.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP,
-                         socket.inet_aton('224.0.0.251') + socket.inet_aton(self.ip))
+            s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 255)
+            s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_IF, socket.inet_aton(self.ip))
         except OSError:
             pass
         pkt = self._resp()
+        ls = None
+        try:  # reception des queries (optionnelle si 5353 deja pris)
+            ls = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+            ls.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            ls.bind(('', 5353))
+            ls.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP,
+                          socket.inet_aton('224.0.0.251') + socket.inet_aton(self.ip))
+            ls.settimeout(8.0)
+        except OSError:
+            ls = None
         while True:
             try:
                 s.sendto(pkt, ('224.0.0.251', 5353))
-                s.settimeout(10.0)
-                while True:  # repondre aussi aux queries entrantes
+                if ls:
                     try:
-                        d, a = s.recvfrom(4096)
+                        while True:
+                            d, a = ls.recvfrom(4096)
+                            if b'_rtsp' in d or b'_services' in d:
+                                s.sendto(pkt, ('224.0.0.251', 5353))
                     except socket.timeout:
-                        break
-                    if b'_rtsp' in d or b'_services' in d:
-                        s.sendto(pkt, ('224.0.0.251', 5353))
+                        pass
+                else:
+                    time.sleep(8)
             except OSError:
                 time.sleep(2)
 
