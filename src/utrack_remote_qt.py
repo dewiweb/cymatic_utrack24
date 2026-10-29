@@ -98,9 +98,10 @@ class Win(QMainWindow):
         self.pos=QSpinBox();self.pos.setRange(0,0x7fffffff);self.pos.setMaximumWidth(130)
         self.pos.setToolTip('Position en échantillons (0xd001-3: locate/loop start/loop end)')
         for lab,cid in (('►|','d001'),('⟲A','d002'),('B⟲','d003')):
-            b=QPushButton(lab);b.setFixedHeight(28)
-            b.clicked.connect(lambda _,c=cid:self.u and self.u.num(int(c,16),self.pos.value()))
+            b=QPushButton(lab);b.setFixedHeight(28);b.setEnabled(False)
+            b.setToolTip('0x%s = controle texte (ASCII decimal) — ecriture non encore implementee'%cid)
             tr.addWidget(b)
+        self.pos.setEnabled(False)
         tr.addWidget(self.pos)
         self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
         self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")
@@ -486,11 +487,19 @@ class Win(QMainWindow):
     def _refresh(self):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
-            self.gb_tr.setEnabled(True);self.tabs.setEnabled(True)
-            self.overlay.hide();self.content.setGraphicsEffect(None)
         elif self._conn not in (None,'done'):
             self.statusBar().showMessage('Erreur : %s'%self._conn);self._conn='done'
             self.overlay.hide();self.content.setGraphicsEffect(None)
+        # etat connexion suivi en continu : (re)active l'UI quand la session revient
+        alive=bool(self.u and self.u.alive)
+        if alive and not self.tabs.isEnabled():
+            self.gb_tr.setEnabled(True);self.tabs.setEnabled(True)
+            self.overlay.hide();self.content.setGraphicsEffect(None)
+            self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state))
+        elif not alive and self.tabs.isEnabled() and self._conn=='done':
+            self.gb_tr.setEnabled(False);self.tabs.setEnabled(False)
+            self.statusBar().showMessage('Déconnecté — reconnexion…')
+            if hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         if self._reclog is not None:self.reclog.setPlainText(self._reclog);self._reclog=None
         if self._takes_data is not None:
             d,self._takes_data=self._takes_data,None;self.btn_ref.setEnabled(True)
@@ -512,7 +521,7 @@ class Win(QMainWindow):
         # 0xf050 decode: channelmode + board ID + sync lock
         s=u.op_status()
         if s is not None:
-            cm={0:'normal',1:'mono',2:'stereo',3:'?'}.get((s>>4)&0x3,'?')
+            cm={0:'24In/26Out',1:'24In/2Out',2:'8In/26Out',3:'8In/10Out'}.get((s>>4)&0x3,'?')
             bd={0:'none',1:'MADI',2:'ADAT',3:'AudioLAN'}.get((s>>8)&0x7,'id%d'%((s>>8)&0x7))
             self.hdr_status.setText('%s · %s · %s'%(cm,bd,'lock' if s&1 else 'no lock'))
         if self.u and hasattr(self.u,'ensure_alive'):self.u.ensure_alive()

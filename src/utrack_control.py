@@ -130,7 +130,9 @@ class UTrackControl:
                 except OSError:break
                 last_hb=time.time()
             if time.time()-last>0.4:
-                self._send(frame(b'',0xa));last=time.time()
+                try:self._send(frame(b'',0xa))
+                except OSError:break
+                last=time.time()
         self.alive=False
         try:self.s.close()
         except Exception:pass
