@@ -254,6 +254,7 @@ class Win(QMainWindow):
         self.btn_alan_apply=QPushButton('Appliquer');self.btn_alan_apply.setEnabled(False)
         self.btn_alan_apply.clicked.connect(self._alan_apply);hb.addWidget(self.btn_alan_apply)
         self.btn_alan_reb=QPushButton('Redémarrer');self.btn_alan_reb.clicked.connect(self._alan_reboot);hb.addWidget(self.btn_alan_reb)
+        self.btn_alan_fw=QPushButton('Firmware…');self.btn_alan_fw.clicked.connect(self._alan_upload);hb.addWidget(self.btn_alan_fw)
         self.alan_info=QLabel('—');hb.addWidget(self.alan_info);hb.addStretch(1);v.addLayout(hb)
         self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
         self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
@@ -371,6 +372,19 @@ class Win(QMainWindow):
         if QMessageBox.question(self,'AudioLAN','Redémarrer la carte AudioLAN ?')!=QMessageBox.Yes:return
         try:self.alan.reboot();self.statusBar().showMessage('AudioLAN : reboot envoyé')
         except Exception as e:self.statusBar().showMessage('Erreur reboot : %s'%e)
+
+    def _alan_upload(self):
+        if self.alan is None:return
+        from PySide6.QtWidgets import QFileDialog
+        p,_=QFileDialog.getOpenFileName(self,'Firmware','','BCD (*.bcd);;Tous (*)')
+        if not p:return
+        if QMessageBox.question(self,'Firmware','Flasher %s sur la carte AudioLAN ?\nOpération à risque — coupure de courant interdite.'%p)!=QMessageBox.Yes:return
+        if QMessageBox.question(self,'Firmware','CONFIRMER le flashage ?')!=QMessageBox.Yes:return
+        self.statusBar().showMessage('Upload firmware…')
+        def run():
+            try:self.alan.upload(p);self._stat_txt='Upload envoyé — vérifier installProgress'
+            except Exception as e:self._stat_txt='Erreur upload : %s'%e
+        threading.Thread(target=run,daemon=True).start()
 
     def _alan_apply(self):
         if self.alan is None or not getattr(self,'_edit_items',None):return

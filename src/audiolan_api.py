@@ -94,6 +94,20 @@ class AudioLan:
     def reboot(self,bootloader=False):
         return self.post('/command',{'ArchwaveCMD':{'version':1,'reboot':True,'bootloader':bootloader}})
 
+    def upload(self,fw_path):
+        """POST /api/fileupload multipart -> poll /api/installProgress."""
+        import os,mimetypes,uuid
+        name=os.path.basename(fw_path);data=open(fw_path,'rb').read()
+        b=uuid.uuid4().hex.encode()
+        body=(b'--'+b+b'\r\nContent-Disposition: form-data; name="uploadedFile"; filename="'+name.encode()
+              +b'"\r\nContent-Type: application/octet-stream\r\n\r\n'+data+b'\r\n--'+b+b'--\r\n')
+        req=urllib.request.Request(self.base+'/api/fileupload',data=body,
+              headers={'Content-Type':'multipart/form-data; boundary='+b.decode()})
+        return urllib.request.urlopen(req,timeout=30).read()
+
+    def install_progress(self):
+        return self.get('/api/installProgress')
+
 def _demo():
     a=AudioLan()
     print(json.dumps(a.device_list(),indent=1))
