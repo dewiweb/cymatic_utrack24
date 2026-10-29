@@ -1,0 +1,53 @@
+=========== FUN_000ebb64 @ 000ebb64
+
+void FUN_000ebb64(undefined4 param_1,int param_2,undefined4 param_3)
+
+{
+  func_0x0001ab90((uint)*(ushort *)(param_2 + -2) + param_2 + 0x14,uRam000ebb98,param_3);
+  return;
+}
+
+
+=========== FUN_000ebb9c @ 000ebb9c
+
+void FUN_000ebb9c(undefined4 param_1,int param_2,undefined4 param_3)
+
+{
+  func_0x0001ad68((uint)*(ushort *)(param_2 + -2) + param_2 + 0x14,uRam000ebbd0,param_3);
+  return;
+}
+
+
+=========== FUN_000ebbd4 @ 000ebbd4
+
+void FUN_000ebbd4(int param_1,int param_2,undefined4 param_3)
+
+{
+  func_0x0001b60c((uint)*(ushort *)(param_1 + -2) + param_1 + 0x14,uRam000ebc1c,param_3,
+                  (uint)*(ushort *)(param_2 + -2) + param_2 + 0x14);
+  return;
+}
+
+
+=========== FUN_000ebc20 @ 000ebc20
+
+void FUN_000ebc20(int param_1,int param_2,undefined4 param_3)
+
+{
+  func_0x0001b1f0((uint)*(ushort *)(param_1 + -2) + param_1 + 0x14,uRam000ebc68,param_3,
+                  (uint)*(ushort *)(param_2 + -2) + param_2 + 0x14);
+  return;
+}
+
+
+=========== FUN_000ebc6c @ 000ebc6c
+
+void FUN_000ebc6c(int param_1,int param_2,undefined4 param_3)
+
+{
+  func_0x0001b354((uint)*(ushort *)(param_1 + -2) + param_1 + 0x14,uRam000ebcb4,param_3,
+                  (uint)*(ushort *)(param_2 + -2) + param_2 + 0x14);
+  return;
+}
+
+

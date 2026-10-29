@@ -1,0 +1,10 @@
+@0c9718 = 600f15a8  sym=DAT_000c9718@000c9718  func=-
+@0c9724 = 600f1704  sym=DAT_000c9724@000c9724  func=-
+@11d448 = 600f15a8  sym=DAT_0011d448@0011d448  func=-
+@11d44c = 600f1f14  sym=DAT_0011d44c@0011d44c  func=-
+@11d454 = 600f1f4c  sym=DAT_0011d454@0011d454  func=-
+@141668 = 600f15a8  sym=DAT_00141668@00141668  func=-
+@14166c = 600f166c  sym=DAT_0014166c@0014166c  func=-
+@141670 = 600f16b8  sym=DAT_00141670@00141670  func=-
+@2d7f80 = 600f1d44  sym=-  func=-
+@2d7f8c = 601c95cc  sym=-  func=-

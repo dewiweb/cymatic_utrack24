@@ -1,0 +1,159 @@
+pat 'PLL' @ 000d003c(+0) <- 000cff88 FUN_001fe1c4
+
+=========== FUN_001fe1c4 @ 001fe1c4 via 'PLL'
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_001fe1c4(undefined4 *param_1)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 uVar5;
+  undefined4 uVar6;
+  uint uVar7;
+  uint uVar8;
+  int *piVar9;
+  int iVar10;
+  int iVar11;
+  uint uVar12;
+  undefined8 uVar13;
+  undefined8 uVar14;
+  undefined8 uVar15;
+  uint local_38;
+  uint local_34;
+  undefined4 local_30;
+  char local_2c;
+  undefined3 uStack_2b;
+  
+  piVar9 = (int *)FUN_00011c80(*param_1,param_1[1]);
+  uVar2 = DAT_000cfd68;
+  iVar10 = *piVar9;
+  FUN_000034d8(&local_38,iVar10,DAT_000cfd68);
+  iVar3 = DAT_000cfd6c;
+  iVar4 = (int)((ulonglong)((longlong)DAT_000cfd6c * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_Xtali_input_000cfd5c,iVar10,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+  FUN_00002898(s___31s_000cfd88,s___System_clock_PLL_000cfd72 + 2);
+  uVar5 = FUN_00011c94();
+  uVar6 = FUN_00011c8c();
+  iVar4 = FUN_00011c80(uVar5,uVar6);
+  iVar11 = 0;
+  if ((*(byte *)(iVar4 + 8) & 1) == 0) {
+    iVar1 = 1 << (*(byte *)(iVar4 + 7) & 3);
+    local_38 = (uint)*(byte *)(iVar4 + 5);
+    local_34 = *(byte *)(iVar4 + 6) & 0x1f;
+    uVar13 = FUN_002492ec(iVar1);
+    uVar14 = FUN_002492ec(local_34);
+    uVar15 = FUN_002492ec(local_38);
+    uVar14 = FUN_00248dc0((int)uVar15,(int)((ulonglong)uVar15 >> 0x20),(int)uVar14,
+                          (int)((ulonglong)uVar14 >> 0x20));
+    uVar15 = FUN_002492ec(iVar10);
+    uVar14 = FUN_00249444((int)uVar15,(int)((ulonglong)uVar15 >> 0x20),(int)uVar14,
+                          (int)((ulonglong)uVar14 >> 0x20));
+    FUN_00248dc0((int)uVar14,(int)((ulonglong)uVar14 >> 0x20),(int)uVar13,
+                 (int)((ulonglong)uVar13 >> 0x20));
+    iVar11 = FUN_00249194();
+    FUN_00002898(s__u_Hz_x___u____u_____u____u_Hz_000cfd98,iVar10,local_38,local_34,iVar1,iVar11);
+  }
+  else {
+    FUN_00002898(&DAT_000cfd90);
+  }
+  iVar4 = DAT_000cfdbc;
+  uVar7 = *(uint *)(DAT_000cfdbc + 4) & 7;
+  if (((uVar7 != 0) && (iVar10 = iVar11, uVar7 != 1)) && (iVar10 = DAT_000cfdd8, uVar7 != 3)) {
+    iVar10 = iVar11;
+  }
+  FUN_00002898(s___31s__s_000cfe00,s_Clock_source_selection_000cfde8);
+  uVar7 = *(uint *)(iVar4 + 0x14);
+  uVar12 = *(uint *)(iVar4 + 0x10) & 0x3f;
+  uVar5 = FUN_00006604(iVar10,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_AHB_clock_000cfe0c,uVar5,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = uVar7 & 0xf;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_ARM_clock_000cfe18,uVar5,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = (uVar7 << 0x18) >> 0x1c;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_Warp0_clock_000cfe24,uVar5,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = (uVar7 << 0x14) >> 0x1c;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_SDRAM_clock_000cfe30,uVar5,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = (uVar7 << 0x10) >> 0x1c;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_AV_system_clock_000cfe3c,uVar5,local_38,
+               (iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = (uVar7 << 0xc) >> 0x1c;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_HV_system_clock_000cfe4c,uVar5,local_38,
+               (iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = (uVar7 << 8) >> 0x1c;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_AV_oversampling_clock_000d000c,uVar5,local_38,
+               (iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar8 = (uVar7 << 4) >> 0x1c;
+  if (uVar8 == 0) {
+    uVar8 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar8,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_Warp1_clock_000d0024,uVar5,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+  uVar7 = uVar7 >> 0x1c;
+  if (uVar7 == 0) {
+    uVar7 = 4;
+  }
+  uVar5 = FUN_00006604(iVar10 * uVar7,uVar12);
+  FUN_000034d8(&local_38,uVar5,uVar2);
+  iVar10 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+  FUN_00002898(_DAT_000cfd70,s_Sol_clock_000d0030,uVar5,local_38,(iVar10 >> 6) - (iVar10 >> 0x1f));
+  FUN_00002898(&DAT_000cfd94);
+  local_30 = DAT_000d003c;
+  iVar10 = 0;
+  uStack_2b = (undefined3)((uint)DAT_000d0040 >> 8);
+  local_2c = '0';
+  do {
+    uVar5 = FUN_000d0330();
+    uVar5 = FUN_001b8144(uVar5,iVar10);
+    FUN_000034d8(&local_38,uVar5,uVar2);
+    iVar4 = (int)((ulonglong)((longlong)iVar3 * (longlong)(int)local_34) >> 0x20);
+    FUN_00002898(_DAT_000cfd70,&local_30,uVar5,local_38,(iVar4 >> 6) - (iVar4 >> 0x1f));
+    iVar10 = iVar10 + 1;
+    local_2c = local_2c + '\x01';
+  } while (iVar10 < 5);
+  return;
+}
+
+

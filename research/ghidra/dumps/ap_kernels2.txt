@@ -1,0 +1,611 @@
+=========== FUN_0001ab90 @ 0001ab90
+
+void FUN_0001ab90(uint *param_1,int *param_2,int param_3)
+
+{
+  bool bVar1;
+  uint *puVar2;
+  int iVar3;
+  uint *puVar4;
+  uint uVar5;
+  uint uVar6;
+  undefined4 uVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  undefined4 *puVar13;
+  undefined4 *puVar14;
+  
+  puVar13 = (undefined4 *)param_2[1];
+  iVar9 = 0;
+  iVar10 = 0;
+  puVar4 = (uint *)(*param_2 + -4);
+  iVar3 = 0xc;
+  do {
+    puVar2 = param_1;
+    uVar5 = *puVar2;
+    uVar6 = puVar2[1];
+    uVar8 = uVar5 ^ (int)uVar5 >> 0x1f;
+    if ((int)puVar4[1] < (int)uVar8) {
+      puVar4[1] = uVar8;
+    }
+    puVar4 = puVar4 + 2;
+    uVar8 = uVar6 ^ (int)uVar6 >> 0x1f;
+    if ((int)*puVar4 < (int)uVar8) {
+      *puVar4 = uVar8;
+    }
+    uVar7 = *puVar13;
+    puVar14 = puVar13 + 1;
+    puVar13 = puVar13 + 3;
+    iVar9 = (int)((uint6)((int6)(int)uVar6 * (int6)(short)*puVar14) >> 0x10) +
+            (int)((uint6)((int6)(int)uVar5 * (int6)(short)uVar7) >> 0x10) + iVar9;
+    iVar11 = iVar3 + -1;
+    iVar10 = (int)((uint6)((int6)(int)uVar6 * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar5 * (int6)(short)((uint)uVar7 >> 0x10)) >> 0x10) + iVar10;
+    bVar1 = 0 < iVar3;
+    param_1 = puVar2 + 2;
+    iVar3 = iVar11;
+  } while (iVar11 != 0 && bVar1);
+  iVar3 = SignedSaturate(iVar9 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar3 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  uVar5 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(uVar5,0x20);
+  iVar3 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar3 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  uVar6 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(uVar6,0x20);
+  puVar2[2] = uVar5;
+  puVar2[3] = uVar6;
+  iVar3 = param_3 + -1;
+  do {
+    iVar10 = 0;
+    iVar11 = 0;
+    puVar13 = (undefined4 *)param_2[1];
+    puVar4 = puVar2 + 4;
+    iVar9 = 0xc;
+    do {
+      puVar2 = puVar4;
+      uVar7 = *puVar13;
+      puVar14 = puVar13 + 1;
+      puVar13 = puVar13 + 3;
+      iVar10 = (int)((uint6)((int6)(int)puVar2[1] * (int6)(short)*puVar14) >> 0x10) +
+               (int)((uint6)((int6)(int)*puVar2 * (int6)(short)uVar7) >> 0x10) + iVar10;
+      iVar12 = iVar9 + -1;
+      iVar11 = (int)((uint6)((int6)(int)puVar2[1] * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10)
+               + (int)((uint6)((int6)(int)*puVar2 * (int6)(short)((uint)uVar7 >> 0x10)) >> 0x10) +
+                 iVar11;
+      bVar1 = 0 < iVar9;
+      puVar4 = puVar2 + 2;
+      iVar9 = iVar12;
+    } while (iVar12 != 0 && bVar1);
+    iVar9 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar9 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    uVar5 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(uVar5,0x20);
+    iVar9 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar9 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    uVar6 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(uVar6,0x20);
+    iVar9 = iVar3 + -1;
+    puVar2[2] = uVar5;
+    puVar2[3] = uVar6;
+    bVar1 = 0 < iVar3;
+    iVar3 = iVar9;
+  } while (iVar9 != 0 && bVar1);
+  return;
+}
+
+
+=========== FUN_0001ad68 @ 0001ad68
+
+void FUN_0001ad68(uint *param_1,int *param_2,int param_3)
+
+{
+  bool bVar1;
+  uint *puVar2;
+  int iVar3;
+  uint *puVar4;
+  uint uVar5;
+  uint uVar6;
+  undefined4 uVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  undefined4 *puVar13;
+  undefined4 *puVar14;
+  
+  puVar13 = (undefined4 *)param_2[1];
+  iVar9 = 0;
+  iVar10 = 0;
+  puVar4 = (uint *)(*param_2 + -4);
+  iVar3 = 4;
+  do {
+    puVar2 = param_1;
+    uVar5 = *puVar2;
+    uVar6 = puVar2[1];
+    uVar8 = uVar5 ^ (int)uVar5 >> 0x1f;
+    if ((int)puVar4[1] < (int)uVar8) {
+      puVar4[1] = uVar8;
+    }
+    puVar4 = puVar4 + 2;
+    uVar8 = uVar6 ^ (int)uVar6 >> 0x1f;
+    if ((int)*puVar4 < (int)uVar8) {
+      *puVar4 = uVar8;
+    }
+    uVar7 = *puVar13;
+    puVar14 = puVar13 + 1;
+    puVar13 = puVar13 + 3;
+    iVar9 = (int)((uint6)((int6)(int)uVar6 * (int6)(short)*puVar14) >> 0x10) +
+            (int)((uint6)((int6)(int)uVar5 * (int6)(short)uVar7) >> 0x10) + iVar9;
+    iVar10 = (int)((uint6)((int6)(int)uVar6 * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar5 * (int6)(short)((uint)uVar7 >> 0x10)) >> 0x10) + iVar10;
+    iVar11 = iVar3 + -1;
+    bVar1 = 0 < iVar3;
+    param_1 = puVar2 + 2;
+    iVar3 = iVar11;
+  } while (iVar11 != 0 && bVar1);
+  iVar3 = SignedSaturate(iVar9 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar3 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  uVar5 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(uVar5,0x20);
+  iVar3 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar3 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  uVar6 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(uVar6,0x20);
+  puVar2[2] = uVar5;
+  puVar2[3] = uVar6;
+  iVar3 = param_3 + -1;
+  do {
+    iVar10 = 0;
+    iVar11 = 0;
+    puVar13 = (undefined4 *)param_2[1];
+    puVar4 = puVar2 + 4;
+    iVar9 = 4;
+    do {
+      puVar2 = puVar4;
+      uVar7 = *puVar13;
+      puVar14 = puVar13 + 1;
+      puVar13 = puVar13 + 3;
+      iVar10 = (int)((uint6)((int6)(int)puVar2[1] * (int6)(short)*puVar14) >> 0x10) +
+               (int)((uint6)((int6)(int)*puVar2 * (int6)(short)uVar7) >> 0x10) + iVar10;
+      iVar12 = iVar9 + -1;
+      iVar11 = (int)((uint6)((int6)(int)puVar2[1] * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10)
+               + (int)((uint6)((int6)(int)*puVar2 * (int6)(short)((uint)uVar7 >> 0x10)) >> 0x10) +
+                 iVar11;
+      bVar1 = 0 < iVar9;
+      puVar4 = puVar2 + 2;
+      iVar9 = iVar12;
+    } while (iVar12 != 0 && bVar1);
+    iVar9 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar9 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    uVar5 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(uVar5,0x20);
+    iVar9 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar9 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    uVar6 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(uVar6,0x20);
+    iVar9 = iVar3 + -1;
+    puVar2[2] = uVar5;
+    puVar2[3] = uVar6;
+    bVar1 = 0 < iVar3;
+    iVar3 = iVar9;
+  } while (iVar9 != 0 && bVar1);
+  return;
+}
+
+
+=========== FUN_0001b1f0 @ 0001b1f0
+
+void FUN_0001b1f0(uint *param_1,int *param_2,int param_3,int *param_4)
+
+{
+  bool bVar1;
+  short sVar2;
+  undefined4 *puVar3;
+  int iVar4;
+  uint *puVar5;
+  uint *puVar6;
+  uint uVar7;
+  uint uVar8;
+  uint uVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  int iVar13;
+  undefined4 *puVar14;
+  
+  iVar10 = 0;
+  iVar11 = 0;
+  puVar6 = (uint *)(*param_2 + -4);
+  iVar4 = 0xc;
+  puVar3 = (undefined4 *)param_2[1];
+  do {
+    puVar14 = puVar3;
+    puVar5 = puVar6;
+    uVar7 = *param_1;
+    uVar8 = param_1[1];
+    uVar9 = uVar7 ^ (int)uVar7 >> 0x1f;
+    if ((int)puVar5[1] < (int)uVar9) {
+      puVar5[1] = uVar9;
+    }
+    puVar6 = puVar5 + 2;
+    uVar9 = uVar8 ^ (int)uVar8 >> 0x1f;
+    if ((int)*puVar6 < (int)uVar9) {
+      *puVar6 = uVar9;
+    }
+    iVar10 = (int)((uint6)((int6)(int)uVar8 * (int6)(short)puVar14[1]) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar7 * (int6)(short)*puVar14) >> 0x10) + iVar10;
+    iVar11 = (int)((uint6)((int6)(int)uVar8 * (int6)(short)((uint)puVar14[1] >> 0x10)) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar7 * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10) +
+             iVar11;
+    iVar12 = iVar4 + -1;
+    *param_1 = uVar7 >> 8 | 0x40000000;
+    param_1[1] = uVar8 >> 8 | 0x40000000;
+    param_1 = param_1 + 2;
+    bVar1 = 0 < iVar4;
+    iVar4 = iVar12;
+    puVar3 = puVar14 + 3;
+  } while (iVar12 != 0 && bVar1);
+  iVar4 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar4,0x20);
+  iVar4 = SignedSaturate(iVar4 * 2,0x20);
+  SignedDoesSaturate(iVar4,0x20);
+  iVar4 = SignedSaturate(iVar4 * 2,0x20);
+  SignedDoesSaturate(iVar4,0x20);
+  iVar10 = SignedSaturate(iVar11 * 2,0x20);
+  SignedDoesSaturate(iVar10,0x20);
+  iVar10 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar10,0x20);
+  iVar10 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar10,0x20);
+  sVar2 = (short)puVar14[3];
+  uVar7 = SignedSaturate(((int)((uint6)((int6)*param_4 * (int6)(short)puVar14[4]) >> 0x10) +
+                         (int)((uint6)((int6)iVar4 * (int6)sVar2) >> 0x10)) * 2,0x20);
+  SignedDoesSaturate(uVar7,0x20);
+  uVar8 = SignedSaturate(((int)((uint6)((int6)param_4[1] * (int6)(short)puVar14[4]) >> 0x10) +
+                         (int)((uint6)((int6)iVar10 * (int6)sVar2) >> 0x10)) * 2,0x20);
+  SignedDoesSaturate(uVar8,0x20);
+  param_4[0x18] = uVar7;
+  param_4[0x19] = uVar8;
+  uVar7 = uVar7 ^ (int)uVar7 >> 0x1f;
+  if ((int)puVar5[3] < (int)uVar7) {
+    puVar5[3] = uVar7;
+  }
+  uVar8 = uVar8 ^ (int)uVar8 >> 0x1f;
+  if ((int)puVar5[4] < (int)uVar8) {
+    puVar5[4] = uVar8;
+  }
+  iVar4 = param_3 + -1;
+  do {
+    iVar11 = 0;
+    iVar12 = 0;
+    iVar10 = 0xc;
+    puVar3 = (undefined4 *)param_2[1];
+    do {
+      puVar14 = puVar3;
+      uVar7 = *param_1;
+      uVar8 = param_1[1];
+      iVar11 = (int)((uint6)((int6)(int)uVar8 * (int6)(short)puVar14[1]) >> 0x10) +
+               (int)((uint6)((int6)(int)uVar7 * (int6)(short)*puVar14) >> 0x10) + iVar11;
+      iVar12 = (int)((uint6)((int6)(int)uVar8 * (int6)(short)((uint)puVar14[1] >> 0x10)) >> 0x10) +
+               (int)((uint6)((int6)(int)uVar7 * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10) +
+               iVar12;
+      iVar13 = iVar10 + -1;
+      *param_1 = uVar7 >> 8 | 0x40000000;
+      param_1[1] = uVar8 >> 8 | 0x40000000;
+      param_1 = param_1 + 2;
+      bVar1 = 0 < iVar10;
+      iVar10 = iVar13;
+      puVar3 = puVar14 + 3;
+    } while (iVar13 != 0 && bVar1);
+    iVar10 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar10 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar10 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar11 = SignedSaturate(iVar12 * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    iVar11 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    iVar11 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    sVar2 = (short)puVar14[3];
+    iVar10 = SignedSaturate(((int)((uint6)((int6)param_4[0x1a] * (int6)(short)puVar14[4]) >> 0x10) +
+                            (int)((uint6)((int6)iVar10 * (int6)sVar2) >> 0x10)) * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar11 = SignedSaturate(((int)((uint6)((int6)param_4[0x1b] * (int6)(short)puVar14[4]) >> 0x10) +
+                            (int)((uint6)((int6)iVar11 * (int6)sVar2) >> 0x10)) * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    iVar12 = iVar4 + -1;
+    param_4[0x32] = iVar10;
+    param_4[0x33] = iVar11;
+    bVar1 = 0 < iVar4;
+    iVar4 = iVar12;
+    param_4 = param_4 + 0x1a;
+  } while (iVar12 != 0 && bVar1);
+  return;
+}
+
+
+=========== FUN_0001b354 @ 0001b354
+
+void FUN_0001b354(uint *param_1,int *param_2,int param_3,int *param_4)
+
+{
+  bool bVar1;
+  short sVar2;
+  undefined4 *puVar3;
+  int iVar4;
+  uint *puVar5;
+  uint *puVar6;
+  uint uVar7;
+  uint uVar8;
+  uint uVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  int iVar13;
+  undefined4 *puVar14;
+  
+  iVar10 = 0;
+  iVar11 = 0;
+  puVar6 = (uint *)(*param_2 + -4);
+  iVar4 = 0xc;
+  puVar3 = (undefined4 *)param_2[1];
+  do {
+    puVar14 = puVar3;
+    puVar5 = puVar6;
+    uVar7 = *param_1;
+    uVar8 = param_1[1];
+    param_1 = param_1 + 2;
+    uVar9 = uVar7 ^ (int)uVar7 >> 0x1f;
+    if ((int)puVar5[1] < (int)uVar9) {
+      puVar5[1] = uVar9;
+    }
+    puVar6 = puVar5 + 2;
+    uVar9 = uVar8 ^ (int)uVar8 >> 0x1f;
+    if ((int)*puVar6 < (int)uVar9) {
+      *puVar6 = uVar9;
+    }
+    iVar10 = (int)((uint6)((int6)(int)uVar8 * (int6)(short)puVar14[1]) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar7 * (int6)(short)*puVar14) >> 0x10) + iVar10;
+    iVar11 = (int)((uint6)((int6)(int)uVar8 * (int6)(short)((uint)puVar14[1] >> 0x10)) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar7 * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10) +
+             iVar11;
+    iVar12 = iVar4 + -1;
+    bVar1 = 0 < iVar4;
+    iVar4 = iVar12;
+    puVar3 = puVar14 + 3;
+  } while (iVar12 != 0 && bVar1);
+  iVar4 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar4,0x20);
+  iVar4 = SignedSaturate(iVar4 * 2,0x20);
+  SignedDoesSaturate(iVar4,0x20);
+  iVar4 = SignedSaturate(iVar4 * 2,0x20);
+  SignedDoesSaturate(iVar4,0x20);
+  iVar10 = SignedSaturate(iVar11 * 2,0x20);
+  SignedDoesSaturate(iVar10,0x20);
+  iVar10 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar10,0x20);
+  iVar10 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar10,0x20);
+  sVar2 = (short)puVar14[3];
+  uVar7 = SignedSaturate(((int)((uint6)((int6)*param_4 * (int6)(short)puVar14[4]) >> 0x10) +
+                         (int)((uint6)((int6)iVar4 * (int6)sVar2) >> 0x10)) * 2,0x20);
+  SignedDoesSaturate(uVar7,0x20);
+  uVar8 = SignedSaturate(((int)((uint6)((int6)param_4[1] * (int6)(short)puVar14[4]) >> 0x10) +
+                         (int)((uint6)((int6)iVar10 * (int6)sVar2) >> 0x10)) * 2,0x20);
+  SignedDoesSaturate(uVar8,0x20);
+  param_4[0x18] = uVar7;
+  param_4[0x19] = uVar8;
+  uVar7 = uVar7 ^ (int)uVar7 >> 0x1f;
+  if ((int)puVar5[3] < (int)uVar7) {
+    puVar5[3] = uVar7;
+  }
+  uVar8 = uVar8 ^ (int)uVar8 >> 0x1f;
+  if ((int)puVar5[4] < (int)uVar8) {
+    puVar5[4] = uVar8;
+  }
+  iVar4 = param_3 + -1;
+  do {
+    iVar11 = 0;
+    iVar12 = 0;
+    iVar10 = 0xc;
+    puVar3 = (undefined4 *)param_2[1];
+    do {
+      puVar14 = puVar3;
+      uVar7 = *param_1;
+      puVar6 = param_1 + 1;
+      param_1 = param_1 + 2;
+      iVar11 = (int)((uint6)((int6)(int)*puVar6 * (int6)(short)puVar14[1]) >> 0x10) +
+               (int)((uint6)((int6)(int)uVar7 * (int6)(short)*puVar14) >> 0x10) + iVar11;
+      iVar12 = (int)((uint6)((int6)(int)*puVar6 * (int6)(short)((uint)puVar14[1] >> 0x10)) >> 0x10)
+               + (int)((uint6)((int6)(int)uVar7 * (int6)(short)((uint)*puVar14 >> 0x10)) >> 0x10) +
+                 iVar12;
+      iVar13 = iVar10 + -1;
+      bVar1 = 0 < iVar10;
+      iVar10 = iVar13;
+      puVar3 = puVar14 + 3;
+    } while (iVar13 != 0 && bVar1);
+    iVar10 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar10 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar10 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar11 = SignedSaturate(iVar12 * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    iVar11 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    iVar11 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    sVar2 = (short)puVar14[3];
+    iVar10 = SignedSaturate(((int)((uint6)((int6)param_4[0x1a] * (int6)(short)puVar14[4]) >> 0x10) +
+                            (int)((uint6)((int6)iVar10 * (int6)sVar2) >> 0x10)) * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar11 = SignedSaturate(((int)((uint6)((int6)param_4[0x1b] * (int6)(short)puVar14[4]) >> 0x10) +
+                            (int)((uint6)((int6)iVar11 * (int6)sVar2) >> 0x10)) * 2,0x20);
+    SignedDoesSaturate(iVar11,0x20);
+    iVar12 = iVar4 + -1;
+    param_4[0x32] = iVar10;
+    param_4[0x33] = iVar11;
+    bVar1 = 0 < iVar4;
+    iVar4 = iVar12;
+    param_4 = param_4 + 0x1a;
+  } while (iVar12 != 0 && bVar1);
+  return;
+}
+
+
+=========== FUN_0001b60c @ 0001b60c
+
+void FUN_0001b60c(uint *param_1,int *param_2,int param_3,int *param_4)
+
+{
+  bool bVar1;
+  undefined4 *puVar2;
+  int iVar3;
+  uint *puVar4;
+  uint *puVar5;
+  uint uVar6;
+  uint uVar7;
+  uint uVar8;
+  int iVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  undefined4 *puVar13;
+  
+  iVar9 = 0;
+  iVar10 = 0;
+  puVar5 = (uint *)(*param_2 + -4);
+  iVar3 = 4;
+  puVar2 = (undefined4 *)param_2[1];
+  do {
+    puVar13 = puVar2;
+    puVar4 = puVar5;
+    uVar6 = *param_1;
+    uVar7 = param_1[1];
+    param_1 = param_1 + 2;
+    uVar8 = uVar6 ^ (int)uVar6 >> 0x1f;
+    if ((int)puVar4[1] < (int)uVar8) {
+      puVar4[1] = uVar8;
+    }
+    puVar5 = puVar4 + 2;
+    uVar8 = uVar7 ^ (int)uVar7 >> 0x1f;
+    if ((int)*puVar5 < (int)uVar8) {
+      *puVar5 = uVar8;
+    }
+    iVar9 = (int)((uint6)((int6)(int)uVar7 * (int6)(short)puVar13[1]) >> 0x10) +
+            (int)((uint6)((int6)(int)uVar6 * (int6)(short)*puVar13) >> 0x10) + iVar9;
+    iVar10 = (int)((uint6)((int6)(int)uVar7 * (int6)(short)((uint)puVar13[1] >> 0x10)) >> 0x10) +
+             (int)((uint6)((int6)(int)uVar6 * (int6)(short)((uint)*puVar13 >> 0x10)) >> 0x10) +
+             iVar10;
+    iVar11 = iVar3 + -1;
+    bVar1 = 0 < iVar3;
+    iVar3 = iVar11;
+    puVar2 = puVar13 + 3;
+  } while (iVar11 != 0 && bVar1);
+  iVar3 = SignedSaturate(iVar9 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar3 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar3 = SignedSaturate(iVar3 * 2,0x20);
+  SignedDoesSaturate(iVar3,0x20);
+  iVar9 = SignedSaturate(iVar10 * 2,0x20);
+  SignedDoesSaturate(iVar9,0x20);
+  iVar9 = SignedSaturate(iVar9 * 2,0x20);
+  SignedDoesSaturate(iVar9,0x20);
+  iVar9 = SignedSaturate(iVar9 * 2,0x20);
+  SignedDoesSaturate(iVar9,0x20);
+  uVar6 = SignedSaturate(((int)((uint6)((int6)*param_4 * (int6)(short)puVar13[0x1c]) >> 0x10) +
+                         (int)((uint6)((int6)iVar3 * (int6)(short)puVar13[0x1b]) >> 0x10)) * 2,0x20)
+  ;
+  SignedDoesSaturate(uVar6,0x20);
+  uVar7 = SignedSaturate(((int)((uint6)((int6)param_4[1] * (int6)(short)puVar13[0x1c]) >> 0x10) +
+                         (int)((uint6)((int6)iVar9 * (int6)(short)puVar13[0x1b]) >> 0x10)) * 2,0x20)
+  ;
+  SignedDoesSaturate(uVar7,0x20);
+  param_4[8] = uVar6;
+  param_4[9] = uVar7;
+  uVar6 = uVar6 ^ (int)uVar6 >> 0x1f;
+  if ((int)puVar4[0x13] < (int)uVar6) {
+    puVar4[0x13] = uVar6;
+  }
+  uVar7 = uVar7 ^ (int)uVar7 >> 0x1f;
+  if ((int)puVar4[0x14] < (int)uVar7) {
+    puVar4[0x14] = uVar7;
+  }
+  iVar3 = param_3 + -1;
+  do {
+    iVar10 = 0;
+    iVar11 = 0;
+    iVar9 = 4;
+    puVar2 = (undefined4 *)param_2[1];
+    do {
+      puVar13 = puVar2;
+      uVar6 = *param_1;
+      puVar5 = param_1 + 1;
+      param_1 = param_1 + 2;
+      iVar10 = (int)((uint6)((int6)(int)*puVar5 * (int6)(short)puVar13[1]) >> 0x10) +
+               (int)((uint6)((int6)(int)uVar6 * (int6)(short)*puVar13) >> 0x10) + iVar10;
+      iVar11 = (int)((uint6)((int6)(int)*puVar5 * (int6)(short)((uint)puVar13[1] >> 0x10)) >> 0x10)
+               + (int)((uint6)((int6)(int)uVar6 * (int6)(short)((uint)*puVar13 >> 0x10)) >> 0x10) +
+                 iVar11;
+      iVar12 = iVar9 + -1;
+      bVar1 = 0 < iVar9;
+      iVar9 = iVar12;
+      puVar2 = puVar13 + 3;
+    } while (iVar12 != 0 && bVar1);
+    iVar9 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar9 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar9 = SignedSaturate(iVar9 * 2,0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar10 = SignedSaturate(iVar11 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar10 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar10 = SignedSaturate(iVar10 * 2,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar9 = SignedSaturate(((int)((uint6)((int6)param_4[10] * (int6)(short)puVar13[0x1c]) >> 0x10) +
+                           (int)((uint6)((int6)iVar9 * (int6)(short)puVar13[0x1b]) >> 0x10)) * 2,
+                           0x20);
+    SignedDoesSaturate(iVar9,0x20);
+    iVar10 = SignedSaturate(((int)((uint6)((int6)param_4[0xb] * (int6)(short)puVar13[0x1c]) >> 0x10)
+                            + (int)((uint6)((int6)iVar10 * (int6)(short)puVar13[0x1b]) >> 0x10)) * 2
+                            ,0x20);
+    SignedDoesSaturate(iVar10,0x20);
+    iVar11 = iVar3 + -1;
+    param_4[0x12] = iVar9;
+    param_4[0x13] = iVar10;
+    bVar1 = 0 < iVar3;
+    iVar3 = iVar11;
+    param_4 = param_4 + 10;
+  } while (iVar11 != 0 && bVar1);
+  return;
+}
+
+

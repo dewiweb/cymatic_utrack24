@@ -1,0 +1,114 @@
+=========== FUN_000b43f8 @ 000b43f8
+
+void FUN_000b43f8(undefined4 *param_1)
+
+{
+  *param_1 = DAT_000b4404;
+  return;
+}
+
+
+=========== FUN_001a31d8 @ 001a31d8
+
+undefined4 FUN_001a31d8(int param_1,int param_2,uint param_3)
+
+{
+  undefined4 uVar1;
+  
+  if (param_3 < 9) {
+    if (param_2 == 0) {
+      if (param_3 == 0) {
+        *(undefined1 *)(param_1 + 0x94) = 0;
+      }
+      else {
+        *(byte *)(param_1 + 0x94) = *(byte *)(param_1 + 0x94) & ~(byte)(1 << (param_3 & 0xff));
+      }
+    }
+    else if (param_3 == 0) {
+      *(undefined1 *)(param_1 + 0x94) = 0xff;
+    }
+    else {
+      *(byte *)(param_1 + 0x94) = *(byte *)(param_1 + 0x94) | (byte)(1 << (param_3 & 0xff));
+    }
+    *(undefined1 *)(param_1 + 0x37) = *(undefined1 *)(param_1 + 0x94);
+    uVar1 = FUN_001a2f54(param_1,param_1 + 0x35,3);
+  }
+  else {
+    uVar1 = 0;
+  }
+  return uVar1;
+}
+
+
+=========== FUN_001776c0 @ 001776c0
+
+int FUN_001776c0(int param_1)
+
+{
+  return param_1 + 0x68;
+}
+
+
+=========== FUN_000ec678 @ 000ec678
+
+undefined4 FUN_000ec678(int param_1)
+
+{
+  return *(undefined4 *)(param_1 + 4);
+}
+
+
+=========== FUN_0017157c @ 0017157c
+
+void FUN_0017157c(int param_1,uint param_2,int param_3)
+
+{
+  *(byte *)(param_1 + 0x18) = *(byte *)(param_1 + 0x18) & ~(byte)(1 << (param_2 & 0xff));
+  if (param_3 != 0) {
+    *(byte *)(param_1 + 0x18) = *(byte *)(param_1 + 0x18) | (byte)(1 << (param_2 & 0xff));
+  }
+  FUN_00171250(param_1,param_1 + 0x16,3);
+  return;
+}
+
+
+=========== FUN_00177c0c @ 00177c0c
+
+void FUN_00177c0c(int param_1,undefined4 param_2)
+
+{
+  FUN_00171458(param_1 + 0x340,param_2);
+  return;
+}
+
+
+=========== FUN_00177b7c @ 00177b7c
+
+void FUN_00177b7c(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  FUN_001731f8(param_1 + 0x314,param_2,param_3);
+  return;
+}
+
+
+=========== FUN_00177be8 @ 00177be8
+
+void FUN_00177be8(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  FUN_00173360(param_1 + 0x314,param_2,param_3);
+  return;
+}
+
+
+=========== FUN_00177bcc @ 00177bcc
+
+void FUN_00177bcc(int param_1,undefined4 param_2)
+
+{
+  FUN_001732b4(param_1 + 0x314,param_2);
+  return;
+}
+
+

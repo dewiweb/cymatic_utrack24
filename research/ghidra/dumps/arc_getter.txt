@@ -1,0 +1,10 @@
+
+=========== FUN_00066ba0 callers: [FUN_000b6cbc, FUN_00099014]
+
+undefined4 FUN_00066ba0(void)
+
+{
+  return *DAT_00066bac;
+}
+
+

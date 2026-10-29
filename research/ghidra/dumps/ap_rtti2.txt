@@ -1,0 +1,13 @@
+### StreamingConfiguration_Mixer name@[2952910]
+  typeinfo @2cf080
+### StreamingConfiguration name@[2951325]
+  typeinfo @2ced54
+### USBDecoder name@[]
+### StreamingQuery_GetLevelMeters name@[2953068]
+  typeinfo @2cf0bc
+### DSPAppControl_Custom name@[]
+### AudioDeviceBlock name@[2947921]
+  typeinfo @2ce4a4
+### DSPStreaming name@[]
+### Ringbuffer name@[]
+### FileStreamingInterface name@[]
