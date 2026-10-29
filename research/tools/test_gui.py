@@ -22,6 +22,7 @@ class Fake:
     def __getattr__(self,n):
         if n=='ensure_alive':return lambda *a:None
         if n=='input_select':return lambda *a:None
+        if n=='op_status':return lambda *a:None
         def f(*a):self.calls.append((n,)+a)
         return f
 

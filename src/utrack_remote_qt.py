@@ -86,6 +86,7 @@ class Win(QMainWindow):
         hd=QFrame();hd.setObjectName('card');h=QHBoxLayout(hd);self.hdr={}
         for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date')):
             l=QLabel('%s : —'%name);self.hdr[ctrl]=(l,name);h.addWidget(l);h.addSpacing(18)
+        self.hdr_status=QLabel('—');h.addWidget(self.hdr_status);h.addSpacing(6)
         h.addStretch(1);v.addWidget(hd)
         tr=QHBoxLayout();tr.setSpacing(10)
         for label,fn,oid in (('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec')):
@@ -94,6 +95,13 @@ class Win(QMainWindow):
             elif fn=='stop':b.clicked.connect(self._stop)
             else:b.clicked.connect(lambda _,f=fn:self.u and getattr(self.u,f)())
             tr.addWidget(b)
+        self.pos=QSpinBox();self.pos.setRange(0,0x7fffffff);self.pos.setMaximumWidth(130)
+        self.pos.setToolTip('Position en échantillons (0xd001-3: locate/loop start/loop end)')
+        for lab,cid in (('►|','d001'),('⟲A','d002'),('B⟲','d003')):
+            b=QPushButton(lab);b.setFixedHeight(28)
+            b.clicked.connect(lambda _,c=cid:self.u and self.u.num(int(c,16),self.pos.value()))
+            tr.addWidget(b)
+        tr.addWidget(self.pos)
         self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
         self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
@@ -501,6 +509,12 @@ class Win(QMainWindow):
         e=st.get(0xc000) or st.get(0xf000)
         if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
+        # 0xf050 decode: channelmode + board ID + sync lock
+        s=u.op_status()
+        if s is not None:
+            cm={0:'normal',1:'mono',2:'stereo',3:'?'}.get((s>>4)&0x3,'?')
+            bd={0:'none',1:'MADI',2:'ADAT',3:'AudioLAN'}.get((s>>8)&0x7,'id%d'%((s>>8)&0x7))
+            self.hdr_status.setText('%s · %s · %s'%(cm,bd,'lock' if s&1 else 'no lock'))
         if self.u and hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         self._meters_tick()
         for ch,s in enumerate(self.strips):

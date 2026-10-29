@@ -203,6 +203,19 @@ class UTrackControl:
         if s is None:return None
         m=(s>>1)&0x7
         return [bool(m&1),bool(m&2),bool(m&4)]  # True=digital pour blocs 1,2,3
+    def sync_lock(self):
+        s=self.op_status()
+        return None if s is None else bool(s&1)
+    def channel_mode(self):
+        s=self.op_status()
+        return None if s is None else (s>>4)&0x3
+    def board_id(self):
+        s=self.op_status()
+        return None if s is None else (s>>8)&0x7  # 1=MADI 2=ADAT 3=AudioLAN
+    # transport locate/loop (ghidra_utrack_files.md): echantillons absolus
+    def seek(self,sample):self.num(0xd001,int(sample))
+    def loop_in(self,sample):self.num(0xd002,int(sample))
+    def loop_out(self,sample):self.num(0xd003,int(sample))
 
 if __name__=='__main__':
     a=sys.argv[1:]
