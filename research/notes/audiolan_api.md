@@ -1,5 +1,11 @@
 # AudioLAN (Archwave uMAN AES67) — API JSON/HTTP
 
+> **Référence exhaustive déplacée → [`audiolan_http_api.md`](audiolan_http_api.md)**
+> (schémas GET/POST champ par champ, tables de statuts 0-15, sémantique
+> streamPath/manualSDP, gestion d'erreurs, séquence "Apply all" du webapp,
+> file upload, exemples curl). Ce fichier reste le résumé + journal de
+> découverte ; privilégier la référence pour toute implémentation.
+
 Carte : `uT24-AudioLan-49-00-30` @ `192.168.10.175` (MAC `00:07:F5:49:00:30`), firmware `Main Firmware revision 4078`. Interface web AngularJS `aes67-0.1.2` (lwIP/1.3.1). Bundle JS conservé : `research/assets/audiolan/aes67-0.1.2.js`, page : `research/notes/audiolan_http_root.html`.
 
 ## Ports ouverts (vérifiés par scan TCP, 28/10/2026)
