@@ -77,7 +77,7 @@ class UTrackControl:
         return d
 
     def connect(self):
-        self.s=socket.socket();self.s.connect(self.addr);self.s.settimeout(0.02)
+        self.s=socket.socket();self.s.settimeout(4.0);self.s.connect(self.addr);self.s.settimeout(0.02)
         buf=b''
         for l in open(self.seq_file):
             self._send(bytes.fromhex(l.strip()));buf+=self._drain();time.sleep(0.003)
