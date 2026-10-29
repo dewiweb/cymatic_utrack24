@@ -45,3 +45,11 @@ Firmware update : `POST /api/fileupload` multipart, champ `uploadedFile`, ≤ 16
 - RTSP : `DESCRIBE` une source pour voir le SDP dynamique.
 - VNM 55000 : même protocole CHAI ? Si oui, la carte est pilotable via notre stack CopperLan existant.
 - Captures ANEMAN/ArchControl si dispo pour compléter les champs write.
+
+## Native subscribe VALIDATED (2026-10-29)
+
+- POST /outputs avec `streamPath='<stream>/<ch>'` (1-indexed) persiste si `manualSDP` vide + `manualSDPChannel` present dans le POST.
+- `devin-test` decouvert nativement via mDNS `_rtsp._tcp,_ravenna_session` (instance=name) + RTSP `DESCRIBE /by-name/<name>` -> SDP -> decodeur.
+- SDP async (sans clock-domain/ts-refclk/sync-time/mediaclk) passe la gate PTP -> reception (status 13 pendant resolve, puis flux).
+- streamPath vide = desabonne le canal. Teste sur 24 canaux et 1/2 (pairs) : fonctionne.
+- sender: fake_aes67_sender.py --rtsp <port> --async-sdp + MdnsAdvertiser.
