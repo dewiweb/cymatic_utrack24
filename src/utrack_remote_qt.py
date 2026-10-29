@@ -293,10 +293,21 @@ class Win(QMainWindow):
         self.btn_alan_apply.setEnabled(bool(self._edit_items))
         g3=QTreeWidgetItem(['Sorties (réseau → audio)',''])
         self._alan_out=out.get('ArchwaveAES67',{}).get('outputs',[])
+        streams=sl.get('ArchwaveAES67',{}).get('streams',[])
+        choices=['—']
+        for s in streams:
+            for ch in range(1,int(s.get('channelCount',8))+1):
+                choices.append('%s/%d'%(s.get('name','?'),ch))
+        self._route_boxes=[]
         for o in self._alan_out:
             it=QTreeWidgetItem(g3,[o.get('name','?'),''])
-            leaf(it,'Stream assigné',o,'streamPath')
-        self.atree.addTopLevelItem(g3);g3.setExpanded(False)
+            cb=QComboBox();cb.addItems(choices)
+            cur=o.get('streamPath') or ''
+            ix=cb.findText(cur)
+            cb.setCurrentIndex(ix if ix>=0 else 0)
+            self.atree.setItemWidget(it,1,cb)
+            self._route_boxes.append((cb,o))
+        self.atree.addTopLevelItem(g3);g3.setExpanded(True)
         g4=QTreeWidgetItem(['Streams actifs',''])
         for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
             QTreeWidgetItem(g4,[str(s)[:80],''])
@@ -316,6 +327,12 @@ class Win(QMainWindow):
             else:
                 v=it.text(1)
                 t[k]=int(v) if isinstance(d.get(k),int) and v.lstrip('-').isdigit() else v
+        for cb,o in getattr(self,'_route_boxes',[]):
+            t=idmap.get(id(o))
+            if t is None:continue
+            p=cb.currentText()
+            t['streamPath']='' if p=='—' else p
+            if p!='—':t['manualSDP']=''
         if QMessageBox.question(self,'AudioLAN','Appliquer les modifications sur la carte ?')!=QMessageBox.Yes:return
         self.btn_alan_apply.setEnabled(False);self.statusBar().showMessage('Écriture AudioLAN…')
         def run():
