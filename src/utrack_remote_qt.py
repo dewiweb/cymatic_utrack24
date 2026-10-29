@@ -293,13 +293,32 @@ class Win(QMainWindow):
         leaf(g1,'Masque statique',cfg,'IPmask')
         leaf(g1,'Passerelle statique',cfg,'IPgateway')
         leaf(g1,'Nom',cfg,'name')
+        leaf(g1,'DNS 1',cfg,'IPDNS1');leaf(g1,'DNS 2',cfg,'IPDNS2')
         leaf(g1,'Sample rate',cfg,'samplingRate','str',ro=True)
+        leaf(g1,'Résolution',cfg,'resolution','str',ro=True)
+        leaf(g1,'Mode audio',cfg,'audioMode','str',ro=True)
+        leaf(g1,'Syntonized',cfg,'syntonizedMode','bool')
         pd=cfg.get('playoutDelay') or {}
         leaf(g1,'Playout delay (samples)',pd,'delayInSamples')
         ptp=cfg.get('PTP') or {}
         leaf(g1,'PTP domain',ptp,'domain')
+        leaf(g1,'PTP preferred master',ptp,'preferredMaster','bool')
+        leaf(g1,'PTP slave only',ptp,'slaveOnly','bool')
         self._alan_cfg['playoutDelay']=pd;self._alan_cfg['PTP']=ptp
+        sap=cfg.get('SAP') or {}
+        leaf(g1,'SAP annonces',sap,'SessionAnnouncementEnabled','bool')
+        leaf(g1,'SAP browsing',sap,'BrowsingEnabled','bool')
+        self._alan_cfg['SAP']=sap
         self.atree.addTopLevelItem(g1);g1.setExpanded(True)
+        g0=QTreeWidgetItem(['Système',''])
+        try:
+            sv=self.alan.sw_versions().get('ArchwaveVER',{})
+            for k,v in sv.items():
+                if isinstance(v,dict):QTreeWidgetItem(g0,[k,v.get('version','—')])
+            dl=self.alan.device_list().get('ArchwaveAES67',{}).get('devices',[])
+            for d in dl:QTreeWidgetItem(g0,['Device',d.get('hostname','?')+' @ '+d.get('IPaddress','?')])
+        except Exception:pass
+        self.atree.addTopLevelItem(g0);g0.setExpanded(False)
         g2=QTreeWidgetItem(['Sources (audio → réseau)',''])
         self._alan_src=src.get('ArchwaveAES67',{}).get('sources',[])
         for s in self._alan_src:
@@ -360,7 +379,7 @@ class Win(QMainWindow):
         # map original->copie (les _edit_items/_route_boxes referencent les originaux)
         idmap={id(a):b for a,b in zip(self._alan_src,src)}
         idmap.update({id(a):b for a,b in zip(self._alan_out,out)});idmap[id(self._alan_cfg)]=cfg
-        for sub in ('playoutDelay','PTP'):  # sous-dicts editables
+        for sub in ('playoutDelay','PTP','SAP'):  # sous-dicts editables
             if isinstance(self._alan_cfg.get(sub),dict):idmap[id(self._alan_cfg[sub])]=cfg[sub]
         for it,d,k,kind in self._edit_items:
             t=idmap.get(id(d))
