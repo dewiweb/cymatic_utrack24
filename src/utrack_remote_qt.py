@@ -319,9 +319,15 @@ class Win(QMainWindow):
         self.btn_alan_reb=QPushButton('Redémarrer');self.btn_alan_reb.clicked.connect(self._alan_reboot);hb.addWidget(self.btn_alan_reb)
         self.btn_alan_fw=QPushButton('Firmware…');self.btn_alan_fw.clicked.connect(self._alan_upload);hb.addWidget(self.btn_alan_fw)
         self.alan_info=QLabel('—');hb.addWidget(self.alan_info);hb.addStretch(1);v.addLayout(hb)
+        gb=QGroupBox('Routing — réseau → audio (24 sorties)');rg=QVBoxLayout(gb)
+        self.route_grid=QGridLayout();self.route_grid.setSpacing(4)
+        rg.addLayout(self.route_grid)
+        scw=QWidget();scw.setLayout(rg)
+        sc=QScrollArea();sc.setWidgetResizable(True);sc.setWidget(scw);sc.setMaximumHeight(300)
+        v.addWidget(sc,1)
         self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
         self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
-        v.addWidget(self.atree)
+        v.addWidget(self.atree,1)
         return w
 
     def _alan_refresh(self):
@@ -396,7 +402,6 @@ class Win(QMainWindow):
             leaf(it,'SIP user',s,'SIPusername')
         self.atree.addTopLevelItem(g2);g2.setExpanded(True)
         self.btn_alan_apply.setEnabled(bool(self._edit_items))
-        g3=QTreeWidgetItem(['Sorties (réseau → audio)',''])
         self._alan_out=out.get('ArchwaveAES67',{}).get('outputs',[])
         streams=sl.get('ArchwaveAES67',{}).get('streams',[])
         choices=['—']
@@ -411,19 +416,27 @@ class Win(QMainWindow):
         stat={}
         try:stat={i:o.get('status') for i,o in enumerate(self.alan.status().get('ArchwaveAES67',{}).get('outputs',[]))}
         except Exception:pass
+        # vider la grille precedente
+        while self.route_grid.count():
+            it=self.route_grid.takeAt(0)
+            if it.widget():it.widget().deleteLater()
         self._route_boxes=[]
         for i,o in enumerate(self._alan_out):
-            it=QTreeWidgetItem(g3,[o.get('name','?'),''])
+            r=i//4;c=(i%4)*3
+            lb=QLabel('ch%d'% (i+1));lb.setObjectName('dim');lb.setFixedWidth(34)
             st=stat.get(i)
-            if st is not None:
-                QTreeWidgetItem(it,['statut','%d %s'%(st,SS.get(st,''))])
-            cb=QComboBox();cb.addItems(choices);cb.setMinimumWidth(220)
+            sl2=QLabel(SS.get(st,'') if st is not None else '');sl2.setObjectName('dim')
+            sl2.setFixedWidth(120);sl2.setStyleSheet('font-size:8pt')
+            if st in (10,11):sl2.setStyleSheet('font-size:8pt;color:#58c184')
+            elif st in (14,15):sl2.setStyleSheet('font-size:8pt;color:#e06c6c')
+            cb=QComboBox();cb.addItems(choices);cb.setMinimumWidth(200)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
             cb.setCurrentIndex(ix if ix>=0 else 0)
-            self.atree.setItemWidget(it,1,cb)
+            self.route_grid.addWidget(lb,r,c)
+            self.route_grid.addWidget(cb,r,c+1)
+            self.route_grid.addWidget(sl2,r,c+2)
             self._route_boxes.append((cb,o))
-        self.atree.addTopLevelItem(g3);g3.setExpanded(True)
         g4=QTreeWidgetItem(['Streams actifs',''])
         for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
             QTreeWidgetItem(g4,[str(s)[:80],''])
