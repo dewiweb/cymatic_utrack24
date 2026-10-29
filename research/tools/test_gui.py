@@ -79,12 +79,8 @@ w.cmb[0xb102].activated.emit(0)
 assert f.calls==[('set',0xb102,1)],f.calls
 f.calls.clear()
 
-# spinbox : envoi sur editingFinished seulement, brut converti
-w.sp[0xb201][0].setValue(-3)
-assert f.calls==[]
-w.sp[0xb201][0].editingFinished.emit()
-assert f.calls==[('num',0xb201,att_raw(-3))],f.calls
-f.calls.clear()
+# spinbox 0xb201/0xb202 : desactives (ecriture numerique non effective, cf gui_review P1-3)
+assert not w.sp[0xb201][0].isEnabled() and not w.sp[0xb202][0].isEnabled()
 
 s['f'].setValue(0x1234)      # drag -> pending seulement
 assert f.calls==[]
@@ -104,7 +100,7 @@ for _ in range(200):
     time.sleep(0.01);w._refresh()
 assert w.tree.topLevelItemCount()==2
 it=w.tree.topLevelItem(0)
-assert it.text(0)=='Take0012' and '44100' in it.text(2) and it.text(3)=='0:09.4'
+assert it.text(0)=='Take0012' and '44100' in it.text(2) and it.text(3)=='0:00:09.4'
 assert '2' in it.text(4) and '6.3 s' in it.text(4)
 assert w.tree.topLevelItem(1).text(2)=='—'
 w.tree.setCurrentItem(it)

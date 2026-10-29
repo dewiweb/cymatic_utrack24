@@ -182,7 +182,7 @@ class UTrack24:
             if wavs:
                 wi = self.wave_info('/MultiTrack/%s/%s' % (e['name'], wavs[0]['name']))
                 t['wave'] = wi
-                t['duration'] = wi['samples'] / wi['sample_rate']
+                t['duration'] = wi.get('samples',0) / max(wi.get('sample_rate',1),1)
                 t['markers_s'] = [m / wi['sample_rate'] for m in wi['markers']]
             out.append(t)
         return out

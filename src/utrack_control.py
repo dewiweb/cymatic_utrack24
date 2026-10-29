@@ -34,7 +34,7 @@ SETTINGS={0xb000:[(0,'Internal'),(1,'Wordclock'),(2,'Digital I/O'),(3,'PTP')],
           0xb103:[(16,'16-bit'),(24,'24-bit')],
           0xb104:[(2,'Stereo')]+[(n,'%d Ch'%n) for n in (4,8,12,16,20,24)],
           0xb203:[(-1,'Single'),(0,'Continuous'),(1,'Shuffle'),(2,'Repeat One'),(3,'Repeat All')],
-          0xb204:[(n,'%d-%d'%(n,n+1)) for n in range(1,32,2)],
+          0xb204:[(n,'%d-%d'%(n,n+1)) for n in range(1,8,2)],  # 88/96k: ids 1..7 seulement
           0xb205:[(n,'%d-%d'%(n,n+1)) for n in range(1,32,2)]}
 def att_raw(db):return ((db+30)*0xffff)//30
 def att_db(raw):return round(raw*30/65535-30)
@@ -62,9 +62,14 @@ class UTrackControl:
         self.addr=(host,port);self.seq_file=seq_file
         self.s=None;self.lock=threading.Lock();self.alive=False
         self.slock=threading.Lock();self.state={};self._hbi=0
+        self._next_retry=0.0
 
     def _send(self,data):
-        with self.lock:self.s.sendall(data)
+        s=self.s
+        if s is None or not self.alive:return
+        try:
+            with self.lock:s.sendall(data)
+        except OSError:self.alive=False
 
     def _drain(self):
         d=b''
@@ -95,18 +100,22 @@ class UTrackControl:
         'ef5130b00001c423fffffffffeff2000f4de012f00100000000001000e00010034b96e2e00000000010000009023001008000100e659b6cf')]
 
     def ensure_alive(self):
-        """Reconnecte la session si le thread de reception est mort."""
-        if self.alive:return
-        self.alive=True
+        """Reconnecte la session si le thread de reception est mort (backoff ~2s)."""
+        if self.alive or time.time()<self._next_retry:return
+        self.alive=True;self._next_retry=time.time()+2.0
         threading.Thread(target=self._reconnect,daemon=True).start()
 
     def _reconnect(self):
         try:
             try:self.s.close()
             except Exception:pass
+            with self.slock:self.state.clear()
             self.connect()
         except Exception:
-            self.alive=False
+            try:
+                if self.s:self.s.close()
+            except Exception:pass
+            self.s=None;self.alive=False
 
     def _loop(self):
         buf=b'';last=0;last_hb=0
@@ -119,6 +128,7 @@ class UTrackControl:
             except OSError:break
             frames,buf=parse(buf)
             for fl,body,ok in frames:
+                if not ok:continue
                 try:
                     if fl==2 and body[:4]==b'\x00\x01\xc4\x23':
                         resp=bytearray(body);resp[2:4]=b'\x44\x23'

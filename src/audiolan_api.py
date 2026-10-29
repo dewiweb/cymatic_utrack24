@@ -22,7 +22,7 @@ class AudioLan:
         except socket.timeout:pass
         s.close()
         head,_,data=d.partition(b'\r\n\r\n')
-        if b'gzip' in head:data=zlib.decompress(data,16+zlib.MAX_WBITS)
+        if b'content-encoding: gzip' in head.lower():data=zlib.decompress(data,16+zlib.MAX_WBITS)
         code=int(head.split(b' ')[1])
         return code,data
 

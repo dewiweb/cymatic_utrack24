@@ -30,7 +30,7 @@ def run(host='127.0.0.1',port=55000,seq_file=None):
     seq=[l.strip() for l in open(seq_file or SEQ_FILE)]
     while True:
         try:
-            s=socket.socket();s.connect((host,port));s.settimeout(0.05)
+            s=socket.socket();s.settimeout(4.0);s.connect((host,port));s.settimeout(0.05)
             print('connecte — replay %d msgs'%len(seq));sys.stdout.flush()
             for hx in seq:
                 s.sendall(bytes.fromhex(hx))

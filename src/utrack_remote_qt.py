@@ -18,6 +18,7 @@ QFrame#card,QGroupBox{background:#262a31;border:1px solid #383d45;border-radius:
 QGroupBox{margin-top:14px;padding-top:10px;font-weight:600}
 QGroupBox::title{subcontrol-origin:margin;left:10px;padding:0 6px;color:#9aa0a8}
 QLabel#dim{color:#9aa0a8}
+QLabel#info{color:#9aa0a8}
 QLabel#ch{font-weight:700;font-size:10pt;padding:2px}
 QLabel#raw{color:#9aa0a8;font-family:Consolas;font-size:8pt}
 QPushButton{background:#30353d;border:1px solid #4a5058;border-radius:5px;padding:6px 14px;font-weight:600}
@@ -186,7 +187,7 @@ class Win(QMainWindow):
          0xb103:'Change le format d\'enregistrement. Continuer ?',
          0xb104:'Change le format d\'enregistrement. Continuer ?'}
     COMBO_LABEL={0xb000:'Horloge',0xb001:'Commutateur au pied',0xb102:'Fréquence',0xb103:'Résolution',
-                 0xb104:'Pistes',0xb203:'Mode de lecture',0xb204:'Sorties stéréo 1',0xb205:'Sorties stéréo 2'}
+                 0xb104:'Pistes',0xb203:'Mode de lecture',0xb204:'Sorties stéréo 88/96k',0xb205:'Sorties stéréo 44/48k'}
 
     def _set_ask(self,ctrl,val):
         if not self.u:return
@@ -212,11 +213,11 @@ class Win(QMainWindow):
             self.cmb[ctrl]=cb;gr.addWidget(cb,i//2,(i%2)*2+1)
         self.sp={}
         for ctrl,lab,rng,unit,to_raw in ((0xb201,'Atténuation de sortie',(-30,0),' dB',att_raw),
-                                         (0xb202,'Délai',(-1000,1000),' ms',ms_raw)):
+                                         (0xb202,'Offset MIDI',(-1000,1000),' ms',ms_raw)):
             i=len(self.cmb)+len(self.sp)
             gr.addWidget(QLabel(lab,objectName='dim'),i//2,(i%2)*2)
-            sb=QSpinBox();sb.setRange(*rng);sb.setSuffix(unit)
-            sb.editingFinished.connect(lambda c=ctrl,f=to_raw,s=sb:self.u and self.u.num(c,f(s.value())))
+            sb=QSpinBox();sb.setRange(*rng);sb.setSuffix(unit);sb.setEnabled(False)
+            sb.setToolTip('0x%x: ecriture numerique non effective (chemin commit uCL+0x848 requis)'%ctrl)
             self.sp[ctrl]=(sb,to_raw);gr.addWidget(sb,i//2,(i%2)*2+1)
         g2.setLayout(gr);v.addWidget(g2)
         g=QGroupBox('Lecture seule');gr2=QGridLayout();gr2.setSpacing(8);self.ro={}
@@ -341,7 +342,7 @@ class Win(QMainWindow):
             if t is None:continue
             p=cb.currentText()
             t['streamPath']='' if p=='—' else p
-            if p!='—':t['manualSDP']=''
+            t['manualSDP']=''  # unsubscribe = les deux vides ; subscribe = manualSDP vide
         if QMessageBox.question(self,'AudioLAN','Appliquer les modifications sur la carte ?')!=QMessageBox.Yes:return
         self.btn_alan_apply.setEnabled(False);self.statusBar().showMessage('Écriture AudioLAN…')
         def run():
@@ -369,8 +370,7 @@ class Win(QMainWindow):
             gg.addWidget(ba,1,0,1,4);gg.addWidget(bd,1,4,1,4);self.mbtns+= [ba,bd]
             grd.addWidget(gb,0,blk)
         v.addLayout(grd)
-        self.mleg=QLabel("vert = analogique · bleu = digital (AES67) · '?' = inconnu (jamais commandé) — "
-                         "l'état de sélection n'est pas lisible sur l'appareil",objectName='info')
+        self.mleg=QLabel("vert = analogique · bleu = digital (AES67) — état réel lu en live via 0xf050",objectName='info')
         v.addWidget(self.mleg);v.addStretch(1)
         return w
 
@@ -394,8 +394,8 @@ class Win(QMainWindow):
     def _meters_tick(self):
         """poll SDS mixer querylevels ~1 fois/s en tache de fond."""
         import time as _t
-        if _t.time()-self._meters_ts<1.0:return
-        self._meters_ts=_t.time()
+        if _t.time()-self._meters_ts<1.0 or getattr(self,'_meters_busy',False):return
+        self._meters_ts=_t.time();self._meters_busy=True
         def run():
             try:
                 if self.tel is None:
@@ -403,10 +403,11 @@ class Win(QMainWindow):
                     self.tel=Tel(TEL_HOST)
                 with self._tlock:out=self.tel.cmd('mixer querylevels',1.5)
                 import re
-                d={int(n):min(65535,int(v,16)>>12) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
+                d={int(n):min(65535,int(v,16)>>7) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
                 if d:self._meters=d
             except Exception:
                 self.tel=None  # session morte : reconnexion au prochain tick
+            finally:self._meters_busy=False
         threading.Thread(target=run,daemon=True).start()
 
     def _fill_matrix(self,st):
@@ -414,7 +415,7 @@ class Win(QMainWindow):
         for ch,lb in enumerate(self.mcells):
             blk=ch//8
             if sel is not None:
-                m='digital' if sel[blk] else 'analog'
+                m='analog' if sel[blk] else 'digital'  # bit set = analog (RE: isDigital^1)
             else:
                 m=self._matrix_state[ch]
             col='#2a6e3a' if m=='analog' else '#2a4e8e' if m=='digital' else '#333'
@@ -438,10 +439,13 @@ class Win(QMainWindow):
         t=it.data(0,Qt.UserRole) if it else None
         en=bool(t) and t['name']!=self._loaded
         self.btn_ren.setEnabled(en);self.btn_del.setEnabled(en)
-        if not t or self.tel is None:return
+        if not t:return
         self.reclog.setPlainText('Chargement…')
         def run():
             try:
+                if self.tel is None:
+                    from utrack_telnet import UTrack24 as Tel
+                    self.tel=Tel(TEL_HOST)
                 with self._tlock:self._reclog=self.tel.read_file('/MultiTrack/%s/reclog.txt'%t['name']).decode('latin-1').replace('\r\n','\n')
             except OSError as e:self._reclog='Erreur : %s'%e;self.tel=None
             except Exception as e:self._reclog='Erreur : %s'%e
@@ -453,7 +457,7 @@ class Win(QMainWindow):
             w=t.get('wave')
             fmt=('%d Hz / %d bits / %d voies'%(w['sample_rate'],w['bits'],w['channels'])) if w else '—'
             dur='—'
-            if 'duration' in t:dur='%d:%04.1f'%(int(t['duration'])//60,t['duration']%60)
+            if 'duration' in t:dur='%d:%02d:%04.1f'%(int(t['duration'])//3600,int(t['duration'])%3600//60,t['duration']%60)
             mk='—'
             if 'markers_s' in t:mk='%d (%s)'%(len(t['markers_s']),', '.join('%.1f s'%s for s in t['markers_s']))
             it=QTreeWidgetItem([t['name'],t['date'],fmt,dur,mk])
@@ -510,7 +514,7 @@ class Win(QMainWindow):
             if isinstance(d,Exception):self.statusBar().showMessage('Erreur AudioLAN : %s'%d)
             else:self._fill_alan(d)
         if self._take_err is not None:
-            e,self._take_err=self._take_err,None;self.btn_ref.setEnabled(True)
+            e,self._take_err=self._take_err,None;self.btn_ref.setEnabled(True);self.btn_ren.setEnabled(True);self.btn_del.setEnabled(True)
             QMessageBox.warning(self,'Prises','Erreur : %s'%e)
             self.statusBar().showMessage('Erreur : %s'%e)
         u=self.u
@@ -567,7 +571,7 @@ class Win(QMainWindow):
         self.overlay.setGeometry(0,0,e.size().width(),e.size().height());super().resizeEvent(e)
 
     def closeEvent(self,e):
-        self.u and self.u.close();e.accept()
+        self.u and self.u.close();self.tel and self.tel.close();e.accept()
 
 def main():
     out=subprocess.run(['tasklist','/FI','IMAGENAME eq uRemote.exe'],capture_output=True,text=True).stdout

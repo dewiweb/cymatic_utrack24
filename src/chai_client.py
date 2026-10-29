@@ -13,7 +13,7 @@ def frame(msg,flag=0xb0):
 class ChaiClient:
     def __init__(self,name=b'DewiTool',member_id=0x6d795442,host=VNM_HOST,port=VNM_PORT):
         self.name=name;self.mid=member_id
-        self.s=socket.socket();self.s.connect((host,port))
+        self.s=socket.socket();self.s.settimeout(4.0);self.s.connect((host,port))
         self.s.settimeout(0.5)
     def send(self,msg,flag=0xb0):
         self.s.sendall(frame(msg,flag))
