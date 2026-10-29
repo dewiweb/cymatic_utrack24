@@ -96,6 +96,90 @@ def sap_packet(src_ip, sdp_bytes):
             + b'application/sdp\x00' + sdp_bytes)
 
 
+def _dn(n):
+    return b''.join(bytes([len(p)]) + p.encode() for p in n.split('.')) + b'\x00'
+
+
+class RtspServer(threading.Thread):
+    """Mini serveur RTSP: repond a DESCRIBE /by-name/<NAME> avec 200 + SDP.
+    La carte RAVENNA ne verifie pas le statut, juste le body apres \\r\\n\\r\\n
+    (cf ghidra_audiolan_discovery.md)."""
+    def __init__(self, ip, port, get_sdp):
+        super().__init__(daemon=True)
+        self.ip, self.port, self.get_sdp = ip, port, get_sdp
+
+    def run(self):
+        srv = socket.socket()
+        srv.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        srv.bind((self.ip, self.port))
+        srv.listen(4)
+        while True:
+            try:
+                c, _ = srv.accept()
+                req = c.recv(4096)
+                if b'DESCRIBE' in req or b'GET_PARAMETER' in req:
+                    body = self.get_sdp()
+                    rsp = (b'RTSP/1.0 200 OK\r\nCSeq: 2\r\n'
+                           b'Content-Type: application/sdp\r\n'
+                           + b'Content-Length: %d\r\n\r\n' % len(body) + body)
+                    c.sendall(rsp)
+                c.close()
+            except OSError:
+                continue
+
+
+class MdnsAdvertiser(threading.Thread):
+    """Annonce DNS-SD : <NAME>._rtsp._tcp.local (_ravenna_session subtype) ->
+    <host>.local:<rtsp_port>. La carte browse _rtsp._tcp,_ravenna_session."""
+    def __init__(self, ip, rtsp_port):
+        super().__init__(daemon=True)
+        self.ip, self.port = ip, rtsp_port
+        self.inst = f'{NAME}._rtsp._tcp.local'
+        self.host = f'pc-{ip.replace(".", "-")}.local'
+
+    def _resp(self):
+        mdns_ip, mdns_port = '224.0.0.251', 5353
+        rrtype_srv, rrtype_txt, rrtype_a, rrtype_ptr = 33, 16, 1, 12
+        cache_flush = 0x8000
+        inst, host = _dn(self.inst), _dn(self.host)
+        svc = _dn('_rtsp._tcp.local')
+        sub = _dn('_ravenna_session._sub._rtsp._tcp.local')
+        def rec(n, t, data, fl=0):
+            return n + struct.pack('>HHIH', t, fl | 1, 120, len(data)) + data
+        ans = b''
+        ans += rec(sub, rrtype_ptr, inst)                       # subtype PTR
+        ans += rec(svc, rrtype_ptr, inst)                     # type PTR
+        srvd = struct.pack('>HHH', 0, 0, self.port) + host
+        ans += rec(inst, rrtype_srv | cache_flush, srvd)
+        ans += rec(inst, rrtype_txt | cache_flush, b'\x00')
+        ans += rec(host, rrtype_a | cache_flush, socket.inet_aton(self.ip))
+        return struct.pack('>HHHHHH', 0, 0x8400, 0, 5, 0, 0) + ans
+
+    def run(self):
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+        try:
+            s.bind(('', 5353))
+            s.setsockopt(socket.IPPROTO_IP, socket.IP_ADD_MEMBERSHIP,
+                         socket.inet_aton('224.0.0.251') + socket.inet_aton(self.ip))
+        except OSError:
+            pass
+        pkt = self._resp()
+        while True:
+            try:
+                s.sendto(pkt, ('224.0.0.251', 5353))
+                s.settimeout(10.0)
+                while True:  # repondre aussi aux queries entrantes
+                    try:
+                        d, a = s.recvfrom(4096)
+                    except socket.timeout:
+                        break
+                    if b'_rtsp' in d or b'_services' in d:
+                        s.sendto(pkt, ('224.0.0.251', 5353))
+            except OSError:
+                time.sleep(2)
+
+
 def main():
     global RATE, SAP_ADDR
     ap = argparse.ArgumentParser()
@@ -106,6 +190,8 @@ def main():
     ap.add_argument('--dur', type=float, default=0.0)
     ap.add_argument('--rate', type=int, default=44100)
     ap.add_argument('--sap-group', default=SAP_ADDR[0])
+    ap.add_argument('--rtsp', type=int, default=0, help='port RTSP natif (0=off)')
+    ap.add_argument('--async-sdp', action='store_true', help='SDP sans lignes PTP (flux asynchrone)')
     a = ap.parse_args()
     RATE = a.rate
     SAP_ADDR = (a.sap_group, 9875)
@@ -115,8 +201,20 @@ def main():
     time.sleep(0.5)
     print(f'PTP master: gm={clk.clock_id_hex} now={clk.now():.3f}', flush=True)
 
-    sdpb = sdp(a.src, a.ip, a.port, clk.clock_id_hex)
+    def make_sdp():
+        s = sdp(a.src, a.ip, a.port, clk.clock_id_hex)
+        if a.async_sdp:
+            s = b''.join(l for l in s.split(b'\r\n')
+                         if not l.startswith((b'a=clock-domain', b'a=ts-refclk', b'a=sync-time', b'a=mediaclk')))
+            s += b'\r\n'
+        return s
+    sdpb = make_sdp()
     sapb = sap_packet(a.src, sdpb)
+
+    if a.rtsp:
+        RtspServer(a.src, a.rtsp, make_sdp).start()
+        MdnsAdvertiser(a.src, a.rtsp).start()
+        print(f'RTSP by-name: rtsp://{a.src}:{a.rtsp}/by-name/{NAME} + mDNS _rtsp._tcp,_ravenna_session', flush=True)
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     s.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, 32)
@@ -131,7 +229,7 @@ def main():
     ts0 = int(clk.now() * RATE)
     t0 = time.perf_counter()
     print(f'sending -> {a.ip}:{a.port} (ts locked to PTP)', flush=True)
-    while a.dur == 0 or time.time() - t0 < a.dur:
+    while a.dur == 0 or time.perf_counter() - t0 < a.dur:
         if n % 5000 == 0:
             try:
                 s_sap.sendto(sapb, SAP_ADDR)
