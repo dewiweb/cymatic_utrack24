@@ -1,0 +1,1585 @@
+
+############ ARM range ae70c..affc4
+  000ae70c  stmdb sp!,{r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  000ae710  ldr r0,[r1,#0x14]
+  000ae714  sub sp,sp,#0x54
+  000ae718  cmp r0,#0x1
+  000ae71c  cpy r8,r1
+  000ae720  beq 0x000ae740   ; ref->000ae740 = 0xe59f5470  <OBJ/BSS>
+  000ae724  cmp r0,#0x2
+  000ae728  beq 0x000ae734   ; ref->000ae734 = 0xe3a00000  <OBJ/BSS>
+  000ae72c  cmp r0,#0x3
+  000ae730  beq 0x000ae740   ; ref->000ae740 = 0xe59f5470  <OBJ/BSS>
+  000ae734  mov r0,#0x0
+  000ae738  add sp,sp,#0x54
+  000ae73c  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000ae740  ldr r5,[0xaebb8]
+  000ae744  mvn r1,#0x0
+  000ae748  cpy r0,r5
+  000ae74c  bl 0x0017afd4   ; ref->0017afd4 = 0xe92d4070  <OBJ/BSS>
+  000ae750  ldr r0,[r8,#0xc]
+  000ae754  add r7,r5,#0x20
+  000ae758  add r1,r0,#0x1
+  000ae75c  cmp r1,#0x8000
+  000ae760  mov r4,#0x0
+  000ae764  bls 0x000ae798   ; ref->000ae798 = 0xe2881008  <OBJ/BSS>
+  000ae768  add r0,r0,#0x1
+  000ae76c  mov r1,#0x1
+  000ae770  bl 0x001a0808   ; ref->001a0808 = 0xe1a0200e  <OBJ/BSS>
+  000ae774  cpy r6,r0
+  000ae778  cmp r4,r6
+  000ae77c  cpy r0,r4
+  000ae780  beq 0x000ae78c   ; ref->000ae78c = 0xe1b07004  <OBJ/BSS>
+  000ae784  bl 0x0019f30c   ; ref->0019f30c = 0xe3a0201f  <OBJ/BSS>
+  000ae788  cpy r4,r6
+  000ae78c  movs r7,r4
+  000ae790  cpy r0,r4
+  000ae794  beq 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000ae798  add r1,r8,#0x8
+  000ae79c  ldmia r1,{r1,r2}
+  000ae7a0  cpy r0,r7
+  000ae7a4  bl 0x00003628   ; ref->00003628 = 0xe3520003  <OBJ/BSS>
+  000ae7a8  ldr r0,[r8,#0xc]
+  000ae7ac  mov r6,#0x0
+  000ae7b0  strb r6,[r7,r0]
+  000ae7b4  mov r2,#0x400
+  000ae7b8  cpy r1,r6
+  000ae7bc  add r0,sp,#0x10
+  000ae7c0  bl 0x001d6158   ; ref->001d6158 = 0xe92d41f0  <OBJ/BSS>
+  000ae7c4  cpy r1,r7
+  000ae7c8  add r0,sp,#0x10
+  000ae7cc  bl 0x001d5fcc   ; ref->001d5fcc = 0xe92d41f0  <OBJ/BSS>
+  000ae7d0  ldr r0,[sp,#0x38]
+  000ae7d4  cmp r0,#0x0
+  000ae7d8  bne 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae7dc  b 0x000ae7f8   ; ref->000ae7f8 = 0xe28f1fef  <OBJ/BSS>
+  000ae7e0  bl 0x0019f30c   ; ref->0019f30c = 0xe3a0201f  <OBJ/BSS>
+  000ae7e4  cpy r0,r5
+  000ae7e8  bl 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000ae7ec  mov r0,#0x0
+  000ae7f0  add sp,sp,#0x54
+  000ae7f4  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000ae7f8  adr r1,0xaebbc
+  000ae7fc  add r0,sp,#0x10
+  000ae800  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae804  cmp r0,#0x0
+  000ae808  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae80c  adr r1,0xaebbc
+  000ae810  add r0,sp,#0x10
+  000ae814  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae818  ldr r0,[r0,#0xc]
+  000ae81c  cmp r0,#0x3
+  000ae820  bne 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae824  adr r1,0xaebbc
+  000ae828  add r0,sp,#0x10
+  000ae82c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae830  adr r1,0xaebcc
+  000ae834  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae838  cmp r0,#0x0
+  000ae83c  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae840  adr r1,0xaebbc
+  000ae844  add r0,sp,#0x10
+  000ae848  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae84c  adr r1,0xaebcc
+  000ae850  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae854  ldr r0,[r0,#0xc]
+  000ae858  and r0,r0,#0x400
+  000ae85c  movs r0,r0, lsr #0xa
+  000ae860  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae864  adr r1,0xaebbc
+  000ae868  add r0,sp,#0x10
+  000ae86c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae870  adr r1,0xaebcc
+  000ae874  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae878  ldr r1,[r0,#0xc]
+  000ae87c  tst r1,#0x400
+  000ae880  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000ae884  ldr r0,[r0,#0x0]
+  000ae888  cmp r0,#0x1
+  000ae88c  bne 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae890  bl 0x000b9aac   ; ref->000b9aac = 0xe92d4070  <OBJ/BSS>
+  000ae894  str r0,[sp,#0xc]
+  000ae898  adr r1,0xaebbc
+  000ae89c  add r0,sp,#0x10
+  000ae8a0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae8a4  adr r1,0xaebd4
+  000ae8a8  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae8ac  cmp r0,#0x0
+  000ae8b0  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae8b4  adr r1,0xaebbc
+  000ae8b8  add r0,sp,#0x10
+  000ae8bc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae8c0  adr r1,0xaebd4
+  000ae8c4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae8c8  ldr r0,[r0,#0xc]
+  000ae8cc  cmp r0,#0x3
+  000ae8d0  bne 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000ae8d4  adr r1,0xaebbc
+  000ae8d8  add r0,sp,#0x10
+  000ae8dc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae8e0  adr r1,0xaebd4
+  000ae8e4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae8e8  adr r1,0xaebdc
+  000ae8ec  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae8f0  cmp r0,#0x0
+  000ae8f4  beq 0x000ae964   ; ref->000ae964 = 0xe28f1e25  <OBJ/BSS>
+  000ae8f8  adr r1,0xaebbc
+  000ae8fc  add r0,sp,#0x10
+  000ae900  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae904  adr r1,0xaebd4
+  000ae908  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae90c  adr r1,0xaebdc
+  000ae910  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae914  ldr r0,[r0,#0xc]
+  000ae918  and r0,r0,#0x100000
+  000ae91c  movs r0,r0, lsr #0x14
+  000ae920  beq 0x000ae964   ; ref->000ae964 = 0xe28f1e25  <OBJ/BSS>
+  000ae924  adr r1,0xaebbc
+  000ae928  add r0,sp,#0x10
+  000ae92c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae930  adr r1,0xaebd4
+  000ae934  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae938  adr r1,0xaebdc
+  000ae93c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae940  ldr r1,[r0,#0xc]
+  000ae944  and r1,r1,#0x100000
+  000ae948  movs r1,r1, lsr #0x14
+  000ae94c  ldrne r1,[r0,#0x0]
+  000ae950  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000ae954  ldr r0,[sp,#0xc]
+  000ae958  bl 0x000b9c98   ; ref->000b9c98 = 0xe92d41f0  <OBJ/BSS>
+  000ae95c  cmp r0,#0x0
+  000ae960  beq 0x000aeebc   ; ref->000aeebc = 0xe59f0250  <OBJ/BSS>
+  000ae964  adr r1,0xaebbc
+  000ae968  add r0,sp,#0x10
+  000ae96c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae970  adr r1,0xaebd4
+  000ae974  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae978  adr r1,0xaebe4
+  000ae97c  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae980  ldr r8,[0xaebf0]
+  000ae984  ldr r7,[0xaebf4]
+  000ae988  cmp r0,#0x0
+  000ae98c  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000ae990  adr r1,0xaebbc
+  000ae994  add r0,sp,#0x10
+  000ae998  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae99c  adr r1,0xaebd4
+  000ae9a0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9a4  adr r1,0xaebe4
+  000ae9a8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9ac  ldr r0,[r0,#0xc]
+  000ae9b0  and r0,r0,#0x100
+  000ae9b4  movs r0,r0, lsr #0x8
+  000ae9b8  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000ae9bc  adr r1,0xaebbc
+  000ae9c0  add r0,sp,#0x10
+  000ae9c4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9c8  adr r1,0xaebd4
+  000ae9cc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9d0  adr r1,0xaebf8
+  000ae9d4  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae9d8  cmp r0,#0x0
+  000ae9dc  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000ae9e0  adr r1,0xaebbc
+  000ae9e4  add r0,sp,#0x10
+  000ae9e8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9ec  adr r1,0xaebd4
+  000ae9f0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9f4  adr r1,0xaebf8
+  000ae9f8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae9fc  ldr r0,[r0,#0xc]
+  000aea00  and r0,r0,#0x100000
+  000aea04  movs r0,r0, lsr #0x14
+  000aea08  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000aea0c  adr r1,0xaebbc
+  000aea10  add r0,sp,#0x10
+  000aea14  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea18  adr r1,0xaebd4
+  000aea1c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea20  adr r1,0xaec04
+  000aea24  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aea28  cmp r0,#0x0
+  000aea2c  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000aea30  adr r1,0xaebbc
+  000aea34  add r0,sp,#0x10
+  000aea38  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea3c  adr r1,0xaebd4
+  000aea40  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea44  adr r1,0xaec04
+  000aea48  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea4c  ldr r0,[r0,#0xc]
+  000aea50  and r0,r0,#0x100000
+  000aea54  movs r0,r0, lsr #0x14
+  000aea58  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000aea5c  adr r1,0xaebbc
+  000aea60  add r0,sp,#0x10
+  000aea64  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea68  adr r1,0xaebd4
+  000aea6c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea70  adr r1,0xaec0c
+  000aea74  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aea78  cmp r0,#0x0
+  000aea7c  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000aea80  adr r1,0xaebbc
+  000aea84  add r0,sp,#0x10
+  000aea88  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea8c  adr r1,0xaebd4
+  000aea90  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea94  adr r1,0xaec0c
+  000aea98  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aea9c  ldr r0,[r0,#0xc]
+  000aeaa0  and r0,r0,#0x100000
+  000aeaa4  movs r0,r0, lsr #0x14
+  000aeaa8  beq 0x000aed9c   ; ref->000aed9c = 0xe3a090ff  <OBJ/BSS>
+  000aeaac  mov r11,#0x0
+  000aeab0  cpy r10,r11
+  000aeab4  adr r1,0xaebbc
+  000aeab8  add r0,sp,#0x10
+  000aeabc  str r7,[sp,#0x48]
+  000aeac0  str r7,[sp,#0x4c]
+  000aeac4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeac8  adr r1,0xaebd4
+  000aeacc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aead0  adr r1,0xaec18
+  000aead4  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aead8  cmp r0,#0x0
+  000aeadc  beq 0x000aeb74   ; ref->000aeb74 = 0xe28f1040  <OBJ/BSS>
+  000aeae0  adr r1,0xaebbc
+  000aeae4  add r0,sp,#0x10
+  000aeae8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeaec  adr r1,0xaebd4
+  000aeaf0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeaf4  adr r1,0xaec18
+  000aeaf8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeafc  ldr r0,[r0,#0xc]
+  000aeb00  and r0,r0,#0x100000
+  000aeb04  movs r0,r0, lsr #0x14
+  000aeb08  beq 0x000aeb74   ; ref->000aeb74 = 0xe28f1040  <OBJ/BSS>
+  000aeb0c  add r11,sp,#0x48
+  000aeb10  adr r1,0xaebbc
+  000aeb14  add r0,sp,#0x10
+  000aeb18  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeb1c  adr r1,0xaebd4
+  000aeb20  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeb24  adr r1,0xaec18
+  000aeb28  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeb2c  ldr r1,[r0,#0xc]
+  000aeb30  and r1,r1,#0x100000
+  000aeb34  movs r1,r1, lsr #0x14
+  000aeb38  ldrne r9,[r0,#0x0]
+  000aeb3c  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aeb40  cpy r0,r9
+  000aeb44  blx 0x000034d0   ; ref->000034d0 = 0x1c44b530
+  000aeb48  cmp r0,#0x0
+  000aeb4c  beq 0x000aeed4   ; ref->000aeed4 = 0xe59d0048  <OBJ/BSS>
+  000aeb50  ldr r1,[sp,#0x48]
+  000aeb54  cpy r3,r9
+  000aeb58  ldr r2,[r1,#-0x4]
+  000aeb5c  stmia sp,{r0,r6}
+  000aeb60  str r0,[sp,#0x8]
+  000aeb64  mov r1,#0x0
+  000aeb68  cpy r0,r11
+  000aeb6c  blx 0x001da110   ; ref->001da110 = 0xb085b5ff  <OBJ/BSS>
+  000aeb70  ldr r11,[sp,#0x48]
+  000aeb74  adr r1,0xaebbc
+  000aeb78  add r0,sp,#0x10
+  000aeb7c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeb80  adr r1,0xaebd4
+  000aeb84  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeb88  adr r1,0xaec20
+  000aeb8c  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aeb90  cmp r0,#0x0
+  000aeb94  beq 0x000aeca0   ; ref->000aeca0 = 0xe24f10ec  <OBJ/BSS>
+  000aeb98  adr r1,0xaebbc
+  000aeb9c  add r0,sp,#0x10
+  000aeba0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeba4  adr r1,0xaebd4
+  000aeba8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aebac  adr r1,0xaec20
+  000aebb0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aebb4  b 0x000aec28   ; ref->000aec28 = 0xe590000c  <OBJ/BSS>
+  000aebb8  .word 0x60405f30 '0_@`'  <OBJ/BSS>
+  000aebbc  .word 0x68637241 'Arch'  <OBJ/BSS>
+  000aebc0  .word 0x65766177 'wave'  <OBJ/BSS>
+  000aebc4  .word 0x36534541 'AES6'
+  000aebc8  .word 0x37 '7...'
+  000aebcc  .word 0x73726576 'vers'  <OBJ/BSS>
+  000aebd0  .word 0x6e6f69 'ion.'
+  000aebd4  .word 0x666e6f63 'conf'  <OBJ/BSS>
+  000aebd8  .word 0x6769 'ig..'
+  000aebdc  .word 0x656d616e 'name'  <OBJ/BSS>
+  000aebe0  .word 0x0 '....'
+  000aebe4  .word 0x50434844 'DHCP'
+  000aebe8  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000aebec  .word 0x656c 'le..'
+  000aebf0  .word 0x102
+  000aebf4  .word 0x60499a00  <OBJ/BSS>
+  000aebf8  .word 0x64615049 'IPad'  <OBJ/BSS>
+  000aebfc  .word 0x73657264 'dres'  <OBJ/BSS>
+  000aec00  .word 0x73 's...'
+  000aec04  .word 0x616d5049 'IPma'  <OBJ/BSS>
+  000aec08  .word 0x6b73 'sk..'
+  000aec0c  .word 0x61675049 'IPga'  <OBJ/BSS>
+  000aec10  .word 0x61776574 'tewa'  <OBJ/BSS>
+  000aec14  .word 0x79 'y...'
+  000aec18  .word 0x4e445049 'IPDN'
+  000aec1c  .word 0x3153 'S1..'
+  000aec20  .word 0x4e445049 'IPDN'
+  000aec24  .word 0x3253 'S2..'
+  000aec28  ldr r0,[r0,#0xc]
+  000aec2c  and r0,r0,#0x100000
+  000aec30  movs r0,r0, lsr #0x14
+  000aec34  beq 0x000aeca0   ; ref->000aeca0 = 0xe24f10ec  <OBJ/BSS>
+  000aec38  add r10,sp,#0x4c
+  000aec3c  adr r1,0xaebbc
+  000aec40  add r0,sp,#0x10
+  000aec44  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aec48  adr r1,0xaebd4
+  000aec4c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aec50  adr r1,0xaec20
+  000aec54  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aec58  ldr r1,[r0,#0xc]
+  000aec5c  and r1,r1,#0x100000
+  000aec60  movs r1,r1, lsr #0x14
+  000aec64  ldrne r9,[r0,#0x0]
+  000aec68  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aec6c  cpy r0,r9
+  000aec70  blx 0x000034d0   ; ref->000034d0 = 0x1c44b530
+  000aec74  cmp r0,#0x0
+  000aec78  beq 0x000aef00   ; ref->000aef00 = 0xe59d004c  <OBJ/BSS>
+  000aec7c  ldr r1,[sp,#0x4c]
+  000aec80  cpy r3,r9
+  000aec84  ldr r2,[r1,#-0x4]
+  000aec88  stmia sp,{r0,r6}
+  000aec8c  str r0,[sp,#0x8]
+  000aec90  mov r1,#0x0
+  000aec94  cpy r0,r10
+  000aec98  blx 0x001da110   ; ref->001da110 = 0xb085b5ff  <OBJ/BSS>
+  000aec9c  ldr r10,[sp,#0x4c]
+  000aeca0  adr r1,0xaebbc
+  000aeca4  add r0,sp,#0x10
+  000aeca8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aecac  adr r1,0xaebd4
+  000aecb0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aecb4  adr r1,0xaec0c
+  000aecb8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aecbc  ldr r1,[r0,#0xc]
+  000aecc0  and r1,r1,#0x100000
+  000aecc4  movs r1,r1, lsr #0x14
+  000aecc8  ldrne r9,[r0,#0x0]
+  000aeccc  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aecd0  adr r1,0xaebbc
+  000aecd4  add r0,sp,#0x10
+  000aecd8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aecdc  adr r1,0xaebd4
+  000aece0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aece4  adr r1,0xaec04
+  000aece8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aecec  ldr r1,[r0,#0xc]
+  000aecf0  and r1,r1,#0x100000
+  000aecf4  movs r1,r1, lsr #0x14
+  000aecf8  ldrne r0,[r0,#0x0]
+  000aecfc  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aed00  str r0,[sp,#0x44]
+  000aed04  adr r1,0xaebbc
+  000aed08  add r0,sp,#0x10
+  000aed0c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aed10  adr r1,0xaebd4
+  000aed14  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aed18  adr r1,0xaebf8
+  000aed1c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aed20  ldr r1,[r0,#0xc]
+  000aed24  and r1,r1,#0x100000
+  000aed28  movs r1,r1, lsr #0x14
+  000aed2c  ldrne r0,[r0,#0x0]
+  000aed30  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aed34  str r0,[sp,#0x40]
+  000aed38  adr r1,0xaebbc
+  000aed3c  add r0,sp,#0x10
+  000aed40  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aed44  adr r1,0xaebd4
+  000aed48  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aed4c  adr r1,0xaebe4
+  000aed50  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aed54  ldr r0,[r0,#0xc]
+  000aed58  and r1,r0,#0x100
+  000aed5c  movs r1,r1, lsr #0x8
+  000aed60  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aed64  str r10,[sp,#0x8]
+  000aed68  stmia sp,{r9,r11}
+  000aed6c  cmp r0,r8
+  000aed70  ldrd r2,r3,[sp,#0x40]
+  000aed74  ldr r0,[sp,#0xc]
+  000aed78  moveq r1,#0x1
+  000aed7c  movne r1,#0x0
+  000aed80  bl 0x000bb42c   ; ref->000bb42c = 0xe92d4ff0  <OBJ/BSS>
+  000aed84  cmp r0,#0x0
+  000aed88  beq 0x000aef2c   ; ref->000aef2c = 0xe28f0f79  <OBJ/BSS>
+  000aed8c  add r0,sp,#0x4c
+  000aed90  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000aed94  add r0,sp,#0x48
+  000aed98  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000aed9c  mov r9,#0xff
+  000aeda0  adr r1,0xaebbc
+  000aeda4  add r0,sp,#0x10
+  000aeda8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aedac  adr r1,0xaebd4
+  000aedb0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aedb4  adr r1,0xaf0f8
+  000aedb8  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aedbc  cmp r0,#0x0
+  000aedc0  beq 0x000aee20   ; ref->000aee20 = 0xe24f1f9b  <OBJ/BSS>
+  000aedc4  adr r1,0xaebbc
+  000aedc8  add r0,sp,#0x10
+  000aedcc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aedd0  adr r1,0xaebd4
+  000aedd4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aedd8  adr r1,0xaf0f8
+  000aeddc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aede0  ldr r0,[r0,#0xc]
+  000aede4  and r0,r0,#0x400
+  000aede8  movs r0,r0, lsr #0xa
+  000aedec  beq 0x000aee20   ; ref->000aee20 = 0xe24f1f9b  <OBJ/BSS>
+  000aedf0  adr r1,0xaebbc
+  000aedf4  add r0,sp,#0x10
+  000aedf8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aedfc  adr r1,0xaebd4
+  000aee00  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee04  adr r1,0xaf0f8
+  000aee08  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee0c  ldr r1,[r0,#0xc]
+  000aee10  tst r1,#0x400
+  000aee14  ldrne r0,[r0,#0x0]
+  000aee18  andne r9,r0,#0xff
+  000aee1c  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aee20  adr r1,0xaebbc
+  000aee24  add r0,sp,#0x10
+  000aee28  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee2c  adr r1,0xaebd4
+  000aee30  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee34  adr r1,0xaf108
+  000aee38  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aee3c  cmp r0,#0x0
+  000aee40  beq 0x000aef6c   ; ref->000aef6c = 0xe35900ff  <OBJ/BSS>
+  000aee44  adr r1,0xaebbc
+  000aee48  add r0,sp,#0x10
+  000aee4c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee50  adr r1,0xaebd4
+  000aee54  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee58  adr r1,0xaf108
+  000aee5c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee60  ldr r0,[r0,#0xc]
+  000aee64  and r0,r0,#0x400
+  000aee68  movs r0,r0, lsr #0xa
+  000aee6c  beq 0x000aef6c   ; ref->000aef6c = 0xe35900ff  <OBJ/BSS>
+  000aee70  adr r1,0xaebbc
+  000aee74  add r0,sp,#0x10
+  000aee78  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee7c  adr r1,0xaebd4
+  000aee80  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee84  adr r1,0xaf108
+  000aee88  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aee8c  ldr r1,[r0,#0xc]
+  000aee90  tst r1,#0x400
+  000aee94  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aee98  ldr r1,[r0,#0x0]
+  000aee9c  cmp r1,#0x0
+  000aeea0  blt 0x000aef6c   ; ref->000aef6c = 0xe35900ff  <OBJ/BSS>
+  000aeea4  ldr r0,[sp,#0xc]
+  000aeea8  cpy r2,r9
+  000aeeac  bl 0x000b99d4   ; ref->000b99d4 = 0xe92d43f0  <OBJ/BSS>
+  000aeeb0  cmp r0,#0x0
+  000aeeb4  beq 0x000aef54   ; ref->000aef54 = 0xe59f01fc  <OBJ/BSS>
+  000aeeb8  b 0x000aef88   ; ref->000aef88 = 0xe24f1ff5  <OBJ/BSS>
+  000aeebc  ldr r0,[0xaf114]
+  000aeec0  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000aeec4  add r0,sp,#0x10
+  000aeec8  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000aeecc  cpy r0,r4
+  000aeed0  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000aeed4  ldr r0,[sp,#0x48]
+  000aeed8  ldr r1,[r0,#-0xc]
+  000aeedc  add r1,r1,#0x1
+  000aeee0  cmp r1,#0x1
+  000aeee4  streq r6,[r0,#-0x4]
+  000aeee8  strbeq r6,[r0,#0x0]
+  000aeeec  beq 0x000aeb70   ; ref->000aeb70 = 0xe59db048  <OBJ/BSS>
+  000aeef0  cpy r0,r11
+  000aeef4  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000aeef8  str r7,[sp,#0x48]
+  000aeefc  b 0x000aeb70   ; ref->000aeb70 = 0xe59db048  <OBJ/BSS>
+  000aef00  ldr r0,[sp,#0x4c]
+  000aef04  ldr r1,[r0,#-0xc]
+  000aef08  add r1,r1,#0x1
+  000aef0c  cmp r1,#0x1
+  000aef10  streq r6,[r0,#-0x4]
+  000aef14  strbeq r6,[r0,#0x0]
+  000aef18  beq 0x000aec9c   ; ref->000aec9c = 0xe59da04c  <OBJ/BSS>
+  000aef1c  cpy r0,r10
+  000aef20  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000aef24  str r7,[sp,#0x4c]
+  000aef28  b 0x000aec9c   ; ref->000aec9c = 0xe59da04c  <OBJ/BSS>
+  000aef2c  adr r0,0xaf118
+  000aef30  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000aef34  add r0,sp,#0x4c
+  000aef38  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000aef3c  add r0,sp,#0x48
+  000aef40  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000aef44  add r0,sp,#0x10
+  000aef48  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000aef4c  cpy r0,r4
+  000aef50  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000aef54  ldr r0,[0xaf158]
+  000aef58  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000aef5c  add r0,sp,#0x10
+  000aef60  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000aef64  cpy r0,r4
+  000aef68  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000aef6c  cmp r9,#0xff
+  000aef70  beq 0x000aef88   ; ref->000aef88 = 0xe24f1ff5  <OBJ/BSS>
+  000aef74  ldr r0,[sp,#0xc]
+  000aef78  cpy r1,r9
+  000aef7c  bl 0x000ba54c   ; ref->000ba54c = 0xe92d41f0  <OBJ/BSS>
+  000aef80  cmp r0,#0x0
+  000aef84  beq 0x000af194   ; ref->000af194 = 0xe28f0e3a  <OBJ/BSS>
+  000aef88  adr r1,0xaebbc
+  000aef8c  add r0,sp,#0x10
+  000aef90  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aef94  adr r1,0xaebd4
+  000aef98  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aef9c  adr r1,0xaf15c
+  000aefa0  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000aefa4  cmp r0,#0x0
+  000aefa8  beq 0x000af018   ; ref->000af018 = 0xe59f1148  <OBJ/BSS>
+  000aefac  adr r1,0xaebbc
+  000aefb0  add r0,sp,#0x10
+  000aefb4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aefb8  adr r1,0xaebd4
+  000aefbc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aefc0  adr r1,0xaf15c
+  000aefc4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aefc8  ldr r0,[r0,#0xc]
+  000aefcc  and r0,r0,#0x400
+  000aefd0  movs r0,r0, lsr #0xa
+  000aefd4  beq 0x000af018   ; ref->000af018 = 0xe59f1148  <OBJ/BSS>
+  000aefd8  ldr r1,[0xaf168]
+  000aefdc  add r0,sp,#0x10
+  000aefe0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aefe4  adr r1,0xaf16c
+  000aefe8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aefec  adr r1,0xaf15c
+  000aeff0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aeff4  ldr r1,[r0,#0xc]
+  000aeff8  tst r1,#0x400
+  000aeffc  ldrne r0,[r0,#0x0]
+  000af000  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af004  and r1,r0,#0xff
+  000af008  ldr r0,[sp,#0xc]
+  000af00c  bl 0x000b9d64   ; ref->000b9d64 = 0xe92d41f0  <OBJ/BSS>
+  000af010  cmp r0,#0x0
+  000af014  beq 0x000af1ac   ; ref->000af1ac = 0xe28f0ff2  <OBJ/BSS>
+  000af018  ldr r1,[0xaf168]
+  000af01c  add r0,sp,#0x10
+  000af020  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af024  adr r1,0xaf16c
+  000af028  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af02c  adr r1,0xaf174
+  000af030  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af034  cmp r0,#0x0
+  000af038  beq 0x000af0a8   ; ref->000af0a8 = 0xe59f10b8  <OBJ/BSS>
+  000af03c  ldr r1,[0xaf168]
+  000af040  add r0,sp,#0x10
+  000af044  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af048  adr r1,0xaf16c
+  000af04c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af050  adr r1,0xaf174
+  000af054  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af058  ldr r0,[r0,#0xc]
+  000af05c  and r0,r0,#0x100
+  000af060  movs r0,r0, lsr #0x8
+  000af064  beq 0x000af0a8   ; ref->000af0a8 = 0xe59f10b8  <OBJ/BSS>
+  000af068  ldr r1,[0xaf168]
+  000af06c  add r0,sp,#0x10
+  000af070  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af074  adr r1,0xaf16c
+  000af078  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af07c  adr r1,0xaf174
+  000af080  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af084  ldr r0,[r0,#0xc]
+  000af088  and r1,r0,#0x100
+  000af08c  movs r1,r1, lsr #0x8
+  000af090  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af094  cmp r0,r8
+  000af098  ldr r0,[sp,#0xc]
+  000af09c  moveq r1,#0x1
+  000af0a0  movne r1,#0x0
+  000af0a4  bl 0x000bb290   ; ref->000bb290 = 0xe92d4008  <OBJ/BSS>
+  000af0a8  ldr r1,[0xaf168]
+  000af0ac  add r0,sp,#0x10
+  000af0b0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af0b4  adr r1,0xaf16c
+  000af0b8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af0bc  adr r1,0xaf184
+  000af0c0  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af0c4  cmp r0,#0x0
+  000af0c8  beq 0x000af268   ; ref->000af268 = 0xe51f1108  <OBJ/BSS>
+  000af0cc  ldr r1,[0xaf168]
+  000af0d0  add r0,sp,#0x10
+  000af0d4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af0d8  adr r1,0xaf16c
+  000af0dc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af0e0  adr r1,0xaf184
+  000af0e4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af0e8  ldr r0,[r0,#0xc]
+  000af0ec  cmp r0,#0x3
+  000af0f0  beq 0x000af1c4   ; ref->000af1c4 = 0xe51f1064  <OBJ/BSS>
+  000af0f4  b 0x000af268   ; ref->000af268 = 0xe51f1108  <OBJ/BSS>
+  000af0f8  .word 0x706d6173 'samp'  <OBJ/BSS>
+  000af0fc  .word 0x676e696c 'ling'  <OBJ/BSS>
+  000af100  .word 0x65746152 'Rate'  <OBJ/BSS>
+  000af104  .word 0x0 '....'
+  000af108  .word 0x69647561 'audi'  <OBJ/BSS>
+  000af10c  .word 0x646f4d6f 'oMod'  <OBJ/BSS>
+  000af110  .word 0x65 'e...'
+  000af114  .word 0x601ed988  (ptr 1e7a04)
+  000af118  .word 0x4f525245 'ERRO'
+  000af11c  .word 0x52203a52 'R: R'
+  000af120  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000af124  .word 0x4f50616e 'naPO'
+  000af128  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000af12c  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000af130  .word 0x3a3a7265 'er::'
+  000af134  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000af138  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000af13c  .word 0x4e203a6c 'l: N'
+  000af140  .word 0x49207765 'ew I'
+  000af144  .word 0x6f632050 'P co'  <OBJ/BSS>
+  000af148  .word 0x6769666e 'nfig'  <OBJ/BSS>
+  000af14c  .word 0x6a657220 ' rej'  <OBJ/BSS>
+  000af150  .word 0x65746365 'ecte'  <OBJ/BSS>
+  000af154  .word 0xa64
+  000af158  .word 0x601ed9cc  (ptr 1e7a48)
+  000af15c  .word 0x6f736572 'reso'  <OBJ/BSS>
+  000af160  .word 0x6974756c 'luti'  <OBJ/BSS>
+  000af164  .word 0x6e6f 'on..'
+  000af168  .word 0x600b4b3c  "0_@`ArchwaveAES67"
+  000af16c  .word 0x666e6f63 'conf'  <OBJ/BSS>
+  000af170  .word 0x6769 'ig..'
+  000af174  .word 0x746e7973 'synt'  <OBJ/BSS>
+  000af178  .word 0x7a696e6f 'oniz'  <OBJ/BSS>
+  000af17c  .word 0x6f4d6465 'edMo'  <OBJ/BSS>
+  000af180  .word 0x6564 'de..'
+  000af184  .word 0x79616c70 'play'  <OBJ/BSS>
+  000af188  .word 0x4474756f 'outD'
+  000af18c  .word 0x79616c65 'elay'  <OBJ/BSS>
+  000af190  .word 0x0 '....'
+  000af194  adr r0,0xaf53c
+  000af198  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af19c  add r0,sp,#0x10
+  000af1a0  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af1a4  cpy r0,r4
+  000af1a8  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af1ac  adr r0,0xaf57c
+  000af1b0  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af1b4  add r0,sp,#0x10
+  000af1b8  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af1bc  cpy r0,r4
+  000af1c0  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af1c4  ldr r1,[0xaf168]
+  000af1c8  add r0,sp,#0x10
+  000af1cc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af1d0  adr r1,0xaf16c
+  000af1d4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af1d8  adr r1,0xaf184
+  000af1dc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af1e0  adr r1,0xaf5bc
+  000af1e4  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af1e8  cmp r0,#0x0
+  000af1ec  beq 0x000af268   ; ref->000af268 = 0xe51f1108  <OBJ/BSS>
+  000af1f0  ldr r1,[0xaf168]
+  000af1f4  add r0,sp,#0x10
+  000af1f8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af1fc  adr r1,0xaf16c
+  000af200  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af204  adr r1,0xaf184
+  000af208  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af20c  adr r1,0xaf5bc
+  000af210  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af214  ldr r0,[r0,#0xc]
+  000af218  and r0,r0,#0x400
+  000af21c  movs r0,r0, lsr #0xa
+  000af220  beq 0x000af268   ; ref->000af268 = 0xe51f1108  <OBJ/BSS>
+  000af224  ldr r1,[0xaf168]
+  000af228  add r0,sp,#0x10
+  000af22c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af230  adr r1,0xaf16c
+  000af234  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af238  adr r1,0xaf184
+  000af23c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af240  adr r1,0xaf5bc
+  000af244  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af248  ldr r1,[r0,#0xc]
+  000af24c  tst r1,#0x400
+  000af250  ldrne r1,[r0,#0x0]
+  000af254  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af258  ldr r0,[sp,#0xc]
+  000af25c  bl 0x000ba52c   ; ref->000ba52c = 0xe92d4008  <OBJ/BSS>
+  000af260  cmp r0,#0x0
+  000af264  beq 0x000af2b8   ; ref->000af2b8 = 0xe28f0e31  <OBJ/BSS>
+  000af268  ldr r1,[0xaf168]
+  000af26c  add r0,sp,#0x10
+  000af270  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af274  adr r1,0xaf16c
+  000af278  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af27c  adr r1,0xaf5cc
+  000af280  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af284  cmp r0,#0x0
+  000af288  beq 0x000af794   ; ref->000af794 = 0xe51f1634  <OBJ/BSS>
+  000af28c  ldr r1,[0xaf168]
+  000af290  add r0,sp,#0x10
+  000af294  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af298  adr r1,0xaf16c
+  000af29c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af2a0  adr r1,0xaf5cc
+  000af2a4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af2a8  ldr r0,[r0,#0xc]
+  000af2ac  cmp r0,#0x3
+  000af2b0  beq 0x000af2d0   ; ref->000af2d0 = 0xe51f1170  <OBJ/BSS>
+  000af2b4  b 0x000af794   ; ref->000af794 = 0xe51f1634  <OBJ/BSS>
+  000af2b8  adr r0,0xaf5d0
+  000af2bc  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af2c0  add r0,sp,#0x10
+  000af2c4  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af2c8  cpy r0,r4
+  000af2cc  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af2d0  ldr r1,[0xaf168]
+  000af2d4  add r0,sp,#0x10
+  000af2d8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af2dc  adr r1,0xaf16c
+  000af2e0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af2e4  adr r1,0xaf5cc
+  000af2e8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af2ec  adr r1,0xaf610
+  000af2f0  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af2f4  cmp r0,#0x0
+  000af2f8  beq 0x000af374   ; ref->000af374 = 0xe51f1214  <OBJ/BSS>
+  000af2fc  ldr r1,[0xaf168]
+  000af300  add r0,sp,#0x10
+  000af304  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af308  adr r1,0xaf16c
+  000af30c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af310  adr r1,0xaf5cc
+  000af314  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af318  adr r1,0xaf610
+  000af31c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af320  ldr r0,[r0,#0xc]
+  000af324  and r0,r0,#0x800
+  000af328  movs r0,r0, lsr #0xb
+  000af32c  beq 0x000af374   ; ref->000af374 = 0xe51f1214  <OBJ/BSS>
+  000af330  ldr r1,[0xaf168]
+  000af334  add r0,sp,#0x10
+  000af338  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af33c  adr r1,0xaf16c
+  000af340  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af344  adr r1,0xaf5cc
+  000af348  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af34c  adr r1,0xaf610
+  000af350  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af354  ldr r1,[r0,#0xc]
+  000af358  tst r1,#0x800
+  000af35c  ldrne r1,[r0,#0x0]
+  000af360  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af364  ldr r0,[sp,#0xc]
+  000af368  bl 0x000bb52c   ; ref->000bb52c = 0xe92d4008  <OBJ/BSS>
+  000af36c  cmp r0,#0x0
+  000af370  beq 0x000af7e4   ; ref->000af7e4 = 0xe59f0250  <OBJ/BSS>
+  000af374  ldr r1,[0xaf168]
+  000af378  add r0,sp,#0x10
+  000af37c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af380  adr r1,0xaf16c
+  000af384  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af388  adr r1,0xaf5cc
+  000af38c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af390  adr r1,0xaf618
+  000af394  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af398  cmp r0,#0x0
+  000af39c  beq 0x000af424   ; ref->000af424 = 0xe51f12c4  <OBJ/BSS>
+  000af3a0  ldr r1,[0xaf168]
+  000af3a4  add r0,sp,#0x10
+  000af3a8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3ac  adr r1,0xaf16c
+  000af3b0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3b4  adr r1,0xaf5cc
+  000af3b8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3bc  adr r1,0xaf618
+  000af3c0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3c4  ldr r0,[r0,#0xc]
+  000af3c8  and r0,r0,#0x100
+  000af3cc  movs r0,r0, lsr #0x8
+  000af3d0  beq 0x000af424   ; ref->000af424 = 0xe51f12c4  <OBJ/BSS>
+  000af3d4  ldr r1,[0xaf168]
+  000af3d8  add r0,sp,#0x10
+  000af3dc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3e0  adr r1,0xaf16c
+  000af3e4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3e8  adr r1,0xaf5cc
+  000af3ec  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3f0  adr r1,0xaf618
+  000af3f4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af3f8  ldr r0,[r0,#0xc]
+  000af3fc  and r1,r0,#0x100
+  000af400  movs r1,r1, lsr #0x8
+  000af404  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af408  cmp r0,r8
+  000af40c  ldr r0,[sp,#0xc]
+  000af410  moveq r1,#0x1
+  000af414  movne r1,#0x0
+  000af418  bl 0x000bc3b8   ; ref->000bc3b8 = 0xe92d40f8  <OBJ/BSS>
+  000af41c  cmp r0,#0x0
+  000af420  beq 0x000af7fc   ; ref->000af7fc = 0xe28f0f8f  <OBJ/BSS>
+  000af424  ldr r1,[0xaf168]
+  000af428  add r0,sp,#0x10
+  000af42c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af430  adr r1,0xaf16c
+  000af434  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af438  adr r1,0xaf5cc
+  000af43c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af440  adr r1,0xaf628
+  000af444  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af448  cmp r0,#0x0
+  000af44c  beq 0x000af474   ; ref->000af474 = 0xe51f1314  <OBJ/BSS>
+  000af450  ldr r1,[0xaf168]
+  000af454  add r0,sp,#0x10
+  000af458  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af45c  adr r1,0xaf16c
+  000af460  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af464  adr r1,0xaf5cc
+  000af468  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af46c  adr r1,0xaf628
+  000af470  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af474  ldr r1,[0xaf168]
+  000af478  add r0,sp,#0x10
+  000af47c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af480  adr r1,0xaf16c
+  000af484  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af488  adr r1,0xaf5cc
+  000af48c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af490  adr r1,0xaf634
+  000af494  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af498  cmp r0,#0x0
+  000af49c  beq 0x000af4c4   ; ref->000af4c4 = 0xe51f1364  <OBJ/BSS>
+  000af4a0  ldr r1,[0xaf168]
+  000af4a4  add r0,sp,#0x10
+  000af4a8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4ac  adr r1,0xaf16c
+  000af4b0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4b4  adr r1,0xaf5cc
+  000af4b8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4bc  adr r1,0xaf634
+  000af4c0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4c4  ldr r1,[0xaf168]
+  000af4c8  add r0,sp,#0x10
+  000af4cc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4d0  adr r1,0xaf16c
+  000af4d4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4d8  adr r1,0xaf5cc
+  000af4dc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4e0  adr r1,0xaf648
+  000af4e4  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af4e8  cmp r0,#0x0
+  000af4ec  beq 0x000af514   ; ref->000af514 = 0xe51f13b4  <OBJ/BSS>
+  000af4f0  ldr r1,[0xaf168]
+  000af4f4  add r0,sp,#0x10
+  000af4f8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af4fc  adr r1,0xaf16c
+  000af500  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af504  adr r1,0xaf5cc
+  000af508  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af50c  adr r1,0xaf648
+  000af510  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af514  ldr r1,[0xaf168]
+  000af518  add r0,sp,#0x10
+  000af51c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af520  adr r1,0xaf16c
+  000af524  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af528  adr r1,0xaf5cc
+  000af52c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af530  adr r1,0xaf658
+  000af534  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af538  b 0x000af660   ; ref->000af660 = 0xe3500000  <OBJ/BSS>
+  000af53c  .word 0x4f525245 'ERRO'
+  000af540  .word 0x52203a52 'R: R'
+  000af544  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000af548  .word 0x4f50616e 'naPO'
+  000af54c  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000af550  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000af554  .word 0x3a3a7265 'er::'
+  000af558  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000af55c  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000af560  .word 0x53203a6c 'l: S'
+  000af564  .word 0x6c706d61 'ampl'  <OBJ/BSS>
+  000af568  .word 0x20676e69 'ing '
+  000af56c  .word 0x65746172 'rate'  <OBJ/BSS>
+  000af570  .word 0x6a657220 ' rej'  <OBJ/BSS>
+  000af574  .word 0x65746365 'ecte'  <OBJ/BSS>
+  000af578  .word 0xa64
+  000af57c  .word 0x4f525245 'ERRO'
+  000af580  .word 0x52203a52 'R: R'
+  000af584  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000af588  .word 0x4f50616e 'naPO'
+  000af58c  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000af590  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000af594  .word 0x3a3a7265 'er::'
+  000af598  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000af59c  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000af5a0  .word 0x53203a6c 'l: S'
+  000af5a4  .word 0x6c706d61 'ampl'  <OBJ/BSS>
+  000af5a8  .word 0x20676e69 'ing '
+  000af5ac  .word 0x657a6973 'size'  <OBJ/BSS>
+  000af5b0  .word 0x6a657220 ' rej'  <OBJ/BSS>
+  000af5b4  .word 0x65746365 'ecte'  <OBJ/BSS>
+  000af5b8  .word 0xa64
+  000af5bc  .word 0x616c6564 'dela'  <OBJ/BSS>
+  000af5c0  .word 0x536e4979 'yInS'
+  000af5c4  .word 0x6c706d61 'ampl'  <OBJ/BSS>
+  000af5c8  .word 0x7365 'es..'
+  000af5cc  .word 0x505450 'PTP.'
+  000af5d0  .word 0x4f525245 'ERRO'
+  000af5d4  .word 0x52203a52 'R: R'
+  000af5d8  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000af5dc  .word 0x4f50616e 'naPO'
+  000af5e0  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000af5e4  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000af5e8  .word 0x3a3a7265 'er::'
+  000af5ec  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000af5f0  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000af5f4  .word 0x50203a6c 'l: P'
+  000af5f8  .word 0x6f79616c 'layo'  <OBJ/BSS>
+  000af5fc  .word 0x64207475 'ut d'  <OBJ/BSS>
+  000af600  .word 0x79616c65 'elay'  <OBJ/BSS>
+  000af604  .word 0x6a657220 ' rej'  <OBJ/BSS>
+  000af608  .word 0x65746365 'ecte'  <OBJ/BSS>
+  000af60c  .word 0xa64
+  000af610  .word 0x616d6f64 'doma'  <OBJ/BSS>
+  000af614  .word 0x6e69 'in..'
+  000af618  .word 0x66657270 'pref'  <OBJ/BSS>
+  000af61c  .word 0x65727265 'erre'  <OBJ/BSS>
+  000af620  .word 0x73614d64 'dMas'  <OBJ/BSS>
+  000af624  .word 0x726574 'ter.'
+  000af628  .word 0x636f6c63 'cloc'  <OBJ/BSS>
+  000af62c  .word 0x616c436b 'kCla'  <OBJ/BSS>
+  000af630  .word 0x7373 'ss..'
+  000af634  .word 0x41676f6c 'logA'
+  000af638  .word 0x756f6e6e 'nnou'  <OBJ/BSS>
+  000af63c  .word 0x4965636e 'nceI'
+  000af640  .word 0x7265746e 'nter'  <OBJ/BSS>
+  000af644  .word 0x6c6176 'val.'
+  000af648  .word 0x53676f6c 'logS'
+  000af64c  .word 0x49636e79 'yncI'
+  000af650  .word 0x7265746e 'nter'  <OBJ/BSS>
+  000af654  .word 0x6c6176 'val.'
+  000af658  .word 0x54547069 'ipTT'
+  000af65c  .word 0x4c 'L...'
+  000af660  cmp r0,#0x0
+  000af664  beq 0x000af6e4   ; ref->000af6e4 = 0xe51f1584  <OBJ/BSS>
+  000af668  ldr r1,[0xaf168]
+  000af66c  add r0,sp,#0x10
+  000af670  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af674  adr r1,0xafa18
+  000af678  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af67c  adr r1,0xaf5cc
+  000af680  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af684  adr r1,0xaf658
+  000af688  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af68c  ldr r0,[r0,#0xc]
+  000af690  and r0,r0,#0x800
+  000af694  movs r0,r0, lsr #0xb
+  000af698  beq 0x000af6e4   ; ref->000af6e4 = 0xe51f1584  <OBJ/BSS>
+  000af69c  ldr r1,[0xaf168]
+  000af6a0  add r0,sp,#0x10
+  000af6a4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af6a8  adr r1,0xafa18
+  000af6ac  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af6b0  adr r1,0xaf5cc
+  000af6b4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af6b8  adr r1,0xaf658
+  000af6bc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af6c0  ldr r1,[r0,#0xc]
+  000af6c4  tst r1,#0x800
+  000af6c8  ldrne r0,[r0,#0x0]
+  000af6cc  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af6d0  and r1,r0,#0xff
+  000af6d4  ldr r0,[sp,#0xc]
+  000af6d8  bl 0x000bf26c   ; ref->000bf26c = 0xe92d41f0  <OBJ/BSS>
+  000af6dc  cmp r0,#0x0
+  000af6e0  beq 0x000af814   ; ref->000af814 = 0xe28f0f99  <OBJ/BSS>
+  000af6e4  ldr r1,[0xaf168]
+  000af6e8  add r0,sp,#0x10
+  000af6ec  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af6f0  adr r1,0xafa18
+  000af6f4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af6f8  adr r1,0xaf5cc
+  000af6fc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af700  adr r1,0xafa20
+  000af704  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af708  cmp r0,#0x0
+  000af70c  beq 0x000af794   ; ref->000af794 = 0xe51f1634  <OBJ/BSS>
+  000af710  ldr r1,[0xaf168]
+  000af714  add r0,sp,#0x10
+  000af718  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af71c  adr r1,0xafa18
+  000af720  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af724  adr r1,0xaf5cc
+  000af728  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af72c  adr r1,0xafa20
+  000af730  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af734  ldr r0,[r0,#0xc]
+  000af738  and r0,r0,#0x100
+  000af73c  movs r0,r0, lsr #0x8
+  000af740  beq 0x000af794   ; ref->000af794 = 0xe51f1634  <OBJ/BSS>
+  000af744  ldr r1,[0xaf168]
+  000af748  add r0,sp,#0x10
+  000af74c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af750  adr r1,0xafa18
+  000af754  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af758  adr r1,0xaf5cc
+  000af75c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af760  adr r1,0xafa20
+  000af764  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af768  ldr r0,[r0,#0xc]
+  000af76c  and r1,r0,#0x100
+  000af770  movs r1,r1, lsr #0x8
+  000af774  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af778  cmp r0,r8
+  000af77c  ldr r0,[sp,#0xc]
+  000af780  moveq r1,#0x1
+  000af784  movne r1,#0x0
+  000af788  bl 0x000ba50c   ; ref->000ba50c = 0xe92d4008  <OBJ/BSS>
+  000af78c  cmp r0,#0x0
+  000af790  beq 0x000af82c   ; ref->000af82c = 0xe28f0fa2  <OBJ/BSS>
+  000af794  ldr r1,[0xaf168]
+  000af798  add r0,sp,#0x10
+  000af79c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af7a0  adr r1,0xafa18
+  000af7a4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af7a8  adr r1,0xafa2c
+  000af7ac  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af7b0  cmp r0,#0x0
+  000af7b4  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af7b8  ldr r1,[0xaf168]
+  000af7bc  add r0,sp,#0x10
+  000af7c0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af7c4  adr r1,0xafa18
+  000af7c8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af7cc  adr r1,0xafa2c
+  000af7d0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af7d4  ldr r0,[r0,#0xc]
+  000af7d8  cmp r0,#0x3
+  000af7dc  beq 0x000af844   ; ref->000af844 = 0xe51f16e4  <OBJ/BSS>
+  000af7e0  b 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af7e4  ldr r0,[0xafa3c]
+  000af7e8  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af7ec  add r0,sp,#0x10
+  000af7f0  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af7f4  cpy r0,r4
+  000af7f8  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af7fc  adr r0,0xafa40
+  000af800  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af804  add r0,sp,#0x10
+  000af808  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af80c  cpy r0,r4
+  000af810  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af814  adr r0,0xafa80
+  000af818  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af81c  add r0,sp,#0x10
+  000af820  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af824  cpy r0,r4
+  000af828  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af82c  adr r0,0xafabc
+  000af830  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000af834  add r0,sp,#0x10
+  000af838  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000af83c  cpy r0,r4
+  000af840  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000af844  ldr r1,[0xaf168]
+  000af848  add r0,sp,#0x10
+  000af84c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af850  adr r1,0xafa18
+  000af854  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af858  adr r1,0xafa2c
+  000af85c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af860  adr r1,0xafafc
+  000af864  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af868  cmp r0,#0x0
+  000af86c  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af870  ldr r1,[0xaf168]
+  000af874  add r0,sp,#0x10
+  000af878  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af87c  adr r1,0xafa18
+  000af880  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af884  adr r1,0xafa2c
+  000af888  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af88c  adr r1,0xafafc
+  000af890  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af894  ldr r0,[r0,#0xc]
+  000af898  and r0,r0,#0x100000
+  000af89c  movs r0,r0, lsr #0x14
+  000af8a0  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af8a4  ldr r1,[0xaf168]
+  000af8a8  add r0,sp,#0x10
+  000af8ac  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8b0  adr r1,0xafa18
+  000af8b4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8b8  adr r1,0xafa2c
+  000af8bc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8c0  adr r1,0xafb08
+  000af8c4  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af8c8  cmp r0,#0x0
+  000af8cc  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af8d0  ldr r1,[0xaf168]
+  000af8d4  add r0,sp,#0x10
+  000af8d8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8dc  adr r1,0xafa18
+  000af8e0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8e4  adr r1,0xafa2c
+  000af8e8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8ec  adr r1,0xafb08
+  000af8f0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af8f4  ldr r0,[r0,#0xc]
+  000af8f8  and r0,r0,#0x100000
+  000af8fc  movs r0,r0, lsr #0x14
+  000af900  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af904  ldr r1,[0xaf168]
+  000af908  add r0,sp,#0x10
+  000af90c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af910  adr r1,0xafa18
+  000af914  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af918  adr r1,0xafa2c
+  000af91c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af920  adr r1,0xafb14
+  000af924  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000af928  cmp r0,#0x0
+  000af92c  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af930  ldr r1,[0xaf168]
+  000af934  add r0,sp,#0x10
+  000af938  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af93c  adr r1,0xafa18
+  000af940  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af944  adr r1,0xafa2c
+  000af948  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af94c  adr r1,0xafb14
+  000af950  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af954  ldr r0,[r0,#0xc]
+  000af958  and r0,r0,#0x100000
+  000af95c  movs r0,r0, lsr #0x14
+  000af960  beq 0x000afd00   ; ref->000afd00 = 0xe51f1ba0  <OBJ/BSS>
+  000af964  ldr r1,[0xaf168]
+  000af968  add r11,sp,#0x40
+  000af96c  add r0,sp,#0x10
+  000af970  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af974  adr r1,0xafa18
+  000af978  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af97c  adr r1,0xafa2c
+  000af980  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af984  adr r1,0xafafc
+  000af988  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af98c  ldr r1,[r0,#0xc]
+  000af990  and r1,r1,#0x100000
+  000af994  movs r1,r1, lsr #0x14
+  000af998  ldrne r10,[r0,#0x0]
+  000af99c  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000af9a0  cpy r0,r10
+  000af9a4  blx 0x000034d0   ; ref->000034d0 = 0x1c44b530
+  000af9a8  movs r9,r0
+  000af9ac  cpyeq r0,r7
+  000af9b0  beq 0x000af9e0   ; ref->000af9e0 = 0xe1a02009  <OBJ/BSS>
+  000af9b4  cmp r9,#0x80
+  000af9b8  mov r1,#0x80
+  000af9bc  add r3,sp,#0x4
+  000af9c0  cpyhi r3,sp
+  000af9c4  str r9,[sp,#0x0]
+  000af9c8  str r1,[sp,#0x4]
+  000af9cc  ldr r1,[r3,#0x0]
+  000af9d0  cpy r0,r11
+  000af9d4  cpy r2,r9
+  000af9d8  blx 0x001da28c   ; ref->001da28c = 0x200eb5f8
+  000af9dc  add r0,r0,#0xc
+  000af9e0  cpy r2,r9
+  000af9e4  cpy r1,r10
+  000af9e8  str r0,[sp,#0x40]
+  000af9ec  bl 0x00003628   ; ref->00003628 = 0xe3520003  <OBJ/BSS>
+  000af9f0  ldr r1,[0xaf168]
+  000af9f4  add r0,sp,#0x10
+  000af9f8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000af9fc  adr r1,0xafa18
+  000afa00  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afa04  adr r1,0xafa2c
+  000afa08  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afa0c  adr r1,0xafb08
+  000afa10  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afa14  b 0x000afb20   ; ref->000afb20 = 0xe590100c  <OBJ/BSS>
+  000afa18  .word 0x666e6f63 'conf'  <OBJ/BSS>
+  000afa1c  .word 0x6769 'ig..'
+  000afa20  .word 0x76616c73 'slav'  <OBJ/BSS>
+  000afa24  .word 0x6c6e4f65 'eOnl'  <OBJ/BSS>
+  000afa28  .word 0x79 'y...'
+  000afa2c  .word 0x72504953 'SIPr'  <OBJ/BSS>
+  000afa30  .word 0x69656365 'ecei'  <OBJ/BSS>
+  000afa34  .word 0x73726576 'vers'  <OBJ/BSS>
+  000afa38  .word 0x0 '....'
+  000afa3c  .word 0x601eda18  (ptr 1e7a94)
+  000afa40  .word 0x4f525245 'ERRO'
+  000afa44  .word 0x52203a52 'R: R'
+  000afa48  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000afa4c  .word 0x4f50616e 'naPO'
+  000afa50  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000afa54  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000afa58  .word 0x3a3a7265 'er::'
+  000afa5c  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000afa60  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000afa64  .word 0x50203a6c 'l: P'
+  000afa68  .word 0x70205054 'TP p'  <OBJ/BSS>
+  000afa6c  .word 0x726f6972 'rior'  <OBJ/BSS>
+  000afa70  .word 0x65697469 'itie'  <OBJ/BSS>
+  000afa74  .word 0x65722073 's re'  <OBJ/BSS>
+  000afa78  .word 0x7463656a 'ject'  <OBJ/BSS>
+  000afa7c  .word 0xa6465
+  000afa80  .word 0x4f525245 'ERRO'
+  000afa84  .word 0x52203a52 'R: R'
+  000afa88  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000afa8c  .word 0x4f50616e 'naPO'
+  000afa90  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000afa94  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000afa98  .word 0x3a3a7265 'er::'
+  000afa9c  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000afaa0  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000afaa4  .word 0x50203a6c 'l: P'
+  000afaa8  .word 0x54205054 'TP T'
+  000afaac  .word 0x72204c54 'TL r'  <OBJ/BSS>
+  000afab0  .word 0x63656a65 'ejec'  <OBJ/BSS>
+  000afab4  .word 0xa646574
+  000afab8  .word 0x0 '....'
+  000afabc  .word 0x4f525245 'ERRO'
+  000afac0  .word 0x52203a52 'R: R'
+  000afac4  .word 0x6e657661 'aven'  <OBJ/BSS>
+  000afac8  .word 0x4f50616e 'naPO'
+  000afacc  .word 0x685f5453 'ST_h'  <OBJ/BSS>
+  000afad0  .word 0x6c646e61 'andl'  <OBJ/BSS>
+  000afad4  .word 0x3a3a7265 'er::'
+  000afad8  .word 0x65476f64 'doGe'  <OBJ/BSS>
+  000afadc  .word 0x6172656e 'nera'  <OBJ/BSS>
+  000afae0  .word 0x50203a6c 'l: P'
+  000afae4  .word 0x73205054 'TP s'  <OBJ/BSS>
+  000afae8  .word 0x6576616c 'lave'  <OBJ/BSS>
+  000afaec  .word 0x6c6e6f20 ' onl'  <OBJ/BSS>
+  000afaf0  .word 0x65722079 'y re'  <OBJ/BSS>
+  000afaf4  .word 0x7463656a 'ject'  <OBJ/BSS>
+  000afaf8  .word 0xa6465
+  000afafc  .word 0x75504953 'SIPu'  <OBJ/BSS>
+  000afb00  .word 0x6e726573 'sern'  <OBJ/BSS>
+  000afb04  .word 0x656d61 'ame.'
+  000afb08  .word 0x70504953 'SIPp'  <OBJ/BSS>
+  000afb0c  .word 0x77737361 'assw'  <OBJ/BSS>
+  000afb10  .word 0x64726f 'ord.'
+  000afb14  .word 0x73504953 'SIPs'  <OBJ/BSS>
+  000afb18  .word 0x65767265 'erve'  <OBJ/BSS>
+  000afb1c  .word 0x72 'r...'
+  000afb20  ldr r1,[r0,#0xc]
+  000afb24  and r1,r1,#0x100000
+  000afb28  movs r1,r1, lsr #0x14
+  000afb2c  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afb30  ldr r0,[r0,#0x4]
+  000afb34  cmp r0,#0x0
+  000afb38  beq 0x000afbb0   ; ref->000afbb0 = 0xe51f1a50  <OBJ/BSS>
+  000afb3c  mov r1,#0x3a
+  000afb40  add r0,sp,#0x40
+  000afb44  bl 0x001da7ec   ; ref->001da7ec = 0xe92d47f0  <OBJ/BSS>
+  000afb48  ldr r1,[0xaf168]
+  000afb4c  add r9,sp,#0x40
+  000afb50  add r0,sp,#0x10
+  000afb54  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afb58  adr r1,0xafa18
+  000afb5c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afb60  adr r1,0xafa2c
+  000afb64  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afb68  adr r1,0xafb08
+  000afb6c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afb70  ldr r1,[r0,#0xc]
+  000afb74  and r1,r1,#0x100000
+  000afb78  movs r1,r1, lsr #0x14
+  000afb7c  ldrne r7,[r0,#0x0]
+  000afb80  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afb84  ldr r0,[sp,#0x40]
+  000afb88  ldr r10,[r0,#-0x4]
+  000afb8c  cpy r0,r7
+  000afb90  blx 0x000034d0   ; ref->000034d0 = 0x1c44b530
+  000afb94  stmia sp,{r0,r6}
+  000afb98  str r0,[sp,#0x8]
+  000afb9c  cpy r3,r7
+  000afba0  mov r2,#0x0
+  000afba4  cpy r1,r10
+  000afba8  cpy r0,r9
+  000afbac  blx 0x001da110   ; ref->001da110 = 0xb085b5ff  <OBJ/BSS>
+  000afbb0  ldr r1,[0xaf168]
+  000afbb4  add r0,sp,#0x10
+  000afbb8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afbbc  adr r1,0xafa18
+  000afbc0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afbc4  adr r1,0xafa2c
+  000afbc8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afbcc  adr r1,0xafb14
+  000afbd0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afbd4  ldr r1,[r0,#0xc]
+  000afbd8  and r1,r1,#0x100000
+  000afbdc  movs r1,r1, lsr #0x14
+  000afbe0  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afbe4  ldr r0,[r0,#0x4]
+  000afbe8  cmp r0,#0x0
+  000afbec  beq 0x000afc64   ; ref->000afc64 = 0xe59d0040  <OBJ/BSS>
+  000afbf0  mov r1,#0x40
+  000afbf4  add r0,sp,#0x40
+  000afbf8  bl 0x001da7ec   ; ref->001da7ec = 0xe92d47f0  <OBJ/BSS>
+  000afbfc  ldr r1,[0xaf168]
+  000afc00  add r9,sp,#0x40
+  000afc04  add r0,sp,#0x10
+  000afc08  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afc0c  adr r1,0xafa18
+  000afc10  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afc14  adr r1,0xafa2c
+  000afc18  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afc1c  adr r1,0xafb14
+  000afc20  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afc24  ldr r1,[r0,#0xc]
+  000afc28  and r1,r1,#0x100000
+  000afc2c  movs r1,r1, lsr #0x14
+  000afc30  ldrne r7,[r0,#0x0]
+  000afc34  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afc38  ldr r0,[sp,#0x40]
+  000afc3c  ldr r10,[r0,#-0x4]
+  000afc40  cpy r0,r7
+  000afc44  blx 0x000034d0   ; ref->000034d0 = 0x1c44b530
+  000afc48  stmia sp,{r0,r6}
+  000afc4c  str r0,[sp,#0x8]
+  000afc50  cpy r3,r7
+  000afc54  mov r2,#0x0
+  000afc58  cpy r1,r10
+  000afc5c  cpy r0,r9
+  000afc60  blx 0x001da110   ; ref->001da110 = 0xb085b5ff  <OBJ/BSS>
+  000afc64  ldr r0,[sp,#0x40]
+  000afc68  add r7,sp,#0x44
+  000afc6c  cpy r1,r0
+  000afc70  ldr r2,[r0,#-0xc]!
+  000afc74  adds r3,r2,#0x1
+  000afc78  beq 0x000afc90   ; ref->000afc90 = 0xe5116004  <OBJ/BSS>
+  000afc7c  str r1,[sp,#0x44]
+  000afc80  ldr r1,[0xaff60]
+  000afc84  cmp r0,r1
+  000afc88  strne r3,[r0,#0x0]
+  000afc8c  b 0x000afcb8   ; ref->000afcb8 = 0xe59d000c  <OBJ/BSS>
+  000afc90  ldr r6,[r1,#-0x4]
+  000afc94  cpy r0,r7
+  000afc98  cpy r2,r6
+  000afc9c  cpy r1,r6
+  000afca0  blx 0x001da28c   ; ref->001da28c = 0x200eb5f8
+  000afca4  add r0,r0,#0xc
+  000afca8  ldr r1,[sp,#0x40]
+  000afcac  cpy r2,r6
+  000afcb0  str r0,[sp,#0x44]
+  000afcb4  bl 0x00003628   ; ref->00003628 = 0xe3520003  <OBJ/BSS>
+  000afcb8  ldr r0,[sp,#0xc]
+  000afcbc  cpy r1,r7
+  000afcc0  bl 0x000bdc00   ; ref->000bdc00 = 0xe92d43f0  <OBJ/BSS>
+  000afcc4  eor r6,r0,#0x1
+  000afcc8  add r0,sp,#0x44
+  000afccc  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000afcd0  cmp r6,#0x0
+  000afcd4  beq 0x000afcf8   ; ref->000afcf8 = 0xe28d0040  <OBJ/BSS>
+  000afcd8  ldr r0,[0xaff64]
+  000afcdc  blx 0x000028a4   ; ref->000028a4 = 0x4905b40f
+  000afce0  add r0,sp,#0x40
+  000afce4  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000afce8  add r0,sp,#0x10
+  000afcec  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000afcf0  cpy r0,r4
+  000afcf4  b 0x000ae7e0   ; ref->000ae7e0 = 0xeb03c2c9  <OBJ/BSS>
+  000afcf8  add r0,sp,#0x40
+  000afcfc  blx 0x001da314   ; ref->001da314 = 0x4b538
+  000afd00  ldr r1,[0xaf168]
+  000afd04  add r0,sp,#0x10
+  000afd08  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd0c  adr r1,0xafa18
+  000afd10  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd14  adr r1,0xaff68
+  000afd18  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000afd1c  cmp r0,#0x0
+  000afd20  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afd24  ldr r1,[0xaf168]
+  000afd28  add r0,sp,#0x10
+  000afd2c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd30  adr r1,0xafa18
+  000afd34  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd38  adr r1,0xaff68
+  000afd3c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd40  ldr r0,[r0,#0xc]
+  000afd44  cmp r0,#0x3
+  000afd48  bne 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afd4c  ldr r1,[0xaf168]
+  000afd50  add r0,sp,#0x10
+  000afd54  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd58  adr r1,0xafa18
+  000afd5c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd60  adr r1,0xaff68
+  000afd64  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd68  cpy r6,r0
+  000afd6c  adr r1,0xaff6c
+  000afd70  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000afd74  cmp r0,#0x0
+  000afd78  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afd7c  cpy r0,r6
+  000afd80  adr r1,0xaff6c
+  000afd84  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afd88  ldr r0,[r0,#0xc]
+  000afd8c  and r0,r0,#0x100000
+  000afd90  movs r0,r0, lsr #0x14
+  000afd94  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afd98  adr r1,0xaff80
+  000afd9c  cpy r0,r6
+  000afda0  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000afda4  cmp r0,#0x0
+  000afda8  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afdac  cpy r0,r6
+  000afdb0  adr r1,0xaff80
+  000afdb4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afdb8  ldr r0,[r0,#0xc]
+  000afdbc  and r0,r0,#0x800
+  000afdc0  movs r0,r0, lsr #0xb
+  000afdc4  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afdc8  adr r1,0xaff88
+  000afdcc  cpy r0,r6
+  000afdd0  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000afdd4  cmp r0,#0x0
+  000afdd8  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afddc  cpy r0,r6
+  000afde0  adr r1,0xaff88
+  000afde4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afde8  ldr r0,[r0,#0xc]
+  000afdec  and r0,r0,#0x800
+  000afdf0  movs r0,r0, lsr #0xb
+  000afdf4  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afdf8  adr r1,0xaff98
+  000afdfc  cpy r0,r6
+  000afe00  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000afe04  cmp r0,#0x0
+  000afe08  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afe0c  cpy r0,r6
+  000afe10  adr r1,0xaff98
+  000afe14  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afe18  ldr r0,[r0,#0xc]
+  000afe1c  and r0,r0,#0x100
+  000afe20  movs r0,r0, lsr #0x8
+  000afe24  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afe28  adr r1,0xaffb4
+  000afe2c  cpy r0,r6
+  000afe30  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000afe34  cmp r0,#0x0
+  000afe38  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afe3c  cpy r0,r6
+  000afe40  adr r1,0xaffb4
+  000afe44  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afe48  ldr r0,[r0,#0xc]
+  000afe4c  and r0,r0,#0x100
+  000afe50  movs r0,r0, lsr #0x8
+  000afe54  beq 0x000aff38   ; ref->000aff38 = 0xe28d0010  <OBJ/BSS>
+  000afe58  cpy r0,r6
+  000afe5c  adr r1,0xaff6c
+  000afe60  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afe64  ldr r1,[r0,#0xc]
+  000afe68  and r1,r1,#0x100000
+  000afe6c  movs r1,r1, lsr #0x14
+  000afe70  ldrne r1,[r0,#0x0]
+  000afe74  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afe78  ldr r0,[sp,#0xc]
+  000afe7c  bl 0x000bc528   ; ref->000bc528 = 0xe92d41f0  <OBJ/BSS>
+  000afe80  cpy r0,r6
+  000afe84  adr r1,0xaff80
+  000afe88  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afe8c  ldr r1,[r0,#0xc]
+  000afe90  tst r1,#0x800
+  000afe94  ldrne r0,[r0,#0x0]
+  000afe98  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afe9c  mov r1,r0, lsl #0x10
+  000afea0  ldr r0,[sp,#0xc]
+  000afea4  mov r1,r1, lsr #0x10
+  000afea8  bl 0x000b96e0   ; ref->000b96e0 = 0xe92d41f0  <OBJ/BSS>
+  000afeac  cpy r0,r6
+  000afeb0  adr r1,0xaff88
+  000afeb4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afeb8  ldr r1,[r0,#0xc]
+  000afebc  tst r1,#0x800
+  000afec0  ldrne r0,[r0,#0x0]
+  000afec4  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afec8  mov r1,r0, lsl #0x10
+  000afecc  ldr r0,[sp,#0xc]
+  000afed0  mov r1,r1, lsr #0x10
+  000afed4  bl 0x000bdde0   ; ref->000bdde0 = 0xe92d41f0  <OBJ/BSS>
+  000afed8  cpy r0,r6
+  000afedc  adr r1,0xaff98
+  000afee0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000afee4  ldr r0,[r0,#0xc]
+  000afee8  and r1,r0,#0x100
+  000afeec  movs r1,r1, lsr #0x8
+  000afef0  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000afef4  cmp r0,r8
+  000afef8  ldr r0,[sp,#0xc]
+  000afefc  moveq r1,#0x1
+  000aff00  movne r1,#0x0
+  000aff04  bl 0x000be894   ; ref->000be894 = 0xe92d4008  <OBJ/BSS>
+  000aff08  cpy r0,r6
+  000aff0c  adr r1,0xaffb4
+  000aff10  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000aff14  ldr r0,[r0,#0xc]
+  000aff18  and r1,r0,#0x100
+  000aff1c  movs r1,r1, lsr #0x8
+  000aff20  beq 0x000aff5c   ; ref->000aff5c = 0xfafd4ce5  <OBJ/BSS>
+  000aff24  cmp r0,r8
+  000aff28  ldr r0,[sp,#0xc]
+  000aff2c  moveq r1,#0x1
+  000aff30  movne r1,#0x0
+  000aff34  bl 0x000bc4ac   ; ref->000bc4ac = 0xe92d4008  <OBJ/BSS>
+  000aff38  add r0,sp,#0x10
+  000aff3c  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000aff40  cpy r0,r4
+  000aff44  bl 0x0019f30c   ; ref->0019f30c = 0xe3a0201f  <OBJ/BSS>
+  000aff48  cpy r0,r5
+  000aff4c  bl 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000aff50  mov r0,#0x1
+  000aff54  add sp,sp,#0x54
+  000aff58  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000aff5c  blx 0x000032f8   ; ref->000032f8 = 0xf0012000  <OBJ/BSS>
+  000aff60  .word 0x604999f4  <OBJ/BSS>
+  000aff64  .word 0x601eda5c  (ptr 1e7ad8)
+  000aff68  .word 0x504153 'SAP.'
+  000aff6c  .word 0x746c754d 'Mult'  <OBJ/BSS>
+  000aff70  .word 0x73616369 'icas'  <OBJ/BSS>
+  000aff74  .word 0x64644174 'tAdd'  <OBJ/BSS>
+  000aff78  .word 0x73736572 'ress'  <OBJ/BSS>
+  000aff7c  .word 0x0 '....'
+  000aff80  .word 0x74726f50 'Port'  <OBJ/BSS>
+  000aff84  .word 0x0 '....'
+  000aff88  .word 0x73736553 'Sess'  <OBJ/BSS>
+  000aff8c  .word 0x546e6f69 'ionT'
+  000aff90  .word 0x6f656d69 'imeo'  <OBJ/BSS>
+  000aff94  .word 0x7475 'ut..'
+  000aff98  .word 0x73736553 'Sess'  <OBJ/BSS>
+  000aff9c  .word 0x416e6f69 'ionA'
+  000affa0  .word 0x756f6e6e 'nnou'  <OBJ/BSS>
+  000affa4  .word 0x6d65636e 'ncem'  <OBJ/BSS>
+  000affa8  .word 0x45746e65 'entE'
+  000affac  .word 0x6c62616e 'nabl'  <OBJ/BSS>
+  000affb0  .word 0x6465 'ed..'
+  000affb4  .word 0x776f7242 'Brow'  <OBJ/BSS>
+  000affb8  .word 0x676e6973 'sing'  <OBJ/BSS>
+  000affbc  .word 0x62616e45 'Enab'  <OBJ/BSS>
+  000affc0  .word 0x64656c 'led.'
+  000affc4  .word 0xe92d4ff0  <OBJ/BSS>

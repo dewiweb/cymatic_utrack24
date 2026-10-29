@@ -59,6 +59,33 @@ class AudioLan:
             for k in('streamStatus','currentStream','currentStreamChannel','isCollapsedChannel','streamPathFake'):o.pop(k,None)
         return self.post('/outputs',{'ArchwaveAES67':{'version':1,'outputs':outputs}})
 
+    # --- routing stream->carte (streamPath='nom/canal', canal 1-indexe) ---
+    # valide: streamPath persiste si manualSDP='' ET manualSDPChannel present.
+    def route(self,output_ch,stream_name=None,stream_ch=1):
+        """Route output_ch (0-indexe) sur stream_name/stream_ch (1-indexe), ou
+        desabonne si stream_name=None. Relit les 24 outputs, modifie, reposte."""
+        outs=self.outputs()['ArchwaveAES67']['outputs']
+        for i,o in enumerate(outs):
+            for k in('streamStatus','currentStream','currentStreamChannel','isCollapsedChannel','streamPathFake'):
+                o.pop(k,None)
+            if i==output_ch:
+                o['manualSDP']=''
+                o['streamPath']='%s/%d'%(stream_name,stream_ch) if stream_name else ''
+        return self.post('/outputs',{'ArchwaveAES67':{'version':1,'outputs':outs}})
+
+    def route_all(self,stream_name,ch_map=None):
+        """ch_map={output_ch(0-idx):stream_ch(1-idx)}; absent ->1..8; None entree=off."""
+        outs=self.outputs()['ArchwaveAES67']['outputs']
+        for i,o in enumerate(outs):
+            for k in('streamStatus','currentStream','currentStreamChannel','isCollapsedChannel','streamPathFake'):
+                o.pop(k,None)
+            o['manualSDP']=''
+            o['streamPath']='%s/%d'%(stream_name,ch_map.get(i,0)) if (ch_map or {}).get(i) else ''
+        return self.post('/outputs',{'ArchwaveAES67':{'version':1,'outputs':outs}})
+
+    def discovered_streams(self):
+        return self.stream_list().get('ArchwaveAES67',{}).get('streams',[])
+
     def set_general(self,config):
         if 'playoutDelay' in config and 'delayInSamples' in config['playoutDelay']:
             config['playoutDelay']['delayInSamples']=int(config['playoutDelay']['delayInSamples'])

@@ -1,0 +1,256 @@
+
+############ ARM range ae318..ae70c
+  000ae318  stmdb sp!,{r4,r5,r6,r7,r8,lr}
+  000ae31c  cpy r8,r0
+  000ae320  ldr r0,[r1,#0x14]
+  000ae324  sub sp,sp,#0x30
+  000ae328  cmp r0,#0x1
+  000ae32c  cpy r7,r1
+  000ae330  beq 0x000ae350   ; ref->000ae350 = 0xe59f530c  <OBJ/BSS>
+  000ae334  cmp r0,#0x2
+  000ae338  beq 0x000ae344   ; ref->000ae344 = 0xe3a00000  <OBJ/BSS>
+  000ae33c  cmp r0,#0x3
+  000ae340  beq 0x000ae350   ; ref->000ae350 = 0xe59f530c  <OBJ/BSS>
+  000ae344  mov r0,#0x0
+  000ae348  add sp,sp,#0x30
+  000ae34c  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  000ae350  ldr r5,[0xae664]
+  000ae354  mvn r1,#0x0
+  000ae358  cpy r0,r5
+  000ae35c  bl 0x0017afd4   ; ref->0017afd4 = 0xe92d4070  <OBJ/BSS>
+  000ae360  ldr r0,[r7,#0xc]
+  000ae364  add r6,r5,#0x20
+  000ae368  add r1,r0,#0x1
+  000ae36c  cmp r1,#0x8000
+  000ae370  mov r4,#0x0
+  000ae374  bls 0x000ae3a8   ; ref->000ae3a8 = 0xe2871008  <OBJ/BSS>
+  000ae378  add r0,r0,#0x1
+  000ae37c  mov r1,#0x1
+  000ae380  bl 0x001a0808   ; ref->001a0808 = 0xe1a0200e  <OBJ/BSS>
+  000ae384  cpy r6,r0
+  000ae388  cmp r4,r6
+  000ae38c  cpy r0,r4
+  000ae390  beq 0x000ae39c   ; ref->000ae39c = 0xe1b06004  <OBJ/BSS>
+  000ae394  bl 0x0019f30c   ; ref->0019f30c = 0xe3a0201f  <OBJ/BSS>
+  000ae398  cpy r4,r6
+  000ae39c  movs r6,r4
+  000ae3a0  cpy r0,r4
+  000ae3a4  beq 0x000ae3f0   ; ref->000ae3f0 = 0xeb03c3c5  <OBJ/BSS>
+  000ae3a8  add r1,r7,#0x8
+  000ae3ac  ldmia r1,{r1,r2}
+  000ae3b0  cpy r0,r6
+  000ae3b4  bl 0x00003628   ; ref->00003628 = 0xe3520003  <OBJ/BSS>
+  000ae3b8  ldr r1,[r7,#0xc]
+  000ae3bc  mov r0,#0x0
+  000ae3c0  strb r0,[r6,r1]
+  000ae3c4  cpy r1,r0
+  000ae3c8  mov r2,#0x400
+  000ae3cc  cpy r0,sp
+  000ae3d0  bl 0x001d6158   ; ref->001d6158 = 0xe92d41f0  <OBJ/BSS>
+  000ae3d4  cpy r1,r6
+  000ae3d8  cpy r0,sp
+  000ae3dc  bl 0x001d5fcc   ; ref->001d5fcc = 0xe92d41f0  <OBJ/BSS>
+  000ae3e0  ldr r0,[sp,#0x28]
+  000ae3e4  cmp r0,#0x0
+  000ae3e8  bne 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae3ec  b 0x000ae408   ; ref->000ae408 = 0xe28f1f96  <OBJ/BSS>
+  000ae3f0  bl 0x0019f30c   ; ref->0019f30c = 0xe3a0201f  <OBJ/BSS>
+  000ae3f4  cpy r0,r5
+  000ae3f8  bl 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000ae3fc  mov r0,#0x0
+  000ae400  add sp,sp,#0x30
+  000ae404  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  000ae408  adr r1,0xae668
+  000ae40c  cpy r0,sp
+  000ae410  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae414  cmp r0,#0x0
+  000ae418  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae41c  adr r1,0xae668
+  000ae420  cpy r0,sp
+  000ae424  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae428  ldr r0,[r0,#0xc]
+  000ae42c  cmp r0,#0x3
+  000ae430  bne 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae434  adr r1,0xae668
+  000ae438  cpy r0,sp
+  000ae43c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae440  adr r1,0xae674
+  000ae444  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae448  cmp r0,#0x0
+  000ae44c  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae450  adr r1,0xae668
+  000ae454  cpy r0,sp
+  000ae458  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae45c  adr r1,0xae674
+  000ae460  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae464  ldr r0,[r0,#0xc]
+  000ae468  and r0,r0,#0x400
+  000ae46c  movs r0,r0, lsr #0xa
+  000ae470  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae474  adr r1,0xae668
+  000ae478  cpy r0,sp
+  000ae47c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae480  adr r1,0xae674
+  000ae484  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae488  ldr r1,[r0,#0xc]
+  000ae48c  tst r1,#0x400
+  000ae490  beq 0x000ae650   ; ref->000ae650 = 0xfafd5328  <OBJ/BSS>
+  000ae494  ldr r0,[r0,#0x0]
+  000ae498  cmp r0,#0x1
+  000ae49c  bne 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae4a0  adr r1,0xae668
+  000ae4a4  cpy r0,sp
+  000ae4a8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae4ac  adr r1,0xae67c
+  000ae4b0  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae4b4  cmp r0,#0x0
+  000ae4b8  beq 0x000ae5ac   ; ref->000ae5ac = 0xe28f10b4  <OBJ/BSS>
+  000ae4bc  adr r1,0xae668
+  000ae4c0  cpy r0,sp
+  000ae4c4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae4c8  adr r1,0xae67c
+  000ae4cc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae4d0  ldr r0,[r0,#0xc]
+  000ae4d4  and r0,r0,#0x100
+  000ae4d8  movs r0,r0, lsr #0x8
+  000ae4dc  beq 0x000ae5ac   ; ref->000ae5ac = 0xe28f10b4  <OBJ/BSS>
+  000ae4e0  adr r1,0xae668
+  000ae4e4  cpy r0,sp
+  000ae4e8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae4ec  adr r1,0xae67c
+  000ae4f0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae4f4  ldr r0,[r0,#0xc]
+  000ae4f8  and r1,r0,#0x100
+  000ae4fc  movs r1,r1, lsr #0x8
+  000ae500  beq 0x000ae650   ; ref->000ae650 = 0xfafd5328  <OBJ/BSS>
+  000ae504  ldr r6,[0xae684]
+  000ae508  cmp r0,r6
+  000ae50c  bne 0x000ae5ac   ; ref->000ae5ac = 0xe28f10b4  <OBJ/BSS>
+  000ae510  adr r1,0xae668
+  000ae514  cpy r0,sp
+  000ae518  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae51c  adr r1,0xae688
+  000ae520  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae524  cmp r0,#0x0
+  000ae528  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae52c  adr r1,0xae668
+  000ae530  cpy r0,sp
+  000ae534  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae538  adr r1,0xae688
+  000ae53c  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae540  ldr r0,[r0,#0xc]
+  000ae544  and r0,r0,#0x100
+  000ae548  movs r0,r0, lsr #0x8
+  000ae54c  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae550  blx 0x000509a8   ; ref->000509a8 = 0xf100b510  <OBJ/BSS>
+  000ae554  ldr r1,[r0,#0x0]
+  000ae558  ldr r1,[r1,#0x3c]
+  000ae55c  blx r1
+  000ae560  blx 0x0006a6e4   ; ref->0006a6e4 = 0xf01db510  <OBJ/BSS>
+  000ae564  ldr r1,[r0,#0x0]
+  000ae568  ldr r1,[r1,#0x1c]
+  000ae56c  blx r1
+  000ae570  adr r1,0xae668
+  000ae574  cpy r0,sp
+  000ae578  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae57c  adr r1,0xae688
+  000ae580  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae584  ldr r0,[r0,#0xc]
+  000ae588  and r1,r0,#0x100
+  000ae58c  movs r1,r1, lsr #0x8
+  000ae590  beq 0x000ae650   ; ref->000ae650 = 0xfafd5328  <OBJ/BSS>
+  000ae594  cmp r0,r6
+  000ae598  adrne r0,0xae694
+  000ae59c  bne 0x000ae628   ; ref->000ae628 = 0xebfe331b  <OBJ/BSS>
+  000ae5a0  adr r0,0xae6b0
+  000ae5a4  bl 0x0003b31c   ; ref->0003b31c = 0xe1a04000  <OBJ/BSS>
+  000ae5a8  b 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae5ac  adr r1,0xae668
+  000ae5b0  cpy r0,sp
+  000ae5b4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae5b8  adr r1,0xae6dc
+  000ae5bc  bl 0x001d8c94   ; ref->001d8c94 = 0xe92d41f0  <OBJ/BSS>
+  000ae5c0  cmp r0,#0x0
+  000ae5c4  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae5c8  adr r1,0xae668
+  000ae5cc  cpy r0,sp
+  000ae5d0  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae5d4  adr r1,0xae6dc
+  000ae5d8  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae5dc  ldr r0,[r0,#0xc]
+  000ae5e0  and r0,r0,#0x100000
+  000ae5e4  movs r0,r0, lsr #0x14
+  000ae5e8  beq 0x000ae62c   ; ref->000ae62c = 0xe1a0000d  <OBJ/BSS>
+  000ae5ec  adr r1,0xae668
+  000ae5f0  cpy r0,sp
+  000ae5f4  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae5f8  adr r1,0xae6dc
+  000ae5fc  bl 0x001d436c   ; ref->001d436c = 0xe92d41f0  <OBJ/BSS>
+  000ae600  ldr r1,[r0,#0xc]
+  000ae604  and r1,r1,#0x100000
+  000ae608  movs r1,r1, lsr #0x14
+  000ae60c  ldrne r1,[r0,#0x0]
+  000ae610  beq 0x000ae650   ; ref->000ae650 = 0xfafd5328  <OBJ/BSS>
+  000ae614  cpy r0,r8
+  000ae618  bl 0x000ae064   ; ref->000ae064 = 0xe92d4070  <OBJ/BSS>
+  000ae61c  cmp r0,#0x0
+  000ae620  adrne r0,0xae6e8
+  000ae624  beq 0x000ae654   ; ref->000ae654 = 0xe1a0000d  <OBJ/BSS>
+  000ae628  bl 0x0003b29c   ; ref->0003b29c = 0xe1a04000  <OBJ/BSS>
+  000ae62c  cpy r0,sp
+  000ae630  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000ae634  cpy r0,r4
+  000ae638  bl 0x0019f30c   ; ref->0019f30c = 0xe3a0201f  <OBJ/BSS>
+  000ae63c  cpy r0,r5
+  000ae640  bl 0x0017b0f0   ; ref->0017b0f0 = 0xe92d4070  <OBJ/BSS>
+  000ae644  mov r0,#0x1
+  000ae648  add sp,sp,#0x30
+  000ae64c  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  000ae650  blx 0x000032f8   ; ref->000032f8 = 0xf0012000  <OBJ/BSS>
+  000ae654  cpy r0,sp
+  000ae658  bl 0x0015242c   ; ref->0015242c = 0xe92d4070  <OBJ/BSS>
+  000ae65c  cpy r0,r4
+  000ae660  b 0x000ae3f0   ; ref->000ae3f0 = 0xeb03c3c5  <OBJ/BSS>
+  000ae664  .word 0x60405f30 '0_@`'  <OBJ/BSS>
+  000ae668  .word 0x68637241 'Arch'  <OBJ/BSS>
+  000ae66c  .word 0x65766177 'wave'  <OBJ/BSS>
+  000ae670  .word 0x444d43 'CMD.'
+  000ae674  .word 0x73726576 'vers'  <OBJ/BSS>
+  000ae678  .word 0x6e6f69 'ion.'
+  000ae67c  .word 0x6f626572 'rebo'  <OBJ/BSS>
+  000ae680  .word 0x746f 'ot..'
+  000ae684  .word 0x102
+  000ae688  .word 0x746f6f62 'boot'  <OBJ/BSS>
+  000ae68c  .word 0x64616f6c 'load'  <OBJ/BSS>
+  000ae690  .word 0x7265 'er..'
+  000ae694  .word 0x74736552 'Rest'  <OBJ/BSS>
+  000ae698  .word 0x69747261 'arti'  <OBJ/BSS>
+  000ae69c  .word 0x6f20676e 'ng o'  <OBJ/BSS>
+  000ae6a0  .word 0x5448206e 'n HT'
+  000ae6a4  .word 0x63205054 'TP c'  <OBJ/BSS>
+  000ae6a8  .word 0x616d6d6f 'omma'  <OBJ/BSS>
+  000ae6ac  .word 0xa646e
+  000ae6b0  .word 0x74736552 'Rest'  <OBJ/BSS>
+  000ae6b4  .word 0x69747261 'arti'  <OBJ/BSS>
+  000ae6b8  .word 0x7420676e 'ng t'  <OBJ/BSS>
+  000ae6bc  .word 0x6f62206f 'o bo'  <OBJ/BSS>
+  000ae6c0  .word 0x6f6c746f 'otlo'  <OBJ/BSS>
+  000ae6c4  .word 0x72656461 'ader'  <OBJ/BSS>
+  000ae6c8  .word 0x206e6f20 ' on '
+  000ae6cc  .word 0x50545448 'HTTP'
+  000ae6d0  .word 0x6d6f6320 ' com'  <OBJ/BSS>
+  000ae6d4  .word 0x646e616d 'mand'  <OBJ/BSS>
+  000ae6d8  .word 0xa
+  000ae6dc  .word 0x4d77656e 'newM'
+  000ae6e0  .word 0x64614341 'ACad'  <OBJ/BSS>
+  000ae6e4  .word 0x7264 'dr..'
+  000ae6e8  .word 0x74736552 'Rest'  <OBJ/BSS>
+  000ae6ec  .word 0x69747261 'arti'  <OBJ/BSS>
+  000ae6f0  .word 0x6f20676e 'ng o'  <OBJ/BSS>
+  000ae6f4  .word 0x414d206e 'n MA'
+  000ae6f8  .word 0x64612043 'C ad'  <OBJ/BSS>
+  000ae6fc  .word 0x73657264 'dres'  <OBJ/BSS>
+  000ae700  .word 0x68632073 's ch'  <OBJ/BSS>
+  000ae704  .word 0x65676e61 'ange'  <OBJ/BSS>
+  000ae708  .word 0xa
+  000ae70c  .word 0xe92d4ff0  <OBJ/BSS>
