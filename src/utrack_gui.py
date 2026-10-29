@@ -9,7 +9,7 @@ sys.path.insert(0, __import__('os').path.dirname(__file__))
 from utrack_telnet import UTrack24
 from audiolan import AudioLAN
 
-UT_HOST, AL_HOST = '192.168.10.197', '192.168.10.175'
+UT_HOST, AL_HOST = '192.168.10.198', '192.168.10.175'
 
 
 class App(tk.Tk):

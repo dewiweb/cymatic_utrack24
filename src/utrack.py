@@ -25,7 +25,7 @@ sys.path.insert(0, __import__('os').path.dirname(__file__))
 from utrack_telnet import UTrack24
 from audiolan import AudioLAN
 
-UTRACK_HOST = '192.168.10.197'
+UTRACK_HOST = '192.168.10.198'
 ALAN_HOST = '192.168.10.175'
 
 

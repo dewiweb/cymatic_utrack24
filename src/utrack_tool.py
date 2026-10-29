@@ -19,7 +19,7 @@ import time
 sys.path.insert(0, __import__('os').path.dirname(__file__))
 from utrack_telnet import UTrack24
 
-HOST = '192.168.10.197'
+HOST = '192.168.10.198'
 
 
 def levels(u, n=1):

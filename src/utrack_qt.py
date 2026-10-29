@@ -11,7 +11,7 @@ sys.path.insert(0, __import__('os').path.dirname(__file__))
 from utrack_telnet import UTrack24
 from audiolan import AudioLAN
 
-UT_HOST, AL_HOST = '192.168.10.197', '192.168.10.175'
+UT_HOST, AL_HOST = '192.168.10.198', '192.168.10.175'
 DARK = """QMainWindow,QWidget{background:#1c1e22;color:#ddd;font:10pt Consolas}
 QPushButton{background:#2d3138;border:1px solid #555;border-radius:4px;padding:8px}
 QPushButton:hover{background:#3a4048} QPushButton:pressed{background:#ff8800;color:#000}

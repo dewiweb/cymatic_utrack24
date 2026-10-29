@@ -6,7 +6,7 @@ access to the device: the `sds://` parameter tree (get/set), the transport
 
 Usage:
     from utrack_telnet import UTrack24
-    u = UTrack24('192.168.10.197')
+    u = UTrack24('192.168.10.198')
     print(u.get('cne/AppSettings/Global/uTrackName'))
     u.cmd('mixer levels')
 
@@ -233,7 +233,7 @@ class UTrack24:
 
 if __name__ == '__main__':
     import sys
-    u = UTrack24(sys.argv[1] if len(sys.argv) > 1 else '192.168.10.197')
+    u = UTrack24(sys.argv[1] if len(sys.argv) > 1 else '192.168.10.198')
     print(u.device_info())
     if len(sys.argv) > 2:
         print(u.cmd(' '.join(sys.argv[2:])))

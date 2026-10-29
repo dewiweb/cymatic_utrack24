@@ -9,7 +9,7 @@ from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
-TEL_HOST='192.168.10.197'
+TEL_HOST='192.168.10.198'
 
 DARK = """
 *{font-family:'Segoe UI';font-size:9.5pt;color:#e8eaed}
