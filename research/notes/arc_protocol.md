@@ -335,3 +335,11 @@ tables) · `arc_helpers*.txt` (field parsers, sendMessage, ctors) ·
 protocol creation) · `arc_iface_ctor.txt` (ARCApplicationInterface ctor
 FUN_000d5514) · `arc_vts*.txt` (candidate vtables) ·
 `arc_utrack_strs.txt` (uTrack "Audiolan Card" UI + spiSlave dev node).
+
+## Verification terrain (29/10/2026) — ARC/UDP inactif sur cette carte
+
+- `cne/AppSettings/ARC` : `Enabled=0`, `Transport=SPI` (etat d'origine).
+- `Enabled=1`+`Transport=UDP` persists, reboot fait → **aucun listener UDP** (scan unicast 1-20000, groupes multicast testes), pas de `_arc._udp` Bonjour, pas de port TCP ARC trouve.
+- Le sous-arbre `AppSettings/ARC/UDP` (DataServerPort etc.) **n'existe pas dans le modele CnE** — cree uniquement par `doUDPSetConfiguration` via ARC → dependance circulaire.
+- **Conclusion : ARC reseau desactive dans cette variante produit.** ARC ne sert que sur SPI (hote↔carte) et UART interne. Canal PC→carte = HTTP API + SDS + RTSP.
+- Carte restauree a SPI/Enabled=0 apres test.
