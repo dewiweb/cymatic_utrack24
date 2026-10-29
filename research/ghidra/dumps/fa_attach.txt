@@ -1,0 +1,203 @@
+ATTACH @000265e0 in FUN_00026578@00026578  r0=?
+GRPADD @000265f0 in FUN_00026578@00026578  r0=?
+ATTACH @00026650 in FUN_00026578@00026578  r0=?
+GRPADD @00026660 in FUN_00026578@00026578  r0=?
+ATTACH @000266c0 in FUN_00026578@00026578  r0=?
+GRPADD @000266d0 in FUN_00026578@00026578  r0=?
+ATTACH @00026730 in FUN_00026578@00026578  r0=?
+GRPADD @00026740 in FUN_00026578@00026578  r0=?
+ATTACH @000267a0 in FUN_00026578@00026578  r0=?
+GRPADD @000267b0 in FUN_00026578@00026578  r0=?
+ATTACH @00026810 in FUN_00026578@00026578  r0=?
+GRPADD @00026820 in FUN_00026578@00026578  r0=?
+ATTACH @00026880 in FUN_00026578@00026578  r0=?
+GRPADD @00026890 in FUN_00026578@00026578  r0=?
+ATTACH @000268f0 in FUN_00026578@00026578  r0=?
+GRPADD @00026900 in FUN_00026578@00026578  r0=?
+ATTACH @00026960 in FUN_00026578@00026578  r0=?
+GRPADD @00026970 in FUN_00026578@00026578  r0=?
+ATTACH @000269d0 in FUN_00026578@00026578  r0=?
+GRPADD @000269e0 in FUN_00026578@00026578  r0=?
+ATTACH @00026a40 in FUN_00026578@00026578  r0=?
+GRPADD @00026a50 in FUN_00026578@00026578  r0=?
+ATTACH @00026ab0 in FUN_00026578@00026578  r0=?
+GRPADD @00026ac0 in FUN_00026578@00026578  r0=?
+ATTACH @00026b20 in FUN_00026578@00026578  r0=?
+GRPADD @00026b30 in FUN_00026578@00026578  r0=?
+ATTACH @00026b9c in FUN_00026578@00026578  r0=?
+GRPADD @00026bac in FUN_00026578@00026578  r0=?
+ATTACH @00026c0c in FUN_00026578@00026578  r0=?
+GRPADD @00026c1c in FUN_00026578@00026578  r0=?
+ATTACH @00026c7c in FUN_00026578@00026578  r0=?
+GRPADD @00026c8c in FUN_00026578@00026578  r0=?
+ATTACH @00026cec in FUN_00026578@00026578  r0=?
+GRPADD @00026cfc in FUN_00026578@00026578  r0=?
+ATTACH @00026d5c in FUN_00026578@00026578  r0=?
+GRPADD @00026d6c in FUN_00026578@00026578  r0=?
+ATTACH @00026dcc in FUN_00026578@00026578  r0=?
+GRPADD @00026ddc in FUN_00026578@00026578  r0=?
+GRPADD @0003d388 in FUN_0003d35c@0003d35c  r0=?
+ATTACH @0003d396 in FUN_0003d35c@0003d35c  r0=?
+ATTACH @0003d39e in FUN_0003d35c@0003d35c  r0=?
+GRPADD @0004505c in FUN_00044fdc@00044fdc  r0=0x60496bc4
+GRPADD @00046c9c in FUN_00046c3c@00046c3c  r0=?
+ATTACH @0004b548 in FUN_0004b538@0004b538  r0=?
+ATTACH @0004b79c in FUN_0004b78c@0004b78c  r0=?
+ATTACH @0004cdf4 in ORPHAN  r0=?
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @0004cef4 in FUN_0004cecc@0004cecc  r0=?
+GRPREG @0004dda4 in FUN_0004dd90@0004dd90  r0=0x9bb88  r1=ptr:600249b0  r2=0x9bb4c
+ATTACH @000517e4 in FUN_000517d8@000517d8  r0=0x60414ec0
+GRPADD @000624f6 in FUN_000624d8@000624d8  r0=?
+GRPADD @00062670 in FUN_000625c8@000625c8  r0=?
+ATTACH @00070e50 in FUN_00070dec@00070dec  r0=?
+GRPADD @000717bc in FUN_00071784@00071784  r0=?
+FILL @00071800 in FUN_000717e0@000717e0  r1=0xe3030  r2=0xe3014  r3=ptr:602b1768
+GRPADD @0007bf6c in FUN_0007bf34@0007bf34  r0=?
+FILL @0007bfb0 in FUN_0007bf90@0007bf90  r1=0xf7f90  r2=0xf7f74  r3=ptr:602b1b40
+GRPADD @0007d0dc in FUN_0007d0a4@0007d0a4  r0=?
+FILL @0007d120 in FUN_0007d100@0007d100  r1=0xfa270  r2=0xfa254  r3=ptr:602b180c
+FILL @00092620 in FUN_00092600@00092600  r1=0x124c7c  r2=0x124c60  r3=ptr:60257a04
+ATTACH @00092638 in FUN_00092600@00092600  r0=?
+ATTACH @000929bc in FUN_00092958@00092958  r0=?
+GRPADD @00097afc in FUN_00097ac4@00097ac4  r0=?
+FILL @00097b40 in FUN_00097b20@00097b20  r1=0x12f6ec  r2=0x12f6c8  r3=0x12f68c
+ATTACH @000a1a56 in FUN_000a1a3c@000a1a3c  r0=?
+GRPADD @000b9dbc in FUN_000b9cf4@000b9cf4  r0=ptr:600bfd64
+ATTACH @000c661c in FUN_000c6440@000c6440  r0=imm:1152
+ATTACH @000c6648 in FUN_000c6440@000c6440  r0=?
+ATTACH @000c6694 in FUN_000c6440@000c6440  r0=?
+ATTACH @000c77d6 in FUN_000c77bc@000c77bc  r0=?
+ATTACH @000cc4b2 in FUN_000cc464@000cc464  r0=?
+ATTACH @000cc4ce in FUN_000cc464@000cc464  r0=?
+FILL @000cd184 in FUN_000cd164@000cd164  r1=0x19a358  r2=0x19a328  r3=ptr:60257b94
+ATTACH @000cd19c in FUN_000cd164@000cd164  r0=?
+GRPADD @000dfcec in FUN_000dfcb0@000dfcb0  r0=?
+ATTACH @000ef75e in FUN_000ef70c@000ef70c  r0=?
+ATTACH @000ef778 in FUN_000ef70c@000ef70c  r0=?
+ATTACH @000ef792 in FUN_000ef70c@000ef70c  r0=?
+GRPADD @000ef85a in FUN_000ef70c@000ef70c  r0=?
+ATTACH @000fa5b4 in FUN_000fa580@000fa580  r0=?
+FILL @000fb0c8 in FUN_000fb0a8@000fb0a8  r1=0x1f61f4  r2=0x1f61d4  r3=0x1f61a8
+ATTACH @000fb0e0 in FUN_000fb0a8@000fb0a8  r0=?
+ATTACH @00104f86 in FUN_00104f6c@00104f6c  r0=?
+FILL @00110158 in FUN_00110138@00110138  r1=0x220304  r2=0x2202d4  r3=0x2202c8
+ATTACH @00110170 in FUN_00110138@00110138  r0=?
+ATTACH @001110b8 in FUN_00111088@00111088  r0=?
+FILL @0011ab40 in FUN_0011ab20@0011ab20  r1=0x2356d0  r2=0x2356b4  r3=0x235698
+ATTACH @0011ab58 in FUN_0011ab20@0011ab20  r0=?
+ATTACH @001241c8 in FUN_0012418c@0012418c  r0=?
+FILL @0012886c in FUN_0012884c@0012884c  r1=0x25114c  r2=0x251134  r3=0x2510f0
+ATTACH @00128884 in FUN_0012884c@0012884c  r0=?
+FILL @0012f83c in FUN_0012f81c@0012f81c  r1=0x25f0e0  r2=0x25f0bc  r3=0x25f090
+ATTACH @0012f854 in FUN_0012f81c@0012f81c  r0=?
+FILL @00137e24 in FUN_00137e04@00137e04  r1=0x26fca8  r2=0x26fc90  r3=0x26fc60
+ATTACH @00137e3c in FUN_00137e04@00137e04  r0=?
+FILL @0013ada0 in FUN_0013ad80@0013ad80  r1=0x275b80  r2=0x275b60  r3=ptr:60257b14
+ATTACH @0013adb8 in FUN_0013ad80@0013ad80  r0=?
+GRPADD @0013b474 in FUN_0013b400@0013b400  r0=0x604975b8
+FILL @00146bc4 in FUN_00146ba4@00146ba4  r1=0x28d7e0  r2=0x28d7bc  r3=0x28d7a0
+ATTACH @00146bdc in FUN_00146ba4@00146ba4  r0=?
+GRPADD @001a62f4 in FUN_001a6170@001a6170  r0=0x60496a14
+ATTACH @001a6308 in FUN_001a6170@001a6170  r0=0x60496a14
+ATTACH @001a8c18 in FUN_001a89d4@001a89d4  r0=?
+GRPADD @001a8c28 in FUN_001a89d4@001a89d4  r0=?
+GRPADD @001a93c4 in ORPHAN  r0=?
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001a93d8 in ORPHAN  r0=0x60496ab4
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001b4d9c in FUN_001b4d24@001b4d24  r0=?
+GRPADD @001c19d0 in FUN_001c19a4@001c19a4  r0=?
+GRPADD @001c846c in FUN_001c83e4@001c83e4  r0=0x0
+GRPADD @001c84a2 in FUN_001c8490@001c8490  r0=?
+GRPADD @001cabc8 in FUN_001cab3c@001cab3c  r0=0x0
+GRPADD @001cad0c in FUN_001cab3c@001cab3c  r0=0x0
+GRPADD @001cadc4 in FUN_001cab3c@001cab3c  r0=0x0
+GRPADD @001cae7c in FUN_001cab3c@001cab3c  r0=0x0
+GRPADD @001cb078 in FUN_001caff0@001caff0  r0=0x0
+GRPADD @001cb124 in FUN_001cb09c@001cb09c  r0=0x0
+GRPADD @001cb1d0 in FUN_001cb148@001cb148  r0=0x0
+GRPADD @001cb27c in FUN_001cb1f4@001cb1f4  r0=0x0
+GRPADD @001cb2a4 in FUN_001cb1f4@001cb1f4  r0=?
+GRPADD @001cb2c0 in FUN_001cb1f4@001cb1f4  r0=?
+GRPADD @001cb2e8 in FUN_001cb1f4@001cb1f4  r0=?
+GRPADD @001cb3c0 in FUN_001cb338@001cb338  r0=0x0
+GRPADD @001cb46c in FUN_001cb3e4@001cb3e4  r0=0x0
+GRPADD @001cb488 in FUN_001cb3e4@001cb3e4  r0=?
+GRPADD @001cb4dc in FUN_001cb4b4@001cb4b4  r0=?
+GRPADD @001cb5bc in FUN_001cb534@001cb534  r0=0x0
+GRPADD @001cb668 in FUN_001cb5e0@001cb5e0  r0=0x0
+GRPADD @001cb714 in FUN_001cb68c@001cb68c  r0=0x0
+GRPADD @001cb7c0 in FUN_001cb738@001cb738  r0=0x0
+GRPADD @001cb86c in FUN_001cb7e4@001cb7e4  r0=0x0
+GRPADD @001cb918 in FUN_001cb890@001cb890  r0=0x0
+GRPADD @001cb9c4 in FUN_001cb93c@001cb93c  r0=0x0
+GRPADD @001cba70 in FUN_001cb9e8@001cb9e8  r0=0x0
+GRPADD @001cbb1c in FUN_001cba94@001cba94  r0=0x0
+GRPADD @001cbbc8 in FUN_001cbb40@001cbb40  r0=0x0
+GRPADD @001cbc74 in FUN_001cbbec@001cbbec  r0=0x0
+GRPADD @001cbcae in FUN_001cbc98@001cbc98  r0=?
+GRPADD @001cbcfc in FUN_001cbc98@001cbc98  r0=?
+GRPADD @001cbdb4 in FUN_001cbd2c@001cbd2c  r0=0x0
+GRPADD @001cbdd8 in FUN_001cbd2c@001cbd2c  r0=?
+GRPADD @001cd918 in FUN_001cd890@001cd890  r0=0x0
+GRPADD @001cd93c in FUN_001cd890@001cd890  r0=?
+GRPADD @001cda60 in FUN_001cd9d8@001cd9d8  r0=0x0
+GRPADD @001cda98 in FUN_001cda84@001cda84  r0=?
+GRPREG @001d37c8 in FUN_001d379c@001d379c  r0=0x3a7018  r1=ptr:6002aee4  r2=0x3a7000
+GRPREG @001d37dc in FUN_001d379c@001d379c  r0=0x3a7044  r1=ptr:6002aef0  r2=0x3a702c
+GRPADD @001f48be in FUN_001f488c@001f488c  r0=0x0
+GRPADD @001f6428 in FUN_001f6398@001f6398  r0=0x60496bc4
+ATTACH @001f643c in FUN_001f6398@001f6398  r0=0x60496bc4
+GRPADD @001f64c0 in ORPHAN  r0=0x60496dbc
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f64d4 in ORPHAN  r0=0x60496dbc
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6524 in ORPHAN  r0=0x604973d4
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f6538 in ORPHAN  r0=0x604973d4
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6588 in ORPHAN  r0=0x60497590
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f659c in ORPHAN  r0=0x60497590
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f65ec in ORPHAN  r0=0x60497500
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f6600 in ORPHAN  r0=0x60497500
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6650 in ORPHAN  r0=0x604975a4
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f6664 in ORPHAN  r0=0x604975a4
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f66b4 in ORPHAN  r0=0x60497460
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f66c8 in ORPHAN  r0=0x60497460
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6718 in ORPHAN  r0=0x60497474
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f672c in ORPHAN  r0=0x60497474
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f677c in ORPHAN  r0=0x604975e0
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f6790 in ORPHAN  r0=0x604975e0
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f67e0 in ORPHAN  r0=0x60497514
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f67f4 in ORPHAN  r0=0x60497514
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6a54 in ORPHAN  r0=0x604973e8
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f6a68 in ORPHAN  r0=0x604973e8
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6ab8 in ORPHAN  r0=0x60497488
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+ATTACH @001f6acc in ORPHAN  r0=0x60497488
+orphan disasm err ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+GRPADD @001f6b70 in FUN_001f6b0c@001f6b0c  r0=0x60496e84
+ATTACH @001f6b84 in FUN_001f6b0c@001f6b0c  r0=0x60496e84
+GRPADD @001f6bd4 in FUN_001f6b0c@001f6b0c  r0=0x60497528
+ATTACH @001f6be8 in FUN_001f6b0c@001f6b0c  r0=0x60497528
+GRPADD @001f6c38 in FUN_001f6b0c@001f6b0c  r0=0x604973fc
+ATTACH @001f6c4c in FUN_001f6b0c@001f6b0c  r0=0x604973fc
+GRPADD @002262e4 in FUN_00226214@00226214  r0=0x604987ac
+TOTAL orphans=25

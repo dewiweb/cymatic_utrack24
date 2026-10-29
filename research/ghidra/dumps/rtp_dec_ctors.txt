@@ -1,0 +1,226 @@
+
+=========== FUN_000708d0 callers: [FUN_000df040, FUN_000d8124]
+
+undefined4 *
+FUN_000708d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+            undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
+            undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,
+            undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,
+            undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,
+            undefined4 param_21,undefined4 param_22)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  
+  puVar1 = (undefined4 *)
+           FUN_00052038(param_1,param_2,0,param_3,param_4,param_5,param_6,param_7,param_8,param_9,
+                        param_10,param_11,param_12,param_13,param_14,param_16,param_17,param_18,
+                        param_19,param_20,param_21,param_22);
+  *puVar1 = DAT_00070990;
+  puVar1[0x46] = 0;
+  uVar2 = FUN_001547b4(param_15,param_4);
+  puVar1[0x46] = uVar2;
+  return puVar1;
+}
+
+
+
+=========== FUN_00070b28 callers: [FUN_000d8124]
+
+undefined4 *
+FUN_00070b28(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+            undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
+            undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,
+            undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,
+            undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,
+            undefined4 param_21,undefined4 param_22)
+
+{
+  ushort uVar1;
+  undefined4 *puVar2;
+  undefined1 *puVar3;
+  int iVar4;
+  uint uVar5;
+  uint uVar6;
+  uint uVar7;
+  
+  puVar2 = (undefined4 *)
+           FUN_00052038(param_1,param_2,1,param_3,param_4,param_5,param_6,param_7,param_8,param_9,
+                        param_10,param_11,param_12,param_13,param_14,param_16,param_17,param_18,
+                        param_19,param_20,param_21,param_22);
+  uVar1 = *(ushort *)(puVar2 + 0x31);
+  uVar7 = uVar1 + 1 & 0xfffeffff;
+  *puVar2 = DAT_00070c4c;
+  puVar2[0x46] = 0;
+  puVar3 = (undefined1 *)FUN_001a0808(uVar7 * 0xc,1);
+  puVar2[0x46] = puVar3;
+  if (uVar7 != 0) {
+    uVar6 = uVar1 + 1 & 1;
+    uVar5 = (uint)(uVar6 == 1);
+    if (uVar6 == 1) {
+      *puVar3 = 0;
+    }
+    if (uVar6 < uVar7) {
+      do {
+        *(undefined1 *)(puVar2[0x46] + uVar5 * 0xc) = 0;
+        iVar4 = uVar5 + 1;
+        uVar6 = uVar6 + 2;
+        uVar5 = uVar5 + 2;
+        *(undefined1 *)(puVar2[0x46] + iVar4 * 0xc) = 0;
+      } while ((int)uVar6 < (int)uVar7);
+    }
+  }
+  FUN_000709e8(puVar2,param_15);
+  return puVar2;
+}
+
+
+
+=========== FUN_00070cb8 callers: [FUN_000d8124]
+
+undefined4 *
+FUN_00070cb8(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+            undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,
+            undefined4 param_9,undefined4 param_10,undefined4 param_11,undefined4 param_12,
+            undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,
+            undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,
+            undefined4 param_21,undefined4 param_22)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  
+  puVar1 = (undefined4 *)
+           FUN_00052038(param_1,param_2,2,param_3,param_4,param_5,param_6,param_7,param_8,param_9,
+                        param_10,param_11,param_12,param_13,param_14,param_16,param_17,param_18,
+                        param_19,param_20,param_21,param_22);
+  *puVar1 = DAT_00070d78;
+  puVar1[0x46] = 0;
+  uVar2 = FUN_001547b4(param_15,param_4);
+  puVar1[0x46] = uVar2;
+  return puVar1;
+}
+
+
+
+=========== FUN_000de560 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+undefined4 FUN_000de560(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar2 = param_1 + 4;
+  FUN_001a0700(iVar2);
+  iVar1 = FUN_000da8f0(param_1,param_2,param_3);
+  if (iVar1 == 0) {
+    iVar1 = func_0x0016deb0(param_2,DAT_000df564,DAT_000df560,0xffffffff);
+    if (iVar1 != 0) {
+      switch(*(undefined1 *)(iVar1 + 5)) {
+      case 0:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 1:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 2:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 3:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 4:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 5:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 6:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 7:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 8:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 9:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 10:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xc:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xd:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xe:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+    }
+    FUN_001a0d18(iVar2);
+    return 0;
+  }
+  FUN_001a0d18(iVar2);
+  return 1;
+}
+
+
+
+=========== FUN_000da8f0 callers: [FUN_000de560]
+
+undefined4 FUN_000da8f0(int param_1,undefined4 param_2)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 uStack_28;
+  undefined1 uStack_24;
+  undefined4 uStack_20;
+  int iStack_1c;
+  
+  iVar2 = func_0x0016deb0(param_2,DAT_000daa10,DAT_000daa0c,0xffffffff);
+  if (iVar2 == 0) {
+    return 0;
+  }
+  FUN_001a0700(param_1 + 4);
+  if (((*(char *)(param_1 + 0x34) != *(char *)(iVar2 + 4)) ||
+      (*(int *)(param_1 + 0x38) != *(int *)(iVar2 + 8))) ||
+     (*(int *)(param_1 + 0x3c) != *(int *)(iVar2 + 0xc))) {
+    if (param_1 + 0x30 != iVar2) {
+      *(char *)(param_1 + 0x34) = *(char *)(iVar2 + 4);
+      *(undefined4 *)(param_1 + 0x38) = *(undefined4 *)(iVar2 + 8);
+      *(undefined4 *)(param_1 + 0x3c) = *(undefined4 *)(iVar2 + 0xc);
+    }
+    uVar1 = DAT_000daa18;
+    if (*(char *)(param_1 + 0x34) == '\0') {
+      *(undefined4 *)(param_1 + 0x2c) = DAT_000daa14;
+    }
+    else {
+      uStack_24 = 0;
+      uStack_20 = 1;
+      uStack_28 = DAT_000daa18;
+      iStack_1c = FUN_001a0808(4,1);
+      (**(code **)(param_1 + 0x3c))(&uStack_28);
+      *(undefined4 *)(param_1 + 0x2c) = *(undefined4 *)(iVar2 + 8);
+      uStack_28 = uVar1;
+      if (iStack_1c != 0) {
+        func_0x0019f30c();
+      }
+    }
+  }
+  FUN_001a0d18(param_1 + 4);
+  return 1;
+}
+
+

@@ -1,0 +1,122 @@
+
+############ site 1497dc
+NO INSTRUCTION at site
+
+############ site 1499b4
+NO INSTRUCTION at site
+
+############ site 14aa80
+NO INSTRUCTION at site
+
+############ site 14aca0
+NO INSTRUCTION at site
+
+############ site 149e84
+=== FUN_00149e60 @ 00149e60
+
+undefined4 * FUN_00149e60(undefined4 *param_1)
+
+{
+  *param_1 = uRam00149e80;
+  FUN_001a7bfa(param_1);
+  return param_1;
+}
+
+
+
+############ site 16ff94
+=== FUN_0016ff20 @ 0016ff20
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_0016ff20(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+############ site 149d18
+NO INSTRUCTION at site
+
+############ site 14960c
+NO INSTRUCTION at site
+
+############ site 149bbc
+NO INSTRUCTION at site
+
+############ site 148d74
+NO INSTRUCTION at site
+
+############ site 1494e0
+=== FUN_00149458 @ 00149458
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_00149458(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+############ site 148f0c
+=== FUN_00148ee8 @ 00148ee8
+
+undefined4 * FUN_00148ee8(undefined4 *param_1)
+
+{
+  *param_1 = uRam00148f08;
+  FUN_001a7bfa(param_1);
+  return param_1;
+}
+
+
+
+############ site 148be0
+=== FUN_00148bbc @ 00148bbc
+
+undefined4 * FUN_00148bbc(undefined4 *param_1)
+
+{
+  *param_1 = uRam00148bdc;
+  FUN_001a7bfa(param_1);
+  return param_1;
+}
+
+
+
+############ site 1488d8
+NO INSTRUCTION at site
+
+############ site 147ae4
+NO INSTRUCTION at site
+
+############ site 148bbc
+=== FUN_00148bbc @ 00148bbc
+
+undefined4 * FUN_00148bbc(undefined4 *param_1)
+
+{
+  *param_1 = uRam00148bdc;
+  FUN_001a7bfa(param_1);
+  return param_1;
+}
+
+
+
+############ site 1b484b
+NO INSTRUCTION at site
+
+############ site 1b4867
+NO INSTRUCTION at site
+
+############ site 1c0835
+NO INSTRUCTION at site
+
+############ site 1c0831
+NO INSTRUCTION at site
