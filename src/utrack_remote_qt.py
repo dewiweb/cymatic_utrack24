@@ -12,54 +12,115 @@ from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
 TEL_HOST='192.168.10.198'
 
 DARK = """
-*{font-family:'Segoe UI';font-size:9.5pt;color:#e8eaed}
-QMainWindow,QWidget{background:#1e2126}
-QFrame#card,QGroupBox{background:#262a31;border:1px solid #383d45;border-radius:8px}
-QGroupBox{margin-top:14px;padding-top:10px;font-weight:600}
-QGroupBox::title{subcontrol-origin:margin;left:10px;padding:0 6px;color:#9aa0a8}
-QLabel#dim{color:#9aa0a8}
-QLabel#info{color:#9aa0a8}
-QLabel#ch{font-weight:700;font-size:10pt;padding:2px}
-QLabel#raw{color:#9aa0a8;font-family:Consolas;font-size:8pt}
-QPushButton{background:#30353d;border:1px solid #4a5058;border-radius:5px;padding:6px 14px;font-weight:600}
-QPushButton:hover{background:#3a4048;border-color:#5a6169}
-QPushButton:pressed{background:#4a5058}
-QPushButton:disabled{color:#5a6067;background:#262a31;border-color:#33383f}
-QPushButton:checked{background:#f39c12;color:#000;border-color:#f39c12}
-QPushButton#solo:checked{background:#f1c40f}
-QPushButton#play{background:#1f6f43;border-color:#27a35e;color:#fff}
-QPushButton#play:hover{background:#27a35e}
-QPushButton#rec{background:#7e2b24;border-color:#c0392b;color:#fff}
-QPushButton#rec:hover{background:#c0392b}
-QComboBox,QSpinBox{background:#1a1d21;border:1px solid #4a5058;border-radius:4px;padding:4px 8px;min-width:120px}
-QComboBox:hover,QSpinBox:hover{border-color:#5a6169}
-QComboBox::drop-down{border:none;width:20px}
-QComboBox QAbstractItemView{background:#262a31;border:1px solid #4a5058;selection-background-color:#3fa7ff}
+/* uTrack24 Remote — theme "console studio" : gris/bleus profonds, accent #3fa7ff */
+*{font-family:'Segoe UI';font-size:9.5pt;color:#dde2e8}
+QMainWindow,QWidget{background:#15171b}
+QWidget#overlay{background:rgba(8,10,13,195)}
+
+/* ---- cadres / cartes / groupes ---- */
+QFrame#card{background:#1d2128;border:1px solid #2f353f;border-radius:8px}
+QFrame#strip{background:#1b1f26;border:1px solid #30363f;border-radius:8px}
+QFrame#stripBus{background:#1c222b;border:1px solid #3d5f80;border-top:2px solid #3fa7ff;border-radius:8px}
+QGroupBox{background:#1d2128;border:1px solid #2f353f;border-radius:8px;margin-top:16px;padding:16px 10px 10px 10px;font-weight:600}
+QGroupBox::title{subcontrol-origin:margin;subcontrol-position:top left;left:12px;padding:0 8px;color:#8b94a1}
+QGroupBox:disabled{color:#545b66}
+
+/* ---- labels ---- */
+QLabel#dim{color:#8b94a1}
+QLabel#info{color:#8b94a1}
+QLabel#ch{font-weight:700;font-size:9.5pt;padding:2px;color:#c8cfd8}
+QLabel#chBus{font-weight:700;font-size:9.5pt;padding:2px;color:#8fc9ff}
+QLabel#raw{color:#767f8b;font-family:Consolas;font-size:8pt}
+QLabel#chip,QLabel#err{background:#181b20;border:1px solid #2d333d;border-radius:6px;padding:4px 10px;color:#96a0ac;font-size:8.5pt}
+QLabel#err[on="true"]{background:rgba(224,82,82,28);border:1px solid #e05252;color:#ff9d94;font-weight:700}
+QLabel#statePill{background:rgba(63,167,255,22);border:1px solid #3fa7ff;border-radius:9px;padding:4px 14px;color:#8fc9ff;font-weight:600}
+QLabel:disabled{color:#545b66}
+
+/* ---- boutons ---- */
+QPushButton{background:#272c34;border:1px solid #3a414c;border-radius:5px;padding:6px 14px;font-weight:600;color:#d3d9e0}
+QPushButton:hover{background:#2f3540;border-color:#4a5260}
+QPushButton:pressed{background:#3a424e}
+QPushButton:checked{background:#3fa7ff;border-color:#3fa7ff;color:#0d1117}
+QPushButton:disabled{color:#545b66;background:#1a1e24;border-color:#282e37}
+/* mute rouge / solo ambre quand actifs */
+QPushButton#mute:hover{border-color:#d4574b}
+QPushButton#mute:checked{background:#b23a2e;border-color:#d4574b;color:#fff}
+QPushButton#solo:hover{border-color:#e8b93e}
+QPushButton#solo:checked{background:#d9a026;border-color:#e8b93e;color:#161309}
+/* transport type console */
+QPushButton#play{background:#1e5b3c;border:1px solid #31a065;color:#dcf4e7;min-width:64px}
+QPushButton#play:hover{background:#27804f;border-color:#3cb877}
+QPushButton#play:pressed{background:#31a065}
+QPushButton#rec{background:#7c2721;border:1px solid #d24539;color:#ffe7e3;min-width:64px}
+QPushButton#rec:hover{background:#a03429;border-color:#e0574a}
+QPushButton#rec:pressed{background:#b23a2e}
+QPushButton#stop{background:#2b313a;border-color:#454d59;min-width:64px}
+QPushButton#prev,QPushButton#next,QPushButton#save{background:#232830;border-color:#39404b}
+QPushButton#marker{background:#233246;border:1px solid #3fa7ff;color:#8fc9ff}
+QPushButton#marker:hover{background:#2a3d55}
+QPushButton#marker:disabled{color:#545b66;background:#1a1e24;border-color:#282e37}
+
+/* ---- saisie ---- */
+QComboBox,QSpinBox{background:#14161a;border:1px solid #3a414c;border-radius:4px;padding:4px 8px;min-width:120px;color:#dde2e8}
+QComboBox:hover,QSpinBox:hover{border-color:#4a5260}
+QComboBox:disabled,QSpinBox:disabled{color:#545b66;background:#171a1f;border-color:#282e37}
+QComboBox::drop-down{border:none;width:22px}
+QComboBox QAbstractItemView{background:#1d2128;border:1px solid #3a414c;selection-background-color:#3fa7ff;selection-color:#fff;outline:none}
+QSpinBox::up-button,QSpinBox::down-button{background:#272c34;border:none;width:16px}
+QSpinBox::up-button:hover,QSpinBox::down-button:hover{background:#2f3540}
 QCheckBox{spacing:8px}
-QCheckBox::indicator{width:16px;height:16px;border:1px solid #4a5058;border-radius:3px;background:#1a1d21}
+QCheckBox:disabled{color:#545b66}
+QCheckBox::indicator{width:15px;height:15px;border:1px solid #3a414c;border-radius:3px;background:#14161a}
+QCheckBox::indicator:hover{border-color:#3fa7ff}
 QCheckBox::indicator:checked{background:#3fa7ff;border-color:#3fa7ff}
-QSlider::groove:vertical{background:#1a1d21;width:8px;border:1px solid #383d45;border-radius:4px}
-QSlider::handle:vertical{background:#3fa7ff;border:1px solid #5cb8ff;border-radius:6px;height:18px;margin:0 -6px}
-QSlider::handle:vertical:hover{background:#5cb8ff}
-QDial{background:#262a31}
-QProgressBar{background:#1a1d21;border:1px solid #383d45;border-radius:3px}
-QProgressBar::chunk{background:qlineargradient(x1:0,y1:1,x2:0,y2:0,stop:0 #27a35e,stop:0.75 #f1c40f,stop:1 #e74c3c);border-radius:2px}
-QTreeWidget{background:#1a1d21;border:1px solid #383d45;border-radius:6px;alternate-background-color:#21252c}
-QTreeWidget::item{padding:4px}
-QTreeWidget::item:selected{background:#3fa7ff;color:#fff}
-QHeaderView::section{background:#262a31;border:none;border-bottom:1px solid #383d45;padding:6px;font-weight:600;color:#9aa0a8}
-QPlainTextEdit{background:#1a1d21;border:1px solid #383d45;border-radius:6px;font-family:Consolas;font-size:9pt}
-QTabWidget::pane{border:1px solid #383d45;border-radius:6px;top:-1px}
-QTabBar::tab{background:#262a31;border:1px solid #383d45;border-bottom:none;border-top-left-radius:6px;border-top-right-radius:6px;padding:8px 24px;color:#9aa0a8}
-QTabBar::tab:selected{background:#3fa7ff;color:#fff}
-QTabBar::tab:hover:!selected{background:#30353d}
-QScrollArea{border:none}
-QStatusBar{background:#1a1d21;border-top:1px solid #383d45;color:#9aa0a8}
-QWidget#overlay{background:rgba(15,17,20,175)}
-QLabel#wait{color:#e8eaed;font-size:12pt;font-weight:600}
-QProgressBar#busy{height:6px;border:none;background:#383d45}
-QProgressBar#busy::chunk{background:#3fa7ff}
-QToolTip{background:#262a31;border:1px solid #4a5058;color:#e8eaed;padding:4px}
+QCheckBox::indicator:disabled{border-color:#282e37;background:#1a1e24}
+
+/* ---- faders / potards / vu-metres ---- */
+QSlider::groove:vertical{background:#101216;width:6px;border:1px solid #2b3038;border-radius:3px}
+QSlider::sub-page:vertical{background:rgba(63,167,255,60);border-radius:3px}
+QSlider::handle:vertical{background:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 #e8ecf1,stop:0.45 #aab3bf,stop:0.55 #7c8794,stop:1 #cfd6de);border:1px solid #14161a;border-radius:3px;height:12px;margin:0 -8px}
+QSlider::handle:vertical:hover{background:qlineargradient(x1:0,y1:0,x2:0,y2:1,stop:0 #ffffff,stop:0.45 #c2cad4,stop:0.55 #8b96a3,stop:1 #e0e6ec)}
+QDial{background:#272c34}
+QProgressBar{background:#101216;border:1px solid #2b3038;border-radius:4px}
+QProgressBar::chunk{background:qlineargradient(x1:0,y1:1,x2:0,y2:0,stop:0 #1d7a46,stop:0.55 #2f9e63,stop:0.8 #d9a026,stop:1 #e05252);border-radius:3px}
+QProgressBar#meter{background:#0e1013;border:1px solid #2b3038;padding:1px}
+QProgressBar#busy{height:5px;border:none;background:#2b3038;border-radius:2px}
+QProgressBar#busy::chunk{background:#3fa7ff;border-radius:2px}
+
+/* ---- arbres / listes / journal ---- */
+QTreeWidget{background:#14161a;border:1px solid #2e343e;border-radius:6px;alternate-background-color:#181c22}
+QTreeWidget::item{height:24px}
+QTreeWidget::item:hover{background:#1e242c}
+QTreeWidget::item:selected{background:#28517a;color:#fff}
+QHeaderView::section{background:#20242b;border:none;border-bottom:1px solid #2e343e;padding:6px 8px;font-weight:600;color:#8b94a1}
+QPlainTextEdit{background:#14161a;border:1px solid #2e343e;border-radius:6px;font-family:Consolas;font-size:9pt;color:#c8cfd8}
+
+/* ---- onglets ---- */
+QTabWidget::pane{border:1px solid #2e343e;border-radius:6px;top:-1px;background:#191d23}
+QTabBar::tab{background:#21252d;border:1px solid #2e343e;border-bottom:none;border-top-left-radius:6px;border-top-right-radius:6px;padding:8px 26px;color:#8b94a1;margin-right:3px}
+QTabBar::tab:selected{background:#191d23;color:#e6ebf1;border-top:2px solid #3fa7ff}
+QTabBar::tab:hover:!selected{background:#262b34;color:#c2c9d2}
+
+/* ---- scrollbars ---- */
+QScrollArea{border:none;background:transparent}
+QScrollBar:horizontal{height:10px;background:#14161a;margin:0}
+QScrollBar::handle:horizontal{background:#3a404a;border-radius:5px;min-width:30px}
+QScrollBar::handle:horizontal:hover{background:#4a5260}
+QScrollBar::add-line:horizontal,QScrollBar::sub-line:horizontal{width:0}
+QScrollBar:vertical{width:10px;background:#14161a}
+QScrollBar::handle:vertical{background:#3a404a;border-radius:5px;min-height:30px}
+QScrollBar::handle:vertical:hover{background:#4a5260}
+QScrollBar::add-line:vertical,QScrollBar::sub-line:vertical{height:0}
+QScrollBar::add-page,QScrollBar::sub-page{background:none}
+
+/* ---- statut / overlay / divers ---- */
+QStatusBar{background:#111318;border-top:1px solid #262b33;color:#8b94a1}
+QStatusBar[conn="ok"]{color:#58c184}
+QStatusBar[conn="wait"]{color:#e0b04e}
+QStatusBar[conn="err"]{color:#ff7a70}
+QLabel#wait{color:#dde2e8;font-size:12pt;font-weight:600}
+QToolTip{background:#20242b;border:1px solid #3a414c;color:#dde2e8;padding:5px}
+QMessageBox{background:#15171b}
 """
 
 class Dial(QDial):
@@ -82,12 +143,13 @@ class Win(QMainWindow):
         self._meters={};self._meters_ts=0;self._tlock=threading.Lock()
         root=QWidget();rv=QVBoxLayout(root);rv.setContentsMargins(0,0,0,0)
         self.content=QFrame();v=QVBoxLayout(self.content)
-        v.setContentsMargins(10,8,10,8);v.setSpacing(8)
+        v.setContentsMargins(12,10,12,10);v.setSpacing(10)
         rv.addWidget(self.content);self.setCentralWidget(root)
-        hd=QFrame();hd.setObjectName('card');h=QHBoxLayout(hd);self.hdr={}
+        hd=QFrame();hd.setObjectName('card');h=QHBoxLayout(hd);h.setSpacing(6);h.setContentsMargins(10,8,10,8);self.hdr={}
         for ctrl,name in ((0xf000,'Nom'),(0xf003,'Fréquence'),(0xf004,'Résolution'),(0xf005,'Pistes'),(0xf040,'Date'),(0xf010,'État'),(0xf006,'Restant'),(0xf060,'Err')):
-            l=QLabel('%s : —'%name);self.hdr[ctrl]=(l,name);h.addWidget(l);h.addSpacing(18)
-        self.hdr_status=QLabel('—');h.addWidget(self.hdr_status);h.addSpacing(6)
+            l=QLabel('%s : —'%name);l.setObjectName('err' if ctrl==0xf060 else 'chip')
+            self.hdr[ctrl]=(l,name);h.addWidget(l)
+        h.addSpacing(6);self.hdr_status=QLabel('—');self.hdr_status.setObjectName('statePill');h.addWidget(self.hdr_status)
         h.addStretch(1);v.addWidget(hd)
         tr=QHBoxLayout();tr.setSpacing(10)
         for label,fn,oid in (('|◄','prev','prev'),('►|','next','next'),('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec'),('SAVE','save','save')):
@@ -104,10 +166,10 @@ class Win(QMainWindow):
             tr.addWidget(b)
         self.pos.setEnabled(False)
         tr.addWidget(self.pos)
-        self.mk=QPushButton('MARQUEUR');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
+        self.mk=QPushButton('MARQUEUR');self.mk.setObjectName('marker');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
         self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
-        self.gb_tr=QGroupBox('Transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
+        self.gb_tr=QGroupBox('Transport');self.gb_tr.setObjectName('transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
         self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AES67 (AudioLAN)');self.tabs.addTab(self._matrix(),'Matrice')
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
@@ -145,18 +207,19 @@ class Win(QMainWindow):
 
     def _mixer(self):
         sc=QScrollArea();sc.setWidgetResizable(True)
-        row=QWidget();h=QHBoxLayout(row);h.setSpacing(6);h.setContentsMargins(8,8,8,8);self.strips=[]
+        row=QWidget();h=QHBoxLayout(row);h.setSpacing(8);h.setContentsMargins(10,10,10,10);self.strips=[]
         for ch in range(26):
-            w=QFrame();w.setObjectName('card');s=QVBoxLayout(w);s.setSpacing(4);s.setContentsMargins(6,6,6,6)
-            s.addWidget(QLabel({24:'MON',25:'BUS'}.get(ch,'CH %d'%(ch+1)),alignment=Qt.AlignCenter,objectName='ch'))
+            w=QFrame();w.setObjectName('stripBus' if ch>=24 else 'strip');w.setFixedWidth(82)
+            s=QVBoxLayout(w);s.setSpacing(4);s.setContentsMargins(6,8,6,8)
+            s.addWidget(QLabel({24:'MON',25:'BUS'}.get(ch,'CH %d'%(ch+1)),alignment=Qt.AlignCenter,objectName='chBus' if ch>=24 else 'ch'))
             mid=QHBoxLayout();mid.setAlignment(Qt.AlignCenter)
-            m=QProgressBar();m.setOrientation(Qt.Vertical);m.setRange(0,65535);m.setFormat('')
-            m.setFixedSize(14,120)
-            f=QSlider(Qt.Vertical);f.setRange(0,65535);f.setMinimumHeight(120)
+            m=QProgressBar();m.setObjectName('meter');m.setOrientation(Qt.Vertical);m.setRange(0,65535);m.setFormat('')
+            m.setFixedSize(14,132)
+            f=QSlider(Qt.Vertical);f.setRange(0,65535);f.setMinimumHeight(132)
             mid.addWidget(m);mid.addSpacing(4);mid.addWidget(f);s.addLayout(mid)
             raw=QLabel('brut —',alignment=Qt.AlignCenter,objectName='raw');s.addWidget(raw)
-            p=Dial();p.setRange(0,65535);p.setFixedSize(46,46);s.addWidget(p,0,Qt.AlignCenter)
-            mb=QPushButton('M');mb.setCheckable(True);mb.setFixedHeight(24)
+            p=Dial();p.setRange(0,65535);p.setFixedSize(44,44);s.addWidget(p,0,Qt.AlignCenter)
+            mb=QPushButton('M');mb.setCheckable(True);mb.setObjectName('mute');mb.setFixedHeight(24)
             sb=QPushButton('S');sb.setCheckable(True);sb.setObjectName('solo');sb.setFixedHeight(24)
             mm=QHBoxLayout();mm.setSpacing(4);mm.addWidget(mb);mm.addWidget(sb);s.addLayout(mm)
             f.valueChanged.connect(lambda v,c=ch:self._mark('f',c,v))
@@ -354,7 +417,7 @@ class Win(QMainWindow):
             st=stat.get(i)
             if st is not None:
                 QTreeWidgetItem(it,['statut','%d %s'%(st,SS.get(st,''))])
-            cb=QComboBox();cb.addItems(choices)
+            cb=QComboBox();cb.addItems(choices);cb.setMinimumWidth(220)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
             cb.setCurrentIndex(ix if ix>=0 else 0)
@@ -422,13 +485,13 @@ class Win(QMainWindow):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(10)
         v.addWidget(QLabel("Source des entrées — état lu en live via CopperLan 0xf050 ; écriture SDS inputselect",objectName='info'))
         self.mcells=[];self.mbtns=[]
-        grd=QGridLayout();grd.setSpacing(6)
+        grd=QGridLayout();grd.setSpacing(10)
         for blk in range(3):
-            gb=QGroupBox('Canaux %d-%d'%(blk*8+1,blk*8+8));gg=QGridLayout(gb)
+            gb=QGroupBox('Canaux %d-%d'%(blk*8+1,blk*8+8));gg=QGridLayout(gb);gg.setSpacing(6)
             for i in range(8):
                 ch=blk*8+i
-                lb=QLabel('%d'%(ch+1));lb.setAlignment(Qt.AlignCenter);lb.setFixedSize(34,34)
-                lb.setStyleSheet('border:1px solid #444;border-radius:4px;background:#2a6e3a;')
+                lb=QLabel('%d'%(ch+1));lb.setAlignment(Qt.AlignCenter);lb.setFixedSize(38,38)
+                lb.setStyleSheet('border:1px solid #3a414c;border-radius:6px;background:#22262d;color:#9aa4b0;font-weight:700;')
                 gg.addWidget(lb,0,i);self.mcells.append(lb)
             ba=QPushButton('Analog');bd=QPushButton('Digital');ba.setFixedHeight(26);bd.setFixedHeight(26)
             ba.clicked.connect(lambda _,b=blk:self._matrix_set(b,'analog'))
@@ -484,9 +547,9 @@ class Win(QMainWindow):
                 m='analog' if sel[blk] else 'digital'  # bit set = analog (RE: isDigital^1)
             else:
                 m=self._matrix_state[ch]
-            col='#2a6e3a' if m=='analog' else '#2a4e8e' if m=='digital' else '#333'
+            col='#2e7d4f' if m=='analog' else '#2f5fae' if m=='digital' else '#22262d'
             txt={'analog':'A','digital':'D'}.get(m,'?')
-            lb.setStyleSheet('border:1px solid #444;border-radius:4px;background:%s;color:#fff;'%col)
+            lb.setStyleSheet('border:1px solid #3a414c;border-radius:6px;background:%s;color:%s;font-weight:700;'%(col,'#fff' if m else '#9aa4b0'))
             lb.setText(txt)
 
     def _takes_refresh(self):
@@ -584,6 +647,10 @@ class Win(QMainWindow):
             self.overlay.hide();self.content.setGraphicsEffect(None)
         # etat connexion suivi en continu : (re)active l'UI quand la session revient
         alive=bool(self.u and self.u.alive)
+        # pastille couleur de la barre de statut : vert connecté / ambre (re)connexion
+        sb=self.statusBar();cs='ok' if alive else 'wait'
+        if sb.property('conn')!=cs:
+            sb.setProperty('conn',cs);sb.style().unpolish(sb);sb.style().polish(sb)
         if alive and not self.tabs.isEnabled():
             self.gb_tr.setEnabled(True);self.tabs.setEnabled(True)
             self.overlay.hide();self.content.setGraphicsEffect(None)
@@ -614,6 +681,10 @@ class Win(QMainWindow):
         e=st.get(0xc000) or st.get(0xf000)
         if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
+        # chip Err en rouge quand un code erreur est remonté (0xf060)
+        err=st.get(0xf060);on=bool(err and (err[1] or err[0]));el=self.hdr[0xf060][0]
+        if bool(el.property('on'))!=on:
+            el.setProperty('on',on);el.style().unpolish(el);el.style().polish(el)
         # 0xf050 decode: channelmode + board ID + sync lock
         s=u.op_status()
         if s is not None:
