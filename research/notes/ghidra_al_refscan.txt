@@ -1,0 +1,3 @@
+total refs into range: 0
+funcs in range: 0
+instructions in range: 0

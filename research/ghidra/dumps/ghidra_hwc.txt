@@ -1,0 +1,103 @@
+
+=========== FUN_000b865c callers: [FUN_000f6be0]
+
+undefined4 FUN_000b865c(int param_1,int param_2)
+
+{
+  if (param_2 == 0) {
+    *(uint *)(param_1 + 0x18) = *(uint *)(param_1 + 0x18) & 0xfffffffe;
+    *(uint *)(param_1 + 0x18) = *(uint *)(param_1 + 0x18) & 0xfffffffd;
+  }
+  else if (param_2 == 1) {
+    *(uint *)(param_1 + 0x18) = *(uint *)(param_1 + 0x18) | 1;
+    *(uint *)(param_1 + 0x18) = *(uint *)(param_1 + 0x18) & 0xfffffffd;
+  }
+  else {
+    if (param_2 != 2) {
+      return 0;
+    }
+    *(uint *)(param_1 + 0x18) = *(uint *)(param_1 + 0x18) & 0xfffffffe;
+    *(uint *)(param_1 + 0x18) = *(uint *)(param_1 + 0x18) | 2;
+  }
+  return 1;
+}
+
+
+
+=========== FUN_001781dc callers: [FUN_000f6be0, FUN_0007c008]
+
+void FUN_001781dc(int param_1,undefined4 param_2)
+
+{
+  FUN_0017350c(param_1 + 0x314,param_2);
+  return;
+}
+
+
+
+=========== FUN_001781c0 callers: [FUN_000f6be0]
+
+void FUN_001781c0(int param_1,undefined4 param_2)
+
+{
+  FUN_001715c4(param_1 + 0x340,param_2);
+  return;
+}
+
+
+
+=========== FUN_00178208 callers: [FUN_000f8fcc, FUN_000f6be0, FUN_0007bd04, FUN_0007c008]
+
+int FUN_00178208(int param_1)
+
+{
+  return (int)(*(byte *)(param_1 + 0x84) & 0x70) >> 4;
+}
+
+
+
+=========== FUN_001781f8 callers: [FUN_0007bd04, FUN_0007c008]
+
+byte FUN_001781f8(int param_1)
+
+{
+  return *(byte *)(param_1 + 0x84) & 7;
+}
+
+
+
+=========== FUN_00177bcc callers: [FUN_00084450, FUN_0007c008, FUN_00141c60]
+
+void FUN_00177bcc(int param_1,undefined4 param_2)
+
+{
+  FUN_001732b4(param_1 + 0x314,param_2);
+  return;
+}
+
+
+
+=========== FUN_001778ec callers: [FUN_000955a4, FUN_0007c008, FUN_000f1f5c]
+
+void FUN_001778ec(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  FUN_00172fa4(param_1 + 0x314,param_2,param_3);
+  return;
+}
+
+
+
+=========== FUN_00177700 callers: [FUN_0017930c]
+
+undefined4 * FUN_00177700(undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  
+  puVar1 = (undefined4 *)FUN_0007ed64(param_1);
+  *puVar1 = DAT_00177724;
+  return puVar1;
+}
+
+

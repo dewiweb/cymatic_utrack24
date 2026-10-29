@@ -1,0 +1,185 @@
+
+=========== FUN_000eb880 @ 000eb880 callers []
+
+undefined4 FUN_000eb880(void)
+
+{
+  int iVar1;
+  
+  FUN_00002898(s_Mixer_Status________________000eb954);
+  FUN_00002898(s_Fader_Values__000eb974);
+  for (iVar1 = 0; iVar1 < 0xc; iVar1 = iVar1 + 1) {
+    FUN_00002898((char *)((int)(BADSPACEBASE *)0x0 + 0xeb986) + 2,iVar1 << 1,
+                 *(undefined4 *)(iRam000eb984 + iVar1 * 0xc));
+    FUN_00002898(s_CH__02d_output__0x_08X_000eb99c,iVar1 << 1,
+                 *(uint *)(iRam000eb984 + (iVar1 * 3 + 2) * 4) & 0xffff);
+    FUN_00002898((char *)((int)(BADSPACEBASE *)0x0 + 0xeb986) + 2,iVar1 * 2 + 1,
+                 *(undefined4 *)(iRam000eb984 + (iVar1 * 3 + 1) * 4));
+    FUN_00002898(s_CH__02d_output__0x_08X_000eb99c,iVar1 * 2 + 1,
+                 *(int *)(iRam000eb984 + (iVar1 * 3 + 2) * 4) >> 0x10);
+  }
+  FUN_00002898(s_Monitor_fader_Value__0x_08X_000eb9b8,*(undefined4 *)(iRam000eb984 + 0x90));
+  FUN_00002898(s_Bus_fader_Value__0x_08X_000eb9d8,*(undefined4 *)(iRam000eb984 + 0x94));
+  func_0x000eb7cc();
+  return 1;
+}
+
+
+
+=========== FUN_000eb7cc @ 000eb7cc callers [FUN_000eb880]
+
+undefined4 FUN_000eb7cc(void)
+
+{
+  int iVar1;
+  
+  FUN_00002898(s_Level_Meters__000eb844);
+  for (iVar1 = 0; iVar1 < 0x1a; iVar1 = iVar1 + 4) {
+    FUN_00002898((char *)((int)(BADSPACEBASE *)0x0 + 0xeb855) + 3,iVar1,
+                 *(undefined4 *)(*piRam000eb854 + iVar1 * 4),
+                 *(undefined4 *)(*piRam000eb854 + (iVar1 + 1) * 4),
+                 *(undefined4 *)(*piRam000eb854 + (iVar1 + 2) * 4),
+                 *(undefined4 *)(*piRam000eb854 + (iVar1 + 3) * 4));
+  }
+  return 1;
+}
+
+
+
+=========== FUN_00064d8c @ 00064d8c callers [FUN_000c8adc]
+
+void FUN_00064d8c(int param_1)
+
+{
+  FUN_00002898(&DAT_00064dd8);
+  FUN_00002898(s_DSPStreaming_statistics__00064ddc);
+  FUN_00002898(s_AV_input_packets___u_00064df8,*(undefined4 *)(param_1 + 0xc4));
+  FUN_00002898(s_Output_block_alloc___u_00064e10,*(undefined4 *)(param_1 + 200));
+  FUN_00002898(s_No_output_packet____u_00064e28,*(undefined4 *)(param_1 + 0xcc));
+  thunk_FUN_00002898(s_No_bus_input_packet____u_00064e44,*(undefined4 *)(param_1 + 0xd0));
+  return;
+}
+
+
+
+=========== FUN_000b0e64 @ 000b0e64 callers [FUN_000f8884, FUN_000924ec, FUN_000f693c, FUN_000f5eb4, FUN_000f63f8]
+
+void FUN_000b0e64(undefined4 param_1,int *param_2,undefined4 param_3,uint param_4)
+
+{
+  undefined4 uVar1;
+  
+  uVar1 = (**(code **)(*param_2 + 0xc))(param_2);
+  FUN_0007ed98(uVar1,0x90);
+  uVar1 = FUN_0007ed84(uVar1);
+  FUN_000619c0(uVar1,0);
+  uVar1 = FUN_00061b08(uVar1);
+  FUN_00111620(uVar1,param_3);
+  if ((~param_4 & 0xf0) == 0) {
+    if (param_4 == 0x1f400f4) {
+      (**(code **)(*param_2 + 0x18))(param_2,8);
+    }
+  }
+  else {
+    uVar1 = FUN_0004e2ec(param_4);
+    (**(code **)(*param_2 + 0x18))(param_2,uVar1);
+  }
+                    /* WARNING: Could not recover jumptable at 0x000b0f14. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (**(code **)(*param_2 + 4))(param_2,0xff);
+  return;
+}
+
+
+
+=========== FUN_000f8eec @ 000f8eec callers [FUN_000924ec]
+
+void FUN_000f8eec(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  undefined1 auStack_28 [16];
+  
+  uVar1 = FUN_0012e0cc(auStack_28,param_2);
+  FUN_0022b6d4(param_1,param_1,*DAT_000f8f48,DAT_000f8f48[1],uVar1,param_3,0xffffffff);
+  FUN_0012e13c(auStack_28);
+  return;
+}
+
+
+
+=========== FUN_0022b664 @ 0022b664 callers [FUN_000f7150, FUN_000f765c, FUN_000f8e0c]
+
+void FUN_0022b664(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,
+                 undefined4 param_5)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 local_2c;
+  int *piStack_28;
+  undefined4 uStack_24;
+  undefined4 local_20;
+  undefined4 uStack_1c;
+  
+  piStack_28 = param_1;
+  uStack_24 = param_2;
+  local_20 = param_3;
+  uStack_1c = param_4;
+  iVar1 = FUN_001c6b14(0x10,DAT_0022b6d0);
+  if (iVar1 == 0) {
+    uVar2 = 0;
+  }
+  else {
+    local_2c = param_2;
+    uVar2 = FUN_002022b8(iVar1,&local_2c,local_20,uStack_1c);
+  }
+  (**(code **)(*param_1 + 0x2c))(param_1,uVar2,param_5);
+  return;
+}
+
+
+
+=========== FUN_0022b178 @ 0022b178 callers [FUN_000f87ec]
+
+uint FUN_0022b178(int *param_1,int param_2,code *param_3,uint param_4,undefined4 param_5,
+                 undefined4 param_6)
+
+{
+  int iVar1;
+  code *pcVar2;
+  uint uVar3;
+  byte *pbVar4;
+  int *piVar5;
+  undefined1 auStack_74 [60];
+  int local_38;
+  int *piStack_34;
+  int iStack_30;
+  code *local_2c;
+  uint local_28;
+  
+  piStack_34 = param_1;
+  iStack_30 = param_2;
+  local_2c = param_3;
+  local_28 = param_4;
+  iVar1 = FUN_001b27ec(param_1);
+  if (iVar1 == 0) {
+    local_38 = param_2;
+    FUN_002049ac(auStack_74,&local_38,local_2c,local_28,param_5,param_6);
+    (**(code **)(*param_1 + 0x2c))(param_1,auStack_74,0xffffffff);
+    pbVar4 = (byte *)FUN_00204938(auStack_74);
+    uVar3 = (uint)*pbVar4;
+    FUN_000f0eac(auStack_74);
+  }
+  else {
+    piVar5 = (int *)(param_2 + ((int)local_28 >> 1));
+    pcVar2 = local_2c;
+    if ((local_28 & 1) != 0) {
+      pcVar2 = *(code **)(local_2c + *piVar5);
+    }
+    uVar3 = (*pcVar2)(piVar5,param_5,param_6);
+  }
+  return uVar3;
+}
+
+

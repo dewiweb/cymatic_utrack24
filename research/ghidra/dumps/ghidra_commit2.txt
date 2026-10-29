@@ -1,0 +1,91 @@
+
+=========== FUN_00177834 callers: [FUN_001776e4]
+
+void FUN_00177834(int param_1)
+
+{
+  if (*(uint *)(param_1 + 0x54) < 2) {
+    FUN_00096760(*(undefined4 *)(param_1 + 0x94));
+  }
+  else {
+    *(uint *)(param_1 + 0x80) = *(uint *)(param_1 + 0x80) | 4;
+  }
+  FUN_00177b38(param_1,0);
+  return;
+}
+
+
+
+=========== FUN_00172cd8 callers: [FUN_001731f8, FUN_00172e78, FUN_00173360, FUN_00172a04, FUN_00172fa4, FUN_00172c94, FUN_00172e34, FUN_0017350c, FUN_001732b4]
+
+bool FUN_00172cd8(int param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  undefined4 uVar1;
+  int iVar2;
+  undefined4 *puVar3;
+  
+  puVar3 = *(undefined4 **)(param_1 + 0xc);
+  uVar1 = FUN_000ec678(param_1);
+  iVar2 = (**(code **)*puVar3)(puVar3,uVar1,param_2,param_3);
+  if (iVar2 == 0) {
+    FUN_00002898(s_ERROR__MADI__writeToMADI__write__00172d38,param_3);
+  }
+  return iVar2 != 0;
+}
+
+
+
+=========== FUN_001776e4 callers: []
+
+void FUN_001776e4(void)
+
+{
+  FUN_00178f04();
+  FUN_00177834();
+  return;
+}
+
+
+
+=========== FUN_0017d704 callers: [FUN_00190ba4]
+
+int * FUN_0017d704(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int *param_5
+                  ,undefined4 param_6,undefined2 param_7,undefined2 param_8)
+
+{
+  int *piVar1;
+  int *piVar2;
+  int iVar3;
+  
+  piVar2 = (int *)FUN_001c6b14(0x78,DAT_0017d848);
+  piVar1 = DAT_0017d84c;
+  if (piVar2 != (int *)0x0) {
+    *piVar2 = *DAT_0017d84c;
+    iVar3 = piVar1[0xb];
+    piVar2[0x1c] = iVar3;
+    *(int *)((int)piVar2 + *(int *)(iVar3 + -0x38) + 0x70) = piVar1[0xc];
+    iVar3 = piVar1[0xd];
+    piVar2[0x1d] = iVar3;
+    *(int *)((int)piVar2 + *(int *)(iVar3 + -0x38) + 0x74) = piVar1[0xe];
+    piVar2 = (int *)FUN_0017e06c(piVar2,piVar1 + 1,2,param_1,param_2,param_3,param_4,param_6,param_7
+                                 ,param_8);
+    iVar3 = *piVar1;
+    *piVar2 = iVar3;
+    *(int *)((int)piVar2 + *(int *)(iVar3 + -0x10)) = piVar1[9];
+    *(int *)((int)piVar2 + *(int *)(*piVar2 + -0xc)) = piVar1[8];
+    *(int *)((int)piVar2 + *(int *)(*piVar2 + -0x14)) = piVar1[10];
+    piVar2[0x1b] = (int)param_5;
+    if (param_5 != (int *)0x0) {
+      (**(code **)(*param_5 + 0x38))(param_5);
+    }
+    iVar3 = FUN_0014c62c(piVar2,0x1e,*(int *)(param_1 + 0x24) + 0x548);
+    if (iVar3 != 0) {
+      return piVar2;
+    }
+    (**(code **)(*piVar2 + 4))(piVar2);
+  }
+  return (int *)0x0;
+}
+
+

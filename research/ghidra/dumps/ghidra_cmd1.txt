@@ -1,0 +1,58 @@
+str 'mixer' @ 000cd1d8 <- 000cd178 FUN_000cd164
+str 'channelmode' @ 00146c20 <- 00146bb8 FUN_00146ba4
+str 'dsp' @ 00092660 <- 00092614 FUN_00092600
+
+=========== FUN_000cd164 @ 000cd164 strings [mixer]
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 * FUN_000cd164(undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  
+  puVar1 = (undefined4 *)
+           FUN_0007f01c(param_1,s_mixer_000cd1d8,s____show_mixer_status_and_interna_000cd1a9 + 3,
+                        _DAT_000cd1a8,1);
+  *puVar1 = DAT_000cd1e0;
+  FUN_001a7b9c(puVar1,0);
+  return puVar1;
+}
+
+
+
+=========== FUN_00146ba4 @ 00146ba4 strings [channelmode]
+
+undefined4 * FUN_00146ba4(undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  
+  puVar1 = (undefined4 *)
+           FUN_0007f01c(param_1,s_channelmode_00146c20,s_change_streaming_channel_mode__00146c00,
+                        s_channelmode_<mode>_00146be8,0);
+  *puVar1 = DAT_00146c2c;
+  FUN_001a7b9c(puVar1,0);
+  return puVar1;
+}
+
+
+
+=========== FUN_00092600 @ 00092600 strings [dsp]
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 * FUN_00092600(undefined4 param_1)
+
+{
+  undefined4 *puVar1;
+  
+  puVar1 = (undefined4 *)
+           FUN_0007f01c(param_1,&DAT_00092660,s_z__DSP_streaming_commands_00092645 + 3,_DAT_00092644
+                        ,1);
+  *puVar1 = DAT_00092664;
+  FUN_001a7b9c(puVar1,0);
+  return puVar1;
+}
+
+

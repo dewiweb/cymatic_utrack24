@@ -1,0 +1,35 @@
+
+=========== FUN_001776c0 callers: [FUN_00067f44, FUN_0007bd04, FUN_0007c008, FUN_000f6be0, FUN_000b4074]
+
+int FUN_001776c0(int param_1)
+
+{
+  return param_1 + 0x68;
+}
+
+
+
+=========== FUN_00177910 callers: [FUN_000f1f5c, FUN_0007c008, FUN_00137ce0, FUN_000955a4, FUN_00172fa4]
+
+undefined4 FUN_00177910(int param_1,int param_2,uint param_3)
+
+{
+  if (param_2 == 0) {
+    *(uint *)(param_1 + 0x7c) = *(uint *)(param_1 + 0x7c) & 0xfeffffff | ((param_3 ^ 1) & 1) << 0x18
+    ;
+  }
+  else if (param_2 == 1) {
+    *(uint *)(param_1 + 0x7c) = *(uint *)(param_1 + 0x7c) & 0xfdffffff | ((param_3 ^ 1) & 1) << 0x19
+    ;
+  }
+  else {
+    if (param_2 != 2) {
+      return 0;
+    }
+    *(uint *)(param_1 + 0x7c) = *(uint *)(param_1 + 0x7c) & 0xfbffffff | ((param_3 ^ 1) & 1) << 0x1a
+    ;
+  }
+  return 1;
+}
+
+

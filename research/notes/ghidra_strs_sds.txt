@@ -1,0 +1,16 @@
+line, ptp, wclk, ext, reset
+switch to sync input:
+Usage: get [option] attributename
+Usage: set attributename attributevalue
+sds://
+No SDS available
+/outputs
+/sources
+/general
+/status
+/stream_list
+/device_list
+/parameter_strings
+/sw_versions
+/command
+ArchwaveCMD

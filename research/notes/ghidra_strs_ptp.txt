@@ -1,0 +1,12 @@
+PTP: large offset, by-passing servo loops    raw_offset=%c%llus %uns
+PTP: resetting servo loops
+PTP LC: Sync Rejected - gap=%u raw_offset=%c%uns lock[count=%u depth=%u]
+PTP LC: gap=%u raw_offset=%c%uns filteredOffsetNs=%d output_drift=%d accu_drift=%d lock[count=%u depth=%u]
+Loop Control: currentOffset=%d lock[count=%u depth=%u]
+PTP MSG: RX sync -> Synchronise local clock
+ptp shell command
+change PI values
+PTP sync
+Port state: %s
+Slave only: %s
+ERROR: RavennaController::notifyPTP2StateChange: Async call failed

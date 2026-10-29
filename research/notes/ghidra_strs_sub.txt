@@ -1,0 +1,18 @@
+ERROR: RavennaController::doOutputChannelChanged: Manual SDP info is invalid
+ERROR: RavennaController::doOutputChannelChanged: Invalid PTPv2 domain number %u
+ERROR: RavennaController::doOutputChannelChanged: Invalid payload format
+ERROR: RavennaController::doOutputChannelChanged: Invalid sampling rate %d
+ERROR: RavennaController::doOutputChannelChanged: No more decoders
+ERROR: RavennaController::doOutputChannelChanged: SIP source stream is malformed!
+ERROR: RavennaController::doOutputChannelChanged: Controller uninitialized
+ERROR: RavennaController::doOutputChannelChanged: Destination address is not a multicast address
+ERROR: RavennaController::doHandleDecoderMessage: Samples outside window on decoder %u
+ERROR: RavennaController::doHandleDecoderMessage: Time step on decoder %u at timestamp %u
+ERROR: SDP_Parser: Error parsing mediaclk line in SDP
+ERROR: SDP_Parser: Error parsing rtpmap line in SDP
+ERROR: SDP_Parser: Error parsing clock domain line in SDP
+ERROR: SDP_Parser: Error parsing sync time line in SDP
+ERROR: SDP_Parser: Missing "a=rtpmap"
+ERROR: RavennaController::doNotifyINVITE: Invalid PTP domain number %u (%u expected)
+ERROR: RtspServerRequestDescribe::invokeRequest: Cannot get SDP description for url %s - return error
+ERROR: RavennaConfiguration::DoSetOutputChannelStreamStatus: Could not set status on output channel %u

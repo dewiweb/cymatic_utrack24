@@ -1,0 +1,22 @@
+=== MEMORY BLOCKS ===
+ram 00000000 .. 002ea7ff size=3057664 exec=true init=true
+=== 'mixer' ===
+  @ 000cd1d8 <- 000cd178 FUN_000cd164
+=== 'inputselect' ===
+  @ 00137e88 <- 00137e18 FUN_00137e04
+=== 'Fader Values' ===
+  (not found)
+=== 'Monitor fader' ===
+  (not found)
+=== 'Bus fader' ===
+  (not found)
+=== 'Level Meters' ===
+  (not found)
+=== 'MonitorBoost' ===
+  @ 0004872e  NO-REFS
+  @ 000934c3  NO-REFS
+  @ 00096243  NO-REFS
+=== 'channelmode' ===
+  @ 00146c20 <- 00146bb8 FUN_00146ba4
+=== 'querylevels' ===
+  @ 000ccdd8  NO-REFS
