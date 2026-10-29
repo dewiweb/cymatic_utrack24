@@ -1,0 +1,4 @@
+00000140  stmdb sp!,{r0,r1,r2,r3,r4,lr}
+00000144  ldmia sp!,{r0,r1,r2,r3,r4,pc}
+00000148  stmdb sp!,{r4,lr}
+0000014c  ldmia sp!,{r4,pc}

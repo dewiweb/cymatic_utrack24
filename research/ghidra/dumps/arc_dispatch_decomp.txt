@@ -1,0 +1,588 @@
+=========== FUN_0005ae14 @ 0005ae14
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_0005ae14(int *param_1,char *param_2,uint param_3)
+
+{
+  char *pcVar1;
+  byte bVar2;
+  char *pcVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  char cVar6;
+  char cVar7;
+  int *piVar8;
+  undefined4 local_250;
+  undefined4 local_24c;
+  undefined2 local_248;
+  ushort local_240 [2];
+  undefined4 local_23c;
+  undefined4 auStack_238 [126];
+  char local_40;
+  char local_3f;
+  char local_3e;
+  char local_3d;
+  char acStack_3c [4];
+  int local_38;
+  undefined1 auStack_34 [4];
+  char acStack_30 [4];
+  undefined1 auStack_2c [12];
+  
+  if (param_3 < 5) {
+    return;
+  }
+  cVar6 = '\0';
+  pcVar3 = param_2 + -1;
+  if ((param_3 & 1) != 0) {
+    cVar6 = *param_2;
+    pcVar3 = param_2;
+  }
+  cVar7 = '\0';
+  for (uVar5 = param_3 >> 1; uVar5 != 0; uVar5 = uVar5 - 1) {
+    pcVar1 = pcVar3 + 1;
+    pcVar3 = pcVar3 + 2;
+    cVar6 = cVar6 + *pcVar1;
+    cVar7 = cVar7 + *pcVar3;
+  }
+  if (((char)(cVar6 + cVar7) != -1) && (param_2[param_3 - 1] != -0x12)) {
+    thunk_FUN_000028a4(s_ERROR__ARCProtocol__receiveData__0005b1bc);
+    return;
+  }
+  cVar6 = *param_2;
+  bVar2 = param_2[1];
+  uVar5 = (uint)CONCAT11(param_2[2],param_2[3]);
+  if (uVar5 + 5 != param_3) {
+    thunk_FUN_000028a4(DAT_0005c9a0,param_3,uVar5 + 5);
+    return;
+  }
+  local_248 = CONCAT11(0xff,cVar6);
+  FUN_0005ad9c(param_1,&local_248,2);
+  pcVar3 = param_2 + 4;
+  if (bVar2 == 0x77) {
+    if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bdec. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*(int *)param_1[1] + 0xcc))((int *)param_1[1],cVar6);
+      return;
+    }
+  }
+  else {
+    if (0x76 < bVar2) {
+      switch(bVar2) {
+      case 0x78:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x79:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x7a:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x7b:
+      case 0x7c:
+      case 0x7d:
+      case 0x7e:
+      case 0x7f:
+      case 0x80:
+      case 0x81:
+      case 0x82:
+      case 0x83:
+      case 0x84:
+      case 0x85:
+      case 0x86:
+      case 0x87:
+      case 0x88:
+      case 0x89:
+      case 0x8a:
+      case 0x8b:
+      case 0x8c:
+      case 0x8d:
+      case 0x8e:
+      case 0x8f:
+      case 0x9f:
+      case 0xa7:
+      case 0xba:
+      case 0xbb:
+      case 0xbc:
+      case 0xbd:
+      case 0xbe:
+      case 0xbf:
+      case 0xc1:
+      case 0xc2:
+      case 0xc3:
+      case 0xc4:
+      case 0xc5:
+      case 0xc6:
+      case 199:
+      case 200:
+      case 0xc9:
+      case 0xca:
+      case 0xcb:
+      case 0xcc:
+      case 0xcd:
+      case 0xce:
+      case 0xcf:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x90:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x91:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x92:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x93:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x94:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x95:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x96:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x97:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x98:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x99:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x9a:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x9b:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x9c:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x9d:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0x9e:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa0:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa1:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa2:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa3:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa4:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa5:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa6:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa8:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xa9:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xaa:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xab:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xac:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xad:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xae:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xaf:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb0:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb1:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb2:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb3:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb4:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb5:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb6:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb7:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb8:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb9:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xc0:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xd0:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+switchD_0005af10_default:
+      FUN_000028a4(s_ERROR__ARCProtocol__receiveData__0005c960,bVar2);
+                    /* WARNING: Could not recover jumptable at 0x0005c940. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+      (**(code **)(*param_1 + 8))(param_1,cVar6,9);
+      return;
+    }
+    if (bVar2 == 0x17) {
+      if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005b720. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (**(code **)(*(int *)param_1[1] + 0x70))((int *)param_1[1],cVar6);
+        return;
+      }
+    }
+    else {
+      if (bVar2 < 0x17) {
+        switch(bVar2) {
+        case 0:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 1:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 2:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 3:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 4:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 5:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 6:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 7:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 8:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 9:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 10:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0xb:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0xc:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0xd:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0xe:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0xf:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x10:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x11:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x12:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x13:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x14:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x15:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        case 0x16:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        goto switchD_0005af10_default;
+      }
+      if (bVar2 != 0x56) {
+        if (bVar2 < 0x56) {
+          if (bVar2 == 0x50) {
+            if (uVar5 == 10) {
+              local_248 = 0;
+              FUN_00077824(&local_23c,pcVar3,&local_248);
+              FUN_00077824(auStack_238,pcVar3,&local_248);
+              local_250 = (uint)(byte)pcVar3[local_248];
+              uVar5 = local_248 + 1 & 0xfffeffff;
+              local_248 = (short)uVar5 + 1;
+              local_24c = (uint)(byte)pcVar3[uVar5];
+              (**(code **)(*(int *)param_1[1] + 0x88))
+                        ((int *)param_1[1],cVar6,local_23c,auStack_238[0]);
+              return;
+            }
+          }
+          else {
+            if (0x4f < bVar2) {
+              switch(bVar2) {
+              case 0x51:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+                halt_baddata();
+              case 0x52:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+                halt_baddata();
+              case 0x53:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+                halt_baddata();
+              case 0x54:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+                halt_baddata();
+              case 0x55:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+                halt_baddata();
+              }
+              goto switchD_0005af10_default;
+            }
+            if (bVar2 == 0x30) {
+              if (uVar5 == 5) {
+                local_240[0] = 0;
+                FUN_00077824(&local_24c,pcVar3,local_240);
+                uVar5 = (uint)local_240[0];
+                local_240[0] = local_240[0] + 1;
+                (**(code **)(*(int *)param_1[1] + 0x7c))
+                          ((int *)param_1[1],cVar6,local_24c,pcVar3[uVar5]);
+                return;
+              }
+            }
+            else {
+              if (0x2f < bVar2) {
+                if (bVar2 == 0x31) {
+                  if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005b840. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                    (**(code **)(*(int *)param_1[1] + 0x80))((int *)param_1[1],cVar6);
+                    return;
+                  }
+                }
+                else {
+                  if (bVar2 != 0x32) goto switchD_0005af10_default;
+                  if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005b868. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                    (**(code **)(*(int *)param_1[1] + 0x84))();
+                    return;
+                  }
+                }
+                goto LAB_0005c848;
+              }
+              if (bVar2 == 0x18) {
+                if (uVar5 != 0) {
+                  local_250 = (uint)local_250._2_2_ << 0x10;
+                  FUN_00077bd0(&local_248,pcVar3,&local_250,0x100);
+                  piVar8 = (int *)param_1[1];
+                  uVar4 = func_0x001d9b54(&local_40,&local_248,acStack_3c);
+                  (**(code **)(*piVar8 + 0x74))(piVar8,cVar6,uVar4);
+                  pcVar3 = &local_40;
+                  goto LAB_0005b6a0;
+                }
+              }
+              else {
+                if (bVar2 != 0x19) goto switchD_0005af10_default;
+                if (6 < uVar5) {
+                  local_24c = (uint)local_24c._2_2_ << 0x10;
+                  FUN_00077a14(local_240,pcVar3,&local_24c);
+                  FUN_00077a80(&local_23c,pcVar3,&local_24c);
+                  (**(code **)(*(int *)param_1[1] + 0x78))
+                            ((int *)param_1[1],cVar6,local_240,&local_23c);
+                  return;
+                }
+              }
+            }
+          }
+        }
+        else {
+          if (bVar2 != 0x71) {
+            if (bVar2 < 0x71) {
+              if (bVar2 == 0x59) {
+                if (1 < uVar5) {
+                  cVar7 = *pcVar3;
+                  local_250 = CONCAT22(local_250._2_2_,1);
+                  FUN_00077bd0(&local_248,pcVar3,&local_250,0x100);
+                  piVar8 = (int *)param_1[1];
+                  uVar4 = func_0x001d9b54(acStack_3c,&local_248,&local_38);
+                  (**(code **)(*piVar8 + 0xac))(piVar8,cVar6,cVar7,uVar4);
+                  pcVar3 = acStack_3c;
+                  goto LAB_0005b6a0;
+                }
+                goto LAB_0005c8f8;
+              }
+              if (bVar2 < 0x59) {
+                if (bVar2 == 0x57) {
+                  if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bae4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                    (**(code **)(*(int *)param_1[1] + 0xa4))((int *)param_1[1],cVar6);
+                    return;
+                  }
+                }
+                else {
+                  if (bVar2 != 0x58) goto switchD_0005af10_default;
+                  if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bb0c. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                    (**(code **)(*(int *)param_1[1] + 0xa8))((int *)param_1[1],cVar6);
+                    return;
+                  }
+                }
+              }
+              else {
+                if (bVar2 != 0x5a) {
+                  if (bVar2 != 0x70) goto switchD_0005af10_default;
+                  if (uVar5 == 5) {
+                    local_240[0] = 0;
+                    FUN_00077824(&local_24c,pcVar3,local_240);
+                    uVar5 = (uint)local_240[0];
+                    local_240[0] = local_240[0] + 1;
+                    (**(code **)(*(int *)param_1[1] + 0xb4))
+                              ((int *)param_1[1],cVar6,local_24c,pcVar3[uVar5]);
+                    return;
+                  }
+                  goto LAB_0005c8f8;
+                }
+                if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bb94. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                  (**(code **)(*(int *)param_1[1] + 0xb0))((int *)param_1[1],cVar6);
+                  return;
+                }
+              }
+            }
+            else if (bVar2 == 0x73) {
+              if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bc9c. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                (**(code **)(*(int *)param_1[1] + 0xbc))((int *)param_1[1],cVar6);
+                return;
+              }
+            }
+            else {
+              if (bVar2 == 0x74) {
+                if (uVar5 < 0xd) {
+                    /* WARNING: Could not recover jumptable at 0x0005bd74. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                  (**(code **)(*param_1 + 8))(param_1,cVar6,6);
+                  return;
+                }
+                local_40 = *pcVar3;
+                local_3f = param_2[5];
+                local_3e = param_2[6];
+                local_250 = CONCAT22(local_250._2_2_,3);
+                FUN_00077824(acStack_3c,pcVar3,&local_250);
+                local_3d = pcVar3[local_250 & 0xffff];
+                local_250 = CONCAT22(local_250._2_2_,(short)local_250 + 1);
+                FUN_00077824(&local_38,pcVar3,&local_250);
+                FUN_00077bd0(&local_248,pcVar3,&local_250,0x100);
+                piVar8 = (int *)param_1[1];
+                uVar4 = func_0x001d9b54(acStack_30,&local_248,auStack_2c);
+                (**(code **)(*piVar8 + 0xc0))(piVar8,cVar6,&local_40,uVar4);
+                pcVar3 = acStack_30;
+                goto LAB_0005b6a0;
+              }
+              if (bVar2 == 0x75) {
+                if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bd9c. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                  (**(code **)(*(int *)param_1[1] + 0xc4))((int *)param_1[1],cVar6);
+                  return;
+                }
+              }
+              else {
+                if (bVar2 != 0x76) goto switchD_0005af10_default;
+                if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005bdc4. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+                  (**(code **)(*(int *)param_1[1] + 200))((int *)param_1[1],cVar6);
+                  return;
+                }
+              }
+            }
+            goto LAB_0005c848;
+          }
+          if (5 < uVar5) {
+            local_24c = (uint)local_24c._2_2_ << 0x10;
+            FUN_00077bd0(&local_248,pcVar3,&local_24c,0x100);
+            if (uVar5 < (local_24c & 0xffff) + 5) {
+              (**(code **)(*param_1 + 8))(param_1,cVar6,6);
+              return;
+            }
+            cVar7 = pcVar3[local_24c & 0xffff];
+            local_24c = CONCAT22(local_24c._2_2_,(short)local_24c + 1);
+            FUN_00077824(&local_38,pcVar3,&local_24c);
+            piVar8 = (int *)param_1[1];
+            uVar4 = func_0x001d9b54(acStack_3c,&local_248,auStack_34);
+            local_250 = local_38;
+            (**(code **)(*piVar8 + 0xb8))(piVar8,cVar6,uVar4,cVar7);
+            pcVar3 = acStack_3c;
+LAB_0005b6a0:
+            func_0x001d9cc8(pcVar3);
+            return;
+          }
+        }
+LAB_0005c8f8:
+                    /* WARNING: Could not recover jumptable at 0x0005c914. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (**(code **)(*param_1 + 8))(param_1,cVar6,6);
+        return;
+      }
+      if (uVar5 == 0) {
+                    /* WARNING: Could not recover jumptable at 0x0005babc. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        (**(code **)(*(int *)param_1[1] + 0xa0))((int *)param_1[1],cVar6);
+        return;
+      }
+    }
+  }
+LAB_0005c848:
+                    /* WARNING: Could not recover jumptable at 0x0005c85c. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+  (**(code **)(*param_1 + 8))(param_1,cVar6,6);
+  return;
+}
+
+

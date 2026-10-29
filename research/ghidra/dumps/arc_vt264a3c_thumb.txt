@@ -1,0 +1,3375 @@
+
+############ site 1708cc
+NO FUNCTION
+
+############ site 1715b8
+=== FUN_001712b4 @ 001712b4 callers [FUN_001795e8]
+  001712b4  push {r0,r1,r2,r4,r5,r6,r7,lr}
+  001712b6  movs r0,#0x0
+  001712b8  sub sp,#0x48
+  001712ba  movs r5,r1
+  001712bc  cmp r1,#0x0
+  001712be  str r0,[sp,#0x30]
+  001712c0  str r0,[sp,#0x18]
+  001712c2  str r0,[sp,#0x34]
+  001712c4  str r0,[sp,#0x14]
+  001712c6  beq 0x00171342
+  001712c8  ldr r0,[r5,#0x7c]
+  001712ca  cmp r0,#0x0
+  001712cc  beq 0x00171342
+  001712ce  ldr r0,[r0,#0x4]
+  001712d0  cmp r0,#0x0
+  001712d2  beq 0x00171342
+  001712d4  ldr r0,[r0,#0x4]
+  001712d6  cmp r0,#0x0
+  001712d8  beq 0x00171342
+  001712da  movs r0,r5
+  001712dc  adds r0,#0x44
+  001712de  str r0,[sp,#0x20]
+  001712e0  ldr r0,[sp,#0x48]
+  001712e2  ldr r1,[sp,#0x50]
+  001712e4  adds r0,#0x80
+  001712e6  str r0,[sp,#0x38]
+  001712e8  movs r0,r5
+  001712ea  adds r0,#0x94
+  001712ec  cmp r1,#0x0
+  001712ee  str r0,[sp,#0x2c]
+  001712f0  beq 0x0017134a
+  001712f2  movs r0,#0x0
+  001712f4  movs r1,r0
+  001712f6  str r0,[sp,#0x3c]
+  001712f8  ldr r0,[sp,#0x50]
+  001712fa  add r2,sp,#0x18
+  001712fc  bl 0x001a56c8
+  00171300  ldr r0,[sp,#0x50]
+  00171302  movs r1,#0x0
+  00171304  add r2,sp,#0x14
+  00171306  bl 0x001a5566
+  0017130a  ldr r1,[sp,#0x14]
+  0017130c  ldr r0,[sp,#0x18]
+  0017130e  orrs r1,r0
+  00171310  beq 0x001713f2
+  00171312  movs r1,r5
+  00171314  adds r1,#0x80
+  00171316  cmp r0,#0x0
+  00171318  str r1,[sp,#0x40]
+  0017131a  beq 0x001713f4
+  0017131c  ldr r0,[r5,#0x7c]
+  0017131e  movs r6,#0x0
+  00171320  ldr r0,[r0,#0x4]
+  00171322  ldr r0,[r0,#0x4]
+  00171324  str r0,[sp,#0x10]
+  00171326  ldr r0,[sp,#0x18]
+  00171328  ldr r7,[r0,#0x4]
+  0017132a  ldr r0,[sp,#0x38]
+  0017132c  str r0,[sp,#0x28]
+  0017132e  ldr r4,[r0,#0x30]
+  00171330  cmp r4,#0x0
+  00171332  beq 0x00171430
+  00171334  ldr r1,[sp,#0x10]
+  00171336  movs r0,r4
+  00171338  bl 0x001a6f04
+  0017133c  cmp r0,#0x0
+  0017133e  beq 0x00171432
+  00171340  b 0x00171508
+  00171342  movs r0,#0x1
+  00171344  mvns r0,r0
+  00171346  add sp,#0x54
+  00171348  pop {r4,r5,r6,r7,pc}
+  0017134a  movs r0,#0x0
+  0017134c  str r0,[sp,#0x40]
+  0017134e  movs r1,#0x8c
+  00171350  muls r0,r1
+  00171352  ldr r1,[sp,#0x48]
+  00171354  adds r1,r0,r1
+  00171356  ldr r0,[0x00171750]
+  00171358  adds r0,r1,r0
+  0017135a  str r0,[sp,#0x1c]
+  0017135c  ldrb r0,[r0,#0x0]
+  0017135e  cmp r0,#0x0
+  00171360  beq 0x00171434
+  00171362  ldr r0,[r5,#0x4c]
+  00171364  ldr r1,[r0,#0x0]
+  00171366  ldr r0,[sp,#0x1c]
+  00171368  bl 0x001a6f04
+  0017136c  cmp r0,#0x0
+  0017136e  bne 0x00171434
+  00171370  ldr r0,[r5,#0x7c]
+  00171372  movs r6,#0x0
+  00171374  ldr r0,[r0,#0x4]
+  00171376  ldr r0,[r0,#0x4]
+  00171378  str r0,[sp,#0x8]
+  0017137a  ldr r0,[sp,#0x1c]
+  0017137c  ldr r0,[r0,#0x40]
+  0017137e  ldr r7,[r0,#0x4]
+  00171380  ldr r0,[sp,#0x38]
+  00171382  str r0,[sp,#0x3c]
+  00171384  ldr r4,[r0,#0x30]
+  00171386  cmp r4,#0x0
+  00171388  beq 0x001713d6
+  0017138a  ldr r1,[sp,#0x8]
+  0017138c  movs r0,r4
+  0017138e  bl 0x001a6f04
+  00171392  cmp r0,#0x0
+  00171394  bne 0x001713cc
+  00171396  movs r0,r4
+  00171398  adds r0,#0xc8
+  0017139a  beq 0x001713ee
+  0017139c  movs r0,#0xc8
+  0017139e  ldrb r0,[r0,r4]
+  001713a0  cmp r0,#0x0
+  001713a2  beq 0x001713ee
+  001713a4  cmp r7,#0x0
+  001713a6  beq 0x0017142e
+  001713a8  movs r1,r4
+  001713aa  adds r1,#0xc8
+  001713ac  movs r0,r7
+  001713ae  str r1,[sp,#0x10]
+  001713b0  bl 0x001a6f04
+  001713b4  cmp r0,#0x0
+  001713b6  beq 0x0017142e
+  001713b8  movs r0,r7
+  001713ba  bl 0x000034d0
+  001713be  subs r2,r0,#0x2
+  001713c0  ldr r1,[sp,#0x10]
+  001713c2  adds r0,r7,#0x1
+  001713c4  bl 0x001a7022
+  001713c8  cmp r0,#0x0
+  001713ca  beq 0x0017142e
+  001713cc  adds r4,#0xff
+  001713ce  adds r4,#0x1
+  001713d0  ldr r4,[r4,#0x0]
+  001713d2  cmp r4,#0x0
+  001713d4  bne 0x0017138a
+  001713d6  ldr r0,[sp,#0x3c]
+  001713d8  ldr r4,[r0,#0x30]
+  001713da  cmp r4,#0x0
+  001713dc  beq 0x0017142c
+  001713de  movs r0,r4
+  001713e0  adds r0,#0xc8
+  001713e2  beq 0x001713f6
+  001713e4  movs r0,#0xc8
+  001713e6  ldrb r0,[r0,r4]
+  001713e8  cmp r0,#0x0
+  001713ea  beq 0x001713f6
+  001713ec  b 0x001713fa
+  001713ee  movs r6,r4
+  001713f0  b 0x001713cc
+  001713f2  b 0x001714ca
+  001713f4  b 0x00171638
+  001713f6  cmp r6,#0x0
+  001713f8  beq 0x0017148e
+  001713fa  cmp r7,#0x0
+  001713fc  beq 0x0017142e
+  001713fe  movs r1,r4
+  00171400  adds r1,#0xc8
+  00171402  movs r0,r7
+  00171404  str r1,[sp,#0xc]
+  00171406  bl 0x001a6f04
+  0017140a  cmp r0,#0x0
+  0017140c  beq 0x0017142e
+  0017140e  movs r0,r7
+  00171410  bl 0x000034d0
+  00171414  subs r2,r0,#0x2
+  00171416  ldr r1,[sp,#0xc]
+  00171418  adds r0,r7,#0x1
+  0017141a  bl 0x001a7022
+  0017141e  cmp r0,#0x0
+  00171420  beq 0x0017142e
+  00171422  adds r4,#0xff
+  00171424  adds r4,#0x1
+  00171426  ldr r4,[r4,#0x0]
+  00171428  cmp r4,#0x0
+  0017142a  bne 0x001713de
+  0017142c  movs r4,r6
+  0017142e  b 0x00171436
+  00171430  b 0x00171514
+  00171432  b 0x001714d2
+  00171434  b 0x001714bc
+  00171436  cmp r4,#0x0
+  00171438  beq 0x0017152c
+  0017143a  ldr r0,[r5,#0x4]
+  0017143c  add r1,sp,#0x24
+  0017143e  bl 0x001a82fc
+  00171442  cmp r0,#0x0
+  00171444  beq 0x00171448
+  00171446  b 0x00171346
+  00171448  ldr r6,[sp,#0x1c]
+  0017144a  add r3,sp,#0x30
+  0017144c  adds r6,#0x80
+  0017144e  ldr r0,[r6,#0x4]
+  00171450  adds r0,r0,#0x1
+  00171452  str r0,[r6,#0x4]
+  00171454  ldr r2,[r5,#0x8]
+  00171456  ldr r1,[sp,#0x1c]
+  00171458  str r0,[sp,#0x10]
+  0017145a  movs r0,r4
+  0017145c  adds r0,#0x96
+  0017145e  str r2,[sp,#0x8]
+  00171460  adds r1,#0x44
+  00171462  str r3,[sp,#0x4]
+  00171464  str r0,[sp,#0x0]
+  00171466  ldr r0,[sp,#0x1c]
+  00171468  str r1,[sp,#0xc]
+  0017146a  movs r3,r4
+  0017146c  movs r2,r4
+  0017146e  ldr r0,[r0,#0x40]
+  00171470  ldr r1,[sp,#0x24]
+  00171472  adds r3,#0x64
+  00171474  adds r2,#0x32
+  00171476  bl 0x001729d4
+  0017147a  movs r4,r0
+  0017147c  ldr r0,[sp,#0x24]
+  0017147e  cmp r0,#0x0
+  00171480  beq 0x00171496
+  00171482  ldr r1,[0x00171754]
+  00171484  ldr r1,[r1,#0x0]
+  00171486  cmp r1,#0x0
+  00171488  beq 0x00171492
+  0017148a  blx r1
+  0017148c  b 0x00171496
+  0017148e  movs r6,r4
+  00171490  b 0x00171422
+  00171492  blx 0x0018a280
+  00171496  cmp r4,#0x0
+  00171498  bne 0x00171598
+  0017149a  ldr r1,[sp,#0x30]
+  0017149c  cmp r1,#0x0
+  0017149e  beq 0x001714bc
+  001714a0  ldr r2,[r6,#0x8]
+  001714a2  movs r0,r2
+  001714a4  ldr r2,[0x00171758]
+  001714a6  subs r0,#0xff
+  001714a8  subs r0,#0x92
+  001714aa  bne 0x001714b0
+  001714ac  ldr r0,[sp,#0x20]
+  001714ae  b 0x001714b2
+  001714b0  ldr r0,[sp,#0x2c]
+  001714b2  bl 0x001a4a80
+  001714b6  movs r0,r5
+  001714b8  bl 0x001a52cc
+  001714bc  ldr r0,[sp,#0x40]
+  001714be  adds r0,r0,#0x1
+  001714c0  cmp r0,#0x64
+  001714c2  str r0,[sp,#0x40]
+  001714c4  bge 0x001714c8
+  001714c6  b 0x0017134e
+  001714c8  b 0x00171820
+  001714ca  movs r0,#0x4
+  001714cc  mvns r0,r0
+  001714ce  add sp,#0x54
+  001714d0  pop {r4,r5,r6,r7,pc}
+  001714d2  movs r0,r4
+  001714d4  adds r0,#0xc8
+  001714d6  beq 0x0017152e
+  001714d8  movs r0,#0xc8
+  001714da  ldrb r0,[r0,r4]
+  001714dc  cmp r0,#0x0
+  001714de  beq 0x0017152e
+  001714e0  cmp r7,#0x0
+  001714e2  beq 0x0017156a
+  001714e4  movs r1,r4
+  001714e6  adds r1,#0xc8
+  001714e8  movs r0,r7
+  001714ea  str r1,[sp,#0xc]
+  001714ec  bl 0x001a6f04
+  001714f0  cmp r0,#0x0
+  001714f2  beq 0x0017156a
+  001714f4  movs r0,r7
+  001714f6  bl 0x000034d0
+  001714fa  subs r2,r0,#0x2
+  001714fc  ldr r1,[sp,#0xc]
+  001714fe  adds r0,r7,#0x1
+  00171500  bl 0x001a7022
+  00171504  cmp r0,#0x0
+  00171506  beq 0x0017156a
+  00171508  adds r4,#0xff
+  0017150a  adds r4,#0x1
+  0017150c  ldr r4,[r4,#0x0]
+  0017150e  cmp r4,#0x0
+  00171510  beq 0x00171514
+  00171512  b 0x00171334
+  00171514  ldr r0,[sp,#0x28]
+  00171516  ldr r4,[r0,#0x30]
+  00171518  cmp r4,#0x0
+  0017151a  beq 0x00171568
+  0017151c  movs r0,r4
+  0017151e  adds r0,#0xc8
+  00171520  beq 0x00171532
+  00171522  movs r0,#0xc8
+  00171524  ldrb r0,[r0,r4]
+  00171526  cmp r0,#0x0
+  00171528  beq 0x00171532
+  0017152a  b 0x00171536
+  0017152c  b 0x0017166c
+  0017152e  movs r6,r4
+  00171530  b 0x00171508
+  00171532  cmp r6,#0x0
+  00171534  beq 0x001715b4
+  00171536  cmp r7,#0x0
+  00171538  beq 0x0017156a
+  0017153a  movs r1,r4
+  0017153c  adds r1,#0xc8
+  0017153e  movs r0,r7
+  00171540  str r1,[sp,#0xc]
+  00171542  bl 0x001a6f04
+  00171546  cmp r0,#0x0
+  00171548  beq 0x0017156a
+  0017154a  movs r0,r7
+  0017154c  bl 0x000034d0
+  00171550  subs r2,r0,#0x2
+  00171552  ldr r1,[sp,#0xc]
+  00171554  adds r0,r7,#0x1
+  00171556  bl 0x001a7022
+  0017155a  cmp r0,#0x0
+  0017155c  beq 0x0017156a
+  0017155e  adds r4,#0xff
+  00171560  adds r4,#0x1
+  00171562  ldr r4,[r4,#0x0]
+  00171564  cmp r4,#0x0
+  00171566  bne 0x0017151c
+  00171568  movs r4,r6
+  0017156a  cmp r4,#0x0
+  0017156c  beq 0x0017166c
+  0017156e  ldr r0,[r5,#0x4]
+  00171570  add r1,sp,#0x24
+  00171572  bl 0x001a82fc
+  00171576  cmp r0,#0x0
+  00171578  bne 0x001714ce
+  0017157a  ldr r1,[r5,#0x8]
+  0017157c  movs r3,#0x1
+  0017157e  adr r2,[0x17175c]
+  00171580  add r0,sp,#0x30
+  00171582  add r6,sp,#0x4
+  00171584  stmia r6!,{r0,r1,r2,r3}
+  00171586  movs r0,r4
+  00171588  adds r0,#0x96
+  0017158a  movs r3,r4
+  0017158c  adds r3,#0x64
+  0017158e  movs r2,r4
+  00171590  ldr r1,[sp,#0x24]
+  00171592  adds r2,#0x32
+  00171594  str r0,[sp,#0x0]
+  00171596  b 0x0017159a
+  00171598  b 0x001716bc
+  0017159a  ldr r0,[sp,#0x18]
+  0017159c  bl 0x001729d4
+  001715a0  movs r4,r0
+  001715a2  ldr r0,[sp,#0x24]
+  001715a4  cmp r0,#0x0
+  001715a6  beq 0x001715bc
+  001715a8  ldr r1,[0x00171754]
+  001715aa  ldr r1,[r1,#0x0]
+  001715ac  cmp r1,#0x0
+  001715ae  beq 0x001715b8
+  001715b0  blx r1
+  001715b2  b 0x001715bc
+  001715b4  movs r6,r4
+  001715b6  b 0x0017155e
+  001715b8  blx 0x0018a280
+  001715bc  cmp r4,#0x0
+  001715be  bne 0x001716bc
+  001715c0  ldr r1,[sp,#0x30]
+  001715c2  cmp r1,#0x0
+  001715c4  beq 0x001715d4
+  001715c6  ldr r0,[sp,#0x20]
+  001715c8  subs r2,r4,#0x1
+  001715ca  bl 0x001a4a80
+  001715ce  movs r0,r5
+  001715d0  bl 0x001a52cc
+  001715d4  ldr r0,[r5,#0x8]
+  001715d6  adr r1,[0x171768]
+  001715d8  bl 0x001a6f04
+  001715dc  cmp r0,#0x0
+  001715de  beq 0x00171610
+  001715e0  ldr r0,[r5,#0x8]
+  001715e2  adr r1,[0x171774]
+  001715e4  bl 0x001a6f04
+  001715e8  cmp r0,#0x0
+  001715ea  beq 0x00171610
+  001715ec  ldr r0,[r5,#0x8]
+  001715ee  adr r1,[0x17177c]
+  001715f0  bl 0x001a6f04
+  001715f4  cmp r0,#0x0
+  001715f6  beq 0x00171610
+  001715f8  movs r0,#0x0
+  001715fa  str r0,[sp,#0x0]
+  001715fc  ldr r0,[sp,#0x40]
+  001715fe  mov r2,sp
+  00171600  ldr r0,[r0,#0x2c]
+  00171602  adr r1,[0x171788]
+  00171604  adds r0,#0x8
+  00171606  bl 0x001a7c44
+  0017160a  ldr r0,[sp,#0x0]
+  0017160c  cmp r0,#0x0
+  0017160e  beq 0x00171620
+  00171610  ldr r0,[r5,#0x4c]
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_001712b4(int param_1,int param_2,int param_3)
+
+{
+  char *pcVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iStack_68;
+  int *piStack_64;
+  undefined4 uStack_60;
+  char *pcStack_5c;
+  int iStack_58;
+  int iStack_54;
+  int iStack_50;
+  char *pcStack_4c;
+  int iStack_48;
+  int iStack_44;
+  int iStack_40;
+  int iStack_3c;
+  int iStack_38;
+  int iStack_34;
+  int iStack_30;
+  int iStack_2c;
+  int iStack_28;
+  int iStack_20;
+  int iStack_1c;
+  int iStack_18;
+  
+  iStack_38 = 0;
+  iStack_50 = 0;
+  iStack_34 = 0;
+  iStack_54 = 0;
+  if ((((param_2 == 0) || (*(int *)(param_2 + 0x7c) == 0)) ||
+      (iVar2 = *(int *)(*(int *)(param_2 + 0x7c) + 4), iVar2 == 0)) || (*(int *)(iVar2 + 4) == 0)) {
+    return -2;
+  }
+  iStack_48 = param_2 + 0x44;
+  iStack_30 = param_1 + 0x80;
+  iStack_3c = param_2 + 0x94;
+  iStack_20 = param_1;
+  iStack_1c = param_2;
+  if (param_3 == 0) {
+    iStack_28 = 0;
+    iStack_18 = 0;
+    do {
+      pcStack_4c = (char *)(iStack_28 * 0x8c + iStack_20 + _DAT_00171750);
+      if ((*pcStack_4c != '\0') &&
+         (iVar2 = func_0x001a6f04(pcStack_4c,**(undefined4 **)(param_2 + 0x4c)), iVar2 == 0)) {
+        uStack_60 = *(undefined4 *)(*(int *)(*(int *)(param_2 + 0x7c) + 4) + 4);
+        iVar7 = *(int *)(*(int *)(pcStack_4c + 0x40) + 4);
+        iVar2 = 0;
+        iStack_2c = iStack_30;
+        for (iVar5 = *(int *)(iStack_30 + 0x30); iVar5 != 0; iVar5 = *(int *)(iVar5 + 0x100)) {
+          iVar3 = func_0x001a6f04(iVar5,uStack_60);
+          iVar6 = iVar2;
+          if (((iVar3 == 0) && (iVar6 = iVar5, iVar5 != -200)) && (*(char *)(iVar5 + 200) != '\0'))
+          {
+            if (iVar7 == 0) goto LAB_0017142e;
+            iStack_58 = iVar5 + 200;
+            iVar6 = func_0x001a6f04(iVar7);
+            if (iVar6 == 0) goto LAB_0017142e;
+            iVar6 = FUN_000034d0(iVar7);
+            iVar3 = func_0x001a7022(iVar7 + 1,iStack_58,iVar6 + -2);
+            iVar6 = iVar2;
+            if (iVar3 == 0) goto LAB_0017142e;
+          }
+          iVar2 = iVar6;
+        }
+        for (iVar6 = *(int *)(iStack_2c + 0x30); iVar5 = iVar2, iVar6 != 0;
+            iVar6 = *(int *)(iVar6 + 0x100)) {
+          if (((iVar6 != -200) && (*(char *)(iVar6 + 200) != '\0')) || (iVar3 = iVar6, iVar2 != 0))
+          {
+            iVar5 = iVar6;
+            if (iVar7 == 0) break;
+            pcStack_5c = (char *)(iVar6 + 200);
+            iVar3 = func_0x001a6f04(iVar7);
+            if (iVar3 == 0) break;
+            iVar3 = FUN_000034d0(iVar7);
+            iVar4 = func_0x001a7022(iVar7 + 1,pcStack_5c,iVar3 + -2);
+            iVar3 = iVar2;
+            if (iVar4 == 0) break;
+          }
+          iVar2 = iVar3;
+        }
+LAB_0017142e:
+        if (iVar5 == 0) {
+          return -6;
+        }
+        iVar2 = func_0x001a82fc(*(undefined4 *)(param_2 + 4),&iStack_44);
+        pcVar1 = pcStack_4c;
+        if (iVar2 != 0) {
+          return iVar2;
+        }
+        piStack_64 = &iStack_38;
+        iStack_58 = *(int *)(pcStack_4c + 0x84) + 1;
+        *(int *)(pcStack_4c + 0x84) = iStack_58;
+        uStack_60 = *(undefined4 *)(param_2 + 8);
+        iStack_68 = iVar5 + 0x96;
+        pcStack_5c = pcStack_4c + 0x44;
+        iVar2 = func_0x001729d4(*(undefined4 *)(pcStack_4c + 0x40),iStack_44,iVar5 + 0x32,
+                                iVar5 + 100);
+        if (iStack_44 != 0) {
+          if ((code *)*_DAT_00171754 == Reset) {
+            func_0x0018a280();
+          }
+          else {
+            (*(code *)*_DAT_00171754)();
+          }
+        }
+        if (iVar2 != 0) {
+          return iVar2;
+        }
+        if (iStack_38 != 0) {
+          iVar2 = iStack_3c;
+          if (*(int *)(pcVar1 + 0x88) == 0x191) {
+            iVar2 = iStack_48;
+          }
+          func_0x001a4a80(iVar2,iStack_38,_DAT_00171758);
+          func_0x001a52cc(param_2);
+        }
+      }
+      iStack_28 = iStack_28 + 1;
+    } while (iStack_28 < 100);
+  }
+  else {
+    iStack_2c = 0;
+    iStack_18 = param_3;
+    func_0x001a56c8(param_3,0,&iStack_50);
+    func_0x001a5566(iStack_18,0,&iStack_54);
+    if (iStack_54 == 0 && iStack_50 == 0) {
+      return -5;
+    }
+    iStack_28 = param_2 + 0x80;
+    while (iStack_50 != 0) {
+      iStack_58 = *(undefined4 *)(*(int *)(*(int *)(param_2 + 0x7c) + 4) + 4);
+      iVar7 = *(int *)(iStack_50 + 4);
+      iVar2 = 0;
+      iStack_40 = iStack_30;
+      for (iVar5 = *(int *)(iStack_30 + 0x30); iVar5 != 0; iVar5 = *(int *)(iVar5 + 0x100)) {
+        iVar3 = func_0x001a6f04(iVar5,iStack_58);
+        iVar6 = iVar2;
+        if (((iVar3 == 0) && (iVar6 = iVar5, iVar5 != -200)) && (*(char *)(iVar5 + 200) != '\0')) {
+          if (iVar7 == 0) goto LAB_0017156a;
+          pcStack_5c = (char *)(iVar5 + 200);
+          iVar6 = func_0x001a6f04(iVar7);
+          if (iVar6 == 0) goto LAB_0017156a;
+          iVar6 = FUN_000034d0(iVar7);
+          iVar3 = func_0x001a7022(iVar7 + 1,pcStack_5c,iVar6 + -2);
+          iVar6 = iVar2;
+          if (iVar3 == 0) goto LAB_0017156a;
+        }
+        iVar2 = iVar6;
+      }
+      for (iVar6 = *(int *)(iStack_40 + 0x30); iVar5 = iVar2, iVar6 != 0;
+          iVar6 = *(int *)(iVar6 + 0x100)) {
+        if (((iVar6 != -200) && (*(char *)(iVar6 + 200) != '\0')) || (iVar3 = iVar6, iVar2 != 0)) {
+          iVar5 = iVar6;
+          if (iVar7 == 0) break;
+          pcStack_5c = (char *)(iVar6 + 200);
+          iVar3 = func_0x001a6f04(iVar7);
+          if (iVar3 == 0) break;
+          iVar3 = FUN_000034d0(iVar7);
+          iVar4 = func_0x001a7022(iVar7 + 1,pcStack_5c,iVar3 + -2);
+          iVar3 = iVar2;
+          if (iVar4 == 0) break;
+        }
+        iVar2 = iVar3;
+      }
+LAB_0017156a:
+      if (iVar5 == 0) {
+        return -6;
+      }
+      iVar2 = func_0x001a82fc(*(undefined4 *)(param_2 + 4),&iStack_44);
+      if (iVar2 != 0) {
+        return iVar2;
+      }
+      uStack_60 = *(undefined4 *)(param_2 + 8);
+      piStack_64 = &iStack_38;
+      pcStack_5c = (char *)0x17175c;
+      iStack_58 = 1;
+      iStack_68 = iVar5 + 0x96;
+      iVar2 = func_0x001729d4(iStack_50,iStack_44,iVar5 + 0x32,iVar5 + 100);
+      if (iStack_44 != 0) {
+        if ((code *)*_DAT_00171754 == Reset) {
+          func_0x0018a280();
+        }
+        else {
+          (*(code *)*_DAT_00171754)();
+        }
+      }
+      if (iVar2 != 0) {
+        return iVar2;
+      }
+      if (iStack_38 != 0) {
+        func_0x001a4a80(iStack_48,iStack_38,0xffffffff);
+        func_0x001a52cc(param_2);
+      }
+      iVar2 = func_0x001a6f04(*(undefined4 *)(param_2 + 8),0x171768);
+      if (((iVar2 == 0) ||
+          (iVar2 = func_0x001a6f04(*(undefined4 *)(param_2 + 8),0x171774), iVar2 == 0)) ||
+         (iVar2 = func_0x001a6f04(*(undefined4 *)(param_2 + 8),0x17177c), iVar2 == 0)) {
+LAB_00171610:
+        FUN_0017928c(iStack_20,**(undefined4 **)(param_2 + 0x4c),iStack_50,0x191);
+      }
+      else {
+        iStack_68 = 0;
+        func_0x001a7c44(*(int *)(iStack_28 + 0x2c) + 8,0x171788,&iStack_68);
+        if (iStack_68 != 0) goto LAB_00171610;
+      }
+      iStack_2c = iStack_2c + 1;
+      func_0x001a56c8(iStack_18,iStack_2c,&iStack_50);
+    }
+    iStack_2c = 0;
+    iStack_50 = 0;
+    iStack_48 = iStack_30;
+    while (iStack_54 != 0) {
+      iStack_58 = *(undefined4 *)(*(int *)(*(int *)(param_2 + 0x7c) + 4) + 4);
+      iVar7 = *(int *)(iStack_54 + 4);
+      iVar2 = 0;
+      iStack_30 = iStack_48;
+      for (iVar5 = *(int *)(iStack_48 + 0x30); iVar5 != 0; iVar5 = *(int *)(iVar5 + 0x100)) {
+        iVar3 = func_0x001a6f04(iVar5,iStack_58);
+        iVar6 = iVar2;
+        if (((iVar3 == 0) && (iVar6 = iVar5, iVar5 != -200)) && (*(char *)(iVar5 + 200) != '\0')) {
+          if (iVar7 == 0) goto LAB_00171702;
+          piStack_64 = (int *)(iVar5 + 200);
+          iVar6 = func_0x001a6f04(iVar7);
+          if (iVar6 == 0) goto LAB_00171702;
+          iVar6 = FUN_000034d0(iVar7);
+          iVar3 = func_0x001a7022(iVar7 + 1,piStack_64,iVar6 + -2);
+          iVar6 = iVar2;
+          if (iVar3 == 0) goto LAB_00171702;
+        }
+        iVar2 = iVar6;
+      }
+      for (iVar6 = *(int *)(iStack_48 + 0x30); iVar5 = iVar2, iVar6 != 0;
+          iVar6 = *(int *)(iVar6 + 0x100)) {
+        if (((iVar6 != -200) && (*(char *)(iVar6 + 200) != '\0')) || (iVar3 = iVar6, iVar2 != 0)) {
+          iVar5 = iVar6;
+          if (iVar7 == 0) break;
+          iStack_44 = iVar6 + 200;
+          iVar3 = func_0x001a6f04(iVar7);
+          if (iVar3 == 0) break;
+          iVar3 = FUN_000034d0(iVar7);
+          iVar4 = func_0x001a7022(iVar7 + 1,iStack_44,iVar3 + -2);
+          iVar3 = iVar2;
+          if (iVar4 == 0) break;
+        }
+        iVar2 = iVar3;
+      }
+LAB_00171702:
+      if (iVar5 == 0) {
+        return -6;
+      }
+      iVar2 = func_0x001a82fc(*(undefined4 *)(param_2 + 4),&pcStack_4c);
+      if (iVar2 != 0) {
+        return iVar2;
+      }
+      uStack_60 = *(undefined4 *)(param_2 + 8);
+      piStack_64 = &iStack_34;
+      pcStack_5c = (char *)0x17175c;
+      iStack_58 = 1;
+      iStack_68 = iVar5 + 0x96;
+      iVar2 = func_0x001729d4(iStack_54,pcStack_4c,iVar5 + 0x32,iVar5 + 100);
+      if (pcStack_4c != (char *)0x0) {
+        if ((code *)*_DAT_00171754 == Reset) {
+          func_0x0018a280();
+        }
+        else {
+          (*(code *)*_DAT_00171754)();
+        }
+      }
+      if (iVar2 != 0) {
+        return iVar2;
+      }
+      if (iStack_34 != 0) {
+        func_0x001a4a80(iStack_3c,iStack_34,0xffffffff);
+        func_0x001a52cc(param_2);
+      }
+      iVar2 = func_0x001a6f04(*(undefined4 *)(param_2 + 8),0x171828);
+      if (((iVar2 == 0) ||
+          (iVar2 = func_0x001a6f04(*(undefined4 *)(param_2 + 8),0x171834), iVar2 == 0)) ||
+         (iVar2 = func_0x001a6f04(*(undefined4 *)(param_2 + 8),0x17183c), iVar2 == 0)) {
+LAB_001717f8:
+        FUN_0017928c(iStack_20,**(undefined4 **)(param_2 + 0x4c),iStack_54,0x197);
+      }
+      else {
+        iStack_68 = 0;
+        func_0x001a7c44(*(int *)(iStack_28 + 0x2c) + 8,0x171848,&iStack_68);
+        if (iStack_68 != 0) goto LAB_001717f8;
+      }
+      iStack_2c = iStack_2c + 1;
+      func_0x001a5566(iStack_18,iStack_2c,&iStack_54);
+      iStack_48 = iStack_30;
+    }
+  }
+  return 0;
+}
+
+
+
+############ site 17185c
+=== FUN_0017184c @ 0017184c callers []
+  0017184c  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  0017184e  sub sp,#0xc
+  00171850  ldr r4,[sp,#0x30]
+  00171852  movs r0,r1
+  00171854  movs r7,#0x0
+  00171856  movs r5,r2
+  00171858  movs r1,r2
+  0017185a  str r7,[r4,#0x0]
+  0017185c  bl 0x00174440
+  00171860  movs r6,r0
+  00171862  beq 0x001718ac
+  00171864  ldr r0,[r6,#0x20]
+  00171866  cmp r0,#0x0
+  00171868  beq 0x001718ac
+  0017186a  ldr r1,[sp,#0x18]
+  0017186c  subs r2,r7,#0x3
+  0017186e  subs r1,#0xc8
+  00171870  cmp r1,#0x64
+  00171872  str r1,[sp,#0x4]
+  00171874  bcs 0x00171880
+  00171876  cmp r5,#0x0
+  00171878  beq 0x00171880
+  0017187a  ldr r1,[r5,#0x4]
+  0017187c  cmp r1,#0x0
+  0017187e  beq 0x001718b4
+  00171880  movs r1,#0x2c
+  00171882  ldrb r1,[r1,r6]
+  00171884  cmp r1,#0x7
+  00171886  beq 0x001718b4
+  00171888  cmp r1,#0x8
+  0017188a  beq 0x001718b4
+  0017188c  cmp r1,#0x9
+  0017188e  beq 0x001718b4
+  00171890  cmp r5,#0x0
+  00171892  str r0,[sp,#0x0]
+  00171894  beq 0x001718ba
+  00171896  ldr r2,[r5,#0x4]
+  00171898  ldr r3,[sp,#0x18]
+  0017189a  ldr r0,[sp,#0xc]
+  0017189c  movs r1,r4
+  0017189e  bl 0x00171cd0
+  001718a2  cmp r0,#0x0
+  001718a4  beq 0x001718c8
+  001718a6  str r7,[r4,#0x0]
+  001718a8  add sp,#0x1c
+  001718aa  pop {r4,r5,r6,r7,pc}
+  001718ac  movs r0,#0x5
+  001718ae  mvns r0,r0
+  001718b0  add sp,#0x1c
+  001718b2  pop {r4,r5,r6,r7,pc}
+  001718b4  movs r0,r2
+  001718b6  add sp,#0x1c
+  001718b8  pop {r4,r5,r6,r7,pc}
+  001718ba  ldr r3,[sp,#0x18]
+  001718bc  ldr r0,[sp,#0xc]
+  001718be  movs r2,#0x0
+  001718c0  movs r1,r4
+  001718c2  bl 0x00171cd0
+  001718c6  b 0x001718a2
+  001718c8  ldr r0,[sp,#0x18]
+  001718ca  subs r0,#0x65
+  001718cc  cmp r0,#0xc7
+  001718ce  bcs 0x001718ee
+  001718d0  ldr r2,[r6,#0x20]
+  001718d2  ldr r1,[r4,#0x0]
+  001718d4  ldr r0,[sp,#0xc]
+  001718d6  bl 0x001727d0
+  001718da  cmp r0,#0x0
+  001718dc  str r0,[sp,#0x0]
+  001718de  beq 0x001718ee
+  001718e0  ldr r0,[r4,#0x0]
+  001718e2  bl 0x001a52e0
+  001718e6  str r7,[r4,#0x0]
+  001718e8  ldr r0,[sp,#0x0]
+  001718ea  add sp,#0x1c
+  001718ec  pop {r4,r5,r6,r7,pc}
+  001718ee  ldr r0,[sp,#0x34]
+  001718f0  cmp r0,#0x1
+  001718f2  bne 0x00171928
+  001718f4  ldr r0,[sp,#0x4]
+  001718f6  cmp r0,#0x64
+  001718f8  bcs 0x0017190e
+  001718fa  cmp r5,#0x0
+  001718fc  beq 0x0017190e
+  001718fe  ldr r1,[r4,#0x0]
+  00171900  movs r0,r5
+  00171902  bl 0x00173b7c
+  00171906  ldr r0,[r5,#0x4]
+  00171908  movs r1,#0x15
+  0017190a  bl 0x001a3c88
+  0017190e  ldr r0,[r4,#0x0]
+  00171910  bl 0x001a688c
+  00171914  ldr r1,[r6,#0x4]
+  00171916  str r1,[r0,#0x4]
+  00171918  movs r1,r0
+  0017191a  movs r0,r6
+  0017191c  bl 0x001a7216
+  00171920  ldr r0,[sp,#0xc]
+  00171922  bl 0x00179b24
+  00171926  str r7,[r4,#0x0]
+  00171928  movs r0,#0x0
+  0017192a  add sp,#0x1c
+  0017192c  pop {r4,r5,r6,r7,pc}
+
+int FUN_0017184c(undefined4 param_1,undefined4 param_2,int param_3,int param_4,undefined4 *param_5,
+                int param_6)
+
+{
+  char cVar1;
+  int iVar2;
+  int iVar3;
+  
+  *param_5 = 0;
+  iVar2 = func_0x00174440(param_2,param_3);
+  if ((iVar2 == 0) || (iVar3 = *(int *)(iVar2 + 0x20), iVar3 == 0)) {
+    return -6;
+  }
+  if (((((99 < param_4 - 200U) || (param_3 == 0)) || (*(int *)(param_3 + 4) != 0)) &&
+      ((cVar1 = *(char *)(iVar2 + 0x2c), cVar1 != '\a' && (cVar1 != '\b')))) && (cVar1 != '\t')) {
+    if (param_3 == 0) {
+      iVar3 = func_0x00171cd0(param_1,param_5,0,param_4,iVar3);
+    }
+    else {
+      iVar3 = func_0x00171cd0(param_1,param_5,*(undefined4 *)(param_3 + 4),param_4,iVar3);
+    }
+    if (iVar3 != 0) {
+      *param_5 = 0;
+      return iVar3;
+    }
+    if (param_4 - 0x65U < 199) {
+      iVar3 = func_0x001727d0(param_1,*param_5,*(undefined4 *)(iVar2 + 0x20));
+      if (iVar3 != 0) {
+        func_0x001a52e0(*param_5);
+        *param_5 = 0;
+        return iVar3;
+      }
+    }
+    if (param_6 == 1) {
+      if ((param_4 - 200U < 100) && (param_3 != 0)) {
+        func_0x00173b7c(param_3,*param_5);
+        FUN_001a3c88(*(undefined4 *)(param_3 + 4),0x15);
+      }
+      iVar3 = func_0x001a688c(*param_5);
+      *(undefined4 *)(iVar3 + 4) = *(undefined4 *)(iVar2 + 4);
+      func_0x001a7216(iVar2,iVar3);
+      FUN_00179b24(param_1);
+      *param_5 = 0;
+    }
+    return 0;
+  }
+  return -3;
+}
+
+
+
+############ site 171a38
+=== FUN_00171930 @ 00171930 callers []
+  00171930  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  00171932  movs r4,r0
+  00171934  sub sp,#0xbc
+  00171936  ldr r0,[sp,#0xc0]
+  00171938  movs r6,#0x0
+  0017193a  movs r5,r3
+  0017193c  cmp r3,#0x0
+  0017193e  str r6,[r0,#0x0]
+  00171940  beq 0x00171950
+  00171942  ldr r0,[r4,#0x0]
+  00171944  cmp r0,#0x0
+  00171946  bgt 0x00171958
+  00171948  movs r0,#0x9
+  0017194a  mvns r0,r0
+  0017194c  add sp,#0xcc
+  0017194e  pop {r4,r5,r6,r7,pc}
+  00171950  movs r0,#0x1
+  00171952  mvns r0,r0
+  00171954  add sp,#0xcc
+  00171956  pop {r4,r5,r6,r7,pc}
+  00171958  add r0,sp,#0x40
+  0017195a  strb r6,[r0,#0x10]
+  0017195c  add r0,sp,#0xa0
+  0017195e  strb r6,[r0,#0x8]
+  00171960  ldr r7,[r4,#0x5c]
+  00171962  cmp r7,#0x0
+  00171964  beq 0x00171974
+  00171966  movs r0,#0xa
+  00171968  movs r2,#0x41
+  0017196a  str r0,[sp,#0x0]
+  0017196c  movs r0,r4
+  0017196e  add r3,sp,#0xa8
+  00171970  add r1,sp,#0x50
+  00171972  blx r7
+  00171974  add r0,sp,#0x4c
+  00171976  bl 0x001a5740
+  0017197a  cmp r0,#0x0
+  0017197c  bne 0x00171954
+  0017197e  ldr r0,[r5,#0x28]
+  00171980  cmp r0,#0x0
+  00171982  beq 0x001719e2
+  00171984  movs r1,#0x44
+  00171986  add r0,sp,#0x4
+  00171988  blx 0x000038a0
+  0017198c  ldr r1,[r4,#0x2c]
+  0017198e  movs r3,#0x31
+  00171990  movs r0,r4
+  00171992  add r2,sp,#0x4
+  00171994  bl 0x00175564
+  00171998  mov r0,sp
+  0017199a  ldrb r0,[r0,#0x4]
+  0017199c  cmp r0,#0x0
+  0017199e  beq 0x001719f0
+  001719a0  ldr r0,[sp,#0xc4]
+  001719a2  bl 0x001a6f50
+  001719a6  movs r1,r0
+  001719a8  ldr r0,[sp,#0x4c]
+  001719aa  str r1,[r0,#0x8]
+  001719ac  beq 0x001719fe
+  001719ae  adr r0,[0x171c6c]
+  001719b0  bl 0x001a6f50
+  001719b4  movs r1,r0
+  001719b6  ldr r0,[sp,#0x4c]
+  001719b8  str r1,[r0,#0x0]
+  001719ba  beq 0x001719fe
+  001719bc  str r6,[r0,#0xc]
+  001719be  str r6,[r0,#0x10]
+  001719c0  movs r0,r5
+  001719c2  adds r0,#0x10
+  001719c4  movs r1,#0x0
+  001719c6  str r0,[sp,#0x48]
+  001719c8  bl 0x001a4bc4
+  001719cc  cmp r0,#0x0
+  001719ce  beq 0x00171a0a
+  001719d0  ldr r0,[r5,#0x28]
+  001719d2  ldr r1,[sp,#0x4c]
+  001719d4  ldr r0,[r0,#0x4]
+  001719d6  adds r1,r1,#0x4
+  001719d8  bl 0x001a7830
+  001719dc  movs r6,r0
+  001719de  bne 0x00171adc
+  001719e0  b 0x00171b06
+  001719e2  ldr r0,[sp,#0x4c]
+  001719e4  bl 0x001a52e0
+  001719e8  movs r0,#0x4
+  001719ea  mvns r0,r0
+  001719ec  add sp,#0xcc
+  001719ee  pop {r4,r5,r6,r7,pc}
+  001719f0  ldr r0,[sp,#0x4c]
+  001719f2  bl 0x001a52e0
+  001719f6  movs r0,#0x9
+  001719f8  mvns r0,r0
+  001719fa  add sp,#0xcc
+  001719fc  pop {r4,r5,r6,r7,pc}
+  001719fe  bl 0x001a52e0
+  00171a02  movs r0,#0x3
+  00171a04  mvns r0,r0
+  00171a06  add sp,#0xcc
+  00171a08  pop {r4,r5,r6,r7,pc}
+  00171a0a  ldr r0,[sp,#0x48]
+  00171a0c  movs r7,#0x0
+  00171a0e  ldr r6,[sp,#0x4c]
+  00171a10  movs r1,r7
+  00171a12  str r0,[sp,#0x98]
+  00171a14  bl 0x001a4bdc
+  00171a18  str r0,[sp,#0x48]
+  00171a1a  ldr r0,[r0,#0x4]
+  00171a1c  add r2,sp,#0xb8
+  00171a1e  adds r0,#0x14
+  00171a20  adr r1,[0x171c74]
+  00171a22  bl 0x001a7c44
+  00171a26  ldr r0,[sp,#0xb8]
+  00171a28  cmp r0,#0x0
+  00171a2a  beq 0x00171a6c
+  00171a2c  ldr r0,[r5,#0x28]
+  00171a2e  adds r1,r6,#0x4
+  00171a30  ldr r0,[r0,#0x4]
+  00171a32  bl 0x001a7830
+  00171a36  cmp r0,#0x0
+  00171a38  beq 0x00171a3e
+  00171a3a  movs r4,r0
+  00171a3c  b 0x00171afa
+  00171a3e  adds r6,#0xa4
+  00171a40  ldr r0,[sp,#0x98]
+  00171a42  movs r1,r7
+  00171a44  bl 0x001a4bc4
+  00171a48  cmp r0,#0x0
+  00171a4a  bne 0x00171b06
+  00171a4c  ldr r0,[sp,#0x98]
+  00171a4e  movs r1,r7
+  00171a50  bl 0x001a4bdc
+  00171a54  add r1,sp,#0x94
+  00171a56  bl 0x001a3ee4
+  00171a5a  cmp r0,#0x0
+  00171a5c  bne 0x00171a3a
+  00171a5e  subs r2,r0,#0x1
+  00171a60  ldr r1,[sp,#0x94]
+  00171a62  movs r0,r6
+  00171a64  bl 0x001a4a80
+  00171a68  adds r7,r7,#0x1
+  00171a6a  b 0x00171a40
+  00171a6c  ldr r0,[sp,#0x48]
+  00171a6e  adds r1,r6,#0x4
+  00171a70  ldr r0,[r0,#0x4]
+  00171a72  bl 0x001a7830
+  00171a76  cmp r0,#0x0
+  00171a78  bne 0x00171a3a
+  00171a7a  movs r0,r6
+  00171a7c  adds r0,#0xa4
+  00171a7e  str r0,[sp,#0xb4]
+  00171a80  ldr r0,[sp,#0x98]
+  00171a82  movs r1,r7
+  00171a84  bl 0x001a4bc4
+  00171a88  cmp r0,#0x0
+  00171a8a  beq 0x00171ab6
+  00171a8c  ldr r0,[r5,#0x28]
+  00171a8e  add r1,sp,#0xa0
+  00171a90  ldr r0,[r0,#0x4]
+  00171a92  bl 0x001a82fc
+  00171a96  cmp r0,#0x0
+  00171a98  bne 0x00171a3a
+  00171a9a  ldr r1,[sp,#0xa0]
+  00171a9c  movs r0,r6
+  00171a9e  bl 0x001a66e8
+  00171aa2  movs r6,r0
+  00171aa4  ldr r0,[sp,#0xa0]
+  00171aa6  cmp r0,#0x0
+  00171aa8  beq 0x00171af4
+  00171aaa  ldr r1,[0x00171c78]
+  00171aac  ldr r1,[r1,#0x0]
+  00171aae  cmp r1,#0x0
+  00171ab0  beq 0x00171af0
+  00171ab2  blx r1
+  00171ab4  b 0x00171af4
+  00171ab6  ldr r0,[sp,#0x98]
+  00171ab8  movs r1,r7
+  00171aba  bl 0x001a4bdc
+  00171abe  add r1,sp,#0x9c
+  00171ac0  bl 0x001a3ee4
+  00171ac4  cmp r0,#0x0
+  00171ac6  bne 0x00171a3a
+  00171ac8  ldr r0,[sp,#0x98]
+  00171aca  adds r1,r7,#0x1
+  00171acc  bl 0x001a4bc4
+  00171ad0  cmp r0,#0x0
+  00171ad2  beq 0x00171ae2
+  00171ad4  ldr r0,[sp,#0x9c]
+  00171ad6  bl 0x001a6e7c
+  00171ada  b 0x00171ade
+  00171adc  b 0x00171b22
+  00171ade  adds r7,r7,#0x1
+  00171ae0  b 0x00171a80
+  00171ae2  movs r2,#0x0
+  00171ae4  ldr r1,[sp,#0x9c]
+  00171ae6  ldr r0,[sp,#0xb4]
+  00171ae8  mvns r2,r2
+  00171aea  bl 0x001a4a80
+  00171aee  b 0x00171ada
+  00171af0  blx 0x0018a280
+  00171af4  cmp r6,#0x0
+  00171af6  beq 0x00171b06
+  00171af8  movs r4,r6
+  00171afa  ldr r0,[sp,#0x4c]
+  00171afc  bl 0x001a52e0
+  00171b00  movs r0,r4
+  00171b02  add sp,#0xcc
+  00171b04  pop {r4,r5,r6,r7,pc}
+  00171b06  ldr r1,[sp,#0x4c]
+  00171b08  ldr r0,[r5,#0x20]
+  00171b0a  adds r1,#0xac
+  00171b0c  bl 0x001a71c8
+  00171b10  movs r6,r0
+  00171b12  bne 0x00171b22
+  00171b14  ldr r1,[sp,#0x4c]
+  00171b16  ldr r0,[r5,#0x24]
+  00171b18  adds r1,#0x7c
+  00171b1a  bl 0x001a3ee4
+  00171b1e  movs r6,r0
+  00171b20  beq 0x00171b2e
+  00171b22  ldr r0,[sp,#0x4c]
+  00171b24  bl 0x001a52e0
+  00171b28  movs r0,r6
+  00171b2a  add sp,#0xcc
+  00171b2c  pop {r4,r5,r6,r7,pc}
+  00171b2e  ldr r1,[r5,#0x0]
+  00171b30  ldr r0,[sp,#0x4c]
+  00171b32  bl 0x001a5bb8
+  00171b36  ldr r1,[sp,#0xc4]
+  00171b38  adr r0,[0x171c7c]
+  00171b3a  blx 0x00003960
+  00171b3e  ldr r6,[0x00171c80]
+  00171b40  cmp r0,#0x0
+  00171b42  add r0,sp,#0x48
+  00171b44  beq 0x00171b5a
+  00171b46  bl 0x001a3844
+  00171b4a  movs r7,r0
+  00171b4c  beq 0x00171b9e
+  00171b4e  ldr r0,[sp,#0x4c]
+  00171b50  bl 0x001a52e0
+  00171b54  movs r0,r7
+  00171b56  add sp,#0xcc
+  00171b58  pop {r4,r5,r6,r7,pc}
+  00171b5a  bl 0x001a3844
+  00171b5e  movs r7,r0
+  00171b60  bne 0x00171b4e
+  00171b62  ldr r1,[r6,#0x0]
+  00171b64  cmp r1,#0x0
+  00171b66  beq 0x00171b6e
+  00171b68  movs r0,#0x14
+  00171b6a  blx r1
+  00171b6c  b 0x00171b74
+  00171b6e  movs r0,#0x14
+  00171b70  blx 0x0019b388
+  00171b74  movs r6,r0
+  00171b76  beq 0x00171c06
+  00171b78  ldr r2,[r5,#0x18]
+  00171b7a  adr r1,[0x171c84]
+  00171b7c  bl 0x000028d8
+  00171b80  ldr r0,[sp,#0x48]
+  00171b82  movs r1,r6
+  00171b84  bl 0x001a39a4
+  00171b88  ldr r0,[sp,#0xc4]
+  00171b8a  bl 0x001a6f50
+  00171b8e  movs r1,r0
+  00171b90  ldr r0,[sp,#0x48]
+  00171b92  bl 0x001a39a0
+  00171b96  ldr r1,[sp,#0x4c]
+  00171b98  ldr r0,[sp,#0x48]
+  00171b9a  str r0,[r1,#0x70]
+  00171b9c  b 0x00171be0
+  00171b9e  ldr r0,[r5,#0x18]
+  00171ba0  adds r0,r0,#0x1
+  00171ba2  str r0,[r5,#0x18]
+  00171ba4  ldr r1,[r6,#0x0]
+  00171ba6  cmp r1,#0x0
+  00171ba8  beq 0x00171bb0
+  00171baa  movs r0,#0x14
+  00171bac  blx r1
+  00171bae  b 0x00171bb6
+  00171bb0  movs r0,#0x14
+  00171bb2  blx 0x0019b388
+  00171bb6  movs r6,r0
+  00171bb8  beq 0x00171c06
+  00171bba  ldr r3,[r5,#0x18]
+  00171bbc  movs r1,#0x14
+  00171bbe  adr r2,[0x171c84]
+  00171bc0  bl 0x000027f4
+  00171bc4  ldr r0,[sp,#0x48]
+  00171bc6  movs r1,r6
+  00171bc8  bl 0x001a39a4
+  00171bcc  ldr r0,[sp,#0xc4]
+  00171bce  bl 0x001a6f50
+  00171bd2  movs r1,r0
+  00171bd4  ldr r0,[sp,#0x48]
+  00171bd6  bl 0x001a39a0
+  00171bda  ldr r1,[sp,#0x4c]
+  00171bdc  ldr r0,[sp,#0x48]
+  00171bde  str r0,[r1,#0x70]
+  00171be0  ldr r0,[sp,#0x4c]
+  00171be2  adr r2,[0x171c88]
+  00171be4  adr r1,[0x171c8c]
+  00171be6  bl 0x001a6054
+  00171bea  ldr r2,[sp,#0xe0]
+  00171bec  ldr r1,[sp,#0x4c]
+  00171bee  movs r0,r4
+  00171bf0  add r3,sp,#0x4
+  00171bf2  bl 0x00178820
+  00171bf6  movs r5,r0
+  00171bf8  beq 0x00171c14
+  00171bfa  ldr r0,[sp,#0x4c]
+  00171bfc  bl 0x001a52e0
+  00171c00  movs r0,r5
+  00171c02  add sp,#0xcc
+  00171c04  pop {r4,r5,r6,r7,pc}
+  00171c06  ldr r0,[sp,#0x4c]
+  00171c08  bl 0x001a52e0
+  00171c0c  movs r0,#0x3
+  00171c0e  mvns r0,r0
+  00171c10  add sp,#0xcc
+  00171c12  pop {r4,r5,r6,r7,pc}
+  00171c14  ldr r1,[sp,#0x4c]
+  00171c16  movs r2,#0x0
+  00171c18  movs r0,r4
+  00171c1a  bl 0x001736ac
+  00171c1e  ldr r1,[sp,#0xc4]
+  00171c20  adr r0,[0x171c9c]
+  00171c22  blx 0x00003960
+  00171c26  cmp r0,#0x0
+  00171c28  beq 0x00171c4a
+  00171c2a  ldr r1,[sp,#0xc4]
+  00171c2c  adr r0,[0x171ca4]
+  00171c2e  blx 0x00003960
+  00171c32  cmp r0,#0x0
+  00171c34  beq 0x00171c4a
+  00171c36  ldr r1,[sp,#0xc4]
+  00171c38  adr r0,[0x171cac]
+  00171c3a  blx 0x00003960
+  00171c3e  cmp r0,#0x0
+  00171c40  beq 0x00171c62
+  00171c42  ldr r1,[sp,#0xc4]
+  00171c44  adr r0,[0x171c7c]
+  00171c46  blx 0x00003960
+  00171c4a  adds r4,#0x80
+  00171c4c  ldr r2,[r4,#0x4]
+  00171c4e  ldr r0,[sp,#0x4c]
+  00171c50  adr r1,[0x171cb4]
+  00171c52  bl 0x001a6054
+  00171c56  ldr r1,[sp,#0x4c]
+  00171c58  ldr r0,[sp,#0xc0]
+  00171c5a  str r1,[r0,#0x0]
+  00171c5c  movs r0,#0x0
+  00171c5e  add sp,#0xcc
+  00171c60  pop {r4,r5,r6,r7,pc}
+  00171c62  ldr r0,[sp,#0x4c]
+  00171c64  adr r1,[0x171cc0]
+  00171c66  bl 0x001a585a
+  00171c6a  b 0x00171c4a
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00171930(int *param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4,
+                undefined4 param_5)
+
+{
+  undefined4 *puVar1;
+  int *piVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 uVar5;
+  code *pcVar6;
+  char acStack_dc [68];
+  undefined4 *puStack_98;
+  int *piStack_94;
+  undefined1 auStack_90 [68];
+  undefined4 uStack_4c;
+  undefined4 *puStack_48;
+  undefined4 uStack_44;
+  int aiStack_40 [2];
+  undefined1 auStack_38 [12];
+  int *piStack_2c;
+  int iStack_28;
+  int *piStack_24;
+  undefined4 *puStack_20;
+  undefined4 uStack_1c;
+  undefined4 *puStack_18;
+  
+  *param_2 = 0;
+  if (param_4 == (undefined4 *)0x0) {
+    return -2;
+  }
+  if (*param_1 < 1) {
+    return -10;
+  }
+  auStack_90[0] = 0;
+  auStack_38[0] = 0;
+  piStack_24 = param_1;
+  puStack_20 = param_2;
+  uStack_1c = param_3;
+  puStack_18 = param_4;
+  if ((code *)param_1[0x17] != Reset) {
+    (*(code *)param_1[0x17])(param_1,auStack_90,0x41,auStack_38,10);
+  }
+  iVar3 = func_0x001a5740(&piStack_94);
+  if (iVar3 != 0) {
+    return iVar3;
+  }
+  if (param_4[10] == 0) {
+    func_0x001a52e0(piStack_94);
+    return -5;
+  }
+  FUN_000038a0(acStack_dc,0x44);
+  func_0x00175564(param_1,param_1[0xb],acStack_dc,0x31);
+  if (acStack_dc[0] == '\0') {
+    func_0x001a52e0(piStack_94);
+    return -10;
+  }
+  iVar3 = func_0x001a6f50(uStack_1c);
+  piStack_94[2] = iVar3;
+  if (iVar3 == 0) {
+LAB_001719fe:
+    func_0x001a52e0();
+    return -4;
+  }
+  iVar3 = func_0x001a6f50(0x171c6c);
+  *piStack_94 = iVar3;
+  if (iVar3 == 0) goto LAB_001719fe;
+  piStack_94[3] = 0;
+  piStack_94[4] = 0;
+  puStack_98 = param_4 + 4;
+  iVar3 = func_0x001a4bc4(puStack_98,0);
+  piVar2 = piStack_94;
+  if (iVar3 == 0) {
+    iVar3 = 0;
+    puStack_48 = puStack_98;
+    puStack_98 = (undefined4 *)func_0x001a4bdc(puStack_98,0);
+    func_0x001a7c44(puStack_98[1] + 0x14,0x171c74,&iStack_28);
+    if (iStack_28 == 0) {
+      iVar4 = func_0x001a7830(puStack_98[1],piVar2 + 1);
+      if (iVar4 != 0) {
+LAB_00171afa:
+        func_0x001a52e0(piStack_94);
+        return iVar4;
+      }
+      piStack_2c = piVar2 + 0x29;
+      while (iVar4 = func_0x001a4bc4(puStack_48,iVar3), iVar4 == 0) {
+        uVar5 = func_0x001a4bdc(puStack_48,iVar3);
+        iVar4 = FUN_001a3ee4(uVar5,&uStack_44);
+        if (iVar4 != 0) goto LAB_00171afa;
+        iVar4 = func_0x001a4bc4(puStack_48,iVar3 + 1);
+        if (iVar4 == 0) {
+          func_0x001a4a80(piStack_2c,uStack_44,0xffffffff);
+        }
+        else {
+          func_0x001a6e7c(uStack_44);
+        }
+        iVar3 = iVar3 + 1;
+      }
+      iVar4 = func_0x001a82fc(*(undefined4 *)(param_4[10] + 4),aiStack_40);
+      if (iVar4 != 0) goto LAB_00171afa;
+      iVar4 = func_0x001a66e8(piVar2,aiStack_40[0]);
+      if (aiStack_40[0] != 0) {
+        if ((code *)*_DAT_00171c78 == Reset) {
+          func_0x0018a280();
+        }
+        else {
+          (*(code *)*_DAT_00171c78)();
+        }
+      }
+      if (iVar4 != 0) goto LAB_00171afa;
+    }
+    else {
+      iVar4 = func_0x001a7830(*(undefined4 *)(param_4[10] + 4),piVar2 + 1);
+      if (iVar4 != 0) goto LAB_00171afa;
+      while (iVar4 = func_0x001a4bc4(puStack_48,iVar3), iVar4 == 0) {
+        uVar5 = func_0x001a4bdc(puStack_48,iVar3);
+        iVar4 = FUN_001a3ee4(uVar5,&uStack_4c);
+        if (iVar4 != 0) goto LAB_00171afa;
+        func_0x001a4a80(piVar2 + 0x29,uStack_4c,0xffffffff);
+        iVar3 = iVar3 + 1;
+      }
+    }
+  }
+  else {
+    iVar3 = func_0x001a7830(*(undefined4 *)(param_4[10] + 4),piStack_94 + 1);
+    if (iVar3 != 0) goto LAB_00171b22;
+  }
+  iVar3 = func_0x001a71c8(param_4[8],piStack_94 + 0x2b);
+  if ((iVar3 != 0) || (iVar3 = FUN_001a3ee4(param_4[9],piStack_94 + 0x1f), iVar3 != 0)) {
+LAB_00171b22:
+    func_0x001a52e0(piStack_94);
+    return iVar3;
+  }
+  func_0x001a5bb8(piStack_94,*param_4);
+  iVar3 = FUN_00003960(0x171c7c,uStack_1c);
+  puVar1 = _DAT_00171c80;
+  if (iVar3 == 0) {
+    iVar3 = FUN_001a3844(&puStack_98);
+    if (iVar3 == 0) {
+      pcVar6 = (code *)*puVar1;
+      if (pcVar6 == Reset) {
+        iVar3 = FUN_0019b388(0x14);
+      }
+      else {
+        iVar3 = (*pcVar6)(0x14);
+      }
+      if (iVar3 == 0) goto LAB_00171c06;
+      FUN_000028d8(iVar3,0x171c84,param_4[6]);
+      FUN_001a39a4(puStack_98,iVar3);
+      uVar5 = func_0x001a6f50(uStack_1c);
+      FUN_001a39a0(puStack_98,uVar5);
+      piStack_94[0x1c] = (int)puStack_98;
+      goto LAB_00171be0;
+    }
+  }
+  else {
+    iVar3 = FUN_001a3844(&puStack_98);
+    if (iVar3 == 0) {
+      param_4[6] = param_4[6] + 1;
+      pcVar6 = (code *)*puVar1;
+      if (pcVar6 == Reset) {
+        iVar3 = FUN_0019b388(0x14);
+      }
+      else {
+        iVar3 = (*pcVar6)(0x14);
+      }
+      if (iVar3 == 0) {
+LAB_00171c06:
+        func_0x001a52e0(piStack_94);
+        return -4;
+      }
+      FUN_000027f4(iVar3,0x14,0x171c84,param_4[6]);
+      FUN_001a39a4(puStack_98,iVar3);
+      uVar5 = func_0x001a6f50(uStack_1c);
+      FUN_001a39a0(puStack_98,uVar5);
+      piStack_94[0x1c] = (int)puStack_98;
+LAB_00171be0:
+      func_0x001a6054(piStack_94,0x171c8c,0x171c88);
+      iVar3 = func_0x00178820(param_1,piStack_94,param_5,acStack_dc);
+      if (iVar3 != 0) {
+        func_0x001a52e0(piStack_94);
+        return iVar3;
+      }
+      func_0x001736ac(param_1,piStack_94,0);
+      iVar3 = FUN_00003960(0x171c9c,uStack_1c);
+      if ((iVar3 != 0) && (iVar3 = FUN_00003960(0x171ca4,uStack_1c), iVar3 != 0)) {
+        iVar3 = FUN_00003960(0x171cac,uStack_1c);
+        if (iVar3 == 0) {
+          func_0x001a585a(piStack_94,0x171cc0);
+        }
+        else {
+          FUN_00003960(0x171c7c,uStack_1c);
+        }
+      }
+      func_0x001a6054(piStack_94,0x171cb4,param_1[0x21]);
+      *puStack_20 = piStack_94;
+      return 0;
+    }
+  }
+  func_0x001a52e0(piStack_94);
+  return iVar3;
+}
+
+
+
+############ site 171b2c
+=== FUN_00171930 @ 00171930 callers []
+  00171930  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  00171932  movs r4,r0
+  00171934  sub sp,#0xbc
+  00171936  ldr r0,[sp,#0xc0]
+  00171938  movs r6,#0x0
+  0017193a  movs r5,r3
+  0017193c  cmp r3,#0x0
+  0017193e  str r6,[r0,#0x0]
+  00171940  beq 0x00171950
+  00171942  ldr r0,[r4,#0x0]
+  00171944  cmp r0,#0x0
+  00171946  bgt 0x00171958
+  00171948  movs r0,#0x9
+  0017194a  mvns r0,r0
+  0017194c  add sp,#0xcc
+  0017194e  pop {r4,r5,r6,r7,pc}
+  00171950  movs r0,#0x1
+  00171952  mvns r0,r0
+  00171954  add sp,#0xcc
+  00171956  pop {r4,r5,r6,r7,pc}
+  00171958  add r0,sp,#0x40
+  0017195a  strb r6,[r0,#0x10]
+  0017195c  add r0,sp,#0xa0
+  0017195e  strb r6,[r0,#0x8]
+  00171960  ldr r7,[r4,#0x5c]
+  00171962  cmp r7,#0x0
+  00171964  beq 0x00171974
+  00171966  movs r0,#0xa
+  00171968  movs r2,#0x41
+  0017196a  str r0,[sp,#0x0]
+  0017196c  movs r0,r4
+  0017196e  add r3,sp,#0xa8
+  00171970  add r1,sp,#0x50
+  00171972  blx r7
+  00171974  add r0,sp,#0x4c
+  00171976  bl 0x001a5740
+  0017197a  cmp r0,#0x0
+  0017197c  bne 0x00171954
+  0017197e  ldr r0,[r5,#0x28]
+  00171980  cmp r0,#0x0
+  00171982  beq 0x001719e2
+  00171984  movs r1,#0x44
+  00171986  add r0,sp,#0x4
+  00171988  blx 0x000038a0
+  0017198c  ldr r1,[r4,#0x2c]
+  0017198e  movs r3,#0x31
+  00171990  movs r0,r4
+  00171992  add r2,sp,#0x4
+  00171994  bl 0x00175564
+  00171998  mov r0,sp
+  0017199a  ldrb r0,[r0,#0x4]
+  0017199c  cmp r0,#0x0
+  0017199e  beq 0x001719f0
+  001719a0  ldr r0,[sp,#0xc4]
+  001719a2  bl 0x001a6f50
+  001719a6  movs r1,r0
+  001719a8  ldr r0,[sp,#0x4c]
+  001719aa  str r1,[r0,#0x8]
+  001719ac  beq 0x001719fe
+  001719ae  adr r0,[0x171c6c]
+  001719b0  bl 0x001a6f50
+  001719b4  movs r1,r0
+  001719b6  ldr r0,[sp,#0x4c]
+  001719b8  str r1,[r0,#0x0]
+  001719ba  beq 0x001719fe
+  001719bc  str r6,[r0,#0xc]
+  001719be  str r6,[r0,#0x10]
+  001719c0  movs r0,r5
+  001719c2  adds r0,#0x10
+  001719c4  movs r1,#0x0
+  001719c6  str r0,[sp,#0x48]
+  001719c8  bl 0x001a4bc4
+  001719cc  cmp r0,#0x0
+  001719ce  beq 0x00171a0a
+  001719d0  ldr r0,[r5,#0x28]
+  001719d2  ldr r1,[sp,#0x4c]
+  001719d4  ldr r0,[r0,#0x4]
+  001719d6  adds r1,r1,#0x4
+  001719d8  bl 0x001a7830
+  001719dc  movs r6,r0
+  001719de  bne 0x00171adc
+  001719e0  b 0x00171b06
+  001719e2  ldr r0,[sp,#0x4c]
+  001719e4  bl 0x001a52e0
+  001719e8  movs r0,#0x4
+  001719ea  mvns r0,r0
+  001719ec  add sp,#0xcc
+  001719ee  pop {r4,r5,r6,r7,pc}
+  001719f0  ldr r0,[sp,#0x4c]
+  001719f2  bl 0x001a52e0
+  001719f6  movs r0,#0x9
+  001719f8  mvns r0,r0
+  001719fa  add sp,#0xcc
+  001719fc  pop {r4,r5,r6,r7,pc}
+  001719fe  bl 0x001a52e0
+  00171a02  movs r0,#0x3
+  00171a04  mvns r0,r0
+  00171a06  add sp,#0xcc
+  00171a08  pop {r4,r5,r6,r7,pc}
+  00171a0a  ldr r0,[sp,#0x48]
+  00171a0c  movs r7,#0x0
+  00171a0e  ldr r6,[sp,#0x4c]
+  00171a10  movs r1,r7
+  00171a12  str r0,[sp,#0x98]
+  00171a14  bl 0x001a4bdc
+  00171a18  str r0,[sp,#0x48]
+  00171a1a  ldr r0,[r0,#0x4]
+  00171a1c  add r2,sp,#0xb8
+  00171a1e  adds r0,#0x14
+  00171a20  adr r1,[0x171c74]
+  00171a22  bl 0x001a7c44
+  00171a26  ldr r0,[sp,#0xb8]
+  00171a28  cmp r0,#0x0
+  00171a2a  beq 0x00171a6c
+  00171a2c  ldr r0,[r5,#0x28]
+  00171a2e  adds r1,r6,#0x4
+  00171a30  ldr r0,[r0,#0x4]
+  00171a32  bl 0x001a7830
+  00171a36  cmp r0,#0x0
+  00171a38  beq 0x00171a3e
+  00171a3a  movs r4,r0
+  00171a3c  b 0x00171afa
+  00171a3e  adds r6,#0xa4
+  00171a40  ldr r0,[sp,#0x98]
+  00171a42  movs r1,r7
+  00171a44  bl 0x001a4bc4
+  00171a48  cmp r0,#0x0
+  00171a4a  bne 0x00171b06
+  00171a4c  ldr r0,[sp,#0x98]
+  00171a4e  movs r1,r7
+  00171a50  bl 0x001a4bdc
+  00171a54  add r1,sp,#0x94
+  00171a56  bl 0x001a3ee4
+  00171a5a  cmp r0,#0x0
+  00171a5c  bne 0x00171a3a
+  00171a5e  subs r2,r0,#0x1
+  00171a60  ldr r1,[sp,#0x94]
+  00171a62  movs r0,r6
+  00171a64  bl 0x001a4a80
+  00171a68  adds r7,r7,#0x1
+  00171a6a  b 0x00171a40
+  00171a6c  ldr r0,[sp,#0x48]
+  00171a6e  adds r1,r6,#0x4
+  00171a70  ldr r0,[r0,#0x4]
+  00171a72  bl 0x001a7830
+  00171a76  cmp r0,#0x0
+  00171a78  bne 0x00171a3a
+  00171a7a  movs r0,r6
+  00171a7c  adds r0,#0xa4
+  00171a7e  str r0,[sp,#0xb4]
+  00171a80  ldr r0,[sp,#0x98]
+  00171a82  movs r1,r7
+  00171a84  bl 0x001a4bc4
+  00171a88  cmp r0,#0x0
+  00171a8a  beq 0x00171ab6
+  00171a8c  ldr r0,[r5,#0x28]
+  00171a8e  add r1,sp,#0xa0
+  00171a90  ldr r0,[r0,#0x4]
+  00171a92  bl 0x001a82fc
+  00171a96  cmp r0,#0x0
+  00171a98  bne 0x00171a3a
+  00171a9a  ldr r1,[sp,#0xa0]
+  00171a9c  movs r0,r6
+  00171a9e  bl 0x001a66e8
+  00171aa2  movs r6,r0
+  00171aa4  ldr r0,[sp,#0xa0]
+  00171aa6  cmp r0,#0x0
+  00171aa8  beq 0x00171af4
+  00171aaa  ldr r1,[0x00171c78]
+  00171aac  ldr r1,[r1,#0x0]
+  00171aae  cmp r1,#0x0
+  00171ab0  beq 0x00171af0
+  00171ab2  blx r1
+  00171ab4  b 0x00171af4
+  00171ab6  ldr r0,[sp,#0x98]
+  00171ab8  movs r1,r7
+  00171aba  bl 0x001a4bdc
+  00171abe  add r1,sp,#0x9c
+  00171ac0  bl 0x001a3ee4
+  00171ac4  cmp r0,#0x0
+  00171ac6  bne 0x00171a3a
+  00171ac8  ldr r0,[sp,#0x98]
+  00171aca  adds r1,r7,#0x1
+  00171acc  bl 0x001a4bc4
+  00171ad0  cmp r0,#0x0
+  00171ad2  beq 0x00171ae2
+  00171ad4  ldr r0,[sp,#0x9c]
+  00171ad6  bl 0x001a6e7c
+  00171ada  b 0x00171ade
+  00171adc  b 0x00171b22
+  00171ade  adds r7,r7,#0x1
+  00171ae0  b 0x00171a80
+  00171ae2  movs r2,#0x0
+  00171ae4  ldr r1,[sp,#0x9c]
+  00171ae6  ldr r0,[sp,#0xb4]
+  00171ae8  mvns r2,r2
+  00171aea  bl 0x001a4a80
+  00171aee  b 0x00171ada
+  00171af0  blx 0x0018a280
+  00171af4  cmp r6,#0x0
+  00171af6  beq 0x00171b06
+  00171af8  movs r4,r6
+  00171afa  ldr r0,[sp,#0x4c]
+  00171afc  bl 0x001a52e0
+  00171b00  movs r0,r4
+  00171b02  add sp,#0xcc
+  00171b04  pop {r4,r5,r6,r7,pc}
+  00171b06  ldr r1,[sp,#0x4c]
+  00171b08  ldr r0,[r5,#0x20]
+  00171b0a  adds r1,#0xac
+  00171b0c  bl 0x001a71c8
+  00171b10  movs r6,r0
+  00171b12  bne 0x00171b22
+  00171b14  ldr r1,[sp,#0x4c]
+  00171b16  ldr r0,[r5,#0x24]
+  00171b18  adds r1,#0x7c
+  00171b1a  bl 0x001a3ee4
+  00171b1e  movs r6,r0
+  00171b20  beq 0x00171b2e
+  00171b22  ldr r0,[sp,#0x4c]
+  00171b24  bl 0x001a52e0
+  00171b28  movs r0,r6
+  00171b2a  add sp,#0xcc
+  00171b2c  pop {r4,r5,r6,r7,pc}
+  00171b2e  ldr r1,[r5,#0x0]
+  00171b30  ldr r0,[sp,#0x4c]
+  00171b32  bl 0x001a5bb8
+  00171b36  ldr r1,[sp,#0xc4]
+  00171b38  adr r0,[0x171c7c]
+  00171b3a  blx 0x00003960
+  00171b3e  ldr r6,[0x00171c80]
+  00171b40  cmp r0,#0x0
+  00171b42  add r0,sp,#0x48
+  00171b44  beq 0x00171b5a
+  00171b46  bl 0x001a3844
+  00171b4a  movs r7,r0
+  00171b4c  beq 0x00171b9e
+  00171b4e  ldr r0,[sp,#0x4c]
+  00171b50  bl 0x001a52e0
+  00171b54  movs r0,r7
+  00171b56  add sp,#0xcc
+  00171b58  pop {r4,r5,r6,r7,pc}
+  00171b5a  bl 0x001a3844
+  00171b5e  movs r7,r0
+  00171b60  bne 0x00171b4e
+  00171b62  ldr r1,[r6,#0x0]
+  00171b64  cmp r1,#0x0
+  00171b66  beq 0x00171b6e
+  00171b68  movs r0,#0x14
+  00171b6a  blx r1
+  00171b6c  b 0x00171b74
+  00171b6e  movs r0,#0x14
+  00171b70  blx 0x0019b388
+  00171b74  movs r6,r0
+  00171b76  beq 0x00171c06
+  00171b78  ldr r2,[r5,#0x18]
+  00171b7a  adr r1,[0x171c84]
+  00171b7c  bl 0x000028d8
+  00171b80  ldr r0,[sp,#0x48]
+  00171b82  movs r1,r6
+  00171b84  bl 0x001a39a4
+  00171b88  ldr r0,[sp,#0xc4]
+  00171b8a  bl 0x001a6f50
+  00171b8e  movs r1,r0
+  00171b90  ldr r0,[sp,#0x48]
+  00171b92  bl 0x001a39a0
+  00171b96  ldr r1,[sp,#0x4c]
+  00171b98  ldr r0,[sp,#0x48]
+  00171b9a  str r0,[r1,#0x70]
+  00171b9c  b 0x00171be0
+  00171b9e  ldr r0,[r5,#0x18]
+  00171ba0  adds r0,r0,#0x1
+  00171ba2  str r0,[r5,#0x18]
+  00171ba4  ldr r1,[r6,#0x0]
+  00171ba6  cmp r1,#0x0
+  00171ba8  beq 0x00171bb0
+  00171baa  movs r0,#0x14
+  00171bac  blx r1
+  00171bae  b 0x00171bb6
+  00171bb0  movs r0,#0x14
+  00171bb2  blx 0x0019b388
+  00171bb6  movs r6,r0
+  00171bb8  beq 0x00171c06
+  00171bba  ldr r3,[r5,#0x18]
+  00171bbc  movs r1,#0x14
+  00171bbe  adr r2,[0x171c84]
+  00171bc0  bl 0x000027f4
+  00171bc4  ldr r0,[sp,#0x48]
+  00171bc6  movs r1,r6
+  00171bc8  bl 0x001a39a4
+  00171bcc  ldr r0,[sp,#0xc4]
+  00171bce  bl 0x001a6f50
+  00171bd2  movs r1,r0
+  00171bd4  ldr r0,[sp,#0x48]
+  00171bd6  bl 0x001a39a0
+  00171bda  ldr r1,[sp,#0x4c]
+  00171bdc  ldr r0,[sp,#0x48]
+  00171bde  str r0,[r1,#0x70]
+  00171be0  ldr r0,[sp,#0x4c]
+  00171be2  adr r2,[0x171c88]
+  00171be4  adr r1,[0x171c8c]
+  00171be6  bl 0x001a6054
+  00171bea  ldr r2,[sp,#0xe0]
+  00171bec  ldr r1,[sp,#0x4c]
+  00171bee  movs r0,r4
+  00171bf0  add r3,sp,#0x4
+  00171bf2  bl 0x00178820
+  00171bf6  movs r5,r0
+  00171bf8  beq 0x00171c14
+  00171bfa  ldr r0,[sp,#0x4c]
+  00171bfc  bl 0x001a52e0
+  00171c00  movs r0,r5
+  00171c02  add sp,#0xcc
+  00171c04  pop {r4,r5,r6,r7,pc}
+  00171c06  ldr r0,[sp,#0x4c]
+  00171c08  bl 0x001a52e0
+  00171c0c  movs r0,#0x3
+  00171c0e  mvns r0,r0
+  00171c10  add sp,#0xcc
+  00171c12  pop {r4,r5,r6,r7,pc}
+  00171c14  ldr r1,[sp,#0x4c]
+  00171c16  movs r2,#0x0
+  00171c18  movs r0,r4
+  00171c1a  bl 0x001736ac
+  00171c1e  ldr r1,[sp,#0xc4]
+  00171c20  adr r0,[0x171c9c]
+  00171c22  blx 0x00003960
+  00171c26  cmp r0,#0x0
+  00171c28  beq 0x00171c4a
+  00171c2a  ldr r1,[sp,#0xc4]
+  00171c2c  adr r0,[0x171ca4]
+  00171c2e  blx 0x00003960
+  00171c32  cmp r0,#0x0
+  00171c34  beq 0x00171c4a
+  00171c36  ldr r1,[sp,#0xc4]
+  00171c38  adr r0,[0x171cac]
+  00171c3a  blx 0x00003960
+  00171c3e  cmp r0,#0x0
+  00171c40  beq 0x00171c62
+  00171c42  ldr r1,[sp,#0xc4]
+  00171c44  adr r0,[0x171c7c]
+  00171c46  blx 0x00003960
+  00171c4a  adds r4,#0x80
+  00171c4c  ldr r2,[r4,#0x4]
+  00171c4e  ldr r0,[sp,#0x4c]
+  00171c50  adr r1,[0x171cb4]
+  00171c52  bl 0x001a6054
+  00171c56  ldr r1,[sp,#0x4c]
+  00171c58  ldr r0,[sp,#0xc0]
+  00171c5a  str r1,[r0,#0x0]
+  00171c5c  movs r0,#0x0
+  00171c5e  add sp,#0xcc
+  00171c60  pop {r4,r5,r6,r7,pc}
+  00171c62  ldr r0,[sp,#0x4c]
+  00171c64  adr r1,[0x171cc0]
+  00171c66  bl 0x001a585a
+  00171c6a  b 0x00171c4a
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00171930(int *param_1,undefined4 *param_2,undefined4 param_3,undefined4 *param_4,
+                undefined4 param_5)
+
+{
+  undefined4 *puVar1;
+  int *piVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 uVar5;
+  code *pcVar6;
+  char acStack_dc [68];
+  undefined4 *puStack_98;
+  int *piStack_94;
+  undefined1 auStack_90 [68];
+  undefined4 uStack_4c;
+  undefined4 *puStack_48;
+  undefined4 uStack_44;
+  int aiStack_40 [2];
+  undefined1 auStack_38 [12];
+  int *piStack_2c;
+  int iStack_28;
+  int *piStack_24;
+  undefined4 *puStack_20;
+  undefined4 uStack_1c;
+  undefined4 *puStack_18;
+  
+  *param_2 = 0;
+  if (param_4 == (undefined4 *)0x0) {
+    return -2;
+  }
+  if (*param_1 < 1) {
+    return -10;
+  }
+  auStack_90[0] = 0;
+  auStack_38[0] = 0;
+  piStack_24 = param_1;
+  puStack_20 = param_2;
+  uStack_1c = param_3;
+  puStack_18 = param_4;
+  if ((code *)param_1[0x17] != Reset) {
+    (*(code *)param_1[0x17])(param_1,auStack_90,0x41,auStack_38,10);
+  }
+  iVar3 = func_0x001a5740(&piStack_94);
+  if (iVar3 != 0) {
+    return iVar3;
+  }
+  if (param_4[10] == 0) {
+    func_0x001a52e0(piStack_94);
+    return -5;
+  }
+  FUN_000038a0(acStack_dc,0x44);
+  func_0x00175564(param_1,param_1[0xb],acStack_dc,0x31);
+  if (acStack_dc[0] == '\0') {
+    func_0x001a52e0(piStack_94);
+    return -10;
+  }
+  iVar3 = func_0x001a6f50(uStack_1c);
+  piStack_94[2] = iVar3;
+  if (iVar3 == 0) {
+LAB_001719fe:
+    func_0x001a52e0();
+    return -4;
+  }
+  iVar3 = func_0x001a6f50(0x171c6c);
+  *piStack_94 = iVar3;
+  if (iVar3 == 0) goto LAB_001719fe;
+  piStack_94[3] = 0;
+  piStack_94[4] = 0;
+  puStack_98 = param_4 + 4;
+  iVar3 = func_0x001a4bc4(puStack_98,0);
+  piVar2 = piStack_94;
+  if (iVar3 == 0) {
+    iVar3 = 0;
+    puStack_48 = puStack_98;
+    puStack_98 = (undefined4 *)func_0x001a4bdc(puStack_98,0);
+    func_0x001a7c44(puStack_98[1] + 0x14,0x171c74,&iStack_28);
+    if (iStack_28 == 0) {
+      iVar4 = func_0x001a7830(puStack_98[1],piVar2 + 1);
+      if (iVar4 != 0) {
+LAB_00171afa:
+        func_0x001a52e0(piStack_94);
+        return iVar4;
+      }
+      piStack_2c = piVar2 + 0x29;
+      while (iVar4 = func_0x001a4bc4(puStack_48,iVar3), iVar4 == 0) {
+        uVar5 = func_0x001a4bdc(puStack_48,iVar3);
+        iVar4 = FUN_001a3ee4(uVar5,&uStack_44);
+        if (iVar4 != 0) goto LAB_00171afa;
+        iVar4 = func_0x001a4bc4(puStack_48,iVar3 + 1);
+        if (iVar4 == 0) {
+          func_0x001a4a80(piStack_2c,uStack_44,0xffffffff);
+        }
+        else {
+          func_0x001a6e7c(uStack_44);
+        }
+        iVar3 = iVar3 + 1;
+      }
+      iVar4 = func_0x001a82fc(*(undefined4 *)(param_4[10] + 4),aiStack_40);
+      if (iVar4 != 0) goto LAB_00171afa;
+      iVar4 = func_0x001a66e8(piVar2,aiStack_40[0]);
+      if (aiStack_40[0] != 0) {
+        if ((code *)*_DAT_00171c78 == Reset) {
+          func_0x0018a280();
+        }
+        else {
+          (*(code *)*_DAT_00171c78)();
+        }
+      }
+      if (iVar4 != 0) goto LAB_00171afa;
+    }
+    else {
+      iVar4 = func_0x001a7830(*(undefined4 *)(param_4[10] + 4),piVar2 + 1);
+      if (iVar4 != 0) goto LAB_00171afa;
+      while (iVar4 = func_0x001a4bc4(puStack_48,iVar3), iVar4 == 0) {
+        uVar5 = func_0x001a4bdc(puStack_48,iVar3);
+        iVar4 = FUN_001a3ee4(uVar5,&uStack_4c);
+        if (iVar4 != 0) goto LAB_00171afa;
+        func_0x001a4a80(piVar2 + 0x29,uStack_4c,0xffffffff);
+        iVar3 = iVar3 + 1;
+      }
+    }
+  }
+  else {
+    iVar3 = func_0x001a7830(*(undefined4 *)(param_4[10] + 4),piStack_94 + 1);
+    if (iVar3 != 0) goto LAB_00171b22;
+  }
+  iVar3 = func_0x001a71c8(param_4[8],piStack_94 + 0x2b);
+  if ((iVar3 != 0) || (iVar3 = FUN_001a3ee4(param_4[9],piStack_94 + 0x1f), iVar3 != 0)) {
+LAB_00171b22:
+    func_0x001a52e0(piStack_94);
+    return iVar3;
+  }
+  func_0x001a5bb8(piStack_94,*param_4);
+  iVar3 = FUN_00003960(0x171c7c,uStack_1c);
+  puVar1 = _DAT_00171c80;
+  if (iVar3 == 0) {
+    iVar3 = FUN_001a3844(&puStack_98);
+    if (iVar3 == 0) {
+      pcVar6 = (code *)*puVar1;
+      if (pcVar6 == Reset) {
+        iVar3 = FUN_0019b388(0x14);
+      }
+      else {
+        iVar3 = (*pcVar6)(0x14);
+      }
+      if (iVar3 == 0) goto LAB_00171c06;
+      FUN_000028d8(iVar3,0x171c84,param_4[6]);
+      FUN_001a39a4(puStack_98,iVar3);
+      uVar5 = func_0x001a6f50(uStack_1c);
+      FUN_001a39a0(puStack_98,uVar5);
+      piStack_94[0x1c] = (int)puStack_98;
+      goto LAB_00171be0;
+    }
+  }
+  else {
+    iVar3 = FUN_001a3844(&puStack_98);
+    if (iVar3 == 0) {
+      param_4[6] = param_4[6] + 1;
+      pcVar6 = (code *)*puVar1;
+      if (pcVar6 == Reset) {
+        iVar3 = FUN_0019b388(0x14);
+      }
+      else {
+        iVar3 = (*pcVar6)(0x14);
+      }
+      if (iVar3 == 0) {
+LAB_00171c06:
+        func_0x001a52e0(piStack_94);
+        return -4;
+      }
+      FUN_000027f4(iVar3,0x14,0x171c84,param_4[6]);
+      FUN_001a39a4(puStack_98,iVar3);
+      uVar5 = func_0x001a6f50(uStack_1c);
+      FUN_001a39a0(puStack_98,uVar5);
+      piStack_94[0x1c] = (int)puStack_98;
+LAB_00171be0:
+      func_0x001a6054(piStack_94,0x171c8c,0x171c88);
+      iVar3 = func_0x00178820(param_1,piStack_94,param_5,acStack_dc);
+      if (iVar3 != 0) {
+        func_0x001a52e0(piStack_94);
+        return iVar3;
+      }
+      func_0x001736ac(param_1,piStack_94,0);
+      iVar3 = FUN_00003960(0x171c9c,uStack_1c);
+      if ((iVar3 != 0) && (iVar3 = FUN_00003960(0x171ca4,uStack_1c), iVar3 != 0)) {
+        iVar3 = FUN_00003960(0x171cac,uStack_1c);
+        if (iVar3 == 0) {
+          func_0x001a585a(piStack_94,0x171cc0);
+        }
+        else {
+          FUN_00003960(0x171c7c,uStack_1c);
+        }
+      }
+      func_0x001a6054(piStack_94,0x171cb4,param_1[0x21]);
+      *puStack_20 = piStack_94;
+      return 0;
+    }
+  }
+  func_0x001a52e0(piStack_94);
+  return iVar3;
+}
+
+
+
+############ site 171d34
+=== FUN_00171cd0 @ 00171cd0 callers [FUN_0017184c]
+  00171cd0  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  00171cd2  sub sp,#0x1c
+  00171cd4  ldr r4,[sp,#0x40]
+  00171cd6  movs r0,#0x0
+  00171cd8  movs r6,r1
+  00171cda  movs r7,r2
+  00171cdc  movs r5,r3
+  00171cde  cmp r4,#0x0
+  00171ce0  str r0,[r1,#0x0]
+  00171ce2  beq 0x00171cfc
+  00171ce4  mov r0,sp
+  00171ce6  bl 0x001a5740
+  00171cea  cmp r0,#0x0
+  00171cec  bne 0x00171d00
+  00171cee  ldr r0,[0x00171f2c]
+  00171cf0  ldr r1,[r0,#0x0]
+  00171cf2  cmp r1,#0x0
+  00171cf4  beq 0x00171d04
+  00171cf6  movs r0,#0x8
+  00171cf8  blx r1
+  00171cfa  b 0x00171d0a
+  00171cfc  movs r0,#0x1
+  00171cfe  mvns r0,r0
+  00171d00  add sp,#0x2c
+  00171d02  pop {r4,r5,r6,r7,pc}
+  00171d04  movs r0,#0x8
+  00171d06  blx 0x0019b388
+  00171d0a  ldr r1,[sp,#0x0]
+  00171d0c  cmp r0,#0x0
+  00171d0e  str r0,[r1,#0x0]
+  00171d10  beq 0x00171d28
+  00171d12  adr r1,[0x171f30]
+  00171d14  bl 0x000028d8
+  00171d18  ldr r0,[sp,#0x0]
+  00171d1a  movs r1,r5
+  00171d1c  bl 0x001a6730
+  00171d20  ldr r0,[r4,#0xc]
+  00171d22  cmp r0,#0x0
+  00171d24  beq 0x00171d36
+  00171d26  b 0x00171d6c
+  00171d28  movs r0,r1
+  00171d2a  bl 0x001a52e0
+  00171d2e  movs r0,#0x3
+  00171d30  mvns r0,r0
+  00171d32  add sp,#0x2c
+  00171d34  pop {r4,r5,r6,r7,pc}
+  00171d36  ldr r0,[r4,#0x8]
+  00171d38  adr r1,[0x171f38]
+  00171d3a  blx 0x00003960
+  00171d3e  cmp r0,#0x0
+  00171d40  bne 0x00171d56
+  00171d42  movs r0,r5
+  00171d44  subs r0,#0xff
+  00171d46  subs r0,#0xe2
+  00171d48  bne 0x00171d56
+  00171d4a  adr r0,[0x171f40]
+  00171d4c  bl 0x001a6f50
+  00171d50  ldr r1,[sp,#0x0]
+  00171d52  str r0,[r1,#0x10]
+  00171d54  b 0x00171da4
+  00171d56  ldr r0,[r4,#0xc]
+  00171d58  cmp r0,#0x0
+  00171d5a  bne 0x00171d6c
+  00171d5c  ldr r0,[r4,#0x8]
+  00171d5e  adr r1,[0x171f5c]
+  00171d60  blx 0x00003960
+  00171d64  cmp r0,#0x0
+  00171d66  bne 0x00171d6c
+  00171d68  cmp r5,#0xca
+  00171d6a  beq 0x00171d80
+  00171d6c  movs r0,r5
+  00171d6e  bl 0x001a55bc
+  00171d72  bl 0x001a6f50
+  00171d76  ldr r1,[sp,#0x0]
+  00171d78  cmp r0,#0x0
+  00171d7a  str r0,[r1,#0x10]
+  00171d7c  beq 0x00171d8c
+  00171d7e  b 0x00171d9c
+  00171d80  adr r0,[0x171f68]
+  00171d82  bl 0x001a6f50
+  00171d86  ldr r1,[sp,#0x0]
+  00171d88  str r0,[r1,#0x10]
+  00171d8a  b 0x00171da4
+  00171d8c  ldr r0,[r1,#0xc]
+  00171d8e  cmp r0,#0x65
+  00171d90  beq 0x00171dca
+  00171d92  adr r0,[0x171f80]
+  00171d94  bl 0x001a6f50
+  00171d98  ldr r1,[sp,#0x0]
+  00171d9a  str r0,[r1,#0x10]
+  00171d9c  ldr r1,[sp,#0x0]
+  00171d9e  movs r0,#0x0
+  00171da0  str r0,[r1,#0x4]
+  00171da2  str r0,[r1,#0x8]
+  00171da4  ldr r0,[sp,#0x0]
+  00171da6  ldr r1,[r0,#0x10]
+  00171da8  cmp r1,#0x0
+  00171daa  beq 0x00171dd6
+  00171dac  movs r1,#0xac
+  00171dae  ldr r2,[r1,r4]
+  00171db0  adds r1,r0,r1
+  00171db2  movs r0,r2
+  00171db4  bl 0x001a71c8
+  00171db8  cmp r0,#0x0
+  00171dba  str r0,[sp,#0xc]
+  00171dbc  ldr r0,[sp,#0x0]
+  00171dbe  beq 0x00171de2
+  00171dc0  bl 0x001a52e0
+  00171dc4  ldr r0,[sp,#0xc]
+  00171dc6  add sp,#0x2c
+  00171dc8  pop {r4,r5,r6,r7,pc}
+  00171dca  adr r0,[0x171f90]
+  00171dcc  bl 0x001a6f50
+  00171dd0  ldr r1,[sp,#0x0]
+  00171dd2  str r0,[r1,#0x10]
+  00171dd4  b 0x00171d9c
+  00171dd6  bl 0x001a52e0
+  00171dda  movs r0,#0x3
+  00171ddc  mvns r0,r0
+  00171dde  add sp,#0x2c
+  00171de0  pop {r4,r5,r6,r7,pc}
+  00171de2  adds r0,#0x80
+  00171de4  ldr r0,[r0,#0x2c]
+  00171de6  add r2,sp,#0x14
+  00171de8  adds r0,#0x8
+  00171dea  adr r1,[0x171fa8]
+  00171dec  bl 0x001a7c44
+  00171df0  cmp r0,#0x0
+  00171df2  beq 0x00171e3a
+  00171df4  cmp r7,#0x0
+  00171df6  beq 0x00171e1a
+  00171df8  ldr r0,[r7,#0x4]
+  00171dfa  cmp r0,#0x0
+  00171dfc  beq 0x00171e1a
+  00171dfe  bl 0x001a6f50
+  00171e02  movs r5,r0
+  00171e04  adr r0,[0x171fa8]
+  00171e06  bl 0x001a6f50
+  00171e0a  ldr r1,[sp,#0x0]
+  00171e0c  movs r2,r5
+  00171e0e  adds r1,#0x80
+  00171e10  ldr r3,[r1,#0x2c]
+  00171e12  movs r1,r0
+  00171e14  adds r3,#0x8
+  00171e16  movs r0,r3
+  00171e18  b 0x00171e36
+  00171e1a  cmp r5,#0x64
+  00171e1c  beq 0x00171e3a
+  00171e1e  bl 0x00175c28
+  00171e22  movs r5,r0
+  00171e24  adr r0,[0x171fa8]
+  00171e26  bl 0x001a6f50
+  00171e2a  movs r1,r0
+  00171e2c  ldr r0,[sp,#0x0]
+  00171e2e  movs r2,r5
+  00171e30  adds r0,#0x80
+  00171e32  ldr r0,[r0,#0x2c]
+  00171e34  adds r0,#0x8
+  00171e36  bl 0x001a7adc
+  00171e3a  ldr r1,[sp,#0x0]
+  00171e3c  ldr r0,[r4,#0x7c]
+  00171e3e  adds r1,#0x7c
+  00171e40  bl 0x001a3ee4
+  00171e44  movs r5,r0
+  00171e46  bne 0x00171ea8
+  00171e48  movs r0,r4
+  00171e4a  adds r0,#0xb0
+  00171e4c  str r0,[sp,#0x10]
+  00171e4e  ldr r0,[sp,#0x10]
+  00171e50  movs r1,r5
+  00171e52  bl 0x001a4bc4
+  00171e56  cmp r0,#0x0
+  00171e58  beq 0x00171e6a
+  00171e5a  ldr r1,[sp,#0x0]
+  00171e5c  ldr r0,[r4,#0x4c]
+  00171e5e  adds r1,#0x4c
+  00171e60  bl 0x001a2c4c
+  00171e64  movs r5,r0
+  00171e66  bne 0x00171ea8
+  00171e68  b 0x00171e9a
+  00171e6a  ldr r0,[sp,#0x10]
+  00171e6c  movs r1,r5
+  00171e6e  bl 0x001a4bdc
+  00171e72  add r1,sp,#0x4
+  00171e74  bl 0x001a87ec
+  00171e78  movs r7,r0
+  00171e7a  beq 0x00171e88
+  00171e7c  ldr r0,[sp,#0x0]
+  00171e7e  bl 0x001a52e0
+  00171e82  movs r0,r7
+  00171e84  add sp,#0x2c
+  00171e86  pop {r4,r5,r6,r7,pc}
+  00171e88  ldr r0,[sp,#0x0]
+  00171e8a  movs r2,#0x0
+  00171e8c  ldr r1,[sp,#0x4]
+  00171e8e  mvns r2,r2
+  00171e90  adds r0,#0xb0
+  00171e92  bl 0x001a4a80
+  00171e96  adds r5,r5,#0x1
+  00171e98  b 0x00171e4e
+  00171e9a  ldr r1,[sp,#0x0]
+  00171e9c  ldr r0,[r4,#0x70]
+  00171e9e  adds r1,#0x70
+  00171ea0  bl 0x001a3798
+  00171ea4  movs r5,r0
+  00171ea6  beq 0x00171eb4
+  00171ea8  ldr r0,[sp,#0x0]
+  00171eaa  bl 0x001a52e0
+  00171eae  movs r0,r5
+  00171eb0  add sp,#0x2c
+  00171eb2  pop {r4,r5,r6,r7,pc}
+  00171eb4  ldr r0,[r4,#0xc]
+  00171eb6  cmp r0,#0x0
+  00171eb8  bne 0x00171f14
+  00171eba  ldr r0,[r4,#0x8]
+  00171ebc  adr r1,[0x171f5c]
+  00171ebe  blx 0x00003960
+  00171ec2  cmp r0,#0x0
+  00171ec4  bne 0x00171f14
+  00171ec6  movs r2,#0x0
+  00171ec8  movs r0,r4
+  00171eca  add r3,sp,#0x8
+  00171ecc  adr r1,[0x171fac]
+  00171ece  bl 0x001a56f2
+  00171ed2  ldr r0,[sp,#0x8]
+  00171ed4  cmp r0,#0x0
+  00171ed6  beq 0x00171efa
+  00171ed8  ldr r2,[r0,#0x4]
+  00171eda  cmp r2,#0x0
+  00171edc  beq 0x00171efa
+  00171ede  ldr r0,[sp,#0x0]
+  00171ee0  adr r1,[0x171fb4]
+  00171ee2  bl 0x001a6054
+  00171ee6  movs r2,#0x0
+  00171ee8  movs r0,r4
+  00171eea  add r3,sp,#0x4
+  00171eec  adr r1,[0x171fbc]
+  00171eee  bl 0x001a56f2
+  00171ef2  ldr r0,[sp,#0x4]
+  00171ef4  cmp r0,#0x0
+  00171ef6  beq 0x00171efe
+  00171ef8  b 0x00171f14
+  00171efa  adr r2,[0x171fc4]
+  00171efc  b 0x00171ede
+  00171efe  add r1,sp,#0xc
+  00171f00  bl 0x001a4528
+  00171f04  ldr r1,[sp,#0xc]
+  00171f06  cmp r1,#0x0
+  00171f08  beq 0x00171f14
+  00171f0a  ldr r0,[sp,#0x0]
+  00171f0c  movs r2,#0x0
+  00171f0e  adds r0,#0xc0
+  00171f10  bl 0x001a4a80
+  00171f14  ldr r0,[sp,#0x1c]
+  00171f16  adr r1,[0x171fd0]
+  00171f18  adds r0,#0x80
+  00171f1a  ldr r2,[r0,#0x4]
+  00171f1c  ldr r0,[sp,#0x0]
+  00171f1e  bl 0x001a6054
+  00171f22  ldr r0,[sp,#0x0]
+  00171f24  str r0,[r6,#0x0]
+  00171f26  movs r0,#0x0
+  00171f28  add sp,#0x2c
+  00171f2a  pop {r4,r5,r6,r7,pc}
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00171cd0(int param_1,undefined4 *param_2,int param_3,int param_4,int param_5)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int iVar4;
+  int *piStack_40;
+  int iStack_3c;
+  int iStack_38;
+  int iStack_34;
+  int iStack_30;
+  undefined1 auStack_2c [8];
+  int iStack_24;
+  undefined4 *puStack_20;
+  int iStack_1c;
+  int iStack_18;
+  
+  *param_2 = 0;
+  if (param_5 == 0) {
+    return -2;
+  }
+  iStack_24 = param_1;
+  puStack_20 = param_2;
+  iStack_1c = param_3;
+  iStack_18 = param_4;
+  iVar1 = func_0x001a5740(&piStack_40);
+  if (iVar1 != 0) {
+    return iVar1;
+  }
+  if ((code *)*_DAT_00171f2c == Reset) {
+    iVar1 = FUN_0019b388(8);
+  }
+  else {
+    iVar1 = (*(code *)*_DAT_00171f2c)(8);
+  }
+  *piStack_40 = iVar1;
+  if (iVar1 == 0) {
+    func_0x001a52e0(piStack_40);
+    return -4;
+  }
+  FUN_000028d8(iVar1,0x171f30);
+  func_0x001a6730(piStack_40,param_4);
+  if (*(int *)(param_5 + 0xc) == 0) {
+    iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f38);
+    if ((iVar1 == 0) && (param_4 == 0x1e1)) {
+      iVar1 = func_0x001a6f50(0x171f40);
+      piStack_40[4] = iVar1;
+    }
+    else {
+      if ((*(int *)(param_5 + 0xc) != 0) ||
+         ((iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f5c), iVar1 != 0 ||
+          (param_4 != 0xca)))) goto LAB_00171d6c;
+      iVar1 = func_0x001a6f50(0x171f68);
+      piStack_40[4] = iVar1;
+    }
+  }
+  else {
+LAB_00171d6c:
+    func_0x001a55bc(param_4);
+    iVar1 = func_0x001a6f50();
+    piStack_40[4] = iVar1;
+    if (iVar1 == 0) {
+      if (piStack_40[3] == 0x65) {
+        iVar1 = func_0x001a6f50(0x171f90);
+        piStack_40[4] = iVar1;
+      }
+      else {
+        iVar1 = func_0x001a6f50(0x171f80);
+        piStack_40[4] = iVar1;
+      }
+    }
+    piStack_40[1] = 0;
+    piStack_40[2] = 0;
+  }
+  if (piStack_40[4] == 0) {
+    func_0x001a52e0();
+    return -4;
+  }
+  iStack_34 = func_0x001a71c8(*(undefined4 *)(param_5 + 0xac),piStack_40 + 0x2b);
+  if (iStack_34 != 0) {
+    func_0x001a52e0();
+    return iStack_34;
+  }
+  iVar1 = func_0x001a7c44(piStack_40[0x2b] + 8,0x171fa8,auStack_2c);
+  if (iVar1 != 0) {
+    if ((param_3 == 0) || (*(int *)(param_3 + 4) == 0)) {
+      if (param_4 == 100) goto LAB_00171e3a;
+      uVar2 = func_0x00175c28();
+      uVar3 = func_0x001a6f50(0x171fa8);
+      iVar1 = piStack_40[0x2b];
+    }
+    else {
+      uVar2 = func_0x001a6f50();
+      uVar3 = func_0x001a6f50(0x171fa8);
+      iVar1 = piStack_40[0x2b];
+    }
+    func_0x001a7adc(iVar1 + 8,uVar3,uVar2);
+  }
+LAB_00171e3a:
+  iVar1 = FUN_001a3ee4(*(undefined4 *)(param_5 + 0x7c),piStack_40 + 0x1f);
+  if (iVar1 == 0) {
+    iStack_30 = param_5 + 0xb0;
+    iVar1 = 0;
+    while (iVar4 = func_0x001a4bc4(iStack_30,iVar1), iVar4 == 0) {
+      uVar2 = func_0x001a4bdc(iStack_30,iVar1);
+      iVar4 = func_0x001a87ec(uVar2,&iStack_3c);
+      if (iVar4 != 0) {
+        func_0x001a52e0(piStack_40);
+        return iVar4;
+      }
+      func_0x001a4a80(piStack_40 + 0x2c,iStack_3c,0xffffffff);
+      iVar1 = iVar1 + 1;
+    }
+    iVar1 = FUN_001a2c4c(*(undefined4 *)(param_5 + 0x4c),piStack_40 + 0x13);
+    if ((iVar1 == 0) &&
+       (iVar1 = FUN_001a3798(*(undefined4 *)(param_5 + 0x70),piStack_40 + 0x1c), iVar1 == 0)) {
+      if ((*(int *)(param_5 + 0xc) == 0) &&
+         (iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f5c), iVar1 == 0)) {
+        func_0x001a56f2(param_5,0x171fac,0,&iStack_38);
+        if ((iStack_38 == 0) || (iVar1 = *(int *)(iStack_38 + 4), iVar1 == 0)) {
+          iVar1 = 0x171fc4;
+        }
+        func_0x001a6054(piStack_40,0x171fb4,iVar1);
+        func_0x001a56f2(param_5,0x171fbc,0,&iStack_3c);
+        if ((iStack_3c == 0) && (func_0x001a4528(0,&iStack_34), iStack_34 != 0)) {
+          func_0x001a4a80(piStack_40 + 0x30,iStack_34,0);
+        }
+      }
+      func_0x001a6054(piStack_40,0x171fd0,*(undefined4 *)(iStack_24 + 0x84));
+      *param_2 = piStack_40;
+      return 0;
+    }
+  }
+  func_0x001a52e0(piStack_40);
+  return iVar1;
+}
+
+
+
+############ site 171e98
+=== FUN_00171cd0 @ 00171cd0 callers [FUN_0017184c]
+  00171cd0  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  00171cd2  sub sp,#0x1c
+  00171cd4  ldr r4,[sp,#0x40]
+  00171cd6  movs r0,#0x0
+  00171cd8  movs r6,r1
+  00171cda  movs r7,r2
+  00171cdc  movs r5,r3
+  00171cde  cmp r4,#0x0
+  00171ce0  str r0,[r1,#0x0]
+  00171ce2  beq 0x00171cfc
+  00171ce4  mov r0,sp
+  00171ce6  bl 0x001a5740
+  00171cea  cmp r0,#0x0
+  00171cec  bne 0x00171d00
+  00171cee  ldr r0,[0x00171f2c]
+  00171cf0  ldr r1,[r0,#0x0]
+  00171cf2  cmp r1,#0x0
+  00171cf4  beq 0x00171d04
+  00171cf6  movs r0,#0x8
+  00171cf8  blx r1
+  00171cfa  b 0x00171d0a
+  00171cfc  movs r0,#0x1
+  00171cfe  mvns r0,r0
+  00171d00  add sp,#0x2c
+  00171d02  pop {r4,r5,r6,r7,pc}
+  00171d04  movs r0,#0x8
+  00171d06  blx 0x0019b388
+  00171d0a  ldr r1,[sp,#0x0]
+  00171d0c  cmp r0,#0x0
+  00171d0e  str r0,[r1,#0x0]
+  00171d10  beq 0x00171d28
+  00171d12  adr r1,[0x171f30]
+  00171d14  bl 0x000028d8
+  00171d18  ldr r0,[sp,#0x0]
+  00171d1a  movs r1,r5
+  00171d1c  bl 0x001a6730
+  00171d20  ldr r0,[r4,#0xc]
+  00171d22  cmp r0,#0x0
+  00171d24  beq 0x00171d36
+  00171d26  b 0x00171d6c
+  00171d28  movs r0,r1
+  00171d2a  bl 0x001a52e0
+  00171d2e  movs r0,#0x3
+  00171d30  mvns r0,r0
+  00171d32  add sp,#0x2c
+  00171d34  pop {r4,r5,r6,r7,pc}
+  00171d36  ldr r0,[r4,#0x8]
+  00171d38  adr r1,[0x171f38]
+  00171d3a  blx 0x00003960
+  00171d3e  cmp r0,#0x0
+  00171d40  bne 0x00171d56
+  00171d42  movs r0,r5
+  00171d44  subs r0,#0xff
+  00171d46  subs r0,#0xe2
+  00171d48  bne 0x00171d56
+  00171d4a  adr r0,[0x171f40]
+  00171d4c  bl 0x001a6f50
+  00171d50  ldr r1,[sp,#0x0]
+  00171d52  str r0,[r1,#0x10]
+  00171d54  b 0x00171da4
+  00171d56  ldr r0,[r4,#0xc]
+  00171d58  cmp r0,#0x0
+  00171d5a  bne 0x00171d6c
+  00171d5c  ldr r0,[r4,#0x8]
+  00171d5e  adr r1,[0x171f5c]
+  00171d60  blx 0x00003960
+  00171d64  cmp r0,#0x0
+  00171d66  bne 0x00171d6c
+  00171d68  cmp r5,#0xca
+  00171d6a  beq 0x00171d80
+  00171d6c  movs r0,r5
+  00171d6e  bl 0x001a55bc
+  00171d72  bl 0x001a6f50
+  00171d76  ldr r1,[sp,#0x0]
+  00171d78  cmp r0,#0x0
+  00171d7a  str r0,[r1,#0x10]
+  00171d7c  beq 0x00171d8c
+  00171d7e  b 0x00171d9c
+  00171d80  adr r0,[0x171f68]
+  00171d82  bl 0x001a6f50
+  00171d86  ldr r1,[sp,#0x0]
+  00171d88  str r0,[r1,#0x10]
+  00171d8a  b 0x00171da4
+  00171d8c  ldr r0,[r1,#0xc]
+  00171d8e  cmp r0,#0x65
+  00171d90  beq 0x00171dca
+  00171d92  adr r0,[0x171f80]
+  00171d94  bl 0x001a6f50
+  00171d98  ldr r1,[sp,#0x0]
+  00171d9a  str r0,[r1,#0x10]
+  00171d9c  ldr r1,[sp,#0x0]
+  00171d9e  movs r0,#0x0
+  00171da0  str r0,[r1,#0x4]
+  00171da2  str r0,[r1,#0x8]
+  00171da4  ldr r0,[sp,#0x0]
+  00171da6  ldr r1,[r0,#0x10]
+  00171da8  cmp r1,#0x0
+  00171daa  beq 0x00171dd6
+  00171dac  movs r1,#0xac
+  00171dae  ldr r2,[r1,r4]
+  00171db0  adds r1,r0,r1
+  00171db2  movs r0,r2
+  00171db4  bl 0x001a71c8
+  00171db8  cmp r0,#0x0
+  00171dba  str r0,[sp,#0xc]
+  00171dbc  ldr r0,[sp,#0x0]
+  00171dbe  beq 0x00171de2
+  00171dc0  bl 0x001a52e0
+  00171dc4  ldr r0,[sp,#0xc]
+  00171dc6  add sp,#0x2c
+  00171dc8  pop {r4,r5,r6,r7,pc}
+  00171dca  adr r0,[0x171f90]
+  00171dcc  bl 0x001a6f50
+  00171dd0  ldr r1,[sp,#0x0]
+  00171dd2  str r0,[r1,#0x10]
+  00171dd4  b 0x00171d9c
+  00171dd6  bl 0x001a52e0
+  00171dda  movs r0,#0x3
+  00171ddc  mvns r0,r0
+  00171dde  add sp,#0x2c
+  00171de0  pop {r4,r5,r6,r7,pc}
+  00171de2  adds r0,#0x80
+  00171de4  ldr r0,[r0,#0x2c]
+  00171de6  add r2,sp,#0x14
+  00171de8  adds r0,#0x8
+  00171dea  adr r1,[0x171fa8]
+  00171dec  bl 0x001a7c44
+  00171df0  cmp r0,#0x0
+  00171df2  beq 0x00171e3a
+  00171df4  cmp r7,#0x0
+  00171df6  beq 0x00171e1a
+  00171df8  ldr r0,[r7,#0x4]
+  00171dfa  cmp r0,#0x0
+  00171dfc  beq 0x00171e1a
+  00171dfe  bl 0x001a6f50
+  00171e02  movs r5,r0
+  00171e04  adr r0,[0x171fa8]
+  00171e06  bl 0x001a6f50
+  00171e0a  ldr r1,[sp,#0x0]
+  00171e0c  movs r2,r5
+  00171e0e  adds r1,#0x80
+  00171e10  ldr r3,[r1,#0x2c]
+  00171e12  movs r1,r0
+  00171e14  adds r3,#0x8
+  00171e16  movs r0,r3
+  00171e18  b 0x00171e36
+  00171e1a  cmp r5,#0x64
+  00171e1c  beq 0x00171e3a
+  00171e1e  bl 0x00175c28
+  00171e22  movs r5,r0
+  00171e24  adr r0,[0x171fa8]
+  00171e26  bl 0x001a6f50
+  00171e2a  movs r1,r0
+  00171e2c  ldr r0,[sp,#0x0]
+  00171e2e  movs r2,r5
+  00171e30  adds r0,#0x80
+  00171e32  ldr r0,[r0,#0x2c]
+  00171e34  adds r0,#0x8
+  00171e36  bl 0x001a7adc
+  00171e3a  ldr r1,[sp,#0x0]
+  00171e3c  ldr r0,[r4,#0x7c]
+  00171e3e  adds r1,#0x7c
+  00171e40  bl 0x001a3ee4
+  00171e44  movs r5,r0
+  00171e46  bne 0x00171ea8
+  00171e48  movs r0,r4
+  00171e4a  adds r0,#0xb0
+  00171e4c  str r0,[sp,#0x10]
+  00171e4e  ldr r0,[sp,#0x10]
+  00171e50  movs r1,r5
+  00171e52  bl 0x001a4bc4
+  00171e56  cmp r0,#0x0
+  00171e58  beq 0x00171e6a
+  00171e5a  ldr r1,[sp,#0x0]
+  00171e5c  ldr r0,[r4,#0x4c]
+  00171e5e  adds r1,#0x4c
+  00171e60  bl 0x001a2c4c
+  00171e64  movs r5,r0
+  00171e66  bne 0x00171ea8
+  00171e68  b 0x00171e9a
+  00171e6a  ldr r0,[sp,#0x10]
+  00171e6c  movs r1,r5
+  00171e6e  bl 0x001a4bdc
+  00171e72  add r1,sp,#0x4
+  00171e74  bl 0x001a87ec
+  00171e78  movs r7,r0
+  00171e7a  beq 0x00171e88
+  00171e7c  ldr r0,[sp,#0x0]
+  00171e7e  bl 0x001a52e0
+  00171e82  movs r0,r7
+  00171e84  add sp,#0x2c
+  00171e86  pop {r4,r5,r6,r7,pc}
+  00171e88  ldr r0,[sp,#0x0]
+  00171e8a  movs r2,#0x0
+  00171e8c  ldr r1,[sp,#0x4]
+  00171e8e  mvns r2,r2
+  00171e90  adds r0,#0xb0
+  00171e92  bl 0x001a4a80
+  00171e96  adds r5,r5,#0x1
+  00171e98  b 0x00171e4e
+  00171e9a  ldr r1,[sp,#0x0]
+  00171e9c  ldr r0,[r4,#0x70]
+  00171e9e  adds r1,#0x70
+  00171ea0  bl 0x001a3798
+  00171ea4  movs r5,r0
+  00171ea6  beq 0x00171eb4
+  00171ea8  ldr r0,[sp,#0x0]
+  00171eaa  bl 0x001a52e0
+  00171eae  movs r0,r5
+  00171eb0  add sp,#0x2c
+  00171eb2  pop {r4,r5,r6,r7,pc}
+  00171eb4  ldr r0,[r4,#0xc]
+  00171eb6  cmp r0,#0x0
+  00171eb8  bne 0x00171f14
+  00171eba  ldr r0,[r4,#0x8]
+  00171ebc  adr r1,[0x171f5c]
+  00171ebe  blx 0x00003960
+  00171ec2  cmp r0,#0x0
+  00171ec4  bne 0x00171f14
+  00171ec6  movs r2,#0x0
+  00171ec8  movs r0,r4
+  00171eca  add r3,sp,#0x8
+  00171ecc  adr r1,[0x171fac]
+  00171ece  bl 0x001a56f2
+  00171ed2  ldr r0,[sp,#0x8]
+  00171ed4  cmp r0,#0x0
+  00171ed6  beq 0x00171efa
+  00171ed8  ldr r2,[r0,#0x4]
+  00171eda  cmp r2,#0x0
+  00171edc  beq 0x00171efa
+  00171ede  ldr r0,[sp,#0x0]
+  00171ee0  adr r1,[0x171fb4]
+  00171ee2  bl 0x001a6054
+  00171ee6  movs r2,#0x0
+  00171ee8  movs r0,r4
+  00171eea  add r3,sp,#0x4
+  00171eec  adr r1,[0x171fbc]
+  00171eee  bl 0x001a56f2
+  00171ef2  ldr r0,[sp,#0x4]
+  00171ef4  cmp r0,#0x0
+  00171ef6  beq 0x00171efe
+  00171ef8  b 0x00171f14
+  00171efa  adr r2,[0x171fc4]
+  00171efc  b 0x00171ede
+  00171efe  add r1,sp,#0xc
+  00171f00  bl 0x001a4528
+  00171f04  ldr r1,[sp,#0xc]
+  00171f06  cmp r1,#0x0
+  00171f08  beq 0x00171f14
+  00171f0a  ldr r0,[sp,#0x0]
+  00171f0c  movs r2,#0x0
+  00171f0e  adds r0,#0xc0
+  00171f10  bl 0x001a4a80
+  00171f14  ldr r0,[sp,#0x1c]
+  00171f16  adr r1,[0x171fd0]
+  00171f18  adds r0,#0x80
+  00171f1a  ldr r2,[r0,#0x4]
+  00171f1c  ldr r0,[sp,#0x0]
+  00171f1e  bl 0x001a6054
+  00171f22  ldr r0,[sp,#0x0]
+  00171f24  str r0,[r6,#0x0]
+  00171f26  movs r0,#0x0
+  00171f28  add sp,#0x2c
+  00171f2a  pop {r4,r5,r6,r7,pc}
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00171cd0(int param_1,undefined4 *param_2,int param_3,int param_4,int param_5)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int iVar4;
+  int *piStack_40;
+  int iStack_3c;
+  int iStack_38;
+  int iStack_34;
+  int iStack_30;
+  undefined1 auStack_2c [8];
+  int iStack_24;
+  undefined4 *puStack_20;
+  int iStack_1c;
+  int iStack_18;
+  
+  *param_2 = 0;
+  if (param_5 == 0) {
+    return -2;
+  }
+  iStack_24 = param_1;
+  puStack_20 = param_2;
+  iStack_1c = param_3;
+  iStack_18 = param_4;
+  iVar1 = func_0x001a5740(&piStack_40);
+  if (iVar1 != 0) {
+    return iVar1;
+  }
+  if ((code *)*_DAT_00171f2c == Reset) {
+    iVar1 = FUN_0019b388(8);
+  }
+  else {
+    iVar1 = (*(code *)*_DAT_00171f2c)(8);
+  }
+  *piStack_40 = iVar1;
+  if (iVar1 == 0) {
+    func_0x001a52e0(piStack_40);
+    return -4;
+  }
+  FUN_000028d8(iVar1,0x171f30);
+  func_0x001a6730(piStack_40,param_4);
+  if (*(int *)(param_5 + 0xc) == 0) {
+    iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f38);
+    if ((iVar1 == 0) && (param_4 == 0x1e1)) {
+      iVar1 = func_0x001a6f50(0x171f40);
+      piStack_40[4] = iVar1;
+    }
+    else {
+      if ((*(int *)(param_5 + 0xc) != 0) ||
+         ((iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f5c), iVar1 != 0 ||
+          (param_4 != 0xca)))) goto LAB_00171d6c;
+      iVar1 = func_0x001a6f50(0x171f68);
+      piStack_40[4] = iVar1;
+    }
+  }
+  else {
+LAB_00171d6c:
+    func_0x001a55bc(param_4);
+    iVar1 = func_0x001a6f50();
+    piStack_40[4] = iVar1;
+    if (iVar1 == 0) {
+      if (piStack_40[3] == 0x65) {
+        iVar1 = func_0x001a6f50(0x171f90);
+        piStack_40[4] = iVar1;
+      }
+      else {
+        iVar1 = func_0x001a6f50(0x171f80);
+        piStack_40[4] = iVar1;
+      }
+    }
+    piStack_40[1] = 0;
+    piStack_40[2] = 0;
+  }
+  if (piStack_40[4] == 0) {
+    func_0x001a52e0();
+    return -4;
+  }
+  iStack_34 = func_0x001a71c8(*(undefined4 *)(param_5 + 0xac),piStack_40 + 0x2b);
+  if (iStack_34 != 0) {
+    func_0x001a52e0();
+    return iStack_34;
+  }
+  iVar1 = func_0x001a7c44(piStack_40[0x2b] + 8,0x171fa8,auStack_2c);
+  if (iVar1 != 0) {
+    if ((param_3 == 0) || (*(int *)(param_3 + 4) == 0)) {
+      if (param_4 == 100) goto LAB_00171e3a;
+      uVar2 = func_0x00175c28();
+      uVar3 = func_0x001a6f50(0x171fa8);
+      iVar1 = piStack_40[0x2b];
+    }
+    else {
+      uVar2 = func_0x001a6f50();
+      uVar3 = func_0x001a6f50(0x171fa8);
+      iVar1 = piStack_40[0x2b];
+    }
+    func_0x001a7adc(iVar1 + 8,uVar3,uVar2);
+  }
+LAB_00171e3a:
+  iVar1 = FUN_001a3ee4(*(undefined4 *)(param_5 + 0x7c),piStack_40 + 0x1f);
+  if (iVar1 == 0) {
+    iStack_30 = param_5 + 0xb0;
+    iVar1 = 0;
+    while (iVar4 = func_0x001a4bc4(iStack_30,iVar1), iVar4 == 0) {
+      uVar2 = func_0x001a4bdc(iStack_30,iVar1);
+      iVar4 = func_0x001a87ec(uVar2,&iStack_3c);
+      if (iVar4 != 0) {
+        func_0x001a52e0(piStack_40);
+        return iVar4;
+      }
+      func_0x001a4a80(piStack_40 + 0x2c,iStack_3c,0xffffffff);
+      iVar1 = iVar1 + 1;
+    }
+    iVar1 = FUN_001a2c4c(*(undefined4 *)(param_5 + 0x4c),piStack_40 + 0x13);
+    if ((iVar1 == 0) &&
+       (iVar1 = FUN_001a3798(*(undefined4 *)(param_5 + 0x70),piStack_40 + 0x1c), iVar1 == 0)) {
+      if ((*(int *)(param_5 + 0xc) == 0) &&
+         (iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f5c), iVar1 == 0)) {
+        func_0x001a56f2(param_5,0x171fac,0,&iStack_38);
+        if ((iStack_38 == 0) || (iVar1 = *(int *)(iStack_38 + 4), iVar1 == 0)) {
+          iVar1 = 0x171fc4;
+        }
+        func_0x001a6054(piStack_40,0x171fb4,iVar1);
+        func_0x001a56f2(param_5,0x171fbc,0,&iStack_3c);
+        if ((iStack_3c == 0) && (func_0x001a4528(0,&iStack_34), iStack_34 != 0)) {
+          func_0x001a4a80(piStack_40 + 0x30,iStack_34,0);
+        }
+      }
+      func_0x001a6054(piStack_40,0x171fd0,*(undefined4 *)(iStack_24 + 0x84));
+      *param_2 = piStack_40;
+      return 0;
+    }
+  }
+  func_0x001a52e0(piStack_40);
+  return iVar1;
+}
+
+
+
+############ site 171ee0
+=== FUN_00171cd0 @ 00171cd0 callers [FUN_0017184c]
+  00171cd0  push {r0,r1,r2,r3,r4,r5,r6,r7,lr}
+  00171cd2  sub sp,#0x1c
+  00171cd4  ldr r4,[sp,#0x40]
+  00171cd6  movs r0,#0x0
+  00171cd8  movs r6,r1
+  00171cda  movs r7,r2
+  00171cdc  movs r5,r3
+  00171cde  cmp r4,#0x0
+  00171ce0  str r0,[r1,#0x0]
+  00171ce2  beq 0x00171cfc
+  00171ce4  mov r0,sp
+  00171ce6  bl 0x001a5740
+  00171cea  cmp r0,#0x0
+  00171cec  bne 0x00171d00
+  00171cee  ldr r0,[0x00171f2c]
+  00171cf0  ldr r1,[r0,#0x0]
+  00171cf2  cmp r1,#0x0
+  00171cf4  beq 0x00171d04
+  00171cf6  movs r0,#0x8
+  00171cf8  blx r1
+  00171cfa  b 0x00171d0a
+  00171cfc  movs r0,#0x1
+  00171cfe  mvns r0,r0
+  00171d00  add sp,#0x2c
+  00171d02  pop {r4,r5,r6,r7,pc}
+  00171d04  movs r0,#0x8
+  00171d06  blx 0x0019b388
+  00171d0a  ldr r1,[sp,#0x0]
+  00171d0c  cmp r0,#0x0
+  00171d0e  str r0,[r1,#0x0]
+  00171d10  beq 0x00171d28
+  00171d12  adr r1,[0x171f30]
+  00171d14  bl 0x000028d8
+  00171d18  ldr r0,[sp,#0x0]
+  00171d1a  movs r1,r5
+  00171d1c  bl 0x001a6730
+  00171d20  ldr r0,[r4,#0xc]
+  00171d22  cmp r0,#0x0
+  00171d24  beq 0x00171d36
+  00171d26  b 0x00171d6c
+  00171d28  movs r0,r1
+  00171d2a  bl 0x001a52e0
+  00171d2e  movs r0,#0x3
+  00171d30  mvns r0,r0
+  00171d32  add sp,#0x2c
+  00171d34  pop {r4,r5,r6,r7,pc}
+  00171d36  ldr r0,[r4,#0x8]
+  00171d38  adr r1,[0x171f38]
+  00171d3a  blx 0x00003960
+  00171d3e  cmp r0,#0x0
+  00171d40  bne 0x00171d56
+  00171d42  movs r0,r5
+  00171d44  subs r0,#0xff
+  00171d46  subs r0,#0xe2
+  00171d48  bne 0x00171d56
+  00171d4a  adr r0,[0x171f40]
+  00171d4c  bl 0x001a6f50
+  00171d50  ldr r1,[sp,#0x0]
+  00171d52  str r0,[r1,#0x10]
+  00171d54  b 0x00171da4
+  00171d56  ldr r0,[r4,#0xc]
+  00171d58  cmp r0,#0x0
+  00171d5a  bne 0x00171d6c
+  00171d5c  ldr r0,[r4,#0x8]
+  00171d5e  adr r1,[0x171f5c]
+  00171d60  blx 0x00003960
+  00171d64  cmp r0,#0x0
+  00171d66  bne 0x00171d6c
+  00171d68  cmp r5,#0xca
+  00171d6a  beq 0x00171d80
+  00171d6c  movs r0,r5
+  00171d6e  bl 0x001a55bc
+  00171d72  bl 0x001a6f50
+  00171d76  ldr r1,[sp,#0x0]
+  00171d78  cmp r0,#0x0
+  00171d7a  str r0,[r1,#0x10]
+  00171d7c  beq 0x00171d8c
+  00171d7e  b 0x00171d9c
+  00171d80  adr r0,[0x171f68]
+  00171d82  bl 0x001a6f50
+  00171d86  ldr r1,[sp,#0x0]
+  00171d88  str r0,[r1,#0x10]
+  00171d8a  b 0x00171da4
+  00171d8c  ldr r0,[r1,#0xc]
+  00171d8e  cmp r0,#0x65
+  00171d90  beq 0x00171dca
+  00171d92  adr r0,[0x171f80]
+  00171d94  bl 0x001a6f50
+  00171d98  ldr r1,[sp,#0x0]
+  00171d9a  str r0,[r1,#0x10]
+  00171d9c  ldr r1,[sp,#0x0]
+  00171d9e  movs r0,#0x0
+  00171da0  str r0,[r1,#0x4]
+  00171da2  str r0,[r1,#0x8]
+  00171da4  ldr r0,[sp,#0x0]
+  00171da6  ldr r1,[r0,#0x10]
+  00171da8  cmp r1,#0x0
+  00171daa  beq 0x00171dd6
+  00171dac  movs r1,#0xac
+  00171dae  ldr r2,[r1,r4]
+  00171db0  adds r1,r0,r1
+  00171db2  movs r0,r2
+  00171db4  bl 0x001a71c8
+  00171db8  cmp r0,#0x0
+  00171dba  str r0,[sp,#0xc]
+  00171dbc  ldr r0,[sp,#0x0]
+  00171dbe  beq 0x00171de2
+  00171dc0  bl 0x001a52e0
+  00171dc4  ldr r0,[sp,#0xc]
+  00171dc6  add sp,#0x2c
+  00171dc8  pop {r4,r5,r6,r7,pc}
+  00171dca  adr r0,[0x171f90]
+  00171dcc  bl 0x001a6f50
+  00171dd0  ldr r1,[sp,#0x0]
+  00171dd2  str r0,[r1,#0x10]
+  00171dd4  b 0x00171d9c
+  00171dd6  bl 0x001a52e0
+  00171dda  movs r0,#0x3
+  00171ddc  mvns r0,r0
+  00171dde  add sp,#0x2c
+  00171de0  pop {r4,r5,r6,r7,pc}
+  00171de2  adds r0,#0x80
+  00171de4  ldr r0,[r0,#0x2c]
+  00171de6  add r2,sp,#0x14
+  00171de8  adds r0,#0x8
+  00171dea  adr r1,[0x171fa8]
+  00171dec  bl 0x001a7c44
+  00171df0  cmp r0,#0x0
+  00171df2  beq 0x00171e3a
+  00171df4  cmp r7,#0x0
+  00171df6  beq 0x00171e1a
+  00171df8  ldr r0,[r7,#0x4]
+  00171dfa  cmp r0,#0x0
+  00171dfc  beq 0x00171e1a
+  00171dfe  bl 0x001a6f50
+  00171e02  movs r5,r0
+  00171e04  adr r0,[0x171fa8]
+  00171e06  bl 0x001a6f50
+  00171e0a  ldr r1,[sp,#0x0]
+  00171e0c  movs r2,r5
+  00171e0e  adds r1,#0x80
+  00171e10  ldr r3,[r1,#0x2c]
+  00171e12  movs r1,r0
+  00171e14  adds r3,#0x8
+  00171e16  movs r0,r3
+  00171e18  b 0x00171e36
+  00171e1a  cmp r5,#0x64
+  00171e1c  beq 0x00171e3a
+  00171e1e  bl 0x00175c28
+  00171e22  movs r5,r0
+  00171e24  adr r0,[0x171fa8]
+  00171e26  bl 0x001a6f50
+  00171e2a  movs r1,r0
+  00171e2c  ldr r0,[sp,#0x0]
+  00171e2e  movs r2,r5
+  00171e30  adds r0,#0x80
+  00171e32  ldr r0,[r0,#0x2c]
+  00171e34  adds r0,#0x8
+  00171e36  bl 0x001a7adc
+  00171e3a  ldr r1,[sp,#0x0]
+  00171e3c  ldr r0,[r4,#0x7c]
+  00171e3e  adds r1,#0x7c
+  00171e40  bl 0x001a3ee4
+  00171e44  movs r5,r0
+  00171e46  bne 0x00171ea8
+  00171e48  movs r0,r4
+  00171e4a  adds r0,#0xb0
+  00171e4c  str r0,[sp,#0x10]
+  00171e4e  ldr r0,[sp,#0x10]
+  00171e50  movs r1,r5
+  00171e52  bl 0x001a4bc4
+  00171e56  cmp r0,#0x0
+  00171e58  beq 0x00171e6a
+  00171e5a  ldr r1,[sp,#0x0]
+  00171e5c  ldr r0,[r4,#0x4c]
+  00171e5e  adds r1,#0x4c
+  00171e60  bl 0x001a2c4c
+  00171e64  movs r5,r0
+  00171e66  bne 0x00171ea8
+  00171e68  b 0x00171e9a
+  00171e6a  ldr r0,[sp,#0x10]
+  00171e6c  movs r1,r5
+  00171e6e  bl 0x001a4bdc
+  00171e72  add r1,sp,#0x4
+  00171e74  bl 0x001a87ec
+  00171e78  movs r7,r0
+  00171e7a  beq 0x00171e88
+  00171e7c  ldr r0,[sp,#0x0]
+  00171e7e  bl 0x001a52e0
+  00171e82  movs r0,r7
+  00171e84  add sp,#0x2c
+  00171e86  pop {r4,r5,r6,r7,pc}
+  00171e88  ldr r0,[sp,#0x0]
+  00171e8a  movs r2,#0x0
+  00171e8c  ldr r1,[sp,#0x4]
+  00171e8e  mvns r2,r2
+  00171e90  adds r0,#0xb0
+  00171e92  bl 0x001a4a80
+  00171e96  adds r5,r5,#0x1
+  00171e98  b 0x00171e4e
+  00171e9a  ldr r1,[sp,#0x0]
+  00171e9c  ldr r0,[r4,#0x70]
+  00171e9e  adds r1,#0x70
+  00171ea0  bl 0x001a3798
+  00171ea4  movs r5,r0
+  00171ea6  beq 0x00171eb4
+  00171ea8  ldr r0,[sp,#0x0]
+  00171eaa  bl 0x001a52e0
+  00171eae  movs r0,r5
+  00171eb0  add sp,#0x2c
+  00171eb2  pop {r4,r5,r6,r7,pc}
+  00171eb4  ldr r0,[r4,#0xc]
+  00171eb6  cmp r0,#0x0
+  00171eb8  bne 0x00171f14
+  00171eba  ldr r0,[r4,#0x8]
+  00171ebc  adr r1,[0x171f5c]
+  00171ebe  blx 0x00003960
+  00171ec2  cmp r0,#0x0
+  00171ec4  bne 0x00171f14
+  00171ec6  movs r2,#0x0
+  00171ec8  movs r0,r4
+  00171eca  add r3,sp,#0x8
+  00171ecc  adr r1,[0x171fac]
+  00171ece  bl 0x001a56f2
+  00171ed2  ldr r0,[sp,#0x8]
+  00171ed4  cmp r0,#0x0
+  00171ed6  beq 0x00171efa
+  00171ed8  ldr r2,[r0,#0x4]
+  00171eda  cmp r2,#0x0
+  00171edc  beq 0x00171efa
+  00171ede  ldr r0,[sp,#0x0]
+  00171ee0  adr r1,[0x171fb4]
+  00171ee2  bl 0x001a6054
+  00171ee6  movs r2,#0x0
+  00171ee8  movs r0,r4
+  00171eea  add r3,sp,#0x4
+  00171eec  adr r1,[0x171fbc]
+  00171eee  bl 0x001a56f2
+  00171ef2  ldr r0,[sp,#0x4]
+  00171ef4  cmp r0,#0x0
+  00171ef6  beq 0x00171efe
+  00171ef8  b 0x00171f14
+  00171efa  adr r2,[0x171fc4]
+  00171efc  b 0x00171ede
+  00171efe  add r1,sp,#0xc
+  00171f00  bl 0x001a4528
+  00171f04  ldr r1,[sp,#0xc]
+  00171f06  cmp r1,#0x0
+  00171f08  beq 0x00171f14
+  00171f0a  ldr r0,[sp,#0x0]
+  00171f0c  movs r2,#0x0
+  00171f0e  adds r0,#0xc0
+  00171f10  bl 0x001a4a80
+  00171f14  ldr r0,[sp,#0x1c]
+  00171f16  adr r1,[0x171fd0]
+  00171f18  adds r0,#0x80
+  00171f1a  ldr r2,[r0,#0x4]
+  00171f1c  ldr r0,[sp,#0x0]
+  00171f1e  bl 0x001a6054
+  00171f22  ldr r0,[sp,#0x0]
+  00171f24  str r0,[r6,#0x0]
+  00171f26  movs r0,#0x0
+  00171f28  add sp,#0x2c
+  00171f2a  pop {r4,r5,r6,r7,pc}
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_00171cd0(int param_1,undefined4 *param_2,int param_3,int param_4,int param_5)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int iVar4;
+  int *piStack_40;
+  int iStack_3c;
+  int iStack_38;
+  int iStack_34;
+  int iStack_30;
+  undefined1 auStack_2c [8];
+  int iStack_24;
+  undefined4 *puStack_20;
+  int iStack_1c;
+  int iStack_18;
+  
+  *param_2 = 0;
+  if (param_5 == 0) {
+    return -2;
+  }
+  iStack_24 = param_1;
+  puStack_20 = param_2;
+  iStack_1c = param_3;
+  iStack_18 = param_4;
+  iVar1 = func_0x001a5740(&piStack_40);
+  if (iVar1 != 0) {
+    return iVar1;
+  }
+  if ((code *)*_DAT_00171f2c == Reset) {
+    iVar1 = FUN_0019b388(8);
+  }
+  else {
+    iVar1 = (*(code *)*_DAT_00171f2c)(8);
+  }
+  *piStack_40 = iVar1;
+  if (iVar1 == 0) {
+    func_0x001a52e0(piStack_40);
+    return -4;
+  }
+  FUN_000028d8(iVar1,0x171f30);
+  func_0x001a6730(piStack_40,param_4);
+  if (*(int *)(param_5 + 0xc) == 0) {
+    iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f38);
+    if ((iVar1 == 0) && (param_4 == 0x1e1)) {
+      iVar1 = func_0x001a6f50(0x171f40);
+      piStack_40[4] = iVar1;
+    }
+    else {
+      if ((*(int *)(param_5 + 0xc) != 0) ||
+         ((iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f5c), iVar1 != 0 ||
+          (param_4 != 0xca)))) goto LAB_00171d6c;
+      iVar1 = func_0x001a6f50(0x171f68);
+      piStack_40[4] = iVar1;
+    }
+  }
+  else {
+LAB_00171d6c:
+    func_0x001a55bc(param_4);
+    iVar1 = func_0x001a6f50();
+    piStack_40[4] = iVar1;
+    if (iVar1 == 0) {
+      if (piStack_40[3] == 0x65) {
+        iVar1 = func_0x001a6f50(0x171f90);
+        piStack_40[4] = iVar1;
+      }
+      else {
+        iVar1 = func_0x001a6f50(0x171f80);
+        piStack_40[4] = iVar1;
+      }
+    }
+    piStack_40[1] = 0;
+    piStack_40[2] = 0;
+  }
+  if (piStack_40[4] == 0) {
+    func_0x001a52e0();
+    return -4;
+  }
+  iStack_34 = func_0x001a71c8(*(undefined4 *)(param_5 + 0xac),piStack_40 + 0x2b);
+  if (iStack_34 != 0) {
+    func_0x001a52e0();
+    return iStack_34;
+  }
+  iVar1 = func_0x001a7c44(piStack_40[0x2b] + 8,0x171fa8,auStack_2c);
+  if (iVar1 != 0) {
+    if ((param_3 == 0) || (*(int *)(param_3 + 4) == 0)) {
+      if (param_4 == 100) goto LAB_00171e3a;
+      uVar2 = func_0x00175c28();
+      uVar3 = func_0x001a6f50(0x171fa8);
+      iVar1 = piStack_40[0x2b];
+    }
+    else {
+      uVar2 = func_0x001a6f50();
+      uVar3 = func_0x001a6f50(0x171fa8);
+      iVar1 = piStack_40[0x2b];
+    }
+    func_0x001a7adc(iVar1 + 8,uVar3,uVar2);
+  }
+LAB_00171e3a:
+  iVar1 = FUN_001a3ee4(*(undefined4 *)(param_5 + 0x7c),piStack_40 + 0x1f);
+  if (iVar1 == 0) {
+    iStack_30 = param_5 + 0xb0;
+    iVar1 = 0;
+    while (iVar4 = func_0x001a4bc4(iStack_30,iVar1), iVar4 == 0) {
+      uVar2 = func_0x001a4bdc(iStack_30,iVar1);
+      iVar4 = func_0x001a87ec(uVar2,&iStack_3c);
+      if (iVar4 != 0) {
+        func_0x001a52e0(piStack_40);
+        return iVar4;
+      }
+      func_0x001a4a80(piStack_40 + 0x2c,iStack_3c,0xffffffff);
+      iVar1 = iVar1 + 1;
+    }
+    iVar1 = FUN_001a2c4c(*(undefined4 *)(param_5 + 0x4c),piStack_40 + 0x13);
+    if ((iVar1 == 0) &&
+       (iVar1 = FUN_001a3798(*(undefined4 *)(param_5 + 0x70),piStack_40 + 0x1c), iVar1 == 0)) {
+      if ((*(int *)(param_5 + 0xc) == 0) &&
+         (iVar1 = FUN_00003960(*(undefined4 *)(param_5 + 8),0x171f5c), iVar1 == 0)) {
+        func_0x001a56f2(param_5,0x171fac,0,&iStack_38);
+        if ((iStack_38 == 0) || (iVar1 = *(int *)(iStack_38 + 4), iVar1 == 0)) {
+          iVar1 = 0x171fc4;
+        }
+        func_0x001a6054(piStack_40,0x171fb4,iVar1);
+        func_0x001a56f2(param_5,0x171fbc,0,&iStack_3c);
+        if ((iStack_3c == 0) && (func_0x001a4528(0,&iStack_34), iStack_34 != 0)) {
+          func_0x001a4a80(piStack_40 + 0x30,iStack_34,0);
+        }
+      }
+      func_0x001a6054(piStack_40,0x171fd0,*(undefined4 *)(iStack_24 + 0x84));
+      *param_2 = piStack_40;
+      return 0;
+    }
+  }
+  func_0x001a52e0(piStack_40);
+  return iVar1;
+}
+
+
+
+############ site 171f30
+NO FUNCTION
+
+############ site 1720b0
+=== FUN_00172050 @ 00172050 callers []
+  00172050  push {r4,r5,r6,lr}
+  00172052  movs r6,r0
+  00172054  ldr r0,[r1,#0x8]
+  00172056  movs r4,r1
+  00172058  cmp r0,#0x0
+  0017205a  beq 0x0017206e
+  0017205c  ldr r0,[r0,#0x20]
+  0017205e  cmp r0,#0x0
+  00172060  beq 0x0017206e
+  00172062  ldr r0,[r0,#0x4c]
+  00172064  cmp r0,#0x0
+  00172066  beq 0x0017206e
+  00172068  ldr r1,[r0,#0x0]
+  0017206a  cmp r1,#0x0
+  0017206c  bne 0x00172086
+  0017206e  ldr r0,[r4,#0xc]
+  00172070  cmp r0,#0x0
+  00172072  beq 0x0017208c
+  00172074  ldr r0,[r0,#0x20]
+  00172076  cmp r0,#0x0
+  00172078  beq 0x0017208c
+  0017207a  ldr r0,[r0,#0x4c]
+  0017207c  cmp r0,#0x0
+  0017207e  beq 0x0017208c
+  00172080  ldr r1,[r0,#0x0]
+  00172082  cmp r1,#0x0
+  00172084  beq 0x0017208c
+  00172086  movs r0,r6
+  00172088  bl 0x00173634
+  0017208c  ldr r1,[r4,#0x4]
+  0017208e  cmp r1,#0x0
+  00172090  beq 0x001720b8
+  00172092  movs r5,#0x0
+  00172094  ldr r0,[r1,#0x3c]
+  00172096  cmp r0,#0x0
+  00172098  beq 0x001720f4
+  0017209a  ldr r2,[r1,#0x38]
+  0017209c  str r2,[r0,#0x38]
+  0017209e  ldr r0,[r1,#0x38]
+  001720a0  cmp r0,#0x0
+  001720a2  beq 0x001720a8
+  001720a4  ldr r2,[r1,#0x3c]
+  001720a6  str r2,[r0,#0x3c]
+  001720a8  str r5,[r1,#0x38]
+  001720aa  str r5,[r1,#0x3c]
+  001720ac  movs r0,r6
+  001720ae  bl 0x0017389c
+  001720b2  ldr r1,[r4,#0x4]
+  001720b4  cmp r1,#0x0
+  001720b6  bne 0x00172094
+  001720b8  ldr r0,[r4,#0x8]
+  001720ba  bl 0x00173680
+  001720be  ldr r0,[r4,#0xc]
+  001720c0  bl 0x00173680
+  001720c4  ldr r1,[r4,#0x8]
+  001720c6  adds r6,#0x9c
+  001720c8  cmp r1,#0x0
+  001720ca  beq 0x001720d4
+  001720cc  movs r2,#0x0
+  001720ce  movs r0,r6
+  001720d0  bl 0x001a4a80
+  001720d4  ldr r1,[r4,#0xc]
+  001720d6  cmp r1,#0x0
+  001720d8  beq 0x001720e2
+  001720da  movs r2,#0x0
+  001720dc  movs r0,r6
+  001720de  bl 0x001a4a80
+  001720e2  cmp r4,#0x0
+  001720e4  beq 0x001720f2
+  001720e6  ldr r0,[0x00172108]
+  001720e8  ldr r1,[r0,#0x0]
+  001720ea  cmp r1,#0x0
+  001720ec  beq 0x00172100
+  001720ee  movs r0,r4
+  001720f0  blx r1
+  001720f2  pop {r4,r5,r6,pc}
+  001720f4  ldr r0,[r1,#0x38]
+  001720f6  cmp r0,#0x0
+  001720f8  str r0,[r4,#0x4]
+  001720fa  beq 0x001720ac
+  001720fc  str r5,[r0,#0x3c]
+  001720fe  b 0x001720ac
+  00172100  movs r0,r4
+  00172102  blx 0x0018a280
+  00172106  pop {r4,r5,r6,pc}
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00172050(int param_1,int param_2)
+
+{
+  int iVar1;
+  int *piVar2;
+  
+  if (((((*(int *)(param_2 + 8) != 0) &&
+        (iVar1 = *(int *)(*(int *)(param_2 + 8) + 0x20), iVar1 != 0)) &&
+       (piVar2 = *(int **)(iVar1 + 0x4c), piVar2 != (int *)0x0)) && (*piVar2 != 0)) ||
+     (((*(int *)(param_2 + 0xc) != 0 &&
+       (iVar1 = *(int *)(*(int *)(param_2 + 0xc) + 0x20), iVar1 != 0)) &&
+      ((piVar2 = *(int **)(iVar1 + 0x4c), piVar2 != (int *)0x0 && (*piVar2 != 0)))))) {
+    func_0x00173634(param_1);
+  }
+  iVar1 = *(int *)(param_2 + 4);
+  while (iVar1 != 0) {
+    if (*(int *)(iVar1 + 0x3c) == 0) {
+      iVar1 = *(int *)(iVar1 + 0x38);
+      *(int *)(param_2 + 4) = iVar1;
+      if (iVar1 != 0) {
+        *(undefined4 *)(iVar1 + 0x3c) = 0;
+      }
+    }
+    else {
+      *(undefined4 *)(*(int *)(iVar1 + 0x3c) + 0x38) = *(undefined4 *)(iVar1 + 0x38);
+      if (*(int *)(iVar1 + 0x38) != 0) {
+        *(undefined4 *)(*(int *)(iVar1 + 0x38) + 0x3c) = *(undefined4 *)(iVar1 + 0x3c);
+      }
+      *(undefined4 *)(iVar1 + 0x38) = 0;
+      *(undefined4 *)(iVar1 + 0x3c) = 0;
+    }
+    func_0x0017389c(param_1);
+    iVar1 = *(int *)(param_2 + 4);
+  }
+  func_0x00173680(*(undefined4 *)(param_2 + 8));
+  func_0x00173680(*(undefined4 *)(param_2 + 0xc));
+  if (*(int *)(param_2 + 8) != 0) {
+    func_0x001a4a80(param_1 + 0x9c,*(int *)(param_2 + 8),0);
+  }
+  if (*(int *)(param_2 + 0xc) != 0) {
+    func_0x001a4a80(param_1 + 0x9c,*(int *)(param_2 + 0xc),0);
+  }
+  if (param_2 != 0) {
+    if ((code *)*_DAT_00172108 == Reset) {
+      func_0x0018a280(param_2);
+      return;
+    }
+    (*(code *)*_DAT_00172108)(param_2);
+  }
+  return;
+}
+
+

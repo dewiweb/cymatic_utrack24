@@ -1,0 +1,128 @@
+
+=== data @ adb3c
+  +00: 60263724 -> off 263724 (no func)
+  +04: e59f1010
+  +08: e92d4010
+  +0c: e5801000
+  +10: ebfe919b
+  +14: e8bd4010
+  +18: ea03c5ec
+  +1c: 60263724 -> off 263724 (no func)
+  +20: e92d4fff
+  +24: e24dd014
+  +28: e1a05000
+  +2c: e28d0050
+  +30: e8900c80
+  +34: e1cd84d8
+  +38: e3a0200c
+  +3c: e28f10d0
+
+----- ptr +0 = 60263724 (off 263724 ARM)
+=== FUN_00263724 @ 00263724 callers []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_00263724(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+----- ptr +1c = 60263724 (off 263724 ARM)
+=== FUN_00263724 @ 00263724 callers []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_00263724(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+=== data @ cc7ac
+  +00: 6026470c -> off 26470c FUN_0026470c@0026470c
+  +04: e92d4010
+  +08: e1a04000
+  +0c: e59f0028
+  +10: e5840000
+  +14: e1a00004
+  +18: ebfe15ee
+  +1c: e5940224
+  +20: eb034ace
+  +24: e59f1014
+  +28: e1a00004
+  +2c: e5841000
+  +30: ebfe1677
+  +34: e8bd4010
+  +38: ea034ac8
+  +3c: 6026470c -> off 26470c FUN_0026470c@0026470c
+
+----- ptr +0 = 6026470c (off 26470c ARM)
+=== FUN_0026470c @ 0026470c callers []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_0026470c(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+----- ptr +3c = 6026470c (off 26470c ARM)
+=== FUN_0026470c @ 0026470c callers []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_0026470c(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+=== data @ adb9c
+  +00: e59d001c
+  +04: e28f10c0
+  +08: ebfd576d
+  +0c: e3500000
+  +10: 03a04003
+  +14: 0a000013
+  +18: e59d001c
+  +1c: e28f10b4
+  +20: ebfd5767
+  +24: e3500000
+  +28: 03a04004
+  +2c: 0a00000d
+  +30: e59d001c
+  +34: e28f10a8
+  +38: ebfd5761
+  +3c: e3500000
+
+=== data @ adbfc
+  +00: 128dd024
+  +04: 18bd8ff0
+  +08: e2850004
+  +0c: e1a06000
+  +10: e3e01000
+  +14: eb0334ef
+  +18: e28d1018
+  +1c: e2850044
+  +20: eb04b4e5
+  +24: e5c04000
+  +28: e1a00006
+  +2c: eb033530
+  +30: e28d1008
+  +34: e8810c80
+  +38: e1cd80f0
+  +3c: e28dc018

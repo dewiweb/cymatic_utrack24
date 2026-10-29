@@ -1,0 +1,865 @@
+#### FUN_00007898 @ 00007898
+   EVT 00007910 ldr r1,[r1,#0x190]  <0x190>
+#### FUN_00007a50 @ 00007a50
+   EVT 00007b70 ldr r3,[r3,#0x1a0]  <0x1a0>
+#### FUN_00007cd8 @ 00007cd8
+   EVT 00007d98 ldr r1,[r1,#0x194]  <0x194>
+#### FUN_00007f14 @ 00007f14
+   EVT 00007fac ldr r1,[r1,#0x19c]  <0x19c>
+#### FUN_00008ee0 @ 00008ee0
+   EVT 00008f40 ldr r1,[r0,#0x198]  <0x198>
+   EVT 00009050 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_0000ddd4 @ 0000ddd4
+   EVT 0000defc ldr r3,[r0,#0x1a0]  <0x1a0>
+#### FUN_0000eb5c @ 0000eb5c
+   EVT 0000ec30 ldr r1,[r0,#0x198]  <0x198>
+#### FUN_0000f964 @ 0000f964
+   EVT 0000f998 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_0000fb04 @ 0000fb04
+   EVT 0000fb44 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_0000fc98 @ 0000fc98
+   EVT 0000fcdc ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_0000fe94 @ 0000fe94
+   EVT 0000fed4 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00010030 @ 00010030
+   EVT 00010070 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000102a8 @ 000102a8
+   EVT 000102e8 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00010318 @ 00010318
+   EVT 00010370 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000106b0 @ 000106b0
+   EVT 000106f0 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00010cc0 @ 00010cc0
+   EVT 00010d28 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00010da4 @ 00010da4
+   EVT 00010e0c ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00010e90 @ 00010e90
+   EVT 00010edc ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00010f90 @ 00010f90
+   EVT 00011000 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_0001107c @ 0001107c
+   EVT 000110e4 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00011108 @ 00011108
+   EVT 00011180 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000111fc @ 000111fc
+   EVT 00011270 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000113c0 @ 000113c0
+   EVT 000114c4 ldr r1,[r0,#0x190]  <0x190>
+#### FUN_000115a0 @ 000115a0
+   EVT 000115f4 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000116a0 @ 000116a0
+   EVT 000116f4 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00011730 @ 00011730
+   EVT 00011798 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000117dc @ 000117dc
+   EVT 0001185c ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00011914 @ 00011914
+   EVT 00011994 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_000119f0 @ 000119f0
+   EVT 00011a2c ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00011aa4 @ 00011aa4
+   EVT 00011ae4 ldr r1,[r0,#0x19c]  <0x19c>
+#### FUN_00044fdc @ 00044fdc
+   OBJP 00045008 ldr r0,[0x450ac]  pool=0x60496bc4
+   OBJP 00045068 ldr r1,[0x450ac]  pool=0x60496bc4
+#### FUN_0005b438 @ 0005b438
+   OBJP 0005b4f0 ldr r0,[0x5b52c]  pool=0x60401a98
+#### FUN_000694fc @ 000694fc  [callsHWCom]
+   SPI 000695ec cmp r0,#0x64
+   SPI 00069644 cmp r0,#0x64
+#### FUN_0006b9ac @ 0006b9ac
+   EVT 0006b9f0 ldr r0,[r4,#0x1a0]  <0x1a0>
+   EVT 0006ba04 str r2,[r4,#0x1a0]  <0x1a0>
+#### FUN_0006bce4 @ 0006bce4
+   EVT 0006be34 str r0,[r4,#0x1a0]  <0x1a0>
+   EVT 0006be48 ldr r3,[r4,#0x1a0]  <0x1a0>
+   EVT 0006be54 strhi r2,[r4,#0x1a0]  <0x1a0>
+#### FUN_0006be80 @ 0006be80
+   EVT 0006c06c ldr r3,[r4,#0x1a0]  <0x1a0>
+#### FUN_0006c134 @ 0006c134
+   EVT 0006c214 add r7,r4,#0x198  <0x198>
+   EVT 0006c220 add r1,r4,#0x190  <0x190>
+   EVT 0006c22c str r0,[r4,#0x1a0]  <0x1a0>
+#### FUN_000713a0 @ 000713a0  [callsHWCom]
+   SPI 00071554 cmp r0,#0x64
+   SPI 0007155c mov r1,#0x64
+#### FUN_0007640c @ 0007640c
+   EVT 00076468 str r1,[r0,#0x190]  <0x190>
+#### FUN_00082d00 @ 00082d00  [callsHWCom]
+   SPIWR 00082f98 str r0,[sp,#0x1c]
+#### FUN_0008adf8 @ 0008adf8
+   EVT 0008aeb8 ldr r2,[r1,#0x19c]  <0x19c>
+#### FUN_00090a74 @ 00090a74
+   EVT 00090b10 ldr r2,[r1,#0x1a0]  <0x1a0>
+#### FUN_00092100 @ 00092100  [callsHWCom]
+   SPI 00092124 str r0,[r4,#0x64]
+   SPI 0009213c add r0,r4,#0x68
+   SPI 00092144 sub r4,r0,#0x68
+   SPI 0009214c strb r0,[r4,#0x84]
+#### FUN_00093628 @ 00093628
+   EVT 00093644 add r0,r4,#0x1a0  <0x1a0>
+#### FUN_000945d0 @ 000945d0
+   EVT 000945d0 strb r1,[r0,#0x19e]  <0x19e>
+#### FUN_000946d4 @ 000946d4
+   EVT 000946d4 strb r1,[r0,#0x19c]  <0x19c>
+#### FUN_000946dc @ 000946dc
+   EVT 000946dc strb r1,[r0,#0x19d]  <0x19d>
+#### FUN_00094720 @ 00094720
+   EVT 00094728 add lr,r0,#0x190  <0x190>
+#### FUN_000949d8 @ 000949d8  [callsHWCom]
+   SPI 000949dc sub sp,sp,#0x64
+   SPI 00094af4 add sp,sp,#0x64
+#### FUN_00095910 @ 00095910  [callsHWCom]
+   EVT 00095ac8 add r0,r4,#0x190  <0x190>
+   EVT 00095ad0 sub r4,r0,#0x190  <0x190>
+   EVT 00095ad8 strb r0,[r4,#0x19c]  <0x19c>
+   EVT 00095adc strb r0,[r4,#0x19d]  <0x19d>
+   EVT 00095ae0 strb r0,[r4,#0x19e]  <0x19e>
+   EVT 00095ae4 add r0,r4,#0x1a0  <0x1a0>
+   EVT 00095aec sub r4,r0,#0x1a0  <0x1a0>
+   SPI 00095914 sub sp,sp,#0x84
+   SPI 00095a68 add r0,sp,#0x68
+   SPI 00095a90 add r0,sp,#0x64
+   SPI 00095b54 add sp,sp,#0x84
+   SPI 00095f74 str r0,[r4,#0x64]
+   SPI 00095f78 str r0,[r4,#0x68]
+#### FUN_0009e6d0 @ 0009e6d0
+   EVT 0009e71c mvn r0,#0x190  <0x190>
+#### FUN_0009f05c @ 0009f05c
+   EVTP 0009f0e8 ldr r1,[0x9f120]  pool=0x196
+#### FUN_000a0630 @ 000a0630
+   EVT 000a06c8 mov r0,#0x19c  <0x19c>
+#### FUN_000a6464 @ 000a6464
+   EVT 000a6b5c str r0,[r1,#0x190]  <0x190>
+   EVT 000a6b9c str r0,[r1,#0x194]  <0x194>
+   EVT 000a6bdc str r0,[r1,#0x198]  <0x198>
+   EVT 000a6c1c str r0,[r1,#0x19c]  <0x19c>
+   EVT 000a6c58 str r0,[r1,#0x1a0]  <0x1a0>
+   EVT 000a6cfc str r0,[sp,#0x198]  <0x198>
+   EVT 000a6d04 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a6d08 add r1,sp,#0x19c  <0x19c>
+   EVT 000a6d0c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a6d50 ldr r0,[sp,#0x198]  <0x198>
+   EVT 000a6d6c ldr r0,[sp,#0x198]  <0x198>
+   EVT 000a6d88 str r0,[sp,#0x194]  <0x194>
+   EVT 000a6d90 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a6d94 add r1,sp,#0x19c  <0x19c>
+   EVT 000a6d98 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a6ddc ldr r0,[sp,#0x194]  <0x194>
+   EVT 000a6df8 ldr r0,[sp,#0x194]  <0x194>
+   EVT 000a6e14 str r0,[sp,#0x190]  <0x190>
+   EVT 000a6e1c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a6e20 add r1,sp,#0x19c  <0x19c>
+   EVT 000a6e24 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a6e68 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000a6e84 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000a6ea8 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a6eac add r1,sp,#0x19c  <0x19c>
+   EVT 000a6eb0 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a6f34 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a6f38 add r1,sp,#0x19c  <0x19c>
+   EVT 000a6f3c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a6fc0 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a6fc4 add r1,sp,#0x19c  <0x19c>
+   EVT 000a6fc8 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7110 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7114 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7118 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a719c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a71a0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a71a4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a722c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7230 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7234 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a72bc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a72c0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a72c4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7348 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a734c add r1,sp,#0x19c  <0x19c>
+   EVT 000a7350 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7394 ldr r0,[r0,#0x194]  <0x194>
+   EVT 000a73dc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a73e0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a73e4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7428 ldr r0,[r0,#0x198]  <0x198>
+   EVT 000a7474 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7478 add r1,sp,#0x19c  <0x19c>
+   EVT 000a747c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a75ac str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a75b0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a75b4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7638 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a763c add r1,sp,#0x19c  <0x19c>
+   EVT 000a7640 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a76c4 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a76c8 add r1,sp,#0x19c  <0x19c>
+   EVT 000a76cc add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7750 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7754 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7758 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a77dc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a77e0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a77e4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7868 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a786c add r1,sp,#0x19c  <0x19c>
+   EVT 000a7870 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a78f4 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a78f8 add r1,sp,#0x19c  <0x19c>
+   EVT 000a78fc add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7a0c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7a10 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7a14 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7a98 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7a9c add r1,sp,#0x19c  <0x19c>
+   EVT 000a7aa0 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7b24 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7b28 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7b2c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7bb0 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7bb4 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7bb8 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7c3c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7c40 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7c44 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7cc8 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7ccc add r1,sp,#0x19c  <0x19c>
+   EVT 000a7cd0 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7d54 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7d58 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7d5c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a7e9c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a7ea0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a7ea4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8178 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a817c add r1,sp,#0x19c  <0x19c>
+   EVT 000a8180 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8280 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8284 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8288 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a830c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8310 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8314 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8398 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a839c add r1,sp,#0x19c  <0x19c>
+   EVT 000a83a0 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8428 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a842c add r1,sp,#0x19c  <0x19c>
+   EVT 000a8430 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a84fc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8500 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8504 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8548 ldr r0,[r0,#0x19c]  <0x19c>
+   EVT 000a8590 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8594 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8598 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a85dc ldr r0,[r0,#0x1a0]  <0x1a0>
+   EVT 000a8b10 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8b14 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8b18 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8c70 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8c74 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8c78 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8cfc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8d00 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8d04 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8d88 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8d8c add r1,sp,#0x19c  <0x19c>
+   EVT 000a8d90 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8e1c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a8e20 add r1,sp,#0x19c  <0x19c>
+   EVT 000a8e24 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a8e68 ldr r0,[r0,#0x190]  <0x190>
+   EVT 000a903c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9040 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9044 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a90d0 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a90d4 add r1,sp,#0x19c  <0x19c>
+   EVT 000a90d8 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9164 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9168 add r1,sp,#0x19c  <0x19c>
+   EVT 000a916c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a91f0 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a91f4 add r1,sp,#0x19c  <0x19c>
+   EVT 000a91f8 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9284 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9288 add r1,sp,#0x19c  <0x19c>
+   EVT 000a928c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9310 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9314 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9318 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9448 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a944c add r1,sp,#0x19c  <0x19c>
+   EVT 000a9450 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a94dc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a94e0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a94e4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9570 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9574 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9578 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9604 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9608 add r1,sp,#0x19c  <0x19c>
+   EVT 000a960c add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a96cc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a96d0 add r1,sp,#0x19c  <0x19c>
+   EVT 000a96d4 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9760 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9764 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9768 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a980c str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9810 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9814 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9940 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9944 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9948 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a99d4 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a99d8 add r1,sp,#0x19c  <0x19c>
+   EVT 000a99dc add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9a68 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9a6c add r1,sp,#0x19c  <0x19c>
+   EVT 000a9a70 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9afc str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9b00 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9b04 add r0,sp,#0x1a0  <0x1a0>
+   EVT 000a9b90 str r1,[sp,#0x19c]  <0x19c>
+   EVT 000a9b94 add r1,sp,#0x19c  <0x19c>
+   EVT 000a9b98 add r0,sp,#0x1a0  <0x1a0>
+#### FUN_000ab65c @ 000ab65c
+   EVT 000ab73c ldr r0,[r4,#0x198]  <0x198>
+   EVT 000ab754 ldr r6,[r4,#0x198]  <0x198>
+   EVT 000ab7fc ldr r0,[r4,#0x194]  <0x194>
+   EVT 000ab814 ldr r6,[r4,#0x194]  <0x194>
+#### FUN_000ac18c @ 000ac18c
+   EVT 000ac6f0 ldr r7,[r4,#0x190]  <0x190>
+#### FUN_000ad8e0 @ 000ad8e0
+   EVT 000ad924 ldr r6,[r4,#0x19c]  <0x19c>
+#### FUN_000adab0 @ 000adab0
+   EVT 000adab4 sub sp,sp,#0x1a0  <0x1a0>
+   EVT 000adac4 str r0,[sp,#0x194]  <0x194>
+   EVT 000adadc add r0,sp,#0x198  <0x198>
+   EVT 000adae8 add r0,sp,#0x198  <0x198>
+   EVT 000adaf0 str r0,[sp,#0x190]  <0x190>
+   EVT 000adaf4 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000ade08 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ade78 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aded0 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000adf60 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000adf74 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000adf80 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae02c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae040 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae04c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae0f8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae118 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae1b4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae244 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae2d4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae364 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae418 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae4a8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae538 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae5dc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae684 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae6dc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae76c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae7fc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae88c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae93c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000ae9a8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aea18 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aea84 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aead4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aeafc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aeb54 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aeb7c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aebf0 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aec28 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aec84 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aed14 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aeda4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aee34 ldr r0,[sp,#0x194]  <0x194>
+   EVT 000aeee4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aef48 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000aefb4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af02c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af090 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af0cc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af0f4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af16c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af1d8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af244 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af2bc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af324 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af388 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af3e8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af45c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af4ac ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af4fc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af56c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af58c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af5ac ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af5cc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af5dc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af5f8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af614 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af664 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af6f0 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af764 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af7ec ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af858 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af8c0 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af92c ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000af994 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afa00 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afa84 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afa90 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afb0c ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afb18 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afb88 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afb94 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afbdc ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afbe8 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afc18 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afc20 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afc88 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afc90 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afca4 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afcb8 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afcec ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afcf8 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afd34 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afd48 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afd7c ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afd88 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afdc4 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afdd8 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afe04 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afe10 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000afe70 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afe84 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afeb0 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000afebc ldr r0,[sp,#0x1a0]  <0x1a0>
+#### FUN_000bf368 @ 000bf368  [callsHWCom]
+   SPI 000bf488 add r0,sp,#0x84
+   SPI 000bf490 add r2,sp,#0x84
+   SPI 000bf638 add r0,sp,#0x84
+   SPI 000bf668 add r0,sp,#0x84
+   SPI 000bf840 add r0,sp,#0x84
+   SPI 000bf868 add r0,sp,#0x84
+#### FUN_000d13e4 @ 000d13e4
+   EVT 000d1404 sub r0,r5,#0x194  <0x194>
+#### FUN_000d21fc @ 000d21fc
+   EVTP 000d2288 ldr r1,[0xd22c0]  pool=0x196
+#### FUN_000dc300 @ 000dc300
+   EVT 000dc75c str r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000dc768 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000dc770 str r0,[sp,#0x1a0]  <0x1a0>
+   EVT 000dc7a0 str r0,[sp,#0x19c]  <0x19c>
+   EVT 000dc7ac ldr r0,[sp,#0x19c]  <0x19c>
+   EVT 000dc7b4 str r0,[sp,#0x19c]  <0x19c>
+   EVT 000dc7e4 str r0,[sp,#0x198]  <0x198>
+   EVT 000dc7f0 ldr r0,[sp,#0x198]  <0x198>
+   EVT 000dc7f8 str r0,[sp,#0x198]  <0x198>
+   EVT 000dc828 str r0,[sp,#0x194]  <0x194>
+   EVT 000dc834 ldr r0,[sp,#0x194]  <0x194>
+   EVT 000dc83c str r0,[sp,#0x194]  <0x194>
+   EVT 000dc86c str r0,[sp,#0x190]  <0x190>
+   EVT 000dc878 ldr r0,[sp,#0x190]  <0x190>
+   EVT 000dc880 str r0,[sp,#0x190]  <0x190>
+   EVTP 000de708 ldr r0,[0xdf5f4]  pool=0x197
+   EVT 000de7e0 mov r0,#0x190  <0x190>
+   EVT 000de9d8 mov r0,#0x190  <0x190>
+   EVTP 000dea68 ldr r0,[0xdf5f4]  pool=0x197
+   EVT 000dec60 mov r0,#0x190  <0x190>
+   EVTP 000df694 ldr r0,[0xdfc28]  pool=0x191
+   EVTP 000df6e4 ldr r0,[0xdfc30]  pool=0x192
+   EVTP 000df70c ldr r0,[0xdfc28]  pool=0x191
+   EVTP 000df75c ldr r0,[0xdfc34]  pool=0x193
+   EVTP 000df784 ldr r0,[0xdf5f4]  pool=0x197
+   EVT 000df7ac mov r0,#0x190  <0x190>
+   EVTP 000df8ec ldr r0,[0xdfc34]  pool=0x193
+   EVTP 000df964 ldr r0,[0xdfc30]  pool=0x192
+   EVTP 000df98c ldr r0,[0xdfc34]  pool=0x193
+   EVTP 000dfa7c ldr r0,[0xdfc28]  pool=0x191
+   EVTP 000dfb44 ldr r0,[0xdfc78]  pool=0x199
+#### FUN_000e11c4 @ 000e11c4
+   EVT 000e1318 mov r1,#0x190  <0x190>
+   EVTP 000e1334 ldr r1,[0xe1520]  pool=0x191
+   EVTP 000e134c ldr r1,[0xe1524]  pool=0x192
+   EVTP 000e1364 ldr r1,[0xe1528]  pool=0x193
+   EVT 000e1378 mov r1,#0x194  <0x194>
+   EVTP 000e1394 ldr r1,[0xe152c]  pool=0x195
+   EVTP 000e13ac ldr r1,[0xe1530]  pool=0x196
+   EVTP 000e13c4 ldr r1,[0xe1534]  pool=0x197
+   EVT 000e13d8 mov r1,#0x198  <0x198>
+   EVTP 000e13f4 ldr r1,[0xe1538]  pool=0x199
+   EVTP 000e1584 ldr r1,[0xe1630]  pool=0x19a
+   EVTP 000e15a8 ldr r1,[0xe1630]  pool=0x19a
+#### FUN_000e1664 @ 000e1664
+   EVT 000e1734 mov r1,#0x190  <0x190>
+   EVTP 000e1750 ldr r1,[0xe19d0]  pool=0x191
+   EVTP 000e1768 ldr r1,[0xe19d4]  pool=0x192
+   EVTP 000e1780 ldr r1,[0xe19d8]  pool=0x193
+   EVT 000e1794 mov r1,#0x194  <0x194>
+   EVTP 000e17b0 ldr r1,[0xe19dc]  pool=0x195
+   EVTP 000e17c8 ldr r1,[0xe19e0]  pool=0x196
+   EVTP 000e17e0 ldr r1,[0xe19e4]  pool=0x197
+   EVT 000e17f4 mov r1,#0x198  <0x198>
+   EVTP 000e1810 ldr r1,[0xe19e8]  pool=0x199
+   EVTP 000e1850 ldr r1,[0xe19ec]  pool=0x19a
+#### FUN_000e3af8 @ 000e3af8
+   EVT 000e3b34 mvn r0,#0x190  <0x190>
+#### FUN_000e7b1c @ 000e7b1c  [callsHWCom]
+   SPIWR 000e8094 str r0,[sp,#0x1c]
+   SPIWR 000e80a8 str r0,[sp,#0x1c]
+   SPIWR 000e80f8 str r0,[sp,#0x1c]
+   SPIWR 000e810c str r0,[sp,#0x1c]
+#### FUN_000ed93c @ 000ed93c
+   EVT 000ed99c add r0,sp,#0x19c  <0x19c>
+   EVT 000ed9ac add r0,sp,#0x19c  <0x19c>
+   EVT 000ed9e4 add r0,sp,#0x19c  <0x19c>
+   EVTP 000ed9f4 ldrne r9,[0xedbac]  pool=0x18f
+   EVT 000eda04 add r1,sp,#0x19c  <0x19c>
+   EVT 000eda2c add r0,sp,#0x19c  <0x19c>
+   EVT 000edac8 add r0,sp,#0x19c  <0x19c>
+   EVT 000edb10 add r1,sp,#0x19c  <0x19c>
+   EVT 000edb20 add r0,sp,#0x19c  <0x19c>
+   EVT 000edb30 add r0,sp,#0x19c  <0x19c>
+   EVT 000edb78 add r0,sp,#0x19c  <0x19c>
+#### FUN_000f1680 @ 000f1680
+   EVTP 000f16a8 ldr r0,[0xf1768]  pool=0x199
+#### FUN_000f2f38 @ 000f2f38
+   EVT 000f2f5c mvn r0,#0x190  <0x190>
+#### FUN_000f365c @ 000f365c
+   EVTP 000f3748 ldr r1,[0xf37a0]  pool=0x199
+#### FUN_000f65ec @ 000f65ec
+   OBJP 000f6668 ldr r0,[0xf6698]  pool=0x60401a98
+   OBJP 000f6680 ldr r1,[0xf6698]  pool=0x60401a98
+#### FUN_000f6810 @ 000f6810  [callsHWCom]
+   OBJP 000f6870 ldr r0,[0xf690c]  pool=0x60401a98
+   OBJP 000f6880 ldr r1,[0xf690c]  pool=0x60401a98
+#### FUN_000f7f20 @ 000f7f20  [callsHWCom]
+   SPI 000f7f4c mov r0,#0x64
+#### FUN_000f8124 @ 000f8124  [callsHWCom]
+   OBJP 000f8250 ldr r0,[0xf84c0]  pool=0x60401a98
+   OBJP 000f8278 ldr r1,[0xf84c0]  pool=0x60401a98
+#### FUN_000f8fcc @ 000f8fcc  [callsHWCom]
+   OBJP 000f92ec ldr r1,[0xf9348]  pool=0x60401a98
+   OBJP 000f9308 ldr r0,[0xf9348]  pool=0x60401a98
+   OBJP 000f9318 ldr r1,[0xf9348]  pool=0x60401a98
+#### FUN_000fad30 @ 000fad30
+   EVT 000fad48 mov r1,#0x190  <0x190>
+#### FUN_000fdad8 @ 000fdad8
+   EVT 000fdc34 ldr r2,[r7,#0x198]  <0x198>
+   EVT 000fdc6c ldr r5,[r7,#0x198]  <0x198>
+   EVT 000fddac ldr r3,[r7,#0x198]  <0x198>
+#### FUN_000fe0a0 @ 000fe0a0
+   EVT 000fe0a8 ldr r0,[r0,#0x198]  <0x198>
+   EVT 000fe1e0 ldr r0,[r7,#0x198]  <0x198>
+   EVT 000fe1ec ldr r12,[r7,#0x198]  <0x198>
+#### FUN_000fef1c @ 000fef1c
+   EVT 000fefdc ldr r1,[r7,#0x198]  <0x198>
+   EVT 000ff1c4 ldr r0,[r7,#0x198]  <0x198>
+#### FUN_000ff840 @ 000ff840
+   EVT 000ff914 sub r0,r1,#0x190  <0x190>
+#### FUN_00105eb4 @ 00105eb4
+   EVTP 00105edc ldr r0,[0x105fe4]  pool=0x199
+#### FUN_00106608 @ 00106608
+   EVT 00106614 cmp r4,#0x190  <0x190>
+#### FUN_00106678 @ 00106678
+   EVT 0010669c mvn r0,#0x190  <0x190>
+   EVTP 001069e8 ldr r7,[0x106be0]  pool=0x192
+#### FUN_0010792c @ 0010792c
+   EVTP 00107958 ldr r0,[0x1079b0]  pool=0x199
+#### FUN_00107ca4 @ 00107ca4
+   EVTP 00107cd4 ldr r0,[0x107f00]  pool=0x199
+   EVTP 00107e68 ldr r0,[0x107f04]  pool=0x191
+   EVT 00107eb4 cmp r5,#0x194  <0x194>
+   EVTP 00107ebc ldr r0,[0x107f08]  pool=0x195
+   EVT 00107ee0 cmp r5,#0x198  <0x198>
+#### FUN_0010845c @ 0010845c
+   EVTP 0010847c ldr r0,[0x1084e8]  pool=0x199
+#### FUN_00108c40 @ 00108c40
+   EVT 00108c4c cmp r6,#0x190  <0x190>
+   EVTP 00108c90 ldr r1,[0x108cac]  pool=0x197
+#### FUN_00108cb0 @ 00108cb0
+   EVTP 00108df0 ldr r1,[0x1092f8]  pool=0x197
+#### FUN_0010a78c @ 0010a78c
+   EVTP 0010a914 ldr r1,[0x10a988]  pool=0x197
+#### FUN_0010a9f0 @ 0010a9f0
+   EVTP 0010aa9c ldr r1,[0x10aba4]  pool=0x197
+#### FUN_0010aedc @ 0010aedc
+   EVTP 0010af04 ldr r0,[0x10b00c]  pool=0x199
+#### FUN_0010ba44 @ 0010ba44
+   EVTP 0010ba7c ldr r0,[0x10bdb8]  pool=0x199
+#### FUN_0010e870 @ 0010e870  [callsHWCom]
+   SPIWR 0010ebbc str r0,[sp,#0x1c]
+   SPIWR 0010ec04 str r0,[sp,#0x1c]
+#### FUN_0010ef64 @ 0010ef64
+   EVTP 0010ef8c ldr r0,[0x10f18c]  pool=0x199
+#### FUN_001101ec @ 001101ec
+   EVT 00110618 ldr r0,[sp,#0x19c]  <0x19c>
+   EVT 00110634 ldr r0,[sp,#0x19c]  <0x19c>
+   EVT 00110674 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 00110784 ldr r0,[sp,#0x19c]  <0x19c>
+   EVT 001107b0 ldr r0,[sp,#0x198]  <0x198>
+   EVT 00110838 ldr r1,[sp,#0x19c]  <0x19c>
+   EVT 00110864 ldr r0,[sp,#0x198]  <0x198>
+   EVT 00110898 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 001108bc ldr r4,[sp,#0x1a0]  <0x1a0>
+   EVT 00110b1c ldr r6,[sp,#0x1a0]  <0x1a0>
+   EVT 00110d64 ldr r0,[sp,#0x19c]  <0x19c>
+#### FUN_00114d88 @ 00114d88  [callsHWCom]
+   SPI 00114d9c add r3,sp,#0x68
+   SPI 00114df8 ldr r0,[sp,#0x68]
+   SPI 00114e80 ldr r0,[sp,#0x68]
+   SPI 00114ee4 ldr r0,[sp,#0x68]
+#### FUN_0011da94 @ 0011da94  [callsHWCom]
+   SPIWR 0011dce0 str r0,[sp,#0x1c]
+#### FUN_0011e434 @ 0011e434  [callsHWCom]
+   EVTP 0011e46c ldr r0,[0x11e790]  pool=0x199
+#### FUN_00127fac @ 00127fac
+   EVT 00127fc0 add r2,sp,#0x198  <0x198>
+   EVT 00128030 add r3,sp,#0x198  <0x198>
+   EVT 00128074 ldr r1,[sp,#0x198]  <0x198>
+   EVT 0012808c add r0,sp,#0x198  <0x198>
+   EVT 001280ac ldr r0,[sp,#0x19c]  <0x19c>
+   EVT 001280ec ldrne r1,[sp,#0x198]  <0x198>
+   EVT 001280fc ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 00128114 ldr r2,[sp,#0x1a0]  <0x1a0>
+   EVT 001281d4 ldr r0,[sp,#0x1a0]  <0x1a0>
+   EVT 001281e0 str r0,[sp,#0x1a0]  <0x1a0>
+   EVT 001281e8 ldr r0,[sp,#0x19c]  <0x19c>
+   EVT 001281f4 str r0,[sp,#0x19c]  <0x19c>
+   EVT 00128250 ldr r1,[sp,#0x198]  <0x198>
+   EVT 00128260 add r0,sp,#0x198  <0x198>
+#### FUN_0013079c @ 0013079c  [callsHWCom]
+   SPI 001307a0 sub sp,sp,#0x84
+   SPI 00130934 add sp,sp,#0x84
+#### FUN_001315b8 @ 001315b8
+   EVT 00131780 strb r5,[r1,#0x198]  <0x198>
+   EVT 00131a00 strb r5,[r1,#0x198]  <0x198>
+#### FUN_00131efc @ 00131efc
+   EVT 00132244 strb r11,[r2,#0x198]  <0x198>
+#### FUN_00134258 @ 00134258  [callsHWCom]
+   EVTP 00134264 ldr r0,[0x1343b8]  pool=0x199
+#### FUN_00134a20 @ 00134a20
+   EVTP 00134a48 ldr r0,[0x134b54]  pool=0x199
+#### FUN_00138874 @ 00138874
+   EVTP 0013889c ldr r0,[0x1389e8]  pool=0x199
+#### FUN_0013b400 @ 0013b400
+   OBJP 0013b448 ldr r0,[0x13b56c]  pool=0x604975b8
+#### FUN_0013bc20 @ 0013bc20
+   EVT 0013bc84 str r0,[r4,#0x190]  <0x190>
+   EVT 0013bc90 str r5,[r4,#0x198]  <0x198>
+#### FUN_0013bcd8 @ 0013bcd8
+   EVT 0013bcec str r0,[r4,#0x190]  <0x190>
+#### FUN_0013becc @ 0013becc
+   EVTP 0013bef4 ldr r0,[0x13bfd0]  pool=0x199
+#### FUN_0013c780 @ 0013c780
+   EVTP 0013c7a8 ldr r0,[0x13c87c]  pool=0x199
+#### FUN_0013e4a4 @ 0013e4a4
+   EVTP 0013e5a8 ldr r1,[0x13e96c]  pool=0x192
+   EVT 0013e7ac ldr r7,[r0,#0x190]  <0x190>
+   EVT 0013e8a8 ldr r7,[r0,#0x190]  <0x190>
+#### FUN_0013f8b8 @ 0013f8b8
+   EVT 0013f8e0 ldrb r0,[r4,#0x194]  <0x194>
+   EVT 0013f908 ldr r0,[r4,#0x190]  <0x190>
+   EVT 0013f938 ldr r0,[r4,#0x190]  <0x190>
+   EVT 0013f95c ldr r0,[r4,#0x190]  <0x190>
+#### FUN_0013f9a8 @ 0013f9a8
+   EVT 0013f9c4 strb r0,[r4,#0x194]  <0x194>
+#### FUN_0013f9e4 @ 0013f9e4
+   EVT 0013f9e8 strb r1,[r0,#0x194]  <0x194>
+#### FUN_0013f9f0 @ 0013f9f0
+   EVT 0013fa58 str r5,[r4,#0x190]  <0x190>
+   EVT 0013fa60 strb r0,[r4,#0x194]  <0x194>
+#### FUN_0013fab8 @ 0013fab8
+   EVTP 001401b0 ldr r1,[0x140314]  pool=0x199
+   EVTP 001401f4 ldr r0,[0x140314]  pool=0x199
+   EVTP 0014023c ldr r1,[0x140314]  pool=0x199
+   EVTP 00140280 ldr r0,[0x140314]  pool=0x199
+   EVTP 00140358 ldr r1,[0x140314]  pool=0x199
+   EVTP 001403e4 ldr r1,[0x140314]  pool=0x199
+   EVTP 001404fc ldr r1,[0x140314]  pool=0x199
+   EVTP 001405d0 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 00140618 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 00140660 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 001406a8 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 001406f0 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 00140738 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 00140780 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 001407c8 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 00140810 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 00140858 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 001408a0 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 001408e8 ldr r0,[0x140314]  pool=0x199
+   EVTP 00140930 ldr r0,[0x140a1c]  pool=0x192
+   EVTP 001409c0 ldr r0,[0x140a1c]  pool=0x192
+#### FUN_00141188 @ 00141188
+   EVT 001411d0 cmp r5,#0x198  <0x198>
+#### FUN_00141348 @ 00141348  [callsHWCom]
+   SPI 001413b8 mov r0,#0x64
+   SPI 00141404 mov r0,#0x64
+#### FUN_0014549c @ 0014549c
+   EVT 00145654 str r6,[r1,#0x190]  <0x190>
+   EVT 00145674 str r2,[r1,#0x194]  <0x194>
+#### FUN_00147da8 @ 00147da8
+   EVTP 00147dd0 ldr r0,[0x147ea4]  pool=0x199
+#### FUN_0014a11c @ 0014a11c
+   EVTP 0014a144 ldr r0,[0x14a218]  pool=0x199
+#### FUN_001545bc @ 001545bc
+   EVT 001545d4 add r0,r0,#0x194  <0x194>
+#### FUN_0015e9d4 @ 0015e9d4
+   EVT 0015ea00 str r1,[r0,#0x190]  <0x190>
+   EVT 0015ea04 str r1,[r0,#0x198]  <0x198>
+   EVT 0015ea08 str r1,[r0,#0x194]  <0x194>
+   EVT 0015ea0c str r1,[r0,#0x19c]  <0x19c>
+   EVT 0015ea10 str r1,[r0,#0x1a0]  <0x1a0>
+#### FUN_00162c6c @ 00162c6c
+   EVT 00162c78 sub sp,sp,#0x190  <0x190>
+   EVT 00162eb0 add sp,sp,#0x190  <0x190>
+#### FUN_00162f3c @ 00162f3c
+   EVT 00162f40 sub sp,sp,#0x194  <0x194>
+   EVT 0016333c add sp,sp,#0x194  <0x194>
+#### FUN_00163344 @ 00163344
+   EVT 00163348 sub sp,sp,#0x19c  <0x19c>
+   EVT 00163534 add r0,sp,#0x190  <0x190>
+   EVT 0016357c add r3,sp,#0x190  <0x190>
+   EVT 001636a4 add r0,sp,#0x190  <0x190>
+   EVT 001636ec add r3,sp,#0x190  <0x190>
+   EVT 00163874 add sp,sp,#0x19c  <0x19c>
+#### FUN_00163958 @ 00163958
+   EVT 0016395c sub sp,sp,#0x194  <0x194>
+   EVT 001639f8 add sp,sp,#0x194  <0x194>
+   EVT 00163d5c add sp,sp,#0x194  <0x194>
+#### FUN_00163d64 @ 00163d64
+   EVT 00163f74 add r0,sp,#0x198  <0x198>
+   EVT 00163f98 add r0,sp,#0x198  <0x198>
+#### FUN_0016c460 @ 0016c460
+   EVT 0016c558 add r0,sp,#0x1a0  <0x1a0>
+   EVT 0016c564 add r0,sp,#0x194  <0x194>
+   EVT 0016c584 add r0,sp,#0x1a0  <0x1a0>
+   EVT 0016c58c add r3,sp,#0x194  <0x194>
+   EVT 0016c590 add r2,sp,#0x1a0  <0x1a0>
+   EVT 0016c774 add r0,sp,#0x194  <0x194>
+   EVT 0016c77c add r0,sp,#0x1a0  <0x1a0>
+#### FUN_00172330 @ 00172330
+   EVT 00172338 ldr r1,[r1,#0x190]  <0x190>
+#### FUN_00185924 @ 00185924
+   EVT 00185954 ldr r1,[r1,#0x190]  <0x190>
+#### FUN_00185e6c @ 00185e6c
+   EVT 00185eb0 ldr r1,[r1,#0x190]  <0x190>
+#### FUN_00187484 @ 00187484
+   EVT 00187728 ldr r1,[r0,#0x190]  <0x190>
+#### FUN_00188834 @ 00188834
+   EVT 00189318 ldr r1,[r0,#0x190]  <0x190>
+#### FUN_001902fc @ 001902fc
+   EVT 00190300 ldr r4,[r0,#0x1a0]  <0x1a0>
+#### FUN_0019fce4 @ 0019fce4
+   EVT 0019fdf4 mov r0,#0x194  <0x194>
+   EVT 0019ff70 ldr r0,[r4,#0x1a0]  <0x1a0>
+#### FUN_001a0670 @ 001a0670
+   EVT 001a0678 ldrb r0,[r0,#0x194]  <0x194>
+#### FUN_001a0894 @ 001a0894
+   EVT 001a089c ldrb r0,[r0,#0x194]  <0x194>
+#### FUN_001a0ac4 @ 001a0ac4
+   EVT 001a0acc ldrb r0,[r0,#0x194]  <0x194>
+#### FUN_001a0b7c @ 001a0b7c
+   EVT 001a0b84 ldrb r0,[r0,#0x194]  <0x194>
+#### FUN_001a0c00 @ 001a0c00
+   EVT 001a0c08 ldrb r0,[r0,#0x194]  <0x194>
+#### FUN_001a0cc0 @ 001a0cc0
+   EVT 001a0cc8 ldrb r0,[r0,#0x194]  <0x194>
+#### FUN_001a0d88 @ 001a0d88
+   EVT 001a0e60 mov r0,#0x194  <0x194>
+   EVT 001a0e70 str r8,[r4,#0x1a0]  <0x1a0>
+#### FUN_001a6170 @ 001a6170
+   OBJP 001a62c8 ldr r0,[0x1a6320]  pool=0x60496a14
+   OBJP 001a6300 ldr r0,[0x1a6320]  pool=0x60496a14
+#### FUN_001a6768 @ 001a6768
+   EVT 001a67f8 add r3,r4,#0x194  <0x194>
+   EVT 001a6808 add lr,r4,#0x19c  <0x19c>
+#### FUN_001b5708 @ 001b5708
+   EVT 001b5720 add r1,r4,#0x1a0  <0x1a0>
+#### FUN_001b59b0 @ 001b59b0
+   EVT 001b59b4 ldrb r0,[r1,#0x19c]  <0x19c>
+#### FUN_001b59bc @ 001b59bc
+   EVT 001b59c0 ldrb r0,[r1,#0x19d]  <0x19d>
+#### FUN_001b59ec @ 001b59ec
+   EVT 001b59ec add r12,r1,#0x190  <0x190>
+#### FUN_001c3e58 @ 001c3e58
+   EVT 001c3f1c ldr r0,[r4,#0x190]  <0x190>
+   EVT 001c4080 ldr r0,[r4,#0x194]  <0x194>
+   EVT 001c40f4 ldr r0,[r4,#0x198]  <0x198>
+   EVT 001c4154 ldr r0,[r4,#0x19c]  <0x19c>
+#### FUN_001f2974 @ 001f2974
+   EVT 001f297c sub sp,#0x198  <0x198>
+#### FUN_001f2aa0 @ 001f2aa0
+   EVT 001f2b32 add sp,#0x190  <0x190>
+   EVT 001f2b42 add sp,#0x190  <0x190>
+#### FUN_001f6398 @ 001f6398
+   OBJP 001f63d0 ldr r0,[0x1f6458]  pool=0x60496bc4
+   OBJP 001f6434 ldr r0,[0x1f6458]  pool=0x60496bc4
+#### FUN_001f6b0c @ 001f6b0c
+   OBJP 001f6ba8 ldr r0,[0x1f6c98]  pool=0x60497528
+   OBJP 001f6be0 ldr r0,[0x1f6c98]  pool=0x60497528
+   OBJP 001f6c0c ldr r0,[0x1f6d20]  pool=0x604973fc
+   OBJP 001f6c44 ldr r0,[0x1f6d20]  pool=0x604973fc
+#### FUN_00226214 @ 00226214
+   OBJP 002262d4 ldr r0,[0x2262fc]  pool=0x604987ac
+   OBJP 002262f0 ldr r0,[0x2262fc]  pool=0x604987ac
+#### FUN_002269ec @ 002269ec
+   EVT 00226ae0 str r0,[r7,#0x198]  <0x198>
+   EVT 00226af0 str r0,[r7,#0x19c]  <0x19c>
+#### FUN_00226c04 @ 00226c04
+   EVT 00226d18 str r2,[r0,#0x198]  <0x198>
+   EVT 00226d28 str r1,[r0,#0x19c]  <0x19c>
+   EVT 00226dc0 str r2,[r0,#0x198]  <0x198>
+   EVT 00226dd4 str r1,[r0,#0x19c]  <0x19c>
+   EVT 00226f38 str r1,[r10,#0x198]  <0x198>
+   EVT 00226f48 str r0,[r10,#0x19c]  <0x19c>
+   EVT 002271b0 str r1,[r10,#0x198]  <0x198>
+   EVT 002271c0 str r0,[r10,#0x19c]  <0x19c>
+   EVT 002272f8 str r1,[r10,#0x198]  <0x198>
+   EVT 00227308 str r0,[r10,#0x19c]  <0x19c>
+   EVT 00227320 str r1,[r10,#0x198]  <0x198>
+   EVT 00227328 str r0,[r10,#0x19c]  <0x19c>
+#### FUN_002275d4 @ 002275d4
+   EVT 00227678 str r0,[r5,#0x198]  <0x198>
+   EVT 00227684 str r0,[r5,#0x19c]  <0x19c>
+   EVT 00227744 str r0,[r5,#0x198]  <0x198>
+   EVT 00227750 str r0,[r5,#0x19c]  <0x19c>
+   EVT 002277e4 str r0,[r5,#0x198]  <0x198>
+   EVT 002277f0 str r0,[r5,#0x19c]  <0x19c>
+#### FUN_0022793c @ 0022793c
+   EVT 00227990 str r0,[r4,#0x198]  <0x198>
+   EVT 002279a0 str r0,[r4,#0x19c]  <0x19c>
+   EVT 00227ae8 str r0,[r4,#0x198]  <0x198>
+   EVT 00227af8 str r0,[r4,#0x19c]  <0x19c>
+   EVT 00227b80 str r1,[r4,#0x198]  <0x198>
+   EVT 00227b88 str r0,[r4,#0x19c]  <0x19c>
+   EVT 00227bd8 str r1,[r4,#0x198]  <0x198>
+   EVT 00227be0 str r0,[r4,#0x19c]  <0x19c>
+   EVT 00227c10 str r1,[r4,#0x198]  <0x198>
+   EVT 00227c18 str r0,[r4,#0x19c]  <0x19c>
+   EVT 00228058 str r0,[r4,#0x198]  <0x198>
+   EVT 00228068 str r0,[r4,#0x19c]  <0x19c>
+#### FUN_002281bc @ 002281bc
+   EVT 002281c8 str r0,[r5,#0x198]  <0x198>
+   EVT 002281cc str r0,[r5,#0x19c]  <0x19c>
+   EVT 0022823c str r0,[r5,#0x198]  <0x198>
+   EVT 00228248 str r0,[r5,#0x19c]  <0x19c>
+   EVT 00228264 str r0,[r5,#0x198]  <0x198>
+   EVT 00228270 str r0,[r5,#0x19c]  <0x19c>
+   EVT 002282dc str r0,[r5,#0x198]  <0x198>
+   EVT 002282e8 str r0,[r5,#0x19c]  <0x19c>
+#### FUN_00228380 @ 00228380
+   EVT 002283a8 str r0,[r4,#0x198]  <0x198>
+   EVT 002283ac str r0,[r4,#0x19c]  <0x19c>
+#### FUN_002283cc @ 002283cc
+   EVT 002283d0 sub sp,sp,#0x1a0  <0x1a0>
+   EVT 00228488 add sp,sp,#0x1a0  <0x1a0>
+#### FUN_0022cd30 @ 0022cd30
+   EVT 0022cd34 ldr r0,[r1,#0x198]  <0x198>
+#### FUN_0022cd3c @ 0022cd3c
+   EVT 0022cd40 ldr r0,[r1,#0x19c]  <0x19c>

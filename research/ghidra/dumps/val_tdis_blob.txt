@@ -1,0 +1,53 @@
+
+############ site 1ed6a8
+  001ed6a8  subs r0,#0xe3
+  001ed6aa  blt 0x001ed730
+  001ed6ac  cmp r5,#0xfb
+  001ed6ae  ldr r2,[0x001eda2c]
+  001ed6b0  pop {r0,r2,r4,r7,pc}
+
+############ site 1edf3c
+  001edf3c  ldr r5,[r7,r4]
+  001edf3e  sub.w sp,lr,#0x6a00000
+  001edf42  cbz r7,0x001edfae
+  001edf44  lsls r1,r5,#0x13
+  001edf46  ldr r7,[r2,#0x38]
+  001edf48  asrs r2,r5,#0x8
+  001edf4a  subs r6,r0,#0x7
+  001edf4c  adr r3,[0x1edfdc]
+  001edf4e  add r5,sp,#0x1b4
+  001edf50  subs r7,#0x3f
+  001edf52  cbz r2,0x001edfd2
+  001edf54  push {r1,r2,r3,r5,r7}
+  001edf56  strh r7,[r7,r3]
+  001edf58  ldr r0,[r5,r5]
+  001edf5a  lsls r3,r6,#0x10
+  001edf5c  str r3,[r7,#0x18]
+  001edf5e  add r2,sp,#0x120
+  001edf60  ldrb r1,[r2,#0x6]
+  001edf62  adr r3,[0x1ee0e0]
+  001edf64  lsrs r1,r7,#0x6
+  001edf66  lsls r0,r3,#0x1
+  001edf68  add r0,r11
+  001edf6a  adr r7,[0x1ee190]
+  001edf6c  str r7,[r5,#0x24]
+  001edf6e  stmia r2,{r2,r6,r7}
+  001edf70  pop {r0,r1,r4,r7,pc}
+
+############ site 1e8800
+  001e8800  svc 0xe1
+  001e8802  asrs r2,r0,#0x9
+  001e8804  cmp r1,#0x12
+  001e8806  ldrb r7,[r4,r2]
+  001e8808  ldrsh r0,[r2,r3]
+  001e880a  cbz r3,0x001e886a
+  001e880c  asrs r4,r0,#0x1b
+  001e880e  ldr r2,[sp,#0x118]
+  001e8810  adr r5,[0x1e8b30]
+  001e8812  lsls r6,r0,#0x1
+  001e8814  cbz r3,0x001e887c
+  001e8816  ldr r4,[r5,#0x20]
+  001e8818  adr r7,[0x1e8c08]
+  001e881a  itee al
+  001e881c  ldr.al r6,[r5,#0x14]
+  001e881e  <no instr>

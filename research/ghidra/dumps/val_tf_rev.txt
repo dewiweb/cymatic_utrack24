@@ -1,0 +1,518 @@
+
+############ site 208956
+NO FUNCTION
+
+############ site 2083b0
+NO FUNCTION
+
+############ site 1faeea
+NO FUNCTION
+
+############ site 204016
+=== FUN_00203a10 @ 00203a10 callers []
+  001ebff0  add r5,sp,#0x2d4
+  001ebff2  push {r3,r6,lr}
+  001ebff4  ldcl p3,cr10,[r12],#0x18
+  001ebff8  ldr r6,[0x001ec230]
+  001ebffa  cmp r6,#0x64
+  001ebffc  movs r1,#0xf3
+  001ebffe  str r6,[sp,#0xbc]
+  001ec000  ite gt
+  001ec002  ldr.gt r6,[r7,#0x50]
+  001ec004  strb.le r4,[r2,#0x1d]
+  001ec006  cmp r2,r4
+  001ec008  movs r6,#0x45
+  001ec00a  b 0x001ec4fe
+  001ec4fe  strh r0,[r5,#0x34]
+  001ec500  ldrh r2,[r2,r7]
+  001ec502  add r5,sp,#0x78
+  001ec504  ldr r4,[sp,#0x1fc]
+  002039a8  bls 0x00203a40
+  002039aa  bic sp,r8,#0x4e8000
+  002039ae  add r7,sp,#0x10c
+  002039b0  cmp r1,#0xcd
+  002039b2  asrs r4,r4,#0xd
+  002039b4  adds r4,#0x69
+  002039b6  strb r5,[r5,#0xd]
+  002039b8  udf #0x6b
+  00203a10  push {r1,r2,r3,r4,r5,r7,lr}
+  00203a12  bpl 0x00203a48
+  00203a14  adds r7,#0x5d
+  00203a16  str r5,[sp,#0x98]
+  00203a18  cdp2 p4,0xd,cr10,cr3,cr6,0x3
+  00203a1c  ldc p2,cr2,[r6],{0x42}
+  00203a20  str r5,[sp,#0x354]
+  00203a22  str r5,[sp,#0x354]
+  00203a24  lsls r2,r2,#0x17
+  00203a26  add r1,sp,#0x70
+  00203a28  ldrsb r5,[r6,r5]
+  00203a2a  ldrb r0,[r3,#0x1a]
+  00203a2c  rsbs r9,r6,r11, asr #0x12
+  00203a30  movs r2,#0x25
+  00203a32  b.w 0x001ebff0
+  00203a40  movs r0,#0xe2
+  00203a42  add r1,sp,#0x60
+  00203a44  str r6,[r5,#0x48]
+  00203a46  b 0x00203fa4
+  00203a48  subs r1,#0x5d
+  00203a4a  adcs.w r8,r2,lr, asr #0x16
+  00203a4e  bvs 0x002039a8
+  00203a50  add r3,sp,#0x3ac
+  00203a52  stmia r5!,{r0,r3,r6}
+  00203a54  bl 0x010b97a0
+  00203a58  b 0x00203e96
+  00203d8a  ldr r0,[r3,r3]
+  00203d8c  subs r1,#0x46
+  00203d8e  subs r2,#0xc8
+  00203de2  ldmia r1,{r0,r1,r2,r3,r4}
+  00203de4  adr r4,[0x203e6c]
+  00203de6  asrs r6,r4,#0x9
+  00203de8  str r0,[r1,#0x68]
+  00203dea  strh r0,[r7,#0xc]
+  00203dec  strh r4,[r5,#0x28]
+  00203dee  ldrh r1,[r2,r4]
+  00203df0  adr r1,[0x204090]
+  00203df2  lsrs r0,r4,#0x16
+  00203df4  stmia r1,{r1,r6,r7}
+  00203df6  ldr r2,[r3,#0x70]
+  00203df8  subs r1,r5,#0x3
+  00203dfa  ldrh r0,[r7,#0x32]
+  00203dfc  adds r4,#0x22
+  00203dfe  movs r7,#0x22
+  00203e00  str r3,[r7,#0x20]
+  00203e02  blx 0x007b25ac
+  00203e06  bics r3,r0,#0x1ca
+  00203e0a  bge 0x00203d8a
+  00203e0c  cmp r6,#0x88
+  00203e0e  ldr r3,[sp,#0x3c]
+  00203e10  bls 0x00203f0c
+  00203e12  b.w 0xffa20470
+  00203e3e  ldmia r2,{r0,r2,r4,r5,r6,r7}
+  00203e40  add r7,sp,#0x3b0
+  00203e42  lsrs r7,r0,#0x1a
+  00203e44  adds r2,r5,r0
+  00203e46  ldr r4,[sp,#0x90]
+  00203e48  ldrd r4,pc,[r3],#-0x280
+  00203e4c  bcc 0x00203de2
+  00203e4e  movs r3,#0xe4
+  00203e50  str r7,[r0,#0x30]
+  00203e52  ldr r1,[0x00204070]
+  00203e54  ldrh r1,[r4,#0x3e]
+  00203e56  lsrs r2,r1,#0x1
+  00203e58  stcl p2,cr0,[r8],#-0x30c
+  00203e5c  ldrb r2,[r1,#0xe]
+  00203e5e  adr r1,[0x203f68]
+  00203e60  asrs r0,r5,#0x1b
+  00203e62  add r0,sp,#0x3f4
+  00203e64  strb r6,[r5,r0]
+  00203e66  strb r7,[r2,#0x11]
+  00203e68  ldrb r2,[r7,#0x6]
+  00203e6a  ldrh r6,[r2,#0x2e]
+  00203e6c  adds r0,#0x58
+  00203e6e  add r7,sp,#0x1e4
+  00203e70  adds r5,#0xe8
+  00203e72  ldrb r3,[r3,#0x1c]
+  00203e74  asrs r3,r3,#0x16
+  00203e76  itett vs
+  00203e78  ldr r3,[r4,#0x5c]
+  00203e7a  tst r6,r5
+  00203e96  adds r0,#0xd3
+  00203e98  lsls r1,r5,#0x1b
+  00203e9a  adds r6,r1,#0x1
+  00203e9c  movs r0,#0xd3
+  00203e9e  ldrb r1,[r7,#0xc]
+  00203ea0  asrs r7,r5,#0xc
+  00203ecc  ldmia r7,{r0,r1,r2,r3,r4,r5,r6,r7}
+  00203ece  blx lr
+  00203ed0  stmia r4!,{r2,r3,r7}
+  00203ed2  strb r0,[r2,#0x18]
+  00203ee6  bpl 0x00203e3e
+  00203ee8  strb r6,[r4,#0x5]
+  00203eea  cmp r7,#0x0
+  00203eec  adds r0,#0x38
+  00203eee  ldrh r3,[r4,#0x28]
+  00203ef0  bls 0x00203e00
+  00203ef2  subs r2,r6,#0x1
+  00203ef4  subs r0,r7,#0x6
+  00203ef6  asrs r5,r7,#0x6
+  00203ef8  subs r6,#0xf8
+  00203efa  bgt 0x00203fc4
+  00203efc  ldrsb r6,[r3,r1]
+  00203efe  str r5,[sp,#0x3e0]
+  00203f00  movs r7,#0xd7
+  00203f0c  adds r2,#0x66
+  00203f0e  asrs r7,r4,#0x5
+  00203f10  str r7,[r6,#0x54]
+  00203f12  lsrs r0,r3,#0x1a
+  00203f14  lsrs r0,r3,#0x1e
+  00203f16  add r7,sp,#0xa4
+  00203f18  movs r4,#0x2
+  00203f1a  bgt 0x00203ecc
+  00203f1c  ldr r3,[0x00203f50]
+  00203f1e  blt 0x00203e78
+  00203f20  b 0x00203ee6
+  00203f2e  ldrh r2,[r4,#0x2c]
+  00203f30  adds r2,r2,#0x3
+  00203f32  ldrb r0,[r5,r4]
+  00203f34  strh r2,[r7,#0x28]
+  00203f36  adds r7,#0x85
+  00203f38  adr r5,[0x204110]
+  00203f3a  ldr r3,[r0,#0x28]
+  00203f3c  bvc 0x00203faa
+  00203f3e  cmp r4,#0x21
+  00203f40  adds r3,#0x5
+  00203f42  ldr r7,[r0,r7]
+  00203f44  ldr r6,[0x00204314]
+  00203f46  strb r1,[r2,#0x0]
+  00203f48  cmp r3,#0xca
+  00203f4a  stmia r0,{r0,r2,r5,r7}
+  00203f4c  cmp r6,r2
+  00203f4e  ldr r2,[sp,#0x1f0]
+  00203fa4  ldrb r7,[r1,#0x9]
+  00203fa6  lsrs r2,r1,#0x9
+  00203fa8  orr.w pc,r2,r8, ror #0x2
+  00203fac  adr r5,[0x203fb4]
+  00203fae  cbnz r2,0x00203fe0
+  00203fb0  strh r6,[r4,#0x18]
+  00203fb2  stc2 p1,cr15,[r10,#-0x30c]!
+  00203fb6  adds r3,r3,r0
+  00203fb8  strh r3,[r7,#0x20]
+  00203fba  subs r3,#0xc9
+  00203fbc  subs r6,#0x15
+  00203fbe  orrs r4,r3
+  00203fc0  subs r6,#0x98
+  00203fc2  lsrs r4,r4,#0x11
+  00203fc4  rsbs r1,r5
+  00203fc6  cmp r2,#0xe9
+  00203fc8  strh r3,[r2,#0x12]
+  00203fca  str r6,[sp,#0x70]
+  00203fcc  cmp r0,#0x6c
+  00203fce  asrs r4,r2,#0x17
+  00203fd0  lsls r5,r5,#0x1b
+  00203fd2  lsrs r2,r0,#0xc
+  00203fd4  adds r4,r2,#0x3
+  00203fd6  cmp r6,pc
+  00203fd8  str r5,[r4,#0x30]
+  00203fda  ittte cc
+  00203fdc  cbnz.cc r4,0x00204052
+  00203fde  strh.cc r5,[r1,#0x8]
+  00203fe0  add.cc r3,sp,#0x10c
+  00203fe2  ldr.cs r2,[sp,#0x39c]
+  00203fe4  subs r7,r0,r4
+  00203fe6  asrs r2,r7,#0xb
+  00203fe8  pop {r1,r3,r6,r7}
+  00203fea  ldrh r1,[r3,#0x24]
+  00203fec  adds r5,#0x77
+  00203fee  adds r7,#0x31
+  00203ff0  adds r6,#0xab
+  00203ff2  bvc 0x00203f2e
+  00203ff4  subs r0,#0x74
+  00203ff6  movs r7,#0x33
+  00203ff8  ldr r0,[0x002042cc]
+  00203ffa  stmia r3,{r0,r1,r3,r4,r5,r6}
+  00203ffc  bpl 0x00203fa8
+  00203ffe  cmp r7,#0x88
+  00204000  asrs r0,r1,#0x13
+  00204002  blx 0xff39e65c
+  00204006  ldr r3,[0x0020412c]
+  00204008  mvns r3,r7
+  0020400a  asrs r7,r3,#0xd
+  0020400c  bl 0x0062c426
+  00204010  subs r3,#0xf8
+  00204012  cdp p8,0x3,cr4,cr7,cr4,0x0
+  00204016  adds r0,#0xf2
+  00204018  ldrh r6,[r3,#0x18]
+  0020401a  ldr r3,[r0,#0x34]
+  0020401c  ldmia r0,{r0,r3,r5,r6}
+  0020401e  add r2,sp,#0x70
+  00204020  strh r5,[r4,#0xa]
+  00204022  strh r1,[r4,#0x2e]
+  00204024  ldr r6,[0x00204258]
+  00204026  strh r3,[r2,#0x2c]
+  00204028  adds r2,#0x6c
+  0020402a  add r3,sp,#0x29c
+  0020402c  lsls r5,r7,#0x16
+  0020402e  ldr r4,[0x0020439c]
+  00204030  lsls r6,r2,#0x8
+  00204032  str r4,[sp,#0x38]
+  00204034  movs r0,#0xbc
+  00204036  bhi 0x00204050
+  00204038  rev16 r1,r6
+  0020403a  beq 0x00204096
+  0020403c  ldr r4,[r7,#0x64]
+  0020403e  str r5,[r6,#0x5c]
+  00204040  ldr r6,[r1,#0x40]
+  00204042  ldr r3,[0x002043e4]
+  00204044  lsls r1,r1,#0xb
+  00204046  str r6,[r5,#0x24]
+  00204048  lsls r3,r4,#0x10
+  0020404a  str r6,[r1,#0x74]
+  0020404c  ldmia r6,{r0,r2,r3,r4,r5,r6}
+  0020404e  add r4,sp,#0x314
+  00204050  str r6,[sp,#0x298]
+  00204052  adds r3,#0x85
+  00204054  bvc 0x002040f6
+  00204056  add r2,sp,#0xb4
+  00204058  add r7,sp,#0x284
+  0020405a  adds r4,#0x11
+  0020405c  ldr r5,[r7,#0x6c]
+  0020405e  movs r2,#0xc8
+  00204060  ldr r2,[sp,#0x3ac]
+  00204062  adr r7,[0x204338]
+  00204064  adds r1,r3,r4
+  00204066  svc 0x14
+  00204068  lsrs r1,r1,#0x4
+  0020406a  ldr r2,[r0,#0x40]
+  0020406c  b 0x00203de4
+  00204096  movs r4,#0xef
+  00204098  strh r5,[r2,#0x12]
+  0020409a  stmia r2!,{r0,r3,r7}
+  0020409c  ldr r4,[0x00204448]
+  0020409e  adds r3,#0x4f
+  002040a0  ldr r1,[r2,#0x24]
+  002040a2  stmia r3,{r1,r3}
+  002040a4  strh r0,[r1,#0x26]
+  002040a6  ldrb r1,[r3,r4]
+  002040a8  adds r1,#0xca
+  002040aa  lsls r2,r6
+  002040ac  vstr.64 d11,[r5,#0x74]
+  002040b0  str r4,[r4,#0x44]
+  002040b2  stmia r7,{r0,r2,r3,r7}
+  002040b4  bkpt 0xd8
+  002040b6  adr r3,[0x204158]
+  002040b8  add r3,sp,#0x78
+  002040ba  svc 0xb7
+  002040bc  mov sp,sp
+  002040be  strh r1,[r6,r0]
+  002040c0  strb r0,[r5,#0x1f]
+  002040c2  adds r7,r1,#0x7
+  002040c4  ldr r6,[0x00204438]
+  002040c6  adr r5,[0x2042b4]
+  002040c8  bls 0x00204138
+  002040ca  ldr r3,[sp,#0x370]
+  002040cc  ldrsh r4,[r1,r0]
+  002040ce  str r2,[sp,#0x1d8]
+  002040d0  stmia r2!,{r1,r4,r5,r7}
+  002040d2  stmia r3!,{r1,r2,r6}
+  002040f6  str r4,[r5,#0x4c]
+  002040f8  strb r3,[r6,#0x8]
+  002040fa  str r4,[sp,#0x1f0]
+  002040fc  strb r5,[r4,r4]
+  002040fe  movs r5,#0x90
+  00204100  cmp r1,#0xd5
+  00204102  strb r6,[r4,#0x5]
+  00204104  str r3,[sp,#0x64]
+  00204106  str r0,[r7,#0x44]
+  00204108  asrs r5,r1,#0x11
+  0020410a  bvc 0x00204128
+  0020410c  subs r1,#0x26
+  0020410e  ldr r5,[0x0020449c]
+  00204110  strb r1,[r0,#0x1b]
+  00204112  ldmia r4,{r1,r2,r4,r6}
+  00204114  vsri.64 d22,d9,#0x38
+  00204118  add r4,sp,#0x324
+  0020411a  rsbs r9,r0,r7, ror #0x15
+  0020411e  mov r10,r4
+  00204120  blx 0xff640eac
+  00204124  ldrb r4,[r5,#0x19]
+  00204126  ldmia r7,{r3,r4,r7}
+  00204138  movs r5,#0x14
+  0020413a  str r5,[r4,#0x28]
+  0020413c  asrs r0,r7,#0x7
+  0020413e  pop {r1,r2,r6}
+  00204140  ldrh r2,[r7,#0x1a]
+  00204142  bcs 0x00204156
+  00204144  ldrh r3,[r3,#0xa]
+  00204146  adds r5,r5,#0x1
+  00204148  stmia r7,{r1,r2,r4,r6,r7}
+  0020414a  cmp r1,r6
+  0020414c  add r4,sp,#0x3b4
+  0020414e  strb r4,[r7,#0xb]
+  00204150  add r7,sp,#0x98
+  00204152  svc 0x81
+  00204154  str r0,[r2,#0x74]
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Instruction at (ram,0x00203faa) overlaps instruction at (ram,0x00203fa8)
+    */
+/* WARNING: Removing unreachable block (ram,0x00204096) */
+/* WARNING: Removing unreachable block (ram,0x002040ca) */
+/* WARNING: Removing unreachable block (ram,0x00204138) */
+/* WARNING: Removing unreachable block (ram,0x00204144) */
+/* WARNING: Removing unreachable block (ram,0x00204156) */
+/* WARNING: Removing unreachable block (ram,0x00203ffe) */
+/* WARNING: Removing unreachable block (ram,0x00204038) */
+/* WARNING: Removing unreachable block (ram,0x0020403c) */
+/* WARNING: Removing unreachable block (ram,0x00204050) */
+/* WARNING: Removing unreachable block (ram,0x00203f0c) */
+/* WARNING: Removing unreachable block (ram,0x00203ecc) */
+/* WARNING: Removing unreachable block (ram,0x00203f1c) */
+/* WARNING: Removing unreachable block (ram,0x00203ee6) */
+/* WARNING: Removing unreachable block (ram,0x00203e3e) */
+/* WARNING: Removing unreachable block (ram,0x00203e4e) */
+/* WARNING: Removing unreachable block (ram,0x00203e78) */
+/* WARNING: Removing unreachable block (ram,0x00203de2) */
+/* WARNING: Removing unreachable block (ram,0x00203ee8) */
+/* WARNING: Removing unreachable block (ram,0x00203ef2) */
+/* WARNING: Removing unreachable block (ram,0x00203efc) */
+/* WARNING: Removing unreachable block (ram,0x0020410c) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00203a10(undefined4 param_1,uint param_2,uint param_3,uint *param_4)
+
+{
+  code *pcVar1;
+  uint uVar2;
+  undefined1 *puVar3;
+  uint uVar4;
+  int iVar5;
+  uint uVar6;
+  uint unaff_r4;
+  undefined4 *unaff_r5;
+  int iVar7;
+  uint unaff_r6;
+  uint uVar8;
+  undefined4 uVar9;
+  uint uVar10;
+  int unaff_r10;
+  undefined4 in_r12;
+  uint *puVar11;
+  int unaff_lr;
+  char in_NG;
+  char cVar12;
+  uint *puVar13;
+  undefined4 in_cr2;
+  undefined4 in_cr3;
+  undefined4 in_cr6;
+  undefined4 in_cr10;
+  undefined4 in_cr15;
+  uint in_stack_0000004c;
+  uint uStack_1c;
+  uint uStack_18;
+  uint *puStack_14;
+  
+  puStack_14 = param_4;
+  uStack_18 = param_3;
+  puVar11 = &uStack_1c;
+  if (in_NG != '\0') {
+    coprocessor_function2(4,0xd,3,in_cr10,in_cr3,in_cr6);
+    coprocessor_load(2,in_cr2,unaff_r6);
+    coprocessor_loadlong(3,in_cr10,in_r12);
+    if (SBORROW4(_DAT_001ec230,100)) {
+      uRam00000042 = (undefined1)unaff_r4;
+    }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  uVar10 = unaff_lr >> 0x16;
+  uVar2 = (uint)(0x5c < param_2);
+  uStack_1c = param_2;
+  if (SCARRY4(param_3,uVar10) == SCARRY4(param_3 + uVar10,uVar2)) {
+    *unaff_r5 = param_1;
+    unaff_r5[1] = &stack0x00000390;
+    unaff_r5[2] = unaff_r6;
+    func_0x010b97a0(param_1,param_2 - 0x5d);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  if ((CARRY4(param_3,uVar10) || CARRY4(param_3 + uVar10,uVar2)) &&
+      param_3 + uVar10 + (0x5c < param_2) != 0) {
+    *(char *)((int)unaff_r5 + 0xd) = (char)unaff_r5;
+                    /* WARNING: Does not return */
+    pcVar1 = (code *)software_udf(0x6b,0x2039b8);
+    (*pcVar1)();
+  }
+  unaff_r5[0x12] = unaff_r6;
+  uVar10 = in_stack_0000004c >> 8 & 0xff;
+  puVar3 = (undefined1 *)((uint)&stack0x00000044 >> 9);
+  uVar2 = 0xe2;
+  do {
+    iVar7 = 0x203fb4;
+    if (puVar3 == (undefined1 *)0x0) {
+      *(short *)(unaff_r4 + 0x18) = (short)unaff_r6;
+      unaff_r10 = unaff_r10 + -0x30c;
+      coprocessor_store(1,in_cr15,unaff_r10);
+      iVar5 = (int)param_4 + uVar2;
+      *(short *)(uVar10 + 0x20) = (short)iVar5;
+      uVar8 = unaff_r6 - 0xad;
+      DataAbort = (undefined2)(iVar5 + -0xc9);
+      puVar11[0x1c] = uVar8;
+      iVar7 = -0x60000000;
+      uVar4 = uVar2 >> 0xc;
+      unaff_r4 = uVar4 + 3;
+      *(undefined4 *)(uVar4 + 0x33) = 0xa0000000;
+      if ((uVar8 < 0x203fda) && (unaff_r4 != 0)) {
+        uVar6 = iVar5 - 0x44;
+        if (!SCARRY4(iVar5 + -0xc9,0x85)) {
+          uRama000004c = unaff_r4;
+          *(char *)(unaff_r6 - 0xa5) = (char)uVar6;
+          puVar11[0x7c] = unaff_r4;
+          *(undefined1 *)(unaff_r4 * 2) = 0;
+          *(char *)(uVar4 + 8) = (char)uVar8;
+          puVar11[0x19] = uVar6;
+          *(uint *)(uVar10 + 0x44) = uVar2;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        uVar10 = puVar11[0xbc];
+        software_interrupt(0x14);
+        *(uint *)((uVar6 + uVar4 + 0x14 >> 4) + 0x68) = uVar2;
+        uRam00204344 = (undefined2)uVar2;
+        *(undefined2 *)(uVar10 + 0x28) = 0x3e6c;
+        uRam00204090 = 0x204090;
+        uRam00204094 = 0x101f;
+        uRam00204098 = 0x204338;
+        cVar12 = '\0';
+        uRam00000042 = (char)uVar6;
+        iVar7 = func_0x007b25ac(uRam0020436a,uVar10 - 3,*(undefined4 *)(iVar5 + 0x2c));
+        if (iVar7 < 0 == (bool)cVar12) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      if (uVar8 < 0x203fda) {
+        uRamffdfc054 = 0;
+      }
+    }
+    uVar4 = _DAT_002042cc;
+    puVar3 = (undefined1 *)((int)(uVar2 - unaff_r4) >> 0xb);
+    param_4 = (uint *)puVar11[1];
+    puVar13 = puVar11 + 2;
+    uVar8 = puVar11[3];
+    puVar11 = puVar11 + 4;
+    uVar2 = param_4[9];
+    unaff_r6 = *puVar13 + 0xab;
+    if (SCARRY4(*puVar13,0xab)) {
+      uVar10 = 0x33;
+      *param_4 = _DAT_002042cc;
+      param_4[1] = (uint)(ushort)uVar2;
+      param_4[2] = (uint)param_4;
+      param_4[3] = unaff_r4;
+      param_4[4] = iVar7 + 0x77U;
+      param_4[5] = unaff_r6;
+      uVar2 = uVar4;
+    }
+    else {
+      puVar3 = (undefined1 *)(*(ushort *)(unaff_r4 + 0x2c) + 3);
+      uVar4 = (uint)*(byte *)(iVar7 + 0x77U + unaff_r4);
+      *(short *)(uVar8 + 0x59) = (short)puVar3;
+      uVar10 = uVar8 + 0xb6;
+      param_4 = *(uint **)(uVar4 + 0x28);
+      if (SCARRY4(uVar8 + 0x31,0x85)) {
+        uVar9 = *(undefined4 *)(uVar4 + uVar10);
+        *puVar3 = (char)(ushort)uVar2;
+        *(uint *)uVar4 = uVar4;
+        *(undefined1 **)(uVar4 + 4) = puVar3;
+        *(undefined4 *)(uVar4 + 8) = 0x204110;
+        *(undefined4 *)(uVar4 + 0xc) = uVar9;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      uVar2 = uVar10 >> 0x1e;
+    }
+  } while( true );
+}
+
+

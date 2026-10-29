@@ -1,0 +1,2500 @@
+
+=========== FUN_0025eb32 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Removing unreachable block (ram,0x0025f6a4) */
+/* WARNING: Removing unreachable block (ram,0x0025f6f2) */
+/* WARNING: Removing unreachable block (ram,0x0025f700) */
+/* WARNING: Removing unreachable block (ram,0x0025f728) */
+/* WARNING: Removing unreachable block (ram,0x0025f73c) */
+/* WARNING: Removing unreachable block (ram,0x0025f74e) */
+/* WARNING: Removing unreachable block (ram,0x0025f78a) */
+/* WARNING: Removing unreachable block (ram,0x0025f78e) */
+/* WARNING: Removing unreachable block (ram,0x0025f790) */
+/* WARNING: Removing unreachable block (ram,0x0025f794) */
+/* WARNING: Removing unreachable block (ram,0x0025f7ae) */
+/* WARNING: Removing unreachable block (ram,0x0025f7d4) */
+/* WARNING: Removing unreachable block (ram,0x0025f808) */
+/* WARNING: Removing unreachable block (ram,0x0025f838) */
+/* WARNING: Removing unreachable block (ram,0x0025f83a) */
+/* WARNING: Removing unreachable block (ram,0x0025f85c) */
+/* WARNING: Removing unreachable block (ram,0x0025f860) */
+/* WARNING: Removing unreachable block (ram,0x0025f876) */
+/* WARNING: Removing unreachable block (ram,0x0025f898) */
+/* WARNING: Removing unreachable block (ram,0x0025f8a2) */
+/* WARNING: Removing unreachable block (ram,0x0025f8c4) */
+/* WARNING: Removing unreachable block (ram,0x0025f8ee) */
+/* WARNING: Removing unreachable block (ram,0x0025f8fe) */
+/* WARNING: Removing unreachable block (ram,0x0025f914) */
+/* WARNING: Removing unreachable block (ram,0x0025f922) */
+/* WARNING: Removing unreachable block (ram,0x0025f95a) */
+/* WARNING: Removing unreachable block (ram,0x0025f968) */
+/* WARNING: Removing unreachable block (ram,0x0025f996) */
+/* WARNING: Removing unreachable block (ram,0x0025eb8a) */
+/* WARNING: Removing unreachable block (ram,0x0025ec06) */
+
+void FUN_0025eb32(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 *param_4)
+
+{
+  code *pcVar1;
+  byte bVar2;
+  ushort uVar3;
+  short sVar4;
+  undefined4 *puVar5;
+  undefined4 *puVar6;
+  undefined4 *unaff_r4;
+  int iVar7;
+  undefined4 *unaff_r5;
+  undefined4 uVar8;
+  undefined4 uVar9;
+  undefined4 *unaff_r6;
+  undefined1 *puVar10;
+  uint uVar11;
+  int *unaff_r7;
+  undefined1 *puVar12;
+  int in_r12;
+  undefined4 unaff_pc;
+  char in_NG;
+  char in_ZR;
+  bool in_CY;
+  char in_OV;
+  bool bVar13;
+  bool bVar14;
+  undefined4 in_cr4;
+  undefined4 in_cr8;
+  undefined4 in_cr12;
+  undefined4 in_cr15;
+  
+code_r0x0025eb32:
+  *param_3 = unaff_r6;
+  *param_3 = unaff_r6;
+  if (param_1 == (undefined4 *)0x0) goto LAB_0025eb4a;
+  *param_3 = unaff_r6;
+  unaff_r5 = (undefined4 *)((int)register0x00000054 + 0x3c0);
+  *param_3 = unaff_r6;
+  if (in_CY != false) goto LAB_0025eae4;
+  *param_3 = unaff_r6;
+  do {
+    param_4 = (undefined4 *)0x25ec88;
+    *param_3 = unaff_r6;
+    if (in_NG == '\0') {
+      param_2 = (undefined4 *)0x25ee98;
+      *param_3 = unaff_r6;
+      unaff_r6 = (undefined4 *)((int)register0x00000054 + 0x2c0);
+      *param_3 = unaff_r6;
+      param_1 = (undefined4 *)0x25ec90;
+      *param_3 = unaff_r6;
+      *param_3 = unaff_r6;
+      param_3 = *(undefined4 **)register0x00000054;
+      param_4 = *(undefined4 **)((int)register0x00000054 + 4);
+      uVar9 = *(undefined4 *)((int)register0x00000054 + 8);
+      unaff_r5 = *(undefined4 **)((int)register0x00000054 + 0xc);
+      unaff_r7 = *(int **)((int)register0x00000054 + 0x10);
+      register0x00000054 = (BADSPACEBASE *)((int)register0x00000054 + 0x14);
+      *param_3 = unaff_r6;
+      software_hlt(0x20);
+      *param_3 = unaff_r6;
+      if (in_ZR == '\0') {
+        *param_3 = unaff_r6;
+        puVar6 = (undefined4 *)register0x00000054;
+LAB_0025ebc0:
+        iVar7 = *unaff_r7;
+        unaff_r6 = (undefined4 *)unaff_r7[1];
+        unaff_r7 = (int *)unaff_r7[2];
+        *param_3 = unaff_r6;
+        *param_3 = unaff_r6;
+        if (((((uint)param_1 >> 0x10 & 0xff) != 0 || (uint)param_1 >> 0x18 != 0) ||
+            ((uint)param_1 & 0xff) != 0) || ((uint)param_1 >> 8 & 0xff) != 0) {
+          halt_baddata();
+        }
+        *param_3 = unaff_r6;
+        param_1 = (undefined4 *)0x0;
+        register0x00000054 = (BADSPACEBASE *)puVar6;
+        if (iVar7 == 0) goto LAB_0025ec00;
+        *param_3 = unaff_r6;
+        unaff_r4 = (undefined4 *)(int)(short)iVar7;
+        *param_3 = unaff_r6;
+        puVar6[-1] = unaff_r7;
+        puVar6[-2] = unaff_r6;
+        puVar6[-3] = unaff_r5;
+        puVar6[-4] = param_4;
+        *param_3 = unaff_r6;
+        puVar6[-5] = unaff_r7;
+        register0x00000054 = (BADSPACEBASE *)(puVar6 + -6);
+        *(undefined4 **)register0x00000054 = param_4;
+        *param_3 = unaff_r6;
+        *param_3 = unaff_r6;
+        param_4 = puVar6 + 0x66;
+        *param_3 = unaff_r6;
+        param_3 = puVar6 + 0xa6;
+        *param_3 = unaff_r6;
+        unaff_r6 = puVar6 + 0x4a;
+        *param_3 = unaff_r6;
+        param_1 = (undefined4 *)0x0;
+        goto LAB_0025ebec;
+      }
+LAB_0025ec20:
+      puVar6 = (undefined4 *)*param_3;
+      param_4 = (undefined4 *)param_3[1];
+      uVar8 = param_3[2];
+      iVar7 = param_3[3];
+      *puVar6 = unaff_r6;
+      if (in_ZR != '\0') {
+        *puVar6 = unaff_r6;
+        *puVar6 = puVar6;
+        puVar6[1] = param_4;
+        puVar6[2] = uVar8;
+        puVar6[3] = unaff_r6;
+        puVar6[4] = iVar7;
+        *puVar6 = unaff_r6;
+        *puVar6 = unaff_r6;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      *(short *)((int)unaff_r6 + 0x22) = (short)param_1;
+      *param_2 = unaff_r6;
+      *(short *)(iVar7 + 0x22) = (short)uVar9;
+      *param_2 = unaff_r6;
+      *(short *)((int)unaff_r6 + 0x22) = (short)uVar9;
+      *param_2 = unaff_r6;
+      *(short *)(iVar7 + 0x22) = (short)param_1;
+      *param_2 = unaff_r6;
+      while( true ) {
+        param_3 = (undefined4 *)*puVar6;
+        puVar5 = (undefined4 *)puVar6[1];
+        uVar11 = puVar6[2];
+        *param_3 = unaff_r6;
+        *puVar5 = param_4;
+        puVar5[1] = uVar9;
+        puVar5[2] = puVar5;
+        puVar5[3] = unaff_r6;
+        puVar5[4] = uVar11;
+        *param_3 = unaff_r6;
+        puVar6 = (undefined4 *)*param_4;
+        unaff_r5 = (undefined4 *)param_4[1];
+        param_4 = param_4 + 2;
+        *param_3 = unaff_r6;
+        unaff_r4 = puVar6;
+        if (in_ZR != '\0') break;
+LAB_0025ea5c:
+        param_1 = (undefined4 *)(uint)*(byte *)(param_4 + 2);
+        *param_2 = unaff_r5;
+        while( true ) {
+          coprocessor_moveto(0xf,7,7,unaff_pc,in_cr12,in_cr15);
+          *param_3 = unaff_r6;
+          if (unaff_r4 != (undefined4 *)0x0) {
+            *param_3 = unaff_r6;
+            param_4 = (undefined4 *)*param_3;
+            unaff_r6 = (undefined4 *)param_3[1];
+            param_3 = param_3 + 2;
+          }
+          *param_3 = unaff_r6;
+          in_NG = (int)param_1 < 0;
+          in_ZR = param_1 == (undefined4 *)0x0;
+          if (param_1 != (undefined4 *)0x0) break;
+          *param_3 = unaff_r6;
+          unaff_r5 = (undefined4 *)0x25ee0c;
+          *param_3 = unaff_r6;
+          while( true ) {
+            *param_3 = unaff_r6;
+            if (in_OV != '\0') goto LAB_0025ea5c;
+            *param_3 = unaff_r6;
+LAB_0025eae4:
+            if (in_CY == false) goto LAB_0025ea5c;
+            *param_3 = unaff_r6;
+            if (in_OV != '\0') {
+              *param_3 = unaff_r6;
+              param_3 = (undefined4 *)*param_4;
+              unaff_r6 = (undefined4 *)param_4[3];
+              param_4 = param_4 + 5;
+              goto LAB_0025eaee;
+            }
+            unaff_r7 = (int *)((int)register0x00000054 + 0x3a0);
+            *param_3 = unaff_r6;
+            if (in_CY && !(bool)in_ZR) goto LAB_0025eb5c;
+            *param_3 = unaff_r6;
+            if (in_NG != '\0') break;
+            *param_3 = unaff_r6;
+          }
+        }
+LAB_0025eaee:
+        *param_3 = unaff_r6;
+        *param_3 = unaff_r6;
+        *param_3 = unaff_r6;
+        uVar9 = 0x25ec4c;
+        *param_3 = unaff_r6;
+        software_bkpt(0xac);
+        *param_3 = unaff_r6;
+        *param_2 = param_4;
+        param_2[1] = 0x25ec4c;
+        param_2[2] = unaff_r6;
+        param_2 = param_2 + 3;
+        *param_3 = unaff_r6;
+        puVar6 = param_3;
+      }
+      *param_3 = unaff_r6;
+      param_2 = (undefined4 *)((int)register0x00000054 + 0x2d0);
+      *param_3 = unaff_r6;
+      *param_3 = unaff_r6;
+      *puVar6 = param_4;
+      puVar6[1] = unaff_r5;
+      puVar6[2] = uVar11;
+      unaff_r4 = puVar6 + 3;
+      *param_3 = unaff_r6;
+      param_1 = (undefined4 *)
+                (uVar11 << 0x18 | (uVar11 >> 8 & 0xff) << 0x10 | (uVar11 >> 0x10 & 0xff) << 8 |
+                uVar11 >> 0x18);
+      *param_3 = unaff_r6;
+      unaff_r7 = *(int **)((int)register0x00000054 + 0x150);
+      *param_3 = unaff_r6;
+      unaff_r6 = *(undefined4 **)((int)register0x00000054 + 0x250);
+      *param_3 = unaff_r6;
+      if (param_1 == (undefined4 *)0x0) break;
+    }
+    else {
+LAB_0025eb4a:
+      *param_3 = unaff_r6;
+      unaff_r6 = (undefined4 *)0x25ec00;
+      *param_3 = 0x25ec00;
+      if (!in_CY || (bool)in_ZR) {
+LAB_0025ebec:
+        *unaff_r5 = param_4;
+        unaff_r5[1] = unaff_r4;
+        unaff_r5[2] = unaff_r7;
+        *param_3 = unaff_r6;
+        in_NG = (int)param_1 < 0;
+        if (in_NG == in_OV) {
+          bVar14 = (bool)hasExclusiveAccess((undefined4 *)(in_r12 + 0x58));
+          if (bVar14) {
+            *(undefined4 *)(in_r12 + 0x58) = unaff_r6;
+          }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        *param_3 = unaff_r6;
+        *param_1 = unaff_r5 + 3;
+        param_1[1] = unaff_r7;
+        *param_3 = unaff_r6;
+        param_1[2] = unaff_r4;
+        param_1 = param_1 + 3;
+        *param_3 = unaff_r6;
+LAB_0025ec00:
+        if (in_NG == '\0') {
+          *param_3 = unaff_r6;
+          software_bkpt(0xb4);
+          *param_3 = unaff_r6;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        *param_3 = unaff_r6;
+        *param_3 = unaff_r6;
+        coprocessor_movefromRt(0xf,6,7,in_cr8,in_cr15);
+        *param_2 = param_4;
+        *param_2 = unaff_r6;
+        *param_2 = unaff_r6;
+        param_1 = (undefined4 *)((uint)param_1 >> 0x15);
+        *param_2 = unaff_r6;
+        *param_2 = unaff_r6;
+        *param_3 = (undefined1 *)((int)register0x00000054 + 0x340);
+        *param_3 = (undefined1 *)((int)register0x00000054 + 0x340);
+        *param_2 = unaff_r6;
+        *param_2 = unaff_r6;
+        *param_1 = (undefined1 *)((int)register0x00000054 + 0x300);
+        *param_1 = (undefined1 *)((int)register0x00000054 + 0x217);
+        puVar10 = (undefined1 *)((int)unaff_r6 + -0xe1);
+        *param_1 = (undefined1 *)((int)register0x00000054 + 0x217);
+        *param_1 = (undefined1 *)((int)register0x00000054 + 0x187);
+        *param_2 = puVar10;
+        puVar12 = (undefined1 *)((int)register0x00000054 + 0xe3);
+        *(undefined4 *)((uint)param_2 >> 0x12) = puVar12;
+        *(undefined4 *)((uint)param_2 >> 0x12) = puVar12;
+        uVar3 = *(ushort *)((int)unaff_r6 + -0xad);
+        *param_2 = param_3;
+        *(undefined4 *)(uint)uVar3 = puVar12;
+        bVar14 = SBORROW4((int)puVar12,0x90);
+        puVar12 = (undefined1 *)((int)register0x00000054 + 0x53);
+        *(undefined4 *)(uint)uVar3 = puVar12;
+        sVar4 = *(short *)((int)param_3 + (int)puVar12);
+        *(undefined4 *)(int)sVar4 = puVar12;
+        *param_3 = (undefined1 *)((int)register0x00000054 + 0x110);
+        *(undefined1 **)(uint)*(byte *)(sVar4 * 2) = puVar12;
+        *param_3 = (undefined1 *)((int)register0x00000054 + 0xa0);
+        *param_2 = param_3;
+        *param_2 = puVar10;
+        *param_2 = puVar10;
+        *param_2 = puVar10;
+        *param_2 = puVar10;
+        *param_2 = puVar10;
+        *param_2 = puVar10;
+        *param_2 = param_3;
+        *param_2 = param_3;
+        *param_2 = param_3;
+        *param_2 = param_3;
+        *param_2 = param_3;
+        *param_2 = puVar10;
+        *param_2 = puVar10;
+        coprocessor_moveto(0xf,7,7,unaff_pc,in_cr12,in_cr15);
+        *param_3 = puVar10;
+        puVar6 = param_3;
+        do {
+          *puVar6 = puVar10;
+          do {
+            *puVar6 = puVar10;
+            *puVar6 = puVar10;
+            iVar7 = *(int *)((int)register0x00000054 + 0x260);
+            *puVar6 = puVar10;
+            *puVar6 = puVar10;
+            puVar5 = *(undefined4 **)((int)register0x00000054 + 0x330);
+            *puVar6 = puVar10;
+            puVar10 = *(undefined1 **)((int)register0x00000054 + 0x100);
+            *puVar6 = puVar10;
+            *puVar6 = puVar10;
+            *puVar5 = puVar10;
+            *puVar6 = puVar10;
+            *puVar6 = puVar10;
+            *puVar5 = puVar10;
+            uVar9 = *(undefined4 *)((int)register0x00000054 + 0xb0);
+            *puVar6 = puVar10;
+            **(undefined4 **)((int)register0x00000054 + 0xa0) = puVar10;
+            **(undefined4 **)((int)register0x00000054 + 0x210) = puVar10;
+            puVar6 = *(undefined4 **)((int)register0x00000054 + 0x380);
+            *puVar6 = puVar10;
+            *puVar5 = puVar10;
+            *puVar5 = puVar10;
+            coprocessor_moveto(0xf,7,7,unaff_pc,in_cr8,in_cr15);
+            bVar13 = -1 < (int)param_3;
+            if (!bVar13 && !bVar14) {
+              *puVar6 = puVar10;
+              *puVar6 = puVar10;
+              bVar2 = *(byte *)(iVar7 + 4);
+              *puVar5 = puVar10;
+              *(undefined4 *)(uint)bVar2 = uVar9;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+              halt_baddata();
+            }
+            *puVar6 = puVar10;
+          } while (bVar13 || bVar14);
+          *puVar5 = uVar9;
+        } while (bVar13 || bVar14);
+        *puVar5 = uVar9;
+        coprocessor_moveto(0xf,7,7,unaff_pc,in_cr4,in_cr15);
+                    /* WARNING: Does not return */
+        pcVar1 = (code *)software_udf(0x60,0x25f2e4);
+        (*pcVar1)();
+      }
+      *param_3 = 0x25ec00;
+      param_4 = (undefined4 *)((int)register0x00000054 + 0x330);
+      *param_3 = 0x25ec00;
+      if (in_OV != '\0') {
+        *param_3 = 0x25ec00;
+        param_3 = (undefined4 *)*unaff_r4;
+        uVar9 = unaff_r4[1];
+        unaff_r6 = (undefined4 *)unaff_r4[2];
+        *param_3 = unaff_r6;
+        *param_3 = param_3;
+        param_3[1] = unaff_r5;
+        param_3[2] = unaff_r6;
+        param_3[3] = unaff_r7;
+        *param_3 = unaff_r6;
+        goto LAB_0025ec20;
+      }
+      *param_3 = 0x25ec00;
+LAB_0025eb5c:
+      puVar6 = (undefined4 *)register0x00000054;
+      if (in_CY == false) goto LAB_0025ebc0;
+    }
+    *param_3 = unaff_r6;
+    if (in_NG == '\0') {
+      *param_3 = unaff_r6;
+      *param_3 = unaff_r6;
+      *param_3 = unaff_r5[1];
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+  } while( true );
+  *param_3 = unaff_r6;
+  param_4 = (undefined4 *)*unaff_r4;
+  unaff_r4 = (undefined4 *)puVar6[4];
+  unaff_r6 = (undefined4 *)puVar6[5];
+  unaff_r7 = (int *)puVar6[6];
+  goto code_r0x0025eb32;
+}
+
+
+
+=========== FUN_001eb344 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: This function may have set the stack pointer */
+/* WARNING: Removing unreachable block (ram,0x001eb666) */
+/* WARNING: Removing unreachable block (ram,0x001eb682) */
+/* WARNING: Removing unreachable block (ram,0x001eb684) */
+/* WARNING: Removing unreachable block (ram,0x001eac6a) */
+/* WARNING: Removing unreachable block (ram,0x001eac6c) */
+/* WARNING: Removing unreachable block (ram,0x001eac70) */
+/* WARNING: Removing unreachable block (ram,0x001eac74) */
+/* WARNING: Removing unreachable block (ram,0x001eac78) */
+/* WARNING: Removing unreachable block (ram,0x001eac7c) */
+/* WARNING: Removing unreachable block (ram,0x001eac80) */
+/* WARNING: Removing unreachable block (ram,0x001eac84) */
+/* WARNING: Removing unreachable block (ram,0x001eac88) */
+/* WARNING: Removing unreachable block (ram,0x001eac8c) */
+/* WARNING: Removing unreachable block (ram,0x001eac90) */
+/* WARNING: Removing unreachable block (ram,0x001eaca2) */
+/* WARNING: Removing unreachable block (ram,0x001eaba4) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_001eb344(void)
+
+{
+  code *pcVar1;
+  ushort uVar2;
+  char cVar3;
+  undefined4 uVar4;
+  uint uVar5;
+  undefined1 *extraout_r1;
+  undefined1 *puVar6;
+  uint *puVar7;
+  undefined4 *puVar8;
+  int extraout_r2;
+  uint uVar9;
+  int in_r3;
+  undefined4 *puVar10;
+  int iVar11;
+  uint uVar12;
+  int iVar13;
+  int iVar14;
+  uint uVar15;
+  undefined4 *unaff_r5;
+  undefined4 uVar16;
+  uint *puVar17;
+  uint *puVar18;
+  undefined4 *puVar19;
+  uint uVar20;
+  uint *puVar21;
+  undefined4 *unaff_r10;
+  int in_r12;
+  int unaff_lr;
+  int unaff_pc;
+  bool bVar22;
+  uint *puVar23;
+  undefined4 in_cr0;
+  undefined4 in_cr5;
+  undefined4 in_cr6;
+  undefined4 in_cr9;
+  undefined4 in_cr10;
+  undefined4 in_cr11;
+  undefined4 in_cr14;
+  undefined8 unaff_d9;
+  undefined8 in_d21;
+  undefined4 in_stack_00000020;
+  undefined4 in_stack_00000024;
+  uint uStack000001e4;
+  
+  puVar10 = (undefined4 *)(in_r3 >> ((uint)unaff_r5 & 0xff));
+  uVar2 = *(ushort *)(puVar10 + 10);
+  *(char *)((uVar2 >> 3) + 0xd) = (char)&stack0x000001d0;
+  uVar4 = *puVar10;
+  uVar16 = puVar10[2];
+  puVar19 = (undefined4 *)puVar10[3];
+  *(undefined4 **)(uVar2 + 0x4c) = puVar10 + 4;
+  iVar14 = iRam001eb588;
+  uStack000001e4 = (uint)uVar2;
+  puVar8 = *(undefined4 **)(iRam001eb588 + 0x44);
+  *puVar19 = uVar4;
+  puVar19[1] = puVar8;
+  puVar19[2] = unaff_r5;
+  puVar19[3] = uVar16;
+  iVar11 = ram0x0000000c;
+  if (SBORROW4((int)puVar8,(int)unaff_r10)) {
+    if (puVar8 != (undefined4 *)0x0) {
+      if (unaff_r10 <= puVar8) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    *(char *)(ram0x0000000c + 0x1b) = (char)((uint)unaff_r5 >> 8);
+    if (iVar11 == -0xf2) {
+      halt_baddata();
+    }
+  }
+  else {
+    uVar20 = (uint)*(char *)(puVar10 + 7);
+    iVar11 = unaff_r5[1];
+    iRam000000d8 = iVar14 + -0xd0;
+    *(undefined4 *)*unaff_r5 = 0xc;
+    uVar4 = *(undefined4 *)(uVar20 + 0x34);
+    register0x00000054 = (BADSPACEBASE *)0x0;
+    *(undefined4 *)(iVar11 + 0x34) = 0x1ebaf8;
+    coprocessor_store(0,in_cr9,in_r12 + -0x84);
+    *puVar8 = 0x1ebaf8;
+    puVar8[1] = uVar4;
+    puVar8[2] = puVar8;
+    puVar8[3] = iVar11;
+    puVar8[4] = uVar20;
+    if (uVar20 >> 0x14 != 0) {
+      unaff_lr = 0x1eb4ad;
+      func_0xff2ce866(0x3f4);
+      *(char *)(extraout_r2 + 9) = (char)extraout_r1;
+      puVar6 = extraout_r1;
+      if (extraout_r2 != 0) {
+                    /* WARNING: Does not return */
+        pcVar1 = (code *)software_udf(0xff,0x1eb4b0);
+        (*pcVar1)();
+      }
+      goto LAB_001eb506;
+    }
+    *(undefined4 *)
+     (*(int *)(*(ushort *)(uVar20 + iVar11) + 0x18) + *(byte *)((int)puVar8 * 2) + 0xae) =
+         uRam00000020;
+  }
+  puVar6 = (undefined1 *)((int)register0x00000054 + 0x170);
+LAB_001eb506:
+  iVar14 = iRam001eb56c;
+  uVar4 = uRam001eb564;
+  iVar11 = iRam001eb55c;
+  bVar22 = SCARRY4((uint)(byte)puVar6[-0x2e],iRam001eb56c);
+  iVar13 = (uint)(byte)puVar6[-0x2e] + iRam001eb56c;
+  uVar20 = (uint)*(ushort *)(iVar13 + 0x16);
+  *(uint *)uVar20 = uVar20;
+  *(undefined4 *)(uVar20 + 4) = 0;
+  *(undefined4 *)(uVar20 + 8) = uVar4;
+  *(int *)(uVar20 + 0xc) = iVar13;
+  if (!bVar22) {
+    do {
+      coprocessor_function(3,1,6,in_cr10,in_cr11,in_cr6);
+    } while( true );
+  }
+  *(undefined1 **)((int)register0x00000054 + -4) = puVar6 + (unaff_lr >> 9) + -0x33;
+  *(undefined4 *)((int)register0x00000054 + -8) = 0;
+  puVar23 = (uint *)((int)register0x00000054 + -0xc);
+  *puVar23 = uVar20;
+  *(undefined4 *)((int)register0x00000054 + 0x140) = 0x1eb594;
+  *(int *)(uVar20 + 0x48) = iVar14;
+  uVar15 = uRam0c00000c;
+  iVar13 = iRam0c000008;
+  iVar14 = iRam0c000004;
+  uVar4 = uRam0c000000;
+  cVar3 = *(char *)(iVar11 + 6);
+  *(undefined4 *)((int)register0x00000054 + 0x150) = 6;
+  puVar8 = (undefined4 *)(int)*(char *)(iVar11 + cVar3);
+  puVar17 = (uint *)puVar8[8];
+  *(short *)(puVar17 + 10) = (short)uRam0c00000c;
+  *(uint **)(iVar13 + iVar14) = puVar17;
+  uVar12 = *(uint *)(iVar13 + 4);
+  *puVar8 = uVar4;
+  puVar8[1] = iVar14;
+  puVar8[2] = uVar12;
+  puVar8[3] = puVar17;
+  puVar21 = puRam0000009a;
+  uVar20 = uRam00000096;
+  uVar2 = *(ushort *)(uVar12 + 0x34);
+  *(uint *)((int)register0x00000054 + 0x2e4) = uRam00000096;
+  *(uint *)(ram0x0000008e + 0x60) = uVar12;
+  *(undefined4 *)(uVar15 + 0x28) = 0x8e;
+  puVar7 = (uint *)0x1eb8a8;
+  *(ushort *)(uVar15 + 0xc) = uVar2;
+  uVar9 = (uint)*(byte *)(uVar2 + 0x1a);
+  bVar22 = true;
+  uVar5 = 0x1eb6cd;
+  while( true ) {
+    *puVar7 = uVar5;
+    puVar7[1] = (uint)puVar7;
+    puVar7[2] = uVar9;
+    puVar7[3] = uVar12;
+    puVar7[4] = uVar15;
+    puVar7[5] = uVar20;
+    puVar7[6] = (uint)puVar21;
+    iVar11 = _DAT_001eb904;
+    uVar12 = puVar23[0xd8];
+    if (!bVar22) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    iVar14 = unaff_pc;
+    if (uVar5 == 0) {
+      *(uint **)(uVar12 + 0x5c) = puVar21;
+      iVar14 = (int)(short)((ushort)((uVar9 & 0xff) << 8) | (ushort)(uVar9 >> 8) & 0xff);
+      puVar23[0xad] = uVar20;
+      *(int *)(iVar11 * 2) = iVar14;
+      iVar11 = _DAT_001eb6b4;
+      software_interrupt(0xdd);
+      uVar15 = (uint)*(byte *)(iVar14 + 6);
+      coprocessor_moveto(0xe,1,3,uVar15,in_cr6,in_cr5);
+      *(ushort *)(uVar12 + uVar15) = ~(ushort)uVar20;
+      puVar21 = puVar23 + 1;
+      uVar9 = puVar23[2];
+      puVar23 = puVar23 + 3;
+      coprocessor_function(2,6,7,in_cr0,in_cr9,in_cr14);
+      uRam00000047 = 0x61;
+      iVar11 = (int)*(char *)(uVar9 + iVar11);
+      *(undefined1 *)(*puVar21 + 0x2d) = 0x61;
+      uVar15 = (uint)*(byte *)(iVar11 + 0x5f5);
+      puVar21 = (uint *)(iVar11 + -0xd9);
+      uVar12 = (uint)*(byte *)(uVar15 + 0x1d);
+      puVar17 = (uint *)0x1eb861;
+      *(undefined2 *)(iVar11 + -0xa1) = 0x2d;
+      iVar14 = unaff_pc + -0x38c;
+      coprocessor_store(0xc,in_cr0,unaff_pc);
+    }
+    *(uint *)((int)puVar21 + (int)puVar17) = uVar15;
+    *(char *)(uVar12 + 0xf) = (char)uVar15;
+    uVar5 = *puVar21;
+    puVar17 = puVar21 + 3;
+    if (*puVar17 != 0) break;
+    puVar7 = *(uint **)(puVar21[1] + 0x68);
+    puVar21 = puVar23 + 0x27;
+    puVar18 = puVar23 + 0x43;
+    uVar15 = (uint)*(byte *)(*puVar17 + 10);
+    while( true ) {
+      uVar20 = 0x1eb9e7;
+      bVar22 = (uint *)0xad < puVar18;
+      puVar17 = puVar23 + 0xf0;
+      unaff_pc = iVar14;
+      if ((uint *)0xae < puVar18) break;
+      if (SBORROW4((int)puVar18,0xae)) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      puVar21 = (uint *)0x1eb764;
+      puVar18 = (uint *)0x29;
+      *(undefined2 *)(uVar12 + 0x12) = 0xb764;
+      uRam001eba13 = (undefined2)uVar15;
+      uVar9 = (uint)*(byte *)(uVar15 + uVar9);
+      VectorPairwiseMax(unaff_d9,in_d21,4,0);
+      *(uint *)(uVar12 + 8) = uVar12;
+      _DataAbort = CONCAT22((short)puVar7,_DataAbort);
+      uVar5 = (uint)bRam00000033;
+      uVar12 = puVar23[0x6c];
+      uRam001eba26 = (undefined1)_DAT_001eb760;
+      uVar15 = _DAT_001eb760;
+    }
+  }
+  halt_baddata();
+}
+
+
+
+=========== FUN_001f0ff4 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Removing unreachable block (ram,0x001f1784) */
+/* WARNING: Removing unreachable block (ram,0x001f0c8a) */
+/* WARNING: Removing unreachable block (ram,0x001f1af6) */
+/* WARNING: Removing unreachable block (ram,0x001f0e78) */
+/* WARNING: Removing unreachable block (ram,0x001f178c) */
+/* WARNING: Removing unreachable block (ram,0x00244628) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 * FUN_001f0ff4(undefined4 *param_1,uint *param_2,uint param_3)
+
+{
+  byte bVar1;
+  byte bVar2;
+  ushort uVar3;
+  undefined1 uVar4;
+  short sVar5;
+  char cVar6;
+  uint uVar7;
+  ushort *puVar8;
+  uint *puVar9;
+  uint *puVar10;
+  int iVar11;
+  uint uVar12;
+  ushort *puVar13;
+  uint extraout_r1;
+  uint extraout_r1_00;
+  int extraout_r1_01;
+  int *piVar14;
+  int *piVar15;
+  undefined4 extraout_r2;
+  int iVar16;
+  uint uVar17;
+  undefined4 *extraout_r2_00;
+  undefined4 extraout_r2_01;
+  uint *extraout_r2_02;
+  int extraout_r2_03;
+  undefined4 extraout_r2_04;
+  uint uVar18;
+  undefined4 *puVar19;
+  uint extraout_r3;
+  undefined1 *puVar20;
+  uint extraout_r3_00;
+  int extraout_r3_01;
+  int extraout_r3_02;
+  undefined4 extraout_r3_03;
+  uint unaff_r4;
+  uint *puVar21;
+  undefined4 uVar22;
+  code *pcVar23;
+  undefined4 *puVar24;
+  byte *pbVar25;
+  int iVar26;
+  uint *unaff_r6;
+  uint uVar27;
+  undefined4 uVar28;
+  undefined2 *puVar29;
+  uint *unaff_r7;
+  int iVar30;
+  uint uVar31;
+  undefined8 *puVar32;
+  undefined1 *puVar33;
+  undefined4 uVar34;
+  int unaff_r8;
+  int unaff_r10;
+  int unaff_r11;
+  int in_r12;
+  int extraout_r12;
+  uint extraout_r12_00;
+  int *piVar35;
+  int *piVar36;
+  int unaff_lr;
+  bool bVar37;
+  bool bVar38;
+  undefined1 uVar39;
+  bool bVar40;
+  undefined4 in_cr0;
+  undefined4 in_cr1;
+  undefined4 in_cr2;
+  undefined4 in_cr3;
+  undefined4 in_cr7;
+  undefined4 in_cr8;
+  undefined4 in_cr9;
+  undefined4 in_cr10;
+  undefined4 in_cr11;
+  undefined4 in_cr12;
+  undefined4 in_cr13;
+  undefined4 in_cr14;
+  undefined4 in_cr15;
+  undefined8 uVar41;
+  
+  while( true ) {
+    *unaff_r7 = param_3;
+    unaff_r7[1] = unaff_r4;
+    unaff_r7[2] = (uint)unaff_r7;
+    piVar14 = *(int **)register0x00000054;
+    puVar21 = *(uint **)((int)register0x00000054 + 4);
+    puVar24 = *(undefined4 **)((int)register0x00000054 + 8);
+    iVar30 = *(int *)((int)register0x00000054 + 0xc);
+    *param_1 = param_1;
+    param_1[1] = piVar14;
+    param_1[2] = unaff_r6;
+    bVar38 = SBORROW4((int)piVar14,0xa5);
+    piVar14[0x1d] = (int)puVar21;
+    bVar40 = ((uint)param_2 & 0x80000000) != 0;
+    uVar18 = (int)param_2 << 1;
+    bVar37 = uVar18 == 0;
+    if (!bVar40 || bVar37) break;
+    iVar30 = (int)*(short *)((int)puVar21 + (int)unaff_r6);
+    uVar3 = *(ushort *)((int)piVar14 + 0x16);
+    puVar24 = (undefined4 *)((int)(param_1 + 0xb) * 0x2000);
+    puVar19 = (undefined4 *)param_1[0xf];
+    piVar15 = (int *)((int)piVar14 >> 8);
+    iVar11 = uVar3 - 0x398;
+    coprocessor_store(0xd,in_cr7,iVar11);
+    bVar38 = SBORROW4(unaff_r8,unaff_r10);
+    *piVar15 = iVar11;
+    piVar15[1] = (int)puVar19;
+    piVar15[2] = (int)puVar24;
+    piVar15[3] = (int)unaff_r6;
+    piVar14 = piVar15 + 4;
+    uVar22 = *(undefined4 *)(uVar3 - 0x328);
+    param_2 = (uint *)((int)puVar24 >> 0x1b);
+    *puVar19 = piVar14;
+    puVar19[1] = puVar19;
+    puVar19[2] = uVar22;
+    puVar19[3] = puVar24;
+    puVar21 = _DAT_001f1250;
+    bVar40 = ((uint)piVar14 >> 0xb & 1) != 0;
+    uVar18 = (uint)piVar14 >> 0xc;
+    bVar37 = uVar18 == 0;
+    unaff_r6 = (uint *)piVar15[0x1a];
+    param_1 = (undefined4 *)((int)register0x00000054 + 0x3ac);
+    if (bVar37 || bVar38) break;
+    *(uint **)((int)param_2 + uVar18) = unaff_r6;
+    *puVar21 = (uint)param_1;
+    puVar21[1] = (uint)param_2;
+    puVar21[2] = (uint)piVar14;
+    puVar21[3] = (uint)unaff_r6;
+    puVar10 = puVar21 + 4;
+    if (puVar24 == param_1) {
+      uVar18 = *(uint *)((int)piVar14 + (int)param_1);
+      *unaff_r6 = (uint)param_1;
+      unaff_r6[1] = (uint)param_2;
+      unaff_r6[2] = (uint)piVar14;
+      unaff_r6[3] = uVar18;
+      unaff_r6[4] = (uint)puVar10;
+      unaff_r6[5] = (uint)puVar24;
+      unaff_r6[6] = (uint)unaff_r6;
+      *(short *)((int)register0x00000054 + 0x3be) = (short)unaff_r6;
+      sVar5 = (short)((int)puVar24 >> 0x1b);
+      if (unaff_r6 != (uint *)0x1) {
+        uVar18 = *(uint *)((int)register0x00000054 + 0x240);
+        *(uint *)((int)register0x00000054 + 0x410) = uVar18;
+        *(short *)((int)unaff_r6 + ((uint)puVar10 >> 0x14)) = sVar5;
+        piVar15[0x11] = (int)param_2;
+        puVar10 = (uint *)((int)unaff_r6 - uVar18);
+        param_1 = (undefined4 *)unaff_r6[7];
+      }
+      bVar40 = unaff_r6 == (uint *)0x1;
+      uVar7 = (int)piVar14 + (int)param_2 + (uint)bVar40;
+      *puVar10 = (uint)param_2;
+      puVar10[1] = uVar7;
+      puVar10[2] = uVar18;
+      puVar10[3] = (uint)puVar24;
+      *(uint *)((int)register0x00000054 + 700) = uVar7;
+      *(char *)(uVar18 + 0xe) = (char)uVar18;
+      if ((int)uVar7 < 0 ==
+          (SCARRY4((int)piVar14,(int)param_2) != SCARRY4((int)piVar14 + (int)param_2,(uint)bVar40)))
+      {
+        *(char *)((int)puVar24 + 0x12) = (char)param_1;
+        *(short *)((int)unaff_r6 + 0x2e) = sVar5;
+        *(uint *)((int)register0x00000054 + 0x208) = uVar7;
+        *(undefined4 **)((int)register0x00000054 + 0x398) = puVar24;
+        if (!SCARRY4((int)param_1,(int)puVar24)) {
+          param_2[9] = uVar7;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        puVar29 = (undefined2 *)(uint)*(ushort *)(uVar7 + 0x30);
+        iVar11 = 0x1f0e9c;
+        *(char *)((int)puVar24 + 0x13) = (char)((int)puVar24 >> 0x1b);
+        uVar12 = (int)puVar29 << 0xc;
+        uVar7 = (uint)*(ushort *)((int)puVar24 + -0x4f);
+        iVar30 = ((int)puVar24 >> 9) + 0x390;
+        coprocessor_loadlong(0xf,in_cr14,(int)puVar24 >> 9);
+        if (puVar29 != (undefined2 *)0x0) {
+          *(uint *)((int)puVar24 + -0x59) = uVar18;
+          *(int *)((int)puVar24 + -0x55) = iVar30;
+          bVar40 = (undefined2 *)0xffffff47 < puVar29;
+          puVar29 = puVar29 + 0x5c;
+          uVar12 = unaff_r6[0x10];
+          if (bVar40 && puVar29 != (undefined2 *)0x0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+            halt_baddata();
+          }
+          *(char *)(((int)puVar24 + -0x51 >> 0x10) + 5) = (char)uVar18;
+          iVar11 = *(int *)(uVar7 + 0x48);
+          *(uint *)((int)register0x00000054 + 0x374) = uVar18;
+          iVar30 = 0x24;
+          *(uint *)((int)register0x00000054 + 0x24) = uVar12;
+        }
+        *puVar29 = (short)iVar11;
+        *(uint *)(iVar11 + 0x4c) = (uint)*(byte *)(iVar11 + 0x1a);
+        puVar24 = (undefined4 *)
+                  (*(code *)((int)&DAT_00000081 + 2))
+                            (uVar7 - (iVar30 + -0x65),uVar7,uVar12,*(undefined4 *)(iVar11 + 0x30));
+        return puVar24;
+      }
+      uVar18 = unaff_r6[1];
+      uVar7 = unaff_r6[2];
+      iVar30 = *(int *)(uVar18 + 8);
+      iVar11 = *(int *)(uVar18 + 0xc);
+      iVar16 = *(int *)(uVar18 + 0x10);
+      iVar26 = *(int *)(uVar18 + 0x14);
+      bVar38 = SBORROW4(iVar26,iVar30);
+      *(int *)((int)register0x00000054 + 0x30c) = iVar16;
+      *(char *)(iVar26 + 0xb) = (char)uVar7;
+      bVar2 = *(byte *)(iVar16 + iVar11);
+      if (iVar26 != iVar30) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      _SupervisorCall = _SupervisorCall & 0xffff;
+      *(short *)(_UndefinedInstruction + 0x20) = (short)iVar30;
+      unaff_r6 = *(uint **)(bVar2 + uVar7);
+      param_1 = (undefined4 *)0x0;
+      goto LAB_001f0f32;
+    }
+    puVar29 = (undefined2 *)puVar24[8];
+    if (uVar18 != 0) {
+LAB_001f0fd4:
+      *(int **)((int)puVar10 + (int)param_2) = piVar14;
+      *puVar29 = (short)param_1;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    uVar7 = (uint)puVar24 | (uint)param_2;
+    uVar18 = piVar15[0xa5];
+    unaff_r6[0xc] = uVar18;
+    if (-1 < (int)uVar7) {
+      software_interrupt(0x18);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    coprocessor_storelong(8,in_cr2,in_r12);
+    *(undefined1 *)(uVar7 + 6) = 0;
+    *(uint **)((int)register0x00000054 + 0x58) = param_2;
+    if (uVar7 != 0) {
+      *(short *)((int)register0x00000054 + 0x3d2) = (short)uVar18;
+      return param_1;
+    }
+    param_1 = (undefined4 *)0xe8;
+    if (*(int *)((int)puVar29 + uVar18) == 0) {
+      piVar14 = (int *)((int)puVar21 + 0x15);
+      puVar29 = (undefined2 *)(uint)bRam001f109b;
+      param_2 = (uint *)(*(ushort *)((int)register0x00000054 + 0x3ea) - 0xd);
+      puVar10 = (uint *)(uint)*(ushort *)((int)puVar21 + 0x32);
+      param_1 = (undefined4 *)0xe8;
+      goto LAB_001f0fd4;
+    }
+    param_3 = unaff_r6[1];
+    unaff_r6 = unaff_r6 + 3;
+    param_2 = (uint *)0x1f127c;
+    unaff_r4 = *(uint *)((int)register0x00000054 + 300);
+    unaff_r7 = _DAT_001f1090;
+    in_r12 = in_r12 + 0x108;
+    register0x00000054 = (BADSPACEBASE *)((int)register0x00000054 + 0x10);
+  }
+  if (!bVar40 || bVar37) {
+LAB_001f0f32:
+    puVar24 = (undefined4 *)param_1[3];
+    uVar22 = *(undefined4 *)((int)register0x00000054 + 0x14);
+    iVar11 = *(int *)((int)register0x00000054 + 0x24);
+    iVar30 = (int)puVar24 * 0x80;
+    *(char *)(iVar11 + iVar30) = (char)*(undefined4 *)((int)register0x00000054 + 0x20);
+    if (bVar38) {
+      *puVar24 = 0xea;
+      puVar24[1] = uVar22;
+      puVar24[2] = iVar30;
+      puVar24[3] = puVar24;
+      puVar24[4] = unaff_r6;
+      puVar24[5] = iVar11;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    if (iVar30 == -0xc1) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(char *)((int)param_1 + 0x1a) = (char)piVar14;
+  *(short *)(param_2 + 0xd) = (short)piVar14;
+  while( true ) {
+    *(uint **)(uVar18 + 0x24) = param_2;
+    uVar7 = _DAT_001f1748;
+    bVar2 = *(byte *)((int)puVar24 + (int)param_1);
+    param_1 = (undefined4 *)(uint)bVar2;
+    *(short *)(uVar18 + 0x2a) = (short)puVar24;
+    iVar11 = iRam001f17b4;
+    iVar16 = (int)*(short *)((int)puVar21 + (int)param_1);
+    if (unaff_lr <= in_r12) break;
+    uVar18 = (int)param_2 + uVar7;
+    if ((int)uVar18 < 0) {
+      if (!CARRY4((uint)param_2,uVar7) || uVar18 == 0) {
+        *param_2 = (uint)param_1;
+        param_2[1] = (uint)param_2;
+        param_2[2] = uVar18;
+        param_2[3] = (uint)((int)register0x00000054 + 0x294);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      *(int *)((int)register0x00000054 + 0x3f0) = iVar30;
+      *(uint *)((int)register0x00000054 + 0x3f4) = uVar18;
+      *(uint **)((int)register0x00000054 + 0x3f8) = puVar21;
+      *(undefined4 **)((int)register0x00000054 + 0x3fc) = puVar24;
+      *(undefined4 *)((int)register0x00000054 + 0x400) =
+           *(undefined4 *)((int)register0x00000054 + 0x10c);
+      *(int *)((int)register0x00000054 + 0x404) = iVar30;
+      *(int *)((int)register0x00000054 + 0x46c) = iVar30;
+      *(uint **)((int)register0x00000054 + 600) = param_2;
+      *(uint **)(iVar30 + 0x74) = param_2;
+      *(char *)(iVar11 + 0x1c) = (char)param_2;
+      iVar16 = _DAT_001f17f0;
+      bVar2 = *(byte *)(iVar30 + 8);
+      *(short *)(iVar30 + 0x1a) = (short)iVar11;
+      *(ushort *)((int)puVar21 + 0x196) = (ushort)bVar2;
+      *(short *)(iVar11 + 0x16) = (short)iVar11;
+      *(uint *)(iVar11 + 0x7c) = uVar18;
+      unaff_lr = 0x1f146d;
+      uVar41 = func_0xff2b1692((uint)bVar2,0,iVar30 + 0xb);
+      param_2 = (uint *)((ulonglong)uVar41 >> 0x20);
+      param_1 = (undefined4 *)uVar41;
+      *param_1 = extraout_r2;
+      param_1[1] = extraout_r3;
+      param_1[2] = puVar21 + 0x59;
+      param_1[3] = (uint)bVar2;
+      param_1 = param_1 + 4;
+      uVar18 = extraout_r3;
+      puVar21 = puVar21 + 0x59;
+      iVar30 = iVar16;
+      in_r12 = extraout_r12;
+    }
+    else if (SCARRY4((int)param_2,uVar7)) {
+      *param_1 = param_1;
+      param_1[1] = param_2;
+      param_1[2] = iVar16;
+      param_1[3] = uVar18;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+  }
+  puVar19 = (undefined4 *)(uVar7 + (int)puVar21);
+  *puVar19 = param_2;
+  puVar19[1] = puVar21;
+  puVar19[2] = puVar24;
+  puVar19[3] = uVar7;
+  puVar19[4] = puVar19;
+  software_bkpt(0x65);
+  *(byte *)(param_2 + 1) = bVar2;
+  uVar31 = (uint)*(char *)((int)param_2 + (int)param_1);
+  iVar11 = *(int *)(iVar16 + 0x308);
+  iVar30 = *(int *)(iVar16 + 0x30c);
+  uVar17 = *(uint *)((int)register0x00000054 + 0x460);
+  *(undefined1 *)(uVar17 + 2) = *(undefined1 *)(iVar16 + 0x30a);
+  *(short *)(uVar31 + 0x38) = (short)param_2;
+  bVar2 = *(byte *)(uVar31 + 0xf);
+  puVar24 = (undefined4 *)(uint)bVar2;
+  *(ushort *)((int)puVar24 + 0x3e) = (ushort)bVar2;
+  *(char *)(iVar11 + ((int)((int)register0x00000054 + 0x458) >> ((uint)puVar21 & 0xff))) =
+       (char)puVar21;
+  uVar12 = ((int)((int)register0x00000054 + 0x458) >> ((uint)puVar21 & 0xff)) >> 0x13;
+  uVar27 = *(uint *)(uVar18 + 0x6c);
+  uVar7 = uVar12 >> 0x1b;
+  uVar18 = (int)uVar18 >> 0xe;
+  *puVar21 = uVar17;
+  puVar21[1] = uVar31;
+  puVar21 = puVar21 + 2;
+  puVar20 = (undefined1 *)0x0;
+  piVar14 = (undefined4 *)((int)register0x00000054 + 0xf4);
+  if (uVar18 == 0) goto LAB_001f1b78;
+  puVar10 = (uint *)(int)*(short *)(uVar31 + uVar17);
+  puVar33 = (undefined1 *)(int)(short)uVar17;
+  if ((int)uVar18 < 0) {
+LAB_001f1b08:
+    *(uint *)(puVar33 + 0x48) = uVar12;
+    *(uint **)(puVar33 + 0x2c) = puVar10;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  puVar21 = (uint *)((int)register0x00000054 + 0x264);
+  *(short *)(puVar33 + 0x10) = (short)uVar27;
+  *puVar10 = uVar12;
+  puVar10[1] = (uint)puVar21;
+  puVar10[2] = (uint)puVar24;
+  puVar10[3] = uVar27;
+  puVar10[4] = (uint)puVar33;
+  puVar9 = puVar10 + 5;
+  uVar7 = 0x37;
+  puVar19 = (undefined4 *)((int)register0x00000054 + 0x420);
+  puVar24 = (undefined4 *)
+            ((uint)(bVar2 >> ((uint)puVar9 & 0x1f)) | (int)puVar24 << 0x20 - ((uint)puVar9 & 0x1f));
+  *(uint **)((int)register0x00000054 + 0x224) = puVar21;
+  uVar39 = SBORROW4((int)puVar21,0xa6);
+  uRam0000003b = 0x37;
+  piVar14 = (undefined4 *)((int)register0x00000054 + 0xf4);
+  puRam00000037 = puVar9;
+  uRam0000003f = uVar18;
+  puRam00000043 = puVar24;
+  uRam00000047 = uVar27;
+  if (puVar21 == (uint *)0xa6) {
+    do {
+      uVar17 = (int)puVar21 >> 0x13;
+      *(short *)(puVar24 + 0xb) = (short)puVar21;
+      *(short *)((int)puVar21 + 0x1e) = (short)puVar33;
+      *(uint **)(uVar18 + 0x18) = puVar21;
+      if (uVar18 == 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      *(undefined4 **)(uVar7 + 0x2c) = puVar19;
+      puVar32 = (undefined8 *)(uVar18 - 6);
+      *(uint *)uVar7 = uVar7;
+      *(undefined4 **)(uVar7 + 4) = puVar19;
+      *(uint *)(uVar7 + 8) = uVar18;
+      *(uint **)(uVar7 + 0xc) = puVar21;
+      *(uint *)(uVar7 + 0x10) = uVar17;
+      if (-1 < (int)(uVar7 - 0xb)) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      *(short *)(uVar7 + 0x2a) = (short)puVar19;
+      *(uint **)(uVar7 + 8) = puVar21;
+      puVar21 = puVar9;
+      if (uVar7 == 0xb) {
+LAB_001f17dc:
+        *(undefined8 **)(uVar7 + 0x78) = puVar32;
+        uVar22 = _DataAbort;
+        uVar7 = _SupervisorCall;
+        if (uVar18 == 0) {
+          uVar41 = func_0xffb2a0de(puVar21,_Reset,*(undefined4 *)((int)piVar14 + 0x118),
+                                   _UndefinedInstruction);
+          *(undefined8 **)((int)piVar14 + 0x3f4) = puVar32;
+          uVar3 = *(ushort *)(extraout_r3_01 + 10);
+          *puVar32 = uVar41;
+          *(undefined4 *)(puVar32 + 1) = extraout_r2_01;
+          *(uint *)((int)puVar32 + 0xc) = (uint)uVar3;
+          *(uint *)(puVar32 + 2) = uVar7;
+          *(undefined4 *)((int)puVar32 + 0x14) = uVar22;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        uVar12 = uVar18 << 0x14;
+        *(undefined4 *)((int)piVar14 + 0x16c) = _DAT_001f1f58;
+        *(short *)(uVar18 + 0x26) = (short)_DAT_001f1f58;
+        uVar3 = *(ushort *)((int)puVar21 + uVar17 + 0x38);
+        *(uint *)((int)piVar14 + 0x2f0) = uVar12;
+        *puVar21 = (uint)uVar3;
+        puVar21[1] = uVar12;
+        uVar7 = puVar19[10];
+        puVar21[2] = (uint)puVar19;
+        puVar21[3] = uVar18;
+        puVar21[4] = uVar7;
+        puVar21[5] = uVar12;
+        DAT_0000009d._1_3_ = (uint3)DAT_0000009d._1_1_;
+                    /* WARNING: Does not return */
+        pcVar23 = (code *)software_udf(0x31,0x1f20f6);
+        (*pcVar23)();
+      }
+      if (puVar9 == (uint *)0x0) {
+        *(undefined4 **)(uVar17 + 0x78) = puVar19;
+      }
+      piVar15 = piRam00007c6e;
+      puVar10 = puRam00007c6a;
+      bVar40 = SCARRY4((int)puVar19,0xfc);
+      iVar11 = *(int *)(uVar17 + 8);
+      uVar18 = uVar17 + 0x14;
+      if (piVar14 != (int *)0xfffffec0) {
+        *(undefined4 *)((int)piVar14 + 0x18) = *(undefined4 *)(uVar17 + 0x10);
+        puVar19 = (undefined4 *)(uint)*(ushort *)(iVar11 + 0x20);
+        puVar21 = (uint *)*puVar9;
+        uVar7 = puVar9[1];
+        uVar17 = puVar9[3];
+        puVar32 = (undefined8 *)puVar9[4];
+        uVar18 = iRam001f1b54 + 0x50;
+        goto LAB_001f17dc;
+      }
+      uVar27 = puVar9[4];
+      bVar38 = false;
+      bVar37 = false;
+      uVar12 = 0x7c7e;
+      uVar7 = puRam00007c6a[0xb9];
+      puVar24 = puRam00007c7a;
+      piVar14 = (int *)(undefined1 *)0xfffffec0;
+      do {
+        piVar35 = piVar14;
+        piVar35[-1] = uVar27;
+        piVar35[-2] = uVar18;
+        piVar35[-3] = (int)puVar24;
+        piVar35[-4] = (uint)(ushort)uVar7;
+        piVar14 = piVar35 + -5;
+        *piVar14 = (int)puVar10;
+        if (!bVar38) {
+          puVar20 = (undefined1 *)(uint)*(byte *)(uVar12 + 0xd);
+          puVar21 = (uint *)piVar35[0xd];
+          if (bVar40) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+            halt_baddata();
+          }
+          puVar33 = (undefined1 *)0x0;
+          piVar36 = piVar14;
+          if (*(byte *)(uVar27 + 8) >> 3 != 0) goto LAB_001f1a2e;
+          goto LAB_001f1ae0;
+        }
+        puVar24 = (undefined4 *)(int)*(char *)((int)puVar10 * 2);
+        if (bVar37) {
+          piVar35[0xae] = (int)piVar15;
+          *(short *)(*(ushort *)(puVar24 + 5) + 0x22) = (short)uVar18;
+          coprocessor_function2(0xe,0xe,0,in_cr8,in_cr0,in_cr7);
+          *(short *)(*(ushort *)(uVar12 * 2) + 0x28) = (short)uVar12;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        *(char *)((int)puVar10 + uVar27) = (char)piVar15;
+        *piVar15 = (int)puVar10;
+        piVar15[1] = 0x15;
+        piVar15[2] = (int)piVar15;
+        piVar15[3] = (uint)(ushort)uVar7;
+        piVar15[4] = (int)puVar24;
+        piVar15[5] = uVar18;
+        piVar15[6] = uVar27;
+        puVar20 = _DAT_001f1c58;
+        bVar40 = SBORROW4(uVar18,1);
+        uVar12 = uVar17 + 0x13;
+        bVar38 = uVar12 == 0;
+        bVar37 = true;
+      } while ((int)uVar12 < 0);
+      uVar3 = *(ushort *)(piVar15 + 0xb);
+      puVar8 = (ushort *)(puVar24 + 9);
+      piVar14 = piVar35 + -0x28;
+      puVar13 = (ushort *)piVar35[0x69];
+      puVar24 = (undefined4 *)((int)puVar13 + 3);
+      *(uint *)(*puVar8 + 0x1c) = (uint)*puVar8;
+      *(ushort *)(puVar20 + 0x24) = uVar3;
+      puVar19 = *(undefined4 **)(puVar13 + 0x10);
+      if ((uint)puVar24 >> 0x10 != 0 && !SCARRY4((int)puVar13,3)) {
+        uVar3 = uVar3 >> 6;
+        uRam000000c7 = (uint)uVar3;
+        iRam000000cf = *(int *)(puVar13 + 0x36);
+        iRam000000b7 = ((int)(piVar35 + -0x28) * 0x20 >> 0xd) + -0xc6;
+        *puVar13 = uVar3;
+        uRam000000bb = _DAT_001f1a18;
+        uRam000000cb = 0xb7;
+        uVar34 = *puVar19;
+        uVar28 = puVar19[1];
+        pcVar23 = (code *)puVar19[2];
+        piVar35[0x9d] = (int)pcVar23;
+        puRam000000bf = puVar20;
+        puRam000000c3 = puVar19;
+        *(char *)(iRam000000cf + uRam000000c7) = (char)uVar3;
+        uVar22 = uRam001f1fac;
+        (*pcVar23)(uVar34,uVar28);
+        *(undefined4 *)pcVar23 = extraout_r3_03;
+        *(code **)(pcVar23 + 4) = pcVar23;
+        *(undefined4 *)(pcVar23 + 8) = uVar22;
+        uRam001f2022 = (undefined2)extraout_r3_03;
+        *(undefined4 *)(extraout_r1_01 + 4) = _DAT_001f21f8;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      *(short *)(puVar19 + 3) = (short)puVar13;
+      uVar18 = (uint)*(byte *)((int)puVar13 + (int)_DAT_001f1d28);
+      piVar15 = _DAT_001f1d28;
+      piVar36 = piVar35 + -0x28;
+      if (SCARRY4((int)puVar13,3)) {
+LAB_001f1a2e:
+        iVar30 = _DAT_001f1ccc;
+        uVar7 = (int)uVar18 >> 3;
+        piVar36[0x6d] = _DAT_001f1ccc;
+        *puVar24 = piVar15;
+        puVar24[1] = puVar20;
+        puVar24[2] = uVar7;
+        piVar14 = puVar24 + 3;
+        iVar11 = (int)piVar14 >> 0xf;
+        if (((int)piVar14 >> 0xe & 1U) != 0) {
+          *(int *)((int)puVar24 + uVar18 + 0x1f1c20) = iVar30;
+          coprocessor_moveto(5,2,6,(undefined4 *)((int)puVar24 + 0x1f1caf),in_cr14,in_cr14);
+          iVar30 = _DAT_001f2140 + 0xed;
+          *(undefined4 *)((int)puVar24 + 0x1f1caf) = 0xd1;
+          *(int *)((int)puVar24 + 0x1f1cb3) = iVar30;
+          *(int **)((int)puVar24 + 0x1f1cb7) = piVar14;
+          *(undefined4 *)((int)puVar24 + 0x1f1cbb) = 0x25;
+          *(uint *)((int)puVar24 + 0x1f1cbf) = uVar7;
+          coprocessor_function(0xf,0xf,6,in_cr1,in_cr13,in_cr7);
+          if (uRam00000025 < uVar7) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+            halt_baddata();
+          }
+          iVar30 = piVar36[7];
+          iVar11 = piVar36[9];
+          *(short *)(piVar36[8] + piVar36[4]) = (short)piVar36[0xb];
+          *(char *)(iVar30 + 0x10) = (char)iVar11;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        iRam001f1c28 = uVar18 + 0xbe;
+        cVar6 = (char)iRam001f1c28;
+        iRam001f1c14 = iVar30;
+        iRam001f1c18 = iVar11;
+        puRam001f1c1c = puVar20;
+        uRam001f1c20 = 0x22;
+        piRam001f1c24 = piVar14;
+        *piVar14 = iVar30;
+        puVar24[4] = 0x1f1c2c;
+        puVar24[5] = piVar14;
+        iVar30 = (iVar11 + 6) * 0x20000;
+        iVar16 = *(int *)(iVar11 + 0x52);
+        piVar36[0x5e] = (int)(puVar20 + 0x1a);
+        uVar41 = func_0xffd90312();
+        iVar11 = (int)((ulonglong)uVar41 >> 0x20);
+        uVar18 = iVar11 + 0xae;
+        *(uint *)(iVar16 + -0x6e + iVar30) = uVar18;
+        *(char *)(uVar7 + 0xf) = (char)uVar18;
+        *(char *)((int)uVar41 + 0x12) = (char)(iVar16 + -0x6e);
+        *(char *)(extraout_r2_03 + iVar30) = cVar6 + '1';
+        uVar7 = *(uint *)(iVar16 + -0x66);
+        iVar16 = *(int *)(iVar16 + -0x62);
+        coprocessor_moveto(1,1,6,piVar36 + 0xbb,in_cr14,in_cr10);
+        iVar30 = piVar36[0x4b];
+        puVar21 = (uint *)(iVar30 >> 0x1b);
+        piVar36[0xbd] = iVar16;
+        coprocessor_store(6,in_cr11,unaff_r11);
+        *(int *)(uVar18 + (int)(piVar36 + 0xbb)) = iVar16 >> 0xf;
+        if (-1 < (int)((uint)puVar21 & 0xfffe37ff)) {
+          piVar36[0x6f] = iVar30;
+          uVar12 = *puVar21;
+          uVar17 = puVar21[1];
+          uVar27 = puVar21[2];
+          uVar31 = puVar21[4];
+          if (((uint)puVar21 & 0xfffe37ff) == 0 || SCARRY4(iVar11,0xae)) {
+            *(char *)(uVar27 + 0x1a) = (char)uVar7;
+          }
+          puVar20 = (undefined1 *)(uVar12 >> 0x17);
+          iVar30 = uVar7 - 0xbd;
+          uVar39 = SUB41(puVar21 + 5,0);
+          if (iVar30 == 0) {
+            if (0xbc < (int)uVar7) {
+              coprocessor_function(0xe,3,6,in_cr14,in_cr9,in_cr0);
+              halt_baddata();
+            }
+            *(char *)((int)puVar21 + 0x21) = (char)uVar18;
+            *(uint *)(uVar7 - 0x69) = uVar27;
+            *(undefined1 *)(uVar7 - 0xb0) = uVar39;
+            *(uint *)(puVar20 + 0x60) = uVar31;
+            uVar22 = *(undefined4 *)(puVar20 + 100);
+            *(undefined1 *)(uVar7 - 0xb0) = uVar39;
+            *(undefined4 *)(puVar20 + 0x70) = uVar22;
+            uVar22 = *(undefined4 *)(uVar7 - 0xb9);
+            *(uint *)(puVar20 + 0x34) = uVar18;
+            uVar34 = *(undefined4 *)(puVar20 + 100);
+            *(undefined4 *)(puVar20 + 0x14) = uVar22;
+            *(uint *)(puVar20 + 100) = (uint)(byte)puVar20[5];
+            uVar12 = *(uint *)(puVar20 + 0x14);
+            *(undefined4 *)(puVar20 + 0x74) = 0;
+            *(uint *)(uVar7 - 0x69) = uVar17;
+            uVar39 = (undefined1)uVar34;
+            *(undefined1 *)(uVar12 + 0x15) = uVar39;
+            *(uint *)(puVar20 + 0x14) = uVar12;
+            uVar4 = (undefined1)uVar12;
+            *(undefined1 *)(uVar7 - 0xac) = uVar4;
+            iVar30 = uVar12 * 2;
+            *(undefined1 *)(uVar17 + uVar18) = uVar4;
+            uVar22 = _DAT_001f2114;
+            puVar20 = (undefined1 *)(uVar18 >> 8);
+            *(undefined4 *)(uVar17 + 0x54) = _DAT_001f2114;
+            *(char *)(iVar30 + 0x19) = (char)uVar17;
+            *(char *)(uVar12 + 9) = (char)(uVar18 >> 8);
+            piVar14 = (int *)0x3a;
+            puVar20[0x1d] = uVar4;
+            *(uint *)(uVar18 * 2) = uVar18;
+            puVar20[0x11] = 0x3a;
+            *(undefined1 *)(iVar30 + 1) = uVar4;
+            puVar20[0xc] = uVar39;
+            *(char *)(uVar12 + 0x19) = (char)((ulonglong)uVar41 >> 0x20) + '\v';
+            uVar34 = *(undefined4 *)(uVar12 + 100);
+            *(int *)(puVar20 + 0x14) = iVar30;
+            uVar28 = *(undefined4 *)(puVar20 + 0x74);
+            *(undefined4 *)(puVar20 + 0x74) = uVar28;
+            puVar20[0x15] = (char)uVar28;
+            iVar30 = *(int *)(puVar20 + 0x70);
+            *(uint *)(iVar30 + 0x74) = uVar17;
+            *puVar20 = uVar39;
+            *(undefined4 *)(puVar20 + 0x54) = *(undefined4 *)(iVar30 + 0x74);
+            *(char *)(uVar12 + 0x11) = (char)uVar22 + '.';
+            puVar20[0x1d] = uVar4;
+            puVar20[1] = (char)uVar34;
+            uVar18 = uVar18 >> 0x1c;
+          }
+          else {
+            *(undefined1 *)(uVar31 + 0x18) = uVar39;
+            if (puVar21 + 5 == (uint *)0x0) {
+              *(uint *)(uVar27 + uVar17) = uVar27;
+              uVar22 = *piVar36;
+              iVar30 = piVar36[1];
+              iVar11 = piVar36[2];
+              puVar24 = (undefined4 *)piVar36[3];
+              *(short *)(puVar20 + 0x22) = (short)puVar24;
+              uVar22 = func_0xff3c3e84(uVar22,uVar18,uVar17,iVar30);
+              *(short *)(extraout_r3_02 + 0x12) = (short)extraout_r3_02;
+              *puVar24 = uVar22;
+              puVar24[1] = extraout_r2_04;
+              puVar24[2] = extraout_r3_02;
+              puVar24[3] = iVar11;
+              puVar24[4] = (uVar31 - uVar17) - (uint)(uVar7 < 0xbd);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+              halt_baddata();
+            }
+            uVar12 = (uint)*(ushort *)(puVar20 + 0x10);
+            piVar14 = piVar36 + 0x5f;
+            uVar18 = *(uint *)(puVar20 + 0x58);
+          }
+          uVar22 = *(undefined4 *)(puVar20 + 100);
+          *(uint *)(iVar30 + 0x54) = uVar12;
+          puVar20[0x11] = (char)iVar30;
+          iVar30 = _DAT_001f20d4;
+          *(char *)(_DAT_001f20d4 + 0x11) = (char)uVar22;
+          uVar7 = uVar18 >> 8;
+          uVar22 = *(undefined4 *)((int)piVar14 + 0x3b);
+          iVar16 = *(int *)(uVar7 + 100);
+          *(uint *)(iVar30 + 0x34) = uVar7;
+          iVar30 = *(int *)(iVar16 + 0x14);
+          *(undefined4 *)(uVar7 + 0x54) = uVar22;
+          *(char *)(iVar30 + 1) = (char)(uVar18 >> 8);
+          *(uint *)(uVar7 + 0x10) = uVar7;
+          iVar11 = *(int *)(uVar7 + 0x14);
+          *(int *)(iVar16 + 0x54) = iVar16;
+          *(char *)((uVar18 >> 8) + 0x11) = (char)iVar16;
+          iVar30 = ram0x0000009e;
+          iVar11 = *(int *)(iVar11 + 0x14);
+          *(int *)(ram0x0000009e + 0x74) = iVar16;
+          bVar2 = *(byte *)(iVar11 + 9);
+          *(char *)(iVar30 + 1) = (char)uVar18;
+          uVar22 = uRam000000ae;
+          *(char *)((uVar18 >> 8) + 0x11) = (char)iVar16;
+          pbVar25 = *(byte **)(iVar11 + 100);
+          bVar1 = *(byte *)(iVar16 + 5);
+          uVar18 = (uint)bVar1;
+          *(undefined4 *)(iVar16 + 0x54) = 0x3a;
+          *(uint *)(iVar16 + 0x54) = uVar18;
+          *(undefined1 *)(bVar2 + 0x11) = 0x3a;
+          *pbVar25 = bVar2;
+          *(uint *)(pbVar25 + 0x14) = uVar18;
+          puVar24 = *(undefined4 **)(pbVar25 + 100);
+          uVar7 = (uint)puVar24 >> 8;
+          puRam0000006e = puVar24;
+          *(undefined4 *)(uVar18 + 0x54) = uVar22;
+          *(char *)(iVar16 + 0xd) = (char)uVar22;
+          *(byte *)(iVar16 + 9) = bVar1;
+          *(char *)(((int)uVar7 >> (uVar7 & 0xff)) + 0x1d) = (char)*(undefined4 *)(uVar7 + 0x44);
+          return puVar24;
+        }
+        software_interrupt(0x90);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      puVar21 = (uint *)(uint)*(byte *)((int)piVar35 + 0x1ea);
+      puVar10 = (uint *)0xee;
+      uVar12 = 0x10;
+      puVar33 = (undefined1 *)(int)(char)*(byte *)((int)piVar35 + 0x1ea);
+      puVar20 = (undefined1 *)0x1f1bec;
+      piVar15 = (int *)0x1f;
+      puVar24 = puRam001f1bf8;
+LAB_001f1ae0:
+      *(char *)puVar24 = (char)piVar15;
+      uVar12 = uVar12 & (uint)puVar24;
+      if (uVar18 == 0) {
+        *piVar15 = (int)puVar10;
+        piVar15[1] = uVar12;
+        piVar15[2] = (int)puVar20;
+        piVar15[3] = (int)puVar24;
+        piVar15[4] = 0;
+        *(short *)((int)puVar24 + 0x3a) = (short)puVar24;
+        uVar7 = (uint)(char)piVar14[0xc9];
+        bVar40 = false;
+      }
+      else {
+        if (puVar21 == (uint *)0x0) goto LAB_001f1b08;
+        bVar40 = SBORROW4((int)puVar21,0x6e);
+        puVar21 = (uint *)((int)puVar21 + -0x6e);
+        iVar11 = iVar30;
+        if ((int)puVar21 * 0x100000 < 0 == bVar40) {
+          puVar21 = (uint *)((int)piVar15 << 0x12);
+          iVar11 = iVar30 + 0xf4;
+          coprocessor_load(2,in_cr3,iVar30);
+        }
+        iVar30 = piVar15[2];
+        puVar24 = (undefined4 *)piVar14[0x99];
+        piVar14[-1] = unaff_lr;
+        piVar14[-2] = (int)puVar21;
+        piVar36 = piVar14 + -3;
+        *piVar36 = iVar30;
+        puVar8 = (ushort *)(puVar20 + (int)piVar15 * 2);
+        bVar2 = *(byte *)(uVar12 + 0xf);
+        uVar17 = (uint)piVar36 >> 0xe | (int)piVar36 * 0x40000;
+        puVar20 = (undefined1 *)(((uint)unaff_r6 | 0xffd47fff) + uVar17);
+        *(short *)(piVar15 + 9) = (short)puVar24;
+        *(char *)((int)piVar15 + 5) = (char)puVar20;
+        *puVar8 = (ushort)bVar2;
+        *(byte *)(uVar12 * 2 + 2) = bVar2;
+        *puVar20 = (char)uVar18;
+        bVar40 = (bool)hasExclusiveAccess((int *)(uVar18 + 0x1a0));
+        bVar40 = !bVar40;
+        if (!bVar40) {
+          *(int *)(uVar18 + 0x1a0) = unaff_lr;
+        }
+        uVar7 = (uint)bVar40;
+        uVar3 = (ushort)(((uint)piVar15 & 0xff) << 8) | (ushort)((uint)piVar15 >> 8) & 0xff;
+        uVar31 = (uint)(short)uVar3;
+        piVar14[0x9c] = (int)puVar20;
+        if (SCARRY4((uint)unaff_r6 | 0xffd47fff,uVar17)) {
+          *(ushort *)(uVar7 + (int)piVar15) = uVar3;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+          halt_baddata();
+        }
+        piVar14[0x5d] = 0x26;
+        puVar20[0x26] = (char)((uint)piVar15 >> 8);
+        *(uint *)(puVar20 + 0x68) = uVar7;
+        *(bool *)((int)puVar21 + 0xb) = bVar40;
+        iVar30 = iVar11;
+        piVar14 = piVar36;
+LAB_001f1b78:
+        bVar40 = SBORROW4(uVar31,0x12);
+      }
+      do {
+        software_bkpt(0x1a);
+      } while ((int)puVar21 < 0 && (int)puVar21 >> 0x1f < 0 == bVar40);
+      puVar33 = (undefined1 *)((int)puVar21 + (int)puVar20);
+      unaff_lr = 0x1f1b8b;
+      func_0xff89daf8(uVar7 - 0x40,(int)puVar21 >> 0x1f,(undefined1 *)((int)piVar14 + 0x2ac));
+      puVar9 = (uint *)(extraout_r3_00 + (int)puVar24);
+      uVar7 = extraout_r1;
+      puVar19 = extraout_r2_00;
+      uVar18 = extraout_r3_00;
+    } while( true );
+  }
+  func_0xffa998ac(*(undefined2 *)((int)register0x00000054 + 0x284));
+  uVar7 = *(uint *)(unaff_r11 + 0x2c4);
+  uVar18 = *(uint *)((int)register0x00000054 + 400);
+  puVar21 = (uint *)(extraout_r1_00 >> 1);
+  bVar40 = false;
+  if ((extraout_r1_00 & 1) != 0) {
+    *puVar21 = extraout_r1_00;
+    puVar21[1] = (uint)extraout_r2_02;
+    puVar21[2] = (uint)extraout_r2_02 >> 6;
+    puVar21[3] = (uint)puVar21;
+    puVar21[4] = (uint)puVar33;
+    *(uint **)((int)register0x00000054 + 0xf0) = puVar21 + 5;
+    *(uint **)((int)register0x00000054 + 0xec) = puVar21;
+    *(uint **)((int)register0x00000054 + 0xe8) = extraout_r2_02;
+    *(uint *)((int)register0x00000054 + 0xe4) = extraout_r1_00;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  do {
+    *extraout_r2_02 = (uint)puVar21;
+    bVar37 = (int)uVar18 < 0;
+    bVar38 = uVar18 == 0;
+    *extraout_r2_02 = (uint)puVar21;
+    if (bVar37 != (bool)uVar39) {
+LAB_002446e0:
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+LAB_00244724:
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+FUN_00244730:
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr8,in_cr15);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    *extraout_r2_02 = extraout_r1_00;
+    uVar3 = *(ushort *)((int)puVar21 * 2);
+    *extraout_r2_02 = (uint)puVar21;
+    if (bVar37 != (bool)uVar39) goto LAB_002446e0;
+    *extraout_r2_02 = extraout_r1_00;
+    if (bVar37 != (bool)uVar39) goto LAB_00244724;
+    *extraout_r2_02 = extraout_r1_00;
+    if (!bVar40 || bVar38) {
+      *extraout_r2_02 = extraout_r1_00;
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      coprocessor_movefromRt(0xf,1,7,in_cr12,in_cr15);
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      *extraout_r2_02 = (uint)puVar33;
+      goto LAB_002446e0;
+    }
+    while( true ) {
+      uVar12 = (int)(uint)uVar3 >> 3;
+      if (bVar38) {
+        uVar18 = uVar18 & uVar12 & uVar12;
+      }
+      if ((bool)uVar39) {
+        bVar40 = (bool)((byte)(extraout_r12_00 >> 0x16) & 1);
+        bVar38 = (undefined1 *)(extraout_r1_00 & (int)extraout_r12_00 >> 0x17) == (undefined1 *)0x0;
+      }
+      if (!bVar40 || bVar38) break;
+      if ((bool)uVar39) {
+                    /* WARNING: Could not recover jumptable at 0x00244624. Too many branches */
+                    /* WARNING: Treating indirect jump as call */
+        puVar24 = (undefined4 *)(*(code *)((uint)extraout_r2_02 & extraout_r12_00 >> 10))();
+        return puVar24;
+      }
+    }
+    *extraout_r2_02 = extraout_r1_00;
+    bVar40 = 0x96 < uVar7;
+    uVar39 = SBORROW4(uVar7,0x97);
+    uVar7 = uVar7 - 0x97;
+    *extraout_r2_02 = (uint)puVar33;
+    if (!bVar40 || uVar7 == 0) goto FUN_00244730;
+    *extraout_r2_02 = extraout_r1_00;
+    if ((bool)uVar39) {
+      bVar40 = SUB41((extraout_r12_00 << 0xc) >> 0x1f,0);
+    }
+    *extraout_r2_02 = (uint)puVar21;
+  } while( true );
+}
+
+
+
+=========== FUN_00208956 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00208956(undefined4 param_1,int param_2,int param_3)
+
+{
+  byte bVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  uint uVar4;
+  int unaff_r4;
+  int unaff_r5;
+  int *piVar5;
+  int unaff_r7;
+  
+  *(uint *)(unaff_r4 + 0x2c) = (uint)*(ushort *)(*(int *)(unaff_r7 + 0x2c) + 0x2a);
+  uVar4 = param_3 - 0xf4;
+  piVar5 = (int *)(uint)*(byte *)(uVar4 + *(int *)(unaff_r4 + 0x3d0));
+  *piVar5 = param_2 >> 0x14;
+  piVar5[1] = uVar4;
+  piVar5[2] = uVar4 >> 0x13;
+  piVar5 = (int *)(uint)*(byte *)((int)piVar5 + (param_2 >> 0x14) + 0xc);
+  *(int *)(param_3 + -0xd0) = param_2;
+  bVar1 = *(byte *)(unaff_r5 + 7);
+  *(undefined1 *)(param_2 + 0x8f) = 0x6c;
+  uVar3 = uRam00000097;
+  uVar2 = uRam00000093;
+  *(int *)param_2 = param_2;
+  *(uint *)(param_2 + 4) = (uint)bVar1;
+  *(int **)(param_2 + 8) = piVar5;
+  *(undefined4 *)(param_2 + 0xc) = uVar2;
+  *(undefined4 *)(param_2 + 0x10) = 0x9b;
+  *(undefined4 *)(param_2 + 0x14) = uVar3;
+  *(short *)(*piVar5 + 0x3a) = (short)uRam9b00002c;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+=========== FUN_002083b0 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Removing unreachable block (ram,0x002071cc) */
+/* WARNING: Removing unreachable block (ram,0x002076be) */
+/* WARNING: Removing unreachable block (ram,0x002075c8) */
+/* WARNING: Removing unreachable block (ram,0x002075d4) */
+/* WARNING: Removing unreachable block (ram,0x0020753c) */
+/* WARNING: Removing unreachable block (ram,0x002076c2) */
+/* WARNING: Removing unreachable block (ram,0x0020765a) */
+/* WARNING: Removing unreachable block (ram,0x0020722c) */
+/* WARNING: Removing unreachable block (ram,0x00207278) */
+/* WARNING: Removing unreachable block (ram,0x00206cb0) */
+/* WARNING: Removing unreachable block (ram,0x00206cc2) */
+/* WARNING: Removing unreachable block (ram,0x00206d96) */
+/* WARNING: Removing unreachable block (ram,0x00206d5e) */
+/* WARNING: Removing unreachable block (ram,0x00206d60) */
+/* WARNING: Removing unreachable block (ram,0x00206d62) */
+/* WARNING: Removing unreachable block (ram,0x00206d64) */
+/* WARNING: Removing unreachable block (ram,0x00206d66) */
+/* WARNING: Removing unreachable block (ram,0x00206d20) */
+/* WARNING: Removing unreachable block (ram,0x002072dc) */
+/* WARNING: Removing unreachable block (ram,0x00207324) */
+/* WARNING: Removing unreachable block (ram,0x002072e0) */
+/* WARNING: Removing unreachable block (ram,0x00207236) */
+/* WARNING: Removing unreachable block (ram,0x00207230) */
+/* WARNING: Removing unreachable block (ram,0x00207966) */
+/* WARNING: Removing unreachable block (ram,0x00207968) */
+/* WARNING: Removing unreachable block (ram,0x00207970) */
+/* WARNING: Removing unreachable block (ram,0x00207976) */
+/* WARNING: Removing unreachable block (ram,0x00207c18) */
+/* WARNING: Removing unreachable block (ram,0x00207c28) */
+/* WARNING: Removing unreachable block (ram,0x00207d34) */
+/* WARNING: Removing unreachable block (ram,0x00207f1a) */
+/* WARNING: Removing unreachable block (ram,0x00207f58) */
+/* WARNING: Removing unreachable block (ram,0x00207fb8) */
+/* WARNING: Removing unreachable block (ram,0x00207f5a) */
+/* WARNING: Removing unreachable block (ram,0x00207f2a) */
+/* WARNING: Removing unreachable block (ram,0x00207f4e) */
+/* WARNING: Removing unreachable block (ram,0x00207cca) */
+/* WARNING: Removing unreachable block (ram,0x00207cd2) */
+/* WARNING: Removing unreachable block (ram,0x00207cd8) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int FUN_002083b0(void)
+
+{
+  byte bVar1;
+  ushort uVar2;
+  undefined4 uVar3;
+  int *piVar4;
+  uint uVar5;
+  int iVar6;
+  uint *puVar7;
+  int iVar8;
+  undefined1 *puVar9;
+  uint *puVar10;
+  uint *puVar11;
+  uint *extraout_r2;
+  int iVar12;
+  undefined4 *puVar13;
+  uint extraout_r3;
+  uint uVar14;
+  undefined4 *puVar15;
+  int unaff_r4;
+  undefined4 *puVar16;
+  undefined4 uVar17;
+  undefined4 *puVar18;
+  uint uVar19;
+  int unaff_r6;
+  uint uVar20;
+  int *unaff_r7;
+  int iVar21;
+  undefined4 unaff_r10;
+  uint extraout_r12;
+  char cVar22;
+  char cVar23;
+  bool bVar24;
+  undefined4 in_cr0;
+  undefined4 in_cr1;
+  undefined4 in_cr2;
+  undefined4 in_cr3;
+  undefined4 in_cr4;
+  undefined4 in_cr8;
+  undefined4 in_cr9;
+  undefined4 in_cr10;
+  undefined4 in_cr11;
+  undefined4 in_cr12;
+  undefined4 in_cr13;
+  undefined8 uVar25;
+  undefined8 uVar26;
+  undefined4 *in_stack_00000000;
+  undefined4 in_stack_00000010;
+  int in_stack_00000074;
+  uint in_stack_00000114;
+  int in_stack_00000178;
+  int in_stack_0000017c;
+  undefined4 in_stack_000001a8;
+  undefined4 in_stack_000001ac;
+  uint in_stack_00000244;
+  
+  iVar8 = (int)*(short *)(unaff_r4 + (int)unaff_r7);
+  iVar6 = *unaff_r7;
+  puVar15 = (undefined4 *)unaff_r7[1];
+  iVar21 = unaff_r7[2];
+  bVar1 = *(byte *)(puVar15 + 1);
+  if ((short)unaff_r7[3] == 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(short *)(iVar8 + 0x34) = (short)iVar21;
+  if (0xffffff35 < bVar1) {
+    *(short *)(iVar21 + 0x1e) = (short)unaff_r6;
+    piVar4 = (int *)(int)*(char *)(iVar6 + (int)puVar15);
+    bVar1 = *(byte *)(puVar15 + 1);
+    *piVar4 = iVar6;
+    piVar4[1] = (int)puVar15;
+    piVar4[2] = (uint)bVar1;
+    piVar4[3] = iVar21;
+    *(short *)(bVar1 + 0x16) = (short)puVar15;
+    uVar5 = uRam00208644;
+    coprocessor_moveto(0xe,0,0,&stack0x00000000,in_cr8,in_cr4);
+    *(short *)(iRam0020863c + (int)puVar15) = (short)puVar15;
+    software_bkpt(0x9e);
+    coprocessor_loadlong(1,in_cr13,iVar8 + 0xe0);
+    iVar8 = (int)(uVar5 >> 3) >> 4;
+    in_stack_0000017c = iVar6;
+    func_0xff2c7378(iVar6,iVar8,0x20864c,iVar8 << 0x19);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  coprocessor_load(3,in_cr13,unaff_r10);
+  puVar16 = (undefined4 *)(bVar1 + 0xd2);
+  *puVar15 = uRam00208410;
+  puVar15[1] = 0x208558;
+  puVar15[2] = puVar15;
+  puVar15[3] = unaff_r6;
+  puVar15 = &stack0x000001ac;
+  *(char *)(unaff_r6 + 0x208560) = (char)*(undefined4 *)(unaff_r6 + 4);
+  coprocessor_store(5,in_cr3,*(undefined4 *)(unaff_r6 + 4));
+  *(char *)((iVar8 - 5U) * 0x800 + 0x17) = (char)puVar16;
+  if ((iVar8 - 5U & 0x200000) == 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(int *)(((int)puVar16 >> 5) + 0x2c) = (int)puVar16 >> 5;
+  uVar19 = 0x208507;
+  cVar22 = ((uint)puVar15 >> 10 & 1) != 0;
+  cVar23 = (uint)puVar15 >> 0xb == 0;
+  iVar6 = 0x207c5b;
+  uVar5 = func_0xff23b624(*(undefined4 *)(((uint)puVar15 >> 0xb) + 0x4c));
+  if (cVar22 != '\0') {
+    software_bkpt(0x30);
+    uVar14 = 0x207cac;
+LAB_00207c62:
+    *(char *)(iRam00207f24 + 2) = (char)uVar14;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  puVar11 = extraout_r2;
+  uVar14 = extraout_r3;
+  if (cVar23 == '\0') {
+    coprocessor_storelong(8,in_cr9,0x207dc7);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+LAB_00207c44:
+  *(char *)(puVar15 + 1) = (char)uVar19;
+  *(uint *)(uVar5 + (int)puVar11) = uVar19;
+  while( true ) {
+    puVar7 = *(uint **)(uVar14 + 0x18);
+    if (0x9c < uVar5) {
+      *(undefined1 *)(puVar15 + 0x81f6b) = 0xac;
+      coprocessor_storelong(0xc,in_cr10,puVar15);
+      goto LAB_00207c62;
+    }
+    *puVar7 = (uint)puVar7;
+    puVar7[1] = (uint)puVar16;
+    puVar7[2] = 0x207dac;
+    uVar2 = *(ushort *)(((int)puVar15 - 0xcbU) + uVar5);
+    uVar19 = *puVar11;
+    puVar16 = (undefined4 *)puVar11[1];
+    puVar10 = puVar11 + 3;
+    if (-1 < (int)((int)puVar15 - 0xcbU)) break;
+    puVar15 = (undefined4 *)puVar16[7];
+    puVar11 = puVar10;
+  }
+  *(char *)((int)puVar11 + 0x23) = (char)uVar19;
+  uVar20 = 0xa1;
+  bVar24 = SBORROW4(uVar5,0x81);
+  if (puVar7 == (uint *)0x0) {
+    puVar11[0x12] = (uint)puVar16;
+    *puVar10 = uVar5 & 0xffff | 0xa5500000;
+    puVar11[4] = 0;
+    puVar11[5] = (uint)uVar2;
+    *(short *)((int)puVar16 + 2) = (short)uVar14 + -0x94;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  do {
+    *(uint *)uVar5 = uVar5;
+    *(uint **)(uVar5 + 4) = puVar7;
+    *(uint **)(uVar5 + 8) = puVar10;
+    *(uint *)(uVar5 + 0xc) = uVar14;
+    *(uint *)(uVar5 + 0x10) = uVar19;
+    *(undefined4 **)(uVar5 + 0x14) = puVar16;
+    puVar13 = (undefined4 *)0x0;
+    puVar11 = puVar10;
+    while( true ) {
+      uVar19 = uVar5 << 8;
+      if ((int)(uVar5 << 8) < 0 != bVar24) goto LAB_00207794;
+      uVar19 = puVar11[10];
+      *(short *)(uVar20 + 6) = (short)((int)puVar11 >> 0x1b);
+      uVar5 = _DAT_00207b78;
+      puVar10 = _DAT_0020788c;
+      if (-1 < (int)puVar11 >> 0x1b) break;
+      uVar2 = *(ushort *)((int)puVar11 + 2);
+      uVar5 = (uint)uVar2;
+      *(undefined1 *)(uVar5 + 0x1f) = 0x90;
+      puVar7 = (uint *)*puVar16;
+      uVar20 = puVar16[3];
+      puVar13 = *(undefined4 **)(puVar16[1] + 0x4c);
+      bVar24 = SBORROW4(puVar16[2],0x9c);
+      puVar11 = (uint *)((int)uVar20 >> 2);
+      in_stack_00000114 = uVar20;
+      puVar16 = (undefined4 *)((uVar2 >> 7) + 0x28c);
+      coprocessor_store(6,in_cr0,puVar16);
+    }
+    coprocessor_loadlong(5,in_cr11,uVar19 + 0x140);
+    puVar13 = (undefined4 *)((int)puVar7 + (int)puVar16);
+    iVar8 = *_DAT_00207bc0;
+    puVar18 = (undefined4 *)_DAT_00207bc0[2];
+    puVar15 = (undefined4 *)((int)puVar13 * 0x80);
+    puVar7 = (uint *)(iVar8 + -0x40);
+    bVar24 = puVar7 == (uint *)0x0;
+    *(short *)(puVar11 + 0xc) = (short)((int)puVar13 >> 0x15);
+    if (SBORROW4(iVar8,0x40)) {
+      uVar19 = _DAT_00207b78;
+      if (0x3f < iVar8) {
+        *(uint *)(iVar8 + 0x1c) = _DAT_00207b78;
+        uRam002079f0 = 7;
+        uRam002079f4 = 0x2079e8;
+        puRam002079e8 = puVar7;
+        puRam002079ec = puVar13;
+        *(undefined4 **)(((int)uVar5 >> 0x18) + 100) = puVar13;
+        coprocessor_storelong(0xf,in_cr10,iVar8 + -0x1e4);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+LAB_00207794:
+      uVar5 = puVar7[4];
+      iVar21 = *(int *)((int)puVar11 + 0x6e);
+      *(short *)(iVar21 + (int)puVar13) = (short)uVar5;
+      *(char *)((int)puVar11 + -3) = (char)uVar5;
+      *(char *)(iVar21 + 1) = (char)uVar19;
+      iVar8 = (int)puVar11 + 0x9d;
+      *puVar13 = puVar7;
+      puVar13[1] = puVar13;
+      puVar13[2] = 0x4a;
+      puVar13[3] = iVar21;
+      puVar13[4] = uVar5;
+      puVar13[5] = 0x80000000;
+      if (iVar8 < 0) {
+        coprocessor_moveto2(4,9,extraout_r12,0x80000000,in_cr12);
+        *(undefined2 *)(iVar21 + 0x3e) = 0x7d9c;
+        software_bkpt(0x49);
+        iVar8 = *(int *)(*(ushort *)((int)puVar7 + 0x36) + 0x60);
+        uVar17 = *(undefined4 *)(*(byte *)(iVar8 + 0xe) + 0x7c);
+        *(uint *)((uint)*(ushort *)((int)puVar7 + 0x36) + iVar8) = (uint)bRam00000064;
+        uVar3 = uRam8000000c;
+        puVar15 = puRam80000004;
+        *(short *)(iRam80000000 + 0x34) = (short)puVar7;
+        *puVar15 = puVar7;
+        puVar15[1] = 0x4a;
+        puVar15[2] = uVar3;
+        puVar15[3] = uVar17;
+        iVar21 = iRam80000024;
+        uVar5 = uRam80000020;
+        iVar8 = iRam80000010;
+        iVar12 = iRam80000010 >> 1;
+        puVar9 = &stack0x00000028;
+        uVar19 = uRam80000020 >> 8;
+        uVar26 = *(undefined8 *)(iVar6 + 0x40);
+        uVar25 = *(undefined8 *)(iVar6 + 0x60);
+        uVar14 = uRam80000020 + 0xff;
+        *(char *)(uRam80000020 + 0x11e) = (char)uVar14;
+        iVar6 = 0;
+        if (iVar21 != 0) {
+          uVar20 = (uint)*(ushort *)(uVar5 + 0x127);
+          if (3 < uVar14) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+            halt_baddata();
+          }
+          uRam000000e6 = 0xd6;
+          if ((iVar8 >> 0xe & 1U) == 0) {
+            *(uint *)(uVar20 + 0x44) = uVar19;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+            halt_baddata();
+          }
+          *(short *)(uVar5 + 0x113) = (short)iVar12;
+          piVar4 = _DAT_0020792c;
+          uVar5 = uVar20 + 6;
+          if ((uVar5 >> 0xc & 1) != 0) {
+            coprocessor_loadlong(7,in_cr2,uVar5);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+            halt_baddata();
+          }
+          puVar9 = (undefined1 *)(uVar20 ^ (uint)&stack0x0000037c);
+          *(uint *)(in_stack_00000178 + 0x38) = uVar5 >> 0xd;
+          *piVar4 = in_stack_00000178;
+          iVar6 = (int)puVar9 >> 0x12;
+          *(char *)(iVar6 + 0x1f) = (char)in_stack_00000178;
+          *(char *)(uVar20 + 0x1b) = (char)puVar9;
+          iVar12 = in_stack_00000178;
+        }
+        VectorShiftLeft(uVar26,uVar25,4,1);
+        software_bkpt(0xf4);
+        *(int *)(iVar6 + ((int)puVar9 >> 7) + -0x8a) = iVar12 + -0x23;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+      in_stack_00000074 = iVar8;
+      FUN_001179e0();
+      FUN_0010e728(&stack0x00000010,puVar7);
+      iVar6 = FUN_0015e6b4(&stack0x00000010);
+      if (iVar6 == 0) {
+        FUN_001179d0(uVar19);
+      }
+      else {
+        uVar3 = FUN_0015e89c(&stack0x00000010);
+        in_stack_00000000 = puVar13;
+        piVar4 = (int *)FUN_00130b9c(uVar19 + 100,uVar19,uVar3,iVar8);
+        *(uint *)(uVar19 + 0x68) = *(uint *)(uVar19 + 0x68) | 0x40020;
+        FUN_001179d0(uVar19);
+        if (piVar4 != (int *)0x0) {
+          iVar6 = (int)piVar4 + *(int *)(*piVar4 + -0x14);
+          goto LAB_00142808;
+        }
+      }
+      iVar6 = 0;
+LAB_00142808:
+      FUN_0010e7f4(&stack0x00000010);
+      return iVar6;
+    }
+    *_DAT_0020788c = _DAT_00207b78;
+    puVar10[1] = (uint)puVar13;
+    puVar10[2] = (uint)puVar15;
+    puVar10[3] = (int)puVar13 >> 0x15;
+    puVar10[4] = (uint)puVar18;
+    puVar10[5] = uVar20;
+    puVar7 = puVar10 + 6;
+    puVar16 = (undefined4 *)(uint)*(ushort *)((int)puVar13 * 0x81);
+    if (bVar24) break;
+    *(undefined4 **)(uVar5 + 0x18) = puVar18;
+    puVar10 = puVar11 + -0x50;
+    coprocessor_store(5,in_cr1,puVar11);
+    *(short *)((int)puVar16 + (int)puVar18) = (short)uVar5;
+    bVar24 = SBORROW4((int)puVar13,0x67);
+    uVar14 = (int)puVar13 - 0x67;
+    uVar20 = uVar14 * 0x800000;
+    uVar19 = _DAT_002079c0;
+    in_stack_00000000 = puVar18;
+  } while( true );
+  iVar6 = (int)puVar7 - (int)puVar13;
+  uVar19 = (int)puVar18 + 199U | (uint)puVar13;
+  *(char *)(in_stack_00000244 + 0x19) = (char)&stack0x00000378;
+  if (&stack0x00000118 != (undefined1 *)0x0) {
+    *(short *)(*(ushort *)(uVar19 + 0x36) + 0x28) = (short)&stack0x00000118;
+    piVar4 = (int *)func_0xff557f36();
+    *piVar4 = iVar6;
+    piVar4[1] = uVar19;
+    piVar4[2] = (int)&stack0x00000378;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(int *)(iVar6 + 0x44) = iVar6;
+  puVar16 = (undefined4 *)(in_stack_00000244 >> 0x14);
+  iVar6 = (extraout_r12 ^ 0x30400000) + 0x108;
+  coprocessor_storelong(10,in_cr1,iVar6);
+  puVar11 = (uint *)0x0;
+  uVar14 = in_stack_00000244;
+  goto LAB_00207c44;
+}
+
+
+
+=========== FUN_001faeea callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_001faeea(undefined4 param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+
+{
+  ushort uVar1;
+  char cVar2;
+  int iVar3;
+  uint uVar4;
+  int extraout_r2;
+  int extraout_r3;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int unaff_r7;
+  undefined4 in_cr7;
+  undefined4 in_cr13;
+  undefined8 uVar8;
+  
+  while( true ) {
+    param_2 = (undefined4 *)*param_2;
+    uVar1 = *(ushort *)(unaff_r7 + 6);
+    iVar6 = param_2[1];
+    *(char *)(param_4 + 7) = (char)*param_2;
+    coprocessor_storelong(0xd,in_cr7,param_2 + -0x91);
+    iVar3 = (uint)uVar1 + (int)(param_2 + -0x91);
+    iVar7 = *(int *)((int)register0x00000054 + 0x10);
+    iVar5 = *(int *)(*(int *)register0x00000054 + *(int *)((int)register0x00000054 + 8));
+    *(int *)((int)register0x00000054 + 0x154) = iVar3;
+    uVar8 = func_0xff2c3c78(iVar3,*(int *)register0x00000054,
+                            *(int *)((int)register0x00000054 + 4) + 0x78);
+    uVar4 = (uint)((ulonglong)uVar8 >> 0x20);
+    iVar3 = extraout_r3 + iVar5;
+    if (extraout_r3 != 0) {
+      coprocessor_load(1,in_cr13,0x1fad07);
+      *(int *)(uVar4 + 100) = iVar6;
+      *(uint *)uVar4 = uVar4;
+      *(int *)(uVar4 + 4) = extraout_r2;
+      *(int *)(uVar4 + 8) = iVar6;
+      *(int *)(uVar4 + 0xc) = iVar7;
+      *(uint *)((int)register0x00000054 + iVar6 + 0x33c) = uVar4;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    iVar7 = *(int *)(iVar3 + 0x1c);
+    unaff_r7 = 0x1fb290;
+    if (iVar3 < 0 != SCARRY4(extraout_r3,iVar5)) break;
+    uVar4 = (uint)(short)((ushort)((uVar4 & 0xff) << 8) | (ushort)((ulonglong)uVar8 >> 0x28) & 0xff)
+    ;
+    cVar2 = *(char *)(iVar7 + extraout_r2);
+    param_2 = (undefined4 *)(uVar4 - 0xde);
+    if (uVar4 < 0xde || param_2 == (undefined4 *)0x0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    uRam001fb29d = uRam001fb290;
+    *param_2 = param_2;
+    *(int *)(uVar4 - 0xda) = extraout_r2;
+    *(undefined4 *)(uVar4 - 0xd6) = 0;
+    *(int *)(uVar4 - 0xd2) = iVar3;
+    *(int *)(uVar4 - 0xce) = (int)cVar2;
+    *(undefined1 *)(iVar6 + 0xe) = 0xa9;
+    param_4 = 0;
+    register0x00000054 = (BADSPACEBASE *)((int)register0x00000054 + 0x14);
+  }
+  iRam001fb2a8 = extraout_r2;
+  *(int *)(iVar6 + 0x68) = (int)uVar8;
+  (*(code *)0x1fb17a)((int)uVar8,iVar7 << 0x12);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+=========== FUN_00204016 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+/* WARNING: Instruction at (ram,0x00203faa) overlaps instruction at (ram,0x00203fa8)
+    */
+/* WARNING: Removing unreachable block (ram,0x00203ffe) */
+/* WARNING: Removing unreachable block (ram,0x00203f0c) */
+/* WARNING: Removing unreachable block (ram,0x00203ecc) */
+/* WARNING: Removing unreachable block (ram,0x00203f1c) */
+/* WARNING: Removing unreachable block (ram,0x00203ee6) */
+/* WARNING: Removing unreachable block (ram,0x00203e3e) */
+/* WARNING: Removing unreachable block (ram,0x00203e4e) */
+/* WARNING: Removing unreachable block (ram,0x00203e78) */
+/* WARNING: Removing unreachable block (ram,0x00203de2) */
+/* WARNING: Removing unreachable block (ram,0x00203ee8) */
+/* WARNING: Removing unreachable block (ram,0x00203ef2) */
+/* WARNING: Removing unreachable block (ram,0x00203efc) */
+/* WARNING: Removing unreachable block (ram,0x00203fc4) */
+/* WARNING: Removing unreachable block (ram,0x00203fdc) */
+/* WARNING: Removing unreachable block (ram,0x00203fde) */
+/* WARNING: Removing unreachable block (ram,0x00203fe0) */
+/* WARNING: Removing unreachable block (ram,0x00203fe2) */
+/* WARNING: Removing unreachable block (ram,0x00203fe4) */
+/* WARNING: Removing unreachable block (ram,0x00203f2e) */
+/* WARNING: Removing unreachable block (ram,0x00203f3e) */
+/* WARNING: Removing unreachable block (ram,0x00203faa) */
+/* WARNING: Removing unreachable block (ram,0x00203ff4) */
+/* WARNING: Removing unreachable block (ram,0x00203fa8) */
+/* WARNING: Removing unreachable block (ram,0x00203fb0) */
+/* WARNING: Removing unreachable block (ram,0x00204096) */
+/* WARNING: Removing unreachable block (ram,0x002040ca) */
+/* WARNING: Removing unreachable block (ram,0x00204138) */
+/* WARNING: Removing unreachable block (ram,0x00204144) */
+/* WARNING: Removing unreachable block (ram,0x00204156) */
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void FUN_00204016(int param_1,int param_2)
+
+{
+  int iVar1;
+  uint uVar2;
+  undefined4 uVar3;
+  undefined1 *puVar4;
+  undefined1 *puVar5;
+  int unaff_r4;
+  undefined4 *puVar6;
+  int iVar7;
+  uint uVar8;
+  int *piVar9;
+  int unaff_r7;
+  char cVar10;
+  undefined8 unaff_d9;
+  undefined8 in_d22;
+  undefined4 *puStack00000038;
+  undefined2 uStack0000009c;
+  undefined4 *in_stack_000001f0;
+  int in_stack_000002f0;
+  
+  uVar3 = *(undefined4 *)(param_1 + 0xf6);
+  *(short *)(unaff_r4 + 10) = (short)*(undefined4 *)(param_1 + 0xfa);
+  *(short *)(unaff_r4 + 0x2e) = (short)param_2;
+  uStack0000009c = (undefined2)uVar3;
+  puVar4 = &stack0x0000029c;
+  iVar7 = unaff_r7 * 0x400000;
+  uVar8 = (int)&stack0x000000dc * 0x100;
+  puStack00000038 = _DAT_0020439c;
+  iVar1 = 0xbc;
+  puVar6 = _DAT_0020439c;
+  if (((uint)&stack0x000000dc & 0x1000000) == 0) {
+    uVar2 = (uVar8 >> 0x10) << 0x18 | (uVar8 >> 0x18) << 0x10 | (uint)&stack0x000000dc & 0xff;
+    *(int *)(uVar8 + 0x5c) = iVar7;
+    piVar9 = *(int **)(uVar2 + 0x40);
+    param_2 = uVar2 * 0x800;
+    *(int **)(iVar7 + 0x24) = piVar9;
+    *(int **)(param_2 + 0x74) = piVar9;
+    iVar1 = *piVar9;
+    puVar4 = (undefined1 *)piVar9[2];
+    iVar7 = piVar9[4];
+    uVar8 = piVar9[5];
+    puVar6 = (undefined4 *)&stack0x00000314;
+  }
+  puVar5 = puVar4 + 0x85;
+  if (SCARRY4((int)puVar4,0x85)) {
+    software_interrupt(0x14);
+    *(int *)(((uint)(puVar5 + (int)puVar6 + 0x11) >> 4) + 0x68) = iVar1;
+    uRam00204344 = (undefined2)iVar1;
+    *(undefined2 *)(in_stack_000002f0 + 0x28) = 0x3e6c;
+    uRam00204090 = 0x204090;
+    uRam00204094 = 0x101f;
+    uRam00204098 = 0x204338;
+    cVar10 = '\0';
+    puRam00000042 = puVar5;
+    iVar1 = func_0x007b25ac(uRam0020436a,in_stack_000002f0 + -3,*(undefined4 *)(puVar4 + 0xf5));
+    if (iVar1 < 0 != (bool)cVar10) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(undefined4 **)(iVar7 + 0x4c) = puVar6;
+  *(char *)(uVar8 + 8) = (char)puVar5;
+  *(char *)((int)puVar6 * 2) = (char)iVar7;
+  *(char *)((int)puVar6 + 5) = (char)uVar8;
+  *(int *)(unaff_r7 + 0x44) = iVar1;
+  if (SBORROW4(param_2,0xd5)) {
+    *(char *)(iVar1 + 0x1b) = (char)param_2 + -0x26;
+    VectorShiftRightInsert(in_d22,unaff_d9,0x38);
+    in_stack_000001f0 = puVar6;
+    func_0xff640eac(iVar1,*puVar6,puVar6[1]);
+  }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+=========== FUN_0022ea50 callers: []
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_0022ea50(int *param_1,undefined4 param_2,int param_3,int param_4,undefined4 param_5,
+                 undefined4 param_6,int param_7,undefined4 param_8,undefined1 param_9)
+
+{
+  byte bVar1;
+  ushort uVar2;
+  int iVar3;
+  int iVar4;
+  uint uVar5;
+  uint uVar6;
+  int unaff_r5;
+  int iVar7;
+  int iVar8;
+  undefined4 unaff_r8;
+  bool bVar9;
+  undefined4 in_cr0;
+  undefined4 in_cr8;
+  int in_stack_00000308;
+  
+  bVar1 = *(byte *)(param_4 + 0x11);
+  param_1[0xe] = param_3 << 0xd;
+  *(int **)(unaff_r5 + 8) = param_1;
+  iVar3 = *param_1;
+  uVar5 = param_1[1];
+  uVar6 = param_1[2];
+  iVar7 = param_1[3];
+  iVar8 = param_1[4];
+  uVar2 = *(ushort *)(iVar3 + 0x12);
+  iVar4 = (uint)uVar2 * 0x200000;
+  *(uint *)(iVar4 + 0x30) = uVar5;
+  if ((uVar2 & 0x800) == 0) {
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  iVar3 = (int)*(short *)(iVar3 + iVar4);
+  if ((uVar6 & 0x2000000) == 0 || (uVar6 & 0x1ffffff) == 0) {
+    *(undefined1 *)((uint)bVar1 + param_4 + 1) = 0;
+    iVar8 = iVar8 + (uint)uVar2 * -0x200000;
+    *(uint *)(iVar7 + 0x5c) = uVar6;
+    bVar9 = -1 < iVar7 + -0xfd;
+    if ((bVar9) && (!SBORROW4(iVar7,0xfd))) {
+      *(undefined1 *)(iVar8 + 2) = 0;
+      *(undefined1 *)(param_7 * 2) = param_9;
+      software_interrupt(0x47);
+                    /* WARNING: Bad instruction - Truncating control flow here */
+      halt_baddata();
+    }
+    if (!bVar9 || iVar7 + -0x40 < 0) {
+      *(char *)(iVar8 + 0x17) = (char)iVar8;
+    }
+    coprocessor_loadlong(6,in_cr0,iVar8);
+    coprocessor_moveto2(0xf,6,unaff_r8,iVar3,in_cr8);
+    *(char *)(*(byte *)(iVar3 + iVar7) + 0x19) = (char)&stack0x0000029c;
+    *(short *)(*(int *)(&stack0x000002a0 + -in_stack_00000308) + 0x34) =
+         (short)*(undefined4 *)(&stack0x0000029c + -in_stack_00000308);
+    *(short *)(*(int *)(in_stack_00000308 + 0x48) + 0x22) = (short)in_stack_00000308;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+    halt_baddata();
+  }
+  *(ushort *)(iVar8 + 2) = (ushort)((uVar5 & 0xff) << 8) | (ushort)(uVar5 >> 8) & 0xff;
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+=========== FUN_001bf828 callers: []
+
+int * FUN_001bf828(uint param_1,uint param_2,int param_3)
+
+{
+  byte bVar1;
+  int *piVar2;
+  int iVar3;
+  uint uVar4;
+  byte *pbVar5;
+  int *piVar6;
+  int unaff_r5;
+  int unaff_r6;
+  uint uStack00000080;
+  
+  *(uint *)param_1 = param_1;
+  piVar6 = (int *)(param_3 >> 0xd);
+  uStack00000080 = param_1 >> 8;
+  *(int **)(param_2 +
+           (uStack00000080 << 0x18 | (param_1 >> 0x10 & 0xff) << 0x10 | (param_1 >> 0x18) << 8)) =
+       piVar6;
+  uVar4 = param_2;
+  while ((iVar3 = unaff_r6, uVar4 != 0xffffffff &&
+         (unaff_r6 = unaff_r6 + 1, iVar3 = unaff_r5, unaff_r6 < unaff_r5))) {
+    piVar2 = *(int **)((int)piVar6 + *(int *)(*piVar6 + -0xc) + 0x34);
+    bVar1 = *(byte *)((int)piVar6 + *(int *)(*piVar6 + -0xc) + 0x3c);
+    uVar4 = (uint)bVar1;
+    if ((piVar2[1] << 0x1c < 0) && (pbVar5 = (byte *)piVar2[9], (byte *)piVar2[10] != pbVar5)) {
+      piVar2[9] = (int)(pbVar5 + 1);
+      *pbVar5 = bVar1;
+    }
+    else {
+      uVar4 = (**(code **)(*piVar2 + 0x28))();
+    }
+  }
+  if (iVar3 != unaff_r5) {
+    param_2 = 1;
+  }
+  if (param_2 != 0) {
+    iVar3 = *(int *)(*piVar6 + -0xc) + (int)piVar6;
+    param_2 = *(uint *)(iVar3 + 0x10) | param_2;
+    if (*(int *)(iVar3 + 0x34) == 0) {
+      param_2 = param_2 | 1;
+    }
+    func_0x00161878(iVar3,param_2,0xffffffff);
+  }
+  return piVar6;
+}
+
+

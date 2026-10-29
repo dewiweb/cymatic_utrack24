@@ -1,0 +1,10 @@
+FUN_001bf828@001bf828  [001bf8fa rev r0,r0]
+FUN_001eb344@001eb344  [001eb3ec revsh r3,r5, 001eb570 revsh r4,r2]
+FUN_001f0ff4@001f0ff4  [001f19e6 rev r4,r3, 001f1b68 revsh r7,r2, 001f1d82 rev16 r3,r0]
+FUN_001faeea@001faeea  [001faf16 revsh r1,r1]
+FUN_00204016@00204016  [00204038 rev16 r1,r6]
+FUN_002083b0@002083b0  [002083c0 rev r0,r1]
+FUN_00208956@00208956  [00208986 rev r2,r6]
+FUN_0022ea50@0022ea50  [0022ebf4 rev16 r3,r3]
+FUN_0025eb32@0025eb32  [0025eaf0 rev r0,r3, 0025eb20 rev r0,r7, 0025ebc4 rev16 r0,r0]
+funcs: 9

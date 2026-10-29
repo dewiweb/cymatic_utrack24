@@ -1,0 +1,165 @@
+
+############ site 57bd8
+NO FUNCTION
+
+############ site ad4b4
+=== FUN_000ad4b4 @ 000ad4b4 callers []
+  000ad4b4  push {r4,r5,r6,lr}
+  000ad4b6  ldr r5,[0x000ad57c]
+  000ad4b8  movs r6,r1
+  000ad4ba  cmp r2,#0x0
+  000ad4bc  sub sp,#0x8
+  000ad4be  beq 0x000ad4ca
+  000ad4c0  cmp r2,#0x1
+  000ad4c2  beq 0x000ad4f8
+  000ad4c4  cmp r2,#0x2
+  000ad4c6  beq 0x000ad526
+  000ad4c8  b 0x000ad556
+  000ad4ca  ldr r2,[r5,#0x2c]
+  000ad4cc  ldr r1,[r5,#0x28]
+  000ad4ce  adr r0,[0xad580]
+  000ad4d0  bl 0x000028a4
+  000ad4d4  ldr r3,[r5,#0xc]
+  000ad4d6  ldr r2,[r5,#0x8]
+  000ad4d8  ldr r1,[r5,#0x24]
+  000ad4da  adr r0,[0xad5a0]
+  000ad4dc  bl 0x000028a4
+  000ad4e0  ldr r1,[r5,#0x34]
+  000ad4e2  ldr r0,[r5,#0x30]
+  000ad4e4  str r1,[sp,#0x4]
+  000ad4e6  str r0,[sp,#0x0]
+  000ad4e8  ldr r3,[r5,#0x4]
+  000ad4ea  ldr r2,[r5,#0x0]
+  000ad4ec  adr r0,[0xad5d8]
+  000ad4ee  bl 0x000028a4
+  000ad4f2  ldr r1,[r5,#0x78]
+  000ad4f4  adr r0,[0xad618]
+  000ad4f6  b 0x000ad520
+  000ad4f8  ldr r1,[r1,#0x0]
+  000ad4fa  adr r0,[0xad630]
+  000ad4fc  blx 0x00003960
+  000ad500  cmp r0,#0x0
+  000ad502  bne 0x000ad556
+  000ad504  ldr r0,[0x000ad634]
+  000ad506  ldrb r1,[r0,#0x1c]
+  000ad508  cmp r1,#0x0
+  000ad50a  beq 0x000ad518
+  000ad50c  movs r1,#0x0
+  000ad50e  cmp r1,#0x0
+  000ad510  strb r1,[r0,#0x1c]
+  000ad512  beq 0x000ad51c
+  000ad514  adr r1,[0xad638]
+  000ad516  b 0x000ad51e
+  000ad518  movs r1,#0x1
+  000ad51a  b 0x000ad50e
+  000ad51c  adr r1,[0xad640]
+  000ad51e  adr r0,[0xad64c]
+  000ad520  bl 0x000028a4
+  000ad524  b 0x000ad568
+  000ad526  ldr r0,[r6,#0x4]
+  000ad528  bl 0x0000317c
+  000ad52c  ldr r1,[0x000ad654]
+  000ad52e  movs r4,r0
+  000ad530  cmp r0,#0x1
+  000ad532  bge 0x000ad538
+  000ad534  movs r4,#0x1
+  000ad536  b 0x000ad53e
+  000ad538  cmp r4,r1
+  000ad53a  ble 0x000ad53e
+  000ad53c  movs r4,r1
+  000ad53e  ldr r1,[r6,#0x0]
+  000ad540  adr r0,[0xad658]
+  000ad542  blx 0x00003960
+  000ad546  cmp r0,#0x0
+  000ad548  beq 0x000ad55c
+  000ad54a  ldr r1,[r6,#0x0]
+  000ad54c  adr r0,[0xad65c]
+  000ad54e  blx 0x00003960
+  000ad552  cmp r0,#0x0
+  000ad554  beq 0x000ad56e
+  000ad556  movs r0,#0x6
+  000ad558  add sp,#0x8
+  000ad55a  pop {r4,r5,r6,pc}
+  000ad55c  str r4,[r5,#0x28]
+  000ad55e  ldr r2,[r5,#0x2c]
+  000ad560  movs r1,r4
+  000ad562  adr r0,[0xad580]
+  000ad564  bl 0x000028a4
+  000ad568  movs r0,#0x0
+  000ad56a  add sp,#0x8
+  000ad56c  pop {r4,r5,r6,pc}
+  000ad56e  str r4,[r5,#0x2c]
+  000ad570  ldr r1,[r5,#0x28]
+  000ad572  movs r2,r4
+  000ad574  adr r0,[0xad580]
+  000ad576  bl 0x000028a4
+  000ad57a  b 0x000ad568
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+undefined4 FUN_000ad4b4(undefined4 param_1,undefined4 *param_2,int param_3)
+
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 uVar5;
+  bool bVar6;
+  
+  puVar1 = _DAT_000ad57c;
+  if (param_3 == 0) {
+    FUN_000028a4(0xad580,_DAT_000ad57c[10],_DAT_000ad57c[0xb]);
+    FUN_000028a4(0xad5a0,puVar1[9],puVar1[2],puVar1[3]);
+    FUN_000028a4(0xad5d8,puVar1[0xd],*puVar1,puVar1[1],puVar1[0xc],puVar1[0xd]);
+    uVar5 = puVar1[0x1e];
+    uVar2 = 0xad618;
+  }
+  else {
+    if (param_3 != 1) {
+      if (param_3 != 2) {
+        return 6;
+      }
+      iVar3 = FUN_0000317c(param_2[1]);
+      if (iVar3 < 1) {
+        iVar3 = 1;
+      }
+      else if (_DAT_000ad654 < iVar3) {
+        iVar3 = _DAT_000ad654;
+      }
+      iVar4 = FUN_00003960(0xad658,*param_2);
+      if (iVar4 != 0) {
+        iVar4 = FUN_00003960(0xad65c,*param_2);
+        if (iVar4 == 0) {
+          puVar1[0xb] = iVar3;
+          FUN_000028a4(0xad580,puVar1[10],iVar3);
+          return 0;
+        }
+        return 6;
+      }
+      puVar1[10] = iVar3;
+      FUN_000028a4(0xad580,iVar3,puVar1[0xb]);
+      return 0;
+    }
+    iVar3 = FUN_00003960(0xad630,*param_2);
+    if (iVar3 != 0) {
+      return 6;
+    }
+    bVar6 = *(char *)(_DAT_000ad634 + 0x1c) == '\0';
+    *(bool *)(_DAT_000ad634 + 0x1c) = bVar6;
+    if (bVar6) {
+      uVar5 = 0xad638;
+    }
+    else {
+      uVar5 = 0xad640;
+    }
+    uVar2 = 0xad64c;
+  }
+  FUN_000028a4(uVar2,uVar5);
+  return 0;
+}
+
+
+
+############ site cc930
+NO FUNCTION

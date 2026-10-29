@@ -1,0 +1,4632 @@
+
+############ ARM range c8700..c8740
+  000c8700  eorvs r7,sp,r12, asr #0x1b
+  000c8704  eorvs r9,sp,r0, asr r10
+  000c8708  ldrbmi r2,[r0,-r2]!
+  000c870c  cpy r1,r0
+  000c8710  ldr r0,[r1,#0xec]
+  000c8714  bx lr
+  000c8718  .word 0xe92d47fc  <OBJ/BSS>
+  000c871c  .word 0xe1a04000  <OBJ/BSS>
+  000c8720  .word 0xe1a05001  <OBJ/BSS>
+  000c8724  .word 0xe3a00009  <OBJ/BSS>
+  000c8728  .word 0xe5c50010  <OBJ/BSS>
+  000c872c  .word 0xe3a00001  <OBJ/BSS>
+  000c8730  .word 0xe5c50018  <OBJ/BSS>
+  000c8734  .word 0xe3a00004  <OBJ/BSS>
+  000c8738  .word 0xe585001c  <OBJ/BSS>
+  000c873c  .word 0xe3a00008  <OBJ/BSS>
+  000c8740  .word 0xe5850014  <OBJ/BSS>
+
+############ ARM range e8c10..e94a0
+  000e8c10  stmdb sp!,{r4,r5,r6,r7,r8,r9,lr}
+  000e8c14  movs r7,r2
+  000e8c18  sub sp,sp,#0x14
+  000e8c1c  cpy r6,r1
+  000e8c20  beq 0x000e8fc4   ; ref->000e8fc4 = 0xe3a00002  <OBJ/BSS>
+  000e8c24  ldr r0,[r6,#0x0]
+  000e8c28  adr r1,0xe8f10
+  000e8c2c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8c30  cmp r0,#0x0
+  000e8c34  mov r4,#0x0
+  000e8c38  beq 0x000e8cbc   ; ref->000e8cbc = 0xe3570001  <OBJ/BSS>
+  000e8c3c  ldr r0,[r6,#0x0]
+  000e8c40  adr r1,0xe8f18
+  000e8c44  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8c48  cmp r0,#0x0
+  000e8c4c  beq 0x000e8d4c   ; ref->000e8d4c = 0xebff7599  <OBJ/BSS>
+  000e8c50  ldr r0,[r6,#0x0]
+  000e8c54  adr r1,0xe8f1c
+  000e8c58  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8c5c  cmp r0,#0x0
+  000e8c60  beq 0x000e8d58   ; ref->000e8d58 = 0xe3570001  <OBJ/BSS>
+  000e8c64  ldr r0,[r6,#0x0]
+  000e8c68  adr r1,0xe8f20
+  000e8c6c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8c70  cmp r0,#0x0
+  000e8c74  beq 0x000e8dd8   ; ref->000e8dd8 = 0xebff7576  <OBJ/BSS>
+  000e8c78  ldr r0,[r6,#0x0]
+  000e8c7c  adr r1,0xe8f28
+  000e8c80  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8c84  cmp r0,#0x0
+  000e8c88  beq 0x000e8de4   ; ref->000e8de4 = 0xebff7573  <OBJ/BSS>
+  000e8c8c  ldr r0,[r6,#0x0]
+  000e8c90  adr r1,0xe8f34
+  000e8c94  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8c98  ldr r5,[0xe8f38]
+  000e8c9c  cmp r0,#0x0
+  000e8ca0  beq 0x000e8e60   ; ref->000e8e60 = 0xe3570001  <OBJ/BSS>
+  000e8ca4  ldr r0,[r6,#0x0]
+  000e8ca8  adr r1,0xe8f3c
+  000e8cac  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8cb0  cmp r0,#0x0
+  000e8cb4  beq 0x000e8fa8   ; ref->000e8fa8 = 0xe3570001  <OBJ/BSS>
+  000e8cb8  b 0x000e8fc4   ; ref->000e8fc4 = 0xe3a00002  <OBJ/BSS>
+  000e8cbc  cmp r7,#0x1
+  000e8cc0  beq 0x000e8d40   ; ref->000e8d40 = 0xebff759c  <OBJ/BSS>
+  000e8cc4  ldr r0,[r6,#0x4]
+  000e8cc8  adr r1,0xe8f40
+  000e8ccc  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8cd0  cmp r0,#0x0
+  000e8cd4  movne r0,#0x3
+  000e8cd8  addne sp,sp,#0x14
+  000e8cdc  ldmiane sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8ce0  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8ce4  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8ce8  str r4,[r0,#0x424]
+  000e8cec  str r4,[r0,#0x42c]
+  000e8cf0  str r4,[r0,#0x430]
+  000e8cf4  str r4,[r0,#0x434]
+  000e8cf8  str r4,[r0,#0x438]
+  000e8cfc  str r4,[r0,#0x43c]
+  000e8d00  str r4,[r0,#0x440]
+  000e8d04  str r4,[r0,#0x44c]
+  000e8d08  str r4,[r0,#0x450]
+  000e8d0c  str r4,[r0,#0x454]
+  000e8d10  str r4,[r0,#0x45c]
+  000e8d14  str r4,[r0,#0x460]
+  000e8d18  str r4,[r0,#0x464]
+  000e8d1c  str r4,[r0,#0x468]
+  000e8d20  str r4,[r0,#0x444]
+  000e8d24  str r4,[r0,#0x448]
+  000e8d28  str r4,[r0,#0x46c]
+  000e8d2c  str r4,[r0,#0x470]
+  000e8d30  str r4,[r0,#0x474]
+  000e8d34  str r4,[r0,#0x478]
+  000e8d38  str r4,[r0,#0x47c]
+  000e8d3c  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8d40  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8d44  bl 0x000451cc   ; ref->000451cc = 0xe92d4010  <OBJ/BSS>
+  000e8d48  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8d4c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8d50  bl 0x000c2438   ; ref->000c2438 = 0xe92d41f0  <OBJ/BSS>
+  000e8d54  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8d58  cmp r7,#0x1
+  000e8d5c  beq 0x000e8d6c   ; ref->000e8d6c = 0xebff7591  <OBJ/BSS>
+  000e8d60  cmp r7,#0x2
+  000e8d64  beq 0x000e8d78   ; ref->000e8d78 = 0xe28f0f72  <OBJ/BSS>
+  000e8d68  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8d6c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8d70  bl 0x000c4d94   ; ref->000c4d94 = 0xe92d41f0  <OBJ/BSS>
+  000e8d74  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8d78  adr r0,0xe8f48
+  000e8d7c  stmia sp,{r0,r4}
+  000e8d80  add r3,sp,#0x4
+  000e8d84  mov r2,#0x1
+  000e8d88  cpy r1,r7
+  000e8d8c  cpy r0,r6
+  000e8d90  bl 0x001d1130   ; ref->001d1130 = 0xe92d43f8  <OBJ/BSS>
+  000e8d94  cmp r0,#0x0
+  000e8d98  moveq r0,#0x6
+  000e8d9c  addeq sp,sp,#0x14
+  000e8da0  ldmiaeq sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8da4  ldr r1,[sp,#0x4]
+  000e8da8  cmp r1,#0x8
+  000e8dac  bcc 0x000e8dc4   ; ref->000e8dc4 = 0xebff757b  <OBJ/BSS>
+  000e8db0  adr r0,0xe8f64
+  000e8db4  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e8db8  mov r0,#0x6
+  000e8dbc  add sp,sp,#0x14
+  000e8dc0  ldmia sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8dc4  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8dc8  ldr r1,[sp,#0x4]
+  000e8dcc  and r1,r1,#0xff
+  000e8dd0  bl 0x000c33e4   ; ref->000c33e4 = 0xe92d4ff3  <OBJ/BSS>
+  000e8dd4  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8dd8  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8ddc  bl 0x000c4f68   ; ref->000c4f68 = 0xe92d4ff0  <OBJ/BSS>
+  000e8de0  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8de4  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8de8  ldr r0,[r0,#0x610]
+  000e8dec  bl 0x00249f54   ; ref->00249f54 = 0xe16f3f10  <OBJ/BSS>
+  000e8df0  ldr r1,[0xe8f7c]
+  000e8df4  bl 0x0024a000   ; ref->0024a000 = 0xe3a0c8ff  <OBJ/BSS>
+  000e8df8  mvn r1,#0xc
+  000e8dfc  bl 0x0024a490   ; ref->0024a490 = 0xe3a020ff  <OBJ/BSS>
+  000e8e00  cpy r7,r0
+  000e8e04  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8e08  ldr r6,[r0,#0x6a8]
+  000e8e0c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8e10  ldr r5,[r0,#0x61c]
+  000e8e14  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8e18  ldr r4,[r0,#0x618]
+  000e8e1c  cpy r0,r7
+  000e8e20  bl 0x00249b28   ; ref->00249b28 = 0xe1b03080  <OBJ/BSS>
+  000e8e24  cpy r7,r0
+  000e8e28  cpy r8,r1
+  000e8e2c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e8e30  ldr r1,[r0,#0x610]
+  000e8e34  ldr r0,[0xe8f80]
+  000e8e38  cpy r2,r7
+  000e8e3c  ldr r0,[r0,#0x0]
+  000e8e40  cpy r3,r8
+  000e8e44  str r0,[sp,#0xc]
+  000e8e48  stmia sp,{r4,r5,r6}
+  000e8e4c  ldr r0,[0xe8f84]
+  000e8e50  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e8e54  mov r0,#0x0
+  000e8e58  add sp,sp,#0x14
+  000e8e5c  ldmia sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8e60  cmp r7,#0x1
+  000e8e64  beq 0x000e8ec0   ; ref->000e8ec0 = 0xe2855008  <OBJ/BSS>
+  000e8e68  ldr r0,[r6,#0x4]
+  000e8e6c  adr r1,0xe8f40
+  000e8e70  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8e74  cmp r0,#0x0
+  000e8e78  beq 0x000e8edc   ; ref->000e8edc = 0xe5854008  <OBJ/BSS>
+  000e8e7c  ldr r0,[r6,#0x4]
+  000e8e80  blx 0x00003258   ; ref->00003258 = 0x6b570
+  000e8e84  subs r4,r0,#0x0
+  000e8e88  mov r6,#0x0
+  000e8e8c  bls 0x000e8eb4   ; ref->000e8eb4 = 0xe28f00e8  <OBJ/BSS>
+  000e8e90  add r1,r5,#0x8
+  000e8e94  ldmia r1,{r1,r2,r3}
+  000e8e98  adr r0,0xe8f88
+  000e8e9c  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e8ea0  mov r0,#0x3e8
+  000e8ea4  bl 0x001d0130   ; ref->001d0130 = 0xe92d4070  <OBJ/BSS>
+  000e8ea8  add r6,r6,#0x1
+  000e8eac  cmp r4,r6
+  000e8eb0  bhi 0x000e8e90   ; ref->000e8e90 = 0xe2851008  <OBJ/BSS>
+  000e8eb4  adr r0,0xe8fa4
+  000e8eb8  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e8ebc  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e8ec0  add r5,r5,#0x8
+  000e8ec4  ldmia r5,{r1,r2,r3}
+  000e8ec8  adr r0,0xe8f88
+  000e8ecc  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e8ed0  mov r0,#0x0
+  000e8ed4  add sp,sp,#0x14
+  000e8ed8  ldmia sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8edc  str r4,[r5,#0x8]
+  000e8ee0  str r4,[r5,#0x0]
+  000e8ee4  cpy r1,r4
+  000e8ee8  str r4,[r5,#0x4]
+  000e8eec  str r4,[r5,#0xc]
+  000e8ef0  cpy r3,r1
+  000e8ef4  cpy r2,r1
+  000e8ef8  adr r0,0xe8f88
+  000e8efc  str r4,[r5,#0x10]
+  000e8f00  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e8f04  mov r0,#0x0
+  000e8f08  add sp,sp,#0x14
+  000e8f0c  ldmia sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8f10  .word 0x74617473 'stat'  <OBJ/BSS>
+  000e8f14  .word 0x0 '....'
+  000e8f18  .word 0x676572 'reg.'
+  000e8f1c  .word 0x7065 'ep..'
+  000e8f20  .word 0x6f666966 'fifo'  <OBJ/BSS>
+  000e8f24  .word 0x0 '....'
+  000e8f28  .word 0x6c707865 'expl'  <OBJ/BSS>
+  000e8f2c  .word 0x74696369 'icit'  <OBJ/BSS>
+  000e8f30  .word 0x0 '....'
+  000e8f34  .word 0x6c6162 'bal.'
+  000e8f38  .word 0x60405a24 '$Z@`'  <OBJ/BSS>
+  000e8f3c  .word 0x7374 'ts..'
+  000e8f40  .word 0x65736572 'rese'  <OBJ/BSS>
+  000e8f44  .word 0x74 't...'
+  000e8f48  .word 0x70646e45 'Endp'  <OBJ/BSS>
+  000e8f4c  .word 0x746e696f 'oint'  <OBJ/BSS>
+  000e8f50  .word 0x6d756e20 ' num'  <OBJ/BSS>
+  000e8f54  .word 0x20726562 'ber '
+  000e8f58  .word 0x65707865 'expe'  <OBJ/BSS>
+  000e8f5c  .word 0x64657463 'cted'  <OBJ/BSS>
+  000e8f60  .word 0x0 '....'
+  000e8f64  .word 0x61766e49 'Inva'  <OBJ/BSS>
+  000e8f68  .word 0x2064696c 'lid '
+  000e8f6c  .word 0x70646e65 'endp'  <OBJ/BSS>
+  000e8f70  .word 0x746e696f 'oint'  <OBJ/BSS>
+  000e8f74  .word 0x6925203a ': %i'  <OBJ/BSS>
+  000e8f78  .word 0xa21
+  000e8f7c  .word 0x45fa0000
+  000e8f80  .word 0x60405a60 '`Z@`'  <OBJ/BSS>
+  000e8f84  .word 0x602a9f88  (ptr 2a4004)
+  000e8f88  .word 0x20425355 'USB '
+  000e8f8c  .word 0x616c6162 'bala'  <OBJ/BSS>
+  000e8f90  .word 0x2065636e 'nce '
+  000e8f94  .word 0x9642520
+  000e8f98  .word 0x2e642528 '(%d.'
+  000e8f9c  .word 0x64252e2e '..%d'  <OBJ/BSS>
+  000e8fa0  .word 0xa29
+  000e8fa4  .word 0xa0a
+  000e8fa8  cmp r7,#0x1
+  000e8fac  beq 0x000e8fd0   ; ref->000e8fd0 = 0xe5956024  <OBJ/BSS>
+  000e8fb0  ldr r0,[r6,#0x4]
+  000e8fb4  adr r1,0xe8f40
+  000e8fb8  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e8fbc  cmp r0,#0x0
+  000e8fc0  beq 0x000e9034   ; ref->000e9034 = 0xe585401c  <OBJ/BSS>
+  000e8fc4  mov r0,#0x2
+  000e8fc8  add sp,sp,#0x14
+  000e8fcc  ldmia sp!,{r4,r5,r6,r7,r8,r9,pc}
+  000e8fd0  ldr r6,[r5,#0x24]
+  000e8fd4  ldr r7,[r5,#0x20]
+  000e8fd8  sub r0,r7,r6
+  000e8fdc  bl 0x00249f54   ; ref->00249f54 = 0xe16f3f10  <OBJ/BSS>
+  000e8fe0  ldr r9,[0xe9054]
+  000e8fe4  ldr r8,[r5,#0x18]
+  000e8fe8  cmp r0,r9
+  000e8fec  cpy r4,r0
+  000e8ff0  eorcs r4,r0,#0x80000000
+  000e8ff4  sub r0,r8,r6
+  000e8ff8  bl 0x00249f54   ; ref->00249f54 = 0xe16f3f10  <OBJ/BSS>
+  000e8ffc  cmp r0,r9
+  000e9000  eorcs r0,r0,#0x80000000
+  000e9004  cpy r1,r4
+  000e9008  bl 0x00249c78   ; ref->00249c78 = 0xe3a0c8ff  <OBJ/BSS>
+  000e900c  ldr r1,[0xe9058]
+  000e9010  bl 0x0024a000   ; ref->0024a000 = 0xe3a0c8ff  <OBJ/BSS>
+  000e9014  bl 0x00249b28   ; ref->00249b28 = 0xe1b03080  <OBJ/BSS>
+  000e9018  ldr r12,[r5,#0x1c]
+  000e901c  stmia sp,{r6,r7,r12}
+  000e9020  cpy r2,r0
+  000e9024  cpy r3,r1
+  000e9028  cpy r1,r8
+  000e902c  adr r0,0xe905c
+  000e9030  b 0x000e904c   ; ref->000e904c = 0xfafc6611  <OBJ/BSS>
+  000e9034  str r4,[r5,#0x1c]
+  000e9038  str r4,[sp,#0x0]
+  000e903c  ldr r1,[r5,#0x18]!
+  000e9040  ldr r3,[r5,#0x8]!
+  000e9044  ldr r2,[r5,#0x4]
+  000e9048  adr r0,0xe9094
+  000e904c  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9050  b 0x000e8f04   ; ref->000e8f04 = 0xe3a00000  <OBJ/BSS>
+  000e9054  .word 0x80800000  <OBJ/BSS>
+  000e9058  .word 0x42c80000
+  000e905c  .word 0x44627355 'UsbD'
+  000e9060  .word 0x646f6365 'ecod'  <OBJ/BSS>
+  000e9064  .word 0x203a7265 'er: '
+  000e9068  .word 0x253d5354 'TS=%'
+  000e906c  .word 0x3d206439 '9d ='
+  000e9070  .word 0x2e332520 ' %3.'
+  000e9074  .word 0x25206631 '1f %'
+  000e9078  .word 0x25282025 '% (%'
+  000e907c  .word 0x2e2e6439 '9d..'
+  000e9080  .word 0x6439252e '.%9d'  <OBJ/BSS>
+  000e9084  .word 0x202f2029 ') / '
+  000e9088  .word 0x72726f43 'Corr'  <OBJ/BSS>
+  000e908c  .word 0xa64253d
+  000e9090  .word 0x0 '....'
+  000e9094  .word 0x44627355 'UsbD'
+  000e9098  .word 0x646f6365 'ecod'  <OBJ/BSS>
+  000e909c  .word 0x203a7265 'er: '
+  000e90a0  .word 0x253d5354 'TS=%'
+  000e90a4  .word 0x28206439 '9d ('
+  000e90a8  .word 0x2e643925 '%9d.'
+  000e90ac  .word 0x39252e2e '..%9'
+  000e90b0  .word 0x2f202964 'd) /'
+  000e90b4  .word 0x726f4320 ' Cor'  <OBJ/BSS>
+  000e90b8  .word 0x64253d72 'r=%d'  <OBJ/BSS>
+  000e90bc  .word 0xa
+  000e90c0  .word 0xe1a05000  <OBJ/BSS>
+  000e90c4  .word 0xe3a0420b  <OBJ/BSS>
+  000e90c8  .word 0xe28500c0  <OBJ/BSS>
+  000e90cc  .word 0xe3e01000  <OBJ/BSS>
+  000e90d0  .word 0xebfcc9c4  <OBJ/BSS>
+  000e90d4  .word 0xe5d40060  <OBJ/BSS>
+  000e90d8  .word 0xe3100080  <OBJ/BSS>
+  000e90dc  .word 0x128f102c
+  000e90e0  .word 0x28f1038
+  000e90e4  .word 0xe28f0040  <OBJ/BSS>
+  000e90e8  .word 0xfafc65ea  <OBJ/BSS>
+  000e90ec  .word 0xe5d41060  <OBJ/BSS>
+  000e90f0  .word 0xe3110080  <OBJ/BSS>
+  000e90f4  .word 0xa000002
+  000e90f8  .word 0xe28f0048  <OBJ/BSS>
+  000e90fc  .word 0xfafc65e5  <OBJ/BSS>
+  000e9100  .word 0xeafffff0  <OBJ/BSS>
+  000e9104  .word 0xe3a00064  <OBJ/BSS>
+  000e9108  .word 0xeb039c08  <OBJ/BSS>
+  000e910c  .word 0xeafffff6  <OBJ/BSS>
+  000e9110  .word 0x43534944 'DISC'
+  000e9114  .word 0x454e4e4f 'ONNE'
+  000e9118  .word 0x44455443 'CTED'
+  000e911c  .word 0x0 '....'
+  000e9120  .word 0x4e4e4f43 'CONN'
+  000e9124  .word 0x45544345 'ECTE'
+  000e9128  .word 0x44 'D...'
+  000e912c  .word 0x2020200a
+  000e9130  .word 0x72727543 'Curr'  <OBJ/BSS>
+  000e9134  .word 0x20746e65 'ent '
+  000e9138  .word 0x74617473 'stat'  <OBJ/BSS>
+  000e913c  .word 0x20203a65 'e:  '
+  000e9140  .word 0x73252020 '  %s'  <OBJ/BSS>
+  000e9144  .word 0xa0a
+  000e9148  .word 0x20200a0a
+  000e914c  .word 0x53494420 ' DIS'
+  000e9150  .word 0x4e4e4f43 'CONN'
+  000e9154  .word 0x20544345 'ECT '
+  000e9158  .word 0x65746564 'dete'  <OBJ/BSS>
+  000e915c  .word 0x64657463 'cted'  <OBJ/BSS>
+  000e9160  .word 0xa
+  000e9164  .word 0xe92d4ff0  <OBJ/BSS>
+  000e9168  .word 0xe1b0b002  <OBJ/BSS>
+  000e916c  .word 0xe24dd024  <OBJ/BSS>
+  000e9170  .word 0xe1a05000  <OBJ/BSS>
+  000e9174  .word 0xe1a09001  <OBJ/BSS>
+  000e9178  .word 0xe3a0420b  <OBJ/BSS>
+  000e917c  .word 0xa00032f
+  000e9180  .word 0xe5990000  <OBJ/BSS>
+  000e9184  .word 0xe28f1f7a  <OBJ/BSS>
+  000e9188  .word 0xebfc6ae2  <OBJ/BSS>
+  000e918c  .word 0xe3500000  <OBJ/BSS>
+  000e9190  .word 0xa00003b
+  000e9194  .word 0xe5990000  <OBJ/BSS>
+  000e9198  .word 0xe28f1f77  <OBJ/BSS>
+  000e919c  .word 0xebfc6add  <OBJ/BSS>
+  000e91a0  .word 0xe3500000  <OBJ/BSS>
+  000e91a4  .word 0xa00003b
+  000e91a8  .word 0xe5990000  <OBJ/BSS>
+  000e91ac  .word 0xe28f1f73  <OBJ/BSS>
+  000e91b0  .word 0xebfc6ad8  <OBJ/BSS>
+  000e91b4  .word 0xe3500000  <OBJ/BSS>
+  000e91b8  .word 0xa000052
+  000e91bc  .word 0xe5990000  <OBJ/BSS>
+  000e91c0  .word 0xe28f1d07  <OBJ/BSS>
+  000e91c4  .word 0xebfc6ad3  <OBJ/BSS>
+  000e91c8  .word 0xe3500000  <OBJ/BSS>
+  000e91cc  .word 0xa000057
+  000e91d0  .word 0xe5990000  <OBJ/BSS>
+  000e91d4  .word 0xe28f1f6d  <OBJ/BSS>
+  000e91d8  .word 0xebfc6ace  <OBJ/BSS>
+  000e91dc  .word 0xe3500000  <OBJ/BSS>
+  000e91e0  .word 0xa0000a3
+  000e91e4  .word 0xe5990000  <OBJ/BSS>
+  000e91e8  .word 0xe28f1f6b  <OBJ/BSS>
+  000e91ec  .word 0xebfc6ac9  <OBJ/BSS>
+  000e91f0  .word 0xe3500000  <OBJ/BSS>
+  000e91f4  .word 0xa0000bb
+  000e91f8  .word 0xe5990000  <OBJ/BSS>
+  000e91fc  .word 0xe28f1f6a  <OBJ/BSS>
+  000e9200  .word 0xebfc6ac4  <OBJ/BSS>
+  000e9204  .word 0xe3500000  <OBJ/BSS>
+  000e9208  .word 0xe3a0a001  <OBJ/BSS>
+  000e920c  .word 0xe3a08000  <OBJ/BSS>
+  000e9210  .word 0xa0000d3
+  000e9214  .word 0xe5990000  <OBJ/BSS>
+  000e9218  .word 0xe28f1f65  <OBJ/BSS>
+  000e921c  .word 0xebfc6abd  <OBJ/BSS>
+  000e9220  .word 0xe3500000  <OBJ/BSS>
+  000e9224  .word 0xa000160
+  000e9228  .word 0xe5990000  <OBJ/BSS>
+  000e922c  .word 0xe28f1f63  <OBJ/BSS>
+  000e9230  .word 0xebfc6ab8  <OBJ/BSS>
+  000e9234  .word 0xe3500000  <OBJ/BSS>
+  000e9238  .word 0xe2847020  <OBJ/BSS>
+  000e923c  .word 0xe3a0620b  <OBJ/BSS>
+  000e9240  .word 0xa00018f
+  000e9244  .word 0xe5990000  <OBJ/BSS>
+  000e9248  .word 0xe28f1f5f  <OBJ/BSS>
+  000e924c  .word 0xebfc6ab1  <OBJ/BSS>
+  000e9250  .word 0xe3500000  <OBJ/BSS>
+  000e9254  .word 0xa000240
+  000e9258  .word 0xe5990000  <OBJ/BSS>
+  000e925c  .word 0xe28f1f5d  <OBJ/BSS>
+  000e9260  .word 0xebfc6aac  <OBJ/BSS>
+  000e9264  .word 0xe3500000  <OBJ/BSS>
+  000e9268  .word 0xa0002cf
+  000e926c  .word 0xe5990000  <OBJ/BSS>
+  000e9270  .word 0xe28f1f5a  <OBJ/BSS>
+  000e9274  .word 0xebfc6aa7  <OBJ/BSS>
+  000e9278  .word 0xe3500000  <OBJ/BSS>
+  000e927c  .word 0xa00036e
+  000e9280  .word 0xea0002ee  <OBJ/BSS>
+  000e9284  .word 0xe28f0e16  <OBJ/BSS>
+  000e9288  .word 0xfafc6582  <OBJ/BSS>
+  000e928c  .word 0xebff7449  <OBJ/BSS>
+  000e9290  .word 0xebff7458  <OBJ/BSS>
+  000e9294  .word 0xea000033  <OBJ/BSS>
+  000e9298  .word 0xe35b0002  <OBJ/BSS>
+  000e929c  .word 0x13a00006
+  000e92a0  .word 0x128dd024
+  000e92a4  .word 0x18bd8ff0
+  000e92a8  .word 0xe5990004  <OBJ/BSS>
+  000e92ac  .word 0xe28f1f52  <OBJ/BSS>
+  000e92b0  .word 0xebfc6a98  <OBJ/BSS>
+  000e92b4  .word 0xe3500000  <OBJ/BSS>
+  000e92b8  .word 0xa000005
+  000e92bc  .word 0xe5990004  <OBJ/BSS>
+  000e92c0  .word 0xe28f1f4f  <OBJ/BSS>
+  000e92c4  .word 0xebfc6a93  <OBJ/BSS>
+  000e92c8  .word 0xe3500000  <OBJ/BSS>
+  000e92cc  .word 0xa000007
+  000e92d0  .word 0xea000024  <OBJ/BSS>
+  000e92d4  .word 0xe28f0e13  <OBJ/BSS>
+  000e92d8  .word 0xfafc656e  <OBJ/BSS>
+  000e92dc  .word 0xebff7435  <OBJ/BSS>
+  000e92e0  .word 0xe5901000  <OBJ/BSS>
+  000e92e4  .word 0xe5912088  <OBJ/BSS>
+  000e92e8  .word 0xe3a01000  <OBJ/BSS>
+  000e92ec  .word 0xea00033b  <OBJ/BSS>
+  000e92f0  .word 0xe28f0f4a  <OBJ/BSS>
+  000e92f4  .word 0xfafc6567  <OBJ/BSS>
+  000e92f8  .word 0xebff742e  <OBJ/BSS>
+  000e92fc  .word 0xe5901000  <OBJ/BSS>
+  000e9300  .word 0xe5912088  <OBJ/BSS>
+  000e9304  .word 0xea00031f  <OBJ/BSS>
+  000e9308  .word 0xe28f0f49  <OBJ/BSS>
+  000e930c  .word 0xfafc6561  <OBJ/BSS>
+  000e9310  .word 0xebff7428  <OBJ/BSS>
+  000e9314  .word 0xe59004c8  <OBJ/BSS>
+  000e9318  .word 0xe5d01001  <OBJ/BSS>
+  000e931c  .word 0xe3811002  <OBJ/BSS>
+  000e9320  .word 0xe5c01001  <OBJ/BSS>
+  000e9324  .word 0xe3a00000  <OBJ/BSS>
+  000e9328  .word 0xe28dd024  <OBJ/BSS>
+  000e932c  .word 0xe8bd8ff0  <OBJ/BSS>
+  000e9330  .word 0xe28f0f46  <OBJ/BSS>
+  000e9334  .word 0xfafc6557  <OBJ/BSS>
+  000e9338  .word 0xebff741e  <OBJ/BSS>
+  000e933c  .word 0xe1a04000  <OBJ/BSS>
+  000e9340  .word 0xe59004c8  <OBJ/BSS>
+  000e9344  .word 0xe5d01001  <OBJ/BSS>
+  000e9348  .word 0xe3811004  <OBJ/BSS>
+  000e934c  .word 0xe5c01001  <OBJ/BSS>
+  000e9350  .word 0xe3a0000a  <OBJ/BSS>
+  000e9354  .word 0xeb039b75  <OBJ/BSS>
+  000e9358  .word 0xe59404c8  <OBJ/BSS>
+  000e935c  .word 0xe5d01001  <OBJ/BSS>
+  000e9360  .word 0xe3c11004  <OBJ/BSS>
+  000e9364  .word 0xe5c01001  <OBJ/BSS>
+  000e9368  .word 0xe3a00000  <OBJ/BSS>
+  000e936c  .word 0xe28dd024  <OBJ/BSS>
+  000e9370  .word 0xe8bd8ff0  <OBJ/BSS>
+  000e9374  .word 0x65736572 'rese'  <OBJ/BSS>
+  000e9378  .word 0x74 't...'
+  000e937c  .word 0x796870 'phy.'
+  000e9380  .word 0x70737573 'susp'  <OBJ/BSS>
+  000e9384  .word 0x646e65 'end.'
+  000e9388  .word 0x75736572 'resu'  <OBJ/BSS>
+  000e938c  .word 0x656d 'me..'
+  000e9390  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e9394  .word 0x5348656c 'leHS'
+  000e9398  .word 0x0 '....'
+  000e939c  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e93a0  .word 0x6f53656c 'leSo'  <OBJ/BSS>
+  000e93a4  .word 0x6f437466 'ftCo'  <OBJ/BSS>
+  000e93a8  .word 0x6e6e 'nn..'
+  000e93ac  .word 0x73736573 'sess'  <OBJ/BSS>
+  000e93b0  .word 0x6e6f69 'ion.'
+  000e93b4  .word 0x74736f68 'host'  <OBJ/BSS>
+  000e93b8  .word 0x63736944 'Disc'  <OBJ/BSS>
+  000e93bc  .word 0x0 '....'
+  000e93c0  .word 0x46746573 'setF'
+  000e93c4  .word 0x53746165 'eatS'
+  000e93c8  .word 0x706574 'tep.'
+  000e93cc  .word 0x44766564 'devD'
+  000e93d0  .word 0x53637365 'escS'
+  000e93d4  .word 0x706574 'tep.'
+  000e93d8  .word 0x74736574 'test'  <OBJ/BSS>
+  000e93dc  .word 0x746170 'pat.'
+  000e93e0  .word 0x48746573 'setH'
+  000e93e4  .word 0x5274736f 'ostR'
+  000e93e8  .word 0x7165 'eq..'
+  000e93ec  .word 0x55203e2d '-> U'
+  000e93f0  .word 0x72204253 'SB r'  <OBJ/BSS>
+  000e93f4  .word 0x74657365 'eset'  <OBJ/BSS>
+  000e93f8  .word 0xa
+  000e93fc  .word 0x61736964 'disa'  <OBJ/BSS>
+  000e9400  .word 0x656c62 'ble.'
+  000e9404  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e9408  .word 0x656c 'le..'
+  000e940c  .word 0x64203e2d '-> d'  <OBJ/BSS>
+  000e9410  .word 0x62617369 'isab'  <OBJ/BSS>
+  000e9414  .word 0x5520656c 'le U'
+  000e9418  .word 0x70204253 'SB p'  <OBJ/BSS>
+  000e941c  .word 0xa7968
+  000e9420  .word 0x65203e2d '-> e'  <OBJ/BSS>
+  000e9424  .word 0x6c62616e 'nabl'  <OBJ/BSS>
+  000e9428  .word 0x53552065 'e US'
+  000e942c  .word 0x68702042 'B ph'  <OBJ/BSS>
+  000e9430  .word 0xa79
+  000e9434  .word 0x65203e2d '-> e'  <OBJ/BSS>
+  000e9438  .word 0x7265746e 'nter'  <OBJ/BSS>
+  000e943c  .word 0x42535520 ' USB'
+  000e9440  .word 0x73757320 ' sus'  <OBJ/BSS>
+  000e9444  .word 0x646e6570 'pend'  <OBJ/BSS>
+  000e9448  .word 0x646f6d20 ' mod'  <OBJ/BSS>
+  000e944c  .word 0xa65
+  000e9450  .word 0x72203e2d '-> r'  <OBJ/BSS>
+  000e9454  .word 0x6d757365 'esum'  <OBJ/BSS>
+  000e9458  .word 0x53552065 'e US'
+  000e945c  .word 0x72662042 'B fr'  <OBJ/BSS>
+  000e9460  .word 0x73206d6f 'om s'  <OBJ/BSS>
+  000e9464  .word 0x65707375 'uspe'  <OBJ/BSS>
+  000e9468  .word 0x6d20646e 'nd m'  <OBJ/BSS>
+  000e946c  .word 0xa65646f
+  000e9470  .word 0x0 '....'
+  000e9474  .word 0xe35b0001  <OBJ/BSS>
+  000e9478  .word 0xa00000a
+  000e947c  .word 0xe5990004  <OBJ/BSS>
+  000e9480  .word 0xe28f1f55  <OBJ/BSS>
+  000e9484  .word 0xebfc6a23  <OBJ/BSS>
+  000e9488  .word 0xe3500000  <OBJ/BSS>
+  000e948c  .word 0xa00000b
+  000e9490  .word 0xe5990004  <OBJ/BSS>
+  000e9494  .word 0xe28f1f51  <OBJ/BSS>
+  000e9498  .word 0xebfc6a1e  <OBJ/BSS>
+  000e949c  .word 0xe3500000  <OBJ/BSS>
+  000e94a0  .word 0xa00000b
+
+############ ARM range e9164..e9a00
+  000e9164  stmdb sp!,{r4,r5,r6,r7,r8,r9,r10,r11,lr}
+  000e9168  movs r11,r2
+  000e916c  sub sp,sp,#0x24
+  000e9170  cpy r5,r0
+  000e9174  cpy r9,r1
+  000e9178  mov r4,#0xb0000000
+  000e917c  beq 0x000e9e40   ; ref->000e9e40 = 0xe3a00002  <OBJ/BSS>
+  000e9180  ldr r0,[r9,#0x0]
+  000e9184  adr r1,0xe9374
+  000e9188  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e918c  cmp r0,#0x0
+  000e9190  beq 0x000e9284   ; ref->000e9284 = 0xe28f0e16  <OBJ/BSS>
+  000e9194  ldr r0,[r9,#0x0]
+  000e9198  adr r1,0xe937c
+  000e919c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e91a0  cmp r0,#0x0
+  000e91a4  beq 0x000e9298   ; ref->000e9298 = 0xe35b0002  <OBJ/BSS>
+  000e91a8  ldr r0,[r9,#0x0]
+  000e91ac  adr r1,0xe9380
+  000e91b0  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e91b4  cmp r0,#0x0
+  000e91b8  beq 0x000e9308   ; ref->000e9308 = 0xe28f0f49  <OBJ/BSS>
+  000e91bc  ldr r0,[r9,#0x0]
+  000e91c0  adr r1,0xe9388
+  000e91c4  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e91c8  cmp r0,#0x0
+  000e91cc  beq 0x000e9330   ; ref->000e9330 = 0xe28f0f46  <OBJ/BSS>
+  000e91d0  ldr r0,[r9,#0x0]
+  000e91d4  adr r1,0xe9390
+  000e91d8  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e91dc  cmp r0,#0x0
+  000e91e0  beq 0x000e9474   ; ref->000e9474 = 0xe35b0001  <OBJ/BSS>
+  000e91e4  ldr r0,[r9,#0x0]
+  000e91e8  adr r1,0xe939c
+  000e91ec  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e91f0  cmp r0,#0x0
+  000e91f4  beq 0x000e94e8   ; ref->000e94e8 = 0xe35b0001  <OBJ/BSS>
+  000e91f8  ldr r0,[r9,#0x0]
+  000e91fc  adr r1,0xe93ac
+  000e9200  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9204  cmp r0,#0x0
+  000e9208  mov r10,#0x1
+  000e920c  mov r8,#0x0
+  000e9210  beq 0x000e9564   ; ref->000e9564 = 0xe35b0001  <OBJ/BSS>
+  000e9214  ldr r0,[r9,#0x0]
+  000e9218  adr r1,0xe93b4
+  000e921c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9220  cmp r0,#0x0
+  000e9224  beq 0x000e97ac   ; ref->000e97ac = 0xebff7301  <OBJ/BSS>
+  000e9228  ldr r0,[r9,#0x0]
+  000e922c  adr r1,0xe93c0
+  000e9230  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9234  cmp r0,#0x0
+  000e9238  add r7,r4,#0x20
+  000e923c  mov r6,#0xb0000000
+  000e9240  beq 0x000e9884   ; ref->000e9884 = 0xe35b0002  <OBJ/BSS>
+  000e9244  ldr r0,[r9,#0x0]
+  000e9248  adr r1,0xe93cc
+  000e924c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9250  cmp r0,#0x0
+  000e9254  beq 0x000e9b5c   ; ref->000e9b5c = 0xe35b0002  <OBJ/BSS>
+  000e9258  ldr r0,[r9,#0x0]
+  000e925c  adr r1,0xe93d8
+  000e9260  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9264  cmp r0,#0x0
+  000e9268  beq 0x000e9dac   ; ref->000e9dac = 0xe35b0002  <OBJ/BSS>
+  000e926c  ldr r0,[r9,#0x0]
+  000e9270  adr r1,0xe93e0
+  000e9274  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9278  cmp r0,#0x0
+  000e927c  beq 0x000ea03c   ; ref->000ea03c = 0xebff70dd  <OBJ/BSS>
+  000e9280  b 0x000e9e40   ; ref->000e9e40 = 0xe3a00002  <OBJ/BSS>
+  000e9284  adr r0,0xe93ec
+  000e9288  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e928c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9290  bl 0x000c63f8   ; ref->000c63f8 = 0xe92d4010  <OBJ/BSS>
+  000e9294  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e9298  cmp r11,#0x2
+  000e929c  movne r0,#0x6
+  000e92a0  addne sp,sp,#0x24
+  000e92a4  ldmiane sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000e92a8  ldr r0,[r9,#0x4]
+  000e92ac  adr r1,0xe93fc
+  000e92b0  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e92b4  cmp r0,#0x0
+  000e92b8  beq 0x000e92d4   ; ref->000e92d4 = 0xe28f0e13  <OBJ/BSS>
+  000e92bc  ldr r0,[r9,#0x4]
+  000e92c0  adr r1,0xe9404
+  000e92c4  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e92c8  cmp r0,#0x0
+  000e92cc  beq 0x000e92f0   ; ref->000e92f0 = 0xe28f0f4a  <OBJ/BSS>
+  000e92d0  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e92d4  adr r0,0xe940c
+  000e92d8  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e92dc  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e92e0  ldr r1,[r0,#0x0]
+  000e92e4  ldr r2,[r1,#0x88]
+  000e92e8  mov r1,#0x0
+  000e92ec  b 0x000e9fe0   ; ref->000e9fe0 = 0xe12fff32  <OBJ/BSS>
+  000e92f0  adr r0,0xe9420
+  000e92f4  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e92f8  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e92fc  ldr r1,[r0,#0x0]
+  000e9300  ldr r2,[r1,#0x88]
+  000e9304  b 0x000e9f88   ; ref->000e9f88 = 0xe3a01001  <OBJ/BSS>
+  000e9308  adr r0,0xe9434
+  000e930c  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9310  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9314  ldr r0,[r0,#0x4c8]
+  000e9318  ldrb r1,[r0,#0x1]
+  000e931c  orr r1,r1,#0x2
+  000e9320  strb r1,[r0,#0x1]
+  000e9324  mov r0,#0x0
+  000e9328  add sp,sp,#0x24
+  000e932c  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000e9330  adr r0,0xe9450
+  000e9334  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9338  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e933c  cpy r4,r0
+  000e9340  ldr r0,[r0,#0x4c8]
+  000e9344  ldrb r1,[r0,#0x1]
+  000e9348  orr r1,r1,#0x4
+  000e934c  strb r1,[r0,#0x1]
+  000e9350  mov r0,#0xa
+  000e9354  bl 0x001d0130   ; ref->001d0130 = 0xe92d4070  <OBJ/BSS>
+  000e9358  ldr r0,[r4,#0x4c8]
+  000e935c  ldrb r1,[r0,#0x1]
+  000e9360  bic r1,r1,#0x4
+  000e9364  strb r1,[r0,#0x1]
+  000e9368  mov r0,#0x0
+  000e936c  add sp,sp,#0x24
+  000e9370  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000e9374  .word 0x65736572 'rese'  <OBJ/BSS>
+  000e9378  .word 0x74 't...'
+  000e937c  .word 0x796870 'phy.'
+  000e9380  .word 0x70737573 'susp'  <OBJ/BSS>
+  000e9384  .word 0x646e65 'end.'
+  000e9388  .word 0x75736572 'resu'  <OBJ/BSS>
+  000e938c  .word 0x656d 'me..'
+  000e9390  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e9394  .word 0x5348656c 'leHS'
+  000e9398  .word 0x0 '....'
+  000e939c  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e93a0  .word 0x6f53656c 'leSo'  <OBJ/BSS>
+  000e93a4  .word 0x6f437466 'ftCo'  <OBJ/BSS>
+  000e93a8  .word 0x6e6e 'nn..'
+  000e93ac  .word 0x73736573 'sess'  <OBJ/BSS>
+  000e93b0  .word 0x6e6f69 'ion.'
+  000e93b4  .word 0x74736f68 'host'  <OBJ/BSS>
+  000e93b8  .word 0x63736944 'Disc'  <OBJ/BSS>
+  000e93bc  .word 0x0 '....'
+  000e93c0  .word 0x46746573 'setF'
+  000e93c4  .word 0x53746165 'eatS'
+  000e93c8  .word 0x706574 'tep.'
+  000e93cc  .word 0x44766564 'devD'
+  000e93d0  .word 0x53637365 'escS'
+  000e93d4  .word 0x706574 'tep.'
+  000e93d8  .word 0x74736574 'test'  <OBJ/BSS>
+  000e93dc  .word 0x746170 'pat.'
+  000e93e0  .word 0x48746573 'setH'
+  000e93e4  .word 0x5274736f 'ostR'
+  000e93e8  .word 0x7165 'eq..'
+  000e93ec  .word 0x55203e2d '-> U'
+  000e93f0  .word 0x72204253 'SB r'  <OBJ/BSS>
+  000e93f4  .word 0x74657365 'eset'  <OBJ/BSS>
+  000e93f8  .word 0xa
+  000e93fc  .word 0x61736964 'disa'  <OBJ/BSS>
+  000e9400  .word 0x656c62 'ble.'
+  000e9404  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e9408  .word 0x656c 'le..'
+  000e940c  .word 0x64203e2d '-> d'  <OBJ/BSS>
+  000e9410  .word 0x62617369 'isab'  <OBJ/BSS>
+  000e9414  .word 0x5520656c 'le U'
+  000e9418  .word 0x70204253 'SB p'  <OBJ/BSS>
+  000e941c  .word 0xa7968
+  000e9420  .word 0x65203e2d '-> e'  <OBJ/BSS>
+  000e9424  .word 0x6c62616e 'nabl'  <OBJ/BSS>
+  000e9428  .word 0x53552065 'e US'
+  000e942c  .word 0x68702042 'B ph'  <OBJ/BSS>
+  000e9430  .word 0xa79
+  000e9434  .word 0x65203e2d '-> e'  <OBJ/BSS>
+  000e9438  .word 0x7265746e 'nter'  <OBJ/BSS>
+  000e943c  .word 0x42535520 ' USB'
+  000e9440  .word 0x73757320 ' sus'  <OBJ/BSS>
+  000e9444  .word 0x646e6570 'pend'  <OBJ/BSS>
+  000e9448  .word 0x646f6d20 ' mod'  <OBJ/BSS>
+  000e944c  .word 0xa65
+  000e9450  .word 0x72203e2d '-> r'  <OBJ/BSS>
+  000e9454  .word 0x6d757365 'esum'  <OBJ/BSS>
+  000e9458  .word 0x53552065 'e US'
+  000e945c  .word 0x72662042 'B fr'  <OBJ/BSS>
+  000e9460  .word 0x73206d6f 'om s'  <OBJ/BSS>
+  000e9464  .word 0x65707375 'uspe'  <OBJ/BSS>
+  000e9468  .word 0x6d20646e 'nd m'  <OBJ/BSS>
+  000e946c  .word 0xa65646f
+  000e9470  .word 0x0 '....'
+  000e9474  cmp r11,#0x1
+  000e9478  beq 0x000e94a8   ; ref->000e94a8 = 0xe5d40001  <OBJ/BSS>
+  000e947c  ldr r0,[r9,#0x4]
+  000e9480  adr r1,0xe95dc
+  000e9484  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9488  cmp r0,#0x0
+  000e948c  beq 0x000e94c0   ; ref->000e94c0 = 0xe28f0e15  <OBJ/BSS>
+  000e9490  ldr r0,[r9,#0x4]
+  000e9494  adr r1,0xe95e0
+  000e9498  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e949c  cmp r0,#0x0
+  000e94a0  beq 0x000e94d4   ; ref->000e94d4 = 0xe28f0f56  <OBJ/BSS>
+  000e94a4  b 0x000e9e40   ; ref->000e9e40 = 0xe3a00002  <OBJ/BSS>
+  000e94a8  ldrb r0,[r4,#0x1]
+  000e94ac  tst r0,#0x20
+  000e94b0  adrne r1,0xe95e4
+  000e94b4  adreq r1,0xe95ec
+  000e94b8  adr r0,0xe95f8
+  000e94bc  b 0x000e95b4   ; ref->000e95b4 = 0xfafc64b7  <OBJ/BSS>
+  000e94c0  adr r0,0xe9618
+  000e94c4  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e94c8  ldrb r0,[r4,#0x1]
+  000e94cc  orr r0,r0,#0x20
+  000e94d0  b 0x000e955c   ; ref->000e955c = 0xe5c40001  <OBJ/BSS>
+  000e94d4  adr r0,0xe9634
+  000e94d8  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e94dc  ldrb r0,[r4,#0x1]
+  000e94e0  bic r0,r0,#0x20
+  000e94e4  b 0x000e955c   ; ref->000e955c = 0xe5c40001  <OBJ/BSS>
+  000e94e8  cmp r11,#0x1
+  000e94ec  beq 0x000e951c   ; ref->000e951c = 0xe5d40001  <OBJ/BSS>
+  000e94f0  ldr r0,[r9,#0x4]
+  000e94f4  adr r1,0xe95dc
+  000e94f8  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e94fc  cmp r0,#0x0
+  000e9500  beq 0x000e9538   ; ref->000e9538 = 0xe28f0e13  <OBJ/BSS>
+  000e9504  ldr r0,[r9,#0x4]
+  000e9508  adr r1,0xe95e0
+  000e950c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9510  cmp r0,#0x0
+  000e9514  beq 0x000e954c   ; ref->000e954c = 0xe28f0f4e  <OBJ/BSS>
+  000e9518  b 0x000e9e40   ; ref->000e9e40 = 0xe3a00002  <OBJ/BSS>
+  000e951c  ldrb r0,[r4,#0x1]
+  000e9520  tst r0,#0x40
+  000e9524  adrne r1,0xe95e4
+  000e9528  adreq r1,0xe95ec
+  000e952c  adr r0,0xe9650
+  000e9530  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9534  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e9538  adr r0,0xe9670
+  000e953c  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9540  ldrb r0,[r4,#0x1]
+  000e9544  orr r0,r0,#0x40
+  000e9548  b 0x000e955c   ; ref->000e955c = 0xe5c40001  <OBJ/BSS>
+  000e954c  adr r0,0xe968c
+  000e9550  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9554  ldrb r0,[r4,#0x1]
+  000e9558  bic r0,r0,#0x40
+  000e955c  strb r0,[r4,#0x1]
+  000e9560  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e9564  cmp r11,#0x1
+  000e9568  beq 0x000e9598   ; ref->000e9598 = 0xebff7386  <OBJ/BSS>
+  000e956c  ldr r0,[r9,#0x4]
+  000e9570  adr r1,0xe95dc
+  000e9574  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e9578  cmp r0,#0x0
+  000e957c  beq 0x000e95bc   ; ref->000e95bc = 0xebff737d  <OBJ/BSS>
+  000e9580  ldr r0,[r9,#0x4]
+  000e9584  adr r1,0xe95e0
+  000e9588  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  000e958c  cmp r0,#0x0
+  000e9590  beq 0x000e96e0   ; ref->000e96e0 = 0xebff7334  <OBJ/BSS>
+  000e9594  b 0x000e9e40   ; ref->000e9e40 = 0xe3a00002  <OBJ/BSS>
+  000e9598  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e959c  ldr r0,[r0,#0x4c8]
+  000e95a0  ldrb r0,[r0,#0x60]
+  000e95a4  tst r0,#0x1
+  000e95a8  adrne r1,0xe95dc
+  000e95ac  adreq r1,0xe95e0
+  000e95b0  adr r0,0xe96a8
+  000e95b4  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e95b8  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e95bc  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e95c0  ldr r1,[r0,#0x0]
+  000e95c4  ldr r2,[r1,#0x84]
+  000e95c8  mov r1,#0x1
+  000e95cc  blx r2
+  000e95d0  adr r0,0xe96c8
+  000e95d4  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e95d8  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e95dc  .word 0x6e6f 'on..'
+  000e95e0  .word 0x66666f 'off.'
+  000e95e4  .word 0x62616e65 'enab'  <OBJ/BSS>
+  000e95e8  .word 0x64656c 'led.'
+  000e95ec  .word 0x61736964 'disa'  <OBJ/BSS>
+  000e95f0  .word 0x64656c62 'bled'  <OBJ/BSS>
+  000e95f4  .word 0x0 '....'
+  000e95f8  .word 0x68676948 'High'  <OBJ/BSS>
+  000e95fc  .word 0x65657053 'Spee'  <OBJ/BSS>
+  000e9600  .word 0x6f6d2064 'd mo'  <OBJ/BSS>
+  000e9604  .word 0x69206564 'de i'  <OBJ/BSS>
+  000e9608  .word 0x75632073 's cu'  <OBJ/BSS>
+  000e960c  .word 0x6e657272 'rren'  <OBJ/BSS>
+  000e9610  .word 0x20796c74 'tly '
+  000e9614  .word 0xa7325
+  000e9618  .word 0x48203e2d '-> H'
+  000e961c  .word 0x53686769 'ighS'
+  000e9620  .word 0x64656570 'peed'  <OBJ/BSS>
+  000e9624  .word 0x646f6d20 ' mod'  <OBJ/BSS>
+  000e9628  .word 0x6e652065 'e en'  <OBJ/BSS>
+  000e962c  .word 0x656c6261 'able'  <OBJ/BSS>
+  000e9630  .word 0xa64
+  000e9634  .word 0x48203e2d '-> H'
+  000e9638  .word 0x53686769 'ighS'
+  000e963c  .word 0x64656570 'peed'  <OBJ/BSS>
+  000e9640  .word 0x646f6d20 ' mod'  <OBJ/BSS>
+  000e9644  .word 0x69642065 'e di'  <OBJ/BSS>
+  000e9648  .word 0x6c626173 'sabl'  <OBJ/BSS>
+  000e964c  .word 0xa6465
+  000e9650  .word 0x74666f53 'Soft'  <OBJ/BSS>
+  000e9654  .word 0x6e6e6f43 'Conn'  <OBJ/BSS>
+  000e9658  .word 0x646f6d20 ' mod'  <OBJ/BSS>
+  000e965c  .word 0x73692065 'e is'  <OBJ/BSS>
+  000e9660  .word 0x72756320 ' cur'  <OBJ/BSS>
+  000e9664  .word 0x746e6572 'rent'  <OBJ/BSS>
+  000e9668  .word 0x2520796c 'ly %'
+  000e966c  .word 0xa73
+  000e9670  .word 0x53203e2d '-> S'
+  000e9674  .word 0x4374666f 'oftC'
+  000e9678  .word 0x206e6e6f 'onn '
+  000e967c  .word 0x65646f6d 'mode'  <OBJ/BSS>
+  000e9680  .word 0x616e6520 ' ena'  <OBJ/BSS>
+  000e9684  .word 0x64656c62 'bled'  <OBJ/BSS>
+  000e9688  .word 0xa
+  000e968c  .word 0x53203e2d '-> S'
+  000e9690  .word 0x4374666f 'oftC'
+  000e9694  .word 0x206e6e6f 'onn '
+  000e9698  .word 0x65646f6d 'mode'  <OBJ/BSS>
+  000e969c  .word 0x73696420 ' dis'  <OBJ/BSS>
+  000e96a0  .word 0x656c6261 'able'  <OBJ/BSS>
+  000e96a4  .word 0xa64
+  000e96a8  .word 0x20425355 'USB '
+  000e96ac  .word 0x73736573 'sess'  <OBJ/BSS>
+  000e96b0  .word 0x206e6f69 'ion '
+  000e96b4  .word 0x63207369 'is c'  <OBJ/BSS>
+  000e96b8  .word 0x65727275 'urre'  <OBJ/BSS>
+  000e96bc  .word 0x796c746e 'ntly'  <OBJ/BSS>
+  000e96c0  .word 0xa732520
+  000e96c4  .word 0x0 '....'
+  000e96c8  .word 0x55203e2d '-> U'
+  000e96cc  .word 0x53204253 'SB S'
+  000e96d0  .word 0x69737365 'essi'  <OBJ/BSS>
+  000e96d4  .word 0x65206e6f 'on e'  <OBJ/BSS>
+  000e96d8  .word 0x6c62616e 'nabl'  <OBJ/BSS>
+  000e96dc  .word 0xa6465
+  000e96e0  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e96e4  cpy r4,r0
+  000e96e8  ldr r0,[r0,#0x0]
+  000e96ec  ldr r1,[r0,#0x6c]
+  000e96f0  cpy r0,r4
+  000e96f4  blx r1
+  000e96f8  cmp r0,#0x0
+  000e96fc  bne 0x000e9734   ; ref->000e9734 = 0xebff731f  <OBJ/BSS>
+  000e9700  ldr r0,[r4,#0x4c8]
+  000e9704  ldrb r0,[r0,#0x60]
+  000e9708  tst r0,#0x4
+  000e970c  beq 0x000e9728   ; ref->000e9728 = 0xe28f0fb2  <OBJ/BSS>
+  000e9710  tst r0,#0x40
+  000e9714  movne r10,#0x2
+  000e9718  bne 0x000e9734   ; ref->000e9734 = 0xebff731f  <OBJ/BSS>
+  000e971c  tst r0,#0x20
+  000e9720  movne r10,#0x3
+  000e9724  bne 0x000e9734   ; ref->000e9734 = 0xebff731f  <OBJ/BSS>
+  000e9728  adr r0,0xe99f8
+  000e972c  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9730  mov r10,#0x1
+  000e9734  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9738  cpy r2,r10
+  000e973c  mov r1,#0x1
+  000e9740  bl 0x000c1f04   ; ref->000c1f04 = 0xe59034c8  <OBJ/BSS>
+  000e9744  cmp r0,#0x0
+  000e9748  beq 0x000e9794   ; ref->000e9794 = 0xe1a0100a  <OBJ/BSS>
+  000e974c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9750  ldr r1,[r0,#0x0]
+  000e9754  ldr r2,[r1,#0x84]
+  000e9758  mov r1,#0x0
+  000e975c  blx r2
+  000e9760  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9764  cpy r2,r10
+  000e9768  mov r1,#0x0
+  000e976c  bl 0x000c1f04   ; ref->000c1f04 = 0xe59034c8  <OBJ/BSS>
+  000e9770  cmp r0,#0x0
+  000e9774  adrne r0,0xe9a30
+  000e9778  bne 0x000e95d4   ; ref->000e95d4 = 0xfafc64af  <OBJ/BSS>
+  000e977c  cpy r1,r10
+  000e9780  adr r0,0xe9a4c
+  000e9784  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e9788  mov r0,#0x2
+  000e978c  add sp,sp,#0x24
+  000e9790  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000e9794  cpy r1,r10
+  000e9798  adr r0,0xe9a78
+  000e979c  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e97a0  mov r0,#0x2
+  000e97a4  add sp,sp,#0x24
+  000e97a8  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  000e97ac  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e97b0  ldr r1,[r0,#0x0]
+  000e97b4  ldr r2,[r1,#0x5c]
+  000e97b8  mov r1,#0xc2
+  000e97bc  blx r2
+  000e97c0  ldr r0,[r5,#0x14]
+  000e97c4  cmp r0,#0x0
+  000e97c8  bne 0x000e984c   ; ref->000e984c = 0xebff72d9  <OBJ/BSS>
+  000e97cc  mov r1,#0x1
+  000e97d0  mov r0,#0xdc
+  000e97d4  bl 0x001f01c4   ; ref->001f01c4 = 0xe1a0200e  <OBJ/BSS>
+  000e97d8  cmp r0,#0x0
+  000e97dc  moveq r4,#0x0
+  000e97e0  beq 0x000e9848   ; ref->000e9848 = 0xe5854014  <OBJ/BSS>
+  000e97e4  ldr r1,[0xe9aa0]
+  000e97e8  mov r3,#0x8
+  000e97ec  str r3,[sp,#0x0]
+  000e97f0  str r1,[sp,#0xc]
+  000e97f4  mov r2,#0x400
+  000e97f8  add r4,sp,#0x4
+  000e97fc  stmia r4,{r2,r10}
+  000e9800  ldr r1,[0xe9aa4]
+  000e9804  mov r3,#0x9
+  000e9808  mov r2,#0x0
+  000e980c  bl 0x0006f700   ; ref->0006f700 = 0xe92d4fff  <OBJ/BSS>
+  000e9810  ldr r1,[0xe9aa8]
+  000e9814  cpy r4,r0
+  000e9818  str r1,[r0,#0x0]
+  000e981c  add r6,r0,#0xc0
+  000e9820  str r8,[r0,#0xc0]
+  000e9824  ldr r1,[0xe9aac]
+  000e9828  cpy r2,r8
+  000e982c  cpy r3,r10
+  000e9830  cpy r0,r6
+  000e9834  bl 0x001ce8fc   ; ref->001ce8fc = 0xe92d4010  <OBJ/BSS>
+  000e9838  cpy r0,r6
+  000e983c  bl 0x0001b7e0   ; ref->0001b7e0 = 0xe51ff004  <OBJ/BSS>
+  000e9840  cpy r0,r4
+  000e9844  bl 0x0006f678   ; ref->0006f678 = 0xe92d4070  <OBJ/BSS>
+  000e9848  str r4,[r5,#0x14]
+  000e984c  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9850  ldr r1,[r0,#0x0]
+  000e9854  ldr r2,[r1,#0x84]
+  000e9858  mov r1,#0x0
+  000e985c  blx r2
+  000e9860  bl 0x000c63b8   ; ref->000c63b8 = 0xe92d4010  <OBJ/BSS>
+  000e9864  ldr r1,[r0,#0x0]
+  000e9868  ldr r2,[r1,#0x84]
+  000e986c  mov r1,#0x1
+  000e9870  blx r2
+  000e9874  ldr r0,[r5,#0x14]
+  000e9878  add r0,r0,#0xc0
+  000e987c  bl 0x0001b7d8   ; ref->0001b7d8 = 0xe51ff004  <OBJ/BSS>
+  000e9880  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e9884  cmp r11,#0x2
+  000e9888  ldrne r0,[r5,#0x1c]
+  000e988c  bne 0x000e989c   ; ref->000e989c = 0xe3500001  <OBJ/BSS>
+  000e9890  ldr r0,[r9,#0x4]
+  000e9894  blx 0x00003258   ; ref->00003258 = 0x6b570
+  000e9898  str r0,[r5,#0x1c]
+  000e989c  cmp r0,#0x1
+  000e98a0  beq 0x000e98b0   ; ref->000e98b0 = 0xe28f0f7e  <OBJ/BSS>
+  000e98a4  cmp r0,#0x2
+  000e98a8  bne 0x000e99f0   ; ref->000e99f0 = 0xe585a01c  <OBJ/BSS>
+  000e98ac  b 0x000e9954   ; ref->000e9954 = 0xe28f0d06  <OBJ/BSS>
+  000e98b0  adr r0,0xe9ab0
+  000e98b4  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e98b8  ldrb r0,[sp,#0x10]
+  000e98bc  mov r3,#0x3
+  000e98c0  mov r2,#0x3200
+  000e98c4  bic r1,r0,#0x80
+  000e98c8  bic r12,r1,#0x7f
+  000e98cc  strb r12,[sp,#0x10]
+  000e98d0  strb r3,[sp,#0x11]
+  000e98d4  strh r8,[sp,#0x14]
+  000e98d8  add r0,sp,#0x10
+  000e98dc  mov r1,#0x0
+  000e98e0  strh r2,[sp,#0x12]
+  000e98e4  strh r8,[sp,#0x16]
+  000e98e8  ldrb r2,[r0],#0x1
+  000e98ec  add r1,r1,#0x2
+  000e98f0  strb r2,[r7,#0x0]
+  000e98f4  ldrb r2,[r0],#0x1
+  000e98f8  cmp r1,#0x8
+  000e98fc  strb r2,[r7,#0x0]
+  000e9900  blt 0x000e98e8   ; ref->000e98e8 = 0xe4d02001  <OBJ/BSS>
+  000e9904  add r0,sp,#0x18
+  000e9908  bl 0x001fe1e4   ; ref->001fe1e4 = 0xe10f1000  <OBJ/BSS>
+  000e990c  ldrb r1,[r6,#0xe]
+  000e9910  strb r8,[r6,#0xe]
+  000e9914  ldrb r0,[r4,#0x13]
+  000e9918  ldrb r2,[r4,#0x12]
+  000e991c  orr r0,r2,r0, lsl #0x8
+  000e9920  and r2,r0,#0xff
+  000e9924  orr r2,r2,#0xa
+  000e9928  bic r0,r0,#0xff
+  000e992c  orr r0,r0,r2
+  000e9930  mov r2,r0, lsr #0x8
+  000e9934  strb r0,[r4,#0x12]
+  000e9938  strb r2,[r4,#0x13]
+  000e993c  strb r1,[r6,#0xe]
+  000e9940  ldr r0,[sp,#0x18]
+  000e9944  bl 0x001fe1f8   ; ref->001fe1f8 = 0xe121f000  <OBJ/BSS>
+  000e9948  mov r0,#0x2
+  000e994c  str r0,[r5,#0x1c]
+  000e9950  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e9954  adr r0,0xe9adc
+  000e9958  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e995c  add r0,sp,#0x4
+  000e9960  bl 0x001fe1e4   ; ref->001fe1e4 = 0xe10f1000  <OBJ/BSS>
+  000e9964  ldrb r1,[r6,#0xe]
+  000e9968  strb r8,[r6,#0xe]
+  000e996c  ldrb r0,[r6,#0x13]
+  000e9970  ldrb r2,[r6,#0x12]
+  000e9974  orr r0,r2,r0, lsl #0x8
+  000e9978  and r2,r0,#0xff
+  000e997c  bic r3,r0,#0xff
+  000e9980  orr r0,r2,#0x20
+  000e9984  orr r0,r0,r3
+  000e9988  mov r2,r0, lsr #0x8
+  000e998c  strb r0,[r6,#0x12]
+  000e9990  strb r2,[r6,#0x13]
+  000e9994  strb r1,[r6,#0xe]
+  000e9998  ldr r0,[sp,#0x4]
+  000e999c  bl 0x001fe1f8   ; ref->001fe1f8 = 0xe121f000  <OBJ/BSS>
+  000e99a0  mov r0,#0x64
+  000e99a4  bl 0x001d0130   ; ref->001d0130 = 0xe92d4070  <OBJ/BSS>
+  000e99a8  add r0,sp,#0x8
+  000e99ac  bl 0x001fe1e4   ; ref->001fe1e4 = 0xe10f1000  <OBJ/BSS>
+  000e99b0  ldrb r0,[r6,#0xe]
+  000e99b4  strb r8,[r6,#0xe]
+  000e99b8  ldrb r3,[r6,#0x13]
+  000e99bc  ldrb r2,[r6,#0x12]
+  000e99c0  ldrb r1,[r6,#0x18]
+  000e99c4  strb r0,[r6,#0xe]
+  000e99c8  orr r4,r2,r3, lsl #0x8
+  000e99cc  and r7,r1,#0x7f
+  000e99d0  ldr r0,[sp,#0x8]
+  000e99d4  bl 0x001fe1f8   ; ref->001fe1f8 = 0xe121f000  <OBJ/BSS>
+  000e99d8  tst r4,#0x1
+  000e99dc  beq 0x000e99e8   ; ref->000e99e8 = 0xe28f0f45  <OBJ/BSS>
+  000e99e0  cmp r7,#0x0
+  000e99e4  beq 0x000e9b10   ; ref->000e9b10 = 0xe28f0fcd  <OBJ/BSS>
+  000e99e8  adr r0,0xe9b04
+  000e99ec  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  000e99f0  str r10,[r5,#0x1c]
+  000e99f4  b 0x000e9368   ; ref->000e9368 = 0xe3a00000  <OBJ/BSS>
+  000e99f8  .word 0x6c756f43 'Coul'  <OBJ/BSS>
+  000e99fc  .word 0x6f6e2064 'd no'  <OBJ/BSS>
+  000e9a00  .word 0x65672074 't ge'  <OBJ/BSS>
+
+############ ARM range 1f6300..1f6e00
+  001f6300  ldmdacc r0!,{r3,r4,r5,r6,r8,r10,sp}
+  001f6304  andeq r0,r0,r8, ror r10
+  001f6308  ldrlt r2,[r0],#-0x300
+  001f630c  .word 0xd31c4281  <OBJ/BSS>
+  001f6310  .word 0xd21a4291  <OBJ/BSS>
+  001f6314  .word 0x1c497808
+  001f6318  .word 0xd0092800  <OBJ/BSS>
+  001f631c  .word 0x1a40984
+  001f6320  .word 0x2c40d016
+  001f6324  .word 0x2c80d011
+  001f6328  .word 0x2cc0d00f
+  001f632c  .word 0x1c49d1f2
+  001f6330  .word 0xd00a2900  <OBJ/BSS>
+  001f6334  .word 0x300a0008
+  001f6338  .word 0xd8064290  <OBJ/BSS>
+  001f633c  .word 0x7a497a0b  <OBJ/BSS>
+  001f6340  .word 0x430b021b
+  001f6344  .word 0x429018c0
+  001f6348  .word 0x2000d900
+  001f634c  .word 0x4770bc10
+  001f6350  .word 0x42911809
+  001f6354  .word 0x1818d2f9
+  001f6358  .word 0x28ff1c40
+  001f635c  .word 0x403d8f5
+  001f6360  .word 0xe7d70c1b  <OBJ/BSS>
+  001f6364  .word 0xd1022800  <OBJ/BSS>
+  001f6368  .word 0xf8e6f60d  <OBJ/BSS>
+  001f636c  .word 0x88011c80  <OBJ/BSS>
+  001f6370  .word 0xd0012900  <OBJ/BSS>
+  001f6374  .word 0xd9f92920  <OBJ/BSS>
+  001f6378  .word 0x28004770 'pG.('
+  001f637c  .word 0x2900d001
+  001f6380  .word 0xf60dd102  <OBJ/BSS>
+  001f6384  .word 0x1e80f8d9
+  001f6388  .word 0xd9044288  <OBJ/BSS>
+  001f638c  .word 0x3a200002
+  001f6390  .word 0x2a208bd2
+  001f6394  .word 0x4770d9f7
+  001f6398  .word 0xe92d4010  <OBJ/BSS>
+  001f639c  .word 0xe28f00a4  <OBJ/BSS>
+  001f63a0  .word 0xebffe704  <OBJ/BSS>
+  001f63a4  .word 0xe3500000  <OBJ/BSS>
+  001f63a8  .word 0x3a00001
+  001f63ac  .word 0x8bd8010
+  001f63b0  .word 0xe59f009c  <OBJ/BSS>
+  001f63b4  .word 0xe5900000  <OBJ/BSS>
+  001f63b8  .word 0xe3100001  <OBJ/BSS>
+  001f63bc  .word 0x1a00001c
+  001f63c0  .word 0xe59f008c  <OBJ/BSS>
+  001f63c4  .word 0xfbff4365  <OBJ/BSS>
+  001f63c8  .word 0xe3500000  <OBJ/BSS>
+  001f63cc  .word 0xa000018
+  001f63d0  .word 0xe59f0080  <OBJ/BSS>
+  001f63d4  .word 0xe59f1080  <OBJ/BSS>
+  001f63d8  .word 0xe3a03000  <OBJ/BSS>
+  001f63dc  .word 0xe2412020  <OBJ/BSS>
+  001f63e0  .word 0xe1a0c003  <OBJ/BSS>
+  001f63e4  .word 0xe2804004  <OBJ/BSS>
+  001f63e8  .word 0xe884100e  <OBJ/BSS>
+  001f63ec  .word 0xe59f106c  <OBJ/BSS>
+  001f63f0  .word 0xe1a02003  <OBJ/BSS>
+  001f63f4  .word 0xe5801000  <OBJ/BSS>
+  001f63f8  .word 0xe1a01003  <OBJ/BSS>
+  001f63fc  .word 0xe080c182  <OBJ/BSS>
+  001f6400  .word 0xe2822001  <OBJ/BSS>
+  001f6404  .word 0xe0804182  <OBJ/BSS>
+  001f6408  .word 0xe2811002  <OBJ/BSS>
+  001f640c  .word 0xe58c3014  <OBJ/BSS>
+  001f6410  .word 0xe3510014  <OBJ/BSS>
+  001f6414  .word 0xe2822001  <OBJ/BSS>
+  001f6418  .word 0xe5843014  <OBJ/BSS>
+  001f641c  .word 0xbafffff6  <OBJ/BSS>
+  001f6420  .word 0xe59f203c  <OBJ/BSS>
+  001f6424  .word 0xe59f103c  <OBJ/BSS>
+  001f6428  .word 0xfaff431f  <OBJ/BSS>
+  001f642c  .word 0xe59f0020  <OBJ/BSS>
+  001f6430  .word 0xe1a00000  <OBJ/BSS>
+  001f6434  .word 0xe59f001c  <OBJ/BSS>
+  001f6438  .word 0xe28f102c  <OBJ/BSS>
+  001f643c  .word 0xfafec5d6  <OBJ/BSS>
+  001f6440  .word 0xe3a00000  <OBJ/BSS>
+  001f6444  .word 0xe8bd8010  <OBJ/BSS>
+  001f6448  .word 0x756c7553 'Sulu'  <OBJ/BSS>
+  001f644c  .word 0x75646f4d 'Modu'  <OBJ/BSS>
+  001f6450  .word 0x656c 'le..'
+  001f6454  .word 0x6040586c 'lX@`'  <OBJ/BSS>
+  001f6458  .word 0x60496bc4  <OBJ/BSS>
+  001f645c  .word 0x602a7b70 'p{*`'  "versulu"
+  001f6460  .word 0x602da198  (ptr 2d4214)
+  001f6464  .word 0x60008000  (ptr 207c)
+  001f6468  .word 0x6008695c  (ptr 809d8)
+  001f646c  .word 0x737973 'sys.'
+  001f6470  .word 0xe59f03c8  <OBJ/BSS>
+  001f6474  .word 0xe92d4010  <OBJ/BSS>
+  001f6478  .word 0xe5900000  <OBJ/BSS>
+  001f647c  .word 0xe3100001  <OBJ/BSS>
+  001f6480  .word 0x1a000011
+  001f6484  .word 0xe59f03b4  <OBJ/BSS>
+  001f6488  .word 0xfbff4334  <OBJ/BSS>
+  001f648c  .word 0xe3500000  <OBJ/BSS>
+  001f6490  .word 0xa00000d
+  001f6494  .word 0xe59f03a8  <OBJ/BSS>
+  001f6498  .word 0xe3a03000  <OBJ/BSS>
+  001f649c  .word 0xe28f1fe9  <OBJ/BSS>
+  001f64a0  .word 0xe28f2fe9  <OBJ/BSS>
+  001f64a4  .word 0xe1a0c003  <OBJ/BSS>
+  001f64a8  .word 0xe2804004  <OBJ/BSS>
+  001f64ac  .word 0xe884100e  <OBJ/BSS>
+  001f64b0  .word 0xe59f13ac  <OBJ/BSS>
+  001f64b4  .word 0xe59f23ac  <OBJ/BSS>
+  001f64b8  .word 0xe5801000  <OBJ/BSS>
+  001f64bc  .word 0xe59f13a8  <OBJ/BSS>
+  001f64c0  .word 0xfaff42f9  <OBJ/BSS>
+  001f64c4  .word 0xe59f0374  <OBJ/BSS>
+  001f64c8  .word 0xe1a00000  <OBJ/BSS>
+  001f64cc  .word 0xe59f0370  <OBJ/BSS>
+  001f64d0  .word 0xe28f1fe6  <OBJ/BSS>
+  001f64d4  .word 0xfafec5b0  <OBJ/BSS>
+  001f64d8  .word 0xe59f0394  <OBJ/BSS>
+  001f64dc  .word 0xe5900000  <OBJ/BSS>
+  001f64e0  .word 0xe3100001  <OBJ/BSS>
+  001f64e4  .word 0x1a000011
+  001f64e8  .word 0xe59f0384  <OBJ/BSS>
+  001f64ec  .word 0xfbff431b  <OBJ/BSS>
+  001f64f0  .word 0xe3500000  <OBJ/BSS>
+  001f64f4  .word 0xa00000d
+  001f64f8  .word 0xe59f0378  <OBJ/BSS>
+  001f64fc  .word 0xe28f1fde  <OBJ/BSS>
+  001f6500  .word 0xe28f2fde  <OBJ/BSS>
+  001f6504  .word 0xe28f3fe2  <OBJ/BSS>
+  001f6508  .word 0xe3a0c001  <OBJ/BSS>
+  001f650c  .word 0xe2804004  <OBJ/BSS>
+  001f6510  .word 0xe884100e  <OBJ/BSS>
+  001f6514  .word 0xe59f13a0  <OBJ/BSS>
+  001f6518  .word 0xe59f2348  <OBJ/BSS>
+  001f651c  .word 0xe5801000  <OBJ/BSS>
+  001f6520  .word 0xe59f1398  <OBJ/BSS>
+  001f6524  .word 0xfaff42e0  <OBJ/BSS>
+  001f6528  .word 0xe59f0344  <OBJ/BSS>
+  001f652c  .word 0xe1a00000  <OBJ/BSS>
+  001f6530  .word 0xe59f0340  <OBJ/BSS>
+  001f6534  .word 0xe28f1fe2  <OBJ/BSS>
+  001f6538  .word 0xfafec597  <OBJ/BSS>
+  001f653c  .word 0xe59f0388  <OBJ/BSS>
+  001f6540  .word 0xe5900000  <OBJ/BSS>
+  001f6544  .word 0xe3100001  <OBJ/BSS>
+  001f6548  .word 0x1a000011
+  001f654c  .word 0xe59f0378  <OBJ/BSS>
+  001f6550  .word 0xfbff4302  <OBJ/BSS>
+  001f6554  .word 0xe3500000  <OBJ/BSS>
+  001f6558  .word 0xa00000d
+  001f655c  .word 0xe59f036c  <OBJ/BSS>
+  001f6560  .word 0xe28f1fdb  <OBJ/BSS>
+  001f6564  .word 0xe28f2e37  <OBJ/BSS>
+  001f6568  .word 0xe28f3fc9  <OBJ/BSS>
+  001f656c  .word 0xe3a0c001  <OBJ/BSS>
+  001f6570  .word 0xe2804004  <OBJ/BSS>
+  001f6574  .word 0xe884100e  <OBJ/BSS>
+  001f6578  .word 0xe59f137c  <OBJ/BSS>
+  001f657c  .word 0xe59f22e4  <OBJ/BSS>
+  001f6580  .word 0xe5801000  <OBJ/BSS>
+  001f6584  .word 0xe59f1374  <OBJ/BSS>
+  001f6588  .word 0xfaff42c7  <OBJ/BSS>
+  001f658c  .word 0xe59f0338  <OBJ/BSS>
+  001f6590  .word 0xe1a00000  <OBJ/BSS>
+  001f6594  .word 0xe59f0334  <OBJ/BSS>
+  001f6598  .word 0xe28f1fc9  <OBJ/BSS>
+  001f659c  .word 0xfafec57e  <OBJ/BSS>
+  001f65a0  .word 0xe59f035c  <OBJ/BSS>
+  001f65a4  .word 0xe5900000  <OBJ/BSS>
+  001f65a8  .word 0xe3100001  <OBJ/BSS>
+  001f65ac  .word 0x1a000011
+  001f65b0  .word 0xe59f034c  <OBJ/BSS>
+  001f65b4  .word 0xfbff42e9  <OBJ/BSS>
+  001f65b8  .word 0xe3500000  <OBJ/BSS>
+  001f65bc  .word 0xa00000d
+  001f65c0  .word 0xe59f0340  <OBJ/BSS>
+  001f65c4  .word 0xe59f3340  <OBJ/BSS>
+  001f65c8  .word 0xe28f1d0d  <OBJ/BSS>
+  001f65cc  .word 0xe28f2fd1  <OBJ/BSS>
+  001f65d0  .word 0xe3a0c001  <OBJ/BSS>
+  001f65d4  .word 0xe2804004  <OBJ/BSS>
+  001f65d8  .word 0xe884100e  <OBJ/BSS>
+  001f65dc  .word 0xe59f136c  <OBJ/BSS>
+  001f65e0  .word 0xe59f2280  <OBJ/BSS>
+  001f65e4  .word 0xe5801000  <OBJ/BSS>
+  001f65e8  .word 0xe59f1364  <OBJ/BSS>
+  001f65ec  .word 0xfaff42ae  <OBJ/BSS>
+  001f65f0  .word 0xe59f030c  <OBJ/BSS>
+  001f65f4  .word 0xe1a00000  <OBJ/BSS>
+  001f65f8  .word 0xe59f0308  <OBJ/BSS>
+  001f65fc  .word 0xe28f1d0b  <OBJ/BSS>
+  001f6600  .word 0xfafec565  <OBJ/BSS>
+  001f6604  .word 0xe59f034c  <OBJ/BSS>
+  001f6608  .word 0xe5900000  <OBJ/BSS>
+  001f660c  .word 0xe3100001  <OBJ/BSS>
+  001f6610  .word 0x1a000011
+  001f6614  .word 0xe59f033c  <OBJ/BSS>
+  001f6618  .word 0xfbff42d0  <OBJ/BSS>
+  001f661c  .word 0xe3500000  <OBJ/BSS>
+  001f6620  .word 0xa00000d
+  001f6624  .word 0xe59f0330  <OBJ/BSS>
+  001f6628  .word 0xe3a03000  <OBJ/BSS>
+  001f662c  .word 0xe28f1fcb  <OBJ/BSS>
+  001f6630  .word 0xe28f2e33  <OBJ/BSS>
+  001f6634  .word 0xe1a0c003  <OBJ/BSS>
+  001f6638  .word 0xe2804004  <OBJ/BSS>
+  001f663c  .word 0xe884100e  <OBJ/BSS>
+  001f6640  .word 0xe59f1334  <OBJ/BSS>
+  001f6644  .word 0xe59f221c  <OBJ/BSS>
+  001f6648  .word 0xe5801000  <OBJ/BSS>
+  001f664c  .word 0xe59f132c  <OBJ/BSS>
+  001f6650  .word 0xfaff4295  <OBJ/BSS>
+  001f6654  .word 0xe59f02fc  <OBJ/BSS>
+  001f6658  .word 0xe1a00000  <OBJ/BSS>
+  001f665c  .word 0xe59f02f8  <OBJ/BSS>
+  001f6660  .word 0xe28f1f97  <OBJ/BSS>
+  001f6664  .word 0xfafec54c  <OBJ/BSS>
+  001f6668  .word 0xe59f0314  <OBJ/BSS>
+  001f666c  .word 0xe5900000  <OBJ/BSS>
+  001f6670  .word 0xe3100001  <OBJ/BSS>
+  001f6674  .word 0x1a000011
+  001f6678  .word 0xe59f0304  <OBJ/BSS>
+  001f667c  .word 0xfbff42b7  <OBJ/BSS>
+  001f6680  .word 0xe3500000  <OBJ/BSS>
+  001f6684  .word 0xa00000d
+  001f6688  .word 0xe59f02f8  <OBJ/BSS>
+  001f668c  .word 0xe3a03000  <OBJ/BSS>
+  001f6690  .word 0xe28f1fbd  <OBJ/BSS>
+  001f6694  .word 0xe28f2fbe  <OBJ/BSS>
+  001f6698  .word 0xe1a0c003  <OBJ/BSS>
+  001f669c  .word 0xe2804004  <OBJ/BSS>
+  001f66a0  .word 0xe884100e  <OBJ/BSS>
+  001f66a4  .word 0xe59f1300  <OBJ/BSS>
+  001f66a8  .word 0xe59f21b8  <OBJ/BSS>
+  001f66ac  .word 0xe5801000  <OBJ/BSS>
+  001f66b0  .word 0xe59f12f8  <OBJ/BSS>
+  001f66b4  .word 0xfaff427c  <OBJ/BSS>
+  001f66b8  .word 0xe59f02c4  <OBJ/BSS>
+  001f66bc  .word 0xe1a00000  <OBJ/BSS>
+  001f66c0  .word 0xe59f02c0  <OBJ/BSS>
+  001f66c4  .word 0xe28f1f7e  <OBJ/BSS>
+  001f66c8  .word 0xfafec533  <OBJ/BSS>
+  001f66cc  .word 0xe59f02e0  <OBJ/BSS>
+  001f66d0  .word 0xe5900000  <OBJ/BSS>
+  001f66d4  .word 0xe3100001  <OBJ/BSS>
+  001f66d8  .word 0x1a000011
+  001f66dc  .word 0xe59f02d0  <OBJ/BSS>
+  001f66e0  .word 0xfbff429e  <OBJ/BSS>
+  001f66e4  .word 0xe3500000  <OBJ/BSS>
+  001f66e8  .word 0xa00000d
+  001f66ec  .word 0xe59f02c4  <OBJ/BSS>
+  001f66f0  .word 0xe28f1fb1  <OBJ/BSS>
+  001f66f4  .word 0xe28f2fb2  <OBJ/BSS>
+  001f66f8  .word 0xe28f3f65  <OBJ/BSS>
+  001f66fc  .word 0xe3a0c001  <OBJ/BSS>
+  001f6700  .word 0xe2804004  <OBJ/BSS>
+  001f6704  .word 0xe884100e  <OBJ/BSS>
+  001f6708  .word 0xe59f12d4  <OBJ/BSS>
+  001f670c  .word 0xe59f2154  <OBJ/BSS>
+  001f6710  .word 0xe5801000  <OBJ/BSS>
+  001f6714  .word 0xe59f12cc  <OBJ/BSS>
+  001f6718  .word 0xfaff4263  <OBJ/BSS>
+  001f671c  .word 0xe59f0290  <OBJ/BSS>
+  001f6720  .word 0xe1a00000  <OBJ/BSS>
+  001f6724  .word 0xe59f028c  <OBJ/BSS>
+  001f6728  .word 0xe28f1f65  <OBJ/BSS>
+  001f672c  .word 0xfafec51a  <OBJ/BSS>
+  001f6730  .word 0xe59f02b4  <OBJ/BSS>
+  001f6734  .word 0xe5900000  <OBJ/BSS>
+  001f6738  .word 0xe3100001  <OBJ/BSS>
+  001f673c  .word 0x1a000011
+  001f6740  .word 0xe59f02a4  <OBJ/BSS>
+  001f6744  .word 0xfbff4285  <OBJ/BSS>
+  001f6748  .word 0xe3500000  <OBJ/BSS>
+  001f674c  .word 0xa00000d
+  001f6750  .word 0xe59f0298  <OBJ/BSS>
+  001f6754  .word 0xe59f2298  <OBJ/BSS>
+  001f6758  .word 0xe28f1fa6  <OBJ/BSS>
+  001f675c  .word 0xe28f3e13  <OBJ/BSS>
+  001f6760  .word 0xe3a0c001  <OBJ/BSS>
+  001f6764  .word 0xe2804004  <OBJ/BSS>
+  001f6768  .word 0xe884100e  <OBJ/BSS>
+  001f676c  .word 0xe59f128c  <OBJ/BSS>
+  001f6770  .word 0xe59f20f0  <OBJ/BSS>
+  001f6774  .word 0xe5801000  <OBJ/BSS>
+  001f6778  .word 0xe59f1284  <OBJ/BSS>
+  001f677c  .word 0xfaff424a  <OBJ/BSS>
+  001f6780  .word 0xe59f0264  <OBJ/BSS>
+  001f6784  .word 0xe1a00000  <OBJ/BSS>
+  001f6788  .word 0xe59f0260  <OBJ/BSS>
+  001f678c  .word 0xe28f1e13  <OBJ/BSS>
+  001f6790  .word 0xfafec501  <OBJ/BSS>
+  001f6794  .word 0xe59f026c  <OBJ/BSS>
+  001f6798  .word 0xe5900000  <OBJ/BSS>
+  001f679c  .word 0xe3100001  <OBJ/BSS>
+  001f67a0  .word 0x1a000011
+  001f67a4  .word 0xe59f025c  <OBJ/BSS>
+  001f67a8  .word 0xfbff426c  <OBJ/BSS>
+  001f67ac  .word 0xe3500000  <OBJ/BSS>
+  001f67b0  .word 0xa00000d
+  001f67b4  .word 0xe59f0250  <OBJ/BSS>
+  001f67b8  .word 0xe3a03000  <OBJ/BSS>
+  001f67bc  .word 0xe59f224c  <OBJ/BSS>
+  001f67c0  .word 0xe28f1f93  <OBJ/BSS>
+  001f67c4  .word 0xe1a0c003  <OBJ/BSS>
+  001f67c8  .word 0xe2804004  <OBJ/BSS>
+  001f67cc  .word 0xe884100e  <OBJ/BSS>
+  001f67d0  .word 0xe59f1244  <OBJ/BSS>
+  001f67d4  .word 0xe59f208c  <OBJ/BSS>
+  001f67d8  .word 0xe5801000  <OBJ/BSS>
+  001f67dc  .word 0xe59f123c  <OBJ/BSS>
+  001f67e0  .word 0xfaff4231  <OBJ/BSS>
+  001f67e4  .word 0xe59f021c  <OBJ/BSS>
+  001f67e8  .word 0xe1a00000  <OBJ/BSS>
+  001f67ec  .word 0xe59f0218  <OBJ/BSS>
+  001f67f0  .word 0xe28f10cc  <OBJ/BSS>
+  001f67f4  .word 0xfafec4e8  <OBJ/BSS>
+  001f67f8  .word 0xe59f0224  <OBJ/BSS>
+  001f67fc  .word 0xe5900000  <OBJ/BSS>
+  001f6800  .word 0xe3100001  <OBJ/BSS>
+  001f6804  .word 0x1a000095
+  001f6808  .word 0xe59f0214  <OBJ/BSS>
+  001f680c  .word 0xfbff4253  <OBJ/BSS>
+  001f6810  .word 0xe3500000  <OBJ/BSS>
+  001f6814  .word 0xa000091
+  001f6818  .word 0xe59f0208  <OBJ/BSS>
+  001f681c  .word 0xe59f3208  <OBJ/BSS>
+  001f6820  .word 0xe28f1f82  <OBJ/BSS>
+  001f6824  .word 0xe28f2f82  <OBJ/BSS>
+  001f6828  .word 0xe3a0c001  <OBJ/BSS>
+  001f682c  .word 0xe2804004  <OBJ/BSS>
+  001f6830  .word 0xe884100e  <OBJ/BSS>
+  001f6834  .word 0xe59f120c  <OBJ/BSS>
+  001f6838  .word 0xe59f2028  <OBJ/BSS>
+  001f683c  .word 0xea000082  <OBJ/BSS>
+  001f6840  .word 0x604058b0  <OBJ/BSS>
+  001f6844  .word 0x60496dbc  <OBJ/BSS>
+  001f6848  .word 0x616d64 'dma.'
+  001f684c  .word 0x20616d64 'dma '
+  001f6850  .word 0x616c6572 'rela'  <OBJ/BSS>
+  001f6854  .word 0x20646574 'ted '
+  001f6858  .word 0x6d6d6f63 'comm'  <OBJ/BSS>
+  001f685c  .word 0x73646e61 'ands'  <OBJ/BSS>
+  001f6860  .word 0x0 '....'
+  001f6864  .word 0x602dae14  (ptr 2d4e90)
+  001f6868  .word 0x60008000  (ptr 207c)
+  001f686c  .word 0x600a333c  (ptr 9d3b8)
+  001f6870  .word 0x737973 'sys.'
+  001f6874  .word 0x60405918  <OBJ/BSS>
+  001f6878  .word 0x604973d4  <OBJ/BSS>
+  001f687c  .word 0x787463 'ctx.'
+  001f6880  .word 0x706d7564 'dump'  <OBJ/BSS>
+  001f6884  .word 0x6e6f6320 ' con'  <OBJ/BSS>
+  001f6888  .word 0x74786574 'text'  <OBJ/BSS>
+  001f688c  .word 0x20666f20 ' of '
+  001f6890  .word 0x616d64 'dma.'
+  001f6894  .word 0x3e726e3c '<nr>'
+  001f6898  .word 0x20202020 '    '
+  001f689c  .word 0x20202020 '    '
+  001f68a0  .word 0x20202020 '    '
+  001f68a4  .word 0x20202020 '    '
+  001f68a8  .word 0x20202020 '    '
+  001f68ac  .word 0x746e6f63 'cont'  <OBJ/BSS>
+  001f68b0  .word 0x20747865 'ext '
+  001f68b4  .word 0x626d756e 'numb'  <OBJ/BSS>
+  001f68b8  .word 0x7265 'er..'
+  001f68bc  .word 0x602dd698  (ptr 2d7714)
+  001f68c0  .word 0x600df938  (ptr d99b4)
+  001f68c4  .word 0x2f737973 'sys/'
+  001f68c8  .word 0x616d64 'dma.'
+  001f68cc  .word 0x60405978 'xY@`'  <OBJ/BSS>
+  001f68d0  .word 0x60497590  <OBJ/BSS>
+  001f68d4  .word 0x63787463 'ctxc'  <OBJ/BSS>
+  001f68d8  .word 0x726c 'lr..'
+  001f68dc  .word 0x61656c63 'clea'  <OBJ/BSS>
+  001f68e0  .word 0x74207372 'rs t'  <OBJ/BSS>
+  001f68e4  .word 0x73206568 'he s'  <OBJ/BSS>
+  001f68e8  .word 0x69636570 'peci'  <OBJ/BSS>
+  001f68ec  .word 0x64656966 'fied'  <OBJ/BSS>
+  001f68f0  .word 0x6e6f6320 ' con'  <OBJ/BSS>
+  001f68f4  .word 0x74786574 'text'  <OBJ/BSS>
+  001f68f8  .word 0x0 '....'
+  001f68fc  .word 0x602dfa90  (ptr 2d9b0c)
+  001f6900  .word 0x60121300  (ptr 11b37c)
+  001f6904  .word 0x6040595c '\Y@`'  <OBJ/BSS>
+  001f6908  .word 0x60497500 '.uI`'  <OBJ/BSS>
+  001f690c  .word 0x602a7e18  (ptr 2a1e94)
+  001f6910  .word 0x77787463 'ctxw'  <OBJ/BSS>
+  001f6914  .word 0x72 'r...'
+  001f6918  .word 0x74697277 'writ'  <OBJ/BSS>
+  001f691c  .word 0x69207365 'es i'  <OBJ/BSS>
+  001f6920  .word 0x206f746e 'nto '
+  001f6924  .word 0x6f632061 'a co'  <OBJ/BSS>
+  001f6928  .word 0x7865746e 'ntex'  <OBJ/BSS>
+  001f692c  .word 0x69772074 't wi'  <OBJ/BSS>
+  001f6930  .word 0x6f206874 'th o'  <OBJ/BSS>
+  001f6934  .word 0x65736666 'ffse'  <OBJ/BSS>
+  001f6938  .word 0x75715b74 't[qu'  <OBJ/BSS>
+  001f693c  .word 0x656c6461 'adle'  <OBJ/BSS>
+  001f6940  .word 0x74205d74 't] t'  <OBJ/BSS>
+  001f6944  .word 0x76206568 'he v'  <OBJ/BSS>
+  001f6948  .word 0x65756c61 'alue'  <OBJ/BSS>
+  001f694c  .word 0x0 '....'
+  001f6950  .word 0x602dee08  (ptr 2d8e84)
+  001f6954  .word 0x6010a408  (ptr 104484)
+  001f6958  .word 0x6040597c '|Y@`'  <OBJ/BSS>
+  001f695c  .word 0x604975a4  <OBJ/BSS>
+  001f6960  .word 0x6b6f6f6c 'look'  <OBJ/BSS>
+  001f6964  .word 0x7075 'up..'
+  001f6968  .word 0x70736964 'disp'  <OBJ/BSS>
+  001f696c  .word 0x7379616c 'lays'  <OBJ/BSS>
+  001f6970  .word 0x6f6f6c20 ' loo'  <OBJ/BSS>
+  001f6974  .word 0x2070756b 'kup '
+  001f6978  .word 0x6d6172 'ram.'
+  001f697c  .word 0x602dfabc  (ptr 2d9b38)
+  001f6980  .word 0x601213b4  (ptr 11b430)
+  001f6984  .word 0x60405934 '4Y@`'  <OBJ/BSS>
+  001f6988  .word 0x60497460 '`tI`'  <OBJ/BSS>
+  001f698c  .word 0x63736564 'desc'  <OBJ/BSS>
+  001f6990  .word 0x0 '....'
+  001f6994  .word 0x70736964 'disp'  <OBJ/BSS>
+  001f6998  .word 0x7379616c 'lays'  <OBJ/BSS>
+  001f699c  .word 0x73656420 ' des'  <OBJ/BSS>
+  001f69a0  .word 0x70697263 'crip'  <OBJ/BSS>
+  001f69a4  .word 0x73726f74 'tors'  <OBJ/BSS>
+  001f69a8  .word 0x0 '....'
+  001f69ac  .word 0x602de1ec  (ptr 2d8268)
+  001f69b0  .word 0x600f6198  (ptr f0214)
+  001f69b4  .word 0x60405938 '8Y@`'  <OBJ/BSS>
+  001f69b8  .word 0x60497474 'ttI`'  <OBJ/BSS>
+  001f69bc  .word 0x6f666e69 'info'  <OBJ/BSS>
+  001f69c0  .word 0x0 '....'
+  001f69c4  .word 0x70736964 'disp'  <OBJ/BSS>
+  001f69c8  .word 0x7379616c 'lays'  <OBJ/BSS>
+  001f69cc  .word 0x206e6120 ' an '
+  001f69d0  .word 0x7265766f 'over'  <OBJ/BSS>
+  001f69d4  .word 0x77656976 'view'  <OBJ/BSS>
+  001f69d8  .word 0x20666f20 ' of '
+  001f69dc  .word 0x6d642061 'a dm'  <OBJ/BSS>
+  001f69e0  .word 0x61 'a...'
+  001f69e4  .word 0x602de218  (ptr 2d8294)
+  001f69e8  .word 0x600f61f4  (ptr f0270)
+  001f69ec  .word 0x60405988  <OBJ/BSS>
+  001f69f0  .word 0x604975e0  <OBJ/BSS>
+  001f69f4  .word 0x602a7d34 '4}*`'  (ptr 2a1db0)
+  001f69f8  .word 0x69747865 'exti'  <OBJ/BSS>
+  001f69fc  .word 0x6f666e 'nfo.'
+  001f6a00  .word 0x602e052c  (ptr 2da5a8)
+  001f6a04  .word 0x6012e9f8  (ptr 128a74)
+  001f6a08  .word 0x60405960 '`Y@`'  <OBJ/BSS>
+  001f6a0c  .word 0x60497514  <OBJ/BSS>
+  001f6a10  .word 0x602a7ca8  (ptr 2a1d24)
+  001f6a14  .word 0x6f727265 'erro'  <OBJ/BSS>
+  001f6a18  .word 0x72 'r...'
+  001f6a1c  .word 0x602dee34  (ptr 2d8eb0)
+  001f6a20  .word 0x6010a538  (ptr 1045b4)
+  001f6a24  .word 0x6040591c  <OBJ/BSS>
+  001f6a28  .word 0x604973e8  <OBJ/BSS>
+  001f6a2c  .word 0x602a7c0c  (ptr 2a1c88)
+  001f6a30  .word 0x676572 'reg.'
+  001f6a34  .word 0x70736964 'disp'  <OBJ/BSS>
+  001f6a38  .word 0x7379616c 'lays'  <OBJ/BSS>
+  001f6a3c  .word 0x67657220 ' reg'  <OBJ/BSS>
+  001f6a40  .word 0x65747369 'iste'  <OBJ/BSS>
+  001f6a44  .word 0x7372 'rs..'
+  001f6a48  .word 0x602dd6c4  (ptr 2d7740)
+  001f6a4c  .word 0xe5801000  <OBJ/BSS>
+  001f6a50  .word 0xe59f1080  <OBJ/BSS>
+  001f6a54  .word 0xfaff4194  <OBJ/BSS>
+  001f6a58  .word 0xe51f003c  <OBJ/BSS>
+  001f6a5c  .word 0xe1a00000  <OBJ/BSS>
+  001f6a60  .word 0xe51f0040  <OBJ/BSS>
+  001f6a64  .word 0xe24f1f6a  <OBJ/BSS>
+  001f6a68  .word 0xfafec44b  <OBJ/BSS>
+  001f6a6c  .word 0xe59f0068  <OBJ/BSS>
+  001f6a70  .word 0xe5900000  <OBJ/BSS>
+  001f6a74  .word 0xe3100001  <OBJ/BSS>
+  001f6a78  .word 0x1a000011
+  001f6a7c  .word 0xe59f0058  <OBJ/BSS>
+  001f6a80  .word 0xfbff41b6  <OBJ/BSS>
+  001f6a84  .word 0xe3500000  <OBJ/BSS>
+  001f6a88  .word 0xa00000d
+  001f6a8c  .word 0xe59f004c  <OBJ/BSS>
+  001f6a90  .word 0xe59f304c  <OBJ/BSS>
+  001f6a94  .word 0xe28f104c  <OBJ/BSS>
+  001f6a98  .word 0xe28f2050  <OBJ/BSS>
+  001f6a9c  .word 0xe3a0c001  <OBJ/BSS>
+  001f6aa0  .word 0xe2804004  <OBJ/BSS>
+  001f6aa4  .word 0xe884100e  <OBJ/BSS>
+  001f6aa8  .word 0xe59f1054  <OBJ/BSS>
+  001f6aac  .word 0xe51f224c  <OBJ/BSS>
+  001f6ab0  .word 0xe5801000  <OBJ/BSS>
+  001f6ab4  .word 0xe59f104c  <OBJ/BSS>
+  001f6ab8  .word 0xfaff417b  <OBJ/BSS>
+  001f6abc  .word 0xe59f0018  <OBJ/BSS>
+  001f6ac0  .word 0xe1a00000  <OBJ/BSS>
+  001f6ac4  .word 0xe59f0014  <OBJ/BSS>
+  001f6ac8  .word 0xe24f1f83  <OBJ/BSS>
+  001f6acc  .word 0xfafec432  <OBJ/BSS>
+  001f6ad0  .word 0xe3a00000  <OBJ/BSS>
+  001f6ad4  .word 0xe8bd8010  <OBJ/BSS>
+  001f6ad8  .word 0x600e0bf8  (ptr dac74)
+  001f6adc  .word 0x6040593c '<Y@`'  <OBJ/BSS>
+  001f6ae0  .word 0x60497488  <OBJ/BSS>
+  001f6ae4  .word 0x602a7b88  (ptr 2a1c04)
+  001f6ae8  .word 0x66726570 'perf'  <OBJ/BSS>
+  001f6aec  .word 0x0 '....'
+  001f6af0  .word 0x66726570 'perf'  <OBJ/BSS>
+  001f6af4  .word 0x616d726f 'orma'  <OBJ/BSS>
+  001f6af8  .word 0x2065636e 'nce '
+  001f6afc  .word 0x696e6f6d 'moni'  <OBJ/BSS>
+  001f6b00  .word 0x726f74 'tor.'
+  001f6b04  .word 0x602de244  (ptr 2d82c0)
+  001f6b08  .word 0x600f6770  (ptr f07ec)
+  001f6b0c  .word 0xe92d4010  <OBJ/BSS>
+  001f6b10  .word 0xe28f0d05  <OBJ/BSS>
+  001f6b14  .word 0xebffe527  <OBJ/BSS>
+  001f6b18  .word 0xe3500000  <OBJ/BSS>
+  001f6b1c  .word 0x3a00001
+  001f6b20  .word 0x8bd8010
+  001f6b24  .word 0xe59f0138  <OBJ/BSS>
+  001f6b28  .word 0xe5900000  <OBJ/BSS>
+  001f6b2c  .word 0xe3100001  <OBJ/BSS>
+  001f6b30  .word 0x1a000011
+  001f6b34  .word 0xe59f0128  <OBJ/BSS>
+  001f6b38  .word 0xfbff4188  <OBJ/BSS>
+  001f6b3c  .word 0xe3500000  <OBJ/BSS>
+  001f6b40  .word 0xa00000d
+  001f6b44  .word 0xe59f011c  <OBJ/BSS>
+  001f6b48  .word 0xe3a03000  <OBJ/BSS>
+  001f6b4c  .word 0xe28f1f46  <OBJ/BSS>
+  001f6b50  .word 0xe28f2f47  <OBJ/BSS>
+  001f6b54  .word 0xe1a0c003  <OBJ/BSS>
+  001f6b58  .word 0xe2804004  <OBJ/BSS>
+  001f6b5c  .word 0xe884100e  <OBJ/BSS>
+  001f6b60  .word 0xe59f111c  <OBJ/BSS>
+  001f6b64  .word 0xe59f211c  <OBJ/BSS>
+  001f6b68  .word 0xe5801000  <OBJ/BSS>
+  001f6b6c  .word 0xe59f1118  <OBJ/BSS>
+  001f6b70  .word 0xfaff414d  <OBJ/BSS>
+  001f6b74  .word 0xe59f00e8  <OBJ/BSS>
+  001f6b78  .word 0xe1a00000  <OBJ/BSS>
+  001f6b7c  .word 0xe59f00e4  <OBJ/BSS>
+  001f6b80  .word 0xe28f1f42  <OBJ/BSS>
+  001f6b84  .word 0xfafec404  <OBJ/BSS>
+  001f6b88  .word 0xe59f0104  <OBJ/BSS>
+  001f6b8c  .word 0xe5900000  <OBJ/BSS>
+  001f6b90  .word 0xe3100001  <OBJ/BSS>
+  001f6b94  .word 0x1a000011
+  001f6b98  .word 0xe59f00f4  <OBJ/BSS>
+  001f6b9c  .word 0xfbff416f  <OBJ/BSS>
+  001f6ba0  .word 0xe3500000  <OBJ/BSS>
+  001f6ba4  .word 0xa00000d
+  001f6ba8  .word 0xe59f00e8  <OBJ/BSS>
+  001f6bac  .word 0xe28f10e8  <OBJ/BSS>
+  001f6bb0  .word 0xe28f20f0  <OBJ/BSS>
+  001f6bb4  .word 0xe28f3f43  <OBJ/BSS>
+  001f6bb8  .word 0xe3a0c002  <OBJ/BSS>
+  001f6bbc  .word 0xe2804004  <OBJ/BSS>
+  001f6bc0  .word 0xe884100e  <OBJ/BSS>
+  001f6bc4  .word 0xe59f113c  <OBJ/BSS>
+  001f6bc8  .word 0xe59f20b8  <OBJ/BSS>
+  001f6bcc  .word 0xe5801000  <OBJ/BSS>
+  001f6bd0  .word 0xe59f1134  <OBJ/BSS>
+  001f6bd4  .word 0xfaff4134  <OBJ/BSS>
+  001f6bd8  .word 0xe59f00b4  <OBJ/BSS>
+  001f6bdc  .word 0xe1a00000  <OBJ/BSS>
+  001f6be0  .word 0xe59f00b0  <OBJ/BSS>
+  001f6be4  .word 0xe28f1f49  <OBJ/BSS>
+  001f6be8  .word 0xfafec3eb  <OBJ/BSS>
+  001f6bec  .word 0xe59f0128  <OBJ/BSS>
+  001f6bf0  .word 0xe5900000  <OBJ/BSS>
+  001f6bf4  .word 0xe3100001  <OBJ/BSS>
+  001f6bf8  .word 0x1a000011
+  001f6bfc  .word 0xe59f0118  <OBJ/BSS>
+  001f6c00  .word 0xfbff4156  <OBJ/BSS>
+  001f6c04  .word 0xe3500000  <OBJ/BSS>
+  001f6c08  .word 0xa00000d
+  001f6c0c  .word 0xe59f010c  <OBJ/BSS>
+  001f6c10  .word 0xe59f310c  <OBJ/BSS>
+  001f6c14  .word 0xe28f1f43  <OBJ/BSS>
+  001f6c18  .word 0xe28f2e11  <OBJ/BSS>
+  001f6c1c  .word 0xe3a0c001  <OBJ/BSS>
+  001f6c20  .word 0xe2804004  <OBJ/BSS>
+  001f6c24  .word 0xe884100e  <OBJ/BSS>
+  001f6c28  .word 0xe59f1118  <OBJ/BSS>
+  001f6c2c  .word 0xe59f2054  <OBJ/BSS>
+  001f6c30  .word 0xe5801000  <OBJ/BSS>
+  001f6c34  .word 0xe59f1110  <OBJ/BSS>
+  001f6c38  .word 0xfaff411b  <OBJ/BSS>
+  001f6c3c  .word 0xe59f00d8  <OBJ/BSS>
+  001f6c40  .word 0xe1a00000  <OBJ/BSS>
+  001f6c44  .word 0xe59f00d4  <OBJ/BSS>
+  001f6c48  .word 0xe28f10c0  <OBJ/BSS>
+  001f6c4c  .word 0xfafec3d2  <OBJ/BSS>
+  001f6c50  .word 0xe3a00000  <OBJ/BSS>
+  001f6c54  .word 0xe8bd8010  <OBJ/BSS>
+  001f6c58  .word 0x756c7553 'Sulu'  <OBJ/BSS>
+  001f6c5c  .word 0x75646f4d 'Modu'  <OBJ/BSS>
+  001f6c60  .word 0x656c 'le..'
+  001f6c64  .word 0x604058d8  <OBJ/BSS>
+  001f6c68  .word 0x60496e84  <OBJ/BSS>
+  001f6c6c  .word 0x6f697067 'gpio'  <OBJ/BSS>
+  001f6c70  .word 0x0 '....'
+  001f6c74  .word 0x6f697067 'gpio'  <OBJ/BSS>
+  001f6c78  .word 0x6d6f6320 ' com'  <OBJ/BSS>
+  001f6c7c  .word 0x646e616d 'mand'  <OBJ/BSS>
+  001f6c80  .word 0x73 's...'
+  001f6c84  .word 0x602dbf48  (ptr 2d5fc4)
+  001f6c88  .word 0x60008000  (ptr 207c)
+  001f6c8c  .word 0x600be7c0  (ptr b883c)
+  001f6c90  .word 0x737973 'sys.'
+  001f6c94  .word 0x60405964 'dY@`'  <OBJ/BSS>
+  001f6c98  .word 0x60497528 '(uI`'  <OBJ/BSS>
+  001f6c9c  .word 0x72676572 'regr'  <OBJ/BSS>
+  001f6ca0  .word 0x69737365 'essi'  <OBJ/BSS>
+  001f6ca4  .word 0x6e6f 'on..'
+  001f6ca8  .word 0x6f697067 'gpio'  <OBJ/BSS>
+  001f6cac  .word 0x67657220 ' reg'  <OBJ/BSS>
+  001f6cb0  .word 0x73736572 'ress'  <OBJ/BSS>
+  001f6cb4  .word 0x206e6f69 'ion '
+  001f6cb8  .word 0x74736574 'test'  <OBJ/BSS>
+  001f6cbc  .word 0x6d6f6320 ' com'  <OBJ/BSS>
+  001f6cc0  .word 0x646e616d 'mand'  <OBJ/BSS>
+  001f6cc4  .word 0x0 '....'
+  001f6cc8  .word 0x20202020 '    '
+  001f6ccc  .word 0x6f3c2020 '  <o'  <OBJ/BSS>
+  001f6cd0  .word 0x75707475 'utpu'  <OBJ/BSS>
+  001f6cd4  .word 0x70675f74 't_gp'  <OBJ/BSS>
+  001f6cd8  .word 0x6e5f6f69 'io_n'  <OBJ/BSS>
+  001f6cdc  .word 0x20203e72 'r>  '
+  001f6ce0  .word 0x693c2020 '  <i'  <OBJ/BSS>
+  001f6ce4  .word 0x7475706e 'nput'  <OBJ/BSS>
+  001f6ce8  .word 0x6970675f '_gpi'  <OBJ/BSS>
+  001f6cec  .word 0x726e5f6f 'o_nr'  <OBJ/BSS>
+  001f6cf0  .word 0x2020203e '>   '
+  001f6cf4  .word 0x6e5b2020 '  [n'  <OBJ/BSS>
+  001f6cf8  .word 0x666f5f72 'r_of'  <OBJ/BSS>
+  001f6cfc  .word 0x6c75705f '_pul'  <OBJ/BSS>
+  001f6d00  .word 0x5d736573 'ses]'
+  001f6d04  .word 0xa
+  001f6d08  .word 0x602dee60  (ptr 2d8edc)
+  001f6d0c  .word 0x6010aaec  (ptr 104b68)
+  001f6d10  .word 0x2f737973 'sys/'
+  001f6d14  .word 0x6f697067 'gpio'  <OBJ/BSS>
+  001f6d18  .word 0x0 '....'
+  001f6d1c  .word 0x60405920 ' Y@`'  <OBJ/BSS>
+  001f6d20  .word 0x604973fc  <OBJ/BSS>
+  001f6d24  .word 0x602a8508  (ptr 2a2584)
+  001f6d28  .word 0x6c727463 'ctrl'  <OBJ/BSS>
+  001f6d2c  .word 0x0 '....'
+  001f6d30  .word 0x6f697067 'gpio'  <OBJ/BSS>
+  001f6d34  .word 0x6e6f6320 ' con'  <OBJ/BSS>
+  001f6d38  .word 0x6c6f7274 'trol'  <OBJ/BSS>
+  001f6d3c  .word 0x6d6f6320 ' com'  <OBJ/BSS>
+  001f6d40  .word 0x646e616d 'mand'  <OBJ/BSS>
+  001f6d44  .word 0x73 's...'
+  001f6d48  .word 0x602dd6f0  (ptr 2d776c)
+  001f6d4c  .word 0x600e0d40  (ptr dadbc)
+  001f6d50  .word 0xe59f0328  <OBJ/BSS>
+  001f6d54  .word 0xe92d4010  <OBJ/BSS>
+  001f6d58  .word 0xe5900000  <OBJ/BSS>
+  001f6d5c  .word 0xe3100001  <OBJ/BSS>
+  001f6d60  .word 0x1a000011
+  001f6d64  .word 0xe59f0314  <OBJ/BSS>
+  001f6d68  .word 0xfbff40fc  <OBJ/BSS>
+  001f6d6c  .word 0xe3500000  <OBJ/BSS>
+  001f6d70  .word 0xa00000d
+  001f6d74  .word 0xe59f0308  <OBJ/BSS>
+  001f6d78  .word 0xe3a03000  <OBJ/BSS>
+  001f6d7c  .word 0xe28f1fc1  <OBJ/BSS>
+  001f6d80  .word 0xe28f2fc2  <OBJ/BSS>
+  001f6d84  .word 0xe1a0c003  <OBJ/BSS>
+  001f6d88  .word 0xe2804004  <OBJ/BSS>
+  001f6d8c  .word 0xe884100e  <OBJ/BSS>
+  001f6d90  .word 0xe59f1308  <OBJ/BSS>
+  001f6d94  .word 0xe59f2308  <OBJ/BSS>
+  001f6d98  .word 0xe5801000  <OBJ/BSS>
+  001f6d9c  .word 0xe59f1304  <OBJ/BSS>
+  001f6da0  .word 0xfaff40c1  <OBJ/BSS>
+  001f6da4  .word 0xe59f02d4  <OBJ/BSS>
+  001f6da8  .word 0xe1a00000  <OBJ/BSS>
+  001f6dac  .word 0xe59f02d0  <OBJ/BSS>
+  001f6db0  .word 0xe28f1fbd  <OBJ/BSS>
+  001f6db4  .word 0xfafec378  <OBJ/BSS>
+  001f6db8  .word 0xe59f02f0  <OBJ/BSS>
+  001f6dbc  .word 0xe5900000  <OBJ/BSS>
+  001f6dc0  .word 0xe3100001  <OBJ/BSS>
+  001f6dc4  .word 0x1a000011
+  001f6dc8  .word 0xe59f02e0  <OBJ/BSS>
+  001f6dcc  .word 0xfbff40e3  <OBJ/BSS>
+  001f6dd0  .word 0xe3500000  <OBJ/BSS>
+  001f6dd4  .word 0xa00000d
+  001f6dd8  .word 0xe59f02d4  <OBJ/BSS>
+  001f6ddc  .word 0xe3a03000  <OBJ/BSS>
+  001f6de0  .word 0xe28f1e2d  <OBJ/BSS>
+  001f6de4  .word 0xe28f2e2d  <OBJ/BSS>
+  001f6de8  .word 0xe1a0c003  <OBJ/BSS>
+  001f6dec  .word 0xe2804004  <OBJ/BSS>
+  001f6df0  .word 0xe884100e  <OBJ/BSS>
+  001f6df4  .word 0xe59f12d4  <OBJ/BSS>
+  001f6df8  .word 0xe59f22a4  <OBJ/BSS>
+  001f6dfc  .word 0xe5801000  <OBJ/BSS>
+  001f6e00  .word 0xe59f12cc  <OBJ/BSS>
+
+############ ARM range 1a9200..1a9500
+  001a9200  ldr r0,[r4,#0x10c]
+  001a9204  blx 0x00003738   ; ref->00003738 = 0x1c44b530
+  001a9208  cpy r5,r0
+  001a920c  ldr r0,[r4,#0x11c]
+  001a9210  add r0,r0,r7
+  001a9214  cmp r0,#0x0
+  001a9218  str r0,[r4,#0x11c]
+  001a921c  movle r0,#0x0
+  001a9220  cmp r0,r5
+  001a9224  str r0,[r4,#0x11c]
+  001a9228  cpygt r0,r5
+  001a922c  cmp r0,r5
+  001a9230  str r0,[r4,#0x11c]
+  001a9234  ldmiagt sp!,{r4,r5,r6,r7,r8,pc}
+  001a9238  ldrb r0,[r4,#0x112]
+  001a923c  sub r5,r5,#0x1
+  001a9240  cmp r0,#0x0
+  001a9244  adreq r0,0x1a925c
+  001a9248  bleq 0x00002890   ; ref->00002890 = 0xe28fc001  <OBJ/BSS>
+  001a924c  ldr r0,[r4,#0x11c]
+  001a9250  cmp r0,r5
+  001a9254  ble 0x001a9238   ; ref->001a9238 = 0xe5d40112  <OBJ/BSS>
+  001a9258  ldmia sp!,{r4,r5,r6,r7,r8,pc}
+  001a925c  .word 0x8
+  001a9260  .word 0x7325 '%s..'
+  001a9264  .word 0x20 ' ...'
+  001a9268  .word 0xe92d4070  <OBJ/BSS>
+  001a926c  .word 0xe59f518c  <OBJ/BSS>
+  001a9270  .word 0xe24dd010  <OBJ/BSS>
+  001a9274  .word 0xe5950008  <OBJ/BSS>
+  001a9278  .word 0xe3500000  <OBJ/BSS>
+  001a927c  .word 0xa00002d
+  001a9280  .word 0xe28d0004  <OBJ/BSS>
+  001a9284  .word 0xfafc1fe1  <OBJ/BSS>
+  001a9288  .word 0xe59f1174  <OBJ/BSS>
+  001a928c  .word 0xe5801000  <OBJ/BSS>
+  001a9290  .word 0xfafc2db3  <OBJ/BSS>
+  001a9294  .word 0xe59f116c  <OBJ/BSS>
+  001a9298  .word 0xe28d2004  <OBJ/BSS>
+  001a929c  .word 0xfafc2d67  <OBJ/BSS>
+  001a92a0  .word 0xe3500000  <OBJ/BSS>
+  001a92a4  .word 0xa000016
+  001a92a8  .word 0xe59d000c  <OBJ/BSS>
+  001a92ac  .word 0xe5954008  <OBJ/BSS>
+  001a92b0  .word 0xe5901000  <OBJ/BSS>
+  001a92b4  .word 0xe591102c  <OBJ/BSS>
+  001a92b8  .word 0xe12fff31  <OBJ/BSS>
+  001a92bc  .word 0xe1a06000  <OBJ/BSS>
+  001a92c0  .word 0xe59d000c  <OBJ/BSS>
+  001a92c4  .word 0xe5901000  <OBJ/BSS>
+  001a92c8  .word 0xe5911024  <OBJ/BSS>
+  001a92cc  .word 0xe12fff31  <OBJ/BSS>
+  001a92d0  .word 0xe5942000  <OBJ/BSS>
+  001a92d4  .word 0xe1a01000  <OBJ/BSS>
+  001a92d8  .word 0xe5923024  <OBJ/BSS>
+  001a92dc  .word 0xe1a02006  <OBJ/BSS>
+  001a92e0  .word 0xe1a00004  <OBJ/BSS>
+  001a92e4  .word 0xe12fff33  <OBJ/BSS>
+  001a92e8  .word 0xe59d000c  <OBJ/BSS>
+  001a92ec  .word 0xe5951008  <OBJ/BSS>
+  001a92f0  .word 0xe5902000  <OBJ/BSS>
+  001a92f4  .word 0xe3510000  <OBJ/BSS>
+  001a92f8  .word 0xe5922014  <OBJ/BSS>
+  001a92fc  .word 0x128110c0
+  001a9300  .word 0xe12fff32  <OBJ/BSS>
+  001a9304  .word 0xe59f4100  <OBJ/BSS>
+  001a9308  .word 0xe5940000  <OBJ/BSS>
+  001a930c  .word 0xe3500000  <OBJ/BSS>
+  001a9310  .word 0xa000003
+  001a9314  .word 0xe12fff30  <OBJ/BSS>
+  001a9318  .word 0xe5b40004  <OBJ/BSS>
+  001a931c  .word 0xe3500000  <OBJ/BSS>
+  001a9320  .word 0x1afffffb
+  001a9324  .word 0xe59f00e4  <OBJ/BSS>
+  001a9328  .word 0xe5900000  <OBJ/BSS>
+  001a932c  .word 0xe3100001  <OBJ/BSS>
+  001a9330  .word 0x1a000026
+  001a9334  .word 0xea000012  <OBJ/BSS>
+  001a9338  .word 0xe3a01001  <OBJ/BSS>
+  001a933c  .word 0xe3a00f4b  <OBJ/BSS>
+  001a9340  .word 0xeb011b9f  <OBJ/BSS>
+  001a9344  .word 0xe3500000  <OBJ/BSS>
+  001a9348  .word 0xa000002
+  001a934c  .word 0xe3a0201e  <OBJ/BSS>
+  001a9350  .word 0xe3a01e19  <OBJ/BSS>
+  001a9354  .word 0xeb000251  <OBJ/BSS>
+  001a9358  .word 0xe3500000  <OBJ/BSS>
+  001a935c  .word 0xe5850008  <OBJ/BSS>
+  001a9360  .word 0x12800004
+  001a9364  .word 0x15850004
+  001a9368  .word 0x1affffc4
+  001a936c  .word 0xe59f10a0  <OBJ/BSS>
+  001a9370  .word 0xe59f00a0  <OBJ/BSS>
+  001a9374  .word 0xfaf9654e  <OBJ/BSS>
+  001a9378  .word 0xe3a00001  <OBJ/BSS>
+  001a937c  .word 0xe28dd010  <OBJ/BSS>
+  001a9380  .word 0xe8bd8070  <OBJ/BSS>
+  001a9384  .word 0xe59f0084  <OBJ/BSS>
+  001a9388  .word 0xfb007774  <OBJ/BSS>
+  001a938c  .word 0xe3500000  <OBJ/BSS>
+  001a9390  .word 0xa00000e
+  001a9394  .word 0xe59f3084  <OBJ/BSS>
+  001a9398  .word 0xe3a04000  <OBJ/BSS>
+  001a939c  .word 0xe59f0078  <OBJ/BSS>
+  001a93a0  .word 0xe28320e8  <OBJ/BSS>
+  001a93a4  .word 0xe28310e4  <OBJ/BSS>
+  001a93a8  .word 0xe58d4000  <OBJ/BSS>
+  001a93ac  .word 0xebfd136f  <OBJ/BSS>
+  001a93b0  .word 0xe59f106c  <OBJ/BSS>
+  001a93b4  .word 0xe59f206c  <OBJ/BSS>
+  001a93b8  .word 0xe5801000  <OBJ/BSS>
+  001a93bc  .word 0xe59f1068  <OBJ/BSS>
+  001a93c0  .word 0xe580401c  <OBJ/BSS>
+  001a93c4  .word 0xfa007738  <OBJ/BSS>
+  001a93c8  .word 0xe59f0040  <OBJ/BSS>
+  001a93cc  .word 0xe1a00000  <OBJ/BSS>
+  001a93d0  .word 0xe59f0044  <OBJ/BSS>
+  001a93d4  .word 0xe3a01000  <OBJ/BSS>
+  001a93d8  .word 0xfafff9ef  <OBJ/BSS>
+  001a93dc  .word 0xe5950008  <OBJ/BSS>
+  001a93e0  .word 0xe5901000  <OBJ/BSS>
+  001a93e4  .word 0xe5911008  <OBJ/BSS>
+  001a93e8  .word 0xe12fff31  <OBJ/BSS>
+  001a93ec  .word 0xe28d0004  <OBJ/BSS>
+  001a93f0  .word 0xfafc1f8c  <OBJ/BSS>
+  001a93f4  .word 0xe3a00000  <OBJ/BSS>
+  001a93f8  .word 0xe28dd010  <OBJ/BSS>
+  001a93fc  .word 0xe8bd8070  <OBJ/BSS>
+  001a9400  .word 0x604042d4  <OBJ/BSS>
+  001a9404  .word 0x602dcf24  (ptr 2d6fa0)
+  001a9408  .word 0x602b3788  "CommunicationSettingsService"
+  001a940c  .word 0x602504b8  (ptr 24a534)
+  001a9410  .word 0x60405838 '8X@`'  <OBJ/BSS>
+  001a9414  .word 0x602b376c 'l7+`'  (ptr 2ad7e8)
+  001a9418  .word 0x60405ac8  <OBJ/BSS>
+  001a941c  .word 0x60496ab4  <OBJ/BSS>
+  001a9420  .word 0x602b35bc  (ptr 2ad638)
+  001a9424  .word 0x602d92a4  (ptr 2d3320)
+  001a9428  .word 0x60008000  (ptr 207c)
+  001a942c  .word 0x60078440  (ptr 724bc)
+  001a9430  .word 0xe92d41f0  <OBJ/BSS>
+  001a9434  .word 0xe1a04000  <OBJ/BSS>
+  001a9438  .word 0xe59f0258  <OBJ/BSS>
+  001a943c  .word 0xe24dd030  <OBJ/BSS>
+  001a9440  .word 0xe5d00000  <OBJ/BSS>
+  001a9444  .word 0xe1a07001  <OBJ/BSS>
+  001a9448  .word 0xe3a05000  <OBJ/BSS>
+  001a944c  .word 0xe3500000  <OBJ/BSS>
+  001a9450  .word 0xa000061
+  001a9454  .word 0xe3a00000  <OBJ/BSS>
+  001a9458  .word 0xe88d0021  <OBJ/BSS>
+  001a945c  .word 0xe1a0100d  <OBJ/BSS>
+  001a9460  .word 0xe28d0020  <OBJ/BSS>
+  001a9464  .word 0xfa0006a4  <OBJ/BSS>
+  001a9468  .word 0xe59f022c  <OBJ/BSS>
+  001a946c  .word 0xe3a06000  <OBJ/BSS>
+  001a9470  .word 0xeb011b11  <OBJ/BSS>
+  001a9474  .word 0xe59d0004  <OBJ/BSS>
+  001a9478  .word 0xe3500000  <OBJ/BSS>
+  001a947c  .word 0xe59d0000  <OBJ/BSS>
+  001a9480  .word 0xa00000b
+  001a9484  .word 0xe3500000  <OBJ/BSS>
+  001a9488  .word 0xa00000b
+  001a948c  .word 0xe59d1004  <OBJ/BSS>
+  001a9490  .word 0xe1a00001  <OBJ/BSS>
+  001a9494  .word 0xe5911000  <OBJ/BSS>
+  001a9498  .word 0xe2411001  <OBJ/BSS>
+  001a949c  .word 0xe5801000  <OBJ/BSS>
+  001a94a0  .word 0xe59d0004  <OBJ/BSS>
+  001a94a4  .word 0xe5900000  <OBJ/BSS>
+  001a94a8  .word 0xe3500000  <OBJ/BSS>
+  001a94ac  .word 0x1a000006
+  001a94b0  .word 0xea000002  <OBJ/BSS>
+  001a94b4  .word 0xe3500000  <OBJ/BSS>
+  001a94b8  .word 0xa000005
+  001a94bc  .word 0xfaf9681d  <OBJ/BSS>
+  001a94c0  .word 0xe59d0004  <OBJ/BSS>
+  001a94c4  .word 0xeb0115ff  <OBJ/BSS>
+  001a94c8  .word 0xe59d6000  <OBJ/BSS>
+  001a94cc  .word 0xe58d5000  <OBJ/BSS>
+  001a94d0  .word 0xe58d5004  <OBJ/BSS>
+  001a94d4  .word 0xe59f01c0  <OBJ/BSS>
+  001a94d8  .word 0xeb011c7d  <OBJ/BSS>
+  001a94dc  .word 0xe1b00006  <OBJ/BSS>
+  001a94e0  .word 0xa000002
+  001a94e4  .word 0xe5901000  <OBJ/BSS>
+  001a94e8  .word 0xe5911004  <OBJ/BSS>
+  001a94ec  .word 0xe12fff31  <OBJ/BSS>
+  001a94f0  .word 0xe28d1020  <OBJ/BSS>
+  001a94f4  .word 0xe28400fc  <OBJ/BSS>
+  001a94f8  .word 0xfa004bd3  <OBJ/BSS>
+  001a94fc  .word 0xe28d1020  <OBJ/BSS>
+  001a9500  .word 0xe28d0008  <OBJ/BSS>
+
+############ ARM range 4ccc0..4cf40
+  0004ccc0  cmp r0,#0x0
+  0004ccc4  bne 0x0004ccd8   ; ref->0004ccd8 = 0xe28f10e0  <OBJ/BSS>
+  0004ccc8  mov r0,#0x0
+  0004cccc  str r0,[r4,#0x0]
+  0004ccd0  mov r0,#0x1
+  0004ccd4  ldmia sp!,{r4,r5,r6,pc}
+  0004ccd8  adr r1,0x4cdc0
+  0004ccdc  cpy r0,r5
+  0004cce0  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  0004cce4  cmp r0,#0x0
+  0004cce8  bne 0x0004ccf8   ; ref->0004ccf8 = 0xe28f10c8  <OBJ/BSS>
+  0004ccec  mov r0,#0x1
+  0004ccf0  str r0,[r4,#0x0]
+  0004ccf4  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004ccf8  adr r1,0x4cdc8
+  0004ccfc  cpy r0,r5
+  0004cd00  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  0004cd04  cmp r0,#0x0
+  0004cd08  bne 0x0004cd1c   ; ref->0004cd1c = 0xe28f10a8  <OBJ/BSS>
+  0004cd0c  mov r0,#0x2
+  0004cd10  str r0,[r4,#0x0]
+  0004cd14  mov r0,#0x1
+  0004cd18  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004cd1c  adr r1,0x4cdcc
+  0004cd20  cpy r0,r5
+  0004cd24  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  0004cd28  cmp r0,#0x0
+  0004cd2c  bne 0x0004cd40   ; ref->0004cd40 = 0xe28f108c  <OBJ/BSS>
+  0004cd30  mov r0,#0x3
+  0004cd34  str r0,[r4,#0x0]
+  0004cd38  mov r0,#0x1
+  0004cd3c  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004cd40  adr r1,0x4cdd4
+  0004cd44  cpy r0,r5
+  0004cd48  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  0004cd4c  cmp r0,#0x0
+  0004cd50  bne 0x0004cd64   ; ref->0004cd64 = 0xe28f106c  <OBJ/BSS>
+  0004cd54  mov r0,#0x4
+  0004cd58  str r0,[r4,#0x0]
+  0004cd5c  mov r0,#0x1
+  0004cd60  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004cd64  adr r1,0x4cdd8
+  0004cd68  cpy r0,r5
+  0004cd6c  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  0004cd70  cmp r0,#0x0
+  0004cd74  bne 0x0004cd88   ; ref->0004cd88 = 0xe28f1050  <OBJ/BSS>
+  0004cd78  mov r0,#0x5
+  0004cd7c  str r0,[r4,#0x0]
+  0004cd80  mov r0,#0x1
+  0004cd84  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004cd88  adr r1,0x4cde0
+  0004cd8c  cpy r0,r5
+  0004cd90  bl 0x00003d18   ; ref->00003d18 = 0xe3100003  <OBJ/BSS>
+  0004cd94  cmp r0,#0x0
+  0004cd98  bne 0x0004cdac   ; ref->0004cdac = 0xe3a000ff  <OBJ/BSS>
+  0004cd9c  mov r0,#0x6
+  0004cda0  str r0,[r4,#0x0]
+  0004cda4  mov r0,#0x1
+  0004cda8  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004cdac  mov r0,#0xff
+  0004cdb0  str r0,[r4,#0x0]
+  0004cdb4  mov r0,#0x0
+  0004cdb8  b 0x0004ccd4   ; ref->0004ccd4 = 0xe8bd8070  <OBJ/BSS>
+  0004cdbc  .word 0x3233 '32..'
+  0004cdc0  .word 0x312e3434 '44.1'
+  0004cdc4  .word 0x0 '....'
+  0004cdc8  .word 0x3834 '48..'
+  0004cdcc  .word 0x322e3838 '88.2'
+  0004cdd0  .word 0x0 '....'
+  0004cdd4  .word 0x3639 '96..'
+  0004cdd8  .word 0x2e363731 '176.'
+  0004cddc  .word 0x34 '4...'
+  0004cde0  .word 0x323931 '192.'
+  0004cde4  .word 0xe92d4010  <OBJ/BSS>
+  0004cde8  .word 0xeb012b35  <OBJ/BSS>
+  0004cdec  .word 0xe1a04000  <OBJ/BSS>
+  0004cdf0  .word 0xe3a01000  <OBJ/BSS>
+  0004cdf4  .word 0xfa056b68  <OBJ/BSS>
+  0004cdf8  .word 0xe3a00000  <OBJ/BSS>
+  0004cdfc  .word 0xe8bd8010  <OBJ/BSS>
+  0004ce00  .word 0xe92d43f8  <OBJ/BSS>
+  0004ce04  .word 0xe59f509c  <OBJ/BSS>
+  0004ce08  .word 0xe1a07001  <OBJ/BSS>
+  0004ce0c  .word 0xe5951000  <OBJ/BSS>
+  0004ce10  .word 0xe3510000  <OBJ/BSS>
+  0004ce14  .word 0x13500000
+  0004ce18  .word 0x13700001
+  0004ce1c  .word 0xa00001f
+  0004ce20  .word 0xe5901000  <OBJ/BSS>
+  0004ce24  .word 0xe59f2080  <OBJ/BSS>
+  0004ce28  .word 0xe1510002  <OBJ/BSS>
+  0004ce2c  .word 0x1a00001b
+  0004ce30  .word 0xe5908004  <OBJ/BSS>
+  0004ce34  .word 0xe1a04000  <OBJ/BSS>
+  0004ce38  .word 0xe3580000  <OBJ/BSS>
+  0004ce3c  .word 0xa000017
+  0004ce40  .word 0xe5942008  <OBJ/BSS>
+  0004ce44  .word 0xe5950000  <OBJ/BSS>
+  0004ce48  .word 0xe1a01008  <OBJ/BSS>
+  0004ce4c  .word 0xeb001dd9  <OBJ/BSS>
+  0004ce50  .word 0xe1b06000  <OBJ/BSS>
+  0004ce54  .word 0xa000011
+  0004ce58  .word 0xe5940008  <OBJ/BSS>
+  0004ce5c  .word 0xe2800001  <OBJ/BSS>
+  0004ce60  .word 0xe5840008  <OBJ/BSS>
+  0004ce64  .word 0xe1a00006  <OBJ/BSS>
+  0004ce68  .word 0xeb058ffe  <OBJ/BSS>
+  0004ce6c  .word 0xe3500000  <OBJ/BSS>
+  0004ce70  .word 0x1afffff2
+  0004ce74  .word 0xe5951000  <OBJ/BSS>
+  0004ce78  .word 0xe1a02006  <OBJ/BSS>
+  0004ce7c  .word 0xe1a0000d  <OBJ/BSS>
+  0004ce80  .word 0xeb0590c5  <OBJ/BSS>
+  0004ce84  .word 0xe1a0100d  <OBJ/BSS>
+  0004ce88  .word 0xe1a00007  <OBJ/BSS>
+  0004ce8c  .word 0xfa0796ee  <OBJ/BSS>
+  0004ce90  .word 0xe1a0000d  <OBJ/BSS>
+  0004ce94  .word 0xfa0796d5  <OBJ/BSS>
+  0004ce98  .word 0xe3a00001  <OBJ/BSS>
+  0004ce9c  .word 0xe8bd83f8  <OBJ/BSS>
+  0004cea0  .word 0xe3a00000  <OBJ/BSS>
+  0004cea4  .word 0xe8bd83f8  <OBJ/BSS>
+  0004cea8  .word 0x6040435c '\C@`'  <OBJ/BSS>
+  0004ceac  .word 0xabcdef0
+  0004ceb0  .word 0xf400740
+  0004ceb4  .word 0xd0012900  <OBJ/BSS>
+  0004ceb8  .word 0xe0004902  <OBJ/BSS>
+  0004cebc  .word 0x5c084902
+  0004cec0  .word 0x4770 'pG..'
+  0004cec4  .word 0x60403b17  <OBJ/BSS>
+  0004cec8  .word 0x60403b10  <OBJ/BSS>
+  0004cecc  .word 0xb510480d  <OBJ/BSS>
+  0004ced0  .word 0x7c06840
+  0004ced4  .word 0x480cd113
+  0004ced8  .word 0xf943f17a  <OBJ/BSS>
+  0004cedc  .word 0xd00e2800  <OBJ/BSS>
+  0004cee0  .word 0x20004c0a
+  0004cee4  .word 0x490a6060
+  0004cee8  .word 0xf1a30020  <OBJ/BSS>
+  0004ceec  .word 0x4a09e93e
+  0004cef0  .word 0x204909
+  0004cef4  .word 0xf8daf17a  <OBJ/BSS>
+  0004cef8  .word 0x46c04803
+  0004cefc  .word 0x480346c0
+  0004cf00  .word 0xbd10
+  0004cf04  .word 0x60403b00 '.;@`'  <OBJ/BSS>
+  0004cf08  .word 0x60403b04  <OBJ/BSS>
+  0004cf0c  .word 0x60414bac  <OBJ/BSS>
+  0004cf10  .word 0x602a5af8  "BCOStringContainer"
+  0004cf14  .word 0x60008000  (ptr 207c)
+  0004cf18  .word 0x600977cf  (ptr 9184b)
+  0004cf1c  .word 0xf120602
+  0004cf20  .word 0xd00e2a0f  <OBJ/BSS>
+  0004cf24  .word 0xf400740
+  0004cf28  .word 0xd0202900  <OBJ/BSS>
+  0004cf2c  .word 0xd2382807  <OBJ/BSS>
+  0004cf30  .word 0x44790001
+  0004cf34  .word 0x18497909
+  0004cf38  .word 0xd0a448f
+  0004cf3c  .word 0x1513110f
+  0004cf40  .word 0xa410017
+
+############ ARM range 1a6100..1a6400
+  001a6100  bl 0x0005d094   ; ref->0005d094 = 0xe92d4fff  <OBJ/BSS>
+  001a6104  mov r1,#0x1
+  001a6108  mov r0,#0x2c
+  001a610c  bl 0x001f01c4   ; ref->001f01c4 = 0xe1a0200e  <OBJ/BSS>
+  001a6110  cmp r0,#0x0
+  001a6114  addne r1,r6,#0x24
+  001a6118  blne 0x00089398   ; ref->00089398 = 0xe59f3038  <OBJ/BSS>
+  001a611c  cmp r0,#0x0
+  001a6120  str r0,[r6,#0x120]
+  001a6124  beq 0x001a6134   ; ref->001a6134 = 0xe5955014  <OBJ/BSS>
+  001a6128  mov r1,#0x0
+  001a612c  cpy r0,r6
+  001a6130  bl 0x001a5dbc   ; ref->001a5dbc = 0xe92d4030  <OBJ/BSS>
+  001a6134  ldr r5,[r5,#0x14]
+  001a6138  tst r8,#0xff
+  001a613c  cpyne r0,r4
+  001a6140  blne 0x001f06d4   ; ref->001f06d4 = 0xe5901000  <OBJ/BSS>
+  001a6144  cpy r0,r5
+  001a6148  ldmia sp!,{r3,r4,r5,r6,r7,r8,r9,pc}
+  001a614c  .word 0xe31800ff  <OBJ/BSS>
+  001a6150  .word 0x11a00004
+  001a6154  .word 0x1b01295e
+  001a6158  .word 0xe3a00000  <OBJ/BSS>
+  001a615c  .word 0xe8bd83f8  <OBJ/BSS>
+  001a6160  .word 0x60405440 '@T@`'  <OBJ/BSS>
+  001a6164  .word 0x60493f24 '$?I`'  <OBJ/BSS>
+  001a6168  .word 0xe5900020  <OBJ/BSS>
+  001a616c  .word 0xeafade4a  <OBJ/BSS>
+  001a6170  .word 0xe92d43f8  <OBJ/BSS>
+  001a6174  .word 0xe1a04000  <OBJ/BSS>
+  001a6178  .word 0xe59f0194  <OBJ/BSS>
+  001a617c  .word 0xe3a06000  <OBJ/BSS>
+  001a6180  .word 0xe8840003  <OBJ/BSS>
+  001a6184  .word 0xe5846008  <OBJ/BSS>
+  001a6188  .word 0xe584600c  <OBJ/BSS>
+  001a618c  .word 0xe5846010  <OBJ/BSS>
+  001a6190  .word 0xe5846014  <OBJ/BSS>
+  001a6194  .word 0xe5846018  <OBJ/BSS>
+  001a6198  .word 0xe584601c  <OBJ/BSS>
+  001a619c  .word 0xe3a07001  <OBJ/BSS>
+  001a61a0  .word 0xe5846020  <OBJ/BSS>
+  001a61a4  .word 0xe5846120  <OBJ/BSS>
+  001a61a8  .word 0xe5c47124  <OBJ/BSS>
+  001a61ac  .word 0xe5846128  <OBJ/BSS>
+  001a61b0  .word 0xe5846138  <OBJ/BSS>
+  001a61b4  .word 0xe584613c  <OBJ/BSS>
+  001a61b8  .word 0xe2840014  <OBJ/BSS>
+  001a61bc  .word 0xe5c46140  <OBJ/BSS>
+  001a61c0  .word 0xe5c40141  <OBJ/BSS>
+  001a61c4  .word 0xe5846134  <OBJ/BSS>
+  001a61c8  .word 0xe5846130  <OBJ/BSS>
+  001a61cc  .word 0xe2845f4a  <OBJ/BSS>
+  001a61d0  .word 0xe1a09007  <OBJ/BSS>
+  001a61d4  .word 0xe3a01000  <OBJ/BSS>
+  001a61d8  .word 0xe3a0000c  <OBJ/BSS>
+  001a61dc  .word 0xe584612c  <OBJ/BSS>
+  001a61e0  .word 0xfaff359e  <OBJ/BSS>
+  001a61e4  .word 0xe1a08000  <OBJ/BSS>
+  001a61e8  .word 0xe3a00018  <OBJ/BSS>
+  001a61ec  .word 0xe3a01000  <OBJ/BSS>
+  001a61f0  .word 0xfaff359a  <OBJ/BSS>
+  001a61f4  .word 0xe5880008  <OBJ/BSS>
+  001a61f8  .word 0xe5950000  <OBJ/BSS>
+  001a61fc  .word 0xe2852008  <OBJ/BSS>
+  001a6200  .word 0xe8880201  <OBJ/BSS>
+  001a6204  .word 0xe5858000  <OBJ/BSS>
+  001a6208  .word 0xe5980008  <OBJ/BSS>
+  001a620c  .word 0xe59f3104  <OBJ/BSS>
+  001a6210  .word 0xe2801018  <OBJ/BSS>
+  001a6214  .word 0xe8820003  <OBJ/BSS>
+  001a6218  .word 0xe2801018  <OBJ/BSS>
+  001a621c  .word 0xe5851008  <OBJ/BSS>
+  001a6220  .word 0xe5806008  <OBJ/BSS>
+  001a6224  .word 0xe580600c  <OBJ/BSS>
+  001a6228  .word 0xe5c06000  <OBJ/BSS>
+  001a622c  .word 0xe5850010  <OBJ/BSS>
+  001a6230  .word 0xe5806004  <OBJ/BSS>
+  001a6234  .word 0xe5950010  <OBJ/BSS>
+  001a6238  .word 0xe2842f56  <OBJ/BSS>
+  001a623c  .word 0xe5800008  <OBJ/BSS>
+  001a6240  .word 0xe5950010  <OBJ/BSS>
+  001a6244  .word 0xe3e01000  <OBJ/BSS>
+  001a6248  .word 0xe580000c  <OBJ/BSS>
+  001a624c  .word 0xe5846144  <OBJ/BSS>
+  001a6250  .word 0xe5846148  <OBJ/BSS>
+  001a6254  .word 0xe3a00a01  <OBJ/BSS>
+  001a6258  .word 0xe584614c  <OBJ/BSS>
+  001a625c  .word 0xe5840154  <OBJ/BSS>
+  001a6260  .word 0xe5846150  <OBJ/BSS>
+  001a6264  .word 0xe8820041  <OBJ/BSS>
+  001a6268  .word 0xe5840160  <OBJ/BSS>
+  001a626c  .word 0xe5840164  <OBJ/BSS>
+  001a6270  .word 0xe5c47168  <OBJ/BSS>
+  001a6274  .word 0xe584116c  <OBJ/BSS>
+  001a6278  .word 0xe5843054  <OBJ/BSS>
+  001a627c  .word 0xe3a0c4ad  <OBJ/BSS>
+  001a6280  .word 0xe584c058  <OBJ/BSS>
+  001a6284  .word 0xe2848e17  <OBJ/BSS>
+  001a6288  .word 0xe8880042  <OBJ/BSS>
+  001a628c  .word 0xe3a0300d  <OBJ/BSS>
+  001a6290  .word 0xe283cff7  <OBJ/BSS>
+  001a6294  .word 0xe584105c  <OBJ/BSS>
+  001a6298  .word 0xe584c060  <OBJ/BSS>
+  001a629c  .word 0xe3a00004  <OBJ/BSS>
+  001a62a0  .word 0xe584311c  <OBJ/BSS>
+  001a62a4  .word 0xebfa8a15  <OBJ/BSS>
+  001a62a8  .word 0xe59f006c  <OBJ/BSS>
+  001a62ac  .word 0xe5900000  <OBJ/BSS>
+  001a62b0  .word 0xe3100001  <OBJ/BSS>
+  001a62b4  .word 0x1a000011
+  001a62b8  .word 0xe59f005c  <OBJ/BSS>
+  001a62bc  .word 0xfb0083a7  <OBJ/BSS>
+  001a62c0  .word 0xe3500000  <OBJ/BSS>
+  001a62c4  .word 0xa00000d
+  001a62c8  .word 0xe59f0050  <OBJ/BSS>
+  001a62cc  .word 0xe3a03000  <OBJ/BSS>
+  001a62d0  .word 0xe28f104c  <OBJ/BSS>
+  001a62d4  .word 0xe28f2050  <OBJ/BSS>
+  001a62d8  .word 0xe1a0c003  <OBJ/BSS>
+  001a62dc  .word 0xe2805004  <OBJ/BSS>
+  001a62e0  .word 0xe885100e  <OBJ/BSS>
+  001a62e4  .word 0xe59f1050  <OBJ/BSS>
+  001a62e8  .word 0xe59f2050  <OBJ/BSS>
+  001a62ec  .word 0xe5801000  <OBJ/BSS>
+  001a62f0  .word 0xe59f104c  <OBJ/BSS>
+  001a62f4  .word 0xfa00836c  <OBJ/BSS>
+  001a62f8  .word 0xe59f001c  <OBJ/BSS>
+  001a62fc  .word 0xe1a00000  <OBJ/BSS>
+  001a6300  .word 0xe59f0018  <OBJ/BSS>
+  001a6304  .word 0xe3a01000  <OBJ/BSS>
+  001a6308  .word 0xfa000623  <OBJ/BSS>
+  001a630c  .word 0xe1a00004  <OBJ/BSS>
+  001a6310  .word 0xe8bd83f8  <OBJ/BSS>
+  001a6314  .word 0x602e2ed8  (ptr 2dcf54)
+  001a6318  .word 0xe0014000  <OBJ/BSS>
+  001a631c  .word 0x604057e0  <OBJ/BSS>
+  001a6320  .word 0x60496a14  <OBJ/BSS>
+  001a6324  .word 0x70726177 'warp'  <OBJ/BSS>
+  001a6328  .word 0x0 '....'
+  001a632c  .word 0x70726177 'warp'  <OBJ/BSS>
+  001a6330  .word 0x6d6f6320 ' com'  <OBJ/BSS>
+  001a6334  .word 0x646e616d 'mand'  <OBJ/BSS>
+  001a6338  .word 0x73 's...'
+  001a633c  .word 0x602d81f0  (ptr 2d226c)
+  001a6340  .word 0x60008000  (ptr 207c)
+  001a6344  .word 0x6006a6c8  (ptr 64744)
+  001a6348  .word 0xe92d4070  <OBJ/BSS>
+  001a634c  .word 0xe1a04000  <OBJ/BSS>
+  001a6350  .word 0xe1a05001  <OBJ/BSS>
+  001a6354  .word 0xe1a06002  <OBJ/BSS>
+  001a6358  .word 0xe1a02006  <OBJ/BSS>
+  001a635c  .word 0xe1a01005  <OBJ/BSS>
+  001a6360  .word 0xe1a00004  <OBJ/BSS>
+  001a6364  .word 0xeb0000b3  <OBJ/BSS>
+  001a6368  .word 0xe8bd8070  <OBJ/BSS>
+  001a636c  .word 0xe92d4070  <OBJ/BSS>
+  001a6370  .word 0xe1a04000  <OBJ/BSS>
+  001a6374  .word 0xe1a05001  <OBJ/BSS>
+  001a6378  .word 0xe3550000  <OBJ/BSS>
+  001a637c  .word 0xa000003
+  001a6380  .word 0xe5d40011  <OBJ/BSS>
+  001a6384  .word 0xe3800001  <OBJ/BSS>
+  001a6388  .word 0xe5c40011  <OBJ/BSS>
+  001a638c  .word 0xea000002  <OBJ/BSS>
+  001a6390  .word 0xe5d40011  <OBJ/BSS>
+  001a6394  .word 0xe20000fe  <OBJ/BSS>
+  001a6398  .word 0xe5c40011  <OBJ/BSS>
+  001a639c  .word 0xe3a02002  <OBJ/BSS>
+  001a63a0  .word 0xe2841010  <OBJ/BSS>
+  001a63a4  .word 0xe1a00004  <OBJ/BSS>
+  001a63a8  .word 0xeb000042  <OBJ/BSS>
+  001a63ac  .word 0xe8bd8070  <OBJ/BSS>
+  001a63b0  .word 0xe92d4070  <OBJ/BSS>
+  001a63b4  .word 0xe1a04000  <OBJ/BSS>
+  001a63b8  .word 0xe1a05001  <OBJ/BSS>
+  001a63bc  .word 0xe3550001  <OBJ/BSS>
+  001a63c0  .word 0xa000006
+  001a63c4  .word 0xe3550002  <OBJ/BSS>
+  001a63c8  .word 0xa000009
+  001a63cc  .word 0xe3550003  <OBJ/BSS>
+  001a63d0  .word 0xa00000f
+  001a63d4  .word 0xe3550004  <OBJ/BSS>
+  001a63d8  .word 0x1a00001d
+  001a63dc  .word 0xea000014  <OBJ/BSS>
+  001a63e0  .word 0xe1a00000  <OBJ/BSS>
+  001a63e4  .word 0xe5d40011  <OBJ/BSS>
+  001a63e8  .word 0xe20000f9  <OBJ/BSS>
+  001a63ec  .word 0xe5c40011  <OBJ/BSS>
+  001a63f0  .word 0xea00001d  <OBJ/BSS>
+  001a63f4  .word 0xe1a00000  <OBJ/BSS>
+  001a63f8  .word 0xe5d40011  <OBJ/BSS>
+  001a63fc  .word 0xe20000f9  <OBJ/BSS>
+  001a6400  .word 0xe5c40011  <OBJ/BSS>
+
+############ ARM range 44fc0..45100
+  00044fc0  .word 0x6094310
+  00044fc4  .word 0xa014308
+  00044fc8  .word 0x71617120 ' qaq'  <OBJ/BSS>
+  00044fcc  .word 0xe000c01
+  00044fd0  .word 0x71e071a1  <OBJ/BSS>
+  00044fd4  .word 0xbdf89800  <OBJ/BSS>
+  00044fd8  .word 0xbdf82000  <OBJ/BSS>
+  00044fdc  .word 0xe92d4070  <OBJ/BSS>
+  00044fe0  .word 0xe1a05000  <OBJ/BSS>
+  00044fe4  .word 0xe59f00bc  <OBJ/BSS>
+  00044fe8  .word 0xe1a04001  <OBJ/BSS>
+  00044fec  .word 0xe5900000  <OBJ/BSS>
+  00044ff0  .word 0xe3100001  <OBJ/BSS>
+  00044ff4  .word 0x1a00001b
+  00044ff8  .word 0xe59f00a8  <OBJ/BSS>
+  00044ffc  .word 0xfb060857  <OBJ/BSS>
+  00045000  .word 0xe3500000  <OBJ/BSS>
+  00045004  .word 0xa000017
+  00045008  .word 0xe59f009c  <OBJ/BSS>
+  0004500c  .word 0xe59f109c  <OBJ/BSS>
+  00045010  .word 0xe3a03000  <OBJ/BSS>
+  00045014  .word 0xe2412020  <OBJ/BSS>
+  00045018  .word 0xe1a0c003  <OBJ/BSS>
+  0004501c  .word 0xe2806004  <OBJ/BSS>
+  00045020  .word 0xe886100e  <OBJ/BSS>
+  00045024  .word 0xe59f1088  <OBJ/BSS>
+  00045028  .word 0xe1a02003  <OBJ/BSS>
+  0004502c  .word 0xe5801000  <OBJ/BSS>
+  00045030  .word 0xe0801183  <OBJ/BSS>
+  00045034  .word 0xe2833001  <OBJ/BSS>
+  00045038  .word 0xe0806183  <OBJ/BSS>
+  0004503c  .word 0xe2822002  <OBJ/BSS>
+  00045040  .word 0xe581c014  <OBJ/BSS>
+  00045044  .word 0xe3520014  <OBJ/BSS>
+  00045048  .word 0xe2833001  <OBJ/BSS>
+  0004504c  .word 0xe586c014  <OBJ/BSS>
+  00045050  .word 0xbafffff6  <OBJ/BSS>
+  00045054  .word 0xe59f205c  <OBJ/BSS>
+  00045058  .word 0xe59f105c  <OBJ/BSS>
+  0004505c  .word 0xfa060812  <OBJ/BSS>
+  00045060  .word 0xe59f0040  <OBJ/BSS>
+  00045064  .word 0xe1a00000  <OBJ/BSS>
+  00045068  .word 0xe59f103c  <OBJ/BSS>
+  0004506c  .word 0xe3540000  <OBJ/BSS>
+  00045070  .word 0x13a00000
+  00045074  .word 0x8bd8070
+  00045078  .word 0xe0812180  <OBJ/BSS>
+  0004507c  .word 0xe5922014  <OBJ/BSS>
+  00045080  .word 0xe3520000  <OBJ/BSS>
+  00045084  .word 0xa000003
+  00045088  .word 0xe2800001  <OBJ/BSS>
+  0004508c  .word 0xe3500014  <OBJ/BSS>
+  00045090  .word 0xbafffff8  <OBJ/BSS>
+  00045094  .word 0xe8bd8070  <OBJ/BSS>
+  00045098  .word 0xe0810180  <OBJ/BSS>
+  0004509c  .word 0xe5a05014  <OBJ/BSS>
+  000450a0  .word 0xe5804004  <OBJ/BSS>
+  000450a4  .word 0xe8bd8070  <OBJ/BSS>
+  000450a8  .word 0x6040586c 'lX@`'  <OBJ/BSS>
+  000450ac  .word 0x60496bc4  <OBJ/BSS>
+  000450b0  .word 0x602a7b70 'p{*`'  "versulu"
+  000450b4  .word 0x602da198  (ptr 2d4214)
+  000450b8  .word 0x60008000  (ptr 207c)
+  000450bc  .word 0x6008695c  (ptr 809d8)
+  000450c0  .word 0xe59f000c  <OBJ/BSS>
+  000450c4  .word 0xe590010c  <OBJ/BSS>
+  000450c8  .word 0xe3100001  <OBJ/BSS>
+  000450cc  .word 0x12fff1e
+  000450d0  .word 0xea0004b1  <OBJ/BSS>
+  000450d4  .word 0x6045ee8c  <OBJ/BSS>
+  000450d8  .word 0xe92d4030  <OBJ/BSS>
+  000450dc  .word 0xe59f40a0  <OBJ/BSS>
+  000450e0  .word 0xe24dd01c  <OBJ/BSS>
+  000450e4  .word 0xe3e01000  <OBJ/BSS>
+  000450e8  .word 0xe3a05001  <OBJ/BSS>
+  000450ec  .word 0xe5841108  <OBJ/BSS>
+  000450f0  .word 0xe3a00000  <OBJ/BSS>
+  000450f4  .word 0xe584510c  <OBJ/BSS>
+  000450f8  .word 0xe5840114  <OBJ/BSS>
+  000450fc  .word 0xe59401d0  <OBJ/BSS>
+  00045100  .word 0xe1a01005  <OBJ/BSS>
+
+############ ARM range 13b300..13b600
+  0013b300  eoreq r6,r9,r1
+  0013b304  .word 0xf06f301c  <OBJ/BSS>
+  0013b308  .word 0x381cfe13
+  0013b30c  .word 0x63022200  <OBJ/BSS>
+  0013b310  .word 0x63826342  <OBJ/BSS>
+  0013b314  .word 0x640263c2  <OBJ/BSS>
+  0013b318  .word 0x64826442  <OBJ/BSS>
+  0013b31c  .word 0x490364c2
+  0013b320  .word 0x650262c4  <OBJ/BSS>
+  0013b324  .word 0xbd706001  <OBJ/BSS>
+  0013b328  .word 0x602de3fc  (ptr 2d8478)
+  0013b32c  .word 0x602e1634  (ptr 2db6b0)
+  0013b330  .word 0xf000b510  <OBJ/BSS>
+  0013b334  .word 0xf0b3f803  <OBJ/BSS>
+  0013b338  .word 0xbd10ecc8  <OBJ/BSS>
+  0013b33c  .word 0x4b510
+  0013b340  .word 0x60204815  (ptr 1fe891)
+  0013b344  .word 0x28006ae0
+  0013b348  .word 0x2300d00a
+  0013b34c  .word 0x49144a13
+  0013b350  .word 0xf08b43db  <OBJ/BSS>
+  0013b354  .word 0x2800ff61
+  0013b358  .word 0x21d002
+  0013b35c  .word 0xfebef7ff  <OBJ/BSS>
+  0013b360  .word 0x68a23448  <OBJ/BSS>
+  0013b364  .word 0x1a116820
+  0013b368  .word 0x22001089
+  0013b36c  .word 0xfb72f038  <OBJ/BSS>
+  0013b370  .word 0x68a23c0c  <OBJ/BSS>
+  0013b374  .word 0x1a116820
+  0013b378  .word 0x22001089
+  0013b37c  .word 0xfb6af038  <OBJ/BSS>
+  0013b380  .word 0x204908
+  0013b384  .word 0x6001383c  (ptr d8b8)
+  0013b388  .word 0xf06f301c  <OBJ/BSS>
+  0013b38c  .word 0x381cfe0f
+  0013b390  .word 0xf80af720  <OBJ/BSS>
+  0013b394  .word 0xbd10
+  0013b398  .word 0x602e1634  (ptr 2db6b0)
+  0013b39c  .word 0x602d4f0c  (ptr 2cef88)
+  0013b3a0  .word 0x602d4820 ' H-`'  (ptr 2ce89c)
+  0013b3a4  .word 0x602de3fc  (ptr 2d8478)
+  0013b3a8  .word 0xe92d4010  <OBJ/BSS>
+  0013b3ac  .word 0xe1a04000  <OBJ/BSS>
+  0013b3b0  .word 0xe1a00004  <OBJ/BSS>
+  0013b3b4  .word 0xebfff3bf  <OBJ/BSS>
+  0013b3b8  .word 0xe1a04000  <OBJ/BSS>
+  0013b3bc  .word 0xe59f0008  <OBJ/BSS>
+  0013b3c0  .word 0xe5840000  <OBJ/BSS>
+  0013b3c4  .word 0xe1a00004  <OBJ/BSS>
+  0013b3c8  .word 0xe8bd8010  <OBJ/BSS>
+  0013b3cc  .word 0x602e1690  (ptr 2db70c)
+  0013b3d0  .word 0xe92d4010  <OBJ/BSS>
+  0013b3d4  .word 0xe1a04000  <OBJ/BSS>
+  0013b3d8  .word 0xe1a00004  <OBJ/BSS>
+  0013b3dc  .word 0xebfff3c1  <OBJ/BSS>
+  0013b3e0  .word 0xe1a04000  <OBJ/BSS>
+  0013b3e4  .word 0xe1a00004  <OBJ/BSS>
+  0013b3e8  .word 0xe8bd8010  <OBJ/BSS>
+  0013b3ec  .word 0xe59f1004  <OBJ/BSS>
+  0013b3f0  .word 0xe5801000  <OBJ/BSS>
+  0013b3f4  .word 0xe12fff1e  <OBJ/BSS>
+  0013b3f8  .word 0x602e16a0  (ptr 2db71c)
+  0013b3fc  .word 0xe12fff1e  <OBJ/BSS>
+  0013b400  .word 0xe92d4ff0  <OBJ/BSS>
+  0013b404  .word 0xe59f0158  <OBJ/BSS>
+  0013b408  .word 0xe59fb14c  <OBJ/BSS>
+  0013b40c  .word 0xe59f414c  <OBJ/BSS>
+  0013b410  .word 0xe24dd00c  <OBJ/BSS>
+  0013b414  .word 0xe3a05000  <OBJ/BSS>
+  0013b418  .word 0xe3a0a020  <OBJ/BSS>
+  0013b41c  .word 0xe1a07005  <OBJ/BSS>
+  0013b420  .word 0xe3a09001  <OBJ/BSS>
+  0013b424  .word 0xe58d0004  <OBJ/BSS>
+  0013b428  .word 0xe59f0138  <OBJ/BSS>
+  0013b42c  .word 0xe5900000  <OBJ/BSS>
+  0013b430  .word 0xe3100001  <OBJ/BSS>
+  0013b434  .word 0x1a000011
+  0013b438  .word 0xe59f0128  <OBJ/BSS>
+  0013b43c  .word 0xfb022f47  <OBJ/BSS>
+  0013b440  .word 0xe3500000  <OBJ/BSS>
+  0013b444  .word 0xa00000d
+  0013b448  .word 0xe59f011c  <OBJ/BSS>
+  0013b44c  .word 0xe59f111c  <OBJ/BSS>
+  0013b450  .word 0xe3a03000  <OBJ/BSS>
+  0013b454  .word 0xe2412020  <OBJ/BSS>
+  0013b458  .word 0xe3a0c001  <OBJ/BSS>
+  0013b45c  .word 0xe2806004  <OBJ/BSS>
+  0013b460  .word 0xe886100e  <OBJ/BSS>
+  0013b464  .word 0xe59d1004  <OBJ/BSS>
+  0013b468  .word 0xe59f2104  <OBJ/BSS>
+  0013b46c  .word 0xe5801000  <OBJ/BSS>
+  0013b470  .word 0xe59f1100  <OBJ/BSS>
+  0013b474  .word 0xfa022f0c  <OBJ/BSS>
+  0013b478  .word 0xe59f00e8  <OBJ/BSS>
+  0013b47c  .word 0xe1a00000  <OBJ/BSS>
+  0013b480  .word 0xe08b1105  <OBJ/BSS>
+  0013b484  .word 0xe5d12000  <OBJ/BSS>
+  0013b488  .word 0xe3a06c0f  <OBJ/BSS>
+  0013b48c  .word 0xe5d1c001  <OBJ/BSS>
+  0013b490  .word 0xe0062402  <OBJ/BSS>
+  0013b494  .word 0xe5d13002  <OBJ/BSS>
+  0013b498  .word 0xe5d11003  <OBJ/BSS>
+  0013b49c  .word 0xe3c22020  <OBJ/BSS>
+  0013b4a0  .word 0xe00ac28c  <OBJ/BSS>
+  0013b4a4  .word 0xe3822801  <OBJ/BSS>
+  0013b4a8  .word 0xe18cc002  <OBJ/BSS>
+  0013b4ac  .word 0xe3a06010  <OBJ/BSS>
+  0013b4b0  .word 0xe2012007  <OBJ/BSS>
+  0013b4b4  .word 0xe0063203  <OBJ/BSS>
+  0013b4b8  .word 0xe3cc1010  <OBJ/BSS>
+  0013b4bc  .word 0xe1811003  <OBJ/BSS>
+  0013b4c0  .word 0xe3c11007  <OBJ/BSS>
+  0013b4c4  .word 0xe3a00064  <OBJ/BSS>
+  0013b4c8  .word 0xe1811002  <OBJ/BSS>
+  0013b4cc  .word 0xe5847100  <OBJ/BSS>
+  0013b4d0  .word 0xe5847104  <OBJ/BSS>
+  0013b4d4  .word 0xe5849108  <OBJ/BSS>
+  0013b4d8  .word 0xe5841100  <OBJ/BSS>
+  0013b4dc  .word 0xeb025313  <OBJ/BSS>
+  0013b4e0  .word 0xe5940100  <OBJ/BSS>
+  0013b4e4  .word 0xe3c00801  <OBJ/BSS>
+  0013b4e8  .word 0xe3100802  <OBJ/BSS>
+  0013b4ec  .word 0xe5840100  <OBJ/BSS>
+  0013b4f0  .word 0xe5941108  <OBJ/BSS>
+  0013b4f4  .word 0xe5948104  <OBJ/BSS>
+  0013b4f8  .word 0xe2416001  <OBJ/BSS>
+  0013b4fc  .word 0xa000003
+  0013b500  .word 0xe5849108  <OBJ/BSS>
+  0013b504  .word 0xe5847104  <OBJ/BSS>
+  0013b508  .word 0xe59f606c  <OBJ/BSS>
+  0013b50c  .word 0xe3c00802  <OBJ/BSS>
+  0013b510  .word 0xe3800801  <OBJ/BSS>
+  0013b514  .word 0xe5840100  <OBJ/BSS>
+  0013b518  .word 0xe3a00064  <OBJ/BSS>
+  0013b51c  .word 0xe0000098  <OBJ/BSS>
+  0013b520  .word 0xe1a01006  <OBJ/BSS>
+  0013b524  .word 0xebfb2c36  <OBJ/BSS>
+  0013b528  .word 0xe59f1050  <OBJ/BSS>
+  0013b52c  .word 0xe1a02000  <OBJ/BSS>
+  0013b530  .word 0xe58d6000  <OBJ/BSS>
+  0013b534  .word 0xe7911105  <OBJ/BSS>
+  0013b538  .word 0xe1a03008  <OBJ/BSS>
+  0013b53c  .word 0xe28f0040  <OBJ/BSS>
+  0013b540  .word 0xfafb1cd4  <OBJ/BSS>
+  0013b544  .word 0xe2855001  <OBJ/BSS>
+  0013b548  .word 0xe3550006  <OBJ/BSS>
+  0013b54c  .word 0x3affffb5
+  0013b550  .word 0xe3a00000  <OBJ/BSS>
+  0013b554  .word 0xe28dd00c  <OBJ/BSS>
+  0013b558  .word 0xe8bd8ff0  <OBJ/BSS>
+  0013b55c  .word 0x602a886c  (ptr 2a28e8)
+  0013b560  .word 0xe001d000  <OBJ/BSS>
+  0013b564  .word 0x602dfae8  (ptr 2d9b64)
+  0013b568  .word 0x60405980  <OBJ/BSS>
+  0013b56c  .word 0x604975b8  <OBJ/BSS>
+  0013b570  .word 0x602a8af0  "perf"
+  0013b574  .word 0x60008000  (ptr 207c)
+  0013b578  .word 0x601213c0  (ptr 11b43c)
+  0013b57c  .word 0xfffffe
+  0013b580  .word 0x60403c80  <OBJ/BSS>
+  0013b584  .word 0x30332d25 '%-30'
+  0013b588  .word 0x33252073 's %3'
+  0013b58c  .word 0x20252575 'u%% '
+  0013b590  .word 0x2f642528 '(%d/'
+  0013b594  .word 0xa296425
+  0013b598  .word 0x0 '....'
+  0013b59c  .word 0xe12fff1e  <OBJ/BSS>
+  0013b5a0  .word 0xe92d41f0  <OBJ/BSS>
+  0013b5a4  .word 0xe24dd010  <OBJ/BSS>
+  0013b5a8  .word 0xe1a06000  <OBJ/BSS>
+  0013b5ac  .word 0xe1a05001  <OBJ/BSS>
+  0013b5b0  .word 0xe1a07002  <OBJ/BSS>
+  0013b5b4  .word 0xe1a0000d  <OBJ/BSS>
+  0013b5b8  .word 0xfafdd714  <OBJ/BSS>
+  0013b5bc  .word 0xe59f10ec  <OBJ/BSS>
+  0013b5c0  .word 0xe5801000  <OBJ/BSS>
+  0013b5c4  .word 0xfafde4e6  <OBJ/BSS>
+  0013b5c8  .word 0xe1a0200d  <OBJ/BSS>
+  0013b5cc  .word 0xe28f10e0  <OBJ/BSS>
+  0013b5d0  .word 0xfafde49a  <OBJ/BSS>
+  0013b5d4  .word 0xe3500000  <OBJ/BSS>
+  0013b5d8  .word 0xa000015
+  0013b5dc  .word 0xe3a02000  <OBJ/BSS>
+  0013b5e0  .word 0xe5950000  <OBJ/BSS>
+  0013b5e4  .word 0xe1a01002  <OBJ/BSS>
+  0013b5e8  .word 0xfafb1f43  <OBJ/BSS>
+  0013b5ec  .word 0xe1a08000  <OBJ/BSS>
+  0013b5f0  .word 0xe59d0008  <OBJ/BSS>
+  0013b5f4  .word 0xe5901000  <OBJ/BSS>
+  0013b5f8  .word 0xe5912070  <OBJ/BSS>
+  0013b5fc  .word 0xe1a01008  <OBJ/BSS>
+  0013b600  .word 0xe12fff32  <OBJ/BSS>
+
+############ ARM range 133b00..133d00
+  00133b00  ldr r0,[r0,#0x0]
+  00133b04  tst r0,#0x1
+  00133b08  bne 0x00133b54   ; ref->00133b54 = 0xe08b1105  <OBJ/BSS>
+  00133b0c  ldr r0,[0x133c3c]
+  00133b10  blx 0x001c7162   ; ref->001c7162 = 0x29006801
+  00133b14  cmp r0,#0x0
+  00133b18  beq 0x00133b54   ; ref->00133b54 = 0xe08b1105  <OBJ/BSS>
+  00133b1c  ldr r0,[0x133c40]
+  00133b20  ldr r1,[0x133c44]
+  00133b24  mov r3,#0x0
+  00133b28  sub r2,r1,#0x20
+  00133b2c  mov r12,#0x1
+  00133b30  add r6,r0,#0x4
+  00133b34  stmia r6,{r1,r2,r3,r12}
+  00133b38  ldr r1,[sp,#0x4]
+  00133b3c  ldr r2,[0x133c48]
+  00133b40  str r1,[r0,#0x0]
+  00133b44  ldr r1,[0x133c4c]
+  00133b48  blx 0x001c70ac   ; ref->001c70ac = 0x2500b5f7
+  00133b4c  ldr r0,[0x133c3c]
+  00133b50  cpy r0,r0
+  00133b54  add r1,r11,r5, lsl #0x2
+  00133b58  ldrb r2,[r1,#0x0]
+  00133b5c  mov r6,#0xf00
+  00133b60  ldrb r12,[r1,#0x1]
+  00133b64  and r2,r6,r2, lsl #0x8
+  00133b68  ldrb r3,[r1,#0x2]
+  00133b6c  ldrb r1,[r1,#0x3]
+  00133b70  bic r2,r2,#0x20
+  00133b74  and r12,r10,r12, lsl #0x5
+  00133b78  orr r2,r2,#0x10000
+  00133b7c  orr r12,r12,r2
+  00133b80  mov r6,#0x10
+  00133b84  and r2,r1,#0x7
+  00133b88  and r3,r6,r3, lsl #0x4
+  00133b8c  bic r1,r12,#0x10
+  00133b90  orr r1,r1,r3
+  00133b94  bic r1,r1,#0x7
+  00133b98  mov r0,#0x64
+  00133b9c  orr r1,r1,r2
+  00133ba0  str r7,[r4,#0x100]
+  00133ba4  str r7,[r4,#0x104]
+  00133ba8  str r9,[r4,#0x108]
+  00133bac  str r1,[r4,#0x100]
+  00133bb0  bl 0x001d0130   ; ref->001d0130 = 0xe92d4070  <OBJ/BSS>
+  00133bb4  ldr r0,[r4,#0x100]
+  00133bb8  bic r0,r0,#0x10000
+  00133bbc  tst r0,#0x20000
+  00133bc0  str r0,[r4,#0x100]
+  00133bc4  ldr r1,[r4,#0x108]
+  00133bc8  ldr r8,[r4,#0x104]
+  00133bcc  sub r6,r1,#0x1
+  00133bd0  beq 0x00133be4   ; ref->00133be4 = 0xe3800801  <OBJ/BSS>
+  00133bd4  str r9,[r4,#0x108]
+  00133bd8  str r7,[r4,#0x104]
+  00133bdc  ldr r6,[0x133c50]
+  00133be0  bic r0,r0,#0x20000
+  00133be4  orr r0,r0,#0x10000
+  00133be8  str r0,[r4,#0x100]
+  00133bec  mov r0,#0x64
+  00133bf0  mul r0,r8,r0
+  00133bf4  cpy r1,r6
+  00133bf8  bl 0x00006604   ; ref->00006604 = 0xe3b02000  <OBJ/BSS>
+  00133bfc  ldr r1,[0x133c54]
+  00133c00  cpy r2,r0
+  00133c04  str r6,[sp,#0x0]
+  00133c08  ldr r1,[r1,r5,lsl #0x2]
+  00133c0c  cpy r3,r8
+  00133c10  adr r0,0x133c58
+  00133c14  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  00133c18  add r5,r5,#0x1
+  00133c1c  cmp r5,#0x2
+  00133c20  bcc 0x00133afc   ; ref->00133afc = 0xe59f0138  <OBJ/BSS>
+  00133c24  mov r0,#0x0
+  00133c28  add sp,sp,#0xc
+  00133c2c  ldmia sp!,{r4,r5,r6,r7,r8,r9,r10,r11,pc}
+  00133c30  .word 0x602a8864  (ptr 2a28e0)
+  00133c34  .word 0xe001d000  <OBJ/BSS>
+  00133c38  .word 0x602dfae8  (ptr 2d9b64)
+  00133c3c  .word 0x60405980  <OBJ/BSS>
+  00133c40  .word 0x604975b8  <OBJ/BSS>
+  00133c44  .word 0x602a8af0  "perf"
+  00133c48  .word 0x60008000  (ptr 207c)
+  00133c4c  .word 0x601213c0  (ptr 11b43c)
+  00133c50  .word 0xfffffe
+  00133c54  .word 0x60403c78 'x<@`'  <OBJ/BSS>
+  00133c58  .word 0x30332d25 '%-30'
+  00133c5c  .word 0x33252073 's %3'
+  00133c60  .word 0x20252575 'u%% '
+  00133c64  .word 0x2f642528 '(%d/'
+  00133c68  .word 0xa296425
+  00133c6c  .word 0x0 '....'
+  00133c70  .word 0xe12fff1e  <OBJ/BSS>
+  00133c74  .word 0xe92d5ff0  <OBJ/BSS>
+  00133c78  .word 0xe1a06000  <OBJ/BSS>
+  00133c7c  .word 0xe5d00014  <OBJ/BSS>
+  00133c80  .word 0xe1a04001  <OBJ/BSS>
+  00133c84  .word 0xe3500001  <OBJ/BSS>
+  00133c88  .word 0xa00001e
+  00133c8c  .word 0xe5940000  <OBJ/BSS>
+  00133c90  .word 0xe28f1e17  <OBJ/BSS>
+  00133c94  .word 0xebfb401f  <OBJ/BSS>
+  00133c98  .word 0xe3500000  <OBJ/BSS>
+  00133c9c  .word 0xa00001d
+  00133ca0  .word 0xe5940000  <OBJ/BSS>
+  00133ca4  .word 0xe28f1f59  <OBJ/BSS>
+  00133ca8  .word 0xebfb401a  <OBJ/BSS>
+  00133cac  .word 0xe3500000  <OBJ/BSS>
+  00133cb0  .word 0xa00001c
+  00133cb4  .word 0xe5940000  <OBJ/BSS>
+  00133cb8  .word 0xe28f1f57  <OBJ/BSS>
+  00133cbc  .word 0xebfb4015  <OBJ/BSS>
+  00133cc0  .word 0xe3500000  <OBJ/BSS>
+  00133cc4  .word 0xa00001b
+  00133cc8  .word 0xe5940000  <OBJ/BSS>
+  00133ccc  .word 0xe28f1f56  <OBJ/BSS>
+  00133cd0  .word 0xebfb4010  <OBJ/BSS>
+  00133cd4  .word 0xe3500000  <OBJ/BSS>
+  00133cd8  .word 0x13a00006
+  00133cdc  .word 0x18bd9ff0
+  00133ce0  .word 0xe3a05002  <OBJ/BSS>
+  00133ce4  .word 0xe59fa144  <OBJ/BSS>
+  00133ce8  .word 0xe59f7144  <OBJ/BSS>
+  00133cec  .word 0xe59f8144  <OBJ/BSS>
+  00133cf0  .word 0xe3a09c03  <OBJ/BSS>
+  00133cf4  .word 0xe3a0b001  <OBJ/BSS>
+  00133cf8  .word 0xe5d60014  <OBJ/BSS>
+  00133cfc  .word 0xe3500000  <OBJ/BSS>
+  00133d00  .word 0xa000010
+
+############ ARM range 1f7300..1f7600
+  001f7300  sub r2,r1,#0x20
+  001f7304  mov r12,#0x1
+  001f7308  add r4,r0,#0x4
+  001f730c  stmia r4,{r1,r2,r3,r12}
+  001f7310  ldr r1,[0x1f74f8]
+  001f7314  ldr r2,[0x1f7498]
+  001f7318  str r1,[r0,#0x0]
+  001f731c  ldr r1,[0x1f74fc]
+  001f7320  blx 0x001c70ac   ; ref->001c70ac = 0x2500b5f7
+  001f7324  ldr r0,[0x1f74ec]
+  001f7328  cpy r0,r0
+  001f732c  ldr r0,[0x1f74f0]
+  001f7330  adr r1,0x1f74e0
+  001f7334  blx 0x001a7b9c   ; ref->001a7b9c = 0x7b5f0
+  001f7338  ldr r0,[0x1f7500]
+  001f733c  ldr r0,[r0,#0x0]
+  001f7340  tst r0,#0x1
+  001f7344  bne 0x001f7390   ; ref->001f7390 = 0xe59f016c  <OBJ/BSS>
+  001f7348  ldr r0,[0x1f7500]
+  001f734c  blx 0x001c7162   ; ref->001c7162 = 0x29006801
+  001f7350  cmp r0,#0x0
+  001f7354  beq 0x001f7390   ; ref->001f7390 = 0xe59f016c  <OBJ/BSS>
+  001f7358  ldr r0,[0x1f7504]
+  001f735c  mov r3,#0x0
+  001f7360  adr r1,0x1f7508
+  001f7364  adr r2,0x1f750c
+  001f7368  cpy r12,r3
+  001f736c  add r4,r0,#0x4
+  001f7370  stmia r4,{r1,r2,r3,r12}
+  001f7374  ldr r1,[0x1f7518]
+  001f7378  ldr r2,[0x1f7498]
+  001f737c  str r1,[r0,#0x0]
+  001f7380  ldr r1,[0x1f751c]
+  001f7384  blx 0x001c70ac   ; ref->001c70ac = 0x2500b5f7
+  001f7388  ldr r0,[0x1f7500]
+  001f738c  cpy r0,r0
+  001f7390  ldr r0,[0x1f7504]
+  001f7394  adr r1,0x1f7520
+  001f7398  blx 0x001a7b9c   ; ref->001a7b9c = 0x7b5f0
+  001f739c  ldr r0,[0x1f7530]
+  001f73a0  ldr r0,[r0,#0x0]
+  001f73a4  tst r0,#0x1
+  001f73a8  bne 0x001f73f4   ; ref->001f73f4 = 0xe59f0138  <OBJ/BSS>
+  001f73ac  ldr r0,[0x1f7530]
+  001f73b0  blx 0x001c7162   ; ref->001c7162 = 0x29006801
+  001f73b4  cmp r0,#0x0
+  001f73b8  beq 0x001f73f4   ; ref->001f73f4 = 0xe59f0138  <OBJ/BSS>
+  001f73bc  ldr r0,[0x1f7534]
+  001f73c0  mov r3,#0x0
+  001f73c4  adr r1,0x1f747c
+  001f73c8  adr r2,0x1f7538
+  001f73cc  cpy r12,r3
+  001f73d0  add r4,r0,#0x4
+  001f73d4  stmia r4,{r1,r2,r3,r12}
+  001f73d8  ldr r1,[0x1f7548]
+  001f73dc  ldr r2,[0x1f7498]
+  001f73e0  str r1,[r0,#0x0]
+  001f73e4  ldr r1,[0x1f754c]
+  001f73e8  blx 0x001c70ac   ; ref->001c70ac = 0x2500b5f7
+  001f73ec  ldr r0,[0x1f7530]
+  001f73f0  cpy r0,r0
+  001f73f4  ldr r0,[0x1f7534]
+  001f73f8  adr r1,0x1f7520
+  001f73fc  blx 0x001a7b9c   ; ref->001a7b9c = 0x7b5f0
+  001f7400  ldr r0,[0x1f7550]
+  001f7404  ldr r0,[r0,#0x0]
+  001f7408  tst r0,#0x1
+  001f740c  bne 0x001f7460   ; ref->001f7460 = 0xe59f00ec  <OBJ/BSS>
+  001f7410  ldr r0,[0x1f7550]
+  001f7414  blx 0x001c7162   ; ref->001c7162 = 0x29006801
+  001f7418  cmp r0,#0x0
+  001f741c  beq 0x001f7460   ; ref->001f7460 = 0xe59f00ec  <OBJ/BSS>
+  001f7420  ldr r0,[0x1f7554]
+  001f7424  ldr r3,[0x1f7558]
+  001f7428  adr r1,0x1f755c
+  001f742c  adr r2,0x1f7564
+  001f7430  mov r12,#0x1
+  001f7434  add r4,r0,#0x4
+  001f7438  stmia r4,{r1,r2,r3,r12}
+  001f743c  ldr r2,[0x1f7580]
+  001f7440  mov r1,#0x0
+  001f7444  str r2,[r0,#0x0]
+  001f7448  str r1,[r0,#0x18]
+  001f744c  ldr r2,[0x1f7498]
+  001f7450  ldr r1,[0x1f7584]
+  001f7454  blx 0x001c70ac   ; ref->001c70ac = 0x2500b5f7
+  001f7458  ldr r0,[0x1f7550]
+  001f745c  cpy r0,r0
+  001f7460  ldr r0,[0x1f7554]
+  001f7464  adr r1,0x1f74e0
+  001f7468  blx 0x001a7b9c   ; ref->001a7b9c = 0x7b5f0
+  001f746c  mov r0,#0x0
+  001f7470  ldmia sp!,{r4,pc}
+  001f7474  .word 0x60405900 '.Y@`'  <OBJ/BSS>
+  001f7478  .word 0x6049735c '\sI`'  <OBJ/BSS>
+  001f747c  .word 0x61726473 'sdra'  <OBJ/BSS>
+  001f7480  .word 0x6d 'm...'
+  001f7484  .word 0x61726473 'sdra'  <OBJ/BSS>
+  001f7488  .word 0x6f63206d 'm co'  <OBJ/BSS>
+  001f748c  .word 0x6e616d6d 'mman'  <OBJ/BSS>
+  001f7490  .word 0x7364 'ds..'
+  001f7494  .word 0x602dccf8  (ptr 2d6d74)
+  001f7498  .word 0x60008000  (ptr 207c)
+  001f749c  .word 0x600d5080  (ptr cf0fc)
+  001f74a0  .word 0x737973 'sys.'
+  001f74a4  .word 0x60405968 'hY@`'  <OBJ/BSS>
+  001f74a8  .word 0x60497540 '@uI`'  <OBJ/BSS>
+  001f74ac  .word 0x676572 'reg.'
+  001f74b0  .word 0x776f6873 'show'  <OBJ/BSS>
+  001f74b4  .word 0x67657220 ' reg'  <OBJ/BSS>
+  001f74b8  .word 0x65747369 'iste'  <OBJ/BSS>
+  001f74bc  .word 0x7372 'rs..'
+  001f74c0  .word 0x2d5b2020 '  [-'
+  001f74c4  .word 0x20205d6c 'l]  '
+  001f74c8  .word 0x20202020 '    '
+  001f74cc  .word 0x676e6f6c 'long'  <OBJ/BSS>
+  001f74d0  .word 0x726f6620 ' for'  <OBJ/BSS>
+  001f74d4  .word 0x74616d 'mat.'
+  001f74d8  .word 0x602dee8c  (ptr 2d8f08)
+  001f74dc  .word 0x6010ab28  (ptr 104ba4)
+  001f74e0  .word 0x2f737973 'sys/'
+  001f74e4  .word 0x61726473 'sdra'  <OBJ/BSS>
+  001f74e8  .word 0x6d 'm...'
+  001f74ec  .word 0x60405980  <OBJ/BSS>
+  001f74f0  .word 0x604975b8  <OBJ/BSS>
+  001f74f4  .word 0x602a8af0  "perf"
+  001f74f8  .word 0x602dfae8  (ptr 2d9b64)
+  001f74fc  .word 0x601213c0  (ptr 11b43c)
+  001f7500  .word 0x60405994  <OBJ/BSS>
+  001f7504  .word 0x60497624 '$vI`'  <OBJ/BSS>
+  001f7508  .word 0x626861 'ahb.'
+  001f750c  .word 0x696e6f6d 'moni'  <OBJ/BSS>
+  001f7510  .word 0x20726f74 'tor '
+  001f7514  .word 0x626861 'ahb.'
+  001f7518  .word 0x602e1034  (ptr 2db0b0)
+  001f751c  .word 0x60139bf4  (ptr 133c70)
+  001f7520  .word 0x2f737973 'sys/'
+  001f7524  .word 0x61726473 'sdra'  <OBJ/BSS>
+  001f7528  .word 0x65702f6d 'm/pe'  <OBJ/BSS>
+  001f752c  .word 0x6672 'rf..'
+  001f7530  .word 0x604059a0  <OBJ/BSS>
+  001f7534  .word 0x60497664 'dvI`'  <OBJ/BSS>
+  001f7538  .word 0x696e6f6d 'moni'  <OBJ/BSS>
+  001f753c  .word 0x20726f74 'tor '
+  001f7540  .word 0x61726473 'sdra'  <OBJ/BSS>
+  001f7544  .word 0x6d 'm...'
+  001f7548  .word 0x602e16b4  (ptr 2db730)
+  001f754c  .word 0x60141520  (ptr 13b59c)
+  001f7550  .word 0x60405990  <OBJ/BSS>
+  001f7554  .word 0x60497608  <OBJ/BSS>
+  001f7558  .word 0x602a89c4  (ptr 2a2a40)
+  001f755c  .word 0x65727473 'stre'  <OBJ/BSS>
+  001f7560  .word 0x7373 'ss..'
+  001f7564  .word 0x61726473 'sdra'  <OBJ/BSS>
+  001f7568  .word 0x7473206d 'm st'  <OBJ/BSS>
+  001f756c  .word 0x73736572 'ress'  <OBJ/BSS>
+  001f7570  .word 0x73657420 ' tes'  <OBJ/BSS>
+  001f7574  .word 0x6f632074 't co'  <OBJ/BSS>
+  001f7578  .word 0x6e616d6d 'mman'  <OBJ/BSS>
+  001f757c  .word 0x7364 'ds..'
+  001f7580  .word 0x602e0bbc  (ptr 2dac38)
+  001f7584  .word 0x60134f18  (ptr 12ef94)
+  001f7588  .word 0xe59f0078  <OBJ/BSS>
+  001f758c  .word 0xe92d4010  <OBJ/BSS>
+  001f7590  .word 0xe5900000  <OBJ/BSS>
+  001f7594  .word 0xe3100001  <OBJ/BSS>
+  001f7598  .word 0x1a000015
+  001f759c  .word 0xe59f0064  <OBJ/BSS>
+  001f75a0  .word 0xfbff3eee  <OBJ/BSS>
+  001f75a4  .word 0xe3500000  <OBJ/BSS>
+  001f75a8  .word 0xa000011
+  001f75ac  .word 0xe59f0058  <OBJ/BSS>
+  001f75b0  .word 0xe59f3058  <OBJ/BSS>
+  001f75b4  .word 0xe28f1058  <OBJ/BSS>
+  001f75b8  .word 0xe28f2058  <OBJ/BSS>
+  001f75bc  .word 0xe3a0c001  <OBJ/BSS>
+  001f75c0  .word 0xe2804004  <OBJ/BSS>
+  001f75c4  .word 0xe884100e  <OBJ/BSS>
+  001f75c8  .word 0xe59f1060  <OBJ/BSS>
+  001f75cc  .word 0xe3a02000  <OBJ/BSS>
+  001f75d0  .word 0xe5802018  <OBJ/BSS>
+  001f75d4  .word 0xe2812030  <OBJ/BSS>
+  001f75d8  .word 0xe5802014  <OBJ/BSS>
+  001f75dc  .word 0xe5801000  <OBJ/BSS>
+  001f75e0  .word 0xe59f204c  <OBJ/BSS>
+  001f75e4  .word 0xe59f104c  <OBJ/BSS>
+  001f75e8  .word 0xfaff3eaf  <OBJ/BSS>
+  001f75ec  .word 0xe59f0014  <OBJ/BSS>
+  001f75f0  .word 0xe1a00000  <OBJ/BSS>
+  001f75f4  .word 0xe59f0010  <OBJ/BSS>
+  001f75f8  .word 0xe28f103c  <OBJ/BSS>
+  001f75fc  .word 0xfafec166  <OBJ/BSS>
+  001f7600  .word 0xe3a00000  <OBJ/BSS>
+
+############ ARM range 226100..226400
+  00226100  mrrcpl p4,0x4,r5,r3,cr3
+  00226104  swivs 0x626562
+  00226108  swimi 0x5f3762
+  0022610c  .word 0x63696666 'ffic'  <OBJ/BSS>
+  00226110  .word 0x5c6c6169 'ial\'
+  00226114  .word 0x6c636e69 'incl'  <OBJ/BSS>
+  00226118  .word 0x5c656475 'ude\'
+  0022611c  .word 0x69706172 'rapi'  <OBJ/BSS>
+  00226120  .word 0x6f736a64 'djso'  <OBJ/BSS>
+  00226124  .word 0x6f642f6e 'n/do'  <OBJ/BSS>
+  00226128  .word 0x656d7563 'cume'  <OBJ/BSS>
+  0022612c  .word 0x682e746e 'nt.h'  <OBJ/BSS>
+  00226130  .word 0x0 '....'
+  00226134  .word 0x65707974 'type'  <OBJ/BSS>
+  00226138  .word 0x203d3c20 ' <= '
+  0022613c  .word 0x6d754e6b 'kNum'  <OBJ/BSS>
+  00226140  .word 0x54726562 'berT'
+  00226144  .word 0x657079 'ype.'
+  00226148  .word 0x602ea5b4  (ptr 2e4630)
+  0022614c  .word 0xe92d4070  <OBJ/BSS>
+  00226150  .word 0xe1a04000  <OBJ/BSS>
+  00226154  .word 0xe1a05001  <OBJ/BSS>
+  00226158  .word 0xe1a06002  <OBJ/BSS>
+  0022615c  .word 0xe3550000  <OBJ/BSS>
+  00226160  .word 0xa000000
+  00226164  .word 0xea000003  <OBJ/BSS>
+  00226168  .word 0xe3a02078  <OBJ/BSS>
+  0022616c  .word 0xe28f101c  <OBJ/BSS>
+  00226170  .word 0xe28f0054  <OBJ/BSS>
+  00226174  .word 0xfaf774f3  <OBJ/BSS>
+  00226178  .word 0xe59f0054  <OBJ/BSS>
+  0022617c  .word 0xe584000c  <OBJ/BSS>
+  00226180  .word 0xe5845000  <OBJ/BSS>
+  00226184  .word 0xe5846004  <OBJ/BSS>
+  00226188  .word 0xe1a00004  <OBJ/BSS>
+  0022618c  .word 0xe8bd8070  <OBJ/BSS>
+  00226190  .word 0x505c3a6a 'j:\P'
+  00226194  .word 0x454a4f52 'ROJE'
+  00226198  .word 0x5c535443 'CTS\'
+  0022619c  .word 0x6f626562 'bebo'  <OBJ/BSS>
+  002261a0  .word 0x4f5f3762 'b7_O'
+  002261a4  .word 0x63696666 'ffic'  <OBJ/BSS>
+  002261a8  .word 0x5c6c6169 'ial\'
+  002261ac  .word 0x6c636e69 'incl'  <OBJ/BSS>
+  002261b0  .word 0x5c656475 'ude\'
+  002261b4  .word 0x69706172 'rapi'  <OBJ/BSS>
+  002261b8  .word 0x6f736a64 'djso'  <OBJ/BSS>
+  002261bc  .word 0x6f642f6e 'n/do'  <OBJ/BSS>
+  002261c0  .word 0x656d7563 'cume'  <OBJ/BSS>
+  002261c4  .word 0x682e746e 'nt.h'  <OBJ/BSS>
+  002261c8  .word 0x0 '....'
+  002261cc  .word 0x3d212073 's !='
+  002261d0  .word 0x3020 ' 0..'
+  002261d4  .word 0x100005
+  002261d8  .word 0xe59f2020  <OBJ/BSS>
+  002261dc  .word 0xe580200c  <OBJ/BSS>
+  002261e0  .word 0xe1a02fc1  <OBJ/BSS>
+  002261e4  .word 0xe8800006  <OBJ/BSS>
+  002261e8  .word 0xe3510000  <OBJ/BSS>
+  002261ec  .word 0xba000002  <OBJ/BSS>
+  002261f0  .word 0xe590200c  <OBJ/BSS>
+  002261f4  .word 0xe3822b0a  <OBJ/BSS>
+  002261f8  .word 0xe580200c  <OBJ/BSS>
+  002261fc  .word 0xe12fff1e  <OBJ/BSS>
+  00226200  .word 0x1606
+  00226204  .word 0xe3a01000  <OBJ/BSS>
+  00226208  .word 0xe580100c  <OBJ/BSS>
+  0022620c  .word 0xe12fff1e  <OBJ/BSS>
+  00226210  .word 0xe12fff1e  <OBJ/BSS>
+  00226214  .word 0xe92d41f0  <OBJ/BSS>
+  00226218  .word 0xe1b06001  <OBJ/BSS>
+  0022621c  .word 0xe1a05000  <OBJ/BSS>
+  00226220  .word 0xa000002
+  00226224  .word 0xe595000c  <OBJ/BSS>
+  00226228  .word 0xe3500003  <OBJ/BSS>
+  0022622c  .word 0xa000000
+  00226230  .word 0xfaf774c0  <OBJ/BSS>
+  00226234  .word 0xe5d10000  <OBJ/BSS>
+  00226238  .word 0xe1a02001  <OBJ/BSS>
+  0022623c  .word 0xe3500000  <OBJ/BSS>
+  00226240  .word 0xa000002
+  00226244  .word 0xe5f20001  <OBJ/BSS>
+  00226248  .word 0xe3500000  <OBJ/BSS>
+  0022624c  .word 0x1afffffc
+  00226250  .word 0xe5950004  <OBJ/BSS>
+  00226254  .word 0xe5954000  <OBJ/BSS>
+  00226258  .word 0xe0427006  <OBJ/BSS>
+  0022625c  .word 0xe0840280  <OBJ/BSS>
+  00226260  .word 0xe1500004  <OBJ/BSS>
+  00226264  .word 0xe3a08000  <OBJ/BSS>
+  00226268  .word 0xa000011
+  0022626c  .word 0xe5940004  <OBJ/BSS>
+  00226270  .word 0xe1500007  <OBJ/BSS>
+  00226274  .word 0x1a000005
+  00226278  .word 0xe5940000  <OBJ/BSS>
+  0022627c  .word 0xe1a02007  <OBJ/BSS>
+  00226280  .word 0xe1a01006  <OBJ/BSS>
+  00226284  .word 0xfaf774f3  <OBJ/BSS>
+  00226288  .word 0xe3500000  <OBJ/BSS>
+  0022628c  .word 0xa000005
+  00226290  .word 0xe8950003  <OBJ/BSS>
+  00226294  .word 0xe2844020  <OBJ/BSS>
+  00226298  .word 0xe0800281  <OBJ/BSS>
+  0022629c  .word 0xe1500004  <OBJ/BSS>
+  002262a0  .word 0x1afffff1
+  002262a4  .word 0xea000002  <OBJ/BSS>
+  002262a8  .word 0xe3540000  <OBJ/BSS>
+  002262ac  .word 0x12840010
+  002262b0  .word 0x18bd81f0
+  002262b4  .word 0xe59f003c  <OBJ/BSS>
+  002262b8  .word 0xe5900000  <OBJ/BSS>
+  002262bc  .word 0xe3100001  <OBJ/BSS>
+  002262c0  .word 0x1a00000a
+  002262c4  .word 0xe59f002c  <OBJ/BSS>
+  002262c8  .word 0xfbfe83a4  <OBJ/BSS>
+  002262cc  .word 0xe3500000  <OBJ/BSS>
+  002262d0  .word 0xa000006
+  002262d4  .word 0xe59f0020  <OBJ/BSS>
+  002262d8  .word 0xe59f2020  <OBJ/BSS>
+  002262dc  .word 0xe59f1020  <OBJ/BSS>
+  002262e0  .word 0xe580800c  <OBJ/BSS>
+  002262e4  .word 0xfafe8370  <OBJ/BSS>
+  002262e8  .word 0xe59f0008  <OBJ/BSS>
+  002262ec  .word 0xe1a00000  <OBJ/BSS>
+  002262f0  .word 0xe59f0004  <OBJ/BSS>
+  002262f4  .word 0xe8bd81f0  <OBJ/BSS>
+  002262f8  .word 0x60405a04  <OBJ/BSS>
+  002262fc  .word 0x604987ac  <OBJ/BSS>
+  00226300  .word 0x60008000  (ptr 207c)
+  00226304  .word 0x6022c194  (ptr 226210)
+  00226308  .word 0xe92d4070  <OBJ/BSS>
+  0022630c  .word 0xe1a04000  <OBJ/BSS>
+  00226310  .word 0xe3a01004  <OBJ/BSS>
+  00226314  .word 0xe1a00004  <OBJ/BSS>
+  00226318  .word 0xeb000032  <OBJ/BSS>
+  0022631c  .word 0xe3a01001  <OBJ/BSS>
+  00226320  .word 0xe2840004  <OBJ/BSS>
+  00226324  .word 0xeb000b88  <OBJ/BSS>
+  00226328  .word 0xe1a06000  <OBJ/BSS>
+  0022632c  .word 0xe1a01006  <OBJ/BSS>
+  00226330  .word 0xe3a00008  <OBJ/BSS>
+  00226334  .word 0xe1b00001  <OBJ/BSS>
+  00226338  .word 0xe1b05000  <OBJ/BSS>
+  0022633c  .word 0xa000003
+  00226340  .word 0xe3a01001  <OBJ/BSS>
+  00226344  .word 0xe1a00005  <OBJ/BSS>
+  00226348  .word 0xeb0009e3  <OBJ/BSS>
+  0022634c  .word 0xe1a05000  <OBJ/BSS>
+  00226350  .word 0xe1a00004  <OBJ/BSS>
+  00226354  .word 0xeb0009d4  <OBJ/BSS>
+  00226358  .word 0xe1a00004  <OBJ/BSS>
+  0022635c  .word 0xe8bd8070  <OBJ/BSS>
+  00226360  .word 0xe92d4070  <OBJ/BSS>
+  00226364  .word 0xe1a04000  <OBJ/BSS>
+  00226368  .word 0xe3a01003  <OBJ/BSS>
+  0022636c  .word 0xe1a00004  <OBJ/BSS>
+  00226370  .word 0xeb00001c  <OBJ/BSS>
+  00226374  .word 0xe3a01001  <OBJ/BSS>
+  00226378  .word 0xe2840004  <OBJ/BSS>
+  0022637c  .word 0xeb000b72  <OBJ/BSS>
+  00226380  .word 0xe1a06000  <OBJ/BSS>
+  00226384  .word 0xe1a01006  <OBJ/BSS>
+  00226388  .word 0xe3a00008  <OBJ/BSS>
+  0022638c  .word 0xe1b00001  <OBJ/BSS>
+  00226390  .word 0xe1b05000  <OBJ/BSS>
+  00226394  .word 0xa000003
+  00226398  .word 0xe3a01000  <OBJ/BSS>
+  0022639c  .word 0xe1a00005  <OBJ/BSS>
+  002263a0  .word 0xeb0009cd  <OBJ/BSS>
+  002263a4  .word 0xe1a05000  <OBJ/BSS>
+  002263a8  .word 0xe1a00004  <OBJ/BSS>
+  002263ac  .word 0xeb0009c4  <OBJ/BSS>
+  002263b0  .word 0xe1a00004  <OBJ/BSS>
+  002263b4  .word 0xe8bd8070  <OBJ/BSS>
+  002263b8  .word 0xe92d4070  <OBJ/BSS>
+  002263bc  .word 0xe1a04000  <OBJ/BSS>
+  002263c0  .word 0xe2840004  <OBJ/BSS>
+  002263c4  .word 0xeb001a7e  <OBJ/BSS>
+  002263c8  .word 0xe1a001a0  <OBJ/BSS>
+  002263cc  .word 0xe5941020  <OBJ/BSS>
+  002263d0  .word 0xe0050190  <OBJ/BSS>
+  002263d4  .word 0xe5d4101c  <OBJ/BSS>
+  002263d8  .word 0xe1a02005  <OBJ/BSS>
+  002263dc  .word 0xe5940000  <OBJ/BSS>
+  002263e0  .word 0xebfe29e7  <OBJ/BSS>
+  002263e4  .word 0xe8bd8070  <OBJ/BSS>
+  002263e8  .word 0xe92d4070  <OBJ/BSS>
+  002263ec  .word 0xe1a04000  <OBJ/BSS>
+  002263f0  .word 0xe1a06001  <OBJ/BSS>
+  002263f4  .word 0xe2840004  <OBJ/BSS>
+  002263f8  .word 0xeb001a71  <OBJ/BSS>
+  002263fc  .word 0xe3500000  <OBJ/BSS>
+  00226400  .word 0xa000042
+
+############ ARM range 1c3b00..1c4400
+  001c3b00  stc2l p6,cr15,[r2],#-0x2ac
+  001c3b04  ldmiacc pc!,{r4,r8,r10,r11,r12,sp,pc}^
+  001c3b08  ldmdacc r9,{r4,r8,r10,r12,sp,pc}
+  001c3b0c  ldc2l p6,cr15,[r9],#-0x2ac
+  001c3b10  andeq r11,r0,r0, lsl sp
+  001c3b14  stmdb sp!,{r4,r5,r6,lr}
+  001c3b18  cpy r4,r0
+  001c3b1c  cpy r5,r1
+  001c3b20  sub r4,r4,#0x118
+  001c3b24  cpy r1,r5
+  001c3b28  cpy r0,r4
+  001c3b2c  bl 0x0007702c   ; ref->0007702c = 0xe92d407c  <OBJ/BSS>
+  001c3b30  ldmia sp!,{r4,r5,r6,pc}
+  001c3b34  .word 0xe92d4010  <OBJ/BSS>
+  001c3b38  .word 0xe1a03000  <OBJ/BSS>
+  001c3b3c  .word 0xe1a04001  <OBJ/BSS>
+  001c3b40  .word 0xe2433f46  <OBJ/BSS>
+  001c3b44  .word 0xe1a01004  <OBJ/BSS>
+  001c3b48  .word 0xe1a00003  <OBJ/BSS>
+  001c3b4c  .word 0xebfacd44  <OBJ/BSS>
+  001c3b50  .word 0xe8bd8010  <OBJ/BSS>
+  001c3b54  .word 0xe92d4030  <OBJ/BSS>
+  001c3b58  .word 0xe1a03000  <OBJ/BSS>
+  001c3b5c  .word 0xe1a04001  <OBJ/BSS>
+  001c3b60  .word 0xe1a05002  <OBJ/BSS>
+  001c3b64  .word 0xe2433f46  <OBJ/BSS>
+  001c3b68  .word 0xe1a02005  <OBJ/BSS>
+  001c3b6c  .word 0xe1a01004  <OBJ/BSS>
+  001c3b70  .word 0xe1a00003  <OBJ/BSS>
+  001c3b74  .word 0xebfacdf1  <OBJ/BSS>
+  001c3b78  .word 0xe8bd8030  <OBJ/BSS>
+  001c3b7c  .word 0xe92d41f0  <OBJ/BSS>
+  001c3b80  .word 0xe1a04000  <OBJ/BSS>
+  001c3b84  .word 0xe1a05001  <OBJ/BSS>
+  001c3b88  .word 0xe1a06002  <OBJ/BSS>
+  001c3b8c  .word 0xe1a07003  <OBJ/BSS>
+  001c3b90  .word 0xe2444f46  <OBJ/BSS>
+  001c3b94  .word 0xe1a03007  <OBJ/BSS>
+  001c3b98  .word 0xe1a02006  <OBJ/BSS>
+  001c3b9c  .word 0xe1a01005  <OBJ/BSS>
+  001c3ba0  .word 0xe1a00004  <OBJ/BSS>
+  001c3ba4  .word 0xebfb9f6b  <OBJ/BSS>
+  001c3ba8  .word 0xe8bd81f0  <OBJ/BSS>
+  001c3bac  .word 0x47704800 '.HpG'
+  001c3bb0  .word 0x602b0f08  "USBStackService"
+  001c3bb4  .word 0x47706d40 '@mpG'
+  001c3bb8  .word 0x28006d00 '.m.('
+  001c3bbc  .word 0x2001d000
+  001c3bc0  .word 0x4770 'pG..'
+  001c3bc4  .word 0xe92d4070  <OBJ/BSS>
+  001c3bc8  .word 0xe1a04000  <OBJ/BSS>
+  001c3bcc  .word 0xe1a05001  <OBJ/BSS>
+  001c3bd0  .word 0xe2444f47  <OBJ/BSS>
+  001c3bd4  .word 0xe1a01005  <OBJ/BSS>
+  001c3bd8  .word 0xe1a00004  <OBJ/BSS>
+  001c3bdc  .word 0xebfacce2  <OBJ/BSS>
+  001c3be0  .word 0xe8bd8070  <OBJ/BSS>
+  001c3be4  .word 0xe92d4070  <OBJ/BSS>
+  001c3be8  .word 0xe1a04000  <OBJ/BSS>
+  001c3bec  .word 0xe1a05001  <OBJ/BSS>
+  001c3bf0  .word 0xe2444f47  <OBJ/BSS>
+  001c3bf4  .word 0xe1a01005  <OBJ/BSS>
+  001c3bf8  .word 0xe1a00004  <OBJ/BSS>
+  001c3bfc  .word 0xebfacd1b  <OBJ/BSS>
+  001c3c00  .word 0xe8bd8070  <OBJ/BSS>
+  001c3c04  .word 0xe92d4070  <OBJ/BSS>
+  001c3c08  .word 0xe1a04000  <OBJ/BSS>
+  001c3c0c  .word 0xe1a05001  <OBJ/BSS>
+  001c3c10  .word 0xe2444f47  <OBJ/BSS>
+  001c3c14  .word 0xe1a01005  <OBJ/BSS>
+  001c3c18  .word 0xe1a00004  <OBJ/BSS>
+  001c3c1c  .word 0xebfacd63  <OBJ/BSS>
+  001c3c20  .word 0xe8bd8070  <OBJ/BSS>
+  001c3c24  .word 0xe92d4070  <OBJ/BSS>
+  001c3c28  .word 0xe1a04000  <OBJ/BSS>
+  001c3c2c  .word 0xe1a05001  <OBJ/BSS>
+  001c3c30  .word 0xe2444f47  <OBJ/BSS>
+  001c3c34  .word 0xe1a01005  <OBJ/BSS>
+  001c3c38  .word 0xe1a00004  <OBJ/BSS>
+  001c3c3c  .word 0xebfacd9e  <OBJ/BSS>
+  001c3c40  .word 0xe8bd8070  <OBJ/BSS>
+  001c3c44  .word 0xe92d4070  <OBJ/BSS>
+  001c3c48  .word 0xe1a04000  <OBJ/BSS>
+  001c3c4c  .word 0xe1a05001  <OBJ/BSS>
+  001c3c50  .word 0xe2444f47  <OBJ/BSS>
+  001c3c54  .word 0xe1a01005  <OBJ/BSS>
+  001c3c58  .word 0xe1a00004  <OBJ/BSS>
+  001c3c5c  .word 0xebface06  <OBJ/BSS>
+  001c3c60  .word 0xe8bd8070  <OBJ/BSS>
+  001c3c64  .word 0xe92d4070  <OBJ/BSS>
+  001c3c68  .word 0xe1a04000  <OBJ/BSS>
+  001c3c6c  .word 0xe1a05001  <OBJ/BSS>
+  001c3c70  .word 0xe1a06002  <OBJ/BSS>
+  001c3c74  .word 0xe2444f47  <OBJ/BSS>
+  001c3c78  .word 0xe1a02006  <OBJ/BSS>
+  001c3c7c  .word 0xe1a01005  <OBJ/BSS>
+  001c3c80  .word 0xe1a00004  <OBJ/BSS>
+  001c3c84  .word 0xebfba6ab  <OBJ/BSS>
+  001c3c88  .word 0xe8bd8070  <OBJ/BSS>
+  001c3c8c  .word 0xe92d4070  <OBJ/BSS>
+  001c3c90  .word 0xe1a04000  <OBJ/BSS>
+  001c3c94  .word 0xe1a05001  <OBJ/BSS>
+  001c3c98  .word 0xe1a06002  <OBJ/BSS>
+  001c3c9c  .word 0xe2444e12  <OBJ/BSS>
+  001c3ca0  .word 0xe1a02006  <OBJ/BSS>
+  001c3ca4  .word 0xe1a01005  <OBJ/BSS>
+  001c3ca8  .word 0xe1a00004  <OBJ/BSS>
+  001c3cac  .word 0xebfacd10  <OBJ/BSS>
+  001c3cb0  .word 0xe8bd8070  <OBJ/BSS>
+  001c3cb4  .word 0xe92d4070  <OBJ/BSS>
+  001c3cb8  .word 0xe1a04000  <OBJ/BSS>
+  001c3cbc  .word 0xe1a05001  <OBJ/BSS>
+  001c3cc0  .word 0xe1a06002  <OBJ/BSS>
+  001c3cc4  .word 0xe2444e12  <OBJ/BSS>
+  001c3cc8  .word 0xe1a02006  <OBJ/BSS>
+  001c3ccc  .word 0xe1a01005  <OBJ/BSS>
+  001c3cd0  .word 0xe1a00004  <OBJ/BSS>
+  001c3cd4  .word 0xebfb9fbb  <OBJ/BSS>
+  001c3cd8  .word 0xe8bd8070  <OBJ/BSS>
+  001c3cdc  .word 0xe92d41f0  <OBJ/BSS>
+  001c3ce0  .word 0xe1a04000  <OBJ/BSS>
+  001c3ce4  .word 0xe1a05001  <OBJ/BSS>
+  001c3ce8  .word 0xe1a06002  <OBJ/BSS>
+  001c3cec  .word 0xe1a07003  <OBJ/BSS>
+  001c3cf0  .word 0xe2444e12  <OBJ/BSS>
+  001c3cf4  .word 0xe1a03007  <OBJ/BSS>
+  001c3cf8  .word 0xe1a02006  <OBJ/BSS>
+  001c3cfc  .word 0xe1a01005  <OBJ/BSS>
+  001c3d00  .word 0xe1a00004  <OBJ/BSS>
+  001c3d04  .word 0xebfba418  <OBJ/BSS>
+  001c3d08  .word 0xe8bd81f0  <OBJ/BSS>
+  001c3d0c  .word 0xe92d41f0  <OBJ/BSS>
+  001c3d10  .word 0xe1a04000  <OBJ/BSS>
+  001c3d14  .word 0xe1a05001  <OBJ/BSS>
+  001c3d18  .word 0xe1a06002  <OBJ/BSS>
+  001c3d1c  .word 0xe1a07003  <OBJ/BSS>
+  001c3d20  .word 0xe2444e12  <OBJ/BSS>
+  001c3d24  .word 0xe1a03007  <OBJ/BSS>
+  001c3d28  .word 0xe1a02006  <OBJ/BSS>
+  001c3d2c  .word 0xe1a01005  <OBJ/BSS>
+  001c3d30  .word 0xe1a00004  <OBJ/BSS>
+  001c3d34  .word 0xebfba44d  <OBJ/BSS>
+  001c3d38  .word 0xe8bd81f0  <OBJ/BSS>
+  001c3d3c  .word 0xe92d4070  <OBJ/BSS>
+  001c3d40  .word 0xe1a04000  <OBJ/BSS>
+  001c3d44  .word 0xe1a05001  <OBJ/BSS>
+  001c3d48  .word 0xe1a06002  <OBJ/BSS>
+  001c3d4c  .word 0xe2444e12  <OBJ/BSS>
+  001c3d50  .word 0xe1a02006  <OBJ/BSS>
+  001c3d54  .word 0xe1a01005  <OBJ/BSS>
+  001c3d58  .word 0xe1a00004  <OBJ/BSS>
+  001c3d5c  .word 0xebfba753  <OBJ/BSS>
+  001c3d60  .word 0xe8bd8070  <OBJ/BSS>
+  001c3d64  .word 0xe5900c00  <OBJ/BSS>
+  001c3d68  .word 0xe3500000  <OBJ/BSS>
+  001c3d6c  .word 0x12fff1e
+  001c3d70  .word 0xeafe78c9  <OBJ/BSS>
+  001c3d74  .word 0xe240001c  <OBJ/BSS>
+  001c3d78  .word 0xeafe9bcc  <OBJ/BSS>
+  001c3d7c  .word 0xe5900c00  <OBJ/BSS>
+  001c3d80  .word 0xe3500000  <OBJ/BSS>
+  001c3d84  .word 0x12fff1e
+  001c3d88  .word 0xeafe7920  <OBJ/BSS>
+  001c3d8c  .word 0xe92d4008  <OBJ/BSS>
+  001c3d90  .word 0xe240c01c  <OBJ/BSS>
+  001c3d94  .word 0xe5100010  <OBJ/BSS>
+  001c3d98  .word 0xe5900004  <OBJ/BSS>
+  001c3d9c  .word 0xe5900178  <OBJ/BSS>
+  001c3da0  .word 0xe3500000  <OBJ/BSS>
+  001c3da4  .word 0x8bd8008
+  001c3da8  .word 0xe28cc018  <OBJ/BSS>
+  001c3dac  .word 0xe58dc000  <OBJ/BSS>
+  001c3db0  .word 0xe590c000  <OBJ/BSS>
+  001c3db4  .word 0xe59cc02c  <OBJ/BSS>
+  001c3db8  .word 0xe12fff3c  <OBJ/BSS>
+  001c3dbc  .word 0xe8bd8008  <OBJ/BSS>
+  001c3dc0  .word 0xb5102200  <OBJ/BSS>
+  001c3dc4  .word 0x11381c
+  001c3dc8  .word 0xf844f7e8  <OBJ/BSS>
+  001c3dcc  .word 0xbd10
+  001c3dd0  .word 0xe92d41f0  <OBJ/BSS>
+  001c3dd4  .word 0xe1a04000  <OBJ/BSS>
+  001c3dd8  .word 0xe1a05001  <OBJ/BSS>
+  001c3ddc  .word 0xe1a06002  <OBJ/BSS>
+  001c3de0  .word 0xe1a07003  <OBJ/BSS>
+  001c3de4  .word 0xe2444f49  <OBJ/BSS>
+  001c3de8  .word 0xe1a03007  <OBJ/BSS>
+  001c3dec  .word 0xe1a02006  <OBJ/BSS>
+  001c3df0  .word 0xe1a01005  <OBJ/BSS>
+  001c3df4  .word 0xe1a00004  <OBJ/BSS>
+  001c3df8  .word 0xebfacd6b  <OBJ/BSS>
+  001c3dfc  .word 0xe8bd81f0  <OBJ/BSS>
+  001c3e00  .word 0xe92d41f0  <OBJ/BSS>
+  001c3e04  .word 0xe1a04000  <OBJ/BSS>
+  001c3e08  .word 0xe1a05001  <OBJ/BSS>
+  001c3e0c  .word 0xe1a06002  <OBJ/BSS>
+  001c3e10  .word 0xe1a07003  <OBJ/BSS>
+  001c3e14  .word 0xe2444f49  <OBJ/BSS>
+  001c3e18  .word 0xe1a03007  <OBJ/BSS>
+  001c3e1c  .word 0xe1a02006  <OBJ/BSS>
+  001c3e20  .word 0xe1a01005  <OBJ/BSS>
+  001c3e24  .word 0xe1a00004  <OBJ/BSS>
+  001c3e28  .word 0xebfb9a9a  <OBJ/BSS>
+  001c3e2c  .word 0xe8bd81f0  <OBJ/BSS>
+  001c3e30  .word 0xe92d4070  <OBJ/BSS>
+  001c3e34  .word 0xe1a04000  <OBJ/BSS>
+  001c3e38  .word 0xe1a05001  <OBJ/BSS>
+  001c3e3c  .word 0xe1a06002  <OBJ/BSS>
+  001c3e40  .word 0xe2444f4a  <OBJ/BSS>
+  001c3e44  .word 0xe1a02006  <OBJ/BSS>
+  001c3e48  .word 0xe1a01005  <OBJ/BSS>
+  001c3e4c  .word 0xe1a00004  <OBJ/BSS>
+  001c3e50  .word 0xebfaccf7  <OBJ/BSS>
+  001c3e54  .word 0xe8bd8070  <OBJ/BSS>
+  001c3e58  .word 0xe92d47fc  <OBJ/BSS>
+  001c3e5c  .word 0xe1a04000  <OBJ/BSS>
+  001c3e60  .word 0xe1a08001  <OBJ/BSS>
+  001c3e64  .word 0xe1a06002  <OBJ/BSS>
+  001c3e68  .word 0xe1a09003  <OBJ/BSS>
+  001c3e6c  .word 0xe59d5028  <OBJ/BSS>
+  001c3e70  .word 0xe2444f4a  <OBJ/BSS>
+  001c3e74  .word 0xe594018c  <OBJ/BSS>
+  001c3e78  .word 0xe1500008  <OBJ/BSS>
+  001c3e7c  .word 0x1a000026
+  001c3e80  .word 0xe3560000  <OBJ/BSS>
+  001c3e84  .word 0x1a000005
+  001c3e88  .word 0xe3a00000  <OBJ/BSS>
+  001c3e8c  .word 0xe1c500b0  <OBJ/BSS>
+  001c3e90  .word 0xe28f1feb  <OBJ/BSS>
+  001c3e94  .word 0xe1a00009  <OBJ/BSS>
+  001c3e98  .word 0xebfeb662  <OBJ/BSS>
+  001c3e9c  .word 0xea00001e  <OBJ/BSS>
+  001c3ea0  .word 0xe3560001  <OBJ/BSS>
+  001c3ea4  .word 0x1a000005
+  001c3ea8  .word 0xe3a00001  <OBJ/BSS>
+  001c3eac  .word 0xe1c500b0  <OBJ/BSS>
+  001c3eb0  .word 0xe28f1fe5  <OBJ/BSS>
+  001c3eb4  .word 0xe1a00009  <OBJ/BSS>
+  001c3eb8  .word 0xebfeb65a  <OBJ/BSS>
+  001c3ebc  .word 0xea000016  <OBJ/BSS>
+  001c3ec0  .word 0xe2467002  <OBJ/BSS>
+  001c3ec4  .word 0xe1a00807  <OBJ/BSS>
+  001c3ec8  .word 0xe1a00820  <OBJ/BSS>
+  001c3ecc  .word 0xe3800a06  <OBJ/BSS>
+  001c3ed0  .word 0xe1c500b0  <OBJ/BSS>
+  001c3ed4  .word 0xe3570000  <OBJ/BSS>
+  001c3ed8  .word 0xba00000e  <OBJ/BSS>
+  001c3edc  .word 0xe2840e81  <OBJ/BSS>
+  001c3ee0  .word 0xeb01a8c9  <OBJ/BSS>
+  001c3ee4  .word 0xe1500007  <OBJ/BSS>
+  001c3ee8  .word 0x9a00000a  <OBJ/BSS>
+  001c3eec  .word 0xe59f0360  <OBJ/BSS>
+  001c3ef0  .word 0xe1570000  <OBJ/BSS>
+  001c3ef4  .word 0xaa000007  <OBJ/BSS>
+  001c3ef8  .word 0xe1a01007  <OBJ/BSS>
+  001c3efc  .word 0xe2840e81  <OBJ/BSS>
+  001c3f00  .word 0xeb01dcc0  <OBJ/BSS>
+  001c3f04  .word 0xe1a0a000  <OBJ/BSS>
+  001c3f08  .word 0xe1a02009  <OBJ/BSS>
+  001c3f0c  .word 0xe1a0100a  <OBJ/BSS>
+  001c3f10  .word 0xe1a00004  <OBJ/BSS>
+  001c3f14  .word 0xebfba384  <OBJ/BSS>
+  001c3f18  .word 0xe1a00000  <OBJ/BSS>
+  001c3f1c  .word 0xe5940190  <OBJ/BSS>
+  001c3f20  .word 0xe1500008  <OBJ/BSS>
+  001c3f24  .word 0x1a000055
+  001c3f28  .word 0xe3560000  <OBJ/BSS>
+  001c3f2c  .word 0x1a000005
+  001c3f30  .word 0xe3a00000  <OBJ/BSS>
+  001c3f34  .word 0xe1c500b0  <OBJ/BSS>
+  001c3f38  .word 0xe28f1fc6  <OBJ/BSS>
+  001c3f3c  .word 0xe1a00009  <OBJ/BSS>
+  001c3f40  .word 0xebfeb638  <OBJ/BSS>
+  001c3f44  .word 0xea0000d0  <OBJ/BSS>
+  001c3f48  .word 0xe3560001  <OBJ/BSS>
+  001c3f4c  .word 0x1a000005
+  001c3f50  .word 0xe3a00001  <OBJ/BSS>
+  001c3f54  .word 0xe1c500b0  <OBJ/BSS>
+  001c3f58  .word 0xe28f1fbf  <OBJ/BSS>
+  001c3f5c  .word 0xe1a00009  <OBJ/BSS>
+  001c3f60  .word 0xebfeb630  <OBJ/BSS>
+  001c3f64  .word 0xea0000c8  <OBJ/BSS>
+  001c3f68  .word 0xe2467002  <OBJ/BSS>
+  001c3f6c  .word 0xe3570000  <OBJ/BSS>
+  001c3f70  .word 0xba000041  <OBJ/BSS>
+  001c3f74  .word 0xe2840e81  <OBJ/BSS>
+  001c3f78  .word 0xeb01a8a3  <OBJ/BSS>
+  001c3f7c  .word 0xe1500007  <OBJ/BSS>
+  001c3f80  .word 0x9a00003d  <OBJ/BSS>
+  001c3f84  .word 0xe59f02c8  <OBJ/BSS>
+  001c3f88  .word 0xe1570000  <OBJ/BSS>
+  001c3f8c  .word 0xaa00003a  <OBJ/BSS>
+  001c3f90  .word 0xe3a00000  <OBJ/BSS>
+  001c3f94  .word 0xe1c500b0  <OBJ/BSS>
+  001c3f98  .word 0xe1a01007  <OBJ/BSS>
+  001c3f9c  .word 0xe2840e81  <OBJ/BSS>
+  001c3fa0  .word 0xeb01dc98  <OBJ/BSS>
+  001c3fa4  .word 0xe5d00004  <OBJ/BSS>
+  001c3fa8  .word 0xe3500008  <OBJ/BSS>
+  001c3fac  .word 0xa00001e
+  001c3fb0  .word 0xca000006  <OBJ/BSS>
+  001c3fb4  .word 0xe3500001  <OBJ/BSS>
+  001c3fb8  .word 0xa000009
+  001c3fbc  .word 0xe3500002  <OBJ/BSS>
+  001c3fc0  .word 0xa00000d
+  001c3fc4  .word 0xe3500004  <OBJ/BSS>
+  001c3fc8  .word 0x1a000029
+  001c3fcc  .word 0xea000010  <OBJ/BSS>
+  001c3fd0  .word 0xe3500010  <OBJ/BSS>
+  001c3fd4  .word 0xa00001a
+  001c3fd8  .word 0xe3500020  <OBJ/BSS>
+  001c3fdc  .word 0x1a000024
+  001c3fe0  .word 0xea00001d  <OBJ/BSS>
+  001c3fe4  .word 0xe2870a01  <OBJ/BSS>
+  001c3fe8  .word 0xe1c500b0  <OBJ/BSS>
+  001c3fec  .word 0xe28f1f9b  <OBJ/BSS>
+  001c3ff0  .word 0xe1a00009  <OBJ/BSS>
+  001c3ff4  .word 0xebfeb60b  <OBJ/BSS>
+  001c3ff8  .word 0xea00001e  <OBJ/BSS>
+  001c3ffc  .word 0xe2870a02  <OBJ/BSS>
+  001c4000  .word 0xe1c500b0  <OBJ/BSS>
+  001c4004  .word 0xe28f1f96  <OBJ/BSS>
+  001c4008  .word 0xe1a00009  <OBJ/BSS>
+  001c400c  .word 0xebfeb605  <OBJ/BSS>
+  001c4010  .word 0xea000018  <OBJ/BSS>
+  001c4014  .word 0xe2870a03  <OBJ/BSS>
+  001c4018  .word 0xe1c500b0  <OBJ/BSS>
+  001c401c  .word 0xe28f1f91  <OBJ/BSS>
+  001c4020  .word 0xe1a00009  <OBJ/BSS>
+  001c4024  .word 0xebfeb5ff  <OBJ/BSS>
+  001c4028  .word 0xea000012  <OBJ/BSS>
+  001c402c  .word 0xe2870a07  <OBJ/BSS>
+  001c4030  .word 0xe1c500b0  <OBJ/BSS>
+  001c4034  .word 0xe28f1f87  <OBJ/BSS>
+  001c4038  .word 0xe1a00009  <OBJ/BSS>
+  001c403c  .word 0xebfeb5f9  <OBJ/BSS>
+  001c4040  .word 0xea00000c  <OBJ/BSS>
+  001c4044  .word 0xe2870901  <OBJ/BSS>
+  001c4048  .word 0xe1c500b0  <OBJ/BSS>
+  001c404c  .word 0xe28f1f85  <OBJ/BSS>
+  001c4050  .word 0xe1a00009  <OBJ/BSS>
+  001c4054  .word 0xebfeb5f3  <OBJ/BSS>
+  001c4058  .word 0xea000006  <OBJ/BSS>
+  001c405c  .word 0xe2870a05  <OBJ/BSS>
+  001c4060  .word 0xe1c500b0  <OBJ/BSS>
+  001c4064  .word 0xe28f1c02  <OBJ/BSS>
+  001c4068  .word 0xe1a00009  <OBJ/BSS>
+  001c406c  .word 0xebfeb5ed  <OBJ/BSS>
+  001c4070  .word 0xea000000  <OBJ/BSS>
+  001c4074  .word 0xe1a00000  <OBJ/BSS>
+  001c4078  .word 0xe1a00000  <OBJ/BSS>
+  001c407c  .word 0xea000082  <OBJ/BSS>
+  001c4080  .word 0xe5940194  <OBJ/BSS>
+  001c4084  .word 0xe1500008  <OBJ/BSS>
+  001c4088  .word 0x1a000019
+  001c408c  .word 0xe2840b01  <OBJ/BSS>
+  001c4090  .word 0xe2800f95  <OBJ/BSS>
+  001c4094  .word 0xeb01abb6  <OBJ/BSS>
+  001c4098  .word 0xe1500006  <OBJ/BSS>
+  001c409c  .word 0x9a00000e  <OBJ/BSS>
+  001c40a0  .word 0xe1a01006  <OBJ/BSS>
+  001c40a4  .word 0xe2840b01  <OBJ/BSS>
+  001c40a8  .word 0xe2800f95  <OBJ/BSS>
+  001c40ac  .word 0xeb0202d3  <OBJ/BSS>
+  001c40b0  .word 0xe5907000  <OBJ/BSS>
+  001c40b4  .word 0xe1a01007  <OBJ/BSS>
+  001c40b8  .word 0xe1a00009  <OBJ/BSS>
+  001c40bc  .word 0xebfeb6d1  <OBJ/BSS>
+  001c40c0  .word 0xe1a01006  <OBJ/BSS>
+  001c40c4  .word 0xe2840b01  <OBJ/BSS>
+  001c40c8  .word 0xe2800f95  <OBJ/BSS>
+  001c40cc  .word 0xeb0202cb  <OBJ/BSS>
+  001c40d0  .word 0xe5900000  <OBJ/BSS>
+  001c40d4  .word 0xe1c500b0  <OBJ/BSS>
+  001c40d8  .word 0xea00006b  <OBJ/BSS>
+  001c40dc  .word 0xe28f1f63  <OBJ/BSS>
+  001c40e0  .word 0xe1a00009  <OBJ/BSS>
+  001c40e4  .word 0xebfeb5cf  <OBJ/BSS>
+  001c40e8  .word 0xe3e00000  <OBJ/BSS>
+  001c40ec  .word 0xe1c500b0  <OBJ/BSS>
+  001c40f0  .word 0xea000065  <OBJ/BSS>
+  001c40f4  .word 0xe5940198  <OBJ/BSS>
+  001c40f8  .word 0xe1500008  <OBJ/BSS>
+  001c40fc  .word 0x1a000014
+  001c4100  .word 0xe2840b01  <OBJ/BSS>
+  001c4104  .word 0xe2800f92  <OBJ/BSS>
+  001c4108  .word 0xeb01ab99  <OBJ/BSS>
+  001c410c  .word 0xe1500006  <OBJ/BSS>
+  001c4110  .word 0x9a000009  <OBJ/BSS>
+  001c4114  .word 0xe1a01006  <OBJ/BSS>
+  001c4118  .word 0xe2840b01  <OBJ/BSS>
+  001c411c  .word 0xe2800f92  <OBJ/BSS>
+  001c4120  .word 0xeb0202b6  <OBJ/BSS>
+  001c4124  .word 0xe5907000  <OBJ/BSS>
+  001c4128  .word 0xe1a01007  <OBJ/BSS>
+  001c412c  .word 0xe1a00009  <OBJ/BSS>
+  001c4130  .word 0xebfeb6b4  <OBJ/BSS>
+  001c4134  .word 0xe1c560b0  <OBJ/BSS>
+  001c4138  .word 0xea000053  <OBJ/BSS>
+  001c413c  .word 0xe28f1f4b  <OBJ/BSS>
+  001c4140  .word 0xe1a00009  <OBJ/BSS>
+  001c4144  .word 0xebfeb5b7  <OBJ/BSS>
+  001c4148  .word 0xe3e00000  <OBJ/BSS>
+  001c414c  .word 0xe1c500b0  <OBJ/BSS>
+  001c4150  .word 0xea00004d  <OBJ/BSS>
+  001c4154  .word 0xe594019c  <OBJ/BSS>
+  001c4158  .word 0xe1500008  <OBJ/BSS>
+  001c415c  .word 0x1a00004a
+  001c4160  .word 0xe2840b02  <OBJ/BSS>
+  001c4164  .word 0xe2800024  <OBJ/BSS>
+  001c4168  .word 0xeb01a7f7  <OBJ/BSS>
+  001c416c  .word 0xe1500006  <OBJ/BSS>
+  001c4170  .word 0x9a000040  <OBJ/BSS>
+  001c4174  .word 0xe1a01006  <OBJ/BSS>
+  001c4178  .word 0xe2840b02  <OBJ/BSS>
+  001c417c  .word 0xe2800024  <OBJ/BSS>
+  001c4180  .word 0xeb01da81  <OBJ/BSS>
+  001c4184  .word 0xe280700c  <OBJ/BSS>
+  001c4188  .word 0xe1a02009  <OBJ/BSS>
+  001c418c  .word 0xe1a01007  <OBJ/BSS>
+  001c4190  .word 0xe1a00004  <OBJ/BSS>
+  001c4194  .word 0xebfba2e4  <OBJ/BSS>
+  001c4198  .word 0xe1a0000d  <OBJ/BSS>
+  001c419c  .word 0xebfeb73b  <OBJ/BSS>
+  001c41a0  .word 0xe1a01006  <OBJ/BSS>
+  001c41a4  .word 0xe2840b02  <OBJ/BSS>
+  001c41a8  .word 0xe2800024  <OBJ/BSS>
+  001c41ac  .word 0xeb01da76  <OBJ/BSS>
+  001c41b0  .word 0xe2807010  <OBJ/BSS>
+  001c41b4  .word 0xe1a0200d  <OBJ/BSS>
+  001c41b8  .word 0xe1a01007  <OBJ/BSS>
+  001c41bc  .word 0xe1a00004  <OBJ/BSS>
+  001c41c0  .word 0xebfba2d9  <OBJ/BSS>
+  001c41c4  .word 0xe28f10a8  <OBJ/BSS>
+  001c41c8  .word 0xe1a00009  <OBJ/BSS>
+  001c41cc  .word 0xebfeb64b  <OBJ/BSS>
+  001c41d0  .word 0xe1a0100d  <OBJ/BSS>
+  001c41d4  .word 0xe1a00009  <OBJ/BSS>
+  001c41d8  .word 0xebfeb67a  <OBJ/BSS>
+  001c41dc  .word 0xe28f1090  <OBJ/BSS>
+  001c41e0  .word 0xe1a00009  <OBJ/BSS>
+  001c41e4  .word 0xebfeb645  <OBJ/BSS>
+  001c41e8  .word 0xe1a01006  <OBJ/BSS>
+  001c41ec  .word 0xe2840b02  <OBJ/BSS>
+  001c41f0  .word 0xe2800024  <OBJ/BSS>
+  001c41f4  .word 0xeb01da64  <OBJ/BSS>
+  001c41f8  .word 0xe5d07004  <OBJ/BSS>
+  001c41fc  .word 0xe1a01007  <OBJ/BSS>
+  001c4200  .word 0xe1a00009  <OBJ/BSS>
+  001c4204  .word 0xebfeb6b4  <OBJ/BSS>
+  001c4208  .word 0xe28f1064  <OBJ/BSS>
+  001c420c  .word 0xe1a00009  <OBJ/BSS>
+  001c4210  .word 0xebfeb63a  <OBJ/BSS>
+  001c4214  .word 0xe1a01006  <OBJ/BSS>
+  001c4218  .word 0xe2840b02  <OBJ/BSS>
+  001c421c  .word 0xe2800024  <OBJ/BSS>
+  001c4220  .word 0xeb01da59  <OBJ/BSS>
+  001c4224  .word 0xe5907008  <OBJ/BSS>
+  001c4228  .word 0xe1a01007  <OBJ/BSS>
+  001c422c  .word 0xe1a00009  <OBJ/BSS>
+  001c4230  .word 0xebfeb6a9  <OBJ/BSS>
+  001c4234  .word 0xe1c560b0  <OBJ/BSS>
+  001c4238  .word 0xe1a0000d  <OBJ/BSS>
+  001c423c  .word 0xebfeb718  <OBJ/BSS>
+  001c4240  .word 0xea000011  <OBJ/BSS>
+  001c4244  .word 0x5d70555b '[Up]'
+  001c4248  .word 0x0 '....'
+  001c424c  .word 0x6f6f525b '[Roo'  <OBJ/BSS>
+  001c4250  .word 0x5d74 't]..'
+  001c4254  .word 0xfff
+  001c4258  .word 0x55 'U...'
+  001c425c  .word 0x52 'R...'
+  001c4260  .word 0x46 'F...'
+  001c4264  .word 0x57 'W...'
+  001c4268  .word 0x4d 'M...'
+  001c426c  .word 0x50 'P...'
+  001c4270  .word 0x2d '-...'
+  001c4274  .word 0x7c '|...'
+  001c4278  .word 0xe24f1010  <OBJ/BSS>
+  001c427c  .word 0xe1a00009  <OBJ/BSS>
+  001c4280  .word 0xebfeb568  <OBJ/BSS>
+  001c4284  .word 0xe3e00000  <OBJ/BSS>
+  001c4288  .word 0xe1c500b0  <OBJ/BSS>
+  001c428c  .word 0xe8bd87fc  <OBJ/BSS>
+  001c4290  .word 0xe92d4030  <OBJ/BSS>
+  001c4294  .word 0xe1a03000  <OBJ/BSS>
+  001c4298  .word 0xe1a04001  <OBJ/BSS>
+  001c429c  .word 0xe1a05002  <OBJ/BSS>
+  001c42a0  .word 0xe2433f4b  <OBJ/BSS>
+  001c42a4  .word 0xe1a02005  <OBJ/BSS>
+  001c42a8  .word 0xe1a01004  <OBJ/BSS>
+  001c42ac  .word 0xe1a00003  <OBJ/BSS>
+  001c42b0  .word 0xebfacc60  <OBJ/BSS>
+  001c42b4  .word 0xe8bd8030  <OBJ/BSS>
+  001c42b8  .word 0xe92d4010  <OBJ/BSS>
+  001c42bc  .word 0xe1a04000  <OBJ/BSS>
+  001c42c0  .word 0xe2444f4b  <OBJ/BSS>
+  001c42c4  .word 0xe1a00004  <OBJ/BSS>
+  001c42c8  .word 0xebfacce2  <OBJ/BSS>
+  001c42cc  .word 0xe8bd8010  <OBJ/BSS>
+  001c42d0  .word 0xe92d4010  <OBJ/BSS>
+  001c42d4  .word 0xe1a04000  <OBJ/BSS>
+  001c42d8  .word 0xe2444f4b  <OBJ/BSS>
+  001c42dc  .word 0xe1a00004  <OBJ/BSS>
+  001c42e0  .word 0xebfc6006  <OBJ/BSS>
+  001c42e4  .word 0xe8bd8010  <OBJ/BSS>
+  001c42e8  .word 0xe92d4010  <OBJ/BSS>
+  001c42ec  .word 0xe1a04000  <OBJ/BSS>
+  001c42f0  .word 0xe2444f4b  <OBJ/BSS>
+  001c42f4  .word 0xe1a00004  <OBJ/BSS>
+  001c42f8  .word 0xebfc74d2  <OBJ/BSS>
+  001c42fc  .word 0xe8bd8010  <OBJ/BSS>
+  001c4300  .word 0xb5104b02  <OBJ/BSS>
+  001c4304  .word 0xf70f18c0  <OBJ/BSS>
+  001c4308  .word 0xbd10fc07  <OBJ/BSS>
+  001c430c  .word 0xffff80c8  <OBJ/BSS>
+  001c4310  .word 0xb5104902  <OBJ/BSS>
+  001c4314  .word 0xf7101840  <OBJ/BSS>
+  001c4318  .word 0xbd10f8ff  <OBJ/BSS>
+  001c431c  .word 0xffff80c4  <OBJ/BSS>
+  001c4320  .word 0xb5104a02  <OBJ/BSS>
+  001c4324  .word 0xf7021880  <OBJ/BSS>
+  001c4328  .word 0xbd10fcdb  <OBJ/BSS>
+  001c432c  .word 0xffff80b4  <OBJ/BSS>
+  001c4330  .word 0xe92d4010  <OBJ/BSS>
+  001c4334  .word 0xe2404020  <OBJ/BSS>
+  001c4338  .word 0xe28000e0  <OBJ/BSS>
+  001c433c  .word 0xe1d018b0  <OBJ/BSS>
+  001c4340  .word 0xe2812001  <OBJ/BSS>
+  001c4344  .word 0xe311001f  <OBJ/BSS>
+  001c4348  .word 0xe1c028b0  <OBJ/BSS>
+  001c434c  .word 0x1a000003
+  001c4350  .word 0xe1a00004  <OBJ/BSS>
+  001c4354  .word 0xebfe8152  <OBJ/BSS>
+  001c4358  .word 0xe2840080  <OBJ/BSS>
+  001c435c  .word 0xebfe87cd  <OBJ/BSS>
+  001c4360  .word 0xe1a00004  <OBJ/BSS>
+  001c4364  .word 0xebfe80d7  <OBJ/BSS>
+  001c4368  .word 0xe1a00004  <OBJ/BSS>
+  001c436c  .word 0xe8bd4010  <OBJ/BSS>
+  001c4370  .word 0xeafe82eb  <OBJ/BSS>
+  001c4374  .word 0xe2400020  <OBJ/BSS>
+  001c4378  .word 0xeafe80d2  <OBJ/BSS>
+  001c437c  .word 0xe92d4070  <OBJ/BSS>
+  001c4380  .word 0xe1a04000  <OBJ/BSS>
+  001c4384  .word 0xe1a05001  <OBJ/BSS>
+  001c4388  .word 0xe2444f5d  <OBJ/BSS>
+  001c438c  .word 0xe1a01005  <OBJ/BSS>
+  001c4390  .word 0xe1a00004  <OBJ/BSS>
+  001c4394  .word 0xebfccb55  <OBJ/BSS>
+  001c4398  .word 0xe8bd8070  <OBJ/BSS>
+  001c439c  .word 0xe92d4070  <OBJ/BSS>
+  001c43a0  .word 0xe1a04000  <OBJ/BSS>
+  001c43a4  .word 0xe1a05001  <OBJ/BSS>
+  001c43a8  .word 0xe2444f5d  <OBJ/BSS>
+  001c43ac  .word 0xe1a01005  <OBJ/BSS>
+  001c43b0  .word 0xe1a00004  <OBJ/BSS>
+  001c43b4  .word 0xebfccd69  <OBJ/BSS>
+  001c43b8  .word 0xe8bd8070  <OBJ/BSS>
+  001c43bc  .word 0xe92d4070  <OBJ/BSS>
+  001c43c0  .word 0xe1a04000  <OBJ/BSS>
+  001c43c4  .word 0xe1a05001  <OBJ/BSS>
+  001c43c8  .word 0xe2444f5d  <OBJ/BSS>
+  001c43cc  .word 0xe1a01005  <OBJ/BSS>
+  001c43d0  .word 0xe1a00004  <OBJ/BSS>
+  001c43d4  .word 0xebfccd6d  <OBJ/BSS>
+  001c43d8  .word 0xe8bd8070  <OBJ/BSS>
+  001c43dc  .word 0xe92d4070  <OBJ/BSS>
+  001c43e0  .word 0xe1a04000  <OBJ/BSS>
+  001c43e4  .word 0xe1a05001  <OBJ/BSS>
+  001c43e8  .word 0xe2444f5d  <OBJ/BSS>
+  001c43ec  .word 0xe1a01005  <OBJ/BSS>
+  001c43f0  .word 0xe1a00004  <OBJ/BSS>
+  001c43f4  .word 0xebfccf3d  <OBJ/BSS>
+  001c43f8  .word 0xe8bd8070  <OBJ/BSS>
+  001c43fc  .word 0xe92d4070  <OBJ/BSS>
+  001c4400  .word 0xe1a04000  <OBJ/BSS>
+
+############ ARM range 148d74..149b00
+  00148d74  stmdb sp!,{r4,lr}
+  00148d78  sub sp,sp,#0x228
+  00148d7c  mov r0,#0x0
+  00148d80  cpy r3,sp
+  00148d84  ldr r2,[r1,#0x0]
+  00148d88  ldrb r2,[r2,r0]
+  00148d8c  cmp r2,#0x0
+  00148d90  beq 0x00148da4   ; ref->00148da4 = 0xe0831080  <OBJ/BSS>
+  00148d94  add r12,r3,r0, lsl #0x1
+  00148d98  add r0,r0,#0x1
+  00148d9c  strh r2,[r12,#0x0]
+  00148da0  b 0x00148d84   ; ref->00148d84 = 0xe5912000  <OBJ/BSS>
+  00148da4  add r1,r3,r0, lsl #0x1
+  00148da8  mov r0,#0x0
+  00148dac  strh r0,[r1,#0x0]
+  00148db0  add r2,sp,#0x220
+  00148db4  cpy r1,r3
+  00148db8  add r0,sp,#0x21c
+  00148dbc  blx 0x00231ef4   ; ref->00231ef4 = 0x5b57c
+  00148dc0  ldr r0,[0x148e7c]
+  00148dc4  add r1,sp,#0x224
+  00148dc8  mov r2,#0x0
+  00148dcc  bl 0x0001b800   ; ref->0001b800 = 0xe51ff004  <OBJ/BSS>
+  00148dd0  cmp r0,#0x0
+  00148dd4  beq 0x00148dc0   ; ref->00148dc0 = 0xe59f00b4  <OBJ/BSS>
+  00148dd8  bl 0x000cbaf0   ; ref->000cbaf0 = 0xe59f000c  <OBJ/BSS>
+  00148ddc  ldr r1,[r0,#0x0]
+  00148de0  ldr r1,[r1,#0x0]
+  00148de4  blx r1
+  00148de8  ldr r4,[0x148e80]
+  00148dec  cpy r2,r0
+  00148df0  str r0,[r4,#0x8]
+  00148df4  ldr r1,[0x148e84]
+  00148df8  add r3,sp,#0x21c
+  00148dfc  add r0,sp,#0x200
+  00148e00  bl 0x001156a4   ; ref->001156a4 = 0xe1a0c001  <OBJ/BSS>
+  00148e04  bl 0x000cbaf0   ; ref->000cbaf0 = 0xe59f000c  <OBJ/BSS>
+  00148e08  ldr r1,[r0,#0x0]
+  00148e0c  ldr r3,[0x148e88]
+  00148e10  ldr r12,[r1,#0x8]
+  00148e14  mov r2,#0x0
+  00148e18  add r1,sp,#0x200
+  00148e1c  blx r12
+  00148e20  cmp r0,#0x0
+  00148e24  beq 0x00148e38   ; ref->00148e38 = 0xe59d0218  <OBJ/BSS>
+  00148e28  cmp r0,#0x1
+  00148e2c  adrne r0,0x148e8c
+  00148e30  bne 0x00148e44   ; ref->00148e44 = 0xfafae693  <OBJ/BSS>
+  00148e34  b 0x00148e4c   ; ref->00148e4c = 0xe5dd1212  <OBJ/BSS>
+  00148e38  ldr r0,[sp,#0x218]
+  00148e3c  str r0,[r4,#0xc]
+  00148e40  adr r0,0x148ea4
+  00148e44  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  00148e48  b 0x00148e58   ; ref->00148e58 = 0xe59f0084  <OBJ/BSS>
+  00148e4c  ldrb r1,[sp,#0x212]
+  00148e50  adr r0,0x148ec4
+  00148e54  blx 0x00002898   ; ref->00002898 = 0x4905b40f
+  00148e58  ldr r0,[0x148ee4]
+  00148e5c  str r0,[sp,#0x200]
+  00148e60  add r0,sp,#0x214
+  00148e64  blx 0x00232190   ; ref->00232190 = 0x4b510
+  00148e68  add r0,sp,#0x21c
+  00148e6c  blx 0x00232190   ; ref->00232190 = 0x4b510
+  00148e70  mov r0,#0x0
+  00148e74  add sp,sp,#0x228
+  00148e78  ldmia sp!,{r4,pc}
+  00148e7c  .word 0x60406560 '`e@`'  <OBJ/BSS>
+  00148e80  .word 0x60403a40 '@:@`'  <OBJ/BSS>
+  00148e84  .word 0x60406550 'Pe@`'  <OBJ/BSS>
+  00148e88  .word 0x7530 '0u..'
+  00148e8c  .word 0x6e65704f 'Open'  <OBJ/BSS>
+  00148e90  .word 0x72696420 ' dir'  <OBJ/BSS>
+  00148e94  .word 0x6f746365 'ecto'  <OBJ/BSS>
+  00148e98  .word 0x66207972 'ry f'  <OBJ/BSS>
+  00148e9c  .word 0x656c6961 'aile'  <OBJ/BSS>
+  00148ea0  .word 0xa64
+  00148ea4  .word 0x65726944 'Dire'  <OBJ/BSS>
+  00148ea8  .word 0x726f7463 'ctor'  <OBJ/BSS>
+  00148eac  .word 0x75732079 'y su'  <OBJ/BSS>
+  00148eb0  .word 0x73656363 'cces'  <OBJ/BSS>
+  00148eb4  .word 0x6c756673 'sful'  <OBJ/BSS>
+  00148eb8  .word 0x6f20796c 'ly o'  <OBJ/BSS>
+  00148ebc  .word 0x656e6570 'pene'  <OBJ/BSS>
+  00148ec0  .word 0xa64
+  00148ec4  .word 0x6e65704f 'Open'  <OBJ/BSS>
+  00148ec8  .word 0x72696420 ' dir'  <OBJ/BSS>
+  00148ecc  .word 0x6f746365 'ecto'  <OBJ/BSS>
+  00148ed0  .word 0x66207972 'ry f'  <OBJ/BSS>
+  00148ed4  .word 0x656c6961 'aile'  <OBJ/BSS>
+  00148ed8  .word 0x69772064 'd wi'  <OBJ/BSS>
+  00148edc  .word 0x25206874 'th %'
+  00148ee0  .word 0xa64
+  00148ee4  .word 0x602df850  (ptr 2d98cc)
+  00148ee8  .word 0xe92d4010  <OBJ/BSS>
+  00148eec  .word 0xe1a04000  <OBJ/BSS>
+  00148ef0  .word 0xe59f0010  <OBJ/BSS>
+  00148ef4  .word 0xe5840000  <OBJ/BSS>
+  00148ef8  .word 0xe1a00004  <OBJ/BSS>
+  00148efc  .word 0xfb017b3d  <OBJ/BSS>
+  00148f00  .word 0xe1a00004  <OBJ/BSS>
+  00148f04  .word 0xe8bd8010  <OBJ/BSS>
+  00148f08  .word 0x602e24c0  (ptr 2dc53c)
+  00148f0c  .word 0xe52de004  <OBJ/BSS>
+  00148f10  .word 0xe24dd04c  <OBJ/BSS>
+  00148f14  .word 0xe59f00b8  <OBJ/BSS>
+  00148f18  .word 0xe28d1044  <OBJ/BSS>
+  00148f1c  .word 0xe3a02000  <OBJ/BSS>
+  00148f20  .word 0xebfb4a36  <OBJ/BSS>
+  00148f24  .word 0xe3500000  <OBJ/BSS>
+  00148f28  .word 0xafffff9
+  00148f2c  .word 0xe59f00a4  <OBJ/BSS>
+  00148f30  .word 0xe59f10a4  <OBJ/BSS>
+  00148f34  .word 0xe890000c  <OBJ/BSS>
+  00148f38  .word 0xe1a0000d  <OBJ/BSS>
+  00148f3c  .word 0xebff3203  <OBJ/BSS>
+  00148f40  .word 0xebfe0aea  <OBJ/BSS>
+  00148f44  .word 0xe5901000  <OBJ/BSS>
+  00148f48  .word 0xe59f3090  <OBJ/BSS>
+  00148f4c  .word 0xe591c008  <OBJ/BSS>
+  00148f50  .word 0xe3a02000  <OBJ/BSS>
+  00148f54  .word 0xe1a0100d  <OBJ/BSS>
+  00148f58  .word 0xe12fff3c  <OBJ/BSS>
+  00148f5c  .word 0xe3500000  <OBJ/BSS>
+  00148f60  .word 0xe1a0100d  <OBJ/BSS>
+  00148f64  .word 0xa000004
+  00148f68  .word 0xe3500001  <OBJ/BSS>
+  00148f6c  .word 0x128f0070
+  00148f70  .word 0xa00000d
+  00148f74  .word 0xfafae647  <OBJ/BSS>
+  00148f78  .word 0xea00000e  <OBJ/BSS>
+  00148f7c  .word 0xe2810018  <OBJ/BSS>
+  00148f80  .word 0xe59d103c  <OBJ/BSS>
+  00148f84  .word 0xe1d110b0  <OBJ/BSS>
+  00148f88  .word 0xe3510000  <OBJ/BSS>
+  00148f8c  .word 0x159d103c
+  00148f90  .word 0x280100a
+  00148f94  .word 0xe1d110b0  <OBJ/BSS>
+  00148f98  .word 0xe3510000  <OBJ/BSS>
+  00148f9c  .word 0x28f0058
+  00148fa0  .word 0xafffff3
+  00148fa4  .word 0xebfbf9d2  <OBJ/BSS>
+  00148fa8  .word 0xea000002  <OBJ/BSS>
+  00148fac  .word 0xe5dd1012  <OBJ/BSS>
+  00148fb0  .word 0xe28f0060  <OBJ/BSS>
+  00148fb4  .word 0xfafae637  <OBJ/BSS>
+  00148fb8  .word 0xe59f0078  <OBJ/BSS>
+  00148fbc  .word 0xe58d0000  <OBJ/BSS>
+  00148fc0  .word 0xe59d003c  <OBJ/BSS>
+  00148fc4  .word 0xeb02973f  <OBJ/BSS>
+  00148fc8  .word 0xe3a00000  <OBJ/BSS>
+  00148fcc  .word 0xe28dd04c  <OBJ/BSS>
+  00148fd0  .word 0xe49df004  <OBJ/BSS>
+  00148fd4  .word 0x60406560 '`e@`'  <OBJ/BSS>
+  00148fd8  .word 0x60403a48 'H:@`'  <OBJ/BSS>
+  00148fdc  .word 0x60406550 'Pe@`'  <OBJ/BSS>
+  00148fe0  .word 0x7530 '0u..'
+  00148fe4  .word 0x64616552 'Read'  <OBJ/BSS>
+  00148fe8  .word 0x72696420 ' dir'  <OBJ/BSS>
+  00148fec  .word 0x6f746365 'ecto'  <OBJ/BSS>
+  00148ff0  .word 0x66207972 'ry f'  <OBJ/BSS>
+  00148ff4  .word 0x656c6961 'aile'  <OBJ/BSS>
+  00148ff8  .word 0xa64
+  00148ffc  .word 0x20646e45 'End '
+  00149000  .word 0x6420666f 'of d'  <OBJ/BSS>
+  00149004  .word 0x63657269 'irec'  <OBJ/BSS>
+  00149008  .word 0x79726f74 'tory'  <OBJ/BSS>
+  0014900c  .word 0x61657220 ' rea'  <OBJ/BSS>
+  00149010  .word 0x64656863 'ched'  <OBJ/BSS>
+  00149014  .word 0xa
+  00149018  .word 0x64616552 'Read'  <OBJ/BSS>
+  0014901c  .word 0x72696420 ' dir'  <OBJ/BSS>
+  00149020  .word 0x6f746365 'ecto'  <OBJ/BSS>
+  00149024  .word 0x66207972 'ry f'  <OBJ/BSS>
+  00149028  .word 0x656c6961 'aile'  <OBJ/BSS>
+  0014902c  .word 0x69772064 'd wi'  <OBJ/BSS>
+  00149030  .word 0x25206874 'th %'
+  00149034  .word 0xa64
+  00149038  .word 0x602df864  (ptr 2d98e0)
+  0014903c  .word 0xe92d4010  <OBJ/BSS>
+  00149040  .word 0xe1a04000  <OBJ/BSS>
+  00149044  .word 0xe59f0010  <OBJ/BSS>
+  00149048  .word 0xe5840000  <OBJ/BSS>
+  0014904c  .word 0xe1a00004  <OBJ/BSS>
+  00149050  .word 0xfb017ae8  <OBJ/BSS>
+  00149054  .word 0xe1a00004  <OBJ/BSS>
+  00149058  .word 0xe8bd8010  <OBJ/BSS>
+  0014905c  .word 0x602e24ec  (ptr 2dc568)
+  00149060  .word 0x4b510
+  00149064  .word 0x28007a00 '.z.('
+  00149068  .word 0x7a62d017  <OBJ/BSS>
+  0014906c  .word 0x68607b21 '!{`h'  <OBJ/BSS>
+  00149070  .word 0xfc80f73d  <OBJ/BSS>
+  00149074  .word 0x68600021 '!.`h'  <OBJ/BSS>
+  00149078  .word 0xf0653110  <OBJ/BSS>
+  0014907c  .word 0x7a62f95f  <OBJ/BSS>
+  00149080  .word 0x68607b61 'a{`h'  <OBJ/BSS>
+  00149084  .word 0xfe78f73d  <OBJ/BSS>
+  00149088  .word 0x68600021 '!.`h'  <OBJ/BSS>
+  0014908c  .word 0xf0653114  <OBJ/BSS>
+  00149090  .word 0x2000f955
+  00149094  .word 0x20017220
+  00149098  .word 0x2001bd10
+  0014909c  .word 0xbd10
+  001490a0  .word 0x4b5f0
+  001490a4  .word 0xb0936980  <OBJ/BSS>
+  001490a8  .word 0xd0082800  <OBJ/BSS>
+  001490ac  .word 0x7aa27ae3  <OBJ/BSS>
+  001490b0  .word 0x48867a61
+  001490b4  .word 0xfbf0f6b9  <OBJ/BSS>
+  001490b8  .word 0xb0132000  <OBJ/BSS>
+  001490bc  .word 0x7a61bdf0  <OBJ/BSS>
+  001490c0  .word 0xd02a2901  <OBJ/BSS>
+  001490c4  .word 0x2500a082
+  001490c8  .word 0x23012203
+  001490cc  .word 0x93019503  <OBJ/BSS>
+  001490d0  .word 0x90009202  <OBJ/BSS>
+  001490d4  .word 0x7ae36860  <OBJ/BSS>
+  001490d8  .word 0x301c7aa2
+  001490dc  .word 0xff66f72e  <OBJ/BSS>
+  001490e0  .word 0xd01c2800  <OBJ/BSS>
+  001490e4  .word 0x20142101
+  001490e8  .word 0xe86cf0a7  <OBJ/BSS>
+  001490ec  .word 0xd0012800  <OBJ/BSS>
+  001490f0  .word 0xfbe6f7ff  <OBJ/BSS>
+  001490f4  .word 0x61a02800  <OBJ/BSS>
+  001490f8  .word 0x4f7bd01a
+  001490fc  .word 0x68602100 '.!`h'  <OBJ/BSS>
+  00149100  .word 0x690619c0  <OBJ/BSS>
+  00149104  .word 0x2d006875 'uh.-'
+  00149108  .word 0x609d01e
+  0014910c  .word 0x7c280e09  <OBJ/BSS>
+  00149110  .word 0xd2164281  <OBJ/BSS>
+  00149114  .word 0x68ad002e  <OBJ/BSS>
+  00149118  .word 0x2000e014
+  0014911c  .word 0x7ae3e7d3  <OBJ/BSS>
+  00149120  .word 0x7a617aa2  <OBJ/BSS>
+  00149124  .word 0xf6b94871  <OBJ/BSS>
+  00149128  .word 0x2000fbb7
+  0014912c  .word 0xbdf0b013  <OBJ/BSS>
+  00149130  .word 0x7aa27ae3  <OBJ/BSS>
+  00149134  .word 0x486e7a61 'aznH'
+  00149138  .word 0xfbaef6b9  <OBJ/BSS>
+  0014913c  .word 0xb0132000  <OBJ/BSS>
+  00149140  .word 0x68edbdf0  <OBJ/BSS>
+  00149144  .word 0xd1e22d00  <OBJ/BSS>
+  00149148  .word 0x19c06860
+  0014914c  .word 0x42866900
+  00149150  .word 0x6971d005  <OBJ/BSS>
+  00149154  .word 0xf7ff69a0  <OBJ/BSS>
+  00149158  .word 0x7c31fb53  <OBJ/BSS>
+  0014915c  .word 0x4f65e7cf
+  00149160  .word 0x68612000 '. ah'  <OBJ/BSS>
+  00149164  .word 0x690e19c9  <OBJ/BSS>
+  00149168  .word 0x2d006875 'uh.-'
+  0014916c  .word 0x600d00a
+  00149170  .word 0x7c290e00  <OBJ/BSS>
+  00149174  .word 0xd2024288  <OBJ/BSS>
+  00149178  .word 0x68ad002e  <OBJ/BSS>
+  0014917c  .word 0x68ede000  <OBJ/BSS>
+  00149180  .word 0xd1f62d00  <OBJ/BSS>
+  00149184  .word 0x19c06860
+  00149188  .word 0x42866900
+  0014918c  .word 0x6971d005  <OBJ/BSS>
+  00149190  .word 0xf7ff69a0  <OBJ/BSS>
+  00149194  .word 0x7c30fb35  <OBJ/BSS>
+  00149198  .word 0x69a0e7e3  <OBJ/BSS>
+  0014919c  .word 0x68609000  <OBJ/BSS>
+  001491a0  .word 0x7aa27ae3  <OBJ/BSS>
+  001491a4  .word 0x301c7a61
+  001491a8  .word 0xfa18f79f  <OBJ/BSS>
+  001491ac  .word 0xd0642800  <OBJ/BSS>
+  001491b0  .word 0xf7d8a804  <OBJ/BSS>
+  001491b4  .word 0x7b20fa27  <OBJ/BSS>
+  001491b8  .word 0x25014669
+  001491bc  .word 0x20007508
+  001491c0  .word 0x20027548
+  001491c4  .word 0x20007588
+  001491c8  .word 0x26d75c8
+  001491cc  .word 0x834d7608  <OBJ/BSS>
+  001491d0  .word 0xa8047708  <OBJ/BSS>
+  001491d4  .word 0x68609000  <OBJ/BSS>
+  001491d8  .word 0x7aa27ae3  <OBJ/BSS>
+  001491dc  .word 0x301c7a61
+  001491e0  .word 0xfdfef72e  <OBJ/BSS>
+  001491e4  .word 0xd04f2800  <OBJ/BSS>
+  001491e8  .word 0xf0000020  <OBJ/BSS>
+  001491ec  .word 0x2800f8a9
+  001491f0  .word 0xd04e61e0  <OBJ/BSS>
+  001491f4  .word 0x90017b21  <OBJ/BSS>
+  001491f8  .word 0x68609100  <OBJ/BSS>
+  001491fc  .word 0x7aa27ae3  <OBJ/BSS>
+  00149200  .word 0x301c7a61
+  00149204  .word 0xfa52f79f  <OBJ/BSS>
+  00149208  .word 0xd0482800  <OBJ/BSS>
+  0014920c  .word 0xf7d8a80b  <OBJ/BSS>
+  00149210  .word 0x7b61f9f9  <OBJ/BSS>
+  00149214  .word 0x7401a808  <OBJ/BSS>
+  00149218  .word 0x74412101  <OBJ/BSS>
+  0014921c  .word 0x74812102  <OBJ/BSS>
+  00149220  .word 0x74c12100  <OBJ/BSS>
+  00149224  .word 0x46687501
+  00149228  .word 0xa80886c5  <OBJ/BSS>
+  0014922c  .word 0xa80b7601  <OBJ/BSS>
+  00149230  .word 0x68609000  <OBJ/BSS>
+  00149234  .word 0x7aa27ae3  <OBJ/BSS>
+  00149238  .word 0x301c7a61
+  0014923c  .word 0xfdd0f72e  <OBJ/BSS>
+  00149240  .word 0xd0332800  <OBJ/BSS>
+  00149244  .word 0xf0000020  <OBJ/BSS>
+  00149248  .word 0x2800f8c1
+  0014924c  .word 0xd0326220  <OBJ/BSS>
+  00149250  .word 0x90017b61  <OBJ/BSS>
+  00149254  .word 0x68609100  <OBJ/BSS>
+  00149258  .word 0x7aa27ae3  <OBJ/BSS>
+  0014925c  .word 0x301c7a61
+  00149260  .word 0xfa24f79f  <OBJ/BSS>
+  00149264  .word 0xd02a2800  <OBJ/BSS>
+  00149268  .word 0xf7d8a80b  <OBJ/BSS>
+  0014926c  .word 0xa804f9df  <OBJ/BSS>
+  00149270  .word 0xf9dcf7d8  <OBJ/BSS>
+  00149274  .word 0xb0132001  <OBJ/BSS>
+  00149278  .word 0x7ae3bdf0  <OBJ/BSS>
+  0014927c  .word 0x7a617aa2  <OBJ/BSS>
+  00149280  .word 0xf6b9481d  <OBJ/BSS>
+  00149284  .word 0xe007fb09  <OBJ/BSS>
+  00149288  .word 0x7aa27ae3  <OBJ/BSS>
+  0014928c  .word 0x481b7a61
+  00149290  .word 0xa804e009  <OBJ/BSS>
+  00149294  .word 0xf9caf7d8  <OBJ/BSS>
+  00149298  .word 0xb0132000  <OBJ/BSS>
+  0014929c  .word 0x7ae3bdf0  <OBJ/BSS>
+  001492a0  .word 0x7a617aa2  <OBJ/BSS>
+  001492a4  .word 0xf6b94816  <OBJ/BSS>
+  001492a8  .word 0xe7f2faf7  <OBJ/BSS>
+  001492ac  .word 0x7aa27ae3  <OBJ/BSS>
+  001492b0  .word 0x48127a61
+  001492b4  .word 0xa80be007  <OBJ/BSS>
+  001492b8  .word 0xf9b8f7d8  <OBJ/BSS>
+  001492bc  .word 0x7ae3e7e9  <OBJ/BSS>
+  001492c0  .word 0x7a617aa2  <OBJ/BSS>
+  001492c4  .word 0xf6b9480e  <OBJ/BSS>
+  001492c8  .word 0xe7f4fae7  <OBJ/BSS>
+  001492cc  .word 0x602ac408  (ptr 2a6484)
+  001492d0  .word 0x20425355 'USB '
+  001492d4  .word 0x4944494d 'MIDI'
+  001492d8  .word 0x72745320 ' Str'  <OBJ/BSS>
+  001492dc  .word 0x696d6165 'eami'  <OBJ/BSS>
+  001492e0  .word 0x4920676e 'ng I'
+  001492e4  .word 0x46 'F...'
+  001492e8  .word 0xa4c
+  001492ec  .word 0x602ac484  (ptr 2a6500)
+  001492f0  .word 0x602ac4fc  "ERROR: USBStandardMIDIStreamAlternateSetting::initialize: Could not create MIDI Class MS Interface Descriptor (%d-%d-%d)"
+  001492f4  .word 0xa68
+  001492f8  .word 0x602ac578  "ERROR: USBStandardMIDIStreamAlternateSetting::initialize: Could not add class specific MS Interface Descriptor (%d-%d-%d"
+  001492fc  .word 0x602ac5f4  "ERROR: USBStandardMIDIStreamAlternateSetting::initialize: Could not add Standard MS Data Endpoint Descriptor (%d-%d-%d)!"
+  00149300  .word 0x602ac670  (ptr 2a66ec)
+  00149304  .word 0x7ac1b510  <OBJ/BSS>
+  00149308  .word 0xf6b9a001  <OBJ/BSS>
+  0014930c  .word 0xbd10fac5  <OBJ/BSS>
+  00149310  .word 0x2d200909
+  00149314  .word 0x746c4120 ' Alt'  <OBJ/BSS>
+  00149318  .word 0x74746553 'Sett'  <OBJ/BSS>
+  0014931c  .word 0x49676e69 'ingI'
+  00149320  .word 0x25203a64 'd: %'
+  00149324  .word 0x53202c64 'd, S'
+  00149328  .word 0x646e6174 'tand'  <OBJ/BSS>
+  0014932c  .word 0x20647261 'ard '
+  00149330  .word 0x4944494d 'MIDI'
+  00149334  .word 0x7274532d '-Str'  <OBJ/BSS>
+  00149338  .word 0xa6d6165
+  0014933c  .word 0x0 '....'
+  00149340  .word 0x4b5f8
+  00149344  .word 0x20102101
+  00149348  .word 0xef3cf0a6  <OBJ/BSS>
+  0014934c  .word 0xd0132800  <OBJ/BSS>
+  00149350  .word 0xf91cf7f9  <OBJ/BSS>
+  00149354  .word 0xd00f0006  <OBJ/BSS>
+  00149358  .word 0x20004d19
+  0014935c  .word 0x19496861
+  00149360  .word 0x6851690a  <OBJ/BSS>
+  00149364  .word 0xd00c2900  <OBJ/BSS>
+  00149368  .word 0xe1b0603
+  0014936c  .word 0x42837c08
+  00149370  .word 0xad204
+  00149374  .word 0xe0026889  <OBJ/BSS>
+  00149378  .word 0xbdf82000  <OBJ/BSS>
+  0014937c  .word 0x290068c9
+  00149380  .word 0x6860d1f4  <OBJ/BSS>
+  00149384  .word 0x69001940  <OBJ/BSS>
+  00149388  .word 0xd0104282  <OBJ/BSS>
+  0014938c  .word 0x176950
+  00149390  .word 0x28003710
+  00149394  .word 0x2300d011
+  00149398  .word 0x490b4a0a
+  0014939c  .word 0xf07d43db  <OBJ/BSS>
+  001493a0  .word 0x2800ff3b
+  001493a4  .word 0x7940d009  <OBJ/BSS>
+  001493a8  .word 0xd0022801  <OBJ/BSS>
+  001493ac  .word 0x30e005
+  001493b0  .word 0x7839bdf8  <OBJ/BSS>
+  001493b4  .word 0xf7f90030  <OBJ/BSS>
+  001493b8  .word 0x7838f8b1  <OBJ/BSS>
+  001493bc  .word 0xe7ce
+  001493c0  .word 0xa68
+  001493c4  .word 0x602d4da0  (ptr 2cee1c)
+  001493c8  .word 0x602d4d08  (ptr 2ced84)
+  001493cc  .word 0x4b5f8
+  001493d0  .word 0x20102101
+  001493d4  .word 0xeef6f0a6  <OBJ/BSS>
+  001493d8  .word 0xd0132800  <OBJ/BSS>
+  001493dc  .word 0xf8d6f7f9  <OBJ/BSS>
+  001493e0  .word 0xd00f0006  <OBJ/BSS>
+  001493e4  .word 0x20004d19
+  001493e8  .word 0x19496861
+  001493ec  .word 0x6851690a  <OBJ/BSS>
+  001493f0  .word 0xd00c2900  <OBJ/BSS>
+  001493f4  .word 0xe1b0603
+  001493f8  .word 0x42837c08
+  001493fc  .word 0xad204
+  00149400  .word 0xe0026889  <OBJ/BSS>
+  00149404  .word 0xbdf82000  <OBJ/BSS>
+  00149408  .word 0x290068c9
+  0014940c  .word 0x6860d1f4  <OBJ/BSS>
+  00149410  .word 0x69001940  <OBJ/BSS>
+  00149414  .word 0xd0104282  <OBJ/BSS>
+  00149418  .word 0x176950
+  0014941c  .word 0x28003710
+  00149420  .word 0x2300d011
+  00149424  .word 0x490b4a0a
+  00149428  .word 0xf07d43db  <OBJ/BSS>
+  0014942c  .word 0x2800fef5
+  00149430  .word 0x7940d009  <OBJ/BSS>
+  00149434  .word 0xd0022801  <OBJ/BSS>
+  00149438  .word 0x30e005
+  0014943c  .word 0x7839bdf8  <OBJ/BSS>
+  00149440  .word 0xf7f90030  <OBJ/BSS>
+  00149444  .word 0x7838f86b  <OBJ/BSS>
+  00149448  .word 0xe7ce
+  0014944c  .word 0xa4c
+  00149450  .word 0x602d4e24 '$N-`'  (ptr 2ceea0)
+  00149454  .word 0x602d4d08  (ptr 2ced84)
+  00149458  .word 0x4b5f0
+  0014945c  .word 0xb0857a00  <OBJ/BSS>
+  00149460  .word 0xd0022800  <OBJ/BSS>
+  00149464  .word 0xb0052001  <OBJ/BSS>
+  00149468  .word 0x2501bdf0
+  0014946c  .word 0x30140020
+  00149470  .word 0x26f2600
+  00149474  .word 0x97009004  <OBJ/BSS>
+  00149478  .word 0x95039601  <OBJ/BSS>
+  0014947c  .word 0x7b619002  <OBJ/BSS>
+  00149480  .word 0x336860 '`h3.'
+  00149484  .word 0xf0642202  <OBJ/BSS>
+  00149488  .word 0x2800ff37
+  0014948c  .word 0x7a62d0eb  <OBJ/BSS>
+  00149490  .word 0x68607b61 'a{`h'  <OBJ/BSS>
+  00149494  .word 0xfdb6f73d  <OBJ/BSS>
+  00149498  .word 0xd0192800  <OBJ/BSS>
+  0014949c  .word 0x30100020
+  001494a0  .word 0x97009004  <OBJ/BSS>
+  001494a4  .word 0x95039601  <OBJ/BSS>
+  001494a8  .word 0x7b219002  <OBJ/BSS>
+  001494ac  .word 0x23016860
+  001494b0  .word 0xf0642202  <OBJ/BSS>
+  001494b4  .word 0x2800ff21
+  001494b8  .word 0x7a62d0d5  <OBJ/BSS>
+  001494bc  .word 0x68607b21 '!{`h'  <OBJ/BSS>
+  001494c0  .word 0xfc06f73d  <OBJ/BSS>
+  001494c4  .word 0xd0032800  <OBJ/BSS>
+  001494c8  .word 0x20017225
+  001494cc  .word 0xbdf0b005  <OBJ/BSS>
+  001494d0  .word 0x99046860  <OBJ/BSS>
+  001494d4  .word 0xff32f064  <OBJ/BSS>
+  001494d8  .word 0xb0052000  <OBJ/BSS>
+  001494dc  .word 0xbdf0
+  001494e0  .word 0xe52de004  <OBJ/BSS>
+  001494e4  .word 0xe24dd01c  <OBJ/BSS>
+  001494e8  .word 0xe59f0090  <OBJ/BSS>
+  001494ec  .word 0xe28d1018  <OBJ/BSS>
+  001494f0  .word 0xe3a02000  <OBJ/BSS>
+  001494f4  .word 0xebfb48c1  <OBJ/BSS>
+  001494f8  .word 0xe3500000  <OBJ/BSS>
+  001494fc  .word 0xafffff9
+  00149500  .word 0xebfe097a  <OBJ/BSS>
+  00149504  .word 0xe5901000  <OBJ/BSS>
+  00149508  .word 0xe5911000  <OBJ/BSS>
+  0014950c  .word 0xe12fff31  <OBJ/BSS>
+  00149510  .word 0xe59f106c  <OBJ/BSS>
+  00149514  .word 0xe1a02000  <OBJ/BSS>
+  00149518  .word 0xe5810008  <OBJ/BSS>
+  0014951c  .word 0xe591300c  <OBJ/BSS>
+  00149520  .word 0xe59f1060  <OBJ/BSS>
+  00149524  .word 0xe1a0000d  <OBJ/BSS>
+  00149528  .word 0xebff8bf5  <OBJ/BSS>
+  0014952c  .word 0xebfe096f  <OBJ/BSS>
+  00149530  .word 0xe5901000  <OBJ/BSS>
+  00149534  .word 0xe59f3050  <OBJ/BSS>
+  00149538  .word 0xe591c008  <OBJ/BSS>
+  0014953c  .word 0xe3a02000  <OBJ/BSS>
+  00149540  .word 0xe1a0100d  <OBJ/BSS>
+  00149544  .word 0xe12fff3c  <OBJ/BSS>
+  00149548  .word 0xe3500000  <OBJ/BSS>
+  0014954c  .word 0x28f003c
+  00149550  .word 0xa000002
+  00149554  .word 0xe3500001  <OBJ/BSS>
+  00149558  .word 0x128f0050
+  0014955c  .word 0xa000001
+  00149560  .word 0xfafae4cc  <OBJ/BSS>
+  00149564  .word 0xea000002  <OBJ/BSS>
+  00149568  .word 0xe5dd1012  <OBJ/BSS>
+  0014956c  .word 0xe28f0054  <OBJ/BSS>
+  00149570  .word 0xfafae4c8  <OBJ/BSS>
+  00149574  .word 0xe3a00000  <OBJ/BSS>
+  00149578  .word 0xe28dd01c  <OBJ/BSS>
+  0014957c  .word 0xe49df004  <OBJ/BSS>
+  00149580  .word 0x60406560 '`e@`'  <OBJ/BSS>
+  00149584  .word 0x60403a40 '@:@`'  <OBJ/BSS>
+  00149588  .word 0x60406550 'Pe@`'  <OBJ/BSS>
+  0014958c  .word 0x7530 '0u..'
+  00149590  .word 0x65726944 'Dire'  <OBJ/BSS>
+  00149594  .word 0x726f7463 'ctor'  <OBJ/BSS>
+  00149598  .word 0x75732079 'y su'  <OBJ/BSS>
+  0014959c  .word 0x73656363 'cces'  <OBJ/BSS>
+  001495a0  .word 0x6c756673 'sful'  <OBJ/BSS>
+  001495a4  .word 0x6320796c 'ly c'  <OBJ/BSS>
+  001495a8  .word 0x65736f6c 'lose'  <OBJ/BSS>
+  001495ac  .word 0xa
+  001495b0  .word 0x736f6c43 'Clos'  <OBJ/BSS>
+  001495b4  .word 0x69642065 'e di'  <OBJ/BSS>
+  001495b8  .word 0x74636572 'rect'  <OBJ/BSS>
+  001495bc  .word 0x2079726f 'ory '
+  001495c0  .word 0x6c696166 'fail'  <OBJ/BSS>
+  001495c4  .word 0xa6465
+  001495c8  .word 0x736f6c43 'Clos'  <OBJ/BSS>
+  001495cc  .word 0x69642065 'e di'  <OBJ/BSS>
+  001495d0  .word 0x74636572 'rect'  <OBJ/BSS>
+  001495d4  .word 0x2079726f 'ory '
+  001495d8  .word 0x6c696166 'fail'  <OBJ/BSS>
+  001495dc  .word 0x77206465 'ed w'  <OBJ/BSS>
+  001495e0  .word 0x20687469 'ith '
+  001495e4  .word 0xa6425
+  001495e8  .word 0xe92d4010  <OBJ/BSS>
+  001495ec  .word 0xe1a04000  <OBJ/BSS>
+  001495f0  .word 0xe59f0010  <OBJ/BSS>
+  001495f4  .word 0xe5840000  <OBJ/BSS>
+  001495f8  .word 0xe1a00004  <OBJ/BSS>
+  001495fc  .word 0xfb01797d  <OBJ/BSS>
+  00149600  .word 0xe1a00004  <OBJ/BSS>
+  00149604  .word 0xe8bd8010  <OBJ/BSS>
+  00149608  .word 0x602e2538 '8%.`'  (ptr 2dc5b4)
+  0014960c  .word 0xe92d4070  <OBJ/BSS>
+  00149610  .word 0xe24dde23  <OBJ/BSS>
+  00149614  .word 0xe1a04001  <OBJ/BSS>
+  00149618  .word 0xe3a00000  <OBJ/BSS>
+  0014961c  .word 0xe28d5008  <OBJ/BSS>
+  00149620  .word 0xe5941000  <OBJ/BSS>
+  00149624  .word 0xe7d11000  <OBJ/BSS>
+  00149628  .word 0xe3510000  <OBJ/BSS>
+  0014962c  .word 0xa000003
+  00149630  .word 0xe0852080  <OBJ/BSS>
+  00149634  .word 0xe2800001  <OBJ/BSS>
+  00149638  .word 0xe1c210b0  <OBJ/BSS>
+  0014963c  .word 0xeafffff7  <OBJ/BSS>
+  00149640  .word 0xe3a06000  <OBJ/BSS>
+  00149644  .word 0xe0850080  <OBJ/BSS>
+  00149648  .word 0xe1c060b0  <OBJ/BSS>
+  0014964c  .word 0xe28d2f8a  <OBJ/BSS>
+  00149650  .word 0xe1a01005  <OBJ/BSS>
+  00149654  .word 0xe28d0004  <OBJ/BSS>
+  00149658  .word 0xfa03a225  <OBJ/BSS>
+  0014965c  .word 0xe3a00000  <OBJ/BSS>
+  00149660  .word 0xe5941004  <OBJ/BSS>
+  00149664  .word 0xe7d11000  <OBJ/BSS>
+  00149668  .word 0xe3510000  <OBJ/BSS>
+  0014966c  .word 0xa000003
+  00149670  .word 0xe0852080  <OBJ/BSS>
+  00149674  .word 0xe2800001  <OBJ/BSS>
+  00149678  .word 0xe1c210b0  <OBJ/BSS>
+  0014967c  .word 0xeafffff7  <OBJ/BSS>
+  00149680  .word 0xe0850080  <OBJ/BSS>
+  00149684  .word 0xe1c060b0  <OBJ/BSS>
+  00149688  .word 0xe28d2f8a  <OBJ/BSS>
+  0014968c  .word 0xe28d1008  <OBJ/BSS>
+  00149690  .word 0xe28d0f89  <OBJ/BSS>
+  00149694  .word 0xfa03a216  <OBJ/BSS>
+  00149698  .word 0xe59f00bc  <OBJ/BSS>
+  0014969c  .word 0xe28d1f8b  <OBJ/BSS>
+  001496a0  .word 0xe3a02000  <OBJ/BSS>
+  001496a4  .word 0xebfb4855  <OBJ/BSS>
+  001496a8  .word 0xe3500000  <OBJ/BSS>
+  001496ac  .word 0xafffff9
+  001496b0  .word 0xebfe090e  <OBJ/BSS>
+  001496b4  .word 0xe5901000  <OBJ/BSS>
+  001496b8  .word 0xe5911000  <OBJ/BSS>
+  001496bc  .word 0xe12fff31  <OBJ/BSS>
+  001496c0  .word 0xe28d1f89  <OBJ/BSS>
+  001496c4  .word 0xe1a02000  <OBJ/BSS>
+  001496c8  .word 0xe58d1000  <OBJ/BSS>
+  001496cc  .word 0xe59f108c  <OBJ/BSS>
+  001496d0  .word 0xe28d3004  <OBJ/BSS>
+  001496d4  .word 0xe28d0f82  <OBJ/BSS>
+  001496d8  .word 0xebfe35dd  <OBJ/BSS>
+  001496dc  .word 0xebfe0903  <OBJ/BSS>
+  001496e0  .word 0xe5901000  <OBJ/BSS>
+  001496e4  .word 0xe59f3078  <OBJ/BSS>
+  001496e8  .word 0xe591c008  <OBJ/BSS>
+  001496ec  .word 0xe3a02000  <OBJ/BSS>
+  001496f0  .word 0xe28d1f82  <OBJ/BSS>
+  001496f4  .word 0xe12fff3c  <OBJ/BSS>
+  001496f8  .word 0xe3500000  <OBJ/BSS>
+  001496fc  .word 0x28f0064
+  00149700  .word 0xa000002
+  00149704  .word 0xe3500001  <OBJ/BSS>
+  00149708  .word 0x128f0074
+  0014970c  .word 0xa000001
+  00149710  .word 0xfafae460  <OBJ/BSS>
+  00149714  .word 0xea000002  <OBJ/BSS>
+  00149718  .word 0xe5dd121a  <OBJ/BSS>
+  0014971c  .word 0xe28f0074  <OBJ/BSS>
+  00149720  .word 0xfafae45c  <OBJ/BSS>
+  00149724  .word 0xe59f0088  <OBJ/BSS>
+  00149728  .word 0xe28d4f82  <OBJ/BSS>
+  0014972c  .word 0xe58d0208  <OBJ/BSS>
+  00149730  .word 0xe28d0e22  <OBJ/BSS>
+  00149734  .word 0xfa03a295  <OBJ/BSS>
+  00149738  .word 0xe2840014  <OBJ/BSS>
+  0014973c  .word 0xfa03a293  <OBJ/BSS>
+  00149740  .word 0xe28d0f89  <OBJ/BSS>
+  00149744  .word 0xfa03a291  <OBJ/BSS>
+  00149748  .word 0xe28d0004  <OBJ/BSS>
+  0014974c  .word 0xfa03a28f  <OBJ/BSS>
+  00149750  .word 0xe3a00000  <OBJ/BSS>
+  00149754  .word 0xe28dde23  <OBJ/BSS>
+  00149758  .word 0xe8bd8070  <OBJ/BSS>
+  0014975c  .word 0x6040650c  <OBJ/BSS>
+  00149760  .word 0x604064fc  <OBJ/BSS>
+  00149764  .word 0x7530 '0u..'
+  00149768  .word 0x656c6946 'File'  <OBJ/BSS>
+  0014976c  .word 0x63757320 ' suc'  <OBJ/BSS>
+  00149770  .word 0x73736563 'cess'  <OBJ/BSS>
+  00149774  .word 0x6c6c7566 'full'  <OBJ/BSS>
+  00149778  .word 0x6f6d2079 'y mo'  <OBJ/BSS>
+  0014977c  .word 0xa646576
+  00149780  .word 0x0 '....'
+  00149784  .word 0x65766f4d 'Move'  <OBJ/BSS>
+  00149788  .word 0x6c696620 ' fil'  <OBJ/BSS>
+  0014978c  .word 0x61662065 'e fa'  <OBJ/BSS>
+  00149790  .word 0x64656c69 'iled'  <OBJ/BSS>
+  00149794  .word 0xa
+  00149798  .word 0x65766f4d 'Move'  <OBJ/BSS>
+  0014979c  .word 0x6c696620 ' fil'  <OBJ/BSS>
+  001497a0  .word 0x61662065 'e fa'  <OBJ/BSS>
+  001497a4  .word 0x64656c69 'iled'  <OBJ/BSS>
+  001497a8  .word 0x74697720 ' wit'  <OBJ/BSS>
+  001497ac  .word 0x64252068 'h %d'  <OBJ/BSS>
+  001497b0  .word 0xa
+  001497b4  .word 0x602dd3bc  (ptr 2d7438)
+  001497b8  .word 0xe92d4010  <OBJ/BSS>
+  001497bc  .word 0xe1a04000  <OBJ/BSS>
+  001497c0  .word 0xe59f0010  <OBJ/BSS>
+  001497c4  .word 0xe5840000  <OBJ/BSS>
+  001497c8  .word 0xe1a00004  <OBJ/BSS>
+  001497cc  .word 0xfb017909  <OBJ/BSS>
+  001497d0  .word 0xe1a00004  <OBJ/BSS>
+  001497d4  .word 0xe8bd8010  <OBJ/BSS>
+  001497d8  .word 0x602e2564 'd%.`'  (ptr 2dc5e0)
+  001497dc  .word 0xe92d4030  <OBJ/BSS>
+  001497e0  .word 0xe24ddf8d  <OBJ/BSS>
+  001497e4  .word 0xe1a05002  <OBJ/BSS>
+  001497e8  .word 0xe1a04001  <OBJ/BSS>
+  001497ec  .word 0xe3a00000  <OBJ/BSS>
+  001497f0  .word 0xe28d2008  <OBJ/BSS>
+  001497f4  .word 0xe5941000  <OBJ/BSS>
+  001497f8  .word 0xe7d11000  <OBJ/BSS>
+  001497fc  .word 0xe3510000  <OBJ/BSS>
+  00149800  .word 0xa000003
+  00149804  .word 0xe0823080  <OBJ/BSS>
+  00149808  .word 0xe2800001  <OBJ/BSS>
+  0014980c  .word 0xe1c310b0  <OBJ/BSS>
+  00149810  .word 0xeafffff7  <OBJ/BSS>
+  00149814  .word 0xe0821080  <OBJ/BSS>
+  00149818  .word 0xe3a00000  <OBJ/BSS>
+  0014981c  .word 0xe1c100b0  <OBJ/BSS>
+  00149820  .word 0xe28d2f8a  <OBJ/BSS>
+  00149824  .word 0xe28d1008  <OBJ/BSS>
+  00149828  .word 0xe28d0004  <OBJ/BSS>
+  0014982c  .word 0xfa03a1b0  <OBJ/BSS>
+  00149830  .word 0xe3550001  <OBJ/BSS>
+  00149834  .word 0xe3a05001  <OBJ/BSS>
+  00149838  .word 0x9a00000a  <OBJ/BSS>
+  0014983c  .word 0xe5940004  <OBJ/BSS>
+  00149840  .word 0xe28f10e0  <OBJ/BSS>
+  00149844  .word 0xebfae933  <OBJ/BSS>
+  00149848  .word 0xe3500000  <OBJ/BSS>
+  0014984c  .word 0x3a0500b
+  00149850  .word 0xa000004
+  00149854  .word 0xe5940004  <OBJ/BSS>
+  00149858  .word 0xe28f10cc  <OBJ/BSS>
+  0014985c  .word 0xebfae92d  <OBJ/BSS>
+  00149860  .word 0xe3500000  <OBJ/BSS>
+  00149864  .word 0x3a0500a
+  00149868  .word 0xe59f00c0  <OBJ/BSS>
+  0014986c  .word 0xe28d1f8b  <OBJ/BSS>
+  00149870  .word 0xe3a02000  <OBJ/BSS>
+  00149874  .word 0xebfb47e1  <OBJ/BSS>
+  00149878  .word 0xe3500000  <OBJ/BSS>
+  0014987c  .word 0xafffff9
+  00149880  .word 0xebfe089a  <OBJ/BSS>
+  00149884  .word 0xe5901000  <OBJ/BSS>
+  00149888  .word 0xe5911000  <OBJ/BSS>
+  0014988c  .word 0xe12fff31  <OBJ/BSS>
+  00149890  .word 0xe59f409c  <OBJ/BSS>
+  00149894  .word 0xe1a02000  <OBJ/BSS>
+  00149898  .word 0xe5840000  <OBJ/BSS>
+  0014989c  .word 0xe59f1094  <OBJ/BSS>
+  001498a0  .word 0xe28d3004  <OBJ/BSS>
+  001498a4  .word 0xe28d0f82  <OBJ/BSS>
+  001498a8  .word 0xe58d5000  <OBJ/BSS>
+  001498ac  .word 0xebff66d9  <OBJ/BSS>
+  001498b0  .word 0xebfe088e  <OBJ/BSS>
+  001498b4  .word 0xe5901000  <OBJ/BSS>
+  001498b8  .word 0xe59f307c  <OBJ/BSS>
+  001498bc  .word 0xe591c008  <OBJ/BSS>
+  001498c0  .word 0xe3a02000  <OBJ/BSS>
+  001498c4  .word 0xe28d1f82  <OBJ/BSS>
+  001498c8  .word 0xe12fff3c  <OBJ/BSS>
+  001498cc  .word 0xe3500000  <OBJ/BSS>
+  001498d0  .word 0xa000003
+  001498d4  .word 0xe3500001  <OBJ/BSS>
+  001498d8  .word 0x128f0060
+  001498dc  .word 0x1a000003
+  001498e0  .word 0xea000004  <OBJ/BSS>
+  001498e4  .word 0xe59d0224  <OBJ/BSS>
+  001498e8  .word 0xe5840004  <OBJ/BSS>
+  001498ec  .word 0xe28f0060  <OBJ/BSS>
+  001498f0  .word 0xfafae3e8  <OBJ/BSS>
+  001498f4  .word 0xea000002  <OBJ/BSS>
+  001498f8  .word 0xe5dd121a  <OBJ/BSS>
+  001498fc  .word 0xe28f006c  <OBJ/BSS>
+  00149900  .word 0xfafae3e4  <OBJ/BSS>
+  00149904  .word 0xe59f0080  <OBJ/BSS>
+  00149908  .word 0xe58d0208  <OBJ/BSS>
+  0014990c  .word 0xe28d0f87  <OBJ/BSS>
+  00149910  .word 0xfa03a21e  <OBJ/BSS>
+  00149914  .word 0xe28d0004  <OBJ/BSS>
+  00149918  .word 0xfa03a21c  <OBJ/BSS>
+  0014991c  .word 0xe3a00000  <OBJ/BSS>
+  00149920  .word 0xe28ddf8d  <OBJ/BSS>
+  00149924  .word 0xe8bd8030  <OBJ/BSS>
+  00149928  .word 0x7772 'rw..'
+  0014992c  .word 0x6f77 'wo..'
+  00149930  .word 0x6040650c  <OBJ/BSS>
+  00149934  .word 0x60403a40 '@:@`'  <OBJ/BSS>
+  00149938  .word 0x604064fc  <OBJ/BSS>
+  0014993c  .word 0x7530 '0u..'
+  00149940  .word 0x6e65704f 'Open'  <OBJ/BSS>
+  00149944  .word 0x6c696620 ' fil'  <OBJ/BSS>
+  00149948  .word 0x61662065 'e fa'  <OBJ/BSS>
+  0014994c  .word 0x64656c69 'iled'  <OBJ/BSS>
+  00149950  .word 0xa
+  00149954  .word 0x656c6946 'File'  <OBJ/BSS>
+  00149958  .word 0x63757320 ' suc'  <OBJ/BSS>
+  0014995c  .word 0x73736563 'cess'  <OBJ/BSS>
+  00149960  .word 0x6c6c7566 'full'  <OBJ/BSS>
+  00149964  .word 0x706f2079 'y op'  <OBJ/BSS>
+  00149968  .word 0x64656e65 'ened'  <OBJ/BSS>
+  0014996c  .word 0xa
+  00149970  .word 0x6e65704f 'Open'  <OBJ/BSS>
+  00149974  .word 0x6c696620 ' fil'  <OBJ/BSS>
+  00149978  .word 0x61662065 'e fa'  <OBJ/BSS>
+  0014997c  .word 0x64656c69 'iled'  <OBJ/BSS>
+  00149980  .word 0x74697720 ' wit'  <OBJ/BSS>
+  00149984  .word 0x64252068 'h %d'  <OBJ/BSS>
+  00149988  .word 0xa
+  0014998c  .word 0x602e01d0  (ptr 2da24c)
+  00149990  .word 0xe92d4010  <OBJ/BSS>
+  00149994  .word 0xe1a04000  <OBJ/BSS>
+  00149998  .word 0xe59f0010  <OBJ/BSS>
+  0014999c  .word 0xe5840000  <OBJ/BSS>
+  001499a0  .word 0xe1a00004  <OBJ/BSS>
+  001499a4  .word 0xfb017893  <OBJ/BSS>
+  001499a8  .word 0xe1a00004  <OBJ/BSS>
+  001499ac  .word 0xe8bd8010  <OBJ/BSS>
+  001499b0  .word 0x602e2590  (ptr 2dc60c)
+  001499b4  .word 0xe92d4ff0  <OBJ/BSS>
+  001499b8  .word 0xe3a08000  <OBJ/BSS>
+  001499bc  .word 0xe5910000  <OBJ/BSS>
+  001499c0  .word 0xe1a05001  <OBJ/BSS>
+  001499c4  .word 0xe1a06002  <OBJ/BSS>
+  001499c8  .word 0xe24dd03c  <OBJ/BSS>
+  001499cc  .word 0xe1a02008  <OBJ/BSS>
+  001499d0  .word 0xe1a01008  <OBJ/BSS>
+  001499d4  .word 0xfafae648  <OBJ/BSS>
+  001499d8  .word 0xe3500702  <OBJ/BSS>
+  001499dc  .word 0xe1a04000  <OBJ/BSS>
+  001499e0  .word 0x83a04702  <OBJ/BSS>
+  001499e4  .word 0x8a000001  <OBJ/BSS>
+  001499e8  .word 0xe3540000  <OBJ/BSS>
+  001499ec  .word 0x3a04040
+  001499f0  .word 0xe3560001  <OBJ/BSS>
+  001499f4  .word 0x9a000007  <OBJ/BSS>
+  001499f8  .word 0xe5950004  <OBJ/BSS>
+  001499fc  .word 0xe28f1f49  <OBJ/BSS>
+  00149a00  .word 0xebfae8c4  <OBJ/BSS>
+  00149a04  .word 0xe3500000  <OBJ/BSS>
+  00149a08  .word 0x1a000002
+  00149a0c  .word 0xe3a08001  <OBJ/BSS>
+  00149a10  .word 0xe28f0f45  <OBJ/BSS>
+  00149a14  .word 0xfafae39f  <OBJ/BSS>
+  00149a18  .word 0xe3a01001  <OBJ/BSS>
+  00149a1c  .word 0xe1a00004  <OBJ/BSS>
+  00149a20  .word 0xeb0299e7  <OBJ/BSS>
+  00149a24  .word 0xe1b05000  <OBJ/BSS>
+  00149a28  .word 0x3a00004
+  00149a2c  .word 0x28dd03c
+  00149a30  .word 0x8bd8ff0
+  00149a34  .word 0xe1a01004  <OBJ/BSS>
+  00149a38  .word 0xebfae876  <OBJ/BSS>
+  00149a3c  .word 0xe59f00f8  <OBJ/BSS>
+  00149a40  .word 0xe28d1038  <OBJ/BSS>
+  00149a44  .word 0xe3a02000  <OBJ/BSS>
+  00149a48  .word 0xebfb476c  <OBJ/BSS>
+  00149a4c  .word 0xe3500000  <OBJ/BSS>
+  00149a50  .word 0xafffff9
+  00149a54  .word 0xe3a0a000  <OBJ/BSS>
+  00149a58  .word 0xe28d0004  <OBJ/BSS>
+  00149a5c  .word 0xe58d5000  <OBJ/BSS>
+  00149a60  .word 0xe8800410  <OBJ/BSS>
+  00149a64  .word 0xe59f90d4  <OBJ/BSS>
+  00149a68  .word 0xe59f10d4  <OBJ/BSS>
+  00149a6c  .word 0xe899000c  <OBJ/BSS>
+  00149a70  .word 0xe28d000c  <OBJ/BSS>
+  00149a74  .word 0xebff66b2  <OBJ/BSS>
+  00149a78  .word 0xe3a07000  <OBJ/BSS>
+  00149a7c  .word 0xe59fb0c4  <OBJ/BSS>
+  00149a80  .word 0xe1a06007  <OBJ/BSS>
+  00149a84  .word 0xebfe0819  <OBJ/BSS>
+  00149a88  .word 0xe5901000  <OBJ/BSS>
+  00149a8c  .word 0xe1a0300b  <OBJ/BSS>
+  00149a90  .word 0xe591c008  <OBJ/BSS>
+  00149a94  .word 0xe3a02000  <OBJ/BSS>
+  00149a98  .word 0xe28d100c  <OBJ/BSS>
+  00149a9c  .word 0xe12fff3c  <OBJ/BSS>
+  00149aa0  .word 0xe3500000  <OBJ/BSS>
+  00149aa4  .word 0xa000002
+  00149aa8  .word 0xe3500001  <OBJ/BSS>
+  00149aac  .word 0x2866001
+  00149ab0  .word 0xea00000e  <OBJ/BSS>
+  00149ab4  .word 0xe59d0030  <OBJ/BSS>
+  00149ab8  .word 0xe3580000  <OBJ/BSS>
+  00149abc  .word 0xe2866001  <OBJ/BSS>
+  00149ac0  .word 0xe0877000  <OBJ/BSS>
+  00149ac4  .word 0xa000009
+  00149ac8  .word 0xe1500004  <OBJ/BSS>
+  00149acc  .word 0x1a000007
+  00149ad0  .word 0xe28d0004  <OBJ/BSS>
+  00149ad4  .word 0xe58d5000  <OBJ/BSS>
+  00149ad8  .word 0xe8800410  <OBJ/BSS>
+  00149adc  .word 0xe899000c  <OBJ/BSS>
+  00149ae0  .word 0xe59f105c  <OBJ/BSS>
+  00149ae4  .word 0xe28d000c  <OBJ/BSS>
+  00149ae8  .word 0xebff6666  <OBJ/BSS>
+  00149aec  .word 0xeaffffe4  <OBJ/BSS>
+  00149af0  .word 0xe5dd001d  <OBJ/BSS>
+  00149af4  .word 0xe5dd201e  <OBJ/BSS>
+  00149af8  .word 0xe1a03007  <OBJ/BSS>
+  00149afc  .word 0xe3500000  <OBJ/BSS>
+  00149b00  .word 0x128f1044

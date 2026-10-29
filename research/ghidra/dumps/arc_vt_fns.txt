@@ -1,0 +1,198 @@
+
+############ site 1708cc
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 1715b8
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 17185c
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 171a38
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 171b2c
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 171d34
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 171e98
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 171ee0
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 171f30
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 1720b0
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 1720d4
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 17210c
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 172174
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 172190
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 1721b4
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 1722a8
+ERR ghidra.program.model.listing.ContextChangeException: Context register change conflicts with one or more instructions
+
+############ site 1723e8
+=== FUN_001723e8 @ 001723e8
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_001723e8(undefined4 *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  undefined4 unaff_r5;
+  undefined4 unaff_r6;
+  undefined4 unaff_r9;
+  undefined4 unaff_r11;
+  undefined4 unaff_lr;
+  bool in_OV;
+  
+  if (in_OV) {
+    *param_1 = param_4;
+    param_1[1] = unaff_r5;
+    param_1[2] = unaff_r6;
+    param_1[3] = unaff_r9;
+    param_1[4] = unaff_r11;
+    param_1[5] = register0x00000054;
+    param_1[6] = unaff_lr;
+  }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+############ site 172628
+=== FUN_00172628 @ 00172628
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_00172628(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+############ site 172680
+=== FUN_00172680 @ 00172680
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_00172680(void)
+
+{
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
+
+############ site 1726cc
+=== FUN_001726cc @ 001726cc
+
+/* WARNING: Control flow encountered bad instruction data */
+
+void FUN_001726cc(uint param_1,undefined4 param_2,short param_3,undefined4 param_4)
+
+{
+  short sVar1;
+  undefined4 *puVar2;
+  int unaff_r4;
+  undefined4 unaff_r5;
+  undefined4 *unaff_r6;
+  int unaff_r7;
+  undefined4 *unaff_r8;
+  undefined4 *unaff_r9;
+  undefined4 unaff_r11;
+  undefined4 in_r12;
+  undefined4 uVar3;
+  undefined4 unaff_lr;
+  undefined4 uVar4;
+  char in_NG;
+  bool in_ZR;
+  bool in_CY;
+  bool in_OV;
+  undefined4 in_cr2;
+  
+  sVar1 = (short)((uint)unaff_r9 >> 0x10);
+  if (in_ZR || (bool)in_NG != in_OV) {
+    unaff_r7 = (int)sVar1 * (int)param_3 + unaff_r4;
+  }
+  if (!in_CY || in_ZR) {
+    *unaff_r6 = unaff_lr;
+    unaff_r6[-1] = register0x00000054;
+    unaff_r6[-2] = unaff_r11;
+    unaff_r6[-3] = unaff_r7;
+    unaff_r6[-4] = param_1;
+  }
+  if (in_OV) {
+    unaff_lr = *unaff_r8;
+    register0x00000054 = (BADSPACEBASE *)unaff_r8[-1];
+    param_1 = unaff_r8[-2];
+    unaff_r8 = unaff_r8 + -3;
+    unaff_r6 = (undefined4 *)(param_1 ^ (int)param_1 >> 0x10);
+  }
+  if ((bool)in_NG != in_OV) {
+    coprocessor_loadlong(0,in_cr2,unaff_r8);
+  }
+  if (in_CY) {
+    *(undefined4 *)(param_1 - 4) = unaff_lr;
+    *(BADSPACEBASE **)(param_1 - 8) = register0x00000054;
+    *(undefined4 *)(param_1 - 0xc) = unaff_r11;
+    *(int *)(param_1 - 0x10) = unaff_r7;
+    *(undefined4 **)(param_1 - 0x14) = unaff_r6;
+    *(uint *)(param_1 - 0x18) = param_1;
+  }
+  if (in_OV) {
+    *unaff_r9 = 0x1726ec;
+    unaff_r9[-1] = unaff_lr;
+    unaff_r9[-2] = in_r12;
+    unaff_r9[-3] = param_4;
+    unaff_r9[-4] = param_1;
+  }
+  if (in_ZR || (bool)in_NG != in_OV) {
+    unaff_r6 = (undefined4 *)((int)sVar1 * (int)param_3 + unaff_r4);
+  }
+  if (!in_CY || in_ZR) {
+    *unaff_r6 = unaff_lr;
+    unaff_r6[-1] = register0x00000054;
+    unaff_r6[-2] = unaff_r11;
+    unaff_r6[-3] = unaff_r7;
+    unaff_r6[-4] = unaff_r6;
+    unaff_r6[-5] = param_1;
+  }
+  if (in_OV) {
+    uVar4 = *unaff_r8;
+    uVar3 = unaff_r8[-1];
+    puVar2 = (undefined4 *)unaff_r8[-2];
+    *puVar2 = 0x172700;
+    puVar2[-1] = uVar4;
+    puVar2[-2] = uVar3;
+    puVar2[-3] = unaff_r5;
+    puVar2[-4] = unaff_r4;
+    puVar2[-5] = param_4;
+    puVar2[-6] = puVar2;
+  }
+                    /* WARNING: Bad instruction - Truncating control flow here */
+  halt_baddata();
+}
+
+
