@@ -1,0 +1,243 @@
+=== REGISTRAR FUNCTIONS (callers of attach/sds-register) ===
+? : [6e06c@000835d0, 6e06c@000abeac, 16dd44@0014dfc8, 14d890@0014dfdc]
+FUN_00037704 @ 00037704 : [16dd44@00037730, 14d890@0003773e, 14d890@00037746]
+    str 37758:'ptp'
+    str 3775c:'ptp shell command'
+FUN_0004037c @ 0004037c : [16dd44@000403fc]
+FUN_00041e9c @ 00041e9c : [16dd44@00041efc]
+FUN_00042618 @ 00042618 : [16dd44@00042670, 14d890@00042684]
+    str 42690:'Telnet command Init
+'
+    str 426b0:'telnet'
+    str 426b8:'telnet <start|stop>'
+FUN_0004664c @ 0004664c : [16dd44@00046674]
+FUN_0004a894 @ 0004a894 : [14d890@0004a8a0]
+    str 4a8dc:'sys'
+FUN_00052038 @ 00052038 : [6e06c@000520b4]
+    str 38:'8
+''
+FUN_00054d88 @ 00054d88 : [6e06c@00054da2]
+    str 2000:'                                                                                                                        '
+    str 54f18:'RtspServerThread'
+    str 54f3c:'RtspServerTimer'
+FUN_00055f30 @ 00055f30 : [6e06c@00055f54]
+    str 56130:'SAPService'
+    str 56140:'CriticalSection'
+FUN_00058bd4 @ 00058bd4 : [6e06c@00058c00]
+    str 2000:'                                                                                                                        '
+    str 58d58:'SIPHandler'
+FUN_00063a44 @ 00063a44 : [6e06c@00063a6c]
+    str 63b50:'SAPReceiver'
+FUN_00064730 @ 00064730 : [16dd44@0006474e]
+FUN_00064820 @ 00064820 : [16dd44@000648c8]
+FUN_000673cc @ 000673cc : [6e06c@000673f8]
+    str 6749c:'ARCTCPServer'
+FUN_000685f4 @ 000685f4 : [6e06c@00068634]
+    str 68884:'%s/Streaming'
+FUN_0006a5e0 @ 0006a5e0 : [6e06c@0006a610]
+    str 6a66c:'HalUIControl'
+    str 6a680:'CriticalSection'
+FUN_0006d7e8 @ 0006d7e8 : [6e06c@0006d7fe]
+FUN_0006f294 @ 0006f294 : [6e06c@0006f2b8]
+FUN_0006fb8c @ 0006fb8c : [14d890@0006fbf0]
+    str 6fc04:'4
+$`framer'
+    str 6fc08:'framer'
+    str 6fc10:'framer routing and internal statistics'
+    str 6fc3c:'warp'
+FUN_0006fc90 @ 0006fc90 : [6e06c@0006fcd0]
+FUN_0007009c @ 0007009c : [6e06c@000700e8]
+FUN_00077ff8 @ 00077ff8 : [6e06c@00078024]
+    str 780bc:'ARCUDPListener'
+FUN_0007def0 @ 0007def0 : [14d890@0007df00]
+FUN_000825cc @ 000825cc : [6e06c@000825f0]
+    str 82770:'ARCTransportSPI'
+    str 82784:'/cfg/AppSettings/ARC/SPI'
+    str 827a0:'RequestPinActiveLevel'
+    str 827b8:'ERROR: ARCTransportSPI: Request pin active level undefined
+'
+    str 827f4:'high'
+    str 827fc:'low'
+    str 82800:'ERROR: ARCTransportSPI: Request pin active level invalid
+'
+    str 8283c:'RequestPinGPIONumber'
+    str 82854:'ERROR: ARCTransportSPI: Request pin info not found in CnE
+'
+    str 82890:'/dev/spiSlave'
+    str 828a0:'ERROR: ARCTransportSPI: Could not open SPI device for sending
+'
+    str 828e0:'ERROR: ARCTransportSPI: Could not set tx access wait option
+'
+    str 82920:'ERROR: ARCTransportSPI: Could not set tx transmit wait option
+'
+    str 82960:'ERROR: ARCTransportSPI: Could not set request pin
+'
+FUN_00085bf0 @ 00085bf0 : [14d890@00085c20]
+    str 85c2c:'dsp'
+    str 85c30:'starts dsp process'
+    str 85c44:'dsp	'stop|44.1|48|88.2|96'
+'
+FUN_00085f24 @ 00085f24 : [14d890@00085f88]
+    str 85f9c:'|	$`deframer'
+    str 85fa0:'deframer'
+    str 85fac:'deframer routing and internal statistics'
+    str 85fd8:'TE&`warp'
+    str 85fdc:'warp'
+FUN_00088dd0 @ 00088dd0 : [6e06c@00088de6]
+    str 88fa8:'mDNSResponder'
+FUN_0008a584 @ 0008a584 : [6e06c@0008a5a8]
+    str 1c200:'HAICon'
+    str 8a944:'ARCTransportUART'
+    str 8a964:'/cfg/AppSettings/ARC/UART'
+    str 8a980:'Interface'
+    str 8a98c:'ERROR: ARCTransportUART: '%s' configuration not found
+'
+    str 8a9c4:'Baudrate'
+    str 8a9d0:'Parity'
+    str 8a9d8:'uart1'
+    str 8a9e0:'uart2'
+    str 8a9e8:'uart3'
+    str 8a9f0:'uart0'
+    str 8a9f8:'ARCTransportUART: Disabling the shell...
+'
+    str 8aa24:'/dev/'
+    str 8aa30:'ERROR: ARCTransportUART: Could not open %s for sending
+'
+    str 8aa68:'ERROR: RCTransportUART: Could not set terminal mode for %s
+'
+    str 8aaa4:'odd'
+    str 8aaa8:'even'
+    str 8aab0:'ERROR: RCTransportUART: Could not configure %s
+'
+    str 8aae0:'ERROR: RCTransportUART: Could not set wait option on %s
+'
+FUN_00094c54 @ 00094c54 : [16dd44@00094d1c]
+    str 94d3c:'l0&`'
+FUN_00098574 @ 00098574 : [6e06c@0009859c, 14d890@00098750, 14d890@0009877c, 14d890@000987c8]
+    str 98928:'USBDrvRxThread'
+    str 98940:'TxDmaComplete'
+    str 98950:'RxDmaComplete'
+    str 98978:'USBBusDriver Lock'
+    str 98994:'USB Rx Ep%d lock'
+    str 989a8:'USB Tx Ep%d lock'
+FUN_000b462c @ 000b462c : [14d890@000b467e, 14d890@000b4698, 14d890@000b46b2, 16dd44@000b477a]
+    str b47dc:'StreamDeviceMgrImpl'
+    str b47f0:'l0&`T'@`AudioHWService'
+    str b47f4:'T'@`AudioHWService'
+    str b47f8:'AudioHWService'
+FUN_000c2248 @ 000c2248 : [6e06c@000c23f8]
+    str c24f4:'l0&`AudioHWService'
+    str c24f8:'AudioHWService'
+    str c2510:'Pulse Generator'
+    str c2524:'ERROR: sent %d pulses, requested %d
+'
+    str c254c:'ERROR: could not get AudioHWService
+'
+    str c2574:'ERROR: could not get pulser GPIO (%d)
+'
+    str c259c:'ERROR: could not get receiver GPIO (%d)
+'
+    str c25c8:'ERROR: unable to install interrupt handler.
+'
+    str c265c:'ERROR: got %d interrupts, expected %d
+'
+    str c2684:'PASSED: sent/received %d pulses
+'
+FUN_000c2bfc @ 000c2bfc : [14d890@000c2c16]
+FUN_000c8fb0 @ 000c8fb0 : [14d890@000c8fe0]
+    str c8fec:'sync'
+    str c8ff4:'switch to sync input:'
+    str c900c:'sync	 line, ptp, wclk, ext, reset
+'
+FUN_000cad14 @ 000cad14 : [14d890@000cad44]
+    str cad50:'config'
+    str cad58:'set configuration'
+FUN_000cc07c @ 000cc07c : [6e06c@000cc0a4]
+    str cc0e4:'DSPProcessHelper'
+FUN_000cc42c @ 000cc42c : [6e06c@000cc464]
+    str cc580:'TelnetServer'
+    str cc590:'ByteStream'
+    str cc5a4:'`F&`TelnetShell Event'
+    str cc5a8:'TelnetShell Event'
+FUN_000d9ce0 @ 000d9ce0 : [6e06c@000d9f54]
+    str d9e10:'status'
+    str d9e18:'start'
+    str d9e20:'stop'
+    str d9e28:'ERROR: SD-Ram Stress Thread is not running!
+'
+    str d9e58:'SD-Ram Stress Thread stopped (errorCount=%d).
+'
+    str d9e88:'SD-Ram Stress Thread not running
+'
+    str d9eac:'SD-Ram Stress Thread running (errorCount=%d)
+'
+    str d9edc:'nc'
+    str d9ee0:'ERROR: SD-Ram Stress Thread already running!
+'
+    str d9ef0:'ress Thread already running!
+'
+    str da080:'SD-Ram Stress Test'
+    str da09c:'l0&`AudioHWService'
+    str da0a0:'AudioHWService'
+    str da0b0:'ERROR: could not get AudioHWService
+'
+    str da0d8:'ERROR: could not get Sdram-Erorr GPIO (%d)
+'
+FUN_000daf68 @ 000daf68 : [6e06c@000daf90]
+    str dafc8:'CPU Load Supervisor'
+FUN_000dbba8 @ 000dbba8 : [16dd44@000dbc1c]
+    str dbd18:' #`'
+    str dbd28:'H*@`%-30s %3u%% (%d/%d)
+'
+    str dbd2c:'%-30s %3u%% (%d/%d)
+'
+FUN_000e275c @ 000e275c : [14d890@000e278c]
+    str e2798:'ptest'
+    str e27a0:'execute production tests'
+FUN_000e7e0c @ 000e7e0c : [14d890@000e7eb4]
+    str e7ec0:'fba'
+    str e7ec4:'file allocator'
+FUN_00111154 @ 00111154 : [6e06c@00111188]
+    str 1112b0:'L]&`Timer'
+    str 1112b4:'Timer'
+    str 1112c0:'Event'
+    str 1112cc:'TimerIsWaiting'
+FUN_0014a4ec @ 0014a4ec : [6e06c@0014a510]
+    str 14a528:'AV3test'
+FUN_0014c354 @ 0014c354 : [16dd44@0014c4d8, 14d890@0014c4ec]
+    str 14c508:'warp'
+    str 14c510:'warp commands'
+FUN_0014e8a4 @ 0014e8a4 : [6e06c@0014e8d4]
+    str 14ebdc:'ShellThread'
+    str 14ebf0:'SystemDataService'
+    str 14ec10:'
+Error: Could not allocate memory for command-line or path!
+'
+    str 2000:'                                                                                                                        '
+FUN_00150d7c @ 00150d7c : [6e06c@00150d8e]
+    str 150dd0:'WebSocket'
+FUN_001521c0 @ 001521c0 : [6e06c@001521d8]
+    str 1523ac:'WebServer'
+    str 1523d0:'_http._tcp'
+    str 2000:'                                                                                                                        '
+FUN_0015727c @ 0015727c : [16dd44@001572f4]
+FUN_00161714 @ 00161714 : [16dd44@0016172c]
+    str 16173c:'PY@`'
+FUN_0017037c @ 0017037c : [16dd44@0017037e]
+FUN_0017e59c @ 0017e59c : [16dd44@0017e5ec, 14d890@0017e600, 16dd44@0017e650, 14d890@0017e664, 16dd44@0017e6b4, 14d890@0017e6c8, 16dd44@0017e728, 14d890@0017e73c, 16dd44@0017e794, 14d890@0017e7a8, 16dd44@0017e800, 14d890@0017e814, 16dd44@0017e86c, 14d890@0017e880]
+    str 17e898:'shell'
+    str 17e8a0:'shell [-b|-i|-o|-s] - shell configuration'
+    str 17e8e0:'clear'
+    str 17e8e8:'clear shell history'
+    str 17e910:'pwd'
+    str 17e914:'pwd - shows the complete currently used path'
+    str 17e944:'  usage: pwd
+'
+    str 17e96c:'get'
+    str 17e984:'set'
+    str 17e99c:'ls'
+    str 17e9a0:'ls [-r|-n|-e|-v] - shows content of (current) directory'
+    str 17e9ec:'cd'
+    str 17e9f0:'cd <dir> - changes current directory to <dir>'
+FUN_001ac668 @ 001ac668 : [16dd44@001ac696]
+total funcs: 54

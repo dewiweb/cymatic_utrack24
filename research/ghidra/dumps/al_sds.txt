@@ -1,0 +1,94 @@
+=== REGISTRAR FUNCTIONS (callers of attach/sds-register) ===
+? : [16dd44@0014dfc8, 14d890@0014dfdc]
+FUN_00037704 @ 00037704 : [16dd44@00037730, 14d890@0003773e, 14d890@00037746]
+    str 37758:'ptp'
+    str 3775c:'ptp shell command'
+FUN_0004037c @ 0004037c : [16dd44@000403fc]
+FUN_00041e9c @ 00041e9c : [16dd44@00041efc]
+FUN_00042618 @ 00042618 : [16dd44@00042670, 14d890@00042684]
+    str 42690:'Telnet command Init
+'
+    str 426b0:'telnet'
+    str 426b8:'telnet <start|stop>'
+FUN_0004664c @ 0004664c : [16dd44@00046674]
+FUN_0004a894 @ 0004a894 : [14d890@0004a8a0]
+    str 4a8dc:'sys'
+FUN_00064730 @ 00064730 : [16dd44@0006474e]
+FUN_00064820 @ 00064820 : [16dd44@000648c8]
+FUN_0006fb8c @ 0006fb8c : [14d890@0006fbf0]
+    str 6fc04:'4
+$`framer'
+    str 6fc08:'framer'
+    str 6fc10:'framer routing and internal statistics'
+    str 6fc3c:'warp'
+FUN_0007def0 @ 0007def0 : [14d890@0007df00]
+FUN_00085bf0 @ 00085bf0 : [14d890@00085c20]
+    str 85c2c:'dsp'
+    str 85c30:'starts dsp process'
+    str 85c44:'dsp	'stop|44.1|48|88.2|96'
+'
+FUN_00085f24 @ 00085f24 : [14d890@00085f88]
+    str 85f9c:'|	$`deframer'
+    str 85fa0:'deframer'
+    str 85fac:'deframer routing and internal statistics'
+    str 85fd8:'TE&`warp'
+    str 85fdc:'warp'
+FUN_00094c54 @ 00094c54 : [16dd44@00094d1c]
+    str 94d3c:'l0&`'
+FUN_00098574 @ 00098574 : [14d890@00098750, 14d890@0009877c, 14d890@000987c8]
+    str 98928:'USBDrvRxThread'
+    str 98940:'TxDmaComplete'
+    str 98950:'RxDmaComplete'
+    str 98978:'USBBusDriver Lock'
+    str 98994:'USB Rx Ep%d lock'
+    str 989a8:'USB Tx Ep%d lock'
+FUN_000b462c @ 000b462c : [14d890@000b467e, 14d890@000b4698, 14d890@000b46b2, 16dd44@000b477a]
+    str b47dc:'StreamDeviceMgrImpl'
+    str b47f0:'l0&`T'@`AudioHWService'
+    str b47f4:'T'@`AudioHWService'
+    str b47f8:'AudioHWService'
+FUN_000c2bfc @ 000c2bfc : [14d890@000c2c16]
+FUN_000c8fb0 @ 000c8fb0 : [14d890@000c8fe0]
+    str c8fec:'sync'
+    str c8ff4:'switch to sync input:'
+    str c900c:'sync	 line, ptp, wclk, ext, reset
+'
+FUN_000cad14 @ 000cad14 : [14d890@000cad44]
+    str cad50:'config'
+    str cad58:'set configuration'
+FUN_000dbba8 @ 000dbba8 : [16dd44@000dbc1c]
+    str dbd18:' #`'
+    str dbd28:'H*@`%-30s %3u%% (%d/%d)
+'
+    str dbd2c:'%-30s %3u%% (%d/%d)
+'
+FUN_000e275c @ 000e275c : [14d890@000e278c]
+    str e2798:'ptest'
+    str e27a0:'execute production tests'
+FUN_000e7e0c @ 000e7e0c : [14d890@000e7eb4]
+    str e7ec0:'fba'
+    str e7ec4:'file allocator'
+FUN_0014c354 @ 0014c354 : [16dd44@0014c4d8, 14d890@0014c4ec]
+    str 14c508:'warp'
+    str 14c510:'warp commands'
+FUN_0015727c @ 0015727c : [16dd44@001572f4]
+FUN_00161714 @ 00161714 : [16dd44@0016172c]
+    str 16173c:'PY@`'
+FUN_0017037c @ 0017037c : [16dd44@0017037e]
+FUN_0017e59c @ 0017e59c : [16dd44@0017e5ec, 14d890@0017e600, 16dd44@0017e650, 14d890@0017e664, 16dd44@0017e6b4, 14d890@0017e6c8, 16dd44@0017e728, 14d890@0017e73c, 16dd44@0017e794, 14d890@0017e7a8, 16dd44@0017e800, 14d890@0017e814, 16dd44@0017e86c, 14d890@0017e880]
+    str 17e898:'shell'
+    str 17e8a0:'shell [-b|-i|-o|-s] - shell configuration'
+    str 17e8e0:'clear'
+    str 17e8e8:'clear shell history'
+    str 17e910:'pwd'
+    str 17e914:'pwd - shows the complete currently used path'
+    str 17e944:'  usage: pwd
+'
+    str 17e96c:'get'
+    str 17e984:'set'
+    str 17e99c:'ls'
+    str 17e9a0:'ls [-r|-n|-e|-v] - shows content of (current) directory'
+    str 17e9ec:'cd'
+    str 17e9f0:'cd <dir> - changes current directory to <dir>'
+FUN_001ac668 @ 001ac668 : [16dd44@001ac696]
+total funcs: 28
