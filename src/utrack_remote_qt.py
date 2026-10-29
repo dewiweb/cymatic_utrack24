@@ -25,6 +25,21 @@ QGroupBox{background:#1d2128;border:1px solid #2f353f;border-radius:8px;margin-t
 QGroupBox::title{subcontrol-origin:margin;subcontrol-position:top left;left:12px;padding:0 8px;color:#8b94a1}
 QGroupBox:disabled{color:#545b66}
 
+/* ---- routage AES67 : ligne de canal, led d'etat, modifications ---- */
+QFrame#routeRow{background:#181c22;border:1px solid #262c35;border-radius:6px}
+QFrame#routeRow[dirty="true"]{border:1px solid #3fa7ff}
+QLabel#chNum{background:#232830;border:1px solid #39404b;border-radius:4px;padding:2px 4px;font-weight:700;color:#8fc9ff}
+QFrame#led{border-radius:5px;background:#3a404a;border:1px solid #2b3038}
+QFrame#led[st="ok"]{background:#58c184;border-color:#47a06d}
+QFrame#led[st="warn"]{background:#e0b04e;border-color:#bd8f34}
+QFrame#led[st="err"]{background:#e05252;border-color:#c23e3e}
+QLabel#routeName{font-weight:600;color:#c8cfd8}
+QLabel#routeStat{font-size:8pt;color:#767f8b}
+QLabel#routeStat[st="ok"]{color:#58c184}
+QLabel#routeStat[st="warn"]{color:#e0b04e}
+QLabel#routeStat[st="err"]{color:#ff8d84}
+QLabel#dirty{color:#e0b04e;font-weight:600}
+
 /* ---- labels ---- */
 QLabel#dim{color:#8b94a1}
 QLabel#info{color:#8b94a1}
@@ -316,18 +331,23 @@ class Win(QMainWindow):
         self.btn_alan=QPushButton('Rafraîchir');self.btn_alan.clicked.connect(self._alan_refresh);hb.addWidget(self.btn_alan)
         self.btn_alan_apply=QPushButton('Appliquer');self.btn_alan_apply.setEnabled(False)
         self.btn_alan_apply.clicked.connect(self._alan_apply);hb.addWidget(self.btn_alan_apply)
+        self.alan_dirty=QLabel('',objectName='dirty');hb.addWidget(self.alan_dirty);hb.addSpacing(10)
         self.btn_alan_reb=QPushButton('Redémarrer');self.btn_alan_reb.clicked.connect(self._alan_reboot);hb.addWidget(self.btn_alan_reb)
         self.btn_alan_fw=QPushButton('Firmware…');self.btn_alan_fw.clicked.connect(self._alan_upload);hb.addWidget(self.btn_alan_fw)
-        self.alan_info=QLabel('—');hb.addWidget(self.alan_info);hb.addStretch(1);v.addLayout(hb)
-        gb=QGroupBox('Routing — réseau → audio (24 sorties)');rg=QVBoxLayout(gb)
-        self.route_grid=QGridLayout();self.route_grid.setSpacing(4)
-        rg.addLayout(self.route_grid)
-        scw=QWidget();scw.setLayout(rg)
-        sc=QScrollArea();sc.setWidgetResizable(True);sc.setWidget(scw);sc.setMaximumHeight(300)
-        v.addWidget(sc,1)
+        hb.addStretch(1);self.alan_info=QLabel('—',objectName='info');hb.addWidget(self.alan_info);v.addLayout(hb)
+        gb=QGroupBox('Routage — réseau → audio');gg=QVBoxLayout(gb)
+        self.alan_streams_lbl=QLabel('Streams découverts : —',objectName='info');gg.addWidget(self.alan_streams_lbl)
+        sc=QScrollArea();sc.setWidgetResizable(True)
+        scw=QWidget();self.route_grid=QGridLayout(scw)
+        self.route_grid.setSpacing(6);self.route_grid.setHorizontalSpacing(14)
+        self.route_grid.setColumnStretch(0,1);self.route_grid.setColumnStretch(1,1)
+        sc.setWidget(scw);gg.addWidget(sc);v.addWidget(gb,3)
+        gbc=QGroupBox('Configuration AudioLAN — sources · réseau · système · streams');cv=QVBoxLayout(gbc)
         self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
         self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
-        v.addWidget(self.atree,1)
+        self.atree.itemChanged.connect(self._alan_tree_dirty)
+        cv.addWidget(self.atree);v.addWidget(gbc,2)
+        self._tree_dirty=False
         return w
 
     def _alan_refresh(self):
@@ -343,6 +363,7 @@ class Win(QMainWindow):
 
     def _fill_alan(self,data):
         g,src,out,sl=data
+        self.atree.blockSignals(True)
         self.atree.clear();self._edit_items=[]
         cfg=g.get('ArchwaveAES67',{}).get('config',{})
         self.alan_info.setText('%s — %s'%(cfg.get('name','?'),cfg.get('currentIPaddress','?')))
@@ -379,7 +400,7 @@ class Win(QMainWindow):
         leaf(g1,'SAP annonces',sap,'SessionAnnouncementEnabled','bool')
         leaf(g1,'SAP browsing',sap,'BrowsingEnabled','bool')
         self._alan_cfg['SAP']=sap
-        self.atree.addTopLevelItem(g1);g1.setExpanded(True)
+        self.atree.addTopLevelItem(g1);g1.setExpanded(False)
         g0=QTreeWidgetItem(['Système',''])
         try:
             sv=self.alan.sw_versions().get('ArchwaveVER',{})
@@ -400,19 +421,28 @@ class Win(QMainWindow):
             leaf(it,'Multicast',s,'multicastAddress')
             leaf(it,'RTP TTL',s,'RTPTTL')
             leaf(it,'SIP user',s,'SIPusername')
-        self.atree.addTopLevelItem(g2);g2.setExpanded(True)
-        self.btn_alan_apply.setEnabled(bool(self._edit_items))
+        self.atree.addTopLevelItem(g2);g2.setExpanded(False)
+        g4=QTreeWidgetItem(['Streams actifs',''])
+        for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
+            QTreeWidgetItem(g4,[str(s)[:80],''])
+        self.atree.addTopLevelItem(g4);g4.setExpanded(False)
+        self.atree.blockSignals(False)
+        self._tree_dirty=False
         self._alan_out=out.get('ArchwaveAES67',{}).get('outputs',[])
         streams=sl.get('ArchwaveAES67',{}).get('streams',[])
         choices=['—']
         for s in streams:
             for ch in range(1,int(s.get('channelCount',8))+1):
                 choices.append('%s/%d'%(s.get('name','?'),ch))
+        self.alan_streams_lbl.setText('Streams découverts : '+
+            (' · '.join('%s (%d ch)'%(s.get('name','?'),s.get('channelCount',0)) for s in streams) or 'aucun'))
         # table streamStatus officielle (GET /parameter_strings)
         SS={0:'Idle',1:'OK',2:'Transmitting',3:'Transmitting (unicast)',4:'Disabled',5:'Not enough Decoders',
             6:'Address Collision',7:'Waiting',8:'Receiving (no sync)',9:'Receiving (unicast, no sync)',
             10:'Receiving',11:'Receiving (unicast)',12:'Receiving (sync error)',13:'Receiving (time step warning)',
             14:'Invalid Sampling Rate',15:'Invalid PTP Domain'}
+        # led : 10/11=vert, 7/8/9=ambre, 13/14/15=rouge, sinon gris
+        CLS={10:'ok',11:'ok',7:'warn',8:'warn',9:'warn',13:'err',14:'err',15:'err'}
         stat={}
         try:stat={i:o.get('status') for i,o in enumerate(self.alan.status().get('ArchwaveAES67',{}).get('outputs',[]))}
         except Exception:pass
@@ -421,27 +451,48 @@ class Win(QMainWindow):
             it=self.route_grid.takeAt(0)
             if it.widget():it.widget().deleteLater()
         self._route_boxes=[]
+        n=len(self._alan_out);nrows=max(1,(n+1)//2)  # 2 colonnes de 12
         for i,o in enumerate(self._alan_out):
-            r=i//4;c=(i%4)*3
-            lb=QLabel('ch%d'% (i+1));lb.setObjectName('dim');lb.setFixedWidth(34)
-            st=stat.get(i)
-            sl2=QLabel(SS.get(st,'') if st is not None else '');sl2.setObjectName('dim')
-            sl2.setFixedWidth(120);sl2.setStyleSheet('font-size:8pt')
-            if st in (10,11):sl2.setStyleSheet('font-size:8pt;color:#58c184')
-            elif st in (14,15):sl2.setStyleSheet('font-size:8pt;color:#e06c6c')
+            row=QFrame();row.setObjectName('routeRow')
+            hl=QHBoxLayout(row);hl.setContentsMargins(8,4,8,4);hl.setSpacing(8)
+            chip=QLabel('%02d'%(i+1));chip.setObjectName('chNum');chip.setAlignment(Qt.AlignCenter);chip.setFixedWidth(34)
+            hl.addWidget(chip)
+            st=stat.get(i);cls=CLS.get(st,'idle')
+            led=QFrame();led.setObjectName('led');led.setFixedSize(10,10);led.setProperty('st',cls)
+            led.setToolTip('streamStatus : %s'%(SS.get(st,'inconnu') if st is not None else 'non lu'))
+            hl.addWidget(led,0,Qt.AlignVCenter)
+            nm=QLabel(o.get('name') or 'Output %d'%(i+1));nm.setObjectName('routeName')
+            nm.setFixedWidth(130);nm.setToolTip(nm.text());hl.addWidget(nm)
+            sl2=QLabel(SS.get(st,'—') if st is not None else '—');sl2.setObjectName('routeStat')
+            sl2.setProperty('st',cls);sl2.setFixedWidth(150);hl.addWidget(sl2)
             cb=QComboBox();cb.addItems(choices);cb.setMinimumWidth(200)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
-            cb.setCurrentIndex(ix if ix>=0 else 0)
-            self.route_grid.addWidget(lb,r,c)
-            self.route_grid.addWidget(cb,r,c+1)
-            self.route_grid.addWidget(sl2,r,c+2)
+            if cur and ix<0:cb.addItem(cur);ix=cb.count()-1  # stream hors-ligne : garder la valeur
+            cb.blockSignals(True);cb.setCurrentIndex(ix if ix>=0 else 0);cb.blockSignals(False)
+            cb.setProperty('loaded',cb.currentText());cb.setProperty('dirty',False)
+            cb.currentIndexChanged.connect(lambda _i,c=cb,r=row:self._alan_route_changed(c,r))
+            if o.get('manualSDP'):cb.setToolTip('manualSDP actif — Appliquer ecrira streamPath')
+            hl.addWidget(cb,1)
+            self.route_grid.addWidget(row,i%nrows,i//nrows)
             self._route_boxes.append((cb,o))
-        g4=QTreeWidgetItem(['Streams actifs',''])
-        for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
-            QTreeWidgetItem(g4,[str(s)[:80],''])
-        self.atree.addTopLevelItem(g4);g4.setExpanded(True)
+        self._alan_update_apply()
         self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(len(self._alan_src),len(self._alan_out)))
+
+    def _alan_route_changed(self,cb,row):
+        d=cb.currentText()!=cb.property('loaded')
+        cb.setProperty('dirty',d)
+        row.setProperty('dirty',d);row.style().unpolish(row);row.style().polish(row)
+        self._alan_update_apply()
+
+    def _alan_tree_dirty(self,*_a):
+        self._tree_dirty=True;self._alan_update_apply()
+
+    def _alan_update_apply(self):
+        n=sum(1 for cb,_ in getattr(self,'_route_boxes',[]) if cb.property('dirty'))
+        if getattr(self,'_tree_dirty',False):n+=1
+        self.btn_alan_apply.setEnabled(bool(n))
+        self.alan_dirty.setText('%d modification%s en attente'%(n,'s' if n>1 else '') if n else '')
 
     def _alan_reboot(self):
         if self.alan is None:return
@@ -683,7 +734,7 @@ class Win(QMainWindow):
             else:self._fill_takes(d)
         if self._alan_data is not None:
             d,self._alan_data=self._alan_data,None;self.btn_alan.setEnabled(True)
-            if isinstance(d,Exception):self.statusBar().showMessage('Erreur AudioLAN : %s'%d)
+            if isinstance(d,Exception):self.statusBar().showMessage('Erreur AudioLAN : %s'%d);self._alan_update_apply()
             else:self._fill_alan(d)
         if self._take_err is not None:
             e,self._take_err=self._take_err,None;self.btn_ref.setEnabled(True);self.btn_ren.setEnabled(True);self.btn_del.setEnabled(True)
