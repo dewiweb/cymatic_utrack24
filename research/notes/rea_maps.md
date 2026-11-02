@@ -425,3 +425,9 @@ c423 (enum/announce unicast), 5423 (sub sur 8123/9023 params), d842
 DllUnregisterServer => objet COM IASIO classique (vtable Steinberg), la
 couche streaming passe par IOCTLs 0x80892axx vers le .sys (buffer config,
 sample rate), cf section 7.
+
+## 17. Headers .bcd X32 (meme conteneur BcOd/Archwave)
+
+uTRACKX32: 2905 (build 20151008, 2243584B), 3865 (20170216, 2242560B),
+5000 (20181022, 2319360B). Header: BcOd | ver32(1) | build16B |
+0200 0000 | release_no32 @0x1c (0x0b59=2905, 0x0f19=3865, 0x1388=5000).
