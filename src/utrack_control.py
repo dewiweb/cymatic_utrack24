@@ -211,6 +211,9 @@ class UTrackControl:
     def save(self):self.ctrl(TRANSPORT,6)   # UI event 0x192 (Save/Back)
     def playlist_song(self,idx):self.ctrl(0xd008,int(idx))  # selector 4337 (classe 80)
     def playlist_exit(self):self.ctrl(0xd009,1)             # selector 4337
+    def file_up(self):self.ctrl(0xc003,0)                   # repertoire parent
+    def file_root(self):self.ctrl(0xc003,1)                 # racine
+    def file_sel(self,idx):self.ctrl(0xc003,0x1000|(idx&0xfff))  # entree idx: descend dir ou charge take
     def marker(self):self.ctrl(TRANSPORT,PLAY)   # Play pendant un enregistrement = nouveau marqueur (manuel uRemote p.15, verifie Take0012)
 
     def close(self):

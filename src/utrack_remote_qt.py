@@ -5,7 +5,7 @@ from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
     QVBoxLayout,QHBoxLayout,QGridLayout,QPushButton,QLabel,QProgressBar,
     QSlider,QDial,QCheckBox,QComboBox,QSpinBox,QScrollArea,QGroupBox,QMessageBox,
     QTreeWidget,QTreeWidgetItem,QPlainTextEdit,QInputDialog,QFrame,QHeaderView,
-    QGraphicsBlurEffect)
+    QGraphicsBlurEffect,QListWidget)
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
@@ -323,7 +323,25 @@ class Win(QMainWindow):
         self.tree.currentItemChanged.connect(self._take_sel);v.addWidget(self.tree,2)
         lg=QGroupBox('Journal (reclog.txt)');lv=QVBoxLayout(lg)
         self.reclog=QPlainTextEdit(readOnly=True);lv.addWidget(self.reclog);v.addWidget(lg,1)
+        bg=QGroupBox('Navigateur de fichiers (device)');bv=QHBoxLayout(bg)
+        bb=QVBoxLayout()
+        for lab,fn in (('⬆ Parent',self._file_up),('⌂ Racine',self._file_root)):
+            b=QPushButton(lab);b.clicked.connect(fn);bb.addWidget(b)
+        bb.addStretch(1);bv.addLayout(bb)
+        self.flist=QListWidget();self.flist.setToolTip('Entrees du repertoire courant (c011-c01a) — double-clic = ouvrir/charger')
+        self.flist.itemDoubleClicked.connect(lambda it:self.u and self.u.file_sel(self.flist.row(it)))
+        bv.addWidget(self.flist,1);v.addWidget(bg,1)
         return w
+
+    def _file_up(self):self.u and self.u.file_up()
+    def _file_root(self):self.u and self.u.file_root()
+    def _file_fill(self,st):
+        items=[]
+        for i in range(0xc011,0xc01b):
+            e=st.get(i)
+            if e and e[1]:items.append(str(e[1]))
+        if [self.flist.item(i).text() for i in range(self.flist.count())]!=items:
+            self.flist.clear();self.flist.addItems(items)
 
     def _audiolan(self):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
@@ -742,6 +760,7 @@ class Win(QMainWindow):
             self.statusBar().showMessage('Erreur : %s'%e)
         u=self.u
         with u.slock:st=dict(u.state)
+        self._file_fill(st)
         e=st.get(0xc000) or st.get(0xf000)
         if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
