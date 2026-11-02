@@ -578,3 +578,35 @@ Dispatcher: family = class_id>>8 & 0xff, sub = class_id & 0xff.
 - family 0x37: announce (0x100037c8 broadcast hors de ce switch)
 Encodage: 0x10 00 FF SS => FF=family, SS=sub-opcode. Handlers per-case
 via FUN_005af82d factory + dispatch objet.
+
+## 26. Grammaire SDS device (fw4218 strings) + decouvertes
+
+fileplay (aide @0x29acec):
+  route [<destChannel>|*],[<destChannel>|*],... or reset
+  configure <id> <fileName> <firstChannel> <playoutDelay> <noOfBuffers>
+    <bufferSize> <noOfBuffersToPreload> <notifySampleInterval>
+    {autostart} {<fileId> {{<switchSampleNumber>} {pause}}}
+  stop {<id>} | stat | mode | start | pause
+  next <id> <fileName> {<mark-in> {<mark-out> {<fileId> {<switchSampleNumber> {pause}}}}
+  next [preload|select] | mark <id> <mark-in> {{<mark-out>} {pause}}
+  samplecounter [start|stop|reset] {<sample_counter>} {<id>}
+  select <id> <fileId> | clear <id> | eof <id> [pause|continue]
+
+filerec (aide @0x29aff8):
+  maxlen <length>
+  configure <id> <fileName> <bitsPerSample> <firstChannel> <noOfChannels>
+    <noOfBuffers> <bufferSize> <notifySampleInterval> {autostart}
+  stop | mode | start | pause | stat | cue | prerecord
+  next <id> <fileName> | switch
+  samplecounter [start|stop|switch|reset] {<sample_counter>} {<id>}
+
+Enregistrement cmd SDS (FUN_000fa580): obj {vftable=DAT_000fa5f8,
+  name="fileplay", help, flags=DAT_000fa5f4, 1, arg} -> FUN_001a7b9c registry.
+
+Decouvertes fw4218:
+- Web UI Angular embarquee dans le firmware host (page firmware-update,
+  HTML/JS inline @0x29xxxx, Server: lwIP/1.3.1)
+- uTrack24SyncCL : machine d etats sync multi-unites
+  (enterGroupForming/cancelGroupForming/finishGroupForming/rebuildGroup/
+  leaveGroup/becomeSlave + SyncMsg uTS_Msg_* — protocole de sync
+  entre uTrack24 chaines en groupe)
