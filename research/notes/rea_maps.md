@@ -779,3 +779,19 @@ CnE carte (28): ARC/{DeviceInfo,SPI,UART,UDP}, Bonjour,
   {AnnouncementEnabled,BrowsingEnabled,MulticastAddress,Port,
    SessionTimeoutSeconds}, SIP
 Codecs RTP: AM824, AM824CU, FlexDelay, FlexDelayL16, L24, L16
+
+## 39. AudioLAN — chemins cachés / surfaces internes
+
+Chemins config/endpoints non-documentés extraits du fw:
+  /SHA204          — puce crypto Atmel SHA204 (auth/sign firmware?)
+  /SPDIF           — interface SPDIF (carte a un port SPDIF?)
+  /SlaveOnly       — PTP mode
+  /Exchange/samir  — endpoint debug/dev interne
+  /PDelay          — latence programme
+  /Transaction     — état transactionnel
+  /ServiceTypes    — types services réseau
+  /SDRamCfg        — config SDRAM
+  /USB/EP1/Rx/FifoSize — endpoints USB (fifo tuning)
+  /Streaming, /TTL, /Port, /Mode, /PTP, /ADAT, /AVP, /USB
+  /Shell/cne/Shell/ — shell SDS carte (confirme console :23)
+=> carte plus riche: crypto-auth SHA204, SPDIF, debug /Exchange.
