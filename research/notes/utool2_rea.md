@@ -80,3 +80,9 @@ Builder DOM : `FUN_00634c10`=create elem, `FUN_0061a340`=append child, `FUN_0061
 ## Negatif
 - `ArchwaveBCD` absent de uTool2 — le .BCD projet n'y est PAS ecrit (magic vu fw-side @0x116300, parser FUN_00115d40). uTool2 ecrit seulement song.set/.playlistprj/.play/sessions.xml
 - Writer .BCD = autre outil (uTool original? updater?) — a verifier dans uTool 1.1.46
+
+## uTool 1.1.46 (uTool.exe, x86)
+- Extrait de l'installeur Wayback (7z NSIS) : research/assets/software/utool_1146/extracted/uTool.exe
+- `ArchwaveBCD`/`BCD` **absent aussi** — le conteneur .BCD projet n'est ecrit par NI uTool2 NI uTool
+- => .BCD est probablement ecrit par le device lui-meme (export interne) ou l'updater firmware, pas par les outils PC
+- Reste a verifier : l'updater (.exe firmware) ou generation on-device
