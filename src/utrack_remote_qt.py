@@ -185,7 +185,7 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         self.gb_tr=QGroupBox('Transport');self.gb_tr.setObjectName('transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
-        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AES67 (AudioLAN)');self.tabs.addTab(self._matrix(),'Matrice');self.tabs.addTab(self._aoip(),'AoIP')
+        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AES67 (AudioLAN)');self.tabs.addTab(self._matrix(),'Matrice');self.tabs.addTab(self._aoip(),'AoIP');self.tabs.addTab(self._features(),'Fonctions+')
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
         self.overlay=QWidget(root);self.overlay.setObjectName('overlay')
         ov=QVBoxLayout(self.overlay);ov.addStretch(2)
@@ -887,6 +887,64 @@ class Win(QMainWindow):
         threading.Thread(target=run,daemon=True).start()
         self.statusBar().showMessage('statut USB…')
 
+    # ------------------------------------------------------ Fonctions+
+    def _features(self):
+        from PySide6.QtWidgets import QLineEdit
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
+        row=QHBoxLayout();row.setSpacing(10)
+        g1=QGroupBox('Sync multi-unités');g1v=QVBoxLayout(g1)
+        self.f_sync=QComboBox();self.f_sync.addItems(['Master','Slave','Standalone']);g1v.addWidget(self.f_sync)
+        b=QPushButton('Appliquer mode');b.clicked.connect(lambda:self._feat('sync','mode',self.f_sync.currentText()));g1v.addWidget(b)
+        self.f_gid=QLineEdit();self.f_gid.setPlaceholderText('GroupId');g1v.addWidget(self.f_gid)
+        b=QPushButton('Set GroupId');b.clicked.connect(lambda:self._feat('sync','group_id',self.f_gid.text()));g1v.addWidget(b)
+        row.addWidget(g1)
+        g2=QGroupBox('MIDI');g2v=QVBoxLayout(g2)
+        b=QPushButton('MIDI enable');b.clicked.connect(lambda:self._feat('midi','enable',True));g2v.addWidget(b)
+        self.f_midio=QLineEdit();self.f_midio.setPlaceholderText('MidiOffset ms');g2v.addWidget(self.f_midio)
+        b=QPushButton('Set offset');b.clicked.connect(lambda:self._feat('midi','offset',self.f_midio.text()));g2v.addWidget(b)
+        row.addWidget(g2)
+        g3=QGroupBox('Macros / Profils');g3v=QVBoxLayout(g3)
+        self.f_bat=QLineEdit();self.f_bat.setPlaceholderText('nom batch');g3v.addWidget(self.f_bat)
+        b=QPushButton('Exécuter bat');b.clicked.connect(lambda:self._feat('macros','run',self.f_bat.text()));g3v.addWidget(b)
+        b=QPushButton('Snapshot config → .json');b.clicked.connect(lambda:self._feat('profiles','save'));g3v.addWidget(b)
+        b=QPushButton('Restore .json');b.clicked.connect(lambda:self._feat('profiles','restore'));g3v.addWidget(b)
+        row.addWidget(g3)
+        v.addLayout(row,2)
+        g4=QGroupBox('Diagnostics RTOS');g4v=QHBoxLayout(g4)
+        for lab,cmd in (('Threads','os th'),('Mémoire','os free'),('Load','os load'),('Ver','sys ver')):
+            b=QPushButton(lab);b.clicked.connect(lambda _,c=cmd:self._feat_cmd(c));g4v.addWidget(b)
+        g4v.addStretch(1);v.addWidget(g4)
+        g5=QGroupBox('Routage bas niveau');g5v=QHBoxLayout(g5)
+        g5v.addWidget(QLabel('madi u→m :'));self.f_mu=QLineEdit();self.f_mm=QLineEdit();g5v.addWidget(self.f_mu);g5v.addWidget(self.f_mm)
+        b=QPushButton('madi input');b.clicked.connect(lambda:self._feat('routing','madi_input',int(self.f_mu.text() or 0),int(self.f_mm.text() or 0)));g5v.addWidget(b)
+        b=QPushButton('madi output');b.clicked.connect(lambda:self._feat('routing','madi_output',int(self.f_mu.text() or 0),int(self.f_mm.text() or 0)));g5v.addWidget(b)
+        g5v.addStretch(1);v.addWidget(g5)
+        self.feat_out=QPlainTextEdit(readOnly=True);v.addWidget(self.feat_out,2)
+        return w
+
+    def _feat(self,grp,meth,*args):
+        def run():
+            try:
+                with self._tlock:
+                    if self.tel is None:return
+                    import aoip_features
+                    f=aoip_features.attach(self.tel)
+                    r=getattr(getattr(f,grp),meth)(*args)
+                self._feat_res=r
+            except Exception as e:self._feat_res=e
+            self._feat_flag=True
+        self._feat_flag=False
+        threading.Thread(target=run,daemon=True).start()
+
+    def _feat_cmd(self,c):
+        def run():
+            try:
+                with self._tlock:self._feat_res=self.tel.cmd(c,2.0) if self.tel else None
+            except Exception as e:self._feat_res=e
+            self._feat_flag=True
+        self._feat_flag=False
+        threading.Thread(target=run,daemon=True).start()
+
     def _refresh(self):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
@@ -920,6 +978,11 @@ class Win(QMainWindow):
             d,self._alan_data=self._alan_data,None;self.btn_alan.setEnabled(True)
             if isinstance(d,Exception):self.statusBar().showMessage('Erreur AudioLAN : %s'%d);self._alan_update_apply()
             else:self._fill_alan(d)
+        if getattr(self,'_feat_flag',False):
+            self._feat_flag=False
+            r=getattr(self,'_feat_res',None)
+            if hasattr(self,'feat_out'):
+                self.feat_out.setPlainText(str(r) if r is not None else '')
         if getattr(self,'_aoip_data',None) is not None:
             d,self._aoip_data=self._aoip_data,None;self.btn_aoip.setEnabled(True)
             if isinstance(d,Exception):self.statusBar().showMessage('AoIP : %s'%d)
