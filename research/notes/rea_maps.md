@@ -445,3 +445,73 @@ StartDownload, GetDownloadStatus. Enum via InterfaceGuidUSB_%02d.
 proprietes/parametres — get/set/watch du tree VNM). Les noms SM_/APP_/LM_
 n apparaissent que pour les ops de haut niveau; le gros du trafic =
 Generic* (ctors 0x57d4xx-0x5889xx dans decomp_uremote).
+
+## 20. Contrat P/Invoke complet (Mixerpanel.decompiled.cs)
+
+### Signatures Call* (extrait, [DllImport Cdecl Unicode])
+```
+int CallGetNumberOfConnectedDevices(IntPtr pTestClassObject)
+void CallGetDeviceProps(IntPtr pTestClassObject, [In][Out] CDeviceProperties devProps, int iDeviceArrayIndex)
+void CallGetDriverInfo(IntPtr pTestClassObject, [In][Out] CDriverInfo driverInfo)
+uint CallGetFirmwareVersion(IntPtr pTestClassObject, int iDeviceArrayIndex)
+void CallGetAsioBufferConfiguration(IntPtr pTestClassObject, [In][Out] CAsioBufferSettings audioBufferSettings)
+void CallGetStreamBufferConfiguration(IntPtr pTestClassObject, [In][Out] CStreamBufferSettings audioBufferSettings)
+void CallSetStreamBufferConfiguration(IntPtr pTestClassObject, int bufferValue)
+void CallSetAsioBufferConfiguration(IntPtr pTestClassObject, int bufferValue)
+int CallGetSampleRateSelectionMode(IntPtr pTestClassObject)
+void CallSetSampleRateSelectionMode(IntPtr pTestClassObject, int mode)
+int CallGetAsioDropouts(IntPtr pTestClassObject)
+void CallSetDeviceNickName(IntPtr pTestClassObject, [MarshalAs(UnmanagedType.BStr)
+void CallGetSampleRateInfo(IntPtr pTestClassObject, [In][Out] CSampleRateInfo sampleRateInfo, int iDeviceArrayIndex)
+void CallGetSyncModeInfo(IntPtr pTestClassObject, [In][Out] CSyncSource syncSource, int iDeviceArrayIndex, int syncSourceIndex)
+void CallGetChannelProperties(IntPtr pTestClassObject, [In][Out] CChannelProperties chProps, int iDeviceArrayIndex, E_DIRECTION eDirection, int chNumber)
+void CallSetChannelNickName(IntPtr pTestClassObject, int iDeviceArrayIndex, [MarshalAs(UnmanagedType.BStr)
+void CallPrependDeviceNameToDisplayName(IntPtr pTestClassObject, int iDeviceArrayIndex, bool bPrependDeviceNameToDisplayName)
+bool CallGetPrependDeviceNameToDisplayName(IntPtr pTestClassObject, int iDeviceArrayIndex)
+void CallPollDeviceStatus(IntPtr pTestClassObject, [In][Out] CDeviceStatus deviceStatus, int deviceIndex)
+void CallGetCurrentSpdifInputDetectionStatus(IntPtr pTestClassObject, [In][Out] CDigitalInputState ioState, int iDeviceArrayIndex)
+E_SelectorPosAudioMode CallGetCurrentAudioMode(IntPtr pTestClassObject, int iDeviceArrayIndex)
+void CallGetCurrentOpticalInputDetectionStatus(IntPtr pTestClassObject, [In][Out] CDigitalInputState ioState, int iDeviceArrayIndex)
+bool CallGetLevelMeterData(IntPtr pTestClassObject, IntPtr pLevelMeterArray, int iNumberOfChannels, int iDeviceArrayIndex, IntPtr pDeviceStatus)
+bool CallConnectDevice(IntPtr pTestClassObject, int iDeviceArrayIndex)
+void CallSetChannelInputMonitorVol(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel, double dVolume)
+double CallGetChannelInputMonitorVol(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel)
+void CallSetChannelInputMonitorPan(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel, long iPan)
+long CallGetChannelInputMonitorPan(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel)
+void CallSetChannelInputMonitorMute(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel, bool bMute)
+bool CallGetChannelInputMonitorMute(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel)
+ulong CallGetSampleRate(IntPtr pTestClassObject, int iDeviceArrayIndex)
+void CallSetSampleRate(IntPtr pTestClassObject, int iDeviceArrayIndex, int iSampleRate)
+void CallSetSyncSource(IntPtr pTestClassObject, int iDeviceArrayIndex, int deviceID, int syncSourceID, DEVICE_SYNC_MODE eSyncMode)
+int CallGetCurrentSyncSource(IntPtr pTestClassObject, int iDeviceArrayIndex)
+void CallSetCrossFader(IntPtr pTestClassObject, int iDeviceArrayIndex, int iFeatureID, E_Channel eChannel, int Pos)
+void CallSetUsbNotificationCallback(IntPtr pTestClassObject, [MarshalAs(UnmanagedType.FunctionPtr)
+void CallRemoveUsbNotificationCallback(IntPtr pTestClassObject)
+```
+
+### Structs marshales (Sequential, BStr pour strings)
+- CDeviceProperties: Size, E_CONN_TYPE, E_DEVICE_TYPE, InterfaceGuid,
+  DeviceID, VendorID, ProductID, DeviceRank, VendorName, ProductName,
+  Nickname, sDeviceSerialNo, HardwareIdString, InstanceIdString
+- CDeviceStatus: Size, bOpticalConnected, eOpticalSampleRate,
+  bCoaxConnected, eCoaxSampleRate, eAudioMode, iSyncSource, bSyncLocked,
+  uSampleRate, eDeviceMessageID
+- CChannelProperties: Size, ChannelID, DeviceID, E_DIRECTION,
+  HardwareName, Nickname
+- CSampleRateInfo: Size, DomainID, CurrentSampleRate, Count, pSampleRates
+- CChannelSettings: Size, NumberOfControls, DeviceIndex, ChannelSetting[]
+- CChannelSetting: iFeatureID, eChannel, function, returnValue
+- CDigitalInputState, CSyncSource (DeviceSyncMode), CAsioBufferSettings,
+  CStreamBufferSettings, CDriverInfo, CTestClassObject
+
+### Enums (vocabulaire API)
+- E_DIRECTION: Input/Output
+- E_CONN_TYPE: eNoConnection=-1, eUSB2
+- E_DEVICE_TYPE: eCombiDevice, eUSB2Device
+- ESFI_AM824_MBSamplingFreq: 22.05/24/32/44.1/48/96/176.4/192/88.2k +
+  OB_DSD rates (2.048M-12.288M), DontCare=15 — SFI AM824 vocab
+- E_SyncSource: Internal, Busclock
+- E_DEVICE_MESSAGE_ID: AVSpdifIn/AVOpticalIn errors, StreamBlocked,
+  In/OutOfPhase, SystemIn/OutOfLog
+- DEVICE_SYNC_MODE: Unspecified/CSP/SYT_Iso/SYT_Synch/ExtSync/ExtDigital
+- E_SampleRateSelectionMode, E_StreamingMode, USB_EVENT_TYPE
