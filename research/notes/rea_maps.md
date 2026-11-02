@@ -610,3 +610,18 @@ Decouvertes fw4218:
   (enterGroupForming/cancelGroupForming/finishGroupForming/rebuildGroup/
   leaveGroup/becomeSlave + SyncMsg uTS_Msg_* — protocole de sync
   entre uTrack24 chaines en groupe)
+
+## 27. Mixer device-side (fw4218, verifie MCP — croise avec ghidra_utrack_map.md)
+
+- Table SDS complete deja dans ghidra_utrack_map.md (13 app cmds + ~20
+  attaches + file group 16 children) — confirmee par analyse MCP
+  (FUN_001a7b9c registry, registration thunks FUN_000fa580 etc.)
+- 5 mixer units: USBInput Mixer, Monitor Mixer, PhonesCH Mixer,
+  LineOut Mixer, Phones Mixer (@0x113224-0x113264)
+- Persistence: sds://cne/AppSettings/MixerControl + /MonitorBoost
+  (CnE = CopperLan/CnE config storage — MixerControl::loadParametersFromCnE)
+- Handler zone 0xcc-0xcd; querylevels @0xccdd8; usage complet @0x251c10:
+  mixer levels | querylevels | stat | get <channel> | set <channel>
+  <fader|pan|mute> <value> | store
+- Le client Qt existant poll deja 'mixer querylevels' ~1/s
+  (src/utrack_remote_qt.py:606-615)
