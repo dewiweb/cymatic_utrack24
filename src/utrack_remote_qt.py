@@ -758,6 +758,21 @@ class Win(QMainWindow):
         self.btn_aoip_send=QPushButton('Sender sinus');self.btn_aoip_send.clicked.connect(self._aoip_send);pcv.addWidget(self.btn_aoip_send)
         self.btn_aoip_sstop=QPushButton('Stop');self.btn_aoip_sstop.clicked.connect(lambda:setattr(self,'_aoip_sender_stop',True));pcv.addWidget(self.btn_aoip_sstop)
         pcv.addStretch(1);v.addWidget(gpc)
+        gus=QGroupBox('Carte son USB (UAC2) — routage E/S');us=QHBoxLayout(gus)
+        us.addWidget(QLabel('Mode :'))
+        self.aoip_cm=QComboBox();self.aoip_cm.addItems(['24In/26Out','24In/2Out','8In/26Out','8In/10Out'])
+        self.aoip_cm.setToolTip('channelmode — layout des flux USB (inverses/out de l appareil)')
+        us.addWidget(self.aoip_cm)
+        self.btn_aoip_cm=QPushButton('Appliquer');self.btn_aoip_cm.clicked.connect(self._aoip_cm_apply);us.addWidget(self.btn_aoip_cm)
+        us.addSpacing(16)
+        us.addWidget(QLabel('Source entrées :'))
+        self.aoip_src=QComboBox();self.aoip_src.addItems(['analog','digital (AoIP)'])
+        self.aoip_src.setToolTip('inputselect — analog = entrées physiques, digital = carte AudioLAN (AES67)')
+        us.addWidget(self.aoip_src)
+        self.btn_aoip_src=QPushButton('Appliquer');self.btn_aoip_src.clicked.connect(self._aoip_src_apply);us.addWidget(self.btn_aoip_src)
+        us.addSpacing(16)
+        self.btn_aoip_usbstat=QPushButton('Statut USB');self.btn_aoip_usbstat.clicked.connect(self._aoip_usbstat);us.addWidget(self.btn_aoip_usbstat)
+        us.addStretch(1);v.addWidget(gus)
         self.aoip_status=QLabel('—',objectName='info');v.addWidget(self.aoip_status)
         return w
 
@@ -850,6 +865,27 @@ class Win(QMainWindow):
             except Exception as e:self._aoip_sender=e
         threading.Thread(target=run,daemon=True).start()
         self.statusBar().showMessage('sender → %s'%mcast)
+
+    def _aoip_cm_apply(self):
+        m=self.aoip_cm.currentIndex()
+        self._aoip_telcmd(('channelmode',m))
+        self.statusBar().showMessage('channelmode → %d (%s)'%(m,self.aoip_cm.currentText()))
+
+    def _aoip_src_apply(self):
+        src='analog' if self.aoip_src.currentIndex()==0 else 'digital'
+        self._aoip_telcmd(('inputselect','all',src))
+        self.statusBar().showMessage('inputselect → %s'%src)
+
+    def _aoip_usbstat(self):
+        def run():
+            try:
+                with self._tlock:
+                    if self.tel is None:return
+                    out=self.tel.cmd('usb',1.5)+'\n'+self.tel.cmd('stream stat',1.5)
+                self._aoip_usb=out
+            except Exception:self._aoip_usb=Exception('usbstat')
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('statut USB…')
 
     def _refresh(self):
         if self._conn=='ok':
