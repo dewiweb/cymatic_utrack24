@@ -378,3 +378,11 @@ StartDownload, GetDownloadStatus, GetBcdFileInfo, GetDeviceInfo,
 GetApiVersion, GetSerialNumber, SetSerialNumber, SetTimeout, EnableLogging
 
 == l equipement /api/fileupload du firmware a un pendant PC documente.
+
+## 12. Schema .set device (Take0012.set)
+
+<song_settings>: version, creator, target_device, song_name, sync_device,
+wave_file_count, total_sample_count, sampling_rate, resolution,
+channel_count, playback_type, channels/channel(id): output_level,
+output_mute, output_channel, track_name, monitor_volume, monitor_mute,
+monitor_pan (+ markers/marker: position,name si presents)
