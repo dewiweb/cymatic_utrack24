@@ -735,3 +735,19 @@ Etats: state/mode/groupid/index/connected. Handlers:
   (CNT_Connected/Disconnected/NetworkChanged/NetworkStable),
   OnCHAI_Timer (resend RebuildGroupQuery aux slaves).
 => sync de groupe entierement sur le canal CHAI/VNM existant.
+
+## 37. Kernel DSP 0x1b020 — disassemble manuel (ARM, pas Thumb)
+
+CORRECTION doc WSL (kernels = Thumb) : le code est ARM 32-bit, Ghidra
+n a simplement pas fait de fonction a cette adresse. Decode:
+  e92d5ff0 push {r4-r12,lr}
+  e1a08003 mov r8,r3
+  e591c004 ldr r12,[r1,#4]   param_2[1] = table coefficients Q16
+  e5913000 ldr r3,[r1,#0]    param_2[0] = ptr buffer/peaks
+  e2433004 sub r3,r3,#4      peak array juste AVANT buffer (*param_2-4)
+  e3a0b00c mov r11,#0xc      12 paires stereo
+  e8b00030 ldm r0!,{r4,r5}   charge paire echantillons + auto-inc
+  e5b36004 ldr r6,[r3,#4]
+  e0247fc4 op r7,...
+  e1570006 cmp  /  c5837000 strgt r7,[r3]   PEAK-TRACK store-if-greater
+=> confirme doc: gain Q16 + peak-detect par paire, kernels ARM.
