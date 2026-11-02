@@ -635,3 +635,34 @@ FUN_0058e410 IDENTIQUES pour toutes les classes param.
 Layout 20B: class_id u32 LE | tag u16 | flag u8 | pad u8 | param_id u64 |
 value u32. Le class_id seul distingue le sens (request 0x42xx vs reply
 0x23xx vs sous-type). ~90% du trafic CHAI = ce format unique.
+
+## 29. Dictionnaire canonique class_id -> classe (dernier vftable)
+
+Correction du mapping precedent (le dernier vftable assigne dans le ctor
+= la classe concrete, pas le base Generic):
+
+```
+0x10001002 NCM_Ping            0x10002381 SM_Signal
+0x10001003 NCM_NetworkModified 0x10002390 SM_ServiceDevice
+0x10001012/13/14/15 NCM_Duplicate_*  0x10002391 SM_D_AssignController
+0x10002340 SM_SetGlobalClockTime     0x10002392 SM_Learn
+0x10002351 SM_Remote_Destination     0x100023f0 SM_DeviceDeclarationXXX
+0x10002352 SM_Remote_GenericChange   0x100023f2 SM_DeviceDiscarded
+0x10002360 SM_B_RecordingControl     0x100023f3 SM_DeviceIdentityChanged
+0x10002361 SM_D_RecordingControl     0x10003700 APP_Generic
+0x10004203 LM_DeviceDeclaredOrModified  0x10004205 LM_DeviceRemoved
+0x10004206 LM_DeviceIdentityChanged  0x10004207 LM_DeviceLostOrNotFound
+0x10004208 LM_SubDeviceDeclared      0x10004221 LM_GlobalSynchronizedClock
+0x10004222 LM_NetworkModified        0x10004230 LM_TransportFlowControl
+0x10004240 LM_SetGlobalClockTime     0x100042e0/e1 LM_VerifyKey_Req/Reply
+0x100042f3 LM_VNMTray_ResetStatistics 0x100042f6 LM_SetFitness
+0x100042f7 LM_VNMTray_SetTCPIPPort   0x10006301 HM_Warning
+0x10021021 NCM_DevicePresenceReply   0x10023700 APP_Generic_Reply
+0x10024202 LM_RootDeviceDuplicateResolutionReply
+0x10041020 NCM_DevicePresenceRequest
+0x10044201 LM_RootDeviceDuplicateResolutionRequest
+0x10045b01 Diag_Timing
+```
+
+NB: 0x100037c8 (broadcast members) absent de cette table — ctor hors
+corpus ou classe non-nommee. trafic 0x23xx=notifications/replies VNM.
