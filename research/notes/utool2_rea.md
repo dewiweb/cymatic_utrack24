@@ -86,3 +86,8 @@ Builder DOM : `FUN_00634c10`=create elem, `FUN_0061a340`=append child, `FUN_0061
 - `ArchwaveBCD`/`BCD` **absent aussi** — le conteneur .BCD projet n'est ecrit par NI uTool2 NI uTool
 - => .BCD est probablement ecrit par le device lui-meme (export interne) ou l'updater firmware, pas par les outils PC
 - Reste a verifier : l'updater (.exe firmware) ou generation on-device
+
+## RESOLU — ArchwaveBCD
+- Magic **embarque dans les .bcd firmware** : AudioLAN-4078 @0xc55dc, uTrack-4218 @0x116300
+- = bloc template/defaut projet embarque dans le firmware, parse par FUN_00115d40
+- Pas un format exporte par les outils PC — confirme l'absence dans uTool/uTool2
