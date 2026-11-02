@@ -409,3 +409,12 @@ audiolan_vnm_replay (15472B): trafic VNM replay — 0x10002381 x71,
 0x10022301 GetDeviceInfoReply x52, keepalive x44, 0x10004221 x27,
 0x10004230 x25, 0x10002390 x21. Trafic unicast enum/params, pas le
 broadcast 0x100037c8.
+
+## 15. cpm_audiolan.log — session uRemote/VNM decodee (14732 lignes)
+
+Log CopperLan Manager: timestamps + direction (uR>VNM / VNM>uR) + trame ef51
+hex + port=6354. Flag direction: 0xa0/0xb0=uRemote->VNM, 0x10/0x20=VNM->uR.
+Keepalive ef5100a0/ef510010 (echo du rand 9d4d5686). Sous-types msg:
+c423 (enum/announce unicast), 5423 (sub sur 8123/9023 params), d842
+(negoc lien). Corps TLV: 0001<sub16><ep8B?><flags><...><id 0xXXXX0010>
+<crc32 BE>. Endpoint VNM=0x34b96e2e, broadcast feff2000f4de012f.
