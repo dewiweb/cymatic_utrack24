@@ -1,7 +1,8 @@
 #!/bin/bash
 cd /home/dewi/newhome/Github/cymatic_utrack24 || exit 1
+export PATH=/home/dewi/.nvm/versions/node/v24.22.1/bin:$PATH
 export GHIDRA_INSTALL_DIR=$HOME/tools/ghidra_12.1.4/ghidra_12.1.4_PUBLIC
-/home/dewi/.nvm/versions/node/v24.22.1/bin/rea decompile-all "research/assets/firmware/utrack24-release-4218/uTRACK24_Release_4218.bcd" \
+rea decompile-all "research/assets/firmware/utrack24-release-4218/uTRACK24_Release_4218.bcd" \
   --output research/rea/decomp_fw4218 \
   --target-format raw-binary --architecture arm --entry-point 0x0 \
   --format json > research/rea/fw4218_manifest.json 2> research/rea/fw4218.err

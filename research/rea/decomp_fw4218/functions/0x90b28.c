@@ -1,0 +1,57 @@
+// rea decompile_all
+// name: FUN_00090b28
+// address: 0x90b28
+// body: available
+// range: 0x90b28-0x90c23 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: dc47711df08874f4cf3d1d83bbc653d5d7e81a6923a356173f8ed1dbb4060c20
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Headerless raw-binary analysis uses the caller-supplied architecture and entry address; file offset 0 is mapped at that address. Headers are not discovered from file bytes.; Little-endian generic Ghidra languages are used for x86, x86_64, arm, arm64, and NMOS 6502; m68k uses the big-endian 68000 default language, which decodes the 68040 superset. Big-endian ARM, Thumb-only, Cortex-M, 65C02, 65816, separate 68020/68030/CPU32/ColdFire variants, and other processor variants are unsupported in this increment.; Static analysis does not emulate reset vectors, memory-mapped I/O, or firmware boot sequences.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined8 FUN_00090b28(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+
+{
+  int iVar1;
+  int *piVar2;
+  undefined4 uVar3;
+  undefined4 uStack_18;
+  undefined4 uStack_14;
+  undefined4 uStack_10;
+  
+  uStack_18 = param_2;
+  uStack_14 = param_3;
+  uStack_10 = param_4;
+  iVar1 = FUN_00172504(param_1);
+  iVar1 = FUN_001724cc(iVar1 + 4);
+  iVar1 = FUN_00172478(iVar1 + 4);
+  piVar2 = (int *)FUN_001723f0(iVar1 + 4);
+  iVar1 = DAT_00090c24;
+  piVar2[-3] = DAT_00090c24;
+  piVar2[-2] = iVar1 + 0x30;
+  piVar2[-1] = iVar1 + 0x44;
+  *piVar2 = iVar1 + 0x58;
+  *(undefined1 *)(piVar2 + 4) = 0;
+  *(undefined1 *)((int)piVar2 + 0x11) = 0;
+  iVar1 = FUN_00111518(piVar2 + 5);
+  iVar1 = FUN_00111518(iVar1 + 0x18);
+  uVar3 = FUN_0022f608(&uStack_10);
+  iVar1 = FUN_0023ce8c(iVar1 + 0x18,uVar3);
+  iVar1 = FUN_00172710(iVar1 + 0xc);
+  *(undefined4 *)(iVar1 + 0xc) = 0;
+  *(undefined4 *)(iVar1 + 0x10) = 0;
+  *(undefined4 *)(iVar1 + 0x14) = 0;
+  *(undefined1 *)(iVar1 + 0x18) = 0;
+  *(undefined1 *)(iVar1 + 0x19) = 0;
+  *(undefined1 *)(iVar1 + 0x1a) = 0;
+  *(undefined4 *)(iVar1 + 0x1c) = 0;
+  *(undefined4 *)(iVar1 + 0x20) = 0;
+  *(undefined1 *)(iVar1 + 0x24) = 0;
+  *(undefined1 *)(iVar1 + 0x25) = 0;
+  *(undefined1 *)(iVar1 + 0x26) = 0;
+  uVar3 = FUN_00230534(&uStack_18);
+  iVar1 = FUN_00234264(iVar1 + 0x28,&uStack_14,uVar3);
+  return CONCAT44(uStack_18,iVar1 + -0x84);
+}
+
