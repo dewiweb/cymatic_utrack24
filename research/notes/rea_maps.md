@@ -437,3 +437,11 @@ uTRACKX32: 2905 (build 20151008, 2243584B), 3865 (20170216, 2242560B),
 MFC CDeviceUpgradeApp/CDeviceUpgradeDlg -> appelle BCOUFWDL_* (variante USB
 du flash, pas reseau): EnumerateDevices+GetSerialNumber, OpenDevice,
 StartDownload, GetDownloadStatus. Enum via InterfaceGuidUSB_%02d.
+
+## 19. IDs dominants du trafic = CCPMessage_Generic
+
+0x10002381, 0x10002390, 0x100037c8, 0x10004221, 0x10004230, 0x10004207,
+0x10003788, 0x100023f0 = sous-classes CCPMessage_Generic (famille
+proprietes/parametres — get/set/watch du tree VNM). Les noms SM_/APP_/LM_
+n apparaissent que pour les ops de haut niveau; le gros du trafic =
+Generic* (ctors 0x57d4xx-0x5889xx dans decomp_uremote).
