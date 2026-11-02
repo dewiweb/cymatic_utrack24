@@ -386,3 +386,13 @@ wave_file_count, total_sample_count, sampling_rate, resolution,
 channel_count, playback_type, channels/channel(id): output_level,
 output_mute, output_channel, track_name, monitor_volume, monitor_mute,
 monitor_pan (+ markers/marker: position,name si presents)
+
+## 13. Decode pcvnm_full_announce.bin (401 trames ef51)
+
+Flags: 0x23=174x msg 0x100037c8 (records membres du reseau), 0x20=messages
+d enumeration (0x10022301 GetDeviceInfoReply x53, 0x10002381 x50,
+0x10004221 x22, 0x10004230 x19, 0x10002390 x14, 0x10002380 x10,
+0x10004207 x10, 0x10003788 x5, 0x100023f0 x2, 0x10022314/15 enum x2+1,
+0x10024220 LM_GetVNMInfoReply x1, 0x10042301 request x1),
+0x10=25 trames sans class id (hello/keepalive), 0x22/0x25=variantes ack
+du msg 0x100037c8.
