@@ -272,17 +272,24 @@ class UTrack24:
         data = self.read_file(f'/MultiTrack/{take}/{take}.set', 262144)
         return SongSettings.parse(data.decode('utf-8', 'replace'))
 
-    def take_delete(self, take: str):
-        """Supprime une prise: fichiers puis dossier (fs rm verifie live)."""
+    def delete_take(self, take: str, loaded=None):
+        """Supprime une prise: fichiers puis dossier (fs rm verifie live).
+        loaded = nom de la prise actuellement chargee (refuse si == take)."""
+        if take == (loaded or '').split('/')[-1]:
+            raise ValueError('prise actuellement chargee')
+        self._valid_take_name(take)
         base = f'/MultiTrack/{take}'
         for e in self.list_dir(base):
             if not e['is_dir']:
                 self.fs_rm(f'{base}/{e["name"]}')
         self.fs_rm(base)
 
-    def take_rename(self, old: str, new: str):
+    def rename_take(self, old: str, new: str, loaded=None):
         """Renomme une prise: dossier + fichiers prefixes (reclog/.set
         non modifies en contenu — procedure recordings_access.md)."""
+        if old == (loaded or '').split('/')[-1]:
+            raise ValueError('prise actuellement chargee')
+        self._valid_take_name(old); self._valid_take_name(new)
         base = '/MultiTrack'
         for e in self.list_dir(f'{base}/{old}'):
             n = e['name']
