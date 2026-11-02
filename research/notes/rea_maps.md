@@ -696,3 +696,16 @@ FUN_005501d0 / FUN_005581e0 (refs playlist_project) — pas de tags XML
 inline; noms construits via le writer XML generique (s_profile = suffix
 de fichier .play?). "Autoplay" = playlist speciale autoplay.play.
 Le writer song.set (FUN_005406f0, doc WSL) reste le format principal.
+
+## 34. Re-verification REA MCP (2026-11-02)
+
+Verifications live sur les sessions ouvertes:
+- search_bytes c8370010 dans uRemote.exe = 0 match sur 5.8MB =>
+  0x100037c8 confirmé VNM-only (pas dans le client)
+- FUN_0058e350 re-decompile = layout 20B EXACT confirme
+  (class_id4|tag2|flag1|pad1|param_id8|value4)
+- ctor 0x5874a0 = SM_D_RecordingControl: in_ECX[4]=0x10002361, champs
+  u16 @+0x18/+0x1a — note: ses champs propres sont 2x u16 (dans la
+  zone param_id u64 du format generique)
+- FUN_000cd164 (fw) = enregistrement mixer: FUN_0007f01c("mixer",
+  help, handler, 1) -> FUN_001a7b9c — confirme ghidra_utrack_map.md
