@@ -666,3 +666,10 @@ Correction du mapping precedent (le dernier vftable assigne dans le ctor
 
 NB: 0x100037c8 (broadcast members) absent de cette table — ctor hors
 corpus ou classe non-nommee. trafic 0x23xx=notifications/replies VNM.
+
+## 30. Note 0x100037c8
+
+Absent du binaire uRemote — classe instanciee uniquement cote VNM
+(member-record broadcast). uRemote le lit via le parseur generique
+(base CCPMessage sans ctor nomme). Son format TLV <type u16|len u16|
+payload> est decode en section 21.
