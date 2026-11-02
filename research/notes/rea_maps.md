@@ -515,3 +515,25 @@ void CallRemoveUsbNotificationCallback(IntPtr pTestClassObject)
   In/OutOfPhase, SystemIn/OutOfLog
 - DEVICE_SYNC_MODE: Unspecified/CSP/SYT_Iso/SYT_Synch/ExtSync/ExtDigital
 - E_SampleRateSelectionMode, E_StreamingMode, USB_EVENT_TYPE
+
+## 21. Records announce 0x100037c8 — decode partiel
+
+Format observe (cpm_audiolan.log, pcvnm_full_announce.bin):
+`c8370010 | type:u16 | len:u16 | <payload len octets>`
+- type 0x1e len 0x16 : flags4B | paramid?4B | pad8B | nom ascii ("Idle")
+- type 0x1c len 0x14 : ...| "On"
+- type 0x32 len 0x2a : variante plus longue
+- payload contient param ids famille 0x0010xxxx et noms ASCII
+  (Idle, On, Off, Channel 1, Play-Pause, Take0012, 44.1 kHz,
+  transmitter1/2 = sources AES67, -11 ms, 00-07-F5-FF-FE-49-00-30 = MAC)
+Exemples bruts:
+c83700101e001600c200000002002010000040000000040049646c6500004960c837001032002a00c300000004
+c83700101e001600c200000002002010000040000000040049646c6500004960c837001032002a00c300000004
+c83700101c001400c2000000020010100000c000010002004f6e0000b759670a port=6354
+c83700101e001600c200010002002010000040000000040049646c6500004960c837001033002b00c300010004
+c83700101e001600c200000002002010000040000000040049646c6500004960c837001032002a00c300000004
+c83700101e001600c200000002002010000040000000040049646c6500004960c837001032002a00c300000004
+VNM session: membre ID 0x69727160 (stable, client-fourni), handle session
+alloue par VNM (ex 0x3602/c50a), AddLocalDevice(0x6800000,"uTrack24 Remote")
++ 5 containers Status/Meters/Controllers/Files/Settings.
+Serializer de ref: FUN_00657890 (LM_DeviceDeclaredOrModified, analyse WSL).
