@@ -318,3 +318,28 @@ methodes C++ CDriverInterfaceClass (exports mangles) qui envoient les IOCTLs.
 0x7210 CallSetSyncSource
 0x74b0 CallSetUsbNotificationCallback
 ```
+
+## 7. Methode C++ -> IOCTL (graphe d appels transitif, depth 4)
+
+0x80892804/0x80892860/0x80892920 = plumbing de session generique (open/close/
+status poll) vu partout; les autres codes sont l operation reelle.
+
+```
+ConnectDevice 0x80892804,0x80892820,0x80892860,0x80892900,0x80892920
+GetAsioBufferConfiguration 0x80892a88
+GetAsioDropouts 0x80892ac8
+GetChanProp 0x80892810,0x80892864,0x80892980
+PrependDeviceNameToDisplayName 0x80892810,0x80892814
+GetSampleRateSelectionMode 0x80892888
+SetSampleRateSelectionMode 0x8089288c
+GetStreamBufferConfiguration 0x80892a80
+SetStreamBufferConfiguration 0x80892a00,0x80892a04,0x80892a80,0x80892a84
+SetAsioBufferConfiguration 0x80892a00,0x80892a04,0x80892a88,0x80892a8c
+SetChannelNickName 0x80892984
+SetDeviceNickName 0x80892924
+setSyncSource 0x80892904
+setSampleRate 0x808928c4
+getCurrentSyncSource 0x80892900
+getSampleRate 0x808928c0
+getChannelProperties 0x80892810,0x80892864,0x80892980
+```
