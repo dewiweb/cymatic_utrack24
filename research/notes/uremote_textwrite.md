@@ -121,3 +121,12 @@ matching the 4 rotated HBS strings (member ids `d01f`, `06972716`, `f4de012f`).
 async invoke/ack envelope that carries the app write as a task; the *control-value*
 payload itself is the `4437` record documented above. If a `4437` write ever fails on
 hardware, sniff whether uRemote also wraps it in a `4837` invoke — worth one capture.
+
+## Write paths (REA follow-up)
+
+Two client→device write families in uRemote.exe:
+
+- **Property writes** `41xx` TLVs: `4137`,`4237`(modifier),`4337`(selector),`4437`(text),`4537`,`4637` — serializer `FUN_00634680(len,classIdx,flag80,flag40)`, factory `0x629xxx` block builds `CAppModifierMessage` (ctor `0x646cd0`, type `0x8201`) etc. Faders `0xb201/2` use plain `4237` — NO commit message follows a property write.
+- **Internal invoke** `4837/4937` (`CAppInternalControlMessage`, ctor `0x64e290`, type `0x82ff`): kind byte at payload[0], ~20 sub-kinds (`0x02,0x06,0x10,0x44,0x45,0x46,0x4a,0x83,0x84,0x85,0x87,0xc0,0xc2,0xc8,0xf0,0xf1,0xf3`), one wrapper fn per kind at `0x64d1xx-0x64e6xx`, reached via member vtable `+0x17c` (`FUN_0048fb72`→`FUN_00682a40`→`FUN_0064de20`). Kind `0x84` = {u32,u8 flag,u32} invoke-with-arg.
+
+=> uTrack `uCL+0x848` deferred-commit is device-internal; no client commit frame needed.

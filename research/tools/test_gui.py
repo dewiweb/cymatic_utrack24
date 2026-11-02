@@ -79,8 +79,8 @@ w.cmb[0xb102].activated.emit(0)
 assert f.calls==[('set',0xb102,1)],f.calls
 f.calls.clear()
 
-# spinbox 0xb201/0xb202 : desactives (ecriture numerique non effective, cf gui_review P1-3)
-assert not w.sp[0xb201][0].isEnabled() and not w.sp[0xb202][0].isEnabled()
+# spinbox 0xb201/0xb202 : actives (modifier 4237, pas de commit requis — REA uRemote)
+assert w.sp[0xb201][0].isEnabled() and w.sp[0xb202][0].isEnabled()
 
 s['f'].setValue(0x1234)      # drag -> pending seulement
 assert f.calls==[]

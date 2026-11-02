@@ -293,8 +293,9 @@ class Win(QMainWindow):
                                          (0xb202,'Offset MIDI',(-1000,1000),' ms',ms_raw)):
             i=len(self.cmb)+len(self.sp)
             gr.addWidget(QLabel(lab,objectName='dim'),i//2,(i%2)*2)
-            sb=QSpinBox();sb.setRange(*rng);sb.setSuffix(unit);sb.setEnabled(False)
-            sb.setToolTip('0x%x: ecriture numerique non effective (chemin commit uCL+0x848 requis)'%ctrl)
+            sb=QSpinBox();sb.setRange(*rng);sb.setSuffix(unit)
+            sb.setToolTip('0x%x: ecriture modifier 4237 (pas de commit requis — REA uRemote)'%ctrl)
+            sb.editingFinished.connect(lambda c=ctrl,s=sb,r=to_raw:self._set_ask(c,r(s.value())))
             self.sp[ctrl]=(sb,to_raw);gr.addWidget(sb,i//2,(i%2)*2+1)
         g2.setLayout(gr);v.addWidget(g2)
         g=QGroupBox('Lecture seule');gr2=QGridLayout();gr2.setSpacing(8);self.ro={}
