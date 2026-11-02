@@ -418,3 +418,10 @@ Keepalive ef5100a0/ef510010 (echo du rand 9d4d5686). Sous-types msg:
 c423 (enum/announce unicast), 5423 (sub sur 8123/9023 params), d842
 (negoc lien). Corps TLV: 0001<sub16><ep8B?><flags><...><id 0xXXXX0010>
 <crc32 BE>. Endpoint VNM=0x34b96e2e, broadcast feff2000f4de012f.
+
+## 16. utrack24_asio.dll / _x64 — COM ASIO standard
+
+4 exports seulement: DllCanUnloadNow/DllGetClassObject/DllRegisterServer/
+DllUnregisterServer => objet COM IASIO classique (vtable Steinberg), la
+couche streaming passe par IOCTLs 0x80892axx vers le .sys (buffer config,
+sample rate), cf section 7.
