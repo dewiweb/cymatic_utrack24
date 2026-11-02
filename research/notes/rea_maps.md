@@ -565,3 +565,16 @@ Layout 20 octets: class_id u32 | tag u16 (obj+0x14) | flag u8 (obj+0x24)
 Vu en capture: 81230010|1e00|03|22|0500000000000000|... = param_id 5,
 tag 0x1e(30=type valeur: string/texte?), flag 3. 90230010|0800|0100...
 = classe 0x10002390 tag 8 flag 1. GetStreamSize [8]retourne 0x14=20B.
+
+## 25. Dispatch inbound FUN_0052fcc0 — grammaire message-space
+
+Dispatcher: family = class_id>>8 & 0xff, sub = class_id & 0xff.
+- family 0x10 (0x100010xx systeme): subs 1,2,3,0x12,0x13,0x14,0x15,0x20,0x21
+- family 0x23 (0x100023xx replies/param): subs 1,0x10-0x15,0x18-0x1a(enum
+  2314/2315/done),0x20,0x31,0x51,0x52,0x60,0x61,0x70,0x71(D_RecControl
+  setup!),0x80,0x81,0x90,0x91,0x92,0xf0-f4
+- family 0x42 (0x100042xx requests/param): subs 1-8,0x20,0x21,0x22,0x30,
+  0xe0,0xe1,0xf0-0xf7
+- family 0x37: announce (0x100037c8 broadcast hors de ce switch)
+Encodage: 0x10 00 FF SS => FF=family, SS=sub-opcode. Handlers per-case
+via FUN_005af82d factory + dispatch objet.
