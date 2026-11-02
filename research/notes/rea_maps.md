@@ -625,3 +625,13 @@ Decouvertes fw4218:
   <fader|pan|mute> <value> | store
 - Le client Qt existant poll deja 'mixer querylevels' ~1/s
   (src/utrack_remote_qt.py:606-615)
+
+## 28. UN SEUL format fil pour tout le param-tree (Generic*)
+
+0x10002381, 0x10002390, 0x10004221, 0x10004230 partagent vftable 0x5ea308
+(= CCPMessage_Generic) => Serialize FUN_0058e350 / Deserialize
+FUN_0058e410 IDENTIQUES pour toutes les classes param.
+
+Layout 20B: class_id u32 LE | tag u16 | flag u8 | pad u8 | param_id u64 |
+value u32. Le class_id seul distingue le sens (request 0x42xx vs reply
+0x23xx vs sous-type). ~90% du trafic CHAI = ce format unique.
