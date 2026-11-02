@@ -35,3 +35,8 @@
 - `FUN_00593a60` : scan/preview export — calcule octets manquants @+0x2760, capacite disque @+0x1850 (+0x20000000 garde), met a jour les boutons export ; mode post/pre-fader flag @+0x2080&2
 - `FUN_005979c0` : 2e point d'entree, meme walker
 - Writer `.play` binaire : TOUJOURS a localiser — probablement dans le chemin CreateFileW pendant l'export, ou dans FUN_005955a0 cote fichier
+
+## Correction cle (firmware)
+- `.play` device = **XML** (pas binaire) — fw parse `playlistname` + erreur "Error in reading Playlist File %ls"
+- `.BCD` = conteneur `ArchwaveBCD` (projet/session, distinct du magic BcOd firmware); uTool2 ecrit le `.set` XML
+- Playlist controls device : `0xf030-33` start-mode/time, `0xd008` song idx (selector), `0xd009` exit, `0xd088` mixer config
