@@ -546,3 +546,13 @@ Status, Meters, Controllers, Files, Settings (data=DAT_0095c898).
 Membre id stable 0x69727160, handle session alloue par VNM.
 NB: adresses WSL (FUN_00545da0/FUN_00657890) ~= +0x100000 de notre
 corpus — meme exe, region .text differente dans l analyse.
+
+## 23. Serializer LM_DeviceDeclaredOrModified (notre corpus)
+
+vftable CCPMessage_LM_DeviceDeclaredOrModified @VA 0x5eedd8:
+Serialize=FUN_0057d120, Deserialize=FUN_0057d190 (+ 10 autres virtuals).
+Wire: class_id u32 LE (obj+0x10) | u16 (obj+0x14) | bloc_id 10B
+(obj+0x18, via FUN_00507bf0: u16,u16,u16,u32>>16,u16 — triplet id hi/lo).
+Deserialize verifie >=0xf octets restants. => la trame 0x100037c8:
+c8370010 | 1e00(=field14) | bloc 10B | puis records enchaines dans
+la meme trame ef51 (multi-decl par trame, noms inclus dans payload).
