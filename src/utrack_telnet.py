@@ -202,11 +202,28 @@ class UTrack24:
         """file remove <path>."""
         return self._chk(self.cmd(f'file remove {path}', 1.5))
 
+    def _fah_buffer_probe(self, data_probe: bytes) -> int:
+        """Retourne l'offset du staging buffer FAH (rt addr) — 0 si non trouve.
+        Strategie: file read un fichier connu (reclog.txt) puis rd autour de
+        l'objet FAH (*0x60403a3c) pour localiser ou les donnees ont atterri.
+        EXPERIMENTAL — a valider sur device live."""
+        # l'objet FAH pointe par rt 0x60403a3c (singleton FUN_000cbaf0+0xc0)
+        out = self.cmd('rd 0x60403a3c 1', 1.0)
+        m = re.search(r'([0-9a-fA-F]{8})', out)
+        if not m:
+            return 0
+        obj = int(m.group(1), 16)
+        if not (0x60000000 <= obj < 0x61000000):
+            return 0
+        # scanner quelques offsets plausibles du buffer (FAH+0x0..+0x400)
+        return obj
+
     def upload(self, remote: str, data: bytes) -> str:
-        """file open <path> wo + staging buffer + file write <n>.
-        TODO: mecanisme du staging buffer (FAH) a verifier — voir handler
-        0x14aca0 (file write <bytes> {count} {buffer_offset})."""
-        raise NotImplementedError('staging buffer FAH a decoder (handler 0x14aca0)')
+        """Upload via wr (staging buffer) + file open wo + file write <n>.
+        EXPERIMENTAL: l'adresse du staging buffer FAH est runtime — obtenue
+        par _fah_buffer_probe/rd. Taux ~1 mot/commande wr => lent, ok pour
+        .set (~KB). Requiert device live pour calibration."""
+        raise NotImplementedError('calibration runtime du staging buffer requise')
 
     def _chk(self, out: str) -> str:
         if re.search(r'fail|error', out, re.I):
