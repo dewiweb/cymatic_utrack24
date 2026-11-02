@@ -404,3 +404,8 @@ after_play (87260B): 86x 0x100037c8 (flag23 broadcast membres), 33x keepalive
 transport_check (94980B): idem — 94x 0x100037c8, 34x keepalive, 0x10002381 x16
 prop_enum (14916B): 15x 0x100037c8 + 0x10004230/0x10002381/0x10002390 x1
 enum.bin: vide. => 0x100037c8 = broadcast periodique de la liste membres VNM.
+
+audiolan_vnm_replay (15472B): trafic VNM replay — 0x10002381 x71,
+0x10022301 GetDeviceInfoReply x52, keepalive x44, 0x10004221 x27,
+0x10004230 x25, 0x10002390 x21. Trafic unicast enum/params, pas le
+broadcast 0x100037c8.
