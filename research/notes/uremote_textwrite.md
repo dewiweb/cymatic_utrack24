@@ -130,3 +130,14 @@ Two client→device write families in uRemote.exe:
 - **Internal invoke** `4837/4937` (`CAppInternalControlMessage`, ctor `0x64e290`, type `0x82ff`): kind byte at payload[0], ~20 sub-kinds (`0x02,0x06,0x10,0x44,0x45,0x46,0x4a,0x83,0x84,0x85,0x87,0xc0,0xc2,0xc8,0xf0,0xf1,0xf3`), one wrapper fn per kind at `0x64d1xx-0x64e6xx`, reached via member vtable `+0x17c` (`FUN_0048fb72`→`FUN_00682a40`→`FUN_0064de20`). Kind `0x84` = {u32,u8 flag,u32} invoke-with-arg.
 
 => uTrack `uCL+0x848` deferred-commit is device-internal; no client commit frame needed.
+
+## Announce class byte (capture directed_1224.log)
+
+Records `110X 0000 <ctrl> 000007 <flag>` — flag = write family:
+- `00` = numeric → modifier `4237`
+- `40` = text → `4437`
+- `80` = selector → `4337`
+
+Confirmed: `b201`=num, `d001-3`=text, `c001`=text, `c006/7/8`=sel, `d006/7/8`=sel, `d011+`=text, `c011+`=text.
+=> `d008/d009` playlist + `c010` file-select = **selector `4337`** (fixed — were sent as `4237`).
+Transport `d000` already uses `4337` (CTRL_TEMPLATE) — that's why it always worked.
