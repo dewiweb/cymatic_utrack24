@@ -537,3 +537,12 @@ VNM session: membre ID 0x69727160 (stable, client-fourni), handle session
 alloue par VNM (ex 0x3602/c50a), AddLocalDevice(0x6800000,"uTrack24 Remote")
 + 5 containers Status/Meters/Controllers/Files/Settings.
 Serializer de ref: FUN_00657890 (LM_DeviceDeclaredOrModified, analyse WSL).
+
+## 22. Enregistrement membre (decomp_uremote FUN_0045ba5d)
+
+Sequence: chai->vtable[0xb4] AddLocalDevice(2,0,1,0, 0x6800000,
+"uTrack24 Remote"), puis 5 containers proprietes type 0x4000000:
+Status, Meters, Controllers, Files, Settings (data=DAT_0095c898).
+Membre id stable 0x69727160, handle session alloue par VNM.
+NB: adresses WSL (FUN_00545da0/FUN_00657890) ~= +0x100000 de notre
+corpus — meme exe, region .text differente dans l analyse.
