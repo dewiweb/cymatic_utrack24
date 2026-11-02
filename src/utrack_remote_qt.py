@@ -175,11 +175,10 @@ class Win(QMainWindow):
             tr.addWidget(b)
         self.pos=QSpinBox();self.pos.setRange(0,0x7fffffff);self.pos.setMaximumWidth(130)
         self.pos.setToolTip('Position en échantillons (0xd001-3: locate/loop start/loop end)')
-        for lab,cid in (('►|','d001'),('⟲A','d002'),('B⟲','d003')):
-            b=QPushButton(lab);b.setFixedHeight(28);b.setEnabled(False)
-            b.setToolTip('0x%s = controle texte (ASCII decimal) — ecriture non encore implementee'%cid)
+        for lab,cid,tip in (('►|','d001','Locate (echantillon absolu)'),('⟲A','d002','Loop in'),('B⟲','d003','Loop out')):
+            b=QPushButton(lab);b.setFixedHeight(28);b.setToolTip(tip)
+            b.clicked.connect(lambda _,c=cid:self.u and self.u.text(int(c,16),str(self.pos.value())))
             tr.addWidget(b)
-        self.pos.setEnabled(False)
         tr.addWidget(self.pos)
         self.mk=QPushButton('MARQUEUR');self.mk.setObjectName('marker');self.mk.setEnabled(False);self.mk.setMinimumHeight(38)
         self.mk.setToolTip("Ajoute un marqueur à l'enregistrement en cours (actif après REC lancé depuis cette fenêtre)")

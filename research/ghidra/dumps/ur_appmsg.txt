@@ -1,0 +1,7157 @@
+##### TD c8cbb4 struct@c8cbac
+  COL@c58758
+  vftable@00c3b104 (col ptr @00c3b100)
+    +000 -> 00486200 FUN_00486200@00486200
+    ---- decomp FUN_00486200
+
+undefined4 __thiscall FUN_00486200(undefined4 param_1,byte param_2)
+
+{
+  FUN_00486230();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xbc);
+  }
+  return param_1;
+}
+
+
+    +004 -> 0066c010 FUN_0066c010@0066c010
+    ---- decomp FUN_0066c010
+
+void __fastcall FUN_0066c010(int *param_1)
+
+{
+  uint *puVar1;
+  uint uVar2;
+  int iVar3;
+  uint uVar4;
+  DWORD DVar5;
+  uint uVar6;
+  ushort uVar7;
+  uint uVar8;
+  undefined4 *puVar9;
+  uint *puVar10;
+  undefined8 uVar11;
+  ulonglong uVar12;
+  LARGE_INTEGER LStack_10;
+  
+  (**(code **)(*param_1 + 8))();
+  uVar7 = 0;
+  while( true ) {
+    puVar9 = (undefined4 *)0x0;
+    if (uVar7 < *(ushort *)(param_1 + 0x10)) {
+      puVar9 = *(undefined4 **)(param_1[0xf] + (uint)uVar7 * 4);
+    }
+    uVar7 = uVar7 + 1;
+    if (puVar9 == (undefined4 *)0x0) break;
+    iVar3 = param_1[0xb];
+    if (*(int *)(iVar3 + 0x660) == 0 && *(int *)(iVar3 + 0x664) == 0) {
+      uVar11 = FUN_0062e370();
+      *(undefined8 *)(iVar3 + 0x660) = uVar11;
+    }
+    (**(code **)*puVar9)(*(int *)(param_1[10] + 4) + 0x28 + (int)param_1);
+    iVar3 = param_1[0xb];
+    puVar10 = (uint *)(iVar3 + 0x660);
+    if (*puVar10 != 0 || *(int *)(iVar3 + 0x664) != 0) {
+      if (DAT_00c911bf == '\0') {
+        DVar5 = GetTickCount();
+        uVar12 = (ulonglong)(DVar5 * 1000);
+      }
+      else {
+        QueryPerformanceCounter(&LStack_10);
+        uVar11 = __allmul(LStack_10.s.LowPart,LStack_10.s.HighPart,1000000,0);
+        uVar12 = __alldiv(uVar11,DAT_00c91220,DAT_00c91224);
+      }
+      uVar4 = *puVar10;
+      uVar6 = (uint)uVar12 - uVar4;
+      *(uint *)(iVar3 + 0x690) = uVar6;
+      uVar8 = ((int)(uVar12 >> 0x20) - *(int *)(iVar3 + 0x664)) - (uint)((uint)uVar12 < uVar4);
+      *(int *)(iVar3 + 0x678) = *(int *)(iVar3 + 0x678) + 1;
+      puVar1 = (uint *)(iVar3 + 0x670);
+      uVar2 = *puVar1;
+      *puVar1 = *puVar1 + uVar6;
+      *(uint *)(iVar3 + 0x694) = uVar8;
+      *(int *)(iVar3 + 0x674) = *(int *)(iVar3 + 0x674) + uVar8 + (uint)CARRY4(uVar2,uVar6);
+      if ((uVar8 <= *(uint *)(iVar3 + 0x684)) &&
+         ((uVar8 < *(uint *)(iVar3 + 0x684) || (uVar6 < *(uint *)(iVar3 + 0x680))))) {
+        *(uint *)(iVar3 + 0x680) = uVar6;
+        *(uint *)(iVar3 + 0x684) = uVar8;
+      }
+      if ((*(uint *)(iVar3 + 0x68c) <= uVar8) &&
+         ((uVar8 != *(uint *)(iVar3 + 0x68c) || (*(uint *)(iVar3 + 0x688) < uVar6)))) {
+        *(uint *)(iVar3 + 0x688) = uVar6;
+        *(uint *)(iVar3 + 0x68c) = uVar8;
+      }
+      *(uint *)(iVar3 + 0x668) = uVar4;
+      *(undefined4 *)(iVar3 + 0x66c) = *(undefined4 *)(iVar3 + 0x664);
+      *puVar10 = 0;
+      *(undefined4 *)(iVar3 + 0x664) = 0;
+    }
+  }
+  FUN_00647020(param_1);
+  return;
+}
+
+
+    +008 -> 00644a80 FUN_00644a80@00644a80
+    ---- decomp FUN_00644a80
+
+void FUN_00644a80(void)
+
+{
+  return;
+}
+
+
+    +00c -> 004054a0 FUN_004054a0@004054a0
+    ---- decomp FUN_004054a0
+
+void FUN_004054a0(void)
+
+{
+  return;
+}
+
+
+    +010 -> 00644a70 FUN_00644a70@00644a70
+    ---- decomp FUN_00644a70
+
+undefined4 FUN_00644a70(void)
+
+{
+  return 0x16;
+}
+
+
+    +014 -> 00644a60 FUN_00644a60@00644a60
+    ---- decomp FUN_00644a60
+
+undefined1 FUN_00644a60(void)
+
+{
+  return 0;
+}
+
+
+    +018 -> 006449a0 FUN_006449a0@006449a0
+    ---- decomp FUN_006449a0
+
+undefined4 __thiscall FUN_006449a0(int param_1,undefined4 param_2,undefined2 *param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 *puVar2;
+  int iVar3;
+  
+  *param_3 = 0x16;
+  iVar3 = FUN_00634680(0x16,3,*(byte *)(param_1 + 0x74) >> 1 & 1,*(byte *)(param_1 + 0x74) & 1);
+  if (iVar3 != 0) {
+    puVar2 = *(undefined2 **)(iVar3 + 0x1c);
+    *puVar2 = *(undefined2 *)(param_1 + 0x78);
+    puVar2[1] = *(undefined2 *)(param_1 + 0x7a);
+    puVar2[2] = *(undefined2 *)(param_1 + 0x7c);
+    puVar2[3] = *(undefined2 *)(param_1 + 0x7e);
+    puVar2[4] = *(undefined2 *)(param_1 + 0x80);
+    puVar2[5] = *(undefined2 *)(param_1 + 0x82);
+    puVar2[6] = *(undefined2 *)(param_1 + 0x84);
+    puVar2[7] = *(undefined2 *)(param_1 + 0x86);
+    puVar2[8] = *(undefined2 *)(param_1 + 0x88);
+    puVar2[9] = *(undefined2 *)(param_1 + 0x8a);
+    uVar1 = *(undefined2 *)(param_1 + 0x8c);
+    puVar2[10] = uVar1;
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return 0;
+}
+
+
+    +01c -> 00c58840 ?
+    +020 -> 004941e6 FUN_004941e6@004941e6
+    ---- decomp FUN_004941e6
+
+void FUN_004941e6(void)
+
+{
+  code *pcVar1;
+  
+  pcVar1 = (code *)FUN_004941c7();
+  if (pcVar1 != (code *)0x0) {
+    guard_check_icall();
+    (*pcVar1)();
+  }
+                    /* WARNING: Subroutine does not return */
+  _abort();
+}
+
+
+    +024 -> 004941e6 FUN_004941e6@004941e6
+    +028 -> 004941e6 FUN_004941e6@004941e6
+    +02c -> 004941e6 FUN_004941e6@004941e6
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 00485e90 FUN_00485e90@00485e90
+    ---- decomp FUN_00485e90
+
+int __thiscall FUN_00485e90(int param_1,byte param_2)
+
+{
+  *(undefined ***)(param_1 + -8) = CPNS::ISelectorMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 4) + -4 + param_1) =
+       CPNS::ISelectorMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 8) + -4 + param_1) =
+       CPNS::ISelectorMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 0xc) + -4 + param_1) =
+       CPNS::ISelectorMessage::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1 + -8,0x1c);
+  }
+  return param_1 + -8;
+}
+
+
+    +04c -> 00c5890c ?
+    +050 -> 00486560 FUN_00486560@00486560
+    ---- decomp FUN_00486560
+
+undefined4 __thiscall FUN_00486560(undefined4 param_1,byte param_2)
+
+{
+  FUN_004865f0();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,300);
+  }
+  return param_1;
+}
+
+
+    +054 -> 0066c010 FUN_0066c010@0066c010
+    +058 -> 00644cd0 FUN_00644cd0@00644cd0
+    ---- decomp FUN_00644cd0
+
+void FUN_00644cd0(void)
+
+{
+  return;
+}
+
+
+    +05c -> 004054a0 FUN_004054a0@004054a0
+    +060 -> 00c58944 ?
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 004941e6 FUN_004941e6@004941e6
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 00486520 FUN_00486520@00486520
+    ---- decomp FUN_00486520
+
+int * __thiscall FUN_00486520(int param_1,byte param_2)
+
+{
+  int *piVar1;
+  
+  piVar1 = (int *)(param_1 + -4);
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 4) + -4 + param_1) =
+       CPNS::IDeviceEnumerationContext::vftable;
+  *(undefined ***)(*(int *)(*piVar1 + 8) + -4 + param_1) = CPNS::IDeviceEnumerationContext::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(piVar1,0x10);
+  }
+  return piVar1;
+}
+
+
+    +090 -> ffffffd8 ?
+    +094 -> 000000f0 ?
+    +098 -> 000000f8 ?
+    +09c -> 00000100 ?
+    +0a0 -> 00c58984 ?
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 004941e6 FUN_004941e6@004941e6
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+  COL@c5876c
+  vftable@00c3af44 (col ptr @00c3af40)
+    +000 -> 0048638a FUN_0048638a@0048638a
+    ---- decomp FUN_0048638a
+
+void FUN_0048638a(void)
+
+{
+  FUN_00482600();
+  return;
+}
+
+
+    +004 -> 004864fb FUN_004864fb@004864fb
+    ---- decomp FUN_004864fb
+
+void FUN_004864fb(void)
+
+{
+  FUN_00482610();
+  return;
+}
+
+
+    +008 -> 004863c6 FUN_004863c6@004863c6
+    ---- decomp FUN_004863c6
+
+void FUN_004863c6(void)
+
+{
+  FUN_00482650();
+  return;
+}
+
+
+    +00c -> 00c58780 ?
+    +010 -> 004941e6 FUN_004941e6@004941e6
+    +014 -> 004941e6 FUN_004941e6@004941e6
+    +018 -> 004941e6 FUN_004941e6@004941e6
+    +01c -> 004941e6 FUN_004941e6@004941e6
+    +020 -> 004941e6 FUN_004941e6@004941e6
+    +024 -> 004941e6 FUN_004941e6@004941e6
+    +028 -> 004941e6 FUN_004941e6@004941e6
+    +02c -> 004941e6 FUN_004941e6@004941e6
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 004941e6 FUN_004941e6@004941e6
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 004941e6 FUN_004941e6@004941e6
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 004941e6 FUN_004941e6@004941e6
+    +090 -> 00c587c4 ?
+    +094 -> 00486438 FUN_00486438@00486438
+    ---- decomp FUN_00486438
+
+void FUN_00486438(void)
+
+{
+  FUN_00676850();
+  return;
+}
+
+
+    +098 -> 004864f0 FUN_004864f0@004864f0
+    ---- decomp FUN_004864f0
+
+void FUN_004864f0(void)
+
+{
+  FUN_006767f0();
+  return;
+}
+
+
+    +09c -> 00486395 FUN_00486395@00486395
+    ---- decomp FUN_00486395
+
+void FUN_00486395(void)
+
+{
+  FUN_00676790();
+  return;
+}
+
+
+    +0a0 -> 004863ff FUN_004863ff@004863ff
+    ---- decomp FUN_004863ff
+
+void FUN_004863ff(void)
+
+{
+  FUN_00676730();
+  return;
+}
+
+
+    +0a4 -> 00486310 FUN_00486310@00486310
+    ---- decomp FUN_00486310
+
+void FUN_00486310(void)
+
+{
+  FUN_006766d0();
+  return;
+}
+
+
+    +0a8 -> 004863ec FUN_004863ec@004863ec
+    ---- decomp FUN_004863ec
+
+void FUN_004863ec(void)
+
+{
+  FUN_00676670();
+  return;
+}
+
+
+    +0ac -> 00486463 FUN_00486463@00486463
+    ---- decomp FUN_00486463
+
+void FUN_00486463(void)
+
+{
+  FUN_00485aa0();
+  return;
+}
+
+
+    +0b0 -> 0048648c FUN_0048648c@0048648c
+    ---- decomp FUN_0048648c
+
+void FUN_0048648c(void)
+
+{
+  FUN_00485ac0();
+  return;
+}
+
+
+    +0b4 -> 004864a7 FUN_004864a7@004864a7
+    ---- decomp FUN_004864a7
+
+void FUN_004864a7(void)
+
+{
+  FUN_00485ad0();
+  return;
+}
+
+
+    +0b8 -> 004864dd FUN_004864dd@004864dd
+    ---- decomp FUN_004864dd
+
+void FUN_004864dd(void)
+
+{
+  FUN_00485ae0();
+  return;
+}
+
+
+    +0bc -> 0048637f FUN_0048637f@0048637f
+    ---- decomp FUN_0048637f
+
+void FUN_0048637f(void)
+
+{
+  FUN_00485b30();
+  return;
+}
+
+
+    +0c0 -> 00486412 FUN_00486412@00486412
+    ---- decomp FUN_00486412
+
+void FUN_00486412(void)
+
+{
+  FUN_00485b40();
+  return;
+}
+
+
+    +0c4 -> 00c58794 ?
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 00c5882c ?
+    +0fc -> 00486344 FUN_00486344@00486344
+    ---- decomp FUN_00486344
+
+void FUN_00486344(void)
+
+{
+  FUN_0066bff0();
+  return;
+}
+
+
+    +100 -> 004864b2 FUN_004864b2@004864b2
+    ---- decomp FUN_004864b2
+
+void FUN_004864b2(void)
+
+{
+  FUN_00482510();
+  return;
+}
+
+
+    +104 -> 004863a0 FUN_004863a0@004863a0
+    ---- decomp FUN_004863a0
+
+void FUN_004863a0(void)
+
+{
+  FUN_00482550();
+  return;
+}
+
+
+    +108 -> 0048646e FUN_0048646e@0048646e
+    ---- decomp FUN_0048646e
+
+void FUN_0048646e(void)
+
+{
+  FUN_00482590();
+  return;
+}
+
+
+    +10c -> 00486339 FUN_00486339@00486339
+    ---- decomp FUN_00486339
+
+void FUN_00486339(void)
+
+{
+  FUN_004825a0();
+  return;
+}
+
+
+    +110 -> 0048641d FUN_0048641d@0048641d
+    ---- decomp FUN_0048641d
+
+void FUN_0048641d(void)
+
+{
+  FUN_004825b0();
+  return;
+}
+
+
+    +114 -> 004863b3 FUN_004863b3@004863b3
+    ---- decomp FUN_004863b3
+
+void FUN_004863b3(void)
+
+{
+  FUN_004825c0();
+  return;
+}
+
+
+    +118 -> 004863e1 FUN_004863e1@004863e1
+    ---- decomp FUN_004863e1
+
+void FUN_004863e1(void)
+
+{
+  FUN_004825d0();
+  return;
+}
+
+
+    +11c -> 0048650e FUN_0048650e@0048650e
+    ---- decomp FUN_0048650e
+
+void FUN_0048650e(void)
+
+{
+  FUN_004825e0();
+  return;
+}
+
+
+    +120 -> 00486481 FUN_00486481@00486481
+    ---- decomp FUN_00486481
+
+void FUN_00486481(void)
+
+{
+  FUN_004825f0();
+  return;
+}
+
+
+    +124 -> 00486323 FUN_00486323@00486323
+    ---- decomp FUN_00486323
+
+void FUN_00486323(void)
+
+{
+  FUN_00486200();
+  return;
+}
+
+
+    +128 -> 00c58744 ?
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+    +134 -> 004941e6 FUN_004941e6@004941e6
+    +138 -> 00c58818 ?
+    +13c -> 00486506 FUN_00486506@00486506
+    ---- decomp FUN_00486506
+
+void FUN_00486506(void)
+
+{
+  FUN_004861f0();
+  return;
+}
+
+
+    +140 -> 0048649f FUN_0048649f@0048649f
+    ---- decomp FUN_0048649f
+
+void FUN_0048649f(void)
+
+{
+  FUN_00482590();
+  return;
+}
+
+
+    +144 -> 0048645b FUN_0048645b@0048645b
+    ---- decomp FUN_0048645b
+
+void FUN_0048645b(void)
+
+{
+  FUN_00486190();
+  return;
+}
+
+
+    +148 -> 00486430 FUN_00486430@00486430
+    ---- decomp FUN_00486430
+
+void FUN_00486430(void)
+
+{
+  FUN_004861a0();
+  return;
+}
+
+
+    +14c -> 004864d5 FUN_004864d5@004864d5
+    ---- decomp FUN_004864d5
+
+void FUN_004864d5(void)
+
+{
+  FUN_004861c0();
+  return;
+}
+
+
+    +150 -> 0048640a FUN_0048640a@0048640a
+    ---- decomp FUN_0048640a
+
+void FUN_0048640a(void)
+
+{
+  FUN_00486070();
+  return;
+}
+
+
+    +154 -> 004863be FUN_004863be@004863be
+    ---- decomp FUN_004863be
+
+void FUN_004863be(void)
+
+{
+  FUN_00486080();
+  return;
+}
+
+
+    +158 -> 004864bd FUN_004864bd@004864bd
+    ---- decomp FUN_004864bd
+
+void FUN_004864bd(void)
+
+{
+  FUN_004860a0();
+  return;
+}
+
+
+    +15c -> 00486377 FUN_00486377@00486377
+    ---- decomp FUN_00486377
+
+void FUN_00486377(void)
+
+{
+  FUN_004860b0();
+  return;
+}
+
+
+    +160 -> 004864cd FUN_004864cd@004864cd
+    ---- decomp FUN_004864cd
+
+void FUN_004864cd(void)
+
+{
+  FUN_004860e0();
+  return;
+}
+
+
+    +164 -> 00486453 FUN_00486453@00486453
+    ---- decomp FUN_00486453
+
+void FUN_00486453(void)
+
+{
+  FUN_004860f0();
+  return;
+}
+
+
+    +168 -> 00486331 FUN_00486331@00486331
+    ---- decomp FUN_00486331
+
+void FUN_00486331(void)
+
+{
+  FUN_00486120();
+  return;
+}
+
+
+    +16c -> 00486479 FUN_00486479@00486479
+    ---- decomp FUN_00486479
+
+void FUN_00486479(void)
+
+{
+  FUN_00486130();
+  return;
+}
+
+
+    +170 -> 004863f7 FUN_004863f7@004863f7
+    ---- decomp FUN_004863f7
+
+void FUN_004863f7(void)
+
+{
+  FUN_00486140();
+  return;
+}
+
+
+    +174 -> 0048635f FUN_0048635f@0048635f
+    ---- decomp FUN_0048635f
+
+void FUN_0048635f(void)
+
+{
+  FUN_00486030();
+  return;
+}
+
+
+    +178 -> 0048636f FUN_0048636f@0048636f
+    ---- decomp FUN_0048636f
+
+void FUN_0048636f(void)
+
+{
+  FUN_00486040();
+  return;
+}
+
+
+    +17c -> 0048631b FUN_0048631b@0048631b
+    ---- decomp FUN_0048631b
+
+void FUN_0048631b(void)
+
+{
+  FUN_00486060();
+  return;
+}
+
+
+  COL@c587c4
+  vftable@00c3afd8 (col ptr @00c3afd4)
+    +000 -> 00486438 FUN_00486438@00486438
+    +004 -> 004864f0 FUN_004864f0@004864f0
+    +008 -> 00486395 FUN_00486395@00486395
+    +00c -> 004863ff FUN_004863ff@004863ff
+    +010 -> 00486310 FUN_00486310@00486310
+    +014 -> 004863ec FUN_004863ec@004863ec
+    +018 -> 00486463 FUN_00486463@00486463
+    +01c -> 0048648c FUN_0048648c@0048648c
+    +020 -> 004864a7 FUN_004864a7@004864a7
+    +024 -> 004864dd FUN_004864dd@004864dd
+    +028 -> 0048637f FUN_0048637f@0048637f
+    +02c -> 00486412 FUN_00486412@00486412
+    +030 -> 00c58794 ?
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 004941e6 FUN_004941e6@004941e6
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 00c5882c ?
+    +068 -> 00486344 FUN_00486344@00486344
+    +06c -> 004864b2 FUN_004864b2@004864b2
+    +070 -> 004863a0 FUN_004863a0@004863a0
+    +074 -> 0048646e FUN_0048646e@0048646e
+    +078 -> 00486339 FUN_00486339@00486339
+    +07c -> 0048641d FUN_0048641d@0048641d
+    +080 -> 004863b3 FUN_004863b3@004863b3
+    +084 -> 004863e1 FUN_004863e1@004863e1
+    +088 -> 0048650e FUN_0048650e@0048650e
+    +08c -> 00486481 FUN_00486481@00486481
+    +090 -> 00486323 FUN_00486323@00486323
+    +094 -> 00c58744 ?
+    +098 -> 004941e6 FUN_004941e6@004941e6
+    +09c -> 004941e6 FUN_004941e6@004941e6
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 00c58818 ?
+    +0a8 -> 00486506 FUN_00486506@00486506
+    +0ac -> 0048649f FUN_0048649f@0048649f
+    +0b0 -> 0048645b FUN_0048645b@0048645b
+    +0b4 -> 00486430 FUN_00486430@00486430
+    +0b8 -> 004864d5 FUN_004864d5@004864d5
+    +0bc -> 0048640a FUN_0048640a@0048640a
+    +0c0 -> 004863be FUN_004863be@004863be
+    +0c4 -> 004864bd FUN_004864bd@004864bd
+    +0c8 -> 00486377 FUN_00486377@00486377
+    +0cc -> 004864cd FUN_004864cd@004864cd
+    +0d0 -> 00486453 FUN_00486453@00486453
+    +0d4 -> 00486331 FUN_00486331@00486331
+    +0d8 -> 00486479 FUN_00486479@00486479
+    +0dc -> 004863f7 FUN_004863f7@004863f7
+    +0e0 -> 0048635f FUN_0048635f@0048635f
+    +0e4 -> 0048636f FUN_0048636f@0048636f
+    +0e8 -> 0048631b FUN_0048631b@0048631b
+    +0ec -> 00486357 FUN_00486357@00486357
+    ---- decomp FUN_00486357
+
+void FUN_00486357(void)
+
+{
+  FUN_00486150();
+  return;
+}
+
+
+    +0f0 -> 0048644b FUN_0048644b@0048644b
+    ---- decomp FUN_0048644b
+
+void FUN_0048644b(void)
+
+{
+  FUN_00486160();
+  return;
+}
+
+
+    +0f4 -> 004864e8 FUN_004864e8@004864e8
+    ---- decomp FUN_004864e8
+
+void FUN_004864e8(void)
+
+{
+  FUN_00486180();
+  return;
+}
+
+
+    +0f8 -> 00486308 FUN_00486308@00486308
+    ---- decomp FUN_00486308
+
+void FUN_00486308(void)
+
+{
+  FUN_00485f90();
+  return;
+}
+
+
+    +0fc -> 0048634f FUN_0048634f@0048634f
+    ---- decomp FUN_0048634f
+
+void FUN_0048634f(void)
+
+{
+  FUN_00485fb0();
+  return;
+}
+
+
+    +100 -> 004863d9 FUN_004863d9@004863d9
+    ---- decomp FUN_004863d9
+
+void FUN_004863d9(void)
+
+{
+  FUN_00485f10();
+  return;
+}
+
+
+    +104 -> 00486300 FUN_00486300@00486300
+    ---- decomp FUN_00486300
+
+void FUN_00486300(void)
+
+{
+  FUN_00485f70();
+  return;
+}
+
+
+    +108 -> 004863ab FUN_004863ab@004863ab
+    ---- decomp FUN_004863ab
+
+void FUN_004863ab(void)
+
+{
+  FUN_00485ef0();
+  return;
+}
+
+
+    +10c -> 004862f8 FUN_004862f8@004862f8
+    ---- decomp FUN_004862f8
+
+void FUN_004862f8(void)
+
+{
+  FUN_00485f00();
+  return;
+}
+
+
+    +110 -> 00486367 FUN_00486367@00486367
+    ---- decomp FUN_00486367
+
+void FUN_00486367(void)
+
+{
+  FUN_00485fc0();
+  return;
+}
+
+
+    +114 -> 004864c5 FUN_004864c5@004864c5
+    ---- decomp FUN_004864c5
+
+void FUN_004864c5(void)
+
+{
+  FUN_00485fe0();
+  return;
+}
+
+
+    +118 -> 004863d1 FUN_004863d1@004863d1
+    ---- decomp FUN_004863d1
+
+void FUN_004863d1(void)
+
+{
+  FUN_00485ff0();
+  return;
+}
+
+
+    +11c -> 00486443 FUN_00486443@00486443
+    ---- decomp FUN_00486443
+
+void FUN_00486443(void)
+
+{
+  FUN_00486000();
+  return;
+}
+
+
+    +120 -> 00486497 FUN_00486497@00486497
+    ---- decomp FUN_00486497
+
+void FUN_00486497(void)
+
+{
+  FUN_00486010();
+  return;
+}
+
+
+    +124 -> 00486428 FUN_00486428@00486428
+    ---- decomp FUN_00486428
+
+void FUN_00486428(void)
+
+{
+  FUN_00486020();
+  return;
+}
+
+
+    +128 -> 00c58758 ?
+    +12c -> 00486200 FUN_00486200@00486200
+    +130 -> 0066c010 FUN_0066c010@0066c010
+    +134 -> 00644a80 FUN_00644a80@00644a80
+    +138 -> 004054a0 FUN_004054a0@004054a0
+    +13c -> 00644a70 FUN_00644a70@00644a70
+    +140 -> 00644a60 FUN_00644a60@00644a60
+    +144 -> 006449a0 FUN_006449a0@006449a0
+    +148 -> 00c58840 ?
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 00485e90 FUN_00485e90@00485e90
+    +178 -> 00c5890c ?
+    +17c -> 00486560 FUN_00486560@00486560
+  COL@c58818
+  vftable@00c3b080 (col ptr @00c3b07c)
+    +000 -> 00486506 FUN_00486506@00486506
+    +004 -> 0048649f FUN_0048649f@0048649f
+    +008 -> 0048645b FUN_0048645b@0048645b
+    +00c -> 00486430 FUN_00486430@00486430
+    +010 -> 004864d5 FUN_004864d5@004864d5
+    +014 -> 0048640a FUN_0048640a@0048640a
+    +018 -> 004863be FUN_004863be@004863be
+    +01c -> 004864bd FUN_004864bd@004864bd
+    +020 -> 00486377 FUN_00486377@00486377
+    +024 -> 004864cd FUN_004864cd@004864cd
+    +028 -> 00486453 FUN_00486453@00486453
+    +02c -> 00486331 FUN_00486331@00486331
+    +030 -> 00486479 FUN_00486479@00486479
+    +034 -> 004863f7 FUN_004863f7@004863f7
+    +038 -> 0048635f FUN_0048635f@0048635f
+    +03c -> 0048636f FUN_0048636f@0048636f
+    +040 -> 0048631b FUN_0048631b@0048631b
+    +044 -> 00486357 FUN_00486357@00486357
+    +048 -> 0048644b FUN_0048644b@0048644b
+    +04c -> 004864e8 FUN_004864e8@004864e8
+    +050 -> 00486308 FUN_00486308@00486308
+    +054 -> 0048634f FUN_0048634f@0048634f
+    +058 -> 004863d9 FUN_004863d9@004863d9
+    +05c -> 00486300 FUN_00486300@00486300
+    +060 -> 004863ab FUN_004863ab@004863ab
+    +064 -> 004862f8 FUN_004862f8@004862f8
+    +068 -> 00486367 FUN_00486367@00486367
+    +06c -> 004864c5 FUN_004864c5@004864c5
+    +070 -> 004863d1 FUN_004863d1@004863d1
+    +074 -> 00486443 FUN_00486443@00486443
+    +078 -> 00486497 FUN_00486497@00486497
+    +07c -> 00486428 FUN_00486428@00486428
+    +080 -> 00c58758 ?
+    +084 -> 00486200 FUN_00486200@00486200
+    +088 -> 0066c010 FUN_0066c010@0066c010
+    +08c -> 00644a80 FUN_00644a80@00644a80
+    +090 -> 004054a0 FUN_004054a0@004054a0
+    +094 -> 00644a70 FUN_00644a70@00644a70
+    +098 -> 00644a60 FUN_00644a60@00644a60
+    +09c -> 006449a0 FUN_006449a0@006449a0
+    +0a0 -> 00c58840 ?
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 004941e6 FUN_004941e6@004941e6
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 004941e6 FUN_004941e6@004941e6
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 004941e6 FUN_004941e6@004941e6
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 00485e90 FUN_00485e90@00485e90
+    +0d0 -> 00c5890c ?
+    +0d4 -> 00486560 FUN_00486560@00486560
+    +0d8 -> 0066c010 FUN_0066c010@0066c010
+    +0dc -> 00644cd0 FUN_00644cd0@00644cd0
+    +0e0 -> 004054a0 FUN_004054a0@004054a0
+    +0e4 -> 00c58944 ?
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 00486520 FUN_00486520@00486520
+    +114 -> ffffffd8 ?
+    +118 -> 000000f0 ?
+    +11c -> 000000f8 ?
+    +120 -> 00000100 ?
+    +124 -> 00c58984 ?
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+  COL@c5882c
+  vftable@00c3b040 (col ptr @00c3b03c)
+    +000 -> 00486344 FUN_00486344@00486344
+    +004 -> 004864b2 FUN_004864b2@004864b2
+    +008 -> 004863a0 FUN_004863a0@004863a0
+    +00c -> 0048646e FUN_0048646e@0048646e
+    +010 -> 00486339 FUN_00486339@00486339
+    +014 -> 0048641d FUN_0048641d@0048641d
+    +018 -> 004863b3 FUN_004863b3@004863b3
+    +01c -> 004863e1 FUN_004863e1@004863e1
+    +020 -> 0048650e FUN_0048650e@0048650e
+    +024 -> 00486481 FUN_00486481@00486481
+    +028 -> 00486323 FUN_00486323@00486323
+    +02c -> 00c58744 ?
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 00c58818 ?
+    +040 -> 00486506 FUN_00486506@00486506
+    +044 -> 0048649f FUN_0048649f@0048649f
+    +048 -> 0048645b FUN_0048645b@0048645b
+    +04c -> 00486430 FUN_00486430@00486430
+    +050 -> 004864d5 FUN_004864d5@004864d5
+    +054 -> 0048640a FUN_0048640a@0048640a
+    +058 -> 004863be FUN_004863be@004863be
+    +05c -> 004864bd FUN_004864bd@004864bd
+    +060 -> 00486377 FUN_00486377@00486377
+    +064 -> 004864cd FUN_004864cd@004864cd
+    +068 -> 00486453 FUN_00486453@00486453
+    +06c -> 00486331 FUN_00486331@00486331
+    +070 -> 00486479 FUN_00486479@00486479
+    +074 -> 004863f7 FUN_004863f7@004863f7
+    +078 -> 0048635f FUN_0048635f@0048635f
+    +07c -> 0048636f FUN_0048636f@0048636f
+    +080 -> 0048631b FUN_0048631b@0048631b
+    +084 -> 00486357 FUN_00486357@00486357
+    +088 -> 0048644b FUN_0048644b@0048644b
+    +08c -> 004864e8 FUN_004864e8@004864e8
+    +090 -> 00486308 FUN_00486308@00486308
+    +094 -> 0048634f FUN_0048634f@0048634f
+    +098 -> 004863d9 FUN_004863d9@004863d9
+    +09c -> 00486300 FUN_00486300@00486300
+    +0a0 -> 004863ab FUN_004863ab@004863ab
+    +0a4 -> 004862f8 FUN_004862f8@004862f8
+    +0a8 -> 00486367 FUN_00486367@00486367
+    +0ac -> 004864c5 FUN_004864c5@004864c5
+    +0b0 -> 004863d1 FUN_004863d1@004863d1
+    +0b4 -> 00486443 FUN_00486443@00486443
+    +0b8 -> 00486497 FUN_00486497@00486497
+    +0bc -> 00486428 FUN_00486428@00486428
+    +0c0 -> 00c58758 ?
+    +0c4 -> 00486200 FUN_00486200@00486200
+    +0c8 -> 0066c010 FUN_0066c010@0066c010
+    +0cc -> 00644a80 FUN_00644a80@00644a80
+    +0d0 -> 004054a0 FUN_004054a0@004054a0
+    +0d4 -> 00644a70 FUN_00644a70@00644a70
+    +0d8 -> 00644a60 FUN_00644a60@00644a60
+    +0dc -> 006449a0 FUN_006449a0@006449a0
+    +0e0 -> 00c58840 ?
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 00485e90 FUN_00485e90@00485e90
+    +110 -> 00c5890c ?
+    +114 -> 00486560 FUN_00486560@00486560
+    +118 -> 0066c010 FUN_0066c010@0066c010
+    +11c -> 00644cd0 FUN_00644cd0@00644cd0
+    +120 -> 004054a0 FUN_004054a0@004054a0
+    +124 -> 00c58944 ?
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+    +134 -> 004941e6 FUN_004941e6@004941e6
+    +138 -> 004941e6 FUN_004941e6@004941e6
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 00486520 FUN_00486520@00486520
+    +154 -> ffffffd8 ?
+    +158 -> 000000f0 ?
+    +15c -> 000000f8 ?
+    +160 -> 00000100 ?
+    +164 -> 00c58984 ?
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+##### TD c8cffc struct@c8cff4
+  COL@c58f9c
+  vftable@00c3b988 (col ptr @00c3b984)
+    +000 -> 00487c73 FUN_00487c73@00487c73
+    ---- decomp FUN_00487c73
+
+void FUN_00487c73(void)
+
+{
+  FUN_00487a40();
+  return;
+}
+
+
+    +004 -> 00487c2f FUN_00487c2f@00487c2f
+    ---- decomp FUN_00487c2f
+
+void FUN_00487c2f(void)
+
+{
+  FUN_00487a50();
+  return;
+}
+
+
+    +008 -> 00487c0c FUN_00487c0c@00487c0c
+    ---- decomp FUN_00487c0c
+
+void FUN_00487c0c(void)
+
+{
+  FUN_004879e0();
+  return;
+}
+
+
+    +00c -> 00487bc8 FUN_00487bc8@00487bc8
+    ---- decomp FUN_00487bc8
+
+void FUN_00487bc8(void)
+
+{
+  FUN_004879f0();
+  return;
+}
+
+
+    +010 -> 00487cc4 FUN_00487cc4@00487cc4
+    ---- decomp FUN_00487cc4
+
+void FUN_00487cc4(void)
+
+{
+  FUN_00487a10();
+  return;
+}
+
+
+    +014 -> 00487d08 FUN_00487d08@00487d08
+    ---- decomp FUN_00487d08
+
+void FUN_00487d08(void)
+
+{
+  FUN_00487880();
+  return;
+}
+
+
+    +018 -> 00487bee FUN_00487bee@00487bee
+    ---- decomp FUN_00487bee
+
+void FUN_00487bee(void)
+
+{
+  FUN_00487890();
+  return;
+}
+
+
+    +01c -> 00487ca6 FUN_00487ca6@00487ca6
+    ---- decomp FUN_00487ca6
+
+void FUN_00487ca6(void)
+
+{
+  FUN_004878b0();
+  return;
+}
+
+
+    +020 -> 00487d23 FUN_00487d23@00487d23
+    ---- decomp FUN_00487d23
+
+void FUN_00487d23(void)
+
+{
+  FUN_004878c0();
+  return;
+}
+
+
+    +024 -> 0048635f FUN_0048635f@0048635f
+    +028 -> 00487c14 FUN_00487c14@00487c14
+    ---- decomp FUN_00487c14
+
+void FUN_00487c14(void)
+
+{
+  FUN_004878f0();
+  return;
+}
+
+
+    +02c -> 00486357 FUN_00486357@00486357
+    +030 -> 00487c1c FUN_00487c1c@00487c1c
+    ---- decomp FUN_00487c1c
+
+void FUN_00487c1c(void)
+
+{
+  FUN_00487850();
+  return;
+}
+
+
+    +034 -> 00487b8c FUN_00487b8c@00487b8c
+    ---- decomp FUN_00487b8c
+
+void FUN_00487b8c(void)
+
+{
+  FUN_00487860();
+  return;
+}
+
+
+    +038 -> 00486443 FUN_00486443@00486443
+    +03c -> 00487d1b FUN_00487d1b@00487d1b
+    ---- decomp FUN_00487d1b
+
+void FUN_00487d1b(void)
+
+{
+  FUN_00487920();
+  return;
+}
+
+
+    +040 -> 00487cd7 FUN_00487cd7@00487cd7
+    ---- decomp FUN_00487cd7
+
+void FUN_00487cd7(void)
+
+{
+  FUN_00487930();
+  return;
+}
+
+
+    +044 -> 00487c60 FUN_00487c60@00487c60
+    ---- decomp FUN_00487c60
+
+void FUN_00487c60(void)
+
+{
+  FUN_00487950();
+  return;
+}
+
+
+    +048 -> 00487c9e FUN_00487c9e@00487c9e
+    ---- decomp FUN_00487c9e
+
+void FUN_00487c9e(void)
+
+{
+  FUN_004877f0();
+  return;
+}
+
+
+    +04c -> 00487cf5 FUN_00487cf5@00487cf5
+    ---- decomp FUN_00487cf5
+
+void FUN_00487cf5(void)
+
+{
+  FUN_00487810();
+  return;
+}
+
+
+    +050 -> 00487c96 FUN_00487c96@00487c96
+    ---- decomp FUN_00487c96
+
+void FUN_00487c96(void)
+
+{
+  FUN_00487770();
+  return;
+}
+
+
+    +054 -> 00487c8e FUN_00487c8e@00487c8e
+    ---- decomp FUN_00487c8e
+
+void FUN_00487c8e(void)
+
+{
+  FUN_004877d0();
+  return;
+}
+
+
+    +058 -> 00486506 FUN_00486506@00486506
+    +05c -> 0048649f FUN_0048649f@0048649f
+    +060 -> 00487b84 FUN_00487b84@00487b84
+    ---- decomp FUN_00487b84
+
+void FUN_00487b84(void)
+
+{
+  FUN_00487820();
+  return;
+}
+
+
+    +064 -> 00487c86 FUN_00487c86@00487c86
+    ---- decomp FUN_00487c86
+
+void FUN_00487c86(void)
+
+{
+  FUN_00487840();
+  return;
+}
+
+
+    +068 -> 00487c42 FUN_00487c42@00487c42
+    ---- decomp FUN_00487c42
+
+void FUN_00487c42(void)
+
+{
+  FUN_00487960();
+  return;
+}
+
+
+    +06c -> 00487b7c FUN_00487b7c@00487b7c
+    ---- decomp FUN_00487b7c
+
+void FUN_00487b7c(void)
+
+{
+  FUN_00485b30();
+  return;
+}
+
+
+    +070 -> 00487bdb FUN_00487bdb@00487bdb
+    ---- decomp FUN_00487bdb
+
+void FUN_00487bdb(void)
+
+{
+  FUN_00487970();
+  return;
+}
+
+
+    +074 -> 00487bc0 FUN_00487bc0@00487bc0
+    ---- decomp FUN_00487bc0
+
+void FUN_00487bc0(void)
+
+{
+  FUN_00487990();
+  return;
+}
+
+
+    +078 -> 00c590a8 ?
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> ffffffd8 ?
+    +08c -> 00000074 ?
+    +090 -> 0000007c ?
+    +094 -> 00000088 ?
+    +098 -> 00000094 ?
+    +09c -> 00c5906c ?
+    +0a0 -> 00487c37 FUN_00487c37@00487c37
+    ---- decomp FUN_00487c37
+
+void FUN_00487c37(void)
+
+{
+  FUN_00482600();
+  return;
+}
+
+
+    +0a4 -> 00487bb5 FUN_00487bb5@00487bb5
+    ---- decomp FUN_00487bb5
+
+void FUN_00487bb5(void)
+
+{
+  FUN_00482610();
+  return;
+}
+
+
+    +0a8 -> 00487c7b FUN_00487c7b@00487c7b
+    ---- decomp FUN_00487c7b
+
+void FUN_00487c7b(void)
+
+{
+  FUN_00482650();
+  return;
+}
+
+
+    +0ac -> 00c59058 ?
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 004941e6 FUN_004941e6@004941e6
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 004941e6 FUN_004941e6@004941e6
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 00487710 FUN_00487710@00487710
+    ---- decomp FUN_00487710
+
+int __thiscall FUN_00487710(int param_1,byte param_2)
+
+{
+  *(undefined ***)(param_1 + -8) = CPNS::IModifierMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 4) + -4 + param_1) =
+       CPNS::IModifierMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 8) + -4 + param_1) =
+       CPNS::IModifierMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 0xc) + -4 + param_1) =
+       CPNS::IModifierMessage::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1 + -8,0x1c);
+  }
+  return param_1 + -8;
+}
+
+
+    +0dc -> 00c59150 ?
+    +0e0 -> 00487d80 FUN_00487d80@00487d80
+    ---- decomp FUN_00487d80
+
+undefined4 * __thiscall FUN_00487d80(undefined4 *param_1,byte param_2)
+
+{
+  uint uVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_0068b3a6;
+  local_10 = ExceptionList;
+  uVar1 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  *param_1 = CPCHAI::DelayedJobManager::DelayedJob::vftable;
+  (**(code **)(*(int *)(param_1[5] + 0x28 + *(int *)(*(int *)(param_1[5] + 0x28) + 8)) + 4))(uVar1);
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x20);
+  }
+  ExceptionList = local_10;
+  return param_1;
+}
+
+
+    +0e4 -> 00c59100 ?
+    +0e8 -> 00487d50 FUN_00487d50@00487d50
+    ---- decomp FUN_00487d50
+
+undefined4 * __thiscall FUN_00487d50(undefined4 *param_1,byte param_2)
+
+{
+  *param_1 = CPCHAI::DelayedJobManager::vftable;
+  DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 3));
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x70);
+  }
+  return param_1;
+}
+
+
+    +0ec -> 00c591fc ?
+    +0f0 -> 004881cf FUN_004881cf@004881cf
+    ---- decomp FUN_004881cf
+
+void FUN_004881cf(void)
+
+{
+  FUN_00482600();
+  return;
+}
+
+
+    +0f4 -> 00487fda FUN_00487fda@00487fda
+    ---- decomp FUN_00487fda
+
+void FUN_00487fda(void)
+
+{
+  FUN_00482610();
+  return;
+}
+
+
+    +0f8 -> 004882a0 FUN_004882a0@004882a0
+    ---- decomp FUN_004882a0
+
+void FUN_004882a0(void)
+
+{
+  FUN_00482650();
+  return;
+}
+
+
+    +0fc -> ffffffd8 ?
+    +100 -> 00000168 ?
+    +104 -> 00000170 ?
+    +108 -> 0000017c ?
+    +10c -> 00000188 ?
+    +110 -> 00c592a0 ?
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 004941e6 FUN_004941e6@004941e6
+    +124 -> 004941e6 FUN_004941e6@004941e6
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+    +134 -> 004941e6 FUN_004941e6@004941e6
+    +138 -> 004941e6 FUN_004941e6@004941e6
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c59020
+  vftable@00c3b930 (col ptr @00c3b92c)
+    +000 -> 00487a60 FUN_00487a60@00487a60
+    ---- decomp FUN_00487a60
+
+undefined4 __thiscall FUN_00487a60(undefined4 param_1,byte param_2)
+
+{
+  FUN_00487a90();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xc4);
+  }
+  return param_1;
+}
+
+
+    +004 -> 0066c010 FUN_0066c010@0066c010
+    +008 -> 00646cc0 FUN_00646cc0@00646cc0
+    ---- decomp FUN_00646cc0
+
+void FUN_00646cc0(void)
+
+{
+  return;
+}
+
+
+    +00c -> 004054a0 FUN_004054a0@004054a0
+    +010 -> 00646cb0 FUN_00646cb0@00646cb0
+    ---- decomp FUN_00646cb0
+
+undefined4 FUN_00646cb0(void)
+
+{
+  return 0x20;
+}
+
+
+    +014 -> 00646ca0 FUN_00646ca0@00646ca0
+    ---- decomp FUN_00646ca0
+
+undefined1 FUN_00646ca0(void)
+
+{
+  return 0;
+}
+
+
+    +018 -> 00646bd0 FUN_00646bd0@00646bd0
+    ---- decomp FUN_00646bd0
+
+undefined4 __thiscall FUN_00646bd0(int param_1,undefined4 param_2,undefined2 *param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 *puVar2;
+  int iVar3;
+  
+  *param_3 = 0x20;
+  iVar3 = FUN_00634680(0x20,2,*(byte *)(param_1 + 0x74) >> 1 & 1,*(byte *)(param_1 + 0x74) & 1);
+  if (iVar3 != 0) {
+    puVar2 = *(undefined2 **)(iVar3 + 0x1c);
+    *puVar2 = *(undefined2 *)(param_1 + 0x78);
+    puVar2[1] = *(undefined2 *)(param_1 + 0x7a);
+    puVar2[2] = *(undefined2 *)(param_1 + 0x7c);
+    puVar2[3] = *(undefined2 *)(param_1 + 0x7e);
+    puVar2[4] = *(undefined2 *)(param_1 + 0x80);
+    puVar2[5] = *(undefined2 *)(param_1 + 0x82);
+    puVar2[6] = *(undefined2 *)(param_1 + 0x84);
+    puVar2[7] = *(undefined2 *)(param_1 + 0x86);
+    puVar2[8] = *(undefined2 *)(param_1 + 0x88);
+    puVar2[9] = *(undefined2 *)(param_1 + 0x8a);
+    puVar2[10] = *(undefined2 *)(param_1 + 0x8c);
+    uVar1 = *(undefined2 *)(param_1 + 0x8e);
+    puVar2[0xb] = uVar1;
+    *(undefined8 *)(puVar2 + 0xc) = *(undefined8 *)(param_1 + 0x90);
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return 0;
+}
+
+
+    +01c -> 004879b0 FUN_004879b0@004879b0
+    ---- decomp FUN_004879b0
+
+void __thiscall FUN_004879b0(int param_1,undefined2 param_2)
+
+{
+  *(undefined2 *)(param_1 + 0x8c) = param_2;
+  *(undefined2 *)(param_1 + 0x8e) = 0;
+  return;
+}
+
+
+    +020 -> 004879d0 FUN_004879d0@004879d0
+    ---- decomp FUN_004879d0
+
+undefined2 __fastcall FUN_004879d0(int param_1)
+
+{
+  return *(undefined2 *)(param_1 + 0x8c);
+}
+
+
+    +024 -> 00c590d8 ?
+    +028 -> 00487c01 FUN_00487c01@00487c01
+    ---- decomp FUN_00487c01
+
+void FUN_00487c01(void)
+
+{
+  FUN_0066bff0();
+  return;
+}
+
+
+    +02c -> 00487b94 FUN_00487b94@00487b94
+    ---- decomp FUN_00487b94
+
+void FUN_00487b94(void)
+
+{
+  FUN_00482510();
+  return;
+}
+
+
+    +030 -> 00487c55 FUN_00487c55@00487c55
+    ---- decomp FUN_00487c55
+
+void FUN_00487c55(void)
+
+{
+  FUN_00482550();
+  return;
+}
+
+
+    +034 -> 00487d2b FUN_00487d2b@00487d2b
+    ---- decomp FUN_00487d2b
+
+void FUN_00487d2b(void)
+
+{
+  FUN_00482590();
+  return;
+}
+
+
+    +038 -> 00487bf6 FUN_00487bf6@00487bf6
+    ---- decomp FUN_00487bf6
+
+void FUN_00487bf6(void)
+
+{
+  FUN_004825a0();
+  return;
+}
+
+
+    +03c -> 00487cea FUN_00487cea@00487cea
+    ---- decomp FUN_00487cea
+
+void FUN_00487cea(void)
+
+{
+  FUN_004825b0();
+  return;
+}
+
+
+    +040 -> 00487c68 FUN_00487c68@00487c68
+    ---- decomp FUN_00487c68
+
+void FUN_00487c68(void)
+
+{
+  FUN_004825c0();
+  return;
+}
+
+
+    +044 -> 00487cae FUN_00487cae@00487cae
+    ---- decomp FUN_00487cae
+
+void FUN_00487cae(void)
+
+{
+  FUN_004825d0();
+  return;
+}
+
+
+    +048 -> 00487bd0 FUN_00487bd0@00487bd0
+    ---- decomp FUN_00487bd0
+
+void FUN_00487bd0(void)
+
+{
+  FUN_004825e0();
+  return;
+}
+
+
+    +04c -> 00487d36 FUN_00487d36@00487d36
+    ---- decomp FUN_00487d36
+
+void FUN_00487d36(void)
+
+{
+  FUN_004825f0();
+  return;
+}
+
+
+    +050 -> 00487b6e FUN_00487b6e@00487b6e
+    ---- decomp FUN_00487b6e
+
+void FUN_00487b6e(void)
+
+{
+  FUN_00487a60();
+  return;
+}
+
+
+    +054 -> 00c58f9c ?
+    +058 -> 00487c73 FUN_00487c73@00487c73
+    +05c -> 00487c2f FUN_00487c2f@00487c2f
+    +060 -> 00487c0c FUN_00487c0c@00487c0c
+    +064 -> 00487bc8 FUN_00487bc8@00487bc8
+    +068 -> 00487cc4 FUN_00487cc4@00487cc4
+    +06c -> 00487d08 FUN_00487d08@00487d08
+    +070 -> 00487bee FUN_00487bee@00487bee
+    +074 -> 00487ca6 FUN_00487ca6@00487ca6
+    +078 -> 00487d23 FUN_00487d23@00487d23
+    +07c -> 0048635f FUN_0048635f@0048635f
+    +080 -> 00487c14 FUN_00487c14@00487c14
+    +084 -> 00486357 FUN_00486357@00486357
+    +088 -> 00487c1c FUN_00487c1c@00487c1c
+    +08c -> 00487b8c FUN_00487b8c@00487b8c
+    +090 -> 00486443 FUN_00486443@00486443
+    +094 -> 00487d1b FUN_00487d1b@00487d1b
+    +098 -> 00487cd7 FUN_00487cd7@00487cd7
+    +09c -> 00487c60 FUN_00487c60@00487c60
+    +0a0 -> 00487c9e FUN_00487c9e@00487c9e
+    +0a4 -> 00487cf5 FUN_00487cf5@00487cf5
+    +0a8 -> 00487c96 FUN_00487c96@00487c96
+    +0ac -> 00487c8e FUN_00487c8e@00487c8e
+    +0b0 -> 00486506 FUN_00486506@00486506
+    +0b4 -> 0048649f FUN_0048649f@0048649f
+    +0b8 -> 00487b84 FUN_00487b84@00487b84
+    +0bc -> 00487c86 FUN_00487c86@00487c86
+    +0c0 -> 00487c42 FUN_00487c42@00487c42
+    +0c4 -> 00487b7c FUN_00487b7c@00487b7c
+    +0c8 -> 00487bdb FUN_00487bdb@00487bdb
+    +0cc -> 00487bc0 FUN_00487bc0@00487bc0
+    +0d0 -> 00c590a8 ?
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> ffffffd8 ?
+    +0e4 -> 00000074 ?
+    +0e8 -> 0000007c ?
+    +0ec -> 00000088 ?
+    +0f0 -> 00000094 ?
+    +0f4 -> 00c5906c ?
+    +0f8 -> 00487c37 FUN_00487c37@00487c37
+    +0fc -> 00487bb5 FUN_00487bb5@00487bb5
+    +100 -> 00487c7b FUN_00487c7b@00487c7b
+    +104 -> 00c59058 ?
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 004941e6 FUN_004941e6@004941e6
+    +124 -> 004941e6 FUN_004941e6@004941e6
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 00487710 FUN_00487710@00487710
+    +134 -> 00c59150 ?
+    +138 -> 00487d80 FUN_00487d80@00487d80
+    +13c -> 00c59100 ?
+    +140 -> 00487d50 FUN_00487d50@00487d50
+    +144 -> 00c591fc ?
+    +148 -> 004881cf FUN_004881cf@004881cf
+    +14c -> 00487fda FUN_00487fda@00487fda
+    +150 -> 004882a0 FUN_004882a0@004882a0
+    +154 -> ffffffd8 ?
+    +158 -> 00000168 ?
+    +15c -> 00000170 ?
+    +160 -> 0000017c ?
+    +164 -> 00000188 ?
+    +168 -> 00c592a0 ?
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c59034
+  vftable@00c3b8c8 (col ptr @00c3b8c4)
+    +000 -> 00487cfd FUN_00487cfd@00487cfd
+    ---- decomp FUN_00487cfd
+
+void FUN_00487cfd(void)
+
+{
+  FUN_00676850();
+  return;
+}
+
+
+    +004 -> 00487baa FUN_00487baa@00487baa
+    ---- decomp FUN_00487baa
+
+void FUN_00487baa(void)
+
+{
+  FUN_006767f0();
+  return;
+}
+
+
+    +008 -> 00487c4a FUN_00487c4a@00487c4a
+    ---- decomp FUN_00487c4a
+
+void FUN_00487c4a(void)
+
+{
+  FUN_00676790();
+  return;
+}
+
+
+    +00c -> 00487ccc FUN_00487ccc@00487ccc
+    ---- decomp FUN_00487ccc
+
+void FUN_00487ccc(void)
+
+{
+  FUN_00676730();
+  return;
+}
+
+
+    +010 -> 00487be3 FUN_00487be3@00487be3
+    ---- decomp FUN_00487be3
+
+void FUN_00487be3(void)
+
+{
+  FUN_006766d0();
+  return;
+}
+
+
+    +014 -> 00487cb9 FUN_00487cb9@00487cb9
+    ---- decomp FUN_00487cb9
+
+void FUN_00487cb9(void)
+
+{
+  FUN_00676670();
+  return;
+}
+
+
+    +018 -> 00487d10 FUN_00487d10@00487d10
+    ---- decomp FUN_00487d10
+
+void FUN_00487d10(void)
+
+{
+  FUN_00485aa0();
+  return;
+}
+
+
+    +01c -> 00487b58 FUN_00487b58@00487b58
+    ---- decomp FUN_00487b58
+
+void FUN_00487b58(void)
+
+{
+  FUN_00485ac0();
+  return;
+}
+
+
+    +020 -> 00487b63 FUN_00487b63@00487b63
+    ---- decomp FUN_00487b63
+
+void FUN_00487b63(void)
+
+{
+  FUN_00485ad0();
+  return;
+}
+
+
+    +024 -> 00487b9f FUN_00487b9f@00487b9f
+    ---- decomp FUN_00487b9f
+
+void FUN_00487b9f(void)
+
+{
+  FUN_00485ae0();
+  return;
+}
+
+
+    +028 -> 00487c24 FUN_00487c24@00487c24
+    ---- decomp FUN_00487c24
+
+void FUN_00487c24(void)
+
+{
+  FUN_00485b30();
+  return;
+}
+
+
+    +02c -> 00487cdf FUN_00487cdf@00487cdf
+    ---- decomp FUN_00487cdf
+
+void FUN_00487cdf(void)
+
+{
+  FUN_00485b40();
+  return;
+}
+
+
+    +030 -> 00c59094 ?
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 004941e6 FUN_004941e6@004941e6
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 00c59020 ?
+    +068 -> 00487a60 FUN_00487a60@00487a60
+    +06c -> 0066c010 FUN_0066c010@0066c010
+    +070 -> 00646cc0 FUN_00646cc0@00646cc0
+    +074 -> 004054a0 FUN_004054a0@004054a0
+    +078 -> 00646cb0 FUN_00646cb0@00646cb0
+    +07c -> 00646ca0 FUN_00646ca0@00646ca0
+    +080 -> 00646bd0 FUN_00646bd0@00646bd0
+    +084 -> 004879b0 FUN_004879b0@004879b0
+    +088 -> 004879d0 FUN_004879d0@004879d0
+    +08c -> 00c590d8 ?
+    +090 -> 00487c01 FUN_00487c01@00487c01
+    +094 -> 00487b94 FUN_00487b94@00487b94
+    +098 -> 00487c55 FUN_00487c55@00487c55
+    +09c -> 00487d2b FUN_00487d2b@00487d2b
+    +0a0 -> 00487bf6 FUN_00487bf6@00487bf6
+    +0a4 -> 00487cea FUN_00487cea@00487cea
+    +0a8 -> 00487c68 FUN_00487c68@00487c68
+    +0ac -> 00487cae FUN_00487cae@00487cae
+    +0b0 -> 00487bd0 FUN_00487bd0@00487bd0
+    +0b4 -> 00487d36 FUN_00487d36@00487d36
+    +0b8 -> 00487b6e FUN_00487b6e@00487b6e
+    +0bc -> 00c58f9c ?
+    +0c0 -> 00487c73 FUN_00487c73@00487c73
+    +0c4 -> 00487c2f FUN_00487c2f@00487c2f
+    +0c8 -> 00487c0c FUN_00487c0c@00487c0c
+    +0cc -> 00487bc8 FUN_00487bc8@00487bc8
+    +0d0 -> 00487cc4 FUN_00487cc4@00487cc4
+    +0d4 -> 00487d08 FUN_00487d08@00487d08
+    +0d8 -> 00487bee FUN_00487bee@00487bee
+    +0dc -> 00487ca6 FUN_00487ca6@00487ca6
+    +0e0 -> 00487d23 FUN_00487d23@00487d23
+    +0e4 -> 0048635f FUN_0048635f@0048635f
+    +0e8 -> 00487c14 FUN_00487c14@00487c14
+    +0ec -> 00486357 FUN_00486357@00486357
+    +0f0 -> 00487c1c FUN_00487c1c@00487c1c
+    +0f4 -> 00487b8c FUN_00487b8c@00487b8c
+    +0f8 -> 00486443 FUN_00486443@00486443
+    +0fc -> 00487d1b FUN_00487d1b@00487d1b
+    +100 -> 00487cd7 FUN_00487cd7@00487cd7
+    +104 -> 00487c60 FUN_00487c60@00487c60
+    +108 -> 00487c9e FUN_00487c9e@00487c9e
+    +10c -> 00487cf5 FUN_00487cf5@00487cf5
+    +110 -> 00487c96 FUN_00487c96@00487c96
+    +114 -> 00487c8e FUN_00487c8e@00487c8e
+    +118 -> 00486506 FUN_00486506@00486506
+    +11c -> 0048649f FUN_0048649f@0048649f
+    +120 -> 00487b84 FUN_00487b84@00487b84
+    +124 -> 00487c86 FUN_00487c86@00487c86
+    +128 -> 00487c42 FUN_00487c42@00487c42
+    +12c -> 00487b7c FUN_00487b7c@00487b7c
+    +130 -> 00487bdb FUN_00487bdb@00487bdb
+    +134 -> 00487bc0 FUN_00487bc0@00487bc0
+    +138 -> 00c590a8 ?
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> ffffffd8 ?
+    +14c -> 00000074 ?
+    +150 -> 0000007c ?
+    +154 -> 00000088 ?
+    +158 -> 00000094 ?
+    +15c -> 00c5906c ?
+    +160 -> 00487c37 FUN_00487c37@00487c37
+    +164 -> 00487bb5 FUN_00487bb5@00487bb5
+    +168 -> 00487c7b FUN_00487c7b@00487c7b
+    +16c -> 00c59058 ?
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c5906c
+  vftable@00c3ba28 (col ptr @00c3ba24)
+    +000 -> 00487c37 FUN_00487c37@00487c37
+    +004 -> 00487bb5 FUN_00487bb5@00487bb5
+    +008 -> 00487c7b FUN_00487c7b@00487c7b
+    +00c -> 00c59058 ?
+    +010 -> 004941e6 FUN_004941e6@004941e6
+    +014 -> 004941e6 FUN_004941e6@004941e6
+    +018 -> 004941e6 FUN_004941e6@004941e6
+    +01c -> 004941e6 FUN_004941e6@004941e6
+    +020 -> 004941e6 FUN_004941e6@004941e6
+    +024 -> 004941e6 FUN_004941e6@004941e6
+    +028 -> 004941e6 FUN_004941e6@004941e6
+    +02c -> 004941e6 FUN_004941e6@004941e6
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 00487710 FUN_00487710@00487710
+    +03c -> 00c59150 ?
+    +040 -> 00487d80 FUN_00487d80@00487d80
+    +044 -> 00c59100 ?
+    +048 -> 00487d50 FUN_00487d50@00487d50
+    +04c -> 00c591fc ?
+    +050 -> 004881cf FUN_004881cf@004881cf
+    +054 -> 00487fda FUN_00487fda@00487fda
+    +058 -> 004882a0 FUN_004882a0@004882a0
+    +05c -> ffffffd8 ?
+    +060 -> 00000168 ?
+    +064 -> 00000170 ?
+    +068 -> 0000017c ?
+    +06c -> 00000188 ?
+    +070 -> 00c592a0 ?
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 004941e6 FUN_004941e6@004941e6
+    +090 -> 004941e6 FUN_004941e6@004941e6
+    +094 -> 004941e6 FUN_004941e6@004941e6
+    +098 -> 004941e6 FUN_004941e6@004941e6
+    +09c -> 004941e6 FUN_004941e6@004941e6
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 004941e6 FUN_004941e6@004941e6
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 004941e6 FUN_004941e6@004941e6
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 004941e6 FUN_004941e6@004941e6
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 004941e6 FUN_004941e6@004941e6
+    +124 -> 004941e6 FUN_004941e6@004941e6
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+    +134 -> 004941e6 FUN_004941e6@004941e6
+    +138 -> 004941e6 FUN_004941e6@004941e6
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c590b0
+  COL@c590d8
+  vftable@00c3b958 (col ptr @00c3b954)
+    +000 -> 00487c01 FUN_00487c01@00487c01
+    +004 -> 00487b94 FUN_00487b94@00487b94
+    +008 -> 00487c55 FUN_00487c55@00487c55
+    +00c -> 00487d2b FUN_00487d2b@00487d2b
+    +010 -> 00487bf6 FUN_00487bf6@00487bf6
+    +014 -> 00487cea FUN_00487cea@00487cea
+    +018 -> 00487c68 FUN_00487c68@00487c68
+    +01c -> 00487cae FUN_00487cae@00487cae
+    +020 -> 00487bd0 FUN_00487bd0@00487bd0
+    +024 -> 00487d36 FUN_00487d36@00487d36
+    +028 -> 00487b6e FUN_00487b6e@00487b6e
+    +02c -> 00c58f9c ?
+    +030 -> 00487c73 FUN_00487c73@00487c73
+    +034 -> 00487c2f FUN_00487c2f@00487c2f
+    +038 -> 00487c0c FUN_00487c0c@00487c0c
+    +03c -> 00487bc8 FUN_00487bc8@00487bc8
+    +040 -> 00487cc4 FUN_00487cc4@00487cc4
+    +044 -> 00487d08 FUN_00487d08@00487d08
+    +048 -> 00487bee FUN_00487bee@00487bee
+    +04c -> 00487ca6 FUN_00487ca6@00487ca6
+    +050 -> 00487d23 FUN_00487d23@00487d23
+    +054 -> 0048635f FUN_0048635f@0048635f
+    +058 -> 00487c14 FUN_00487c14@00487c14
+    +05c -> 00486357 FUN_00486357@00486357
+    +060 -> 00487c1c FUN_00487c1c@00487c1c
+    +064 -> 00487b8c FUN_00487b8c@00487b8c
+    +068 -> 00486443 FUN_00486443@00486443
+    +06c -> 00487d1b FUN_00487d1b@00487d1b
+    +070 -> 00487cd7 FUN_00487cd7@00487cd7
+    +074 -> 00487c60 FUN_00487c60@00487c60
+    +078 -> 00487c9e FUN_00487c9e@00487c9e
+    +07c -> 00487cf5 FUN_00487cf5@00487cf5
+    +080 -> 00487c96 FUN_00487c96@00487c96
+    +084 -> 00487c8e FUN_00487c8e@00487c8e
+    +088 -> 00486506 FUN_00486506@00486506
+    +08c -> 0048649f FUN_0048649f@0048649f
+    +090 -> 00487b84 FUN_00487b84@00487b84
+    +094 -> 00487c86 FUN_00487c86@00487c86
+    +098 -> 00487c42 FUN_00487c42@00487c42
+    +09c -> 00487b7c FUN_00487b7c@00487b7c
+    +0a0 -> 00487bdb FUN_00487bdb@00487bdb
+    +0a4 -> 00487bc0 FUN_00487bc0@00487bc0
+    +0a8 -> 00c590a8 ?
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> ffffffd8 ?
+    +0bc -> 00000074 ?
+    +0c0 -> 0000007c ?
+    +0c4 -> 00000088 ?
+    +0c8 -> 00000094 ?
+    +0cc -> 00c5906c ?
+    +0d0 -> 00487c37 FUN_00487c37@00487c37
+    +0d4 -> 00487bb5 FUN_00487bb5@00487bb5
+    +0d8 -> 00487c7b FUN_00487c7b@00487c7b
+    +0dc -> 00c59058 ?
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 00487710 FUN_00487710@00487710
+    +10c -> 00c59150 ?
+    +110 -> 00487d80 FUN_00487d80@00487d80
+    +114 -> 00c59100 ?
+    +118 -> 00487d50 FUN_00487d50@00487d50
+    +11c -> 00c591fc ?
+    +120 -> 004881cf FUN_004881cf@004881cf
+    +124 -> 00487fda FUN_00487fda@00487fda
+    +128 -> 004882a0 FUN_004882a0@004882a0
+    +12c -> ffffffd8 ?
+    +130 -> 00000168 ?
+    +134 -> 00000170 ?
+    +138 -> 0000017c ?
+    +13c -> 00000188 ?
+    +140 -> 00c592a0 ?
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+##### TD c8d418 struct@c8d410
+  COL@c59a50
+  vftable@00c3ca1c (col ptr @00c3ca18)
+    +000 -> 00487c37 FUN_00487c37@00487c37
+    +004 -> 00487bb5 FUN_00487bb5@00487bb5
+    +008 -> 00487c7b FUN_00487c7b@00487c7b
+    +00c -> 00c59b9c ?
+    +010 -> 004896e0 FUN_004896e0@004896e0
+    ---- decomp FUN_004896e0
+
+undefined4 * __thiscall FUN_004896e0(undefined4 *param_1,byte param_2)
+
+{
+  *param_1 = CPG::CWin32Winsocks::vftable;
+  LOCK();
+  DAT_00c9122c = DAT_00c9122c + -1;
+  UNLOCK();
+  if (DAT_00c9122c == 0) {
+    WSACleanup();
+  }
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,4);
+  }
+  return param_1;
+}
+
+
+    +014 -> 00c59c30 ?
+    +018 -> 00489720 `scalar_deleting_destructor'@00489720
+    ---- decomp `scalar_deleting_destructor'
+
+/* Library Function - Single Match
+    public: virtual void * __thiscall std::_Facet_base::`scalar deleting destructor'(unsigned int)
+   
+   Library: Visual Studio 2019 Release */
+
+void * __thiscall std::_Facet_base::_scalar_deleting_destructor_(_Facet_base *this,uint param_1)
+
+{
+  *(undefined ***)this = CPG::IVNMEnterBootloaderHandler::vftable;
+  if ((param_1 & 1) != 0) {
+    FUN_00491892(this,4);
+  }
+  return this;
+}
+
+
+    +01c -> 004941e6 FUN_004941e6@004941e6
+    +020 -> 00c59c1c ?
+    +024 -> 00489750 FUN_00489750@00489750
+    ---- decomp FUN_00489750
+
+undefined4 * __thiscall FUN_00489750(undefined4 *param_1,byte param_2)
+
+{
+  uint uVar1;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_0068b3a6;
+  local_10 = ExceptionList;
+  uVar1 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  *param_1 = CPG::CCLPCHAIMsgLinkTransportProtocol::vftable;
+  FUN_0064c6d0(uVar1);
+  CloseHandle((HANDLE)param_1[0x30]);
+  DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 0x1b));
+  DeleteCriticalSection((LPCRITICAL_SECTION)(param_1 + 5));
+  *param_1 = CPG::IVNMEnterBootloaderHandler::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xc70);
+  }
+  ExceptionList = local_10;
+  return param_1;
+}
+
+
+    +028 -> 0064ba60 FUN_0064ba60@0064ba60
+    ---- decomp FUN_0064ba60
+
+void __fastcall FUN_0064ba60(int param_1)
+
+{
+  if (*(char *)(param_1 + 0xc5c) != '\0') {
+    FUN_0064c110(0x3000,0,0);
+  }
+  return;
+}
+
+
+    +02c -> 00c59c44 ?
+    +030 -> 00480d20 FUN_00480d20@00480d20
+    ---- decomp FUN_00480d20
+
+undefined4 * __thiscall FUN_00480d20(undefined4 *param_1,byte param_2)
+
+{
+  *param_1 = CPG::CTimer::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x18);
+  }
+  return param_1;
+}
+
+
+    +034 -> 00c59c90 ?
+    +038 -> 00489b09 FUN_00489b09@00489b09
+    ---- decomp FUN_00489b09
+
+void FUN_00489b09(void)
+
+{
+  FUN_00676850();
+  return;
+}
+
+
+    +03c -> 00489a22 FUN_00489a22@00489a22
+    ---- decomp FUN_00489a22
+
+void FUN_00489a22(void)
+
+{
+  FUN_006767f0();
+  return;
+}
+
+
+    +040 -> 00489a89 FUN_00489a89@00489a89
+    ---- decomp FUN_00489a89
+
+void FUN_00489a89(void)
+
+{
+  FUN_00676790();
+  return;
+}
+
+
+    +044 -> 00489ad7 FUN_00489ad7@00489ad7
+    ---- decomp FUN_00489ad7
+
+void FUN_00489ad7(void)
+
+{
+  FUN_00676730();
+  return;
+}
+
+
+    +048 -> 00489a49 FUN_00489a49@00489a49
+    ---- decomp FUN_00489a49
+
+void FUN_00489a49(void)
+
+{
+  FUN_006766d0();
+  return;
+}
+
+
+    +04c -> 00489acc FUN_00489acc@00489acc
+    ---- decomp FUN_00489acc
+
+void FUN_00489acc(void)
+
+{
+  FUN_00676670();
+  return;
+}
+
+
+    +050 -> 00489b14 FUN_00489b14@00489b14
+    ---- decomp FUN_00489b14
+
+void FUN_00489b14(void)
+
+{
+  FUN_00485aa0();
+  return;
+}
+
+
+    +054 -> 00489b3b FUN_00489b3b@00489b3b
+    ---- decomp FUN_00489b3b
+
+void FUN_00489b3b(void)
+
+{
+  FUN_00485ac0();
+  return;
+}
+
+
+    +058 -> 00489b46 FUN_00489b46@00489b46
+    ---- decomp FUN_00489b46
+
+void FUN_00489b46(void)
+
+{
+  FUN_00485ad0();
+  return;
+}
+
+
+    +05c -> 00489a17 FUN_00489a17@00489a17
+    ---- decomp FUN_00489a17
+
+void FUN_00489a17(void)
+
+{
+  FUN_00485ae0();
+  return;
+}
+
+
+    +060 -> 00489a70 FUN_00489a70@00489a70
+    ---- decomp FUN_00489a70
+
+void FUN_00489a70(void)
+
+{
+  FUN_00485b30();
+  return;
+}
+
+
+    +064 -> 00489af0 FUN_00489af0@00489af0
+    ---- decomp FUN_00489af0
+
+void FUN_00489af0(void)
+
+{
+  FUN_00485b40();
+  return;
+}
+
+
+    +068 -> 00c59ce0 ?
+    +06c -> 00489a62 FUN_00489a62@00489a62
+    ---- decomp FUN_00489a62
+
+void FUN_00489a62(void)
+
+{
+  FUN_0066bff0();
+  return;
+}
+
+
+    +070 -> 00489b51 FUN_00489b51@00489b51
+    ---- decomp FUN_00489b51
+
+void FUN_00489b51(void)
+
+{
+  FUN_00482510();
+  return;
+}
+
+
+    +074 -> 00489a94 FUN_00489a94@00489a94
+    ---- decomp FUN_00489a94
+
+void FUN_00489a94(void)
+
+{
+  FUN_00482550();
+  return;
+}
+
+
+    +078 -> 00489b1f FUN_00489b1f@00489b1f
+    ---- decomp FUN_00489b1f
+
+void FUN_00489b1f(void)
+
+{
+  FUN_00482590();
+  return;
+}
+
+
+    +07c -> 00489a54 FUN_00489a54@00489a54
+    ---- decomp FUN_00489a54
+
+void FUN_00489a54(void)
+
+{
+  FUN_004825a0();
+  return;
+}
+
+
+    +080 -> 00489afb FUN_00489afb@00489afb
+    ---- decomp FUN_00489afb
+
+void FUN_00489afb(void)
+
+{
+  FUN_004825b0();
+  return;
+}
+
+
+    +084 -> 00489aa2 FUN_00489aa2@00489aa2
+    ---- decomp FUN_00489aa2
+
+void FUN_00489aa2(void)
+
+{
+  FUN_004825c0();
+  return;
+}
+
+
+    +088 -> 00489abe FUN_00489abe@00489abe
+    ---- decomp FUN_00489abe
+
+void FUN_00489abe(void)
+
+{
+  FUN_004825d0();
+  return;
+}
+
+
+    +08c -> 00489a3b FUN_00489a3b@00489a3b
+    ---- decomp FUN_00489a3b
+
+void FUN_00489a3b(void)
+
+{
+  FUN_004825e0();
+  return;
+}
+
+
+    +090 -> 00489b2d FUN_00489b2d@00489b2d
+    ---- decomp FUN_00489b2d
+
+void FUN_00489b2d(void)
+
+{
+  FUN_004825f0();
+  return;
+}
+
+
+    +094 -> 00489ae2 FUN_00489ae2@00489ae2
+    ---- decomp FUN_00489ae2
+
+void FUN_00489ae2(void)
+
+{
+  FUN_00489940();
+  return;
+}
+
+
+    +098 -> 00c59d20 ?
+    +09c -> 00489a7b FUN_00489a7b@00489a7b
+    ---- decomp FUN_00489a7b
+
+void FUN_00489a7b(void)
+
+{
+  FUN_00482600();
+  return;
+}
+
+
+    +0a0 -> 00489a2d FUN_00489a2d@00489a2d
+    ---- decomp FUN_00489a2d
+
+void FUN_00489a2d(void)
+
+{
+  FUN_00482610();
+  return;
+}
+
+
+    +0a4 -> 00489ab0 FUN_00489ab0@00489ab0
+    ---- decomp FUN_00489ab0
+
+void FUN_00489ab0(void)
+
+{
+  FUN_00482650();
+  return;
+}
+
+
+    +0a8 -> 00c59ccc ?
+    +0ac -> 00489940 FUN_00489940@00489940
+    ---- decomp FUN_00489940
+
+undefined4 __thiscall FUN_00489940(undefined4 param_1,byte param_2)
+
+{
+  FUN_00489970();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x110);
+  }
+  return param_1;
+}
+
+
+    +0b0 -> 0066c010 FUN_0066c010@0066c010
+    +0b4 -> 0064e270 FUN_0064e270@0064e270
+    ---- decomp FUN_0064e270
+
+void __fastcall FUN_0064e270(int param_1)
+
+{
+  if (*(void **)(param_1 + 0xb4) != (void *)0x0) {
+    FID_conflict__free(*(void **)(param_1 + 0xb4));
+  }
+  *(undefined1 *)(param_1 + 0xb0) = 0;
+  return;
+}
+
+
+    +0b8 -> 004054a0 FUN_004054a0@004054a0
+    +0bc -> 0064d130 FUN_0064d130@0064d130
+    ---- decomp FUN_0064d130
+
+short __fastcall FUN_0064d130(int *param_1)
+
+{
+  short sVar1;
+  
+  sVar1 = (**(code **)(*param_1 + 0x1c))();
+  return sVar1 + 2;
+}
+
+
+    +0c0 -> 0064d100 FUN_0064d100@0064d100
+    ---- decomp FUN_0064d100
+
+void __thiscall FUN_0064d100(int *param_1,int *param_2)
+
+{
+  *(char *)*param_2 = (char)param_1[0x1e];
+  *param_2 = *param_2 + 1;
+  *(undefined1 *)*param_2 = 0;
+  *param_2 = *param_2 + 1;
+  (**(code **)(*param_1 + 0x20))(param_2);
+  return;
+}
+
+
+    +0c4 -> 0064cad0 FUN_0064cad0@0064cad0
+    ---- decomp FUN_0064cad0
+
+undefined4 __thiscall FUN_0064cad0(int param_1,undefined4 param_2,short *param_3)
+
+{
+  ushort uVar1;
+  undefined1 *puVar2;
+  short *psVar3;
+  short sVar4;
+  int iVar5;
+  undefined2 *puVar6;
+  
+  psVar3 = param_3;
+  param_3 = (short *)0x8;
+  *psVar3 = 2;
+  switch(*(undefined1 *)(param_1 + 0x78)) {
+  case 2:
+    sVar4 = 5;
+    break;
+  default:
+    goto switchD_0064cafe_caseD_3;
+  case 0x44:
+  case 0x84:
+  case 0x85:
+    sVar4 = 8;
+    break;
+  case 0x45:
+  case 0x83:
+    sVar4 = 3;
+    break;
+  case 0x4a:
+    sVar4 = *(short *)(param_1 + 0xca) + 0xc;
+    break;
+  case 0x87:
+  case 0x88:
+    sVar4 = 10;
+    break;
+  case 0xc1:
+    sVar4 = (*(short *)(param_1 + 0xca) + 0x19U & 0xfffe) + 4;
+    break;
+  case 0xc2:
+    sVar4 = (*(short *)(param_1 + 0xca) + 0xfU & 0xfffe) + 4;
+    break;
+  case 0xc3:
+    sVar4 = *(short *)(param_1 + 0xca) + 0xe;
+    break;
+  case 200:
+    sVar4 = 4;
+    break;
+  case 0xc9:
+    sVar4 = 6;
+    break;
+  case 0xf0:
+    sVar4 = 8;
+    param_3 = (short *)0x9;
+    break;
+  case 0xf1:
+    param_3 = (short *)0x9;
+    goto switchD_0064cafe_caseD_3;
+  case 0xf2:
+    sVar4 = *(short *)(param_1 + 0xca) + 8;
+    param_3 = (short *)0x9;
+    break;
+  case 0xf3:
+    sVar4 = 7;
+    param_3 = (short *)0x9;
+    break;
+  case 0xf4:
+    sVar4 = *(short *)(param_1 + 0xca) + 6;
+    param_3 = (short *)0x9;
+  }
+  *psVar3 = sVar4;
+switchD_0064cafe_caseD_3:
+  iVar5 = FUN_00634680(*psVar3,param_3,*(byte *)(param_1 + 0x74) >> 1 & 1,
+                       *(byte *)(param_1 + 0x74) & 1);
+  if (iVar5 != 0) {
+    puVar2 = *(undefined1 **)(iVar5 + 0x1c);
+    *puVar2 = *(undefined1 *)(param_1 + 0x78);
+    puVar2[1] = 0;
+    puVar6 = (undefined2 *)(puVar2 + 2);
+    switch(*(undefined1 *)(param_1 + 0x78)) {
+    case 2:
+      *puVar6 = *(undefined2 *)(param_1 + 0x7c);
+      puVar2[4] = *(undefined1 *)(param_1 + 0x7e);
+      return 1;
+    default:
+      return 1;
+    case 0x44:
+      *puVar6 = *(undefined2 *)(param_1 + 0x80);
+      *(undefined4 *)(puVar2 + 4) = *(undefined4 *)(param_1 + 0x7c);
+      return 1;
+    case 0x45:
+    case 0x83:
+      *(undefined1 *)puVar6 = *(undefined1 *)(param_1 + 0x7c);
+      return 1;
+    case 0x4a:
+      FUN_004897e0();
+      *puVar6 = *(undefined2 *)(param_1 + 0xca);
+      FUN_004946f0(puVar2 + 4,*(undefined4 *)(param_1 + 0xc4),*(undefined2 *)(param_1 + 0xca));
+      return 1;
+    case 0x84:
+      *(undefined1 *)puVar6 = *(undefined1 *)(param_1 + 0x80);
+      puVar2[3] = *(char *)(param_1 + 0x84) != '\0';
+      *(undefined4 *)(puVar2 + 4) = *(undefined4 *)(param_1 + 0x7c);
+      return 1;
+    case 0x85:
+    case 0xf0:
+      *puVar6 = *(undefined2 *)(param_1 + 0x7c);
+      *(undefined2 *)(puVar2 + 4) = *(undefined2 *)(param_1 + 0x7e);
+      *(undefined2 *)(puVar2 + 6) = *(undefined2 *)(param_1 + 0x80);
+      return 1;
+    case 0x87:
+    case 0x88:
+      FUN_004897e0();
+      return 1;
+    case 0xc1:
+      FUN_004897e0();
+      *puVar6 = *(undefined2 *)(param_1 + 0x7c);
+      FUN_004876b0();
+      *(undefined2 *)(puVar2 + 4) = *(undefined2 *)(param_1 + 0xca);
+      uVar1 = *(ushort *)(param_1 + 0xca);
+      FUN_004946f0(puVar2 + 6,*(undefined4 *)(param_1 + 0xc4),(uint)uVar1);
+      *(undefined2 *)((uint)(puVar2 + uVar1 + 7) & 0xfffffffe) = 0;
+      return 1;
+    case 0xc2:
+      FUN_004897e0();
+      *puVar6 = *(undefined2 *)(param_1 + 0x7e);
+      *(undefined2 *)(puVar2 + 4) = *(undefined2 *)(param_1 + 0x7c);
+      *(undefined2 *)(puVar2 + 6) = *(undefined2 *)(param_1 + 0xca);
+      uVar1 = *(ushort *)(param_1 + 0xca);
+      FUN_004946f0(puVar2 + 8,*(undefined4 *)(param_1 + 0xc4),(uint)uVar1);
+      *(undefined2 *)((uint)(puVar2 + uVar1 + 9) & 0xfffffffe) = *(undefined2 *)(param_1 + 0x82);
+      return 1;
+    case 0xc3:
+      FUN_004897e0();
+switchD_0064cc18_caseD_f4:
+      *puVar6 = *(undefined2 *)(param_1 + 0x7c);
+      *(undefined2 *)(puVar2 + 4) = *(undefined2 *)(par
+    +0c8 -> 0040f3a0 FUN_0040f3a0@0040f3a0
+    ---- decomp FUN_0040f3a0
+
+undefined4 FUN_0040f3a0(void)
+
+{
+  return 0;
+}
+
+
+    +0cc -> 00405490 FUN_00405490@00405490
+    ---- decomp FUN_00405490
+
+undefined1 FUN_00405490(void)
+
+{
+  return 0;
+}
+
+
+    +0d0 -> ffffffd8 ?
+    +0d4 -> 000000cc ?
+    +0d8 -> 000000d4 ?
+    +0dc -> 000000e0 ?
+    +0e0 -> 00c59fc4 ?
+    +0e4 -> 00489e23 FUN_00489e23@00489e23
+    ---- decomp FUN_00489e23
+
+void __thiscall FUN_00489e23(int param_1,uint param_2)
+
+{
+  CDebugSSectionReader::_scalar_deleting_destructor_((CDebugSSectionReader *)(param_1 + -4),param_2)
+  ;
+  return;
+}
+
+
+    +0e8 -> 00c59ec0 ?
+    +0ec -> 00489df0 `scalar_deleting_destructor'@00489df0
+    ---- decomp `scalar_deleting_destructor'
+
+/* Library Function - Single Match
+    public: virtual void * __thiscall CDebugSSectionReader::`scalar deleting destructor'(unsigned
+   int)
+   
+   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */
+
+void * __thiscall
+CDebugSSectionReader::_scalar_deleting_destructor_(CDebugSSectionReader *this,uint param_1)
+
+{
+  *(undefined ***)(this + 4) = CPG::CPListItem<class_CPG::CCPMessage_Generic>::vftable;
+  *(undefined ***)this = CPNS::ISerializable::vftable;
+  if ((param_1 & 1) != 0) {
+    FUN_00491892(this,0x24);
+  }
+  return this;
+}
+
+
+    +0f0 -> 0064f240 FUN_0064f240@0064f240
+    ---- decomp FUN_0064f240
+
+undefined4 FUN_0064f240(void)
+
+{
+  return 0x10;
+}
+
+
+    +0f4 -> 0064f1d0 FUN_0064f1d0@0064f1d0
+    ---- decomp FUN_0064f1d0
+
+void __thiscall FUN_0064f1d0(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1a);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  *param_2 = *param_2 + 2;
+  return;
+}
+
+
+    +0f8 -> 0064f150 FUN_0064f150@0064f150
+    ---- decomp FUN_0064f150
+
+uint __thiscall FUN_0064f150(int param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  uint uVar4;
+  
+  uVar4 = param_3 - *param_2;
+  if (0xf < (int)uVar4) {
+    *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x1a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar3 = (undefined2 *)*param_2;
+    uVar1 = *puVar3;
+    *param_2 = (int)(puVar3 + 1);
+    uVar2 = puVar3[1];
+    *param_2 = (int)(puVar3 + 2);
+    *(uint *)(param_1 + 0x1c) = CONCAT22(uVar2,uVar1);
+    uVar1 = *(undefined2 *)*param_2;
+    *(undefined2 *)(param_1 + 0x20) = uVar1;
+    *param_2 = *param_2 + 2;
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return uVar4 & 0xffffff00;
+}
+
+
+    +0fc -> 00c59db4 ?
+    +100 -> 00489da0 FUN_00489da0@00489da0
+    ---- decomp FUN_00489da0
+
+undefined4 * __thiscall FUN_00489da0(undefined4 *param_1,byte param_2)
+
+{
+  param_1[7] = CPG::CTransportAddress::vftable;
+  param_1[8] = 0x7f;
+  *(undefined1 *)(param_1 + 9) = 0;
+  *(undefined4 *)((int)param_1 + 0x25) = 0;
+  *(undefined2 *)((int)param_1 + 0x29) = 0;
+  param_1[1] = CPG::CPListItem<class_CPG::CCPMessage_Generic>::vftable;
+  *param_1 = CPNS::ISerializable::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x2c);
+  }
+  return param_1;
+}
+
+
+    +104 -> 0064f570 FUN_0064f570@0064f570
+    ---- decomp FUN_0064f570
+
+undefined4 FUN_0064f570(void)
+
+{
+  return 0xf;
+}
+
+
+    +108 -> 0064f510 FUN_0064f510@0064f510
+    ---- decomp FUN_0064f510
+
+void __thiscall FUN_0064f510(int *param_1,int *param_2)
+
+{
+  undefined4 *puVar1;
+  undefined2 uVar2;
+  
+  uVar2 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar2;
+  *param_2 = *param_2 + 2;
+  *(char *)*param_2 = (char)param_1[6];
+  *param_2 = *param_2 + 1;
+  *(char *)*param_2 = (char)param_1[8];
+  *param_2 = *param_2 + 1;
+  *(char *)*param_2 = (char)param_1[9];
+  *param_2 = *param_2 + 1;
+  puVar1 = (undefined4 *)*param_2;
+  *puVar1 = *(undefined4 *)((int)param_1 + 0x25);
+  *(undefined2 *)(puVar1 + 1) = *(undefined2 *)((int)param_1 + 0x29);
+  *param_2 = *param_2 + 6;
+  return;
+}
+
+
+    +10c -> 0064f4c0 FUN_0064f4c0@0064f4c0
+    ---- decomp FUN_0064f4c0
+
+uint __thiscall FUN_0064f4c0(int param_1,int *param_2,int param_3)
+
+{
+  uint uVar1;
+  
+  uVar1 = param_3 - *param_2;
+  if (6 < (int)uVar1) {
+    *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined1 *)(param_1 + 0x18) = *(undefined1 *)*param_2;
+    *param_2 = *param_2 + 1;
+    uVar1 = FUN_0047ec90();
+    return uVar1;
+  }
+  return uVar1 & 0xffffff00;
+}
+
+
+    +110 -> 00c59e3c ?
+    +114 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +118 -> 0064f020 FUN_0064f020@0064f020
+    ---- decomp FUN_0064f020
+
+undefined4 FUN_0064f020(void)
+
+{
+  return 0x10;
+}
+
+
+    +11c -> 0064efb0 FUN_0064efb0@0064efb0
+    ---- decomp FUN_0064efb0
+
+void __thiscall FUN_0064efb0(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1a);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  *param_2 = *param_2 + 2;
+  return;
+}
+
+
+    +120 -> 0064ef30 FUN_0064ef30@0064ef30
+    ---- decomp FUN_0064ef30
+
+uint __thiscall FUN_0064ef30(int param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  uint uVar4;
+  
+  uVar4 = param_3 - *param_2;
+  if (0xf < (int)uVar4) {
+    *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x1a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar3 = (undefined2 *)*param_2;
+    uVar1 = *puVar3;
+    *param_2 = (int)(puVar3 + 1);
+    uVar2 = puVar3[1];
+    *param_2 = (int)(puVar3 + 2);
+    *(uint *)(param_1 + 0x1c) = CONCAT22(uVar2,uVar1);
+    uVar1 = *(undefined2 *)*param_2;
+    *(undefined2 *)(param_1 + 0x20) = uVar1;
+    *param_2 = *param_2 + 2;
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return uVar4 & 0xffffff00;
+}
+
+
+    +124 -> 00c5a108 ?
+    +128 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    ---- decomp `scalar_deleting_destructor'
+
+/* Library Function - Single Match
+    public: virtual void * __thiscall CDebugSSectionReader::`scalar deleting destructor'(unsigned
+   int)
+   
+   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */
+
+void * __thiscall
+CDebugSSectionReader::_scalar_deleting_destructor_(CDebugSSectionReader *this,uint param_1)
+
+{
+  *(undefined ***)(this + 4) = CPG::CPListItem<class_CPG::CCPMessage_Generic>::vftable;
+  *(undefined ***)this = CPNS::ISerializable::vftable;
+  if ((param_1 & 1) != 0) {
+    FUN_00491892(this,0x28);
+  }
+  return this;
+}
+
+
+    +12c -> 00489b60 FUN_00489b60@00489b60
+    ---- decomp FUN_00489b60
+
+undefined4 FUN_00489b60(void)
+
+{
+  return 0x12;
+}
+
+
+    +130 -> 00489b70 FUN_00489b70@00489b70
+    ---- decomp FUN_00489b70
+
+void __thiscall FUN_00489b70(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x22);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[9];
+  *param_2 = *param_2 + 2;
+  return;
+}
+
+
+    +134 -> 00489bf0 FUN_00489bf0@00489bf0
+    ---- decomp FUN_00489bf0
+
+uint __thiscall FUN_00489bf0(int param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  uint uVar4;
+  
+  uVar4 = param_3 - *param_2;
+  if ((int)uVar4 < 0x12) {
+    return uVar4 & 0xffffff00;
+  }
+  *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)*param_2;
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)(param_1 + 0x1c) = *(undefined2 *)*param_2;
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)(param_1 + 0x1e) = *(undefined2 *)*param_2;
+  *param_2 = *param_2 + 2;
+  puVar3 = (undefined2 *)*param_2;
+  uVar1 = *puVar3;
+  *param_2 = (int)(puVar3 + 1);
+  uVar2 = puVar3[1];
+  *param_2 = (int)(puVar3 + 2);
+  *(uint *)(param_1 + 0x20) = CONCAT22(uVar2,uVar1);
+  uVar1 = *(undefined2 *)*param_2;
+  *(undefined2 *)(param_1 + 0x24) = uVar1;
+  *param_2 = *param_2 + 2;
+  return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+}
+
+
+    +138 -> 00c59d5c ?
+    +13c -> 00489e23 FUN_00489e23@00489e23
+    +140 -> 00c5a054 ?
+    +144 -> 00489d20 `scalar_deleting_destructor'@00489d20
+    ---- decomp `scalar_deleting_destructor'
+
+/* Library Function - Single Match
+    public: virtual void * __thiscall CDebugSSectionReader::`scalar deleting destructor'(unsigned
+   int)
+   
+   Libraries: Visual Studio 2017 Release, Visual Studio 2019 Release */
+
+void * __thiscall
+CDebugSSectionReader::_scalar_deleting_destructor_(CDebugSSectionReader *this,uint param_1)
+
+{
+  *(undefined ***)(this + 4) = CPG::CPListItem<class_CPG::CCPMessage_Generic>::vftable;
+  *(undefined ***)this = CPNS::ISerializable::vftable;
+  if ((param_1 & 1) != 0) {
+    FUN_00491892(this,0x34);
+  }
+  return this;
+}
+
+
+    +148 -> 0064f7b0 FUN_0064f7b0@0064f7b0
+    ---- decomp FUN_0064f7b0
+
+undefined4 FUN_0064f7b0(void)
+
+{
+  return 0x1c;
+}
+
+
+    +14c -> 0064f750 FUN_0064f750@0064f750
+    ---- decomp FUN_0064f750
+
+void __thiscall FUN_0064f750(int param_1,int *param_2)
+
+{
+  FUN_00489b70(param_2);
+  *(undefined2 *)*param_2 = *(undefined2 *)(param_1 + 0x28);
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)(param_1 + 0x2a);
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)(param_1 + 0x2c);
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)(param_1 + 0x2e);
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)(param_1 + 0x30);
+  *param_2 = *param_2 + 2;
+  return;
+}
+
+
+    +150 -> 0064f6e0 FUN_0064f6e0@0064f6e0
+    ---- decomp FUN_0064f6e0
+
+uint __thiscall FUN_0064f6e0(int param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  
+  if (0x1b < param_3 - *param_2) {
+    FUN_00489c80(param_2);
+    *(undefined2 *)(param_1 + 0x28) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x2a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar3 = (undefined2 *)*param_2;
+    uVar1 = *puVar3;
+    *param_2 = (int)(puVar3 + 1);
+    uVar2 = puVar3[1];
+    *param_2 = (int)(puVar3 + 2);
+    *(uint *)(param_1 + 0x2c) = CONCAT22(uVar2,uVar1);
+    uVar1 = *(undefined2 *)*param_2;
+    *(undefined2 *)(param_1 + 0x30) = uVar1;
+    *param_2 = *param_2 + 2;
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return param_3 - *param_2 & 0xffffff00;
+}
+
+
+    +154 -> 00c59f20 ?
+    +158 -> 00489e1b FUN_00489e1b@00489e1b
+    ---- decomp FUN_00489e1b
+
+void __thiscall FUN_00489e1b(int param_1,uint param_2)
+
+{
+  CDebugSSectionReader::_scalar_deleting_destructor_((CDebugSSectionReader *)(param_1 + -4),param_2)
+  ;
+  return;
+}
+
+
+    +15c -> 00c59d8c ?
+    +160 -> 00489e1b FUN_00489e1b@00489e1b
+    +164 -> 00c59da0 ?
+    +168 -> 00489e1b FUN_00489e1b@00489e1b
+    +16c -> 00c5a040 ?
+    +170 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +174 -> 0064f370 FUN_0064f370@0064f370
+    ---- decomp FUN_0064f370
+
+undefined4 FUN_0064f370(void)
+
+{
+  return 0x14;
+}
+
+
+    +178 -> 0064f2f0 FUN_0064f2f0@0064f2f0
+    ---- decomp FUN_0064f2f0
+
+void __thiscall FUN_0064f2f0(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  int *piVar2;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1a);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  piVar2 = (int *)(*param_2 + 5U & 0xfffffffc);
+  *param_2 = (int)piVar2;
+  *piVar2 = param_1[9];
+  *param_2 = *param_2 + 4;
+  return;
+}
+
+
+    +17c -> 0064f260 FUN_0064f260@0064f260
+    ---- decomp FUN_0064f260
+
+uint __thiscall FUN_0064f260(int *param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  int iVar4;
+  uint uVar5;
+  int *piVar6;
+  
+  piVar6 = (int *)*param_2;
+  uVar5 = (**(code **)(*param_1 + 4))();
+  if (uVar5 <= (uint)(param_3 - (int)piVar6)) {
+    param_1[4] = *piVar6;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 5) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 6) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)((int)param_1 + 0x1a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar3 = (undefined2 *)*param_2;
+    uVar1 = *puVar3;
+    *param_2 = (int)(puVar3 + 1);
+    uVar2 = puVar3[1];
+    *param_2 = (int)(puVar3 + 2);
+    param_1[7] = CONCAT22(uVar2,uVar1);
+    *(undefined2 *)(param_1 + 8) = *(undefined2 *)*param_2;
+    piVar6 = (int *)(*param_2 + 5U & 0xfffffffc);
+    *param_2 = (int)piVar6;
+    iVar4 = *piVar6;
+    param_1[9] = iVar4;
+    *param_2 = *param_2 + 4;
+    return CONCAT31((int3)((uint)iVar4 >> 8),1);
+  }
+  return uVar5 & 0xffffff00;
+}
+
+
+  COL@c59ac0
+  vftable@00c3c864 (col ptr @00c3c860)
+    +000 -> 00487c01 FUN_00487c01@00487c01
+    +004 -> 00487b94 FUN_00487b94@00487b94
+    +008 -> 00487c55 FUN_00487c55@00487c55
+    +00c -> 00487d2b FUN_00487d2b@00487d2b
+    +010 -> 00487bf6 FUN_00487bf6@00487bf6
+    +014 -> 00487cea FUN_00487cea@00487cea
+    +018 -> 00487c68 FUN_00487c68@00487c68
+    +01c -> 00487cae FUN_00487cae@00487cae
+    +020 -> 00487bd0 FUN_00487bd0@00487bd0
+    +024 -> 00487d36 FUN_00487d36@00487d36
+    +028 -> 004896bd FUN_004896bd@004896bd
+    ---- decomp FUN_004896bd
+
+void FUN_004896bd(void)
+
+{
+  FUN_004895a0();
+  return;
+}
+
+
+    +02c -> 00c59b88 ?
+    +030 -> 00487cfd FUN_00487cfd@00487cfd
+    +034 -> 00487baa FUN_00487baa@00487baa
+    +038 -> 00487c4a FUN_00487c4a@00487c4a
+    +03c -> 00487ccc FUN_00487ccc@00487ccc
+    +040 -> 00487be3 FUN_00487be3@00487be3
+    +044 -> 00487cb9 FUN_00487cb9@00487cb9
+    +048 -> 00487d10 FUN_00487d10@00487d10
+    +04c -> 00487b58 FUN_00487b58@00487b58
+    +050 -> 00487b63 FUN_00487b63@00487b63
+    +054 -> 00487b9f FUN_00487b9f@00487b9f
+    +058 -> 00487c24 FUN_00487c24@00487c24
+    +05c -> 00487cdf FUN_00487cdf@00487cdf
+    +060 -> 00c59a28 ?
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 004941e6 FUN_004941e6@004941e6
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 004894e0 FUN_004894e0@004894e0
+    ---- decomp FUN_004894e0
+
+int __thiscall FUN_004894e0(int param_1,byte param_2)
+
+{
+  *(undefined ***)(param_1 + -8) = CPNS::ITextMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 4) + -4 + param_1) =
+       CPNS::ITextMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 8) + -4 + param_1) =
+       CPNS::ITextMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 0xc) + -4 + param_1) =
+       CPNS::ITextMessage::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1 + -8,0x1c);
+  }
+  return param_1 + -8;
+}
+
+
+    +090 -> 00c59b20 ?
+    +094 -> 004895a0 FUN_004895a0@004895a0
+    ---- decomp FUN_004895a0
+
+undefined4 __thiscall FUN_004895a0(undefined4 param_1,byte param_2)
+
+{
+  FUN_004895d0();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xc4);
+  }
+  return param_1;
+}
+
+
+    +098 -> 0066c010 FUN_0066c010@0066c010
+    +09c -> 0064b7a0 FUN_0064b7a0@0064b7a0
+    ---- decomp FUN_0064b7a0
+
+void FUN_0064b7a0(void)
+
+{
+  return;
+}
+
+
+    +0a0 -> 004054a0 FUN_004054a0@004054a0
+    +0a4 -> 0064b790 FUN_0064b790@0064b790
+    ---- decomp FUN_0064b790
+
+short __fastcall FUN_0064b790(int param_1)
+
+{
+  return *(short *)(param_1 + 0x92) + 0x16;
+}
+
+
+    +0a8 -> 0064b780 FUN_0064b780@0064b780
+    ---- decomp FUN_0064b780
+
+undefined1 FUN_0064b780(void)
+
+{
+  return 0;
+}
+
+
+    +0ac -> 0064b6a0 FUN_0064b6a0@0064b6a0
+    ---- decomp FUN_0064b6a0
+
+undefined4 __thiscall FUN_0064b6a0(int param_1,undefined4 param_2,short *param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 *puVar2;
+  int iVar3;
+  short sVar4;
+  
+  sVar4 = *(short *)(param_1 + 0x92) + 0x16;
+  *param_3 = sVar4;
+  uVar1 = *(undefined2 *)(param_1 + 0x78);
+  iVar3 = FUN_00634680(sVar4,4,*(byte *)(param_1 + 0x74) >> 1 & 1,*(byte *)(param_1 + 0x74) & 1);
+  if (iVar3 != 0) {
+    puVar2 = *(undefined2 **)(iVar3 + 0x1c);
+    *puVar2 = uVar1;
+    puVar2[1] = *(undefined2 *)(param_1 + 0x7a);
+    puVar2[2] = *(undefined2 *)(param_1 + 0x7c);
+    puVar2[3] = *(undefined2 *)(param_1 + 0x7e);
+    puVar2[4] = *(undefined2 *)(param_1 + 0x80);
+    puVar2[5] = *(undefined2 *)(param_1 + 0x82);
+    puVar2[6] = *(undefined2 *)(param_1 + 0x84);
+    puVar2[7] = *(undefined2 *)(param_1 + 0x86);
+    puVar2[8] = *(undefined2 *)(param_1 + 0x88);
+    puVar2[9] = *(undefined2 *)(param_1 + 0x8a);
+    puVar2[10] = *(undefined2 *)(param_1 + 0x92);
+    FUN_004946f0(puVar2 + 0xb,*(undefined4 *)(param_1 + 0x8c),*(undefined2 *)(param_1 + 0x92));
+    return 1;
+  }
+  return 0;
+}
+
+
+    +0b0 -> 00c59b74 ?
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 004941e6 FUN_004941e6@004941e6
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 00c59a64 ?
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 00c59b60 ?
+    +124 -> 00487c73 FUN_00487c73@00487c73
+    +128 -> 00487c2f FUN_00487c2f@00487c2f
+    +12c -> 00487c0c FUN_00487c0c@00487c0c
+    +130 -> 00487bc8 FUN_00487bc8@00487bc8
+    +134 -> 00487cc4 FUN_00487cc4@00487cc4
+    +138 -> 00487d08 FUN_00487d08@00487d08
+    +13c -> 00487bee FUN_00487bee@00487bee
+    +140 -> 00487ca6 FUN_00487ca6@00487ca6
+    +144 -> 00487d23 FUN_00487d23@00487d23
+    +148 -> 0048635f FUN_0048635f@0048635f
+    +14c -> 00487c14 FUN_00487c14@00487c14
+    +150 -> 00486357 FUN_00486357@00486357
+    +154 -> 00487c1c FUN_00487c1c@00487c1c
+    +158 -> 00487b8c FUN_00487b8c@00487b8c
+    +15c -> 00486443 FUN_00486443@00486443
+    +160 -> 00487c9e FUN_00487c9e@00487c9e
+    +164 -> 00487cf5 FUN_00487cf5@00487cf5
+    +168 -> 00487b84 FUN_00487b84@00487b84
+    +16c -> 00487c86 FUN_00487c86@00487c86
+    +170 -> 00487c42 FUN_00487c42@00487c42
+    +174 -> 00487b7c FUN_00487b7c@00487b7c
+    +178 -> 004896cb FUN_004896cb@004896cb
+    ---- decomp FUN_004896cb
+
+void FUN_004896cb(void)
+
+{
+  FUN_00489540();
+  return;
+}
+
+
+    +17c -> 004896d3 FUN_004896d3@004896d3
+    ---- decomp FUN_004896d3
+
+void FUN_004896d3(void)
+
+{
+  FUN_00489570();
+  return;
+}
+
+
+  COL@c59b20
+  vftable@00c3c8f8 (col ptr @00c3c8f4)
+    +000 -> 004895a0 FUN_004895a0@004895a0
+    +004 -> 0066c010 FUN_0066c010@0066c010
+    +008 -> 0064b7a0 FUN_0064b7a0@0064b7a0
+    +00c -> 004054a0 FUN_004054a0@004054a0
+    +010 -> 0064b790 FUN_0064b790@0064b790
+    +014 -> 0064b780 FUN_0064b780@0064b780
+    +018 -> 0064b6a0 FUN_0064b6a0@0064b6a0
+    +01c -> 00c59b74 ?
+    +020 -> 004941e6 FUN_004941e6@004941e6
+    +024 -> 004941e6 FUN_004941e6@004941e6
+    +028 -> 004941e6 FUN_004941e6@004941e6
+    +02c -> 00c59a64 ?
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 004941e6 FUN_004941e6@004941e6
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 004941e6 FUN_004941e6@004941e6
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 00c59b60 ?
+    +090 -> 00487c73 FUN_00487c73@00487c73
+    +094 -> 00487c2f FUN_00487c2f@00487c2f
+    +098 -> 00487c0c FUN_00487c0c@00487c0c
+    +09c -> 00487bc8 FUN_00487bc8@00487bc8
+    +0a0 -> 00487cc4 FUN_00487cc4@00487cc4
+    +0a4 -> 00487d08 FUN_00487d08@00487d08
+    +0a8 -> 00487bee FUN_00487bee@00487bee
+    +0ac -> 00487ca6 FUN_00487ca6@00487ca6
+    +0b0 -> 00487d23 FUN_00487d23@00487d23
+    +0b4 -> 0048635f FUN_0048635f@0048635f
+    +0b8 -> 00487c14 FUN_00487c14@00487c14
+    +0bc -> 00486357 FUN_00486357@00486357
+    +0c0 -> 00487c1c FUN_00487c1c@00487c1c
+    +0c4 -> 00487b8c FUN_00487b8c@00487b8c
+    +0c8 -> 00486443 FUN_00486443@00486443
+    +0cc -> 00487c9e FUN_00487c9e@00487c9e
+    +0d0 -> 00487cf5 FUN_00487cf5@00487cf5
+    +0d4 -> 00487b84 FUN_00487b84@00487b84
+    +0d8 -> 00487c86 FUN_00487c86@00487c86
+    +0dc -> 00487c42 FUN_00487c42@00487c42
+    +0e0 -> 00487b7c FUN_00487b7c@00487b7c
+    +0e4 -> 004896cb FUN_004896cb@004896cb
+    +0e8 -> 004896d3 FUN_004896d3@004896d3
+    +0ec -> 00c59b0c ?
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 00c59a50 ?
+    +124 -> 00487c37 FUN_00487c37@00487c37
+    +128 -> 00487bb5 FUN_00487bb5@00487bb5
+    +12c -> 00487c7b FUN_00487c7b@00487c7b
+    +130 -> 00c59b9c ?
+    +134 -> 004896e0 FUN_004896e0@004896e0
+    +138 -> 00c59c30 ?
+    +13c -> 00489720 `scalar_deleting_destructor'@00489720
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 00c59c1c ?
+    +148 -> 00489750 FUN_00489750@00489750
+    +14c -> 0064ba60 FUN_0064ba60@0064ba60
+    +150 -> 00c59c44 ?
+    +154 -> 00480d20 FUN_00480d20@00480d20
+    +158 -> 00c59c90 ?
+    +15c -> 00489b09 FUN_00489b09@00489b09
+    +160 -> 00489a22 FUN_00489a22@00489a22
+    +164 -> 00489a89 FUN_00489a89@00489a89
+    +168 -> 00489ad7 FUN_00489ad7@00489ad7
+    +16c -> 00489a49 FUN_00489a49@00489a49
+    +170 -> 00489acc FUN_00489acc@00489acc
+    +174 -> 00489b14 FUN_00489b14@00489b14
+    +178 -> 00489b3b FUN_00489b3b@00489b3b
+    +17c -> 00489b46 FUN_00489b46@00489b46
+  COL@c59b28
+  COL@c59b60
+  vftable@00c3c988 (col ptr @00c3c984)
+    +000 -> 00487c73 FUN_00487c73@00487c73
+    +004 -> 00487c2f FUN_00487c2f@00487c2f
+    +008 -> 00487c0c FUN_00487c0c@00487c0c
+    +00c -> 00487bc8 FUN_00487bc8@00487bc8
+    +010 -> 00487cc4 FUN_00487cc4@00487cc4
+    +014 -> 00487d08 FUN_00487d08@00487d08
+    +018 -> 00487bee FUN_00487bee@00487bee
+    +01c -> 00487ca6 FUN_00487ca6@00487ca6
+    +020 -> 00487d23 FUN_00487d23@00487d23
+    +024 -> 0048635f FUN_0048635f@0048635f
+    +028 -> 00487c14 FUN_00487c14@00487c14
+    +02c -> 00486357 FUN_00486357@00486357
+    +030 -> 00487c1c FUN_00487c1c@00487c1c
+    +034 -> 00487b8c FUN_00487b8c@00487b8c
+    +038 -> 00486443 FUN_00486443@00486443
+    +03c -> 00487c9e FUN_00487c9e@00487c9e
+    +040 -> 00487cf5 FUN_00487cf5@00487cf5
+    +044 -> 00487b84 FUN_00487b84@00487b84
+    +048 -> 00487c86 FUN_00487c86@00487c86
+    +04c -> 00487c42 FUN_00487c42@00487c42
+    +050 -> 00487b7c FUN_00487b7c@00487b7c
+    +054 -> 004896cb FUN_004896cb@004896cb
+    +058 -> 004896d3 FUN_004896d3@004896d3
+    +05c -> 00c59b0c ?
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 004941e6 FUN_004941e6@004941e6
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 004941e6 FUN_004941e6@004941e6
+    +090 -> 00c59a50 ?
+    +094 -> 00487c37 FUN_00487c37@00487c37
+    +098 -> 00487bb5 FUN_00487bb5@00487bb5
+    +09c -> 00487c7b FUN_00487c7b@00487c7b
+    +0a0 -> 00c59b9c ?
+    +0a4 -> 004896e0 FUN_004896e0@004896e0
+    +0a8 -> 00c59c30 ?
+    +0ac -> 00489720 `scalar_deleting_destructor'@00489720
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 00c59c1c ?
+    +0b8 -> 00489750 FUN_00489750@00489750
+    +0bc -> 0064ba60 FUN_0064ba60@0064ba60
+    +0c0 -> 00c59c44 ?
+    +0c4 -> 00480d20 FUN_00480d20@00480d20
+    +0c8 -> 00c59c90 ?
+    +0cc -> 00489b09 FUN_00489b09@00489b09
+    +0d0 -> 00489a22 FUN_00489a22@00489a22
+    +0d4 -> 00489a89 FUN_00489a89@00489a89
+    +0d8 -> 00489ad7 FUN_00489ad7@00489ad7
+    +0dc -> 00489a49 FUN_00489a49@00489a49
+    +0e0 -> 00489acc FUN_00489acc@00489acc
+    +0e4 -> 00489b14 FUN_00489b14@00489b14
+    +0e8 -> 00489b3b FUN_00489b3b@00489b3b
+    +0ec -> 00489b46 FUN_00489b46@00489b46
+    +0f0 -> 00489a17 FUN_00489a17@00489a17
+    +0f4 -> 00489a70 FUN_00489a70@00489a70
+    +0f8 -> 00489af0 FUN_00489af0@00489af0
+    +0fc -> 00c59ce0 ?
+    +100 -> 00489a62 FUN_00489a62@00489a62
+    +104 -> 00489b51 FUN_00489b51@00489b51
+    +108 -> 00489a94 FUN_00489a94@00489a94
+    +10c -> 00489b1f FUN_00489b1f@00489b1f
+    +110 -> 00489a54 FUN_00489a54@00489a54
+    +114 -> 00489afb FUN_00489afb@00489afb
+    +118 -> 00489aa2 FUN_00489aa2@00489aa2
+    +11c -> 00489abe FUN_00489abe@00489abe
+    +120 -> 00489a3b FUN_00489a3b@00489a3b
+    +124 -> 00489b2d FUN_00489b2d@00489b2d
+    +128 -> 00489ae2 FUN_00489ae2@00489ae2
+    +12c -> 00c59d20 ?
+    +130 -> 00489a7b FUN_00489a7b@00489a7b
+    +134 -> 00489a2d FUN_00489a2d@00489a2d
+    +138 -> 00489ab0 FUN_00489ab0@00489ab0
+    +13c -> 00c59ccc ?
+    +140 -> 00489940 FUN_00489940@00489940
+    +144 -> 0066c010 FUN_0066c010@0066c010
+    +148 -> 0064e270 FUN_0064e270@0064e270
+    +14c -> 004054a0 FUN_004054a0@004054a0
+    +150 -> 0064d130 FUN_0064d130@0064d130
+    +154 -> 0064d100 FUN_0064d100@0064d100
+    +158 -> 0064cad0 FUN_0064cad0@0064cad0
+    +15c -> 0040f3a0 FUN_0040f3a0@0040f3a0
+    +160 -> 00405490 FUN_00405490@00405490
+    +164 -> ffffffd8 ?
+    +168 -> 000000cc ?
+    +16c -> 000000d4 ?
+    +170 -> 000000e0 ?
+    +174 -> 00c59fc4 ?
+    +178 -> 00489e23 FUN_00489e23@00489e23
+    +17c -> 00c59ec0 ?
+  COL@c59b88
+  vftable@00c3c894 (col ptr @00c3c890)
+    +000 -> 00487cfd FUN_00487cfd@00487cfd
+    +004 -> 00487baa FUN_00487baa@00487baa
+    +008 -> 00487c4a FUN_00487c4a@00487c4a
+    +00c -> 00487ccc FUN_00487ccc@00487ccc
+    +010 -> 00487be3 FUN_00487be3@00487be3
+    +014 -> 00487cb9 FUN_00487cb9@00487cb9
+    +018 -> 00487d10 FUN_00487d10@00487d10
+    +01c -> 00487b58 FUN_00487b58@00487b58
+    +020 -> 00487b63 FUN_00487b63@00487b63
+    +024 -> 00487b9f FUN_00487b9f@00487b9f
+    +028 -> 00487c24 FUN_00487c24@00487c24
+    +02c -> 00487cdf FUN_00487cdf@00487cdf
+    +030 -> 00c59a28 ?
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 004894e0 FUN_004894e0@004894e0
+    +060 -> 00c59b20 ?
+    +064 -> 004895a0 FUN_004895a0@004895a0
+    +068 -> 0066c010 FUN_0066c010@0066c010
+    +06c -> 0064b7a0 FUN_0064b7a0@0064b7a0
+    +070 -> 004054a0 FUN_004054a0@004054a0
+    +074 -> 0064b790 FUN_0064b790@0064b790
+    +078 -> 0064b780 FUN_0064b780@0064b780
+    +07c -> 0064b6a0 FUN_0064b6a0@0064b6a0
+    +080 -> 00c59b74 ?
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 004941e6 FUN_004941e6@004941e6
+    +090 -> 00c59a64 ?
+    +094 -> 004941e6 FUN_004941e6@004941e6
+    +098 -> 004941e6 FUN_004941e6@004941e6
+    +09c -> 004941e6 FUN_004941e6@004941e6
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 004941e6 FUN_004941e6@004941e6
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 004941e6 FUN_004941e6@004941e6
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 004941e6 FUN_004941e6@004941e6
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 00c59b60 ?
+    +0f4 -> 00487c73 FUN_00487c73@00487c73
+    +0f8 -> 00487c2f FUN_00487c2f@00487c2f
+    +0fc -> 00487c0c FUN_00487c0c@00487c0c
+    +100 -> 00487bc8 FUN_00487bc8@00487bc8
+    +104 -> 00487cc4 FUN_00487cc4@00487cc4
+    +108 -> 00487d08 FUN_00487d08@00487d08
+    +10c -> 00487bee FUN_00487bee@00487bee
+    +110 -> 00487ca6 FUN_00487ca6@00487ca6
+    +114 -> 00487d23 FUN_00487d23@00487d23
+    +118 -> 0048635f FUN_0048635f@0048635f
+    +11c -> 00487c14 FUN_00487c14@00487c14
+    +120 -> 00486357 FUN_00486357@00486357
+    +124 -> 00487c1c FUN_00487c1c@00487c1c
+    +128 -> 00487b8c FUN_00487b8c@00487b8c
+    +12c -> 00486443 FUN_00486443@00486443
+    +130 -> 00487c9e FUN_00487c9e@00487c9e
+    +134 -> 00487cf5 FUN_00487cf5@00487cf5
+    +138 -> 00487b84 FUN_00487b84@00487b84
+    +13c -> 00487c86 FUN_00487c86@00487c86
+    +140 -> 00487c42 FUN_00487c42@00487c42
+    +144 -> 00487b7c FUN_00487b7c@00487b7c
+    +148 -> 004896cb FUN_004896cb@004896cb
+    +14c -> 004896d3 FUN_004896d3@004896d3
+    +150 -> 00c59b0c ?
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+##### TD c8d4c8 struct@c8d4c0
+  COL@c59c90
+  vftable@00c3ca54 (col ptr @00c3ca50)
+    +000 -> 00489b09 FUN_00489b09@00489b09
+    +004 -> 00489a22 FUN_00489a22@00489a22
+    +008 -> 00489a89 FUN_00489a89@00489a89
+    +00c -> 00489ad7 FUN_00489ad7@00489ad7
+    +010 -> 00489a49 FUN_00489a49@00489a49
+    +014 -> 00489acc FUN_00489acc@00489acc
+    +018 -> 00489b14 FUN_00489b14@00489b14
+    +01c -> 00489b3b FUN_00489b3b@00489b3b
+    +020 -> 00489b46 FUN_00489b46@00489b46
+    +024 -> 00489a17 FUN_00489a17@00489a17
+    +028 -> 00489a70 FUN_00489a70@00489a70
+    +02c -> 00489af0 FUN_00489af0@00489af0
+    +030 -> 00c59ce0 ?
+    +034 -> 00489a62 FUN_00489a62@00489a62
+    +038 -> 00489b51 FUN_00489b51@00489b51
+    +03c -> 00489a94 FUN_00489a94@00489a94
+    +040 -> 00489b1f FUN_00489b1f@00489b1f
+    +044 -> 00489a54 FUN_00489a54@00489a54
+    +048 -> 00489afb FUN_00489afb@00489afb
+    +04c -> 00489aa2 FUN_00489aa2@00489aa2
+    +050 -> 00489abe FUN_00489abe@00489abe
+    +054 -> 00489a3b FUN_00489a3b@00489a3b
+    +058 -> 00489b2d FUN_00489b2d@00489b2d
+    +05c -> 00489ae2 FUN_00489ae2@00489ae2
+    +060 -> 00c59d20 ?
+    +064 -> 00489a7b FUN_00489a7b@00489a7b
+    +068 -> 00489a2d FUN_00489a2d@00489a2d
+    +06c -> 00489ab0 FUN_00489ab0@00489ab0
+    +070 -> 00c59ccc ?
+    +074 -> 00489940 FUN_00489940@00489940
+    +078 -> 0066c010 FUN_0066c010@0066c010
+    +07c -> 0064e270 FUN_0064e270@0064e270
+    +080 -> 004054a0 FUN_004054a0@004054a0
+    +084 -> 0064d130 FUN_0064d130@0064d130
+    +088 -> 0064d100 FUN_0064d100@0064d100
+    +08c -> 0064cad0 FUN_0064cad0@0064cad0
+    +090 -> 0040f3a0 FUN_0040f3a0@0040f3a0
+    +094 -> 00405490 FUN_00405490@00405490
+    +098 -> ffffffd8 ?
+    +09c -> 000000cc ?
+    +0a0 -> 000000d4 ?
+    +0a4 -> 000000e0 ?
+    +0a8 -> 00c59fc4 ?
+    +0ac -> 00489e23 FUN_00489e23@00489e23
+    +0b0 -> 00c59ec0 ?
+    +0b4 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +0b8 -> 0064f240 FUN_0064f240@0064f240
+    +0bc -> 0064f1d0 FUN_0064f1d0@0064f1d0
+    +0c0 -> 0064f150 FUN_0064f150@0064f150
+    +0c4 -> 00c59db4 ?
+    +0c8 -> 00489da0 FUN_00489da0@00489da0
+    +0cc -> 0064f570 FUN_0064f570@0064f570
+    +0d0 -> 0064f510 FUN_0064f510@0064f510
+    +0d4 -> 0064f4c0 FUN_0064f4c0@0064f4c0
+    +0d8 -> 00c59e3c ?
+    +0dc -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +0e0 -> 0064f020 FUN_0064f020@0064f020
+    +0e4 -> 0064efb0 FUN_0064efb0@0064efb0
+    +0e8 -> 0064ef30 FUN_0064ef30@0064ef30
+    +0ec -> 00c5a108 ?
+    +0f0 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +0f4 -> 00489b60 FUN_00489b60@00489b60
+    +0f8 -> 00489b70 FUN_00489b70@00489b70
+    +0fc -> 00489bf0 FUN_00489bf0@00489bf0
+    +100 -> 00c59d5c ?
+    +104 -> 00489e23 FUN_00489e23@00489e23
+    +108 -> 00c5a054 ?
+    +10c -> 00489d20 `scalar_deleting_destructor'@00489d20
+    +110 -> 0064f7b0 FUN_0064f7b0@0064f7b0
+    +114 -> 0064f750 FUN_0064f750@0064f750
+    +118 -> 0064f6e0 FUN_0064f6e0@0064f6e0
+    +11c -> 00c59f20 ?
+    +120 -> 00489e1b FUN_00489e1b@00489e1b
+    +124 -> 00c59d8c ?
+    +128 -> 00489e1b FUN_00489e1b@00489e1b
+    +12c -> 00c59da0 ?
+    +130 -> 00489e1b FUN_00489e1b@00489e1b
+    +134 -> 00c5a040 ?
+    +138 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +13c -> 0064f370 FUN_0064f370@0064f370
+    +140 -> 0064f2f0 FUN_0064f2f0@0064f2f0
+    +144 -> 0064f260 FUN_0064f260@0064f260
+    +148 -> 00c59f78 ?
+    +14c -> 00489e1b FUN_00489e1b@00489e1b
+    +150 -> 00c59d48 ?
+    +154 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +158 -> 0064ef10 FUN_0064ef10@0064ef10
+    ---- decomp FUN_0064ef10
+
+undefined4 FUN_0064ef10(void)
+
+{
+  return 0x11;
+}
+
+
+    +15c -> 0064ee90 FUN_0064ee90@0064ee90
+    ---- decomp FUN_0064ee90
+
+void __thiscall FUN_0064ee90(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1a);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  *param_2 = *param_2 + 2;
+  *(char *)*param_2 = (char)param_1[9];
+  *param_2 = *param_2 + 1;
+  return;
+}
+
+
+    +160 -> 0064ee00 FUN_0064ee00@0064ee00
+    ---- decomp FUN_0064ee00
+
+uint __thiscall FUN_0064ee00(int *param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  int *piVar3;
+  undefined2 *puVar4;
+  char *pcVar5;
+  uint uVar6;
+  
+  piVar3 = (int *)*param_2;
+  uVar6 = (**(code **)(*param_1 + 4))();
+  if ((int)uVar6 <= param_3 - (int)piVar3) {
+    param_1[4] = *piVar3;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 5) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 6) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)((int)param_1 + 0x1a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar4 = (undefined2 *)*param_2;
+    uVar1 = *puVar4;
+    *param_2 = (int)(puVar4 + 1);
+    uVar2 = puVar4[1];
+    *param_2 = (int)(puVar4 + 2);
+    param_1[7] = CONCAT22(uVar2,uVar1);
+    *(undefined2 *)(param_1 + 8) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    pcVar5 = (char *)*param_2;
+    *(bool *)(param_1 + 9) = *pcVar5 != '\0';
+    *param_2 = *param_2 + 1;
+    return CONCAT31((int3)((uint)pcVar5 >> 8),1);
+  }
+  return uVar6 & 0xffffff00;
+}
+
+
+    +164 -> 00c59ef8 ?
+    +168 -> 00489e33 FUN_00489e33@00489e33
+    ---- decomp FUN_00489e33
+
+void FUN_00489e33(void)
+
+{
+  FUN_00489da0();
+  return;
+}
+
+
+    +16c -> 00c5a11c ?
+    +170 -> 00489e23 FUN_00489e23@00489e23
+    +174 -> 00c5a018 ?
+    +178 -> 00489e2b FUN_00489e2b@00489e2b
+    ---- decomp FUN_00489e2b
+
+void FUN_00489e2b(void)
+
+{
+  FUN_00489d50();
+  return;
+}
+
+
+    +17c -> 00c59e18 ?
+  COL@c59ccc
+  vftable@00c3cac8 (col ptr @00c3cac4)
+    +000 -> 00489940 FUN_00489940@00489940
+    +004 -> 0066c010 FUN_0066c010@0066c010
+    +008 -> 0064e270 FUN_0064e270@0064e270
+    +00c -> 004054a0 FUN_004054a0@004054a0
+    +010 -> 0064d130 FUN_0064d130@0064d130
+    +014 -> 0064d100 FUN_0064d100@0064d100
+    +018 -> 0064cad0 FUN_0064cad0@0064cad0
+    +01c -> 0040f3a0 FUN_0040f3a0@0040f3a0
+    +020 -> 00405490 FUN_00405490@00405490
+    +024 -> ffffffd8 ?
+    +028 -> 000000cc ?
+    +02c -> 000000d4 ?
+    +030 -> 000000e0 ?
+    +034 -> 00c59fc4 ?
+    +038 -> 00489e23 FUN_00489e23@00489e23
+    +03c -> 00c59ec0 ?
+    +040 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +044 -> 0064f240 FUN_0064f240@0064f240
+    +048 -> 0064f1d0 FUN_0064f1d0@0064f1d0
+    +04c -> 0064f150 FUN_0064f150@0064f150
+    +050 -> 00c59db4 ?
+    +054 -> 00489da0 FUN_00489da0@00489da0
+    +058 -> 0064f570 FUN_0064f570@0064f570
+    +05c -> 0064f510 FUN_0064f510@0064f510
+    +060 -> 0064f4c0 FUN_0064f4c0@0064f4c0
+    +064 -> 00c59e3c ?
+    +068 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +06c -> 0064f020 FUN_0064f020@0064f020
+    +070 -> 0064efb0 FUN_0064efb0@0064efb0
+    +074 -> 0064ef30 FUN_0064ef30@0064ef30
+    +078 -> 00c5a108 ?
+    +07c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +080 -> 00489b60 FUN_00489b60@00489b60
+    +084 -> 00489b70 FUN_00489b70@00489b70
+    +088 -> 00489bf0 FUN_00489bf0@00489bf0
+    +08c -> 00c59d5c ?
+    +090 -> 00489e23 FUN_00489e23@00489e23
+    +094 -> 00c5a054 ?
+    +098 -> 00489d20 `scalar_deleting_destructor'@00489d20
+    +09c -> 0064f7b0 FUN_0064f7b0@0064f7b0
+    +0a0 -> 0064f750 FUN_0064f750@0064f750
+    +0a4 -> 0064f6e0 FUN_0064f6e0@0064f6e0
+    +0a8 -> 00c59f20 ?
+    +0ac -> 00489e1b FUN_00489e1b@00489e1b
+    +0b0 -> 00c59d8c ?
+    +0b4 -> 00489e1b FUN_00489e1b@00489e1b
+    +0b8 -> 00c59da0 ?
+    +0bc -> 00489e1b FUN_00489e1b@00489e1b
+    +0c0 -> 00c5a040 ?
+    +0c4 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +0c8 -> 0064f370 FUN_0064f370@0064f370
+    +0cc -> 0064f2f0 FUN_0064f2f0@0064f2f0
+    +0d0 -> 0064f260 FUN_0064f260@0064f260
+    +0d4 -> 00c59f78 ?
+    +0d8 -> 00489e1b FUN_00489e1b@00489e1b
+    +0dc -> 00c59d48 ?
+    +0e0 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +0e4 -> 0064ef10 FUN_0064ef10@0064ef10
+    +0e8 -> 0064ee90 FUN_0064ee90@0064ee90
+    +0ec -> 0064ee00 FUN_0064ee00@0064ee00
+    +0f0 -> 00c59ef8 ?
+    +0f4 -> 00489e33 FUN_00489e33@00489e33
+    +0f8 -> 00c5a11c ?
+    +0fc -> 00489e23 FUN_00489e23@00489e23
+    +100 -> 00c5a018 ?
+    +104 -> 00489e2b FUN_00489e2b@00489e2b
+    +108 -> 00c59e18 ?
+    +10c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +110 -> 00489b60 FUN_00489b60@00489b60
+    +114 -> 00489b70 FUN_00489b70@00489b70
+    +118 -> 00489bf0 FUN_00489bf0@00489bf0
+    +11c -> 00c59d34 ?
+    +120 -> 00489d50 FUN_00489d50@00489d50
+    ---- decomp FUN_00489d50
+
+undefined4 * __thiscall FUN_00489d50(undefined4 *param_1,byte param_2)
+
+{
+  param_1[9] = CPG::CTransportAddress::vftable;
+  param_1[10] = 0x7f;
+  *(undefined1 *)(param_1 + 0xb) = 0;
+  *(undefined4 *)((int)param_1 + 0x2d) = 0;
+  *(undefined2 *)((int)param_1 + 0x31) = 0;
+  param_1[1] = CPG::CPListItem<class_CPG::CCPMessage_Generic>::vftable;
+  *param_1 = CPNS::ISerializable::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x38);
+  }
+  return param_1;
+}
+
+
+    +124 -> 0064f6a0 FUN_0064f6a0@0064f6a0
+    ---- decomp FUN_0064f6a0
+
+undefined4 FUN_0064f6a0(void)
+
+{
+  return 0x1c;
+}
+
+
+    +128 -> 0064f620 FUN_0064f620@0064f620
+    ---- decomp FUN_0064f620
+
+void __thiscall FUN_0064f620(int *param_1,int *param_2)
+
+{
+  undefined4 *puVar1;
+  undefined2 uVar2;
+  int *piVar3;
+  
+  uVar2 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar2;
+  *param_2 = *param_2 + 2;
+  *(char *)*param_2 = (char)param_1[0xd];
+  piVar3 = (int *)(*param_2 + 4U & 0xfffffffc);
+  *param_2 = (int)piVar3;
+  *piVar3 = param_1[6];
+  piVar3[1] = param_1[7];
+  *param_2 = *param_2 + 8;
+  *(int *)*param_2 = param_1[8];
+  *param_2 = *param_2 + 4;
+  *(char *)*param_2 = (char)param_1[10];
+  *param_2 = *param_2 + 1;
+  *(char *)*param_2 = (char)param_1[0xb];
+  *param_2 = *param_2 + 1;
+  puVar1 = (undefined4 *)*param_2;
+  *puVar1 = *(undefined4 *)((int)param_1 + 0x2d);
+  *(undefined2 *)(puVar1 + 1) = *(undefined2 *)((int)param_1 + 0x31);
+  *param_2 = *param_2 + 6;
+  return;
+}
+
+
+    +12c -> 0064f5b0 FUN_0064f5b0@0064f5b0
+    ---- decomp FUN_0064f5b0
+
+uint __thiscall FUN_0064f5b0(int param_1,int *param_2,int param_3)
+
+{
+  uint uVar1;
+  undefined4 *puVar2;
+  
+  uVar1 = param_3 - *param_2;
+  if (0x13 < (int)uVar1) {
+    *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined1 *)(param_1 + 0x34) = *(undefined1 *)*param_2;
+    puVar2 = (undefined4 *)(*param_2 + 4U & 0xfffffffc);
+    *param_2 = (int)puVar2;
+    *(undefined4 *)(param_1 + 0x18) = *puVar2;
+    *(undefined4 *)(param_1 + 0x1c) = puVar2[1];
+    *param_2 = *param_2 + 8;
+    *(undefined4 *)(param_1 + 0x20) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    uVar1 = FUN_0047ec90(param_2,param_3);
+    return uVar1;
+  }
+  return uVar1 & 0xffffff00;
+}
+
+
+    +130 -> 00c59e50 ?
+    +134 -> 00489e1b FUN_00489e1b@00489e1b
+    +138 -> 00c59eac ?
+    +13c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +140 -> 0064f4a0 FUN_0064f4a0@0064f4a0
+    ---- decomp FUN_0064f4a0
+
+undefined4 FUN_0064f4a0(void)
+
+{
+  return 0x11;
+}
+
+
+    +144 -> 0064f420 FUN_0064f420@0064f420
+    ---- decomp FUN_0064f420
+
+void __thiscall FUN_0064f420(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1a);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  *param_2 = *param_2 + 2;
+  *(char *)*param_2 = (char)param_1[9];
+  *param_2 = *param_2 + 1;
+  return;
+}
+
+
+    +148 -> 0064f390 FUN_0064f390@0064f390
+    ---- decomp FUN_0064f390
+
+uint __thiscall FUN_0064f390(int param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  undefined1 *puVar4;
+  uint uVar5;
+  
+  uVar5 = param_3 - *param_2;
+  if (0x10 < (int)uVar5) {
+    *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x1a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar3 = (undefined2 *)*param_2;
+    uVar1 = *puVar3;
+    *param_2 = (int)(puVar3 + 1);
+    uVar2 = puVar3[1];
+    *param_2 = (int)(puVar3 + 2);
+    *(uint *)(param_1 + 0x1c) = CONCAT22(uVar2,uVar1);
+    *(undefined2 *)(param_1 + 0x20) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar4 = (undefined1 *)*param_2;
+    *(undefined1 *)(param_1 + 0x24) = *puVar4;
+    *param_2 = *param_2 + 1;
+    return CONCAT31((int3)((uint)puVar4 >> 8),1);
+  }
+  return uVar5 & 0xffffff00;
+}
+
+
+    +14c -> 00c59f48 ?
+    +150 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +154 -> 0064f130 FUN_0064f130@0064f130
+    ---- decomp FUN_0064f130
+
+undefined4 FUN_0064f130(void)
+
+{
+  return 0x10;
+}
+
+
+    +158 -> 0064f0c0 FUN_0064f0c0@0064f0c0
+    ---- decomp FUN_0064f0c0
+
+void __thiscall FUN_0064f0c0(int *param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  
+  uVar1 = (**(code **)(*param_1 + 4))();
+  *(int *)*param_2 = param_1[4];
+  *param_2 = *param_2 + 4;
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[6];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1a);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[7];
+  *param_2 = *param_2 + 2;
+  *(undefined2 *)*param_2 = *(undefined2 *)((int)param_1 + 0x1e);
+  *param_2 = *param_2 + 2;
+  *(short *)*param_2 = (short)param_1[8];
+  *param_2 = *param_2 + 2;
+  return;
+}
+
+
+    +15c -> 0064f040 FUN_0064f040@0064f040
+    ---- decomp FUN_0064f040
+
+uint __thiscall FUN_0064f040(int param_1,int *param_2,int param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 uVar2;
+  undefined2 *puVar3;
+  uint uVar4;
+  
+  uVar4 = param_3 - *param_2;
+  if (0xf < (int)uVar4) {
+    *(undefined4 *)(param_1 + 0x10) = *(undefined4 *)*param_2;
+    *param_2 = *param_2 + 4;
+    *(undefined2 *)(param_1 + 0x14) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x18) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    *(undefined2 *)(param_1 + 0x1a) = *(undefined2 *)*param_2;
+    *param_2 = *param_2 + 2;
+    puVar3 = (undefined2 *)*param_2;
+    uVar1 = *puVar3;
+    *param_2 = (int)(puVar3 + 1);
+    uVar2 = puVar3[1];
+    *param_2 = (int)(puVar3 + 2);
+    *(uint *)(param_1 + 0x1c) = CONCAT22(uVar2,uVar1);
+    uVar1 = *(undefined2 *)*param_2;
+    *(undefined2 *)(param_1 + 0x20) = uVar1;
+    *param_2 = *param_2 + 2;
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return uVar4 & 0xffffff00;
+}
+
+
+    +160 -> 00c59ee4 ?
+    +164 -> 00489e3b FUN_00489e3b@00489e3b
+    ---- decomp FUN_00489e3b
+
+void __thiscall FUN_00489e3b(int param_1,uint param_2)
+
+{
+  CDebugSSectionReader::_scalar_deleting_destructor_((CDebugSSectionReader *)(param_1 + -4),param_2)
+  ;
+  return;
+}
+
+
+    +168 -> 00c5a4fc ?
+    +16c -> 0048a6e6 FUN_0048a6e6@0048a6e6
+    ---- decomp FUN_0048a6e6
+
+void __thiscall FUN_0048a6e6(int param_1,uint param_2)
+
+{
+  CDebugSSectionReader::_scalar_deleting_destructor_((CDebugSSectionReader *)(param_1 + -4),param_2)
+  ;
+  return;
+}
+
+
+    +170 -> 00c5a430 ?
+    +174 -> 0048a6ee FUN_0048a6ee@0048a6ee
+    ---- decomp FUN_0048a6ee
+
+void FUN_0048a6ee(void)
+
+{
+  FUN_0048a450();
+  return;
+}
+
+
+    +178 -> 00c5ab88 ?
+    +17c -> 0048a3a0 FUN_0048a3a0@0048a3a0
+    ---- decomp FUN_0048a3a0
+
+undefined4 * __thiscall FUN_0048a3a0(undefined4 *param_1,byte param_2)
+
+{
+  *param_1 = CPG::CCPMessage_SM_Signal::vftable;
+  param_1[1] = CPG::CCPMessage_SM_Signal::vftable;
+  if ((void *)param_1[9] != (void *)0x0) {
+    FID_conflict__free((void *)param_1[9]);
+  }
+  param_1[9] = 0;
+  param_1[10] = 0;
+  param_1[1] = CPG::CPListItem<class_CPG::CCPMessage_Generic>::vftable;
+  *param_1 = CPNS::ISerializable::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x3c);
+  }
+  return param_1;
+}
+
+
+  COL@c59ce0
+  vftable@00c3ca88 (col ptr @00c3ca84)
+    +000 -> 00489a62 FUN_00489a62@00489a62
+    +004 -> 00489b51 FUN_00489b51@00489b51
+    +008 -> 00489a94 FUN_00489a94@00489a94
+    +00c -> 00489b1f FUN_00489b1f@00489b1f
+    +010 -> 00489a54 FUN_00489a54@00489a54
+    +014 -> 00489afb FUN_00489afb@00489afb
+    +018 -> 00489aa2 FUN_00489aa2@00489aa2
+    +01c -> 00489abe FUN_00489abe@00489abe
+    +020 -> 00489a3b FUN_00489a3b@00489a3b
+    +024 -> 00489b2d FUN_00489b2d@00489b2d
+    +028 -> 00489ae2 FUN_00489ae2@00489ae2
+    +02c -> 00c59d20 ?
+    +030 -> 00489a7b FUN_00489a7b@00489a7b
+    +034 -> 00489a2d FUN_00489a2d@00489a2d
+    +038 -> 00489ab0 FUN_00489ab0@00489ab0
+    +03c -> 00c59ccc ?
+    +040 -> 00489940 FUN_00489940@00489940
+    +044 -> 0066c010 FUN_0066c010@0066c010
+    +048 -> 0064e270 FUN_0064e270@0064e270
+    +04c -> 004054a0 FUN_004054a0@004054a0
+    +050 -> 0064d130 FUN_0064d130@0064d130
+    +054 -> 0064d100 FUN_0064d100@0064d100
+    +058 -> 0064cad0 FUN_0064cad0@0064cad0
+    +05c -> 0040f3a0 FUN_0040f3a0@0040f3a0
+    +060 -> 00405490 FUN_00405490@00405490
+    +064 -> ffffffd8 ?
+    +068 -> 000000cc ?
+    +06c -> 000000d4 ?
+    +070 -> 000000e0 ?
+    +074 -> 00c59fc4 ?
+    +078 -> 00489e23 FUN_00489e23@00489e23
+    +07c -> 00c59ec0 ?
+    +080 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +084 -> 0064f240 FUN_0064f240@0064f240
+    +088 -> 0064f1d0 FUN_0064f1d0@0064f1d0
+    +08c -> 0064f150 FUN_0064f150@0064f150
+    +090 -> 00c59db4 ?
+    +094 -> 00489da0 FUN_00489da0@00489da0
+    +098 -> 0064f570 FUN_0064f570@0064f570
+    +09c -> 0064f510 FUN_0064f510@0064f510
+    +0a0 -> 0064f4c0 FUN_0064f4c0@0064f4c0
+    +0a4 -> 00c59e3c ?
+    +0a8 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +0ac -> 0064f020 FUN_0064f020@0064f020
+    +0b0 -> 0064efb0 FUN_0064efb0@0064efb0
+    +0b4 -> 0064ef30 FUN_0064ef30@0064ef30
+    +0b8 -> 00c5a108 ?
+    +0bc -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +0c0 -> 00489b60 FUN_00489b60@00489b60
+    +0c4 -> 00489b70 FUN_00489b70@00489b70
+    +0c8 -> 00489bf0 FUN_00489bf0@00489bf0
+    +0cc -> 00c59d5c ?
+    +0d0 -> 00489e23 FUN_00489e23@00489e23
+    +0d4 -> 00c5a054 ?
+    +0d8 -> 00489d20 `scalar_deleting_destructor'@00489d20
+    +0dc -> 0064f7b0 FUN_0064f7b0@0064f7b0
+    +0e0 -> 0064f750 FUN_0064f750@0064f750
+    +0e4 -> 0064f6e0 FUN_0064f6e0@0064f6e0
+    +0e8 -> 00c59f20 ?
+    +0ec -> 00489e1b FUN_00489e1b@00489e1b
+    +0f0 -> 00c59d8c ?
+    +0f4 -> 00489e1b FUN_00489e1b@00489e1b
+    +0f8 -> 00c59da0 ?
+    +0fc -> 00489e1b FUN_00489e1b@00489e1b
+    +100 -> 00c5a040 ?
+    +104 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +108 -> 0064f370 FUN_0064f370@0064f370
+    +10c -> 0064f2f0 FUN_0064f2f0@0064f2f0
+    +110 -> 0064f260 FUN_0064f260@0064f260
+    +114 -> 00c59f78 ?
+    +118 -> 00489e1b FUN_00489e1b@00489e1b
+    +11c -> 00c59d48 ?
+    +120 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +124 -> 0064ef10 FUN_0064ef10@0064ef10
+    +128 -> 0064ee90 FUN_0064ee90@0064ee90
+    +12c -> 0064ee00 FUN_0064ee00@0064ee00
+    +130 -> 00c59ef8 ?
+    +134 -> 00489e33 FUN_00489e33@00489e33
+    +138 -> 00c5a11c ?
+    +13c -> 00489e23 FUN_00489e23@00489e23
+    +140 -> 00c5a018 ?
+    +144 -> 00489e2b FUN_00489e2b@00489e2b
+    +148 -> 00c59e18 ?
+    +14c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +150 -> 00489b60 FUN_00489b60@00489b60
+    +154 -> 00489b70 FUN_00489b70@00489b70
+    +158 -> 00489bf0 FUN_00489bf0@00489bf0
+    +15c -> 00c59d34 ?
+    +160 -> 00489d50 FUN_00489d50@00489d50
+    +164 -> 0064f6a0 FUN_0064f6a0@0064f6a0
+    +168 -> 0064f620 FUN_0064f620@0064f620
+    +16c -> 0064f5b0 FUN_0064f5b0@0064f5b0
+    +170 -> 00c59e50 ?
+    +174 -> 00489e1b FUN_00489e1b@00489e1b
+    +178 -> 00c59eac ?
+    +17c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+  COL@c59d20
+  vftable@00c3cab8 (col ptr @00c3cab4)
+    +000 -> 00489a7b FUN_00489a7b@00489a7b
+    +004 -> 00489a2d FUN_00489a2d@00489a2d
+    +008 -> 00489ab0 FUN_00489ab0@00489ab0
+    +00c -> 00c59ccc ?
+    +010 -> 00489940 FUN_00489940@00489940
+    +014 -> 0066c010 FUN_0066c010@0066c010
+    +018 -> 0064e270 FUN_0064e270@0064e270
+    +01c -> 004054a0 FUN_004054a0@004054a0
+    +020 -> 0064d130 FUN_0064d130@0064d130
+    +024 -> 0064d100 FUN_0064d100@0064d100
+    +028 -> 0064cad0 FUN_0064cad0@0064cad0
+    +02c -> 0040f3a0 FUN_0040f3a0@0040f3a0
+    +030 -> 00405490 FUN_00405490@00405490
+    +034 -> ffffffd8 ?
+    +038 -> 000000cc ?
+    +03c -> 000000d4 ?
+    +040 -> 000000e0 ?
+    +044 -> 00c59fc4 ?
+    +048 -> 00489e23 FUN_00489e23@00489e23
+    +04c -> 00c59ec0 ?
+    +050 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +054 -> 0064f240 FUN_0064f240@0064f240
+    +058 -> 0064f1d0 FUN_0064f1d0@0064f1d0
+    +05c -> 0064f150 FUN_0064f150@0064f150
+    +060 -> 00c59db4 ?
+    +064 -> 00489da0 FUN_00489da0@00489da0
+    +068 -> 0064f570 FUN_0064f570@0064f570
+    +06c -> 0064f510 FUN_0064f510@0064f510
+    +070 -> 0064f4c0 FUN_0064f4c0@0064f4c0
+    +074 -> 00c59e3c ?
+    +078 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +07c -> 0064f020 FUN_0064f020@0064f020
+    +080 -> 0064efb0 FUN_0064efb0@0064efb0
+    +084 -> 0064ef30 FUN_0064ef30@0064ef30
+    +088 -> 00c5a108 ?
+    +08c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +090 -> 00489b60 FUN_00489b60@00489b60
+    +094 -> 00489b70 FUN_00489b70@00489b70
+    +098 -> 00489bf0 FUN_00489bf0@00489bf0
+    +09c -> 00c59d5c ?
+    +0a0 -> 00489e23 FUN_00489e23@00489e23
+    +0a4 -> 00c5a054 ?
+    +0a8 -> 00489d20 `scalar_deleting_destructor'@00489d20
+    +0ac -> 0064f7b0 FUN_0064f7b0@0064f7b0
+    +0b0 -> 0064f750 FUN_0064f750@0064f750
+    +0b4 -> 0064f6e0 FUN_0064f6e0@0064f6e0
+    +0b8 -> 00c59f20 ?
+    +0bc -> 00489e1b FUN_00489e1b@00489e1b
+    +0c0 -> 00c59d8c ?
+    +0c4 -> 00489e1b FUN_00489e1b@00489e1b
+    +0c8 -> 00c59da0 ?
+    +0cc -> 00489e1b FUN_00489e1b@00489e1b
+    +0d0 -> 00c5a040 ?
+    +0d4 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +0d8 -> 0064f370 FUN_0064f370@0064f370
+    +0dc -> 0064f2f0 FUN_0064f2f0@0064f2f0
+    +0e0 -> 0064f260 FUN_0064f260@0064f260
+    +0e4 -> 00c59f78 ?
+    +0e8 -> 00489e1b FUN_00489e1b@00489e1b
+    +0ec -> 00c59d48 ?
+    +0f0 -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +0f4 -> 0064ef10 FUN_0064ef10@0064ef10
+    +0f8 -> 0064ee90 FUN_0064ee90@0064ee90
+    +0fc -> 0064ee00 FUN_0064ee00@0064ee00
+    +100 -> 00c59ef8 ?
+    +104 -> 00489e33 FUN_00489e33@00489e33
+    +108 -> 00c5a11c ?
+    +10c -> 00489e23 FUN_00489e23@00489e23
+    +110 -> 00c5a018 ?
+    +114 -> 00489e2b FUN_00489e2b@00489e2b
+    +118 -> 00c59e18 ?
+    +11c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +120 -> 00489b60 FUN_00489b60@00489b60
+    +124 -> 00489b70 FUN_00489b70@00489b70
+    +128 -> 00489bf0 FUN_00489bf0@00489bf0
+    +12c -> 00c59d34 ?
+    +130 -> 00489d50 FUN_00489d50@00489d50
+    +134 -> 0064f6a0 FUN_0064f6a0@0064f6a0
+    +138 -> 0064f620 FUN_0064f620@0064f620
+    +13c -> 0064f5b0 FUN_0064f5b0@0064f5b0
+    +140 -> 00c59e50 ?
+    +144 -> 00489e1b FUN_00489e1b@00489e1b
+    +148 -> 00c59eac ?
+    +14c -> 00489cf0 `scalar_deleting_destructor'@00489cf0
+    +150 -> 0064f4a0 FUN_0064f4a0@0064f4a0
+    +154 -> 0064f420 FUN_0064f420@0064f420
+    +158 -> 0064f390 FUN_0064f390@0064f390
+    +15c -> 00c59f48 ?
+    +160 -> 00489df0 `scalar_deleting_destructor'@00489df0
+    +164 -> 0064f130 FUN_0064f130@0064f130
+    +168 -> 0064f0c0 FUN_0064f0c0@0064f0c0
+    +16c -> 0064f040 FUN_0064f040@0064f040
+    +170 -> 00c59ee4 ?
+    +174 -> 00489e3b FUN_00489e3b@00489e3b
+    +178 -> 00c5a4fc ?
+    +17c -> 0048a6e6 FUN_0048a6e6@0048a6e6
+##### TD c8cb64 struct@c8cb5c
+  COL@c58630
+  COL@c5d388
+  vftable@00c3e088 (col ptr @00c3e084)
+    +000 -> 0048e580 FUN_0048e580@0048e580
+    ---- decomp FUN_0048e580
+
+void FUN_0048e580(void)
+
+{
+  FUN_0066bff0();
+  return;
+}
+
+
+    +004 -> 0048e53c FUN_0048e53c@0048e53c
+    ---- decomp FUN_0048e53c
+
+void FUN_0048e53c(void)
+
+{
+  FUN_00482510();
+  return;
+}
+
+
+    +008 -> 0048e59e FUN_0048e59e@0048e59e
+    ---- decomp FUN_0048e59e
+
+void FUN_0048e59e(void)
+
+{
+  FUN_00482550();
+  return;
+}
+
+
+    +00c -> 0048e608 FUN_0048e608@0048e608
+    ---- decomp FUN_0048e608
+
+void FUN_0048e608(void)
+
+{
+  FUN_00482590();
+  return;
+}
+
+
+    +010 -> 0048e575 FUN_0048e575@0048e575
+    ---- decomp FUN_0048e575
+
+void FUN_0048e575(void)
+
+{
+  FUN_004825a0();
+  return;
+}
+
+
+    +014 -> 0048e5ed FUN_0048e5ed@0048e5ed
+    ---- decomp FUN_0048e5ed
+
+void FUN_0048e5ed(void)
+
+{
+  FUN_004825b0();
+  return;
+}
+
+
+    +018 -> 0048e5a9 FUN_0048e5a9@0048e5a9
+    ---- decomp FUN_0048e5a9
+
+void FUN_0048e5a9(void)
+
+{
+  FUN_004825c0();
+  return;
+}
+
+
+    +01c -> 0048e5bf FUN_0048e5bf@0048e5bf
+    ---- decomp FUN_0048e5bf
+
+void FUN_0048e5bf(void)
+
+{
+  FUN_004825d0();
+  return;
+}
+
+
+    +020 -> 0048e562 FUN_0048e562@0048e562
+    ---- decomp FUN_0048e562
+
+void FUN_0048e562(void)
+
+{
+  FUN_004825e0();
+  return;
+}
+
+
+    +024 -> 0048e613 FUN_0048e613@0048e613
+    ---- decomp FUN_0048e613
+
+void FUN_0048e613(void)
+
+{
+  FUN_004825f0();
+  return;
+}
+
+
+    +028 -> 0048e5d2 FUN_0048e5d2@0048e5d2
+    ---- decomp FUN_0048e5d2
+
+void FUN_0048e5d2(void)
+
+{
+  FUN_0048e4f0();
+  return;
+}
+
+
+    +02c -> 00c5d3c4 ?
+    +030 -> 0048e58b FUN_0048e58b@0048e58b
+    ---- decomp FUN_0048e58b
+
+void FUN_0048e58b(void)
+
+{
+  FUN_00482600();
+  return;
+}
+
+
+    +034 -> 0048e557 FUN_0048e557@0048e557
+    ---- decomp FUN_0048e557
+
+void FUN_0048e557(void)
+
+{
+  FUN_00482610();
+  return;
+}
+
+
+    +038 -> 0048e5b4 FUN_0048e5b4@0048e5b4
+    ---- decomp FUN_0048e5b4
+
+void FUN_0048e5b4(void)
+
+{
+  FUN_00482650();
+  return;
+}
+
+
+    +03c -> 00c5d39c ?
+    +040 -> 0048e4f0 FUN_0048e4f0@0048e4f0
+    ---- decomp FUN_0048e4f0
+
+int __thiscall FUN_0048e4f0(int param_1,byte param_2)
+
+{
+  if (*(void **)(param_1 + 0x48) != (void *)0x0) {
+    FID_conflict__free(*(void **)(param_1 + 0x48));
+  }
+  *(undefined4 *)(param_1 + 0x48) = 0;
+  *(undefined4 *)(param_1 + 0x4c) = 0;
+  FUN_0066c150();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x98);
+  }
+  return param_1;
+}
+
+
+    +044 -> 0066c010 FUN_0066c010@0066c010
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004054a0 FUN_004054a0@004054a0
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 00c5d3b0 ?
+    +060 -> 0048e5f8 FUN_0048e5f8@0048e5f8
+    ---- decomp FUN_0048e5f8
+
+void FUN_0048e5f8(void)
+
+{
+  FUN_00676850();
+  return;
+}
+
+
+    +064 -> 0048e54f FUN_0048e54f@0048e54f
+    ---- decomp FUN_0048e54f
+
+void FUN_0048e54f(void)
+
+{
+  FUN_006767f0();
+  return;
+}
+
+
+    +068 -> 0048e596 FUN_0048e596@0048e596
+    ---- decomp FUN_0048e596
+
+void FUN_0048e596(void)
+
+{
+  FUN_00676790();
+  return;
+}
+
+
+    +06c -> 0048e5dd FUN_0048e5dd@0048e5dd
+    ---- decomp FUN_0048e5dd
+
+void FUN_0048e5dd(void)
+
+{
+  FUN_00676730();
+  return;
+}
+
+
+    +070 -> 0048e56d FUN_0048e56d@0048e56d
+    ---- decomp FUN_0048e56d
+
+void FUN_0048e56d(void)
+
+{
+  FUN_006766d0();
+  return;
+}
+
+
+    +074 -> 0048e5ca FUN_0048e5ca@0048e5ca
+    ---- decomp FUN_0048e5ca
+
+void FUN_0048e5ca(void)
+
+{
+  FUN_00676670();
+  return;
+}
+
+
+    +078 -> 0048e600 FUN_0048e600@0048e600
+    ---- decomp FUN_0048e600
+
+void FUN_0048e600(void)
+
+{
+  FUN_00485aa0();
+  return;
+}
+
+
+    +07c -> 0048e61e FUN_0048e61e@0048e61e
+    ---- decomp FUN_0048e61e
+
+void FUN_0048e61e(void)
+
+{
+  FUN_00485ac0();
+  return;
+}
+
+
+    +080 -> 0048e534 FUN_0048e534@0048e534
+    ---- decomp FUN_0048e534
+
+void FUN_0048e534(void)
+
+{
+  FUN_00485ad0();
+  return;
+}
+
+
+    +084 -> 0048e547 FUN_0048e547@0048e547
+    ---- decomp FUN_0048e547
+
+void FUN_0048e547(void)
+
+{
+  FUN_00485ae0();
+  return;
+}
+
+
+    +088 -> 00487b7c FUN_00487b7c@00487b7c
+    +08c -> 0048e5e5 FUN_0048e5e5@0048e5e5
+    ---- decomp FUN_0048e5e5
+
+void FUN_0048e5e5(void)
+
+{
+  FUN_00485b40();
+  return;
+}
+
+
+    +090 -> 00c5d3d8 ?
+    +094 -> 0048e630 FUN_0048e630@0048e630
+    ---- decomp FUN_0048e630
+
+undefined4 * __thiscall FUN_0048e630(undefined4 *param_1,byte param_2)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  uint uVar4;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_0068b0f6;
+  local_10 = ExceptionList;
+  uVar4 = DAT_00c82070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  local_8 = 0;
+  piVar3 = (int *)param_1[0xe];
+  *param_1 = CPG::CBaseTask::vftable;
+  if (piVar3 != (int *)0x0) {
+    piVar1 = piVar3 + 3;
+    if (piVar3[3] != -1) {
+      LOCK();
+      iVar2 = *piVar1;
+      *piVar1 = iVar2 + -1;
+      UNLOCK();
+      if (iVar2 + -1 == 0) {
+        LOCK();
+        *piVar1 = *piVar1 + -1;
+        UNLOCK();
+        (**(code **)(*piVar3 + 4))(uVar4);
+        LOCK();
+        *piVar1 = *piVar1 + 1;
+        UNLOCK();
+        FUN_0062fd00();
+        (**(code **)*piVar3)(1);
+      }
+    }
+    param_1[0xe] = 0;
+  }
+  *param_1 = CPG::CPListItem<class_CPG::CBaseTask>::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xa8);
+  }
+  ExceptionList = local_10;
+  return param_1;
+}
+
+
+    +098 -> 00404fb0 FUN_00404fb0@00404fb0
+    ---- decomp FUN_00404fb0
+
+void FUN_00404fb0(void)
+
+{
+  return;
+}
+
+
+    +09c -> 006786e0 FUN_006786e0@006786e0
+    ---- decomp FUN_006786e0
+
+void __thiscall FUN_006786e0(int *param_1,char param_2)
+
+{
+  uint uVar1;
+  char cVar2;
+  undefined4 extraout_ECX;
+  undefined8 uVar3;
+  undefined4 in_stack_ffffff7c;
+  undefined4 in_stack_ffffff80;
+  undefined4 local_68;
+  undefined4 local_64;
+  undefined4 local_60;
+  void *local_5c;
+  undefined4 local_58;
+  void *local_54;
+  undefined4 local_50;
+  undefined4 local_4c;
+  undefined4 local_48;
+  undefined2 local_44;
+  undefined2 local_40;
+  undefined1 local_3e;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined1 local_17;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_006a814c;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_64 = 0;
+  local_68 = 0;
+  local_60 = 0;
+  local_58 = 0;
+  local_5c = (void *)0x0;
+  local_50 = 0;
+  local_54 = (void *)0x0;
+  local_4c = 0;
+  local_48 = 0;
+  local_44 = 0;
+  local_40 = 0;
+  local_3e = 0;
+  local_2c = 0;
+  local_28 = 0;
+  local_17 = 1;
+  FUN_00636190(DAT_00c82070 ^ (uint)&stack0xfffffffc);
+  local_8 = 0;
+  FUN_00633d20((short)param_1[8],param_1 + 0x18,(char)param_1[0x1b],
+               *(undefined1 *)((int)param_1 + 0x6d),*(undefined1 *)((int)param_1 + 0x6e),
+               *(undefined1 *)((int)param_1 + 0x6f),(char)param_1[0x1c],extraout_ECX,param_1 + 0x1d,
+               param_1[0x20],param_1[0x21],param_1[0x22],param_1[0x23],param_1[0x24],param_1[0x25],
+               param_1[0x26],(short)param_1[0x27],*(undefined2 *)((int)param_1 + 0x9e),
+               in_stack_ffffff7c,in_stack_ffffff80,(short)param_1[0x28],
+               *(undefined2 *)((int)param_1 + 0xa2),param_2 + '\x01');
+  cVar2 = (**(code **)(*(int *)param_1[10] + 4))(&local_68,0);
+  if (((cVar2 == '\0') && (*(char *)((int)param_1 + 0x4e) == '\0')) &&
+     (*(char *)((int)param_1 + 0x4d) == '\0')) {
+    *(undefined1 *)((int)param_1 + 0x4e) = 1;
+    (**(code **)(*param_1 + 0xc))(1,0);
+    if (param_1[0x16] != 0 || param_1[0x17] != 0) {
+      uVar3 = FUN_0062e370();
+      uVar1 = param_1[0x16];
+      param_1[0x16] = (uint)uVar3 - param_1[0x16];
+      param_1[0x17] =
+           ((int)((ulonglong)uVar3 >> 0x20) - param_1[0x17]) - (uint)((uint)uVar3 < uVar1);
+    }
+    *(undefined1 *)((int)param_1 + 0x4d) = 1;
+  }
+  FUN_00636190();
+  if (local_54 != (void *)0x0) {
+    FID_conflict__free(local_54);
+  }
+  local_54 = (void *)0x0;
+  local_50 = 0;
+  if (local_5c != (void *)0x0) {
+    FID_conflict__free(local_5c);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 00678690 FUN_00678690@00678690
+    ---- decomp FUN_00678690
+
+void __thiscall FUN_00678690(int *param_1,int param_2)
+
+{
+  uint uVar1;
+  undefined8 uVar2;
+  
+  if (*(char *)(param_2 + 0x10) == '\x14') {
+    (**(code **)(*param_1 + 0x18))(param_2);
+  }
+  else {
+    (**(code **)(*param_1 + 0x1c))();
+  }
+  if (param_1[0x16] != 0 || param_1[0x17] != 0) {
+    uVar2 = FUN_0062e370();
+    uVar1 = param_1[0x16];
+    param_1[0x16] = (uint)uVar2 - param_1[0x16];
+    param_1[0x17] = ((int)((ulonglong)uVar2 >> 0x20) - param_1[0x17]) - (uint)((uint)uVar2 < uVar1);
+  }
+  *(undefined1 *)((int)param_1 + 0x4d) = 1;
+  return;
+}
+
+
+    +0a8 -> 00636b90 FUN_00636b90@00636b90
+    ---- decomp FUN_00636b90
+
+undefined4 * FUN_00636b90(undefined4 *param_1)
+
+{
+  *param_1 = 0;
+  param_1[1] = 0;
+  FUN_006245a0(&DAT_00c91448);
+  return param_1;
+}
+
+
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 00c5d3ec ?
+    +0b8 -> 0048e6d0 FUN_0048e6d0@0048e6d0
+    ---- decomp FUN_0048e6d0
+
+undefined4 __thiscall FUN_0048e6d0(undefined4 param_1,byte param_2)
+
+{
+  FUN_00678560();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xd0);
+  }
+  return param_1;
+}
+
+
+    +0bc -> 00404fb0 FUN_00404fb0@00404fb0
+    +0c0 -> 006783b0 FUN_006783b0@006783b0
+    ---- decomp FUN_006783b0
+
+void __thiscall FUN_006783b0(int *param_1,char param_2)
+
+{
+  uint uVar1;
+  char cVar2;
+  undefined8 uVar3;
+  undefined4 local_68;
+  undefined4 local_64;
+  undefined4 local_60;
+  void *local_5c;
+  undefined4 local_58;
+  void *local_54;
+  undefined4 local_50;
+  undefined4 local_4c;
+  undefined4 local_48;
+  undefined2 local_44;
+  undefined2 local_40;
+  undefined1 local_3e;
+  undefined4 local_2c;
+  undefined4 local_28;
+  undefined1 local_17;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_006a8108;
+  local_10 = ExceptionList;
+  ExceptionList = &local_10;
+  local_64 = 0;
+  local_68 = 0;
+  local_60 = 0;
+  local_58 = 0;
+  local_5c = (void *)0x0;
+  local_50 = 0;
+  local_54 = (void *)0x0;
+  local_4c = 0;
+  local_48 = 0;
+  local_44 = 0;
+  local_40 = 0;
+  local_3e = 0;
+  local_2c = 0;
+  local_28 = 0;
+  local_17 = 1;
+  FUN_00636190(DAT_00c82070 ^ (uint)&stack0xfffffffc);
+  local_8 = 0;
+  if ((char)param_1[0x1c] == '\0') {
+    FUN_00633c00((short)param_1[8],param_1 + 0x19,param_1 + 0x1d,param_2 + '\x01');
+  }
+  else {
+    FUN_00633c90((short)param_1[8],param_1 + 0x19,param_1 + 0x1d,param_2 + '\x01');
+  }
+  cVar2 = (**(code **)(*(int *)param_1[10] + 4))(&local_68,0);
+  if (((cVar2 == '\0') && (*(char *)((int)param_1 + 0x4e) == '\0')) &&
+     (*(char *)((int)param_1 + 0x4d) == '\0')) {
+    *(undefined1 *)((int)param_1 + 0x4e) = 1;
+    (**(code **)(*param_1 + 0xc))(1,0);
+    if (param_1[0x16] != 0 || param_1[0x17] != 0) {
+      uVar3 = FUN_0062e370();
+      uVar1 = param_1[0x16];
+      param_1[0x16] = (uint)uVar3 - param_1[0x16];
+      param_1[0x17] =
+           ((int)((ulonglong)uVar3 >> 0x20) - param_1[0x17]) - (uint)((uint)uVar3 < uVar1);
+    }
+    *(undefined1 *)((int)param_1 + 0x4d) = 1;
+  }
+  FUN_00636190();
+  if (local_54 != (void *)0x0) {
+    FID_conflict__free(local_54);
+  }
+  local_54 = (void *)0x0;
+  local_50 = 0;
+  if (local_5c != (void *)0x0) {
+    FID_conflict__free(local_5c);
+  }
+  ExceptionList = local_10;
+  return;
+}
+
+
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 00678360 FUN_00678360@00678360
+    ---- decomp FUN_00678360
+
+void __thiscall FUN_00678360(int *param_1,int param_2)
+
+{
+  uint uVar1;
+  undefined8 uVar2;
+  
+  if (*(char *)(param_2 + 0x10) == '\x14') {
+    (**(code **)(*param_1 + 0x18))(param_2);
+  }
+  else {
+    (**(code **)(*param_1 + 0x1c))();
+  }
+  if (param_1[0x16] != 0 || param_1[0x17] != 0) {
+    uVar2 = FUN_0062e370();
+    uVar1 = param_1[0x16];
+    param_1[0x16] = (uint)uVar2 - param_1[0x16];
+    param_1[0x17] = ((int)((ulonglong)uVar2 >> 0x20) - param_1[0x17]) - (uint)((uint)uVar2 < uVar1);
+  }
+  *(undefined1 *)((int)param_1 + 0x4d) = 1;
+  return;
+}
+
+
+    +0cc -> 00636b90 FUN_00636b90@00636b90
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 00c5d480 ?
+    +0dc -> 0048ce8d FUN_0048ce8d@0048ce8d
+    ---- decomp FUN_0048ce8d
+
+void FUN_0048ce8d(void)
+
+{
+  FUN_00482600();
+  return;
+}
+
+
+    +0e0 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    ---- decomp FUN_0048ce2b
+
+void FUN_0048ce2b(void)
+
+{
+  FUN_00482610();
+  return;
+}
+
+
+    +0e4 -> 0048cec5 FUN_0048cec5@0048cec5
+    ---- decomp FUN_0048cec5
+
+void FUN_0048cec5(void)
+
+{
+  FUN_00482650();
+  return;
+}
+
+
+    +0e8 -> 00c5d4e4 ?
+    +0ec -> 0048ce71 FUN_0048ce71@0048ce71
+    ---- decomp FUN_0048ce71
+
+void FUN_0048ce71(void)
+
+{
+  FUN_0066bff0();
+  return;
+}
+
+
+    +0f0 -> 0048ce01 FUN_0048ce01@0048ce01
+    ---- decomp FUN_0048ce01
+
+void FUN_0048ce01(void)
+
+{
+  FUN_00482510();
+  return;
+}
+
+
+    +0f4 -> 0048cea9 FUN_0048cea9@0048cea9
+    ---- decomp FUN_0048cea9
+
+void FUN_0048cea9(void)
+
+{
+  FUN_00482550();
+  return;
+}
+
+
+    +0f8 -> 0048cdc9 FUN_0048cdc9@0048cdc9
+    ---- decomp FUN_0048cdc9
+
+void FUN_0048cdc9(void)
+
+{
+  FUN_00482590();
+  return;
+}
+
+
+    +0fc -> 0048ce63 FUN_0048ce63@0048ce63
+    ---- decomp FUN_0048ce63
+
+void FUN_0048ce63(void)
+
+{
+  FUN_004825a0();
+  return;
+}
+
+
+    +100 -> 0048cd9f FUN_0048cd9f@0048cd9f
+    ---- decomp FUN_0048cd9f
+
+void FUN_0048cd9f(void)
+
+{
+  FUN_004825b0();
+  return;
+}
+
+
+    +104 -> 0048ceb7 FUN_0048ceb7@0048ceb7
+    ---- decomp FUN_0048ceb7
+
+void FUN_0048ceb7(void)
+
+{
+  FUN_004825c0();
+  return;
+}
+
+
+    +108 -> 0048cd67 FUN_0048cd67@0048cd67
+    ---- decomp FUN_0048cd67
+
+void FUN_0048cd67(void)
+
+{
+  FUN_004825d0();
+  return;
+}
+
+
+    +10c -> 0048ce39 FUN_0048ce39@0048ce39
+    ---- decomp FUN_0048ce39
+
+void FUN_0048ce39(void)
+
+{
+  FUN_004825e0();
+  return;
+}
+
+
+    +110 -> 0048cdd7 FUN_0048cdd7@0048cdd7
+    ---- decomp FUN_0048cdd7
+
+void FUN_0048cdd7(void)
+
+{
+  FUN_004825f0();
+  return;
+}
+
+
+    +114 -> 0048ce55 FUN_0048ce55@0048ce55
+    ---- decomp FUN_0048ce55
+
+void FUN_0048ce55(void)
+
+{
+  FUN_0048cc90();
+  return;
+}
+
+
+    +118 -> 00c5d494 ?
+    +11c -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +120 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +124 -> 0048cec5 FUN_0048cec5@0048cec5
+    +128 -> 00c5d4a8 ?
+    +12c -> 0048cc90 FUN_0048cc90@0048cc90
+    ---- decomp FUN_0048cc90
+
+undefined4 __thiscall FUN_0048cc90(undefined4 param_1,byte param_2)
+
+{
+  FUN_0048ccc0();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0x120);
+  }
+  return param_1;
+}
+
+
+    +130 -> 0066c010 FUN_0066c010@0066c010
+    +134 -> 00679130 FUN_00679130@00679130
+    ---- decomp FUN_00679130
+
+void __fastcall FUN_00679130(int param_1)
+
+{
+  if ((*(char *)(param_1 + 0xf8) != '\0') && (*(int *)(param_1 + 0xf4) != 0)) {
+    FUN_0048cc00(*(int *)(param_1 + 0xf4));
+    *(undefined4 *)(param_1 + 0xf4) = 0;
+  }
+  return;
+}
+
+
+    +138 -> 004054a0 FUN_004054a0@004054a0
+    +13c -> 0064d130 FUN_0064d130@0064d130
+    +140 -> 0064d100 FUN_0064d100@0064d100
+    +144 -> 0064cad0 FUN_0064cad0@0064cad0
+    +148 -> 00679040 FUN_00679040@00679040
+    ---- decomp FUN_00679040
+
+short __fastcall FUN_00679040(int param_1)
+
+{
+  if (*(short **)(param_1 + 0xf4) != (short *)0x0) {
+    return **(short **)(param_1 + 0xf4) + 2;
+  }
+  return 2;
+}
+
+
+    +14c -> 00678ff0 FUN_00678ff0@00678ff0
+    ---- decomp FUN_00678ff0
+
+undefined4 __thiscall FUN_00678ff0(int param_1,int *param_2)
+
+{
+  undefined2 *puVar1;
+  undefined4 in_EAX;
+  uint uVar2;
+  
+  uVar2 = CONCAT22((short)((uint)in_EAX >> 0x10),*(undefined2 *)(param_1 + 0xf0));
+  *(undefined2 *)*param_2 = *(undefined2 *)(param_1 + 0xf0);
+  *param_2 = *param_2 + 2;
+  puVar1 = *(undefined2 **)(param_1 + 0xf4);
+  if (puVar1 != (undefined2 *)0x0) {
+    FUN_004946f0(*param_2,*(undefined4 *)(puVar1 + 2),*puVar1);
+    uVar2 = (uint)**(ushort **)(param_1 + 0xf4);
+    *param_2 = *param_2 + uVar2;
+  }
+  return CONCAT31((int3)(uVar2 >> 8),1);
+}
+
+
+    +150 -> 00c5d430 ?
+    +154 -> 0048cc90 FUN_0048cc90@0048cc90
+    +158 -> 0066c010 FUN_0066c010@0066c010
+    +15c -> 00678ea0 FUN_00678ea0@00678ea0
+    ---- decomp FUN_00678ea0
+
+void __fastcall FUN_00678ea0(int param_1)
+
+{
+  if ((*(char *)(param_1 + 0xf8) != '\0') && (*(int *)(param_1 + 0xf4) != 0)) {
+    FUN_0048cc00(*(int *)(param_1 + 0xf4));
+    *(undefined4 *)(param_1 + 0xf4) = 0;
+  }
+  return;
+}
+
+
+    +160 -> 004054a0 FUN_004054a0@004054a0
+    +164 -> 0064d130 FUN_0064d130@0064d130
+    +168 -> 0064d100 FUN_0064d100@0064d100
+    +16c -> 0064cad0 FUN_0064cad0@0064cad0
+    +170 -> 00678e70 FUN_00678e70@00678e70
+    ---- decomp FUN_00678e70
+
+short __fastcall FUN_00678e70(int param_1)
+
+{
+  short sVar1;
+  short sVar2;
+  
+  sVar1 = 2;
+  if (*(short **)(param_1 + 0xf4) != (short *)0x0) {
+    sVar1 = **(short **)(param_1 + 0xf4) + 2;
+  }
+  sVar2 = sVar1 + 2;
+  if ((*(byte *)(param_1 + 0xf2) & 0x80) != 0) {
+    sVar2 = sVar1;
+  }
+  return sVar2;
+}
+
+
+    +174 -> 00678e10 FUN_00678e10@00678e10
+    ---- decomp FUN_00678e10
+
+undefined4 __thiscall FUN_00678e10(int param_1,int *param_2)
+
+{
+  undefined2 uVar1;
+  undefined2 *puVar2;
+  undefined4 in_EAX;
+  uint uVar3;
+  undefined2 *puVar4;
+  
+  uVar1 = *(undefined2 *)(param_1 + 0xf2);
+  *(undefined2 *)*param_2 = uVar1;
+  *param_2 = *param_2 + 2;
+  puVar4 = (undefined2 *)*param_2;
+  if ((*(byte *)(param_1 + 0xf2) & 0x80) == 0) {
+    uVar1 = *(undefined2 *)(param_1 + 0xf0);
+    *puVar4 = uVar1;
+    *param_2 = *param_2 + 2;
+    puVar4 = (undefined2 *)*param_2;
+  }
+  uVar3 = CONCAT22((short)((uint)in_EAX >> 0x10),uVar1);
+  puVar2 = *(undefined2 **)(param_1 + 0xf4);
+  if (puVar2 != (undefined2 *)0x0) {
+    FUN_004946f0(puVar4,*(undefined4 *)(puVar2 + 2),*puVar2);
+    uVar3 = (uint)**(ushort **)(param_1 + 0xf4);
+    *param_2 = *param_2 + uVar3;
+  }
+  return CONCAT31((int3)(uVar3 >> 8),1);
+}
+
+
+    +178 -> 00c5d400 ?
+    +17c -> 0048cdad FUN_0048cdad@0048cdad
+    ---- decomp FUN_0048cdad
+
+void FUN_0048cdad(void)
+
+{
+  FUN_00676850();
+  return;
+}
+
+
+  COL@c5d39c
+  vftable@00c3e0c8 (col ptr @00c3e0c4)
+    +000 -> 0048e4f0 FUN_0048e4f0@0048e4f0
+    +004 -> 0066c010 FUN_0066c010@0066c010
+    +008 -> 004941e6 FUN_004941e6@004941e6
+    +00c -> 004054a0 FUN_004054a0@004054a0
+    +010 -> 004941e6 FUN_004941e6@004941e6
+    +014 -> 004941e6 FUN_004941e6@004941e6
+    +018 -> 004941e6 FUN_004941e6@004941e6
+    +01c -> 00c5d3b0 ?
+    +020 -> 0048e5f8 FUN_0048e5f8@0048e5f8
+    +024 -> 0048e54f FUN_0048e54f@0048e54f
+    +028 -> 0048e596 FUN_0048e596@0048e596
+    +02c -> 0048e5dd FUN_0048e5dd@0048e5dd
+    +030 -> 0048e56d FUN_0048e56d@0048e56d
+    +034 -> 0048e5ca FUN_0048e5ca@0048e5ca
+    +038 -> 0048e600 FUN_0048e600@0048e600
+    +03c -> 0048e61e FUN_0048e61e@0048e61e
+    +040 -> 0048e534 FUN_0048e534@0048e534
+    +044 -> 0048e547 FUN_0048e547@0048e547
+    +048 -> 00487b7c FUN_00487b7c@00487b7c
+    +04c -> 0048e5e5 FUN_0048e5e5@0048e5e5
+    +050 -> 00c5d3d8 ?
+    +054 -> 0048e630 FUN_0048e630@0048e630
+    +058 -> 00404fb0 FUN_00404fb0@00404fb0
+    +05c -> 006786e0 FUN_006786e0@006786e0
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 00678690 FUN_00678690@00678690
+    +068 -> 00636b90 FUN_00636b90@00636b90
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 00c5d3ec ?
+    +078 -> 0048e6d0 FUN_0048e6d0@0048e6d0
+    +07c -> 00404fb0 FUN_00404fb0@00404fb0
+    +080 -> 006783b0 FUN_006783b0@006783b0
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 00678360 FUN_00678360@00678360
+    +08c -> 00636b90 FUN_00636b90@00636b90
+    +090 -> 004941e6 FUN_004941e6@004941e6
+    +094 -> 004941e6 FUN_004941e6@004941e6
+    +098 -> 00c5d480 ?
+    +09c -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +0a0 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +0a4 -> 0048cec5 FUN_0048cec5@0048cec5
+    +0a8 -> 00c5d4e4 ?
+    +0ac -> 0048ce71 FUN_0048ce71@0048ce71
+    +0b0 -> 0048ce01 FUN_0048ce01@0048ce01
+    +0b4 -> 0048cea9 FUN_0048cea9@0048cea9
+    +0b8 -> 0048cdc9 FUN_0048cdc9@0048cdc9
+    +0bc -> 0048ce63 FUN_0048ce63@0048ce63
+    +0c0 -> 0048cd9f FUN_0048cd9f@0048cd9f
+    +0c4 -> 0048ceb7 FUN_0048ceb7@0048ceb7
+    +0c8 -> 0048cd67 FUN_0048cd67@0048cd67
+    +0cc -> 0048ce39 FUN_0048ce39@0048ce39
+    +0d0 -> 0048cdd7 FUN_0048cdd7@0048cdd7
+    +0d4 -> 0048ce55 FUN_0048ce55@0048ce55
+    +0d8 -> 00c5d494 ?
+    +0dc -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +0e0 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +0e4 -> 0048cec5 FUN_0048cec5@0048cec5
+    +0e8 -> 00c5d4a8 ?
+    +0ec -> 0048cc90 FUN_0048cc90@0048cc90
+    +0f0 -> 0066c010 FUN_0066c010@0066c010
+    +0f4 -> 00679130 FUN_00679130@00679130
+    +0f8 -> 004054a0 FUN_004054a0@004054a0
+    +0fc -> 0064d130 FUN_0064d130@0064d130
+    +100 -> 0064d100 FUN_0064d100@0064d100
+    +104 -> 0064cad0 FUN_0064cad0@0064cad0
+    +108 -> 00679040 FUN_00679040@00679040
+    +10c -> 00678ff0 FUN_00678ff0@00678ff0
+    +110 -> 00c5d430 ?
+    +114 -> 0048cc90 FUN_0048cc90@0048cc90
+    +118 -> 0066c010 FUN_0066c010@0066c010
+    +11c -> 00678ea0 FUN_00678ea0@00678ea0
+    +120 -> 004054a0 FUN_004054a0@004054a0
+    +124 -> 0064d130 FUN_0064d130@0064d130
+    +128 -> 0064d100 FUN_0064d100@0064d100
+    +12c -> 0064cad0 FUN_0064cad0@0064cad0
+    +130 -> 00678e70 FUN_00678e70@00678e70
+    +134 -> 00678e10 FUN_00678e10@00678e10
+    +138 -> 00c5d400 ?
+    +13c -> 0048cdad FUN_0048cdad@0048cdad
+    +140 -> 0048ce1d FUN_0048ce1d@0048ce1d
+    ---- decomp FUN_0048ce1d
+
+void FUN_0048ce1d(void)
+
+{
+  FUN_006767f0();
+  return;
+}
+
+
+    +144 -> 0048ce9b FUN_0048ce9b@0048ce9b
+    ---- decomp FUN_0048ce9b
+
+void FUN_0048ce9b(void)
+
+{
+  FUN_00676790();
+  return;
+}
+
+
+    +148 -> 0048cd83 FUN_0048cd83@0048cd83
+    ---- decomp FUN_0048cd83
+
+void FUN_0048cd83(void)
+
+{
+  FUN_00676730();
+  return;
+}
+
+
+    +14c -> 0048ce47 FUN_0048ce47@0048ce47
+    ---- decomp FUN_0048ce47
+
+void FUN_0048ce47(void)
+
+{
+  FUN_006766d0();
+  return;
+}
+
+
+    +150 -> 0048cd75 FUN_0048cd75@0048cd75
+    ---- decomp FUN_0048cd75
+
+void FUN_0048cd75(void)
+
+{
+  FUN_00676670();
+  return;
+}
+
+
+    +154 -> 0048cdbb FUN_0048cdbb@0048cdbb
+    ---- decomp FUN_0048cdbb
+
+void FUN_0048cdbb(void)
+
+{
+  FUN_00485aa0();
+  return;
+}
+
+
+    +158 -> 0048cde5 FUN_0048cde5@0048cde5
+    ---- decomp FUN_0048cde5
+
+void FUN_0048cde5(void)
+
+{
+  FUN_00485ac0();
+  return;
+}
+
+
+    +15c -> 0048cdf3 FUN_0048cdf3@0048cdf3
+    ---- decomp FUN_0048cdf3
+
+void FUN_0048cdf3(void)
+
+{
+  FUN_00485ad0();
+  return;
+}
+
+
+    +160 -> 0048ce0f FUN_0048ce0f@0048ce0f
+    ---- decomp FUN_0048ce0f
+
+void FUN_0048ce0f(void)
+
+{
+  FUN_00485ae0();
+  return;
+}
+
+
+    +164 -> 0048ce7f FUN_0048ce7f@0048ce7f
+    ---- decomp FUN_0048ce7f
+
+void FUN_0048ce7f(void)
+
+{
+  FUN_00485b30();
+  return;
+}
+
+
+    +168 -> 0048cd91 FUN_0048cd91@0048cd91
+    ---- decomp FUN_0048cd91
+
+void FUN_0048cd91(void)
+
+{
+  FUN_00485b40();
+  return;
+}
+
+
+    +16c -> 00c5d4bc ?
+    +170 -> 0048cdad FUN_0048cdad@0048cdad
+    +174 -> 0048ce1d FUN_0048ce1d@0048ce1d
+    +178 -> 0048ce9b FUN_0048ce9b@0048ce9b
+    +17c -> 0048cd83 FUN_0048cd83@0048cd83
+  COL@c5d3b0
+  vftable@00c3e0e8 (col ptr @00c3e0e4)
+    +000 -> 0048e5f8 FUN_0048e5f8@0048e5f8
+    +004 -> 0048e54f FUN_0048e54f@0048e54f
+    +008 -> 0048e596 FUN_0048e596@0048e596
+    +00c -> 0048e5dd FUN_0048e5dd@0048e5dd
+    +010 -> 0048e56d FUN_0048e56d@0048e56d
+    +014 -> 0048e5ca FUN_0048e5ca@0048e5ca
+    +018 -> 0048e600 FUN_0048e600@0048e600
+    +01c -> 0048e61e FUN_0048e61e@0048e61e
+    +020 -> 0048e534 FUN_0048e534@0048e534
+    +024 -> 0048e547 FUN_0048e547@0048e547
+    +028 -> 00487b7c FUN_00487b7c@00487b7c
+    +02c -> 0048e5e5 FUN_0048e5e5@0048e5e5
+    +030 -> 00c5d3d8 ?
+    +034 -> 0048e630 FUN_0048e630@0048e630
+    +038 -> 00404fb0 FUN_00404fb0@00404fb0
+    +03c -> 006786e0 FUN_006786e0@006786e0
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 00678690 FUN_00678690@00678690
+    +048 -> 00636b90 FUN_00636b90@00636b90
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 00c5d3ec ?
+    +058 -> 0048e6d0 FUN_0048e6d0@0048e6d0
+    +05c -> 00404fb0 FUN_00404fb0@00404fb0
+    +060 -> 006783b0 FUN_006783b0@006783b0
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 00678360 FUN_00678360@00678360
+    +06c -> 00636b90 FUN_00636b90@00636b90
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 00c5d480 ?
+    +07c -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +080 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +084 -> 0048cec5 FUN_0048cec5@0048cec5
+    +088 -> 00c5d4e4 ?
+    +08c -> 0048ce71 FUN_0048ce71@0048ce71
+    +090 -> 0048ce01 FUN_0048ce01@0048ce01
+    +094 -> 0048cea9 FUN_0048cea9@0048cea9
+    +098 -> 0048cdc9 FUN_0048cdc9@0048cdc9
+    +09c -> 0048ce63 FUN_0048ce63@0048ce63
+    +0a0 -> 0048cd9f FUN_0048cd9f@0048cd9f
+    +0a4 -> 0048ceb7 FUN_0048ceb7@0048ceb7
+    +0a8 -> 0048cd67 FUN_0048cd67@0048cd67
+    +0ac -> 0048ce39 FUN_0048ce39@0048ce39
+    +0b0 -> 0048cdd7 FUN_0048cdd7@0048cdd7
+    +0b4 -> 0048ce55 FUN_0048ce55@0048ce55
+    +0b8 -> 00c5d494 ?
+    +0bc -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +0c0 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +0c4 -> 0048cec5 FUN_0048cec5@0048cec5
+    +0c8 -> 00c5d4a8 ?
+    +0cc -> 0048cc90 FUN_0048cc90@0048cc90
+    +0d0 -> 0066c010 FUN_0066c010@0066c010
+    +0d4 -> 00679130 FUN_00679130@00679130
+    +0d8 -> 004054a0 FUN_004054a0@004054a0
+    +0dc -> 0064d130 FUN_0064d130@0064d130
+    +0e0 -> 0064d100 FUN_0064d100@0064d100
+    +0e4 -> 0064cad0 FUN_0064cad0@0064cad0
+    +0e8 -> 00679040 FUN_00679040@00679040
+    +0ec -> 00678ff0 FUN_00678ff0@00678ff0
+    +0f0 -> 00c5d430 ?
+    +0f4 -> 0048cc90 FUN_0048cc90@0048cc90
+    +0f8 -> 0066c010 FUN_0066c010@0066c010
+    +0fc -> 00678ea0 FUN_00678ea0@00678ea0
+    +100 -> 004054a0 FUN_004054a0@004054a0
+    +104 -> 0064d130 FUN_0064d130@0064d130
+    +108 -> 0064d100 FUN_0064d100@0064d100
+    +10c -> 0064cad0 FUN_0064cad0@0064cad0
+    +110 -> 00678e70 FUN_00678e70@00678e70
+    +114 -> 00678e10 FUN_00678e10@00678e10
+    +118 -> 00c5d400 ?
+    +11c -> 0048cdad FUN_0048cdad@0048cdad
+    +120 -> 0048ce1d FUN_0048ce1d@0048ce1d
+    +124 -> 0048ce9b FUN_0048ce9b@0048ce9b
+    +128 -> 0048cd83 FUN_0048cd83@0048cd83
+    +12c -> 0048ce47 FUN_0048ce47@0048ce47
+    +130 -> 0048cd75 FUN_0048cd75@0048cd75
+    +134 -> 0048cdbb FUN_0048cdbb@0048cdbb
+    +138 -> 0048cde5 FUN_0048cde5@0048cde5
+    +13c -> 0048cdf3 FUN_0048cdf3@0048cdf3
+    +140 -> 0048ce0f FUN_0048ce0f@0048ce0f
+    +144 -> 0048ce7f FUN_0048ce7f@0048ce7f
+    +148 -> 0048cd91 FUN_0048cd91@0048cd91
+    +14c -> 00c5d4bc ?
+    +150 -> 0048cdad FUN_0048cdad@0048cdad
+    +154 -> 0048ce1d FUN_0048ce1d@0048ce1d
+    +158 -> 0048ce9b FUN_0048ce9b@0048ce9b
+    +15c -> 0048cd83 FUN_0048cd83@0048cd83
+    +160 -> 0048ce47 FUN_0048ce47@0048ce47
+    +164 -> 0048cd75 FUN_0048cd75@0048cd75
+    +168 -> 0048cdbb FUN_0048cdbb@0048cdbb
+    +16c -> 0048cde5 FUN_0048cde5@0048cde5
+    +170 -> 0048cdf3 FUN_0048cdf3@0048cdf3
+    +174 -> 0048ce0f FUN_0048ce0f@0048ce0f
+    +178 -> 0048ce7f FUN_0048ce7f@0048ce7f
+    +17c -> 0048cd91 FUN_0048cd91@0048cd91
+  COL@c5d3c4
+  vftable@00c3e0b8 (col ptr @00c3e0b4)
+    +000 -> 0048e58b FUN_0048e58b@0048e58b
+    +004 -> 0048e557 FUN_0048e557@0048e557
+    +008 -> 0048e5b4 FUN_0048e5b4@0048e5b4
+    +00c -> 00c5d39c ?
+    +010 -> 0048e4f0 FUN_0048e4f0@0048e4f0
+    +014 -> 0066c010 FUN_0066c010@0066c010
+    +018 -> 004941e6 FUN_004941e6@004941e6
+    +01c -> 004054a0 FUN_004054a0@004054a0
+    +020 -> 004941e6 FUN_004941e6@004941e6
+    +024 -> 004941e6 FUN_004941e6@004941e6
+    +028 -> 004941e6 FUN_004941e6@004941e6
+    +02c -> 00c5d3b0 ?
+    +030 -> 0048e5f8 FUN_0048e5f8@0048e5f8
+    +034 -> 0048e54f FUN_0048e54f@0048e54f
+    +038 -> 0048e596 FUN_0048e596@0048e596
+    +03c -> 0048e5dd FUN_0048e5dd@0048e5dd
+    +040 -> 0048e56d FUN_0048e56d@0048e56d
+    +044 -> 0048e5ca FUN_0048e5ca@0048e5ca
+    +048 -> 0048e600 FUN_0048e600@0048e600
+    +04c -> 0048e61e FUN_0048e61e@0048e61e
+    +050 -> 0048e534 FUN_0048e534@0048e534
+    +054 -> 0048e547 FUN_0048e547@0048e547
+    +058 -> 00487b7c FUN_00487b7c@00487b7c
+    +05c -> 0048e5e5 FUN_0048e5e5@0048e5e5
+    +060 -> 00c5d3d8 ?
+    +064 -> 0048e630 FUN_0048e630@0048e630
+    +068 -> 00404fb0 FUN_00404fb0@00404fb0
+    +06c -> 006786e0 FUN_006786e0@006786e0
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 00678690 FUN_00678690@00678690
+    +078 -> 00636b90 FUN_00636b90@00636b90
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 00c5d3ec ?
+    +088 -> 0048e6d0 FUN_0048e6d0@0048e6d0
+    +08c -> 00404fb0 FUN_00404fb0@00404fb0
+    +090 -> 006783b0 FUN_006783b0@006783b0
+    +094 -> 004941e6 FUN_004941e6@004941e6
+    +098 -> 00678360 FUN_00678360@00678360
+    +09c -> 00636b90 FUN_00636b90@00636b90
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 00c5d480 ?
+    +0ac -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +0b0 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +0b4 -> 0048cec5 FUN_0048cec5@0048cec5
+    +0b8 -> 00c5d4e4 ?
+    +0bc -> 0048ce71 FUN_0048ce71@0048ce71
+    +0c0 -> 0048ce01 FUN_0048ce01@0048ce01
+    +0c4 -> 0048cea9 FUN_0048cea9@0048cea9
+    +0c8 -> 0048cdc9 FUN_0048cdc9@0048cdc9
+    +0cc -> 0048ce63 FUN_0048ce63@0048ce63
+    +0d0 -> 0048cd9f FUN_0048cd9f@0048cd9f
+    +0d4 -> 0048ceb7 FUN_0048ceb7@0048ceb7
+    +0d8 -> 0048cd67 FUN_0048cd67@0048cd67
+    +0dc -> 0048ce39 FUN_0048ce39@0048ce39
+    +0e0 -> 0048cdd7 FUN_0048cdd7@0048cdd7
+    +0e4 -> 0048ce55 FUN_0048ce55@0048ce55
+    +0e8 -> 00c5d494 ?
+    +0ec -> 0048ce8d FUN_0048ce8d@0048ce8d
+    +0f0 -> 0048ce2b FUN_0048ce2b@0048ce2b
+    +0f4 -> 0048cec5 FUN_0048cec5@0048cec5
+    +0f8 -> 00c5d4a8 ?
+    +0fc -> 0048cc90 FUN_0048cc90@0048cc90
+    +100 -> 0066c010 FUN_0066c010@0066c010
+    +104 -> 00679130 FUN_00679130@00679130
+    +108 -> 004054a0 FUN_004054a0@004054a0
+    +10c -> 0064d130 FUN_0064d130@0064d130
+    +110 -> 0064d100 FUN_0064d100@0064d100
+    +114 -> 0064cad0 FUN_0064cad0@0064cad0
+    +118 -> 00679040 FUN_00679040@00679040
+    +11c -> 00678ff0 FUN_00678ff0@00678ff0
+    +120 -> 00c5d430 ?
+    +124 -> 0048cc90 FUN_0048cc90@0048cc90
+    +128 -> 0066c010 FUN_0066c010@0066c010
+    +12c -> 00678ea0 FUN_00678ea0@00678ea0
+    +130 -> 004054a0 FUN_004054a0@004054a0
+    +134 -> 0064d130 FUN_0064d130@0064d130
+    +138 -> 0064d100 FUN_0064d100@0064d100
+    +13c -> 0064cad0 FUN_0064cad0@0064cad0
+    +140 -> 00678e70 FUN_00678e70@00678e70
+    +144 -> 00678e10 FUN_00678e10@00678e10
+    +148 -> 00c5d400 ?
+    +14c -> 0048cdad FUN_0048cdad@0048cdad
+    +150 -> 0048ce1d FUN_0048ce1d@0048ce1d
+    +154 -> 0048ce9b FUN_0048ce9b@0048ce9b
+    +158 -> 0048cd83 FUN_0048cd83@0048cd83
+    +15c -> 0048ce47 FUN_0048ce47@0048ce47
+    +160 -> 0048cd75 FUN_0048cd75@0048cd75
+    +164 -> 0048cdbb FUN_0048cdbb@0048cdbb
+    +168 -> 0048cde5 FUN_0048cde5@0048cde5
+    +16c -> 0048cdf3 FUN_0048cdf3@0048cdf3
+    +170 -> 0048ce0f FUN_0048ce0f@0048ce0f
+    +174 -> 0048ce7f FUN_0048ce7f@0048ce7f
+    +178 -> 0048cd91 FUN_0048cd91@0048cd91
+    +17c -> 00c5d4bc ?
+##### TD c8d338 struct@c8d330
+  COL@c596f8
+  vftable@00c3c2fc (col ptr @00c3c2f8)
+    +000 -> 00486344 FUN_00486344@00486344
+    +004 -> 004864b2 FUN_004864b2@004864b2
+    +008 -> 004863a0 FUN_004863a0@004863a0
+    +00c -> 0048646e FUN_0048646e@0048646e
+    +010 -> 00486339 FUN_00486339@00486339
+    +014 -> 0048641d FUN_0048641d@0048641d
+    +018 -> 004863b3 FUN_004863b3@004863b3
+    +01c -> 004863e1 FUN_004863e1@004863e1
+    +020 -> 0048650e FUN_0048650e@0048650e
+    +024 -> 00486481 FUN_00486481@00486481
+    +028 -> 00488e60 FUN_00488e60@00488e60
+    ---- decomp FUN_00488e60
+
+void FUN_00488e60(void)
+
+{
+  FUN_00488ce0();
+  return;
+}
+
+
+    +02c -> 00c5980c ?
+    +030 -> 00486438 FUN_00486438@00486438
+    +034 -> 004864f0 FUN_004864f0@004864f0
+    +038 -> 00486395 FUN_00486395@00486395
+    +03c -> 004863ff FUN_004863ff@004863ff
+    +040 -> 00486310 FUN_00486310@00486310
+    +044 -> 004863ec FUN_004863ec@004863ec
+    +048 -> 00486463 FUN_00486463@00486463
+    +04c -> 0048648c FUN_0048648c@0048648c
+    +050 -> 004864a7 FUN_004864a7@004864a7
+    +054 -> 004864dd FUN_004864dd@004864dd
+    +058 -> 0048637f FUN_0048637f@0048637f
+    +05c -> 00486412 FUN_00486412@00486412
+    +060 -> ffffffd8 ?
+    +064 -> 0000006c ?
+    +068 -> 00000074 ?
+    +06c -> 00000080 ?
+    +070 -> 0000008c ?
+    +074 -> 00c59784 ?
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 00c59720 ?
+    +088 -> 004941e6 FUN_004941e6@004941e6
+    +08c -> 004941e6 FUN_004941e6@004941e6
+    +090 -> 004941e6 FUN_004941e6@004941e6
+    +094 -> 004941e6 FUN_004941e6@004941e6
+    +098 -> 004941e6 FUN_004941e6@004941e6
+    +09c -> 004941e6 FUN_004941e6@004941e6
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 004941e6 FUN_004941e6@004941e6
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 00c59770 ?
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 004941e6 FUN_004941e6@004941e6
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 004941e6 FUN_004941e6@004941e6
+    +124 -> ffffffd8 ?
+    +128 -> 00000150 ?
+    +12c -> 00000158 ?
+    +130 -> 00000164 ?
+    +134 -> 00000170 ?
+    +138 -> 00c59944 ?
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 00488e80 FUN_00488e80@00488e80
+    ---- decomp FUN_00488e80
+
+int __thiscall FUN_00488e80(int param_1,byte param_2)
+
+{
+  *(undefined ***)(param_1 + -8) = CPNS::ILocalDevice::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 4) + -4 + param_1) =
+       CPNS::ILocalDevice::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 8) + -4 + param_1) =
+       CPNS::ILocalDevice::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1 + -8,0x14);
+  }
+  return param_1 + -8;
+}
+
+
+    +168 -> 00c598c0 ?
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 00c5997c ?
+    +174 -> 004892ba FUN_004892ba@004892ba
+    ---- decomp FUN_004892ba
+
+void FUN_004892ba(void)
+
+{
+  FUN_00488ed0();
+  return;
+}
+
+
+    +178 -> 00c598e8 ?
+    +17c -> 004893c6 FUN_004893c6@004893c6
+    ---- decomp FUN_004893c6
+
+void FUN_004893c6(void)
+
+{
+  FUN_0065f000();
+  return;
+}
+
+
+  COL@c59734
+  vftable@00c3c234 (col ptr @00c3c230)
+    +000 -> 00488ce0 FUN_00488ce0@00488ce0
+    ---- decomp FUN_00488ce0
+
+undefined4 __thiscall FUN_00488ce0(undefined4 param_1,byte param_2)
+
+{
+  FUN_00488d10();
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1,0xbc);
+  }
+  return param_1;
+}
+
+
+    +004 -> 0066c010 FUN_0066c010@0066c010
+    +008 -> 00649ae0 FUN_00649ae0@00649ae0
+    ---- decomp FUN_00649ae0
+
+void FUN_00649ae0(void)
+
+{
+  return;
+}
+
+
+    +00c -> 004054a0 FUN_004054a0@004054a0
+    +010 -> 00649ad0 FUN_00649ad0@00649ad0
+    ---- decomp FUN_00649ad0
+
+undefined4 FUN_00649ad0(void)
+
+{
+  return 0x12;
+}
+
+
+    +014 -> 00649ac0 FUN_00649ac0@00649ac0
+    ---- decomp FUN_00649ac0
+
+undefined1 FUN_00649ac0(void)
+
+{
+  return 0;
+}
+
+
+    +018 -> 00649a20 FUN_00649a20@00649a20
+    ---- decomp FUN_00649a20
+
+undefined4 __thiscall FUN_00649a20(int param_1,undefined4 param_2,undefined2 *param_3)
+
+{
+  undefined2 uVar1;
+  undefined2 *puVar2;
+  int iVar3;
+  
+  *param_3 = 0x12;
+  iVar3 = FUN_00634680(0x12,1,*(byte *)(param_1 + 0x74) >> 1 & 1,*(byte *)(param_1 + 0x74) & 1);
+  if (iVar3 != 0) {
+    puVar2 = *(undefined2 **)(iVar3 + 0x1c);
+    *puVar2 = *(undefined2 *)(param_1 + 0x78);
+    puVar2[1] = *(undefined2 *)(param_1 + 0x7a);
+    puVar2[2] = *(undefined2 *)(param_1 + 0x7c);
+    puVar2[3] = *(undefined2 *)(param_1 + 0x7e);
+    puVar2[4] = *(undefined2 *)(param_1 + 0x80);
+    puVar2[5] = *(undefined2 *)(param_1 + 0x82);
+    puVar2[6] = *(undefined2 *)(param_1 + 0x84);
+    puVar2[7] = *(undefined2 *)(param_1 + 0x86);
+    uVar1 = *(undefined2 *)(param_1 + 0x88);
+    puVar2[8] = uVar1;
+    return CONCAT31((uint3)(byte)((ushort)uVar1 >> 8),1);
+  }
+  return 0;
+}
+
+
+    +01c -> 00c59858 ?
+    +020 -> 004941e6 FUN_004941e6@004941e6
+    +024 -> 004941e6 FUN_004941e6@004941e6
+    +028 -> 004941e6 FUN_004941e6@004941e6
+    +02c -> 004941e6 FUN_004941e6@004941e6
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 00488a60 FUN_00488a60@00488a60
+    ---- decomp FUN_00488a60
+
+int __thiscall FUN_00488a60(int param_1,byte param_2)
+
+{
+  *(undefined ***)(param_1 + -8) = CPNS::IEventMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 4) + -4 + param_1) =
+       CPNS::IEventMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 8) + -4 + param_1) =
+       CPNS::IEventMessage::vftable;
+  *(undefined ***)(*(int *)(*(int *)(param_1 + -4) + 0xc) + -4 + param_1) =
+       CPNS::IEventMessage::vftable;
+  if ((param_2 & 1) != 0) {
+    FUN_00491892(param_1 + -8,0x1c);
+  }
+  return param_1 + -8;
+}
+
+
+    +04c -> fffffffc ?
+    +050 -> ffffffe8 ?
+    +054 -> fffffff0 ?
+    +058 -> 00c59748 ?
+    +05c -> 004863d1 FUN_004863d1@004863d1
+    +060 -> 00488e28 FUN_00488e28@00488e28
+    ---- decomp FUN_00488e28
+
+void FUN_00488e28(void)
+
+{
+  FUN_00488c30();
+  return;
+}
+
+
+    +064 -> 0048645b FUN_0048645b@0048645b
+    +068 -> 00488e10 FUN_00488e10@00488e10
+    ---- decomp FUN_00488e10
+
+void FUN_00488e10(void)
+
+{
+  FUN_00488bc0();
+  return;
+}
+
+
+    +06c -> 00488e50 FUN_00488e50@00488e50
+    ---- decomp FUN_00488e50
+
+void FUN_00488e50(void)
+
+{
+  FUN_00488be0();
+  return;
+}
+
+
+    +070 -> 00488e20 FUN_00488e20@00488e20
+    ---- decomp FUN_00488e20
+
+void FUN_00488e20(void)
+
+{
+  FUN_00488c10();
+  return;
+}
+
+
+    +074 -> 00488e40 FUN_00488e40@00488e40
+    ---- decomp FUN_00488e40
+
+void FUN_00488e40(void)
+
+{
+  FUN_00488c20();
+  return;
+}
+
+
+    +078 -> 0048640a FUN_0048640a@0048640a
+    +07c -> 00488dd8 FUN_00488dd8@00488dd8
+    ---- decomp FUN_00488dd8
+
+void FUN_00488dd8(void)
+
+{
+  FUN_00488b70();
+  return;
+}
+
+
+    +080 -> 00488e58 FUN_00488e58@00488e58
+    ---- decomp FUN_00488e58
+
+void FUN_00488e58(void)
+
+{
+  FUN_00488b90();
+  return;
+}
+
+
+    +084 -> 00488de0 FUN_00488de0@00488de0
+    ---- decomp FUN_00488de0
+
+void FUN_00488de0(void)
+
+{
+  FUN_00488c40();
+  return;
+}
+
+
+    +088 -> 00488de8 FUN_00488de8@00488de8
+    ---- decomp FUN_00488de8
+
+void FUN_00488de8(void)
+
+{
+  FUN_00488c60();
+  return;
+}
+
+
+    +08c -> 0048635f FUN_0048635f@0048635f
+    +090 -> 00488df8 FUN_00488df8@00488df8
+    ---- decomp FUN_00488df8
+
+void FUN_00488df8(void)
+
+{
+  FUN_00488ba0();
+  return;
+}
+
+
+    +094 -> 00487c60 FUN_00487c60@00487c60
+    +098 -> 00488e08 FUN_00488e08@00488e08
+    ---- decomp FUN_00488e08
+
+void FUN_00488e08(void)
+
+{
+  FUN_00488c90();
+  return;
+}
+
+
+    +09c -> 00488e6e FUN_00488e6e@00488e6e
+    ---- decomp FUN_00488e6e
+
+void FUN_00488e6e(void)
+
+{
+  FUN_00488cc0();
+  return;
+}
+
+
+    +0a0 -> 00486357 FUN_00486357@00486357
+    +0a4 -> 00488e48 FUN_00488e48@00488e48
+    ---- decomp FUN_00488e48
+
+void FUN_00488e48(void)
+
+{
+  FUN_00488ac0();
+  return;
+}
+
+
+    +0a8 -> 00488e38 FUN_00488e38@00488e38
+    ---- decomp FUN_00488e38
+
+void FUN_00488e38(void)
+
+{
+  FUN_00488af0();
+  return;
+}
+
+
+    +0ac -> 00488e30 FUN_00488e30@00488e30
+    ---- decomp FUN_00488e30
+
+void FUN_00488e30(void)
+
+{
+  FUN_00488b00();
+  return;
+}
+
+
+    +0b0 -> 00488e00 FUN_00488e00@00488e00
+    ---- decomp FUN_00488e00
+
+void FUN_00488e00(void)
+
+{
+  FUN_00488b20();
+  return;
+}
+
+
+    +0b4 -> 00488df0 FUN_00488df0@00488df0
+    ---- decomp FUN_00488df0
+
+void FUN_00488df0(void)
+
+{
+  FUN_00488b30();
+  return;
+}
+
+
+    +0b8 -> 00488e18 FUN_00488e18@00488e18
+    ---- decomp FUN_00488e18
+
+void FUN_00488e18(void)
+
+{
+  FUN_00488b60();
+  return;
+}
+
+
+    +0bc -> 00486308 FUN_00486308@00486308
+    +0c0 -> 0048634f FUN_0048634f@0048634f
+    +0c4 -> 00c596f8 ?
+    +0c8 -> 00486344 FUN_00486344@00486344
+    +0cc -> 004864b2 FUN_004864b2@004864b2
+    +0d0 -> 004863a0 FUN_004863a0@004863a0
+    +0d4 -> 0048646e FUN_0048646e@0048646e
+    +0d8 -> 00486339 FUN_00486339@00486339
+    +0dc -> 0048641d FUN_0048641d@0048641d
+    +0e0 -> 004863b3 FUN_004863b3@004863b3
+    +0e4 -> 004863e1 FUN_004863e1@004863e1
+    +0e8 -> 0048650e FUN_0048650e@0048650e
+    +0ec -> 00486481 FUN_00486481@00486481
+    +0f0 -> 00488e60 FUN_00488e60@00488e60
+    +0f4 -> 00c5980c ?
+    +0f8 -> 00486438 FUN_00486438@00486438
+    +0fc -> 004864f0 FUN_004864f0@004864f0
+    +100 -> 00486395 FUN_00486395@00486395
+    +104 -> 004863ff FUN_004863ff@004863ff
+    +108 -> 00486310 FUN_00486310@00486310
+    +10c -> 004863ec FUN_004863ec@004863ec
+    +110 -> 00486463 FUN_00486463@00486463
+    +114 -> 0048648c FUN_0048648c@0048648c
+    +118 -> 004864a7 FUN_004864a7@004864a7
+    +11c -> 004864dd FUN_004864dd@004864dd
+    +120 -> 0048637f FUN_0048637f@0048637f
+    +124 -> 00486412 FUN_00486412@00486412
+    +128 -> ffffffd8 ?
+    +12c -> 0000006c ?
+    +130 -> 00000074 ?
+    +134 -> 00000080 ?
+    +138 -> 0000008c ?
+    +13c -> 00c59784 ?
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 00c59720 ?
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c59748
+  vftable@00c3c290 (col ptr @00c3c28c)
+    +000 -> 004863d1 FUN_004863d1@004863d1
+    +004 -> 00488e28 FUN_00488e28@00488e28
+    +008 -> 0048645b FUN_0048645b@0048645b
+    +00c -> 00488e10 FUN_00488e10@00488e10
+    +010 -> 00488e50 FUN_00488e50@00488e50
+    +014 -> 00488e20 FUN_00488e20@00488e20
+    +018 -> 00488e40 FUN_00488e40@00488e40
+    +01c -> 0048640a FUN_0048640a@0048640a
+    +020 -> 00488dd8 FUN_00488dd8@00488dd8
+    +024 -> 00488e58 FUN_00488e58@00488e58
+    +028 -> 00488de0 FUN_00488de0@00488de0
+    +02c -> 00488de8 FUN_00488de8@00488de8
+    +030 -> 0048635f FUN_0048635f@0048635f
+    +034 -> 00488df8 FUN_00488df8@00488df8
+    +038 -> 00487c60 FUN_00487c60@00487c60
+    +03c -> 00488e08 FUN_00488e08@00488e08
+    +040 -> 00488e6e FUN_00488e6e@00488e6e
+    +044 -> 00486357 FUN_00486357@00486357
+    +048 -> 00488e48 FUN_00488e48@00488e48
+    +04c -> 00488e38 FUN_00488e38@00488e38
+    +050 -> 00488e30 FUN_00488e30@00488e30
+    +054 -> 00488e00 FUN_00488e00@00488e00
+    +058 -> 00488df0 FUN_00488df0@00488df0
+    +05c -> 00488e18 FUN_00488e18@00488e18
+    +060 -> 00486308 FUN_00486308@00486308
+    +064 -> 0048634f FUN_0048634f@0048634f
+    +068 -> 00c596f8 ?
+    +06c -> 00486344 FUN_00486344@00486344
+    +070 -> 004864b2 FUN_004864b2@004864b2
+    +074 -> 004863a0 FUN_004863a0@004863a0
+    +078 -> 0048646e FUN_0048646e@0048646e
+    +07c -> 00486339 FUN_00486339@00486339
+    +080 -> 0048641d FUN_0048641d@0048641d
+    +084 -> 004863b3 FUN_004863b3@004863b3
+    +088 -> 004863e1 FUN_004863e1@004863e1
+    +08c -> 0048650e FUN_0048650e@0048650e
+    +090 -> 00486481 FUN_00486481@00486481
+    +094 -> 00488e60 FUN_00488e60@00488e60
+    +098 -> 00c5980c ?
+    +09c -> 00486438 FUN_00486438@00486438
+    +0a0 -> 004864f0 FUN_004864f0@004864f0
+    +0a4 -> 00486395 FUN_00486395@00486395
+    +0a8 -> 004863ff FUN_004863ff@004863ff
+    +0ac -> 00486310 FUN_00486310@00486310
+    +0b0 -> 004863ec FUN_004863ec@004863ec
+    +0b4 -> 00486463 FUN_00486463@00486463
+    +0b8 -> 0048648c FUN_0048648c@0048648c
+    +0bc -> 004864a7 FUN_004864a7@004864a7
+    +0c0 -> 004864dd FUN_004864dd@004864dd
+    +0c4 -> 0048637f FUN_0048637f@0048637f
+    +0c8 -> 00486412 FUN_00486412@00486412
+    +0cc -> ffffffd8 ?
+    +0d0 -> 0000006c ?
+    +0d4 -> 00000074 ?
+    +0d8 -> 00000080 ?
+    +0dc -> 0000008c ?
+    +0e0 -> 00c59784 ?
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 00c59720 ?
+    +0f4 -> 004941e6 FUN_004941e6@004941e6
+    +0f8 -> 004941e6 FUN_004941e6@004941e6
+    +0fc -> 004941e6 FUN_004941e6@004941e6
+    +100 -> 004941e6 FUN_004941e6@004941e6
+    +104 -> 004941e6 FUN_004941e6@004941e6
+    +108 -> 004941e6 FUN_004941e6@004941e6
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 004941e6 FUN_004941e6@004941e6
+    +124 -> 00c59770 ?
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+    +134 -> 004941e6 FUN_004941e6@004941e6
+    +138 -> 004941e6 FUN_004941e6@004941e6
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 004941e6 FUN_004941e6@004941e6
+    +144 -> 004941e6 FUN_004941e6@004941e6
+    +148 -> 004941e6 FUN_004941e6@004941e6
+    +14c -> 004941e6 FUN_004941e6@004941e6
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 004941e6 FUN_004941e6@004941e6
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c5975c
+  vftable@00c3c224 (col ptr @00c3c220)
+    +000 -> 0048638a FUN_0048638a@0048638a
+    +004 -> 004864fb FUN_004864fb@004864fb
+    +008 -> 004863c6 FUN_004863c6@004863c6
+    +00c -> 00c59734 ?
+    +010 -> 00488ce0 FUN_00488ce0@00488ce0
+    +014 -> 0066c010 FUN_0066c010@0066c010
+    +018 -> 00649ae0 FUN_00649ae0@00649ae0
+    +01c -> 004054a0 FUN_004054a0@004054a0
+    +020 -> 00649ad0 FUN_00649ad0@00649ad0
+    +024 -> 00649ac0 FUN_00649ac0@00649ac0
+    +028 -> 00649a20 FUN_00649a20@00649a20
+    +02c -> 00c59858 ?
+    +030 -> 004941e6 FUN_004941e6@004941e6
+    +034 -> 004941e6 FUN_004941e6@004941e6
+    +038 -> 004941e6 FUN_004941e6@004941e6
+    +03c -> 004941e6 FUN_004941e6@004941e6
+    +040 -> 004941e6 FUN_004941e6@004941e6
+    +044 -> 004941e6 FUN_004941e6@004941e6
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 004941e6 FUN_004941e6@004941e6
+    +058 -> 00488a60 FUN_00488a60@00488a60
+    +05c -> fffffffc ?
+    +060 -> ffffffe8 ?
+    +064 -> fffffff0 ?
+    +068 -> 00c59748 ?
+    +06c -> 004863d1 FUN_004863d1@004863d1
+    +070 -> 00488e28 FUN_00488e28@00488e28
+    +074 -> 0048645b FUN_0048645b@0048645b
+    +078 -> 00488e10 FUN_00488e10@00488e10
+    +07c -> 00488e50 FUN_00488e50@00488e50
+    +080 -> 00488e20 FUN_00488e20@00488e20
+    +084 -> 00488e40 FUN_00488e40@00488e40
+    +088 -> 0048640a FUN_0048640a@0048640a
+    +08c -> 00488dd8 FUN_00488dd8@00488dd8
+    +090 -> 00488e58 FUN_00488e58@00488e58
+    +094 -> 00488de0 FUN_00488de0@00488de0
+    +098 -> 00488de8 FUN_00488de8@00488de8
+    +09c -> 0048635f FUN_0048635f@0048635f
+    +0a0 -> 00488df8 FUN_00488df8@00488df8
+    +0a4 -> 00487c60 FUN_00487c60@00487c60
+    +0a8 -> 00488e08 FUN_00488e08@00488e08
+    +0ac -> 00488e6e FUN_00488e6e@00488e6e
+    +0b0 -> 00486357 FUN_00486357@00486357
+    +0b4 -> 00488e48 FUN_00488e48@00488e48
+    +0b8 -> 00488e38 FUN_00488e38@00488e38
+    +0bc -> 00488e30 FUN_00488e30@00488e30
+    +0c0 -> 00488e00 FUN_00488e00@00488e00
+    +0c4 -> 00488df0 FUN_00488df0@00488df0
+    +0c8 -> 00488e18 FUN_00488e18@00488e18
+    +0cc -> 00486308 FUN_00486308@00486308
+    +0d0 -> 0048634f FUN_0048634f@0048634f
+    +0d4 -> 00c596f8 ?
+    +0d8 -> 00486344 FUN_00486344@00486344
+    +0dc -> 004864b2 FUN_004864b2@004864b2
+    +0e0 -> 004863a0 FUN_004863a0@004863a0
+    +0e4 -> 0048646e FUN_0048646e@0048646e
+    +0e8 -> 00486339 FUN_00486339@00486339
+    +0ec -> 0048641d FUN_0048641d@0048641d
+    +0f0 -> 004863b3 FUN_004863b3@004863b3
+    +0f4 -> 004863e1 FUN_004863e1@004863e1
+    +0f8 -> 0048650e FUN_0048650e@0048650e
+    +0fc -> 00486481 FUN_00486481@00486481
+    +100 -> 00488e60 FUN_00488e60@00488e60
+    +104 -> 00c5980c ?
+    +108 -> 00486438 FUN_00486438@00486438
+    +10c -> 004864f0 FUN_004864f0@004864f0
+    +110 -> 00486395 FUN_00486395@00486395
+    +114 -> 004863ff FUN_004863ff@004863ff
+    +118 -> 00486310 FUN_00486310@00486310
+    +11c -> 004863ec FUN_004863ec@004863ec
+    +120 -> 00486463 FUN_00486463@00486463
+    +124 -> 0048648c FUN_0048648c@0048648c
+    +128 -> 004864a7 FUN_004864a7@004864a7
+    +12c -> 004864dd FUN_004864dd@004864dd
+    +130 -> 0048637f FUN_0048637f@0048637f
+    +134 -> 00486412 FUN_00486412@00486412
+    +138 -> ffffffd8 ?
+    +13c -> 0000006c ?
+    +140 -> 00000074 ?
+    +144 -> 00000080 ?
+    +148 -> 0000008c ?
+    +14c -> 00c59784 ?
+    +150 -> 004941e6 FUN_004941e6@004941e6
+    +154 -> 004941e6 FUN_004941e6@004941e6
+    +158 -> 004941e6 FUN_004941e6@004941e6
+    +15c -> 00c59720 ?
+    +160 -> 004941e6 FUN_004941e6@004941e6
+    +164 -> 004941e6 FUN_004941e6@004941e6
+    +168 -> 004941e6 FUN_004941e6@004941e6
+    +16c -> 004941e6 FUN_004941e6@004941e6
+    +170 -> 004941e6 FUN_004941e6@004941e6
+    +174 -> 004941e6 FUN_004941e6@004941e6
+    +178 -> 004941e6 FUN_004941e6@004941e6
+    +17c -> 004941e6 FUN_004941e6@004941e6
+  COL@c597a8
+  COL@c5980c
+  vftable@00c3c32c (col ptr @00c3c328)
+    +000 -> 00486438 FUN_00486438@00486438
+    +004 -> 004864f0 FUN_004864f0@004864f0
+    +008 -> 00486395 FUN_00486395@00486395
+    +00c -> 004863ff FUN_004863ff@004863ff
+    +010 -> 00486310 FUN_00486310@00486310
+    +014 -> 004863ec FUN_004863ec@004863ec
+    +018 -> 00486463 FUN_00486463@00486463
+    +01c -> 0048648c FUN_0048648c@0048648c
+    +020 -> 004864a7 FUN_004864a7@004864a7
+    +024 -> 004864dd FUN_004864dd@004864dd
+    +028 -> 0048637f FUN_0048637f@0048637f
+    +02c -> 00486412 FUN_00486412@00486412
+    +030 -> ffffffd8 ?
+    +034 -> 0000006c ?
+    +038 -> 00000074 ?
+    +03c -> 00000080 ?
+    +040 -> 0000008c ?
+    +044 -> 00c59784 ?
+    +048 -> 004941e6 FUN_004941e6@004941e6
+    +04c -> 004941e6 FUN_004941e6@004941e6
+    +050 -> 004941e6 FUN_004941e6@004941e6
+    +054 -> 00c59720 ?
+    +058 -> 004941e6 FUN_004941e6@004941e6
+    +05c -> 004941e6 FUN_004941e6@004941e6
+    +060 -> 004941e6 FUN_004941e6@004941e6
+    +064 -> 004941e6 FUN_004941e6@004941e6
+    +068 -> 004941e6 FUN_004941e6@004941e6
+    +06c -> 004941e6 FUN_004941e6@004941e6
+    +070 -> 004941e6 FUN_004941e6@004941e6
+    +074 -> 004941e6 FUN_004941e6@004941e6
+    +078 -> 004941e6 FUN_004941e6@004941e6
+    +07c -> 004941e6 FUN_004941e6@004941e6
+    +080 -> 004941e6 FUN_004941e6@004941e6
+    +084 -> 004941e6 FUN_004941e6@004941e6
+    +088 -> 00c59770 ?
+    +08c -> 004941e6 FUN_004941e6@004941e6
+    +090 -> 004941e6 FUN_004941e6@004941e6
+    +094 -> 004941e6 FUN_004941e6@004941e6
+    +098 -> 004941e6 FUN_004941e6@004941e6
+    +09c -> 004941e6 FUN_004941e6@004941e6
+    +0a0 -> 004941e6 FUN_004941e6@004941e6
+    +0a4 -> 004941e6 FUN_004941e6@004941e6
+    +0a8 -> 004941e6 FUN_004941e6@004941e6
+    +0ac -> 004941e6 FUN_004941e6@004941e6
+    +0b0 -> 004941e6 FUN_004941e6@004941e6
+    +0b4 -> 004941e6 FUN_004941e6@004941e6
+    +0b8 -> 004941e6 FUN_004941e6@004941e6
+    +0bc -> 004941e6 FUN_004941e6@004941e6
+    +0c0 -> 004941e6 FUN_004941e6@004941e6
+    +0c4 -> 004941e6 FUN_004941e6@004941e6
+    +0c8 -> 004941e6 FUN_004941e6@004941e6
+    +0cc -> 004941e6 FUN_004941e6@004941e6
+    +0d0 -> 004941e6 FUN_004941e6@004941e6
+    +0d4 -> 004941e6 FUN_004941e6@004941e6
+    +0d8 -> 004941e6 FUN_004941e6@004941e6
+    +0dc -> 004941e6 FUN_004941e6@004941e6
+    +0e0 -> 004941e6 FUN_004941e6@004941e6
+    +0e4 -> 004941e6 FUN_004941e6@004941e6
+    +0e8 -> 004941e6 FUN_004941e6@004941e6
+    +0ec -> 004941e6 FUN_004941e6@004941e6
+    +0f0 -> 004941e6 FUN_004941e6@004941e6
+    +0f4 -> ffffffd8 ?
+    +0f8 -> 00000150 ?
+    +0fc -> 00000158 ?
+    +100 -> 00000164 ?
+    +104 -> 00000170 ?
+    +108 -> 00c59944 ?
+    +10c -> 004941e6 FUN_004941e6@004941e6
+    +110 -> 004941e6 FUN_004941e6@004941e6
+    +114 -> 004941e6 FUN_004941e6@004941e6
+    +118 -> 004941e6 FUN_004941e6@004941e6
+    +11c -> 004941e6 FUN_004941e6@004941e6
+    +120 -> 004941e6 FUN_004941e6@004941e6
+    +124 -> 004941e6 FUN_004941e6@004941e6
+    +128 -> 004941e6 FUN_004941e6@004941e6
+    +12c -> 004941e6 FUN_004941e6@004941e6
+    +130 -> 004941e6 FUN_004941e6@004941e6
+    +134 -> 00488e80 FUN_00488e80@00488e80
+    +138 -> 00c598c0 ?
+    +13c -> 004941e6 FUN_004941e6@004941e6
+    +140 -> 00c5997c ?
+    +144 -> 004892ba FUN_004892ba@004892ba
+    +148 -> 00c598e8 ?
+    +14c -> 004893c6 FUN_004893c6@004893c6
+    +150 -> 004892e2 FUN_004892e2@004892e2
+    ---- decomp FUN_004892e2
+
+void FUN_004892e2(void)
+
+{
+  FUN_0065ef90();
+  return;
+}
+
+
+    +154 -> 004891ac FUN_004891ac@004891ac
+    ---- decomp FUN_004891ac
+
+void FUN_004891ac(void)
+
+{
+  FUN_0065ef20();
+  return;
+}
+
+
+    +158 -> 00489128 FUN_00489128@00489128
+    ---- decomp FUN_00489128
+
+void FUN_00489128(void)
+
+{
+  FUN_0065eeb0();
+  return;
+}
+
+
+    +15c -> 004892da FUN_004892da@004892da
+    ---- decomp FUN_004892da
+
+void FUN_004892da(void)
+
+{
+  FUN_0065ee40();
+  return;
+}
+
+
+    +160 -> 0048900e FUN_0048900e@0048900e
+    ---- decomp FUN_0048900e
+
+void FUN_0048900e(void)
+
+{
+  FUN_0065edd0();
+  return;
+}
+
+
+    +164 -> 004892d2 FUN_004892d2@004892d2
+    ---- decomp FUN_004892d2
+
+void FUN_004892d2(void)
+
+{
+  FUN_0065ed60();
+  return;
+}
+
+
+    +168 -> 00489120 FUN_00489120@00489120
+    ---- decomp FUN_00489120
+
+void FUN_00489120(void)
+
+{
+  FUN_0065ecf0();
+  return;
+}
+
+
+    +16c -> 0048917c FUN_0048917c@0048917c
+    ---- decomp FUN_0048917c
+
+void FUN_0048917c(void)
+
+{
+  FUN_0065ec80();
+  return;
+}
+
+
+    +170 -> 00489368 FUN_00489368@00489368
+    ---- decomp FUN_00489368
+
+void FUN_00489368(void)
+
+{
+  FUN_0065ec60();
+  return;
+}
+
+
+    +174 -> 004892b2 FUN_004892b2@004892b2
+    ---- decomp FUN_004892b2
+
+void FUN_004892b2(void)
+
+{
+  FUN_0065ebd0();
+  return;
+}
+
+
+    +178 -> 00489338 FUN_00489338@00489338
+    ---- decomp FUN_00489338
+
+void FUN_00489338(void)
+
+{
+  FUN_0065c3c0();
+  return;
+}
+
+
+    +17c -> 004891fc FUN_004891fc@004891fc
+    ---- decomp FUN_004891fc
+
+void FUN_004891fc(void)
+
+{
+  FUN_0065c310();
+  return;
+}
+
+

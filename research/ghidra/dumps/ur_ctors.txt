@@ -1,0 +1,256 @@
+##### imm 0xc3ca1c
+0064b8b3 FUN_0064b7b0 : MOV dword ptr [EAX + ESI*0x1 + 0x28],0xc3ca1c
+  ---- decomp FUN_0064b7b0
+
+undefined4 * __thiscall FUN_0064b7b0(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  param_1[10] = &DAT_00c3ba10;
+  param_1[0x2a] = &DAT_00c38d10;
+  param_1[0x2d] = &DAT_00c3c280;
+  param_1[0x30] = &DAT_00c3b500;
+  param_1[0x27] = CPNS::IObject::vftable;
+  param_1[0x29] = CPNS::IHookedObject::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2a] + 4) + 0xa8 + (int)param_1) = CPNS::IHookedObject::vftable
+  ;
+  param_1[0x2c] = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2d] + 4) + 0xb4 + (int)param_1) = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2d] + 8) + 0xb4 + (int)param_1) = CPNS::IBaseMessage::vftable;
+  param_1[0x2f] = CPNS::ITextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x30] + 4) + 0xc0 + (int)param_1) = CPNS::ITextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x30] + 8) + 0xc0 + (int)param_1) = CPNS::ITextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x30] + 0xc) + 0xc0 + (int)param_1) =
+       CPNS::ITextMessage::vftable;
+  FUN_006768b0(0x8206,param_2,param_3,1,param_1);
+  *param_1 = CPCHAI::CAppTextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 4) + 0x28 + (int)param_1) =
+       CPCHAI::CAppTextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 8) + 0x28 + (int)param_1) =
+       CPCHAI::CAppTextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0xc) + 0x28 + (int)param_1) =
+       CPCHAI::CAppTextMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0x10) + 0x28 + (int)param_1) =
+       CPCHAI::CAppTextMessage::vftable;
+  *(int *)(*(int *)(param_1[10] + 4) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 4) + -0x74;
+  *(int *)(*(int *)(param_1[10] + 8) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 8) + -0x7c;
+  *(int *)(*(int *)(param_1[10] + 0xc) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 0xc) + -0x88;
+  *(int *)(*(int *)(param_1[10] + 0x10) + 0x24 + (int)param_1) =
+       *(int *)(param_1[10] + 0x10) + -0x94;
+  param_1[0x24] = 0;
+  param_1[0x23] = 0;
+  param_1[0x1e] = 0;
+  param_1[0x1f] = 0;
+  param_1[0x20] = 0;
+  param_1[0x21] = 0;
+  param_1[0x22] = 0;
+  return param_1;
+}
+
+
+##### imm 0xc3b104
+00644b7c FUN_00644a90 : MOV dword ptr [ESI],0xc3b104
+  ---- decomp FUN_00644a90
+
+undefined4 * __thiscall FUN_00644a90(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  param_1[10] = &DAT_00c3c35c;
+  param_1[0x28] = &DAT_00c38d10;
+  param_1[0x2b] = &DAT_00c3c280;
+  param_1[0x2e] = &DAT_00c3b500;
+  param_1[0x25] = CPNS::IObject::vftable;
+  param_1[0x27] = CPNS::IHookedObject::vftable;
+  *(undefined ***)(*(int *)(param_1[0x28] + 4) + 0xa0 + (int)param_1) = CPNS::IHookedObject::vftable
+  ;
+  param_1[0x2a] = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2b] + 4) + 0xac + (int)param_1) = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2b] + 8) + 0xac + (int)param_1) = CPNS::IBaseMessage::vftable;
+  param_1[0x2d] = CPNS::ISelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2e] + 4) + 0xb8 + (int)param_1) =
+       CPNS::ISelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2e] + 8) + 0xb8 + (int)param_1) =
+       CPNS::ISelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2e] + 0xc) + 0xb8 + (int)param_1) =
+       CPNS::ISelectorMessage::vftable;
+  FUN_006768b0(0x8202,param_2,param_3,1,param_1);
+  *param_1 = CPCHAI::CAppSelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 4) + 0x28 + (int)param_1) =
+       CPCHAI::CAppSelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 8) + 0x28 + (int)param_1) =
+       CPCHAI::CAppSelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0xc) + 0x28 + (int)param_1) =
+       CPCHAI::CAppSelectorMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0x10) + 0x28 + (int)param_1) =
+       CPCHAI::CAppSelectorMessage::vftable;
+  *(int *)(*(int *)(param_1[10] + 4) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 4) + -0x6c;
+  *(int *)(*(int *)(param_1[10] + 8) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 8) + -0x74;
+  *(int *)(*(int *)(param_1[10] + 0xc) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 0xc) + -0x80;
+  *(int *)(*(int *)(param_1[10] + 0x10) + 0x24 + (int)param_1) =
+       *(int *)(param_1[10] + 0x10) + -0x8c;
+  param_1[0x1e] = 0;
+  *(undefined2 *)(param_1 + 0x23) = 0;
+  param_1[0x1f] = 0;
+  param_1[0x20] = 0;
+  param_1[0x21] = 0;
+  param_1[0x22] = 0;
+  return param_1;
+}
+
+
+##### imm 0xc3b988
+00646def FUN_00646cd0 : MOV dword ptr [EAX + ESI*0x1 + 0x28],0xc3b988
+  ---- decomp FUN_00646cd0
+
+undefined4 * __thiscall FUN_00646cd0(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  param_1[10] = &DAT_00c3ba10;
+  param_1[0x2a] = &DAT_00c38d10;
+  param_1[0x2d] = &DAT_00c3c280;
+  param_1[0x30] = &DAT_00c3b500;
+  param_1[0x27] = CPNS::IObject::vftable;
+  param_1[0x29] = CPNS::IHookedObject::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2a] + 4) + 0xa8 + (int)param_1) = CPNS::IHookedObject::vftable
+  ;
+  param_1[0x2c] = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2d] + 4) + 0xb4 + (int)param_1) = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2d] + 8) + 0xb4 + (int)param_1) = CPNS::IBaseMessage::vftable;
+  param_1[0x2f] = CPNS::IModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x30] + 4) + 0xc0 + (int)param_1) =
+       CPNS::IModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x30] + 8) + 0xc0 + (int)param_1) =
+       CPNS::IModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x30] + 0xc) + 0xc0 + (int)param_1) =
+       CPNS::IModifierMessage::vftable;
+  FUN_006768b0(0x8201,param_2,param_3,1,param_1);
+  *param_1 = CPCHAI::CAppModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 4) + 0x28 + (int)param_1) =
+       CPCHAI::CAppModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 8) + 0x28 + (int)param_1) =
+       CPCHAI::CAppModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0xc) + 0x28 + (int)param_1) =
+       CPCHAI::CAppModifierMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0x10) + 0x28 + (int)param_1) =
+       CPCHAI::CAppModifierMessage::vftable;
+  *(int *)(*(int *)(param_1[10] + 4) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 4) + -0x74;
+  *(int *)(*(int *)(param_1[10] + 8) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 8) + -0x7c;
+  *(int *)(*(int *)(param_1[10] + 0xc) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 0xc) + -0x88;
+  *(int *)(*(int *)(param_1[10] + 0x10) + 0x24 + (int)param_1) =
+       *(int *)(param_1[10] + 0x10) + -0x94;
+  *(undefined8 *)(param_1 + 0x23) = 0;
+  param_1[0x25] = 0;
+  param_1[0x1e] = 0;
+  param_1[0x1f] = 0;
+  param_1[0x20] = 0;
+  param_1[0x21] = 0;
+  param_1[0x22] = 0;
+  *(undefined8 *)(param_1 + 0x23) = 0;
+  param_1[0x25] = 0;
+  return param_1;
+}
+
+
+##### imm 0xc3c2fc
+00649be5 FUN_00649af0 : MOV dword ptr [EAX + ESI*0x1 + 0x28],0xc3c2fc
+  ---- decomp FUN_00649af0
+
+undefined4 * __thiscall FUN_00649af0(undefined4 *param_1,undefined4 param_2,undefined4 param_3)
+
+{
+  param_1[10] = &DAT_00c3c35c;
+  param_1[0x28] = &DAT_00c38d10;
+  param_1[0x2b] = &DAT_00c3c280;
+  param_1[0x2e] = &DAT_00c3b500;
+  param_1[0x25] = CPNS::IObject::vftable;
+  param_1[0x27] = CPNS::IHookedObject::vftable;
+  *(undefined ***)(*(int *)(param_1[0x28] + 4) + 0xa0 + (int)param_1) = CPNS::IHookedObject::vftable
+  ;
+  param_1[0x2a] = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2b] + 4) + 0xac + (int)param_1) = CPNS::IBaseMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2b] + 8) + 0xac + (int)param_1) = CPNS::IBaseMessage::vftable;
+  param_1[0x2d] = CPNS::IEventMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[0x2e] + 4) + 0xb8 + (int)param_1) = CPNS::IEventMessage::vftable
+  ;
+  *(undefined ***)(*(int *)(param_1[0x2e] + 8) + 0xb8 + (int)param_1) = CPNS::IEventMessage::vftable
+  ;
+  *(undefined ***)(*(int *)(param_1[0x2e] + 0xc) + 0xb8 + (int)param_1) =
+       CPNS::IEventMessage::vftable;
+  FUN_006768b0(0x8200,param_2,param_3,1,param_1);
+  *param_1 = CPCHAI::CAppEventMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 4) + 0x28 + (int)param_1) =
+       CPCHAI::CAppEventMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 8) + 0x28 + (int)param_1) =
+       CPCHAI::CAppEventMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0xc) + 0x28 + (int)param_1) =
+       CPCHAI::CAppEventMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0x10) + 0x28 + (int)param_1) =
+       CPCHAI::CAppEventMessage::vftable;
+  *(int *)(*(int *)(param_1[10] + 4) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 4) + -0x6c;
+  *(int *)(*(int *)(param_1[10] + 8) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 8) + -0x74;
+  *(int *)(*(int *)(param_1[10] + 0xc) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 0xc) + -0x80;
+  *(int *)(*(int *)(param_1[10] + 0x10) + 0x24 + (int)param_1) =
+       *(int *)(param_1[10] + 0x10) + -0x8c;
+  *(undefined2 *)(param_1 + 0x1e) = 0;
+  *(undefined4 *)((int)param_1 + 0x7a) = 0;
+  *(undefined4 *)((int)param_1 + 0x7e) = 0;
+  *(undefined4 *)((int)param_1 + 0x82) = 0;
+  *(undefined4 *)((int)param_1 + 0x86) = 0;
+  return param_1;
+}
+
+
+##### imm 0xc3cac8
+0064e33f FUN_0064e290 : MOV dword ptr [ESI],0xc3cac8
+  ---- decomp FUN_0064e290
+
+undefined4 * __thiscall
+FUN_0064e290(undefined4 *param_1,undefined4 param_2,undefined4 param_3,uint param_4,int param_5)
+
+{
+  if (param_5 != 0) {
+    param_1[10] = &DAT_00c3caec;
+    param_1[0x40] = &DAT_00c38d10;
+    param_1[0x43] = &DAT_00c3c280;
+    param_1[0x3d] = CPNS::IObject::vftable;
+    param_1[0x3f] = CPNS::IHookedObject::vftable;
+    *(undefined ***)(*(int *)(param_1[0x40] + 4) + 0x100 + (int)param_1) =
+         CPNS::IHookedObject::vftable;
+    param_1[0x42] = CPNS::IBaseMessage::vftable;
+    *(undefined ***)(*(int *)(param_1[0x43] + 4) + 0x10c + (int)param_1) =
+         CPNS::IBaseMessage::vftable;
+    *(undefined ***)(*(int *)(param_1[0x43] + 8) + 0x10c + (int)param_1) =
+         CPNS::IBaseMessage::vftable;
+  }
+  FUN_006768b0(0x82ff,param_2,param_3,(byte)(param_4 >> 7) & 1,param_1);
+  *param_1 = CPCHAI::CAppInternalControlMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 4) + 0x28 + (int)param_1) =
+       CPCHAI::CAppInternalControlMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 8) + 0x28 + (int)param_1) =
+       CPCHAI::CAppInternalControlMessage::vftable;
+  *(undefined ***)(*(int *)(param_1[10] + 0xc) + 0x28 + (int)param_1) =
+       CPCHAI::CAppInternalControlMessage::vftable;
+  *(int *)(*(int *)(param_1[10] + 4) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 4) + -0xcc;
+  *(int *)(*(int *)(param_1[10] + 8) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 8) + -0xd4;
+  *(int *)(*(int *)(param_1[10] + 0xc) + 0x24 + (int)param_1) = *(int *)(param_1[10] + 0xc) + -0xe0;
+  *(char *)(param_1 + 0x1e) = (char)param_4;
+  param_1[0x22] = 0;
+  param_1[0x23] = 0;
+  param_1[0x24] = 0;
+  param_1[0x25] = 0;
+  *(undefined2 *)(param_1 + 0x26) = 0;
+  *(undefined2 *)(param_1 + 0x27) = 0;
+  *(undefined1 *)((int)param_1 + 0x9e) = 0;
+  param_1[0x28] = 0;
+  param_1[0x29] = 0;
+  *(undefined2 *)(param_1 + 0x2a) = 0;
+  *(undefined8 *)(param_1 + 0x2e) = 0;
+  param_1[0x30] = 0;
+  param_1[0x31] = 0;
+  param_1[0x32] = 0;
+  FUN_0047e8c0();
+  param_1[0x2d] = 0;
+  *(undefined1 *)(param_1 + 0x2c) = 0;
+  return param_1;
+}
+
+

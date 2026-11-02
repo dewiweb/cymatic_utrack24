@@ -57,6 +57,17 @@ def num_msg(ctrl,val,sub=None):
     struct.pack_into('<H',m,NUM_VAL_OFF,val)
     return bytes(m)
 
+def text_msg(ctrl,s,sub=None):
+    """TLV 4437 text write (RE uRemote CAppTextMessage — uremote_textwrite.md).
+    Pour controles c3 : d001-3 locate/loop, c001 chdir, b002/4/5, f060."""
+    if sub is None:sub=node(ctrl)
+    s=str(s).encode('ascii')
+    m=bytearray(CTRL_TEMPLATE)  # meme prefixe 8437 que ctrl/num
+    for o in SUB_OFFS:struct.pack_into('<H',m,o,sub)
+    body=struct.pack('<HHHHH',0x4437,0x0010,len(s)+0x1e,len(s)+0x16,0)
+    body+=struct.pack('<H',ctrl)+b'\x00'*16+struct.pack('<H',len(s))+s
+    return bytes(m)+body
+
 class UTrackControl:
     def __init__(self,host='127.0.0.1',port=55000,seq_file=SEQ_FILE):
         self.addr=(host,port);self.seq_file=seq_file
@@ -180,6 +191,7 @@ class UTrackControl:
 
     def set(self,ctrl,val):self.ctrl(ctrl,val)
     def num(self,ctrl,val):self._send(frame(num_msg(ctrl,val)))
+    def text(self,ctrl,s):self._send(frame(text_msg(ctrl,s)))
 
     def _toggle(self,ctrl,on):
         with self.slock:e=self.state.get(ctrl)
@@ -230,9 +242,10 @@ class UTrackControl:
         s=self.op_status()
         return None if s is None else (s>>8)&0x7  # 1=MADI 2=ADAT 3=AudioLAN
     # transport locate/loop (ghidra_utrack_files.md): echantillons absolus
-    def seek(self,sample):self.num(0xd001,int(sample))
-    def loop_in(self,sample):self.num(0xd002,int(sample))
-    def loop_out(self,sample):self.num(0xd003,int(sample))
+    def seek(self,sample):self.text(0xd001,str(int(sample)))
+    def loop_in(self,sample):self.text(0xd002,str(int(sample)))
+    def loop_out(self,sample):self.text(0xd003,str(int(sample)))
+    def chdir(self,path):self.text(0xc001,path)
 
 if __name__=='__main__':
     a=sys.argv[1:]
