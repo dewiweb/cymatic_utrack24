@@ -40,3 +40,22 @@
 - `.play` device = **XML** (pas binaire) — fw parse `playlistname` + erreur "Error in reading Playlist File %ls"
 - `.BCD` = conteneur `ArchwaveBCD` (projet/session, distinct du magic BcOd firmware); uTool2 ecrit le `.set` XML
 - Playlist controls device : `0xf030-33` start-mode/time, `0xd008` song idx (selector), `0xd009` exit, `0xd088` mixer config
+
+## song.set (XML par take/song, dans le dossier du take)
+`ns0:SongProject` > `song_name`, `song_type`, `version`, `timestamp`,
+`duration_seconds`, `total_sample_count`, `sampling_rate`, `resolution`,
+`sync_units`, `midi_file`, `midi_duration`, `markers` > `marker`,
+`tracks` > `track` > `audiofile`, `audiofiletrackindex`, `channel`,
+`trackname`, `samplingrate`, `monitor_level`, `monitor_pan`, `monitor_mute`,
+`direct_level`, `validationtimestamp`
+
+## sessions.xml (index sessions sur le media)
+`ns0:sessiontree` > `items` > `item` (ns http://www.cymaticaudio.com/sessiontree/1.0), `version`
+
+## mixerpreset (dans song.set ou projet)
+`ns0:mixerpreset` > `channels` > `channel` > `name`, `pre`
+
+## playlist_project (XML, champs vus)
+`playlist_name`, `project_type`, `version`, `timestamp`,
+`start_mode`, `start_mode_delay`,
+`song_projects` > `song_project` > `song_project_name`, `project_file_location`
