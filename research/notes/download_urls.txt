@@ -1,0 +1,55 @@
+# Cymatic Audio binary download URLs — verified live 2026-11-02
+# Live site (WP File Download pattern: /download/<cat>/<slug>/<id>/<file>)
+# Search endpoint: POST /wp-admin/admin-ajax.php?juwpfisadmin=false&action=wpfd&task=search.display  body: chk_ftags[]=UTRACK24
+
+## uTrack24 host firmware
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89255/utrack24-release-4218-cymatic-audio.zip
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89254/utrack24-release-4064-cymatic-audio.zip
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89253/utrack24-network-update-3124-cymatic-audio.zip
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89256/utrack24-v3124-firmware-osx-cymatic-audio.zip
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89257/utrack24-v3124-firmware-x64-cymatic-audio.zip
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89258/utrack24-v3124-firmware-x86-cymatic-audio.zip
+
+## AudioLAN option card firmware (uTrack24 AES67/RAVENNA card)
+https://cymaticaudio.com/download/552/audiolan/89261/utrack24-audiolan-release-4078-cymatic-audio.zip
+
+## uTool2 (song/playlist manager)
+https://cymaticaudio.com/download/540/utool/90202/utool2-installer-windows.exe
+https://cymaticaudio.com/download/540/utool/90201/utool2-installer-mac.pkg
+
+## uTrack24 Windows USB audio driver v6.19.1
+https://cymaticaudio.com/download/563/windows-usb-audio-driver/89263/utrack24-v6-19-1-signed-windows-usb-audio-driver-cymatic-audio.zip
+https://cymaticaudio.com/download/563/windows-usb-audio-driver/89262/utrack24-v6-19-1-unsigned-windows-usb-audio-driver-cymatic-audio.zip
+
+## uTrack-X32 option-card firmware (shared Archwave codebase, for comparison)
+https://cymaticaudio.com/download/571/utrack-x32-firmware-update-files/89284/utrack-x32-firmware-update-2905-cymatic-audio.zip
+https://cymaticaudio.com/download/571/utrack-x32-firmware-update-files/89285/utrack-x32-release-3865-firmware-update-file-cymatic-audio.zip
+https://cymaticaudio.com/download/571/utrack-x32-firmware-update-files/89286/utrack-x32-release-5000-firmware-update-file-cymatic-audio.zip
+
+## LP-16 / LR-16 (other products, for reference)
+https://cymaticaudio.com/download/530/feb-2018/89244/lp-16-firmware-upgrade-x64-cymatic-audio.zip
+https://cymaticaudio.com/download/530/feb-2018/89245/lp-16-firmware-upgrade-x32-cymatic-audio.zip
+https://cymaticaudio.com/download/531/sept-2017/89242/lp-16-firmware-upgrade-x64-cymatic-audio-2.zip
+https://cymaticaudio.com/download/531/sept-2017/89243/lp-16-firmware-upgrade-x32-cymatic-audio-2.zip
+https://cymaticaudio.com/download/561/lr-16-live-recorder/89235/lp-lr-osx-updater-cymatic-audio.zip
+https://cymaticaudio.com/download/561/lr-16-live-recorder/89236/lr16-unsigned-update-file-cymatic-audio.zip
+https://cymaticaudio.com/download/561/lr-16-live-recorder/89237/lr16-signed-update-file-cymatic-audio.zip
+
+## Wayback Machine only (removed from live site)
+https://web.archive.org/web/20160424103204id_/http://cymaticaudio.com/images/downloads/drivers_and_firmware/uRemote_win_1.2.009.zip
+https://web.archive.org/web/20160424103037id_/http://cymaticaudio.com/images/downloads/drivers_and_firmware/uRemote_OSX_1.2.009.zip
+https://web.archive.org/web/20160424103106id_/http://cymaticaudio.com/images/downloads/drivers_and_firmware/uTool_Installer_1.1.46_Win.zip
+
+## Manuals / docs on live site (selected)
+https://cymaticaudio.com/download/544/utrack24/89187/utrack24-user-manual-cymatic-audio.pdf
+https://cymaticaudio.com/download/544/utrack24/89185/utrack24-sync-manual-cymatic-audio.pdf
+https://cymaticaudio.com/download/544/utrack24/89178/utrack24-audio-lan-module-user-manual-cymatic-audio.pdf
+https://cymaticaudio.com/download/544/utrack24/89183/utrack24-synchronisation-cymatic-audio.pdf
+https://cymaticaudio.com/download/534/uremote/89152/uremote-user-manual-cymatic-audio.pdf
+https://cymaticaudio.com/download/534/uremote/89154/uremote-release-notes-cymatic-audio.pdf
+https://cymaticaudio.com/download/540/utool/89167/utool-user-manual-cymatic-audio.pdf
+https://cymaticaudio.com/download/552/audiolan/89208/utrack24-audiolan-module-user-manual-cymatic-audio.pdf
+https://cymaticaudio.com/download/552/audiolan/89200/utrack24-audiolan-firmware-release-notes-cymatic-audio.pdf
+https://cymaticaudio.com/download/552/audiolan/89209/utrack24-audiolan-firmware-update-cymatic-audio.pdf
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89250/utrack24-firmware-4218-release-notes-cymatic-audio.pdf
+https://cymaticaudio.com/download/564/utrack24-firmware-update-files/89252/utrack24-firmware-update-cymatic-audio.pdf
