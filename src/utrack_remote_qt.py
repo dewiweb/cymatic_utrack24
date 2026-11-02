@@ -914,11 +914,13 @@ class Win(QMainWindow):
         for lab,cmd in (('Threads','os th'),('Mémoire','os free'),('Load','os load'),('Ver','sys ver')):
             b=QPushButton(lab);b.clicked.connect(lambda _,c=cmd:self._feat_cmd(c));g4v.addWidget(b)
         g4v.addStretch(1);v.addWidget(g4)
-        g5=QGroupBox('Routage bas niveau');g5v=QHBoxLayout(g5)
-        g5v.addWidget(QLabel('madi u→m :'));self.f_mu=QLineEdit();self.f_mm=QLineEdit();g5v.addWidget(self.f_mu);g5v.addWidget(self.f_mm)
+        g5=QGroupBox('Routage carte option (MADI)');g5v=QHBoxLayout(g5)
+        g5v.addWidget(QLabel('uTrackCh ↔ madiCh :'));self.f_mu=QLineEdit();self.f_mm=QLineEdit();g5v.addWidget(self.f_mu);g5v.addWidget(self.f_mm)
         b=QPushButton('madi input');b.clicked.connect(lambda:self._feat('routing','madi_input',int(self.f_mu.text() or 0),int(self.f_mm.text() or 0)));g5v.addWidget(b)
         b=QPushButton('madi output');b.clicked.connect(lambda:self._feat('routing','madi_output',int(self.f_mu.text() or 0),int(self.f_mm.text() or 0)));g5v.addWidget(b)
         g5v.addStretch(1);v.addWidget(g5)
+        g5.setToolTip('Slot option unique : MADI ou AudioLAN ou ADAT — actif seulement si carte MADI')
+        self.f_route=g5
         self.feat_out=QPlainTextEdit(readOnly=True);v.addWidget(self.feat_out,2)
         return w
 
@@ -1005,8 +1007,11 @@ class Win(QMainWindow):
         s=u.op_status()
         if s is not None:
             cm={0:'24In/26Out',1:'24In/2Out',2:'8In/26Out',3:'8In/10Out'}.get((s>>4)&0x3,'?')
-            bd={0:'none',1:'MADI',2:'ADAT',3:'AudioLAN'}.get((s>>8)&0x7,'id%d'%((s>>8)&0x7))
+            bd_id=(s>>8)&0x7
+            bd={0:'none',1:'MADI',2:'ADAT',3:'AudioLAN'}.get(bd_id,'id%d'%bd_id)
             self.hdr_status.setText('%s · %s · %s'%(cm,bd,'lock' if s&1 else 'no lock'))
+            if hasattr(self,'f_route'):
+                self.f_route.setEnabled(bd_id==1)
         if self.u and hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         self._meters_tick()
         for ch,s in enumerate(self.strips):
