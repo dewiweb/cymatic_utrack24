@@ -366,3 +366,15 @@ SFX 7z: arch_fwdl + arch_usb_fwdl.dll (API de flash Archwave) +
 deviceUpgrade_64.exe + uTRACK24_Release_No_CnE_ 3124.bcd.
 Le .bcd embarque est **strictement identique** (byte-for-byte) a
 uTrack_3124.bcd du network-update — "No_CnE" n est qu un nom.
+
+## 11. API de flash firmware (arch_fwdl_x64 / arch_usb_fwdl_x64)
+
+Reseau (BCOFWDL, 13 exports): EnumerateDevices, OpenDevice, CloseDevice,
+CheckDownload, StartDownload, GetDownloadStatus, GetBcdFileInfo,
+GetDeviceInfo, GetVersion, IsUserAdmin, Reboot, SetTimeout, EnableLogging
+
+USB (BCOUFWDL, 12 exports): EnumerateDevices, OpenDevice, CloseDevice,
+StartDownload, GetDownloadStatus, GetBcdFileInfo, GetDeviceInfo,
+GetApiVersion, GetSerialNumber, SetSerialNumber, SetTimeout, EnableLogging
+
+== l equipement /api/fileupload du firmware a un pendant PC documente.
