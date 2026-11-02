@@ -749,6 +749,8 @@ class Win(QMainWindow):
         self.btn_aoip_stopplay=QPushButton('■ Stop');self.btn_aoip_stopplay.clicked.connect(lambda:self._aoip_telcmd(('fileplay','stop')));hp.addWidget(self.btn_aoip_stopplay)
         gpv.addLayout(hp);row.addWidget(gp,1)
         v.addLayout(row,3)
+        # groupes dependants de la carte AudioLAN (board_id==3)
+        self.f_aoip_card=(gs,gc,gp)
         gpc=QGroupBox('PC — capture / sender de test');pcv=QHBoxLayout(gpc)
         pcv.addWidget(QLabel('mcast :'));self.aoip_mcast=QLineEdit('239.0.0.1');pcv.addWidget(self.aoip_mcast)
         pcv.addWidget(QLabel('port :'));self.aoip_port=QLineEdit('5004');pcv.addWidget(self.aoip_port)
@@ -1012,6 +1014,9 @@ class Win(QMainWindow):
             self.hdr_status.setText('%s · %s · %s'%(cm,bd,'lock' if s&1 else 'no lock'))
             if hasattr(self,'f_route'):
                 self.f_route.setEnabled(bd_id==1)
+            if hasattr(self,'f_aoip_card'):
+                for g in self.f_aoip_card:
+                    g.setEnabled(bd_id==3)
         if self.u and hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         self._meters_tick()
         for ch,s in enumerate(self.strips):
