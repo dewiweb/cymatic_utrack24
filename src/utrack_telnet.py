@@ -187,6 +187,27 @@ class UTrack24:
             out.append(t)
         return out
 
+    def download(self, remote: str, local: str, maxlen: int = 16777216) -> int:
+        """file open ro/size/print/close -> sauve en binaire local."""
+        data = self.read_file(remote, maxlen)
+        with open(local, 'wb') as f:
+            f.write(data)
+        return len(data)
+
+    def mv(self, src: str, dst: str) -> str:
+        """file move <src> <dst> (rename; documented ghidra_utrack_files.md)."""
+        return self._chk(self.cmd(f'file move {src} {dst}', 1.5))
+
+    def rm(self, path: str) -> str:
+        """file remove <path>."""
+        return self._chk(self.cmd(f'file remove {path}', 1.5))
+
+    def upload(self, remote: str, data: bytes) -> str:
+        """file open <path> wo + staging buffer + file write <n>.
+        TODO: mecanisme du staging buffer (FAH) a verifier — voir handler
+        0x14aca0 (file write <bytes> {count} {buffer_offset})."""
+        raise NotImplementedError('staging buffer FAH a decoder (handler 0x14aca0)')
+
     def _chk(self, out: str) -> str:
         if re.search(r'fail|error', out, re.I):
             raise RuntimeError(out.strip().splitlines()[-1] if out.strip() else 'erreur')
