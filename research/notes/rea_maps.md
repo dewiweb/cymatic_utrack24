@@ -240,3 +240,81 @@ IOCTL -> handler interne du driver utrack24_usb_x64.sys :
 0x80892aac FUN_000144d4
 0x80892ac4 FUN_00021314
 ```
+
+## 5. User-mode IOCTL senders (decomp_bebob)
+
+Chaque fonction DeviceIoControl de BebobDriverInterface.dll et son code:
+
+```
+FUN_addr  ioctl
+10003100 
+10001240 0x80892804
+100012c0 0x80892810
+10001340 0x80892814
+100013c0 0x80892820
+10001450 0x80892828
+100014d0 0x80892860
+10001680 0x80892864
+10001bb0 0x80892888
+10001c30 0x8089288c
+10001aa0 0x808928c0
+10001b20 0x808928c4
+10001cc0 0x80892900
+10001d50 0x80892904
+10001560 0x80892920
+100015f0 0x80892924
+10001710 0x80892980
+100017a0 0x80892984
+10001dd0 0x80892a00
+10001e50 0x80892a04
+10001820 0x80892a80
+100018a0 0x80892a84
+10001920 0x80892a88
+100019a0 0x80892a8c
+10001a20 0x80892ac8
+```
+
+## 6. Call* export RVAs (BebobDriverInterface.dll)
+
+VA = image_base(0x10000000) + RVA. Les wrappers Call* (C ABI) forwardent vers les
+methodes C++ CDriverInterfaceClass (exports mangles) qui envoient les IOCTLs.
+
+```
+0x7310 CallConnectDevice
+0x6f80 CallGetAsioBufferConfiguration
+0x7040 CallGetAsioDropouts
+0x7420 CallGetChannelInputMonitorMute
+0x73d0 CallGetChannelInputMonitorPan
+0x7380 CallGetChannelInputMonitorVol
+0x70f0 CallGetChannelProperties
+0x7240 CallGetCurrentAudioMode
+0x72b0 CallGetCurrentOpticalInputDetectionStatus
+0x7280 CallGetCurrentSpdifInputDetectionStatus
+0x7480 CallGetCurrentSyncSource
+0x74e0 CallGetDeviceProps
+0x6f40 CallGetDriverInfo
+0x7260 CallGetFirmwareVersion
+0x72e0 CallGetLevelMeterData
+0x6f00 CallGetNumberOfConnectedDevices
+0x7190 CallGetPrependDeviceNameToDisplayName
+0x7450 CallGetSampleRate
+0x7060 CallGetSampleRateInfo
+0x7000 CallGetSampleRateSelectionMode
+0x6fa0 CallGetStreamBufferConfiguration
+0x70a0 CallGetSyncModeInfo
+0x71a0 CallPollDeviceStatus
+0x7170 CallPrependDeviceNameToDisplayName
+0x74d0 CallRemoveUsbNotificationCallback
+0x6fe0 CallSetAsioBufferConfiguration
+0x7400 CallSetChannelInputMonitorMute
+0x73b0 CallSetChannelInputMonitorPan
+0x7330 CallSetChannelInputMonitorVol
+0x7140 CallSetChannelNickName
+0x7360 CallSetCrossFader
+0x6f20 CallSetDeviceNickName
+0x71f0 CallSetSampleRate
+0x7020 CallSetSampleRateSelectionMode
+0x6fc0 CallSetStreamBufferConfiguration
+0x7210 CallSetSyncSource
+0x74b0 CallSetUsbNotificationCallback
+```
