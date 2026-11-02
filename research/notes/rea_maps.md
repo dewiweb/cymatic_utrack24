@@ -359,3 +359,10 @@ utrack24_usb*.sys et uTrack24MixerLauncher.exe sont natifs.
 
 Driver signed vs unsigned: meme arborescence; seules la signature
 (.cat, vendor.cer) changent.
+
+## 10. Updater uTrack24_v3124 (x64/x86/osx)
+
+SFX 7z: arch_fwdl + arch_usb_fwdl.dll (API de flash Archwave) +
+deviceUpgrade_64.exe + uTRACK24_Release_No_CnE_ 3124.bcd.
+Le .bcd embarque est **strictement identique** (byte-for-byte) a
+uTrack_3124.bcd du network-update — "No_CnE" n est qu un nom.
