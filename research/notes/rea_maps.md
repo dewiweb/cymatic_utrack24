@@ -350,3 +350,12 @@ Mixerpanel.exe + CControlKnob.dll, PushButton.dll, VUMeter.dll, Fader.dll,
 MatrixLib.dll, FlatTabControl.dll = 100% CIL -> decompilables en C# integral
 (ilspy/dnSpy). Seuls BebobDriverInterface.dll, utrack24_asio*.dll,
 utrack24_usb*.sys et uTrack24MixerLauncher.exe sont natifs.
+
+## 9. Routes REST du bundle AES67 (aes67-0.1.2.js, carte AudioLAN)
+
+/api/fileupload, /command, /configuration, /device, /device_list,
+/firmware-install, /firmware-update, /general, /home, /outputs,
+/parameter_strings, /setup, /sources, /status, /stream_list, /sw_versions
+
+Driver signed vs unsigned: meme arborescence; seules la signature
+(.cat, vendor.cer) changent.
