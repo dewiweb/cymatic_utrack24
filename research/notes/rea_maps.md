@@ -721,3 +721,17 @@ Groupes sys/os/test: ~50 cmds dont couche debug bas niveau:
   systeme: clock, flash, reboot, reset, restart (+restart in update mode),
         uartcfg, ver, av, if stat, lpm, mode, test
 => shell de debug RTOS complet expose via telnet (device non authentifie!)
+
+## 36. Protocole sync multi-unites uTrack24SyncCL (uTS_Msg_*)
+
+Messages CHAI (OnCHAI_* handlers, pas canal dedie):
+  GroupForming | CancelGroupForming | BecomeSlave | BecameSlave |
+  LeaveGroup | ExitGroup | RebuildGroupQuery | RebuildGroupResponse
+  (+ notifies: enteredGroupForming/exitedGroupForming/becameSlave/
+   slaveChanged/masterChanged/groupDisolved/groupRebuildQuery|Failed)
+Etats: state/mode/groupid/index/connected. Handlers:
+  OnCHAI_DeviceDeclaration (type), OnCHAI_DeviceDiscarded (reason,
+  modes SM_Master/SS_GroupForm/SS_GroupRebuild), OnCHAI_Notification
+  (CNT_Connected/Disconnected/NetworkChanged/NetworkStable),
+  OnCHAI_Timer (resend RebuildGroupQuery aux slaves).
+=> sync de groupe entierement sur le canal CHAI/VNM existant.
