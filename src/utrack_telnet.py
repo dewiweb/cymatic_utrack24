@@ -266,6 +266,30 @@ class UTrack24:
         finally:
             self.cmd('file close', 1.0)
 
+    def take_settings(self, take: str):
+        """Lit + parse le .set d'une prise -> SongSettings (uset_file)."""
+        from uset_file import SongSettings
+        data = self.read_file(f'/MultiTrack/{take}/{take}.set', 262144)
+        return SongSettings.parse(data.decode('utf-8', 'replace'))
+
+    def take_delete(self, take: str):
+        """Supprime une prise: fichiers puis dossier (fs rm verifie live)."""
+        base = f'/MultiTrack/{take}'
+        for e in self.list_dir(base):
+            if not e['is_dir']:
+                self.fs_rm(f'{base}/{e["name"]}')
+        self.fs_rm(base)
+
+    def take_rename(self, old: str, new: str):
+        """Renomme une prise: dossier + fichiers prefixes (reclog/.set
+        non modifies en contenu — procedure recordings_access.md)."""
+        base = '/MultiTrack'
+        for e in self.list_dir(f'{base}/{old}'):
+            n = e['name']
+            if n.startswith(old):
+                self.fs_rename(f'{base}/{old}/{n}', f'{base}/{old}/{new}{n[len(old):]}')
+        self.fs_rename(f'{base}/{old}', f'{base}/{new}')
+
     def takes(self) -> list:
         """Liste des prises /MultiTrack (hors _Temp) avec infos du 1er wav."""
         self.reset_line()
