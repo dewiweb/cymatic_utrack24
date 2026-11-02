@@ -199,6 +199,34 @@ class UTrack24:
         """file dir open|close|read|create|free."""
         return self.cmd('file dir ' + ' '.join(map(str, args)), 1.5)
 
+    def file_stat(self, path: str) -> str:
+        """file stat <path> — metadata fichier/dossier."""
+        return self.cmd('file stat ' + path, 1.5)
+
+    def file_tell(self) -> str:
+        """file tell — offset courant du handle ouvert."""
+        return self.cmd('file tell', 1.0)
+
+    def file_seek(self, offset: int) -> str:
+        """file seek <offset> — repositionne le handle courant."""
+        return self.cmd(f'file seek {offset}', 1.0)
+
+    def file_info(self) -> str:
+        """file info — diag FAH ("Last file access: %s")."""
+        return self.cmd('file info', 1.0)
+
+    # ---------- playlists (#PLAYLISTS, .play XML) ----------
+    def playlists(self) -> list:
+        """Liste les fichiers .play dans #PLAYLISTS."""
+        return [e['name'] for e in self.list_dir('/#PLAYLISTS')
+                if not e['is_dir'] and e['name'].lower().endswith('.play')]
+
+    def playlist_read(self, name: str):
+        """Lit + parse un .play device -> Playlist (uset_file)."""
+        from uset_file import Playlist
+        data = self.read_file(f'/#PLAYLISTS/{name}', 262144)
+        return Playlist.parse(data.decode('utf-8', 'replace'))
+
     def file_dir_create(self, path: str) -> str:
         return self.file_dir('create', path)
 

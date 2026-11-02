@@ -65,10 +65,20 @@ def run(host='127.0.0.1',port=55000,seq_file=None):
                 # parse les frames et reponds aux sondes c423
                 frames,buf=parse(buf)
                 for fl,body,ok in frames:
-                    # sonde c423 du VNM (flags 2) -> reponds 4423
-                    if fl==2 and body[:4]==b'\x00\x01\xc4\x23':
-                        resp=bytearray(body);resp[2:4]=b'\x44\x23'  # c423->4423
-                        s.sendall(frame(bytes(resp)))
+                    # sondes VNM (flags 2): c423->4423 (echo), d842->echo (link neg), d423->4423
+                    if fl==2 and len(body)>=4 and body[0:2]==b'\x00\x01':
+                        st=body[2:4]
+                        if st==b'\xc4\x23':  # c423
+                            resp=bytearray(body);resp[2:4]=b'\x44\x23'
+                            s.sendall(frame(bytes(resp)))
+                        elif st==b'\xd8\x42':  # d842 link neg -> echo back
+                            s.sendall(frame(bytes(body)))
+                        elif st==b'\xd4\x23':  # d423 -> 4423
+                            resp=bytearray(body);resp[2:4]=b'\x44\x23'
+                            s.sendall(frame(bytes(resp)))
+                        elif st==b'\x54\x23':  # 5423 subscribe -> ack
+                            resp=bytearray(body);resp[2:4]=b'\x44\x23'
+                            s.sendall(frame(bytes(resp)))
                     elif ok and fl==2:
                         print('<<',describe(body))
                 if time.time()-last_ka>0.4:
