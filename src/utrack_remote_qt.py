@@ -649,7 +649,7 @@ class Win(QMainWindow):
         if not it:return
         idx=self.tree.indexOfTopLevelItem(it)
         if QMessageBox.question(self,'Prises','Charger %s sur le device ?'%it.text(0))!=QMessageBox.Yes:return
-        self.u and self.u.num(0xc010,idx)  # file-select par index (RE: 0xc010)
+        self.u and self.u.ctrl(0xc010,idx)  # file-select par index = selector 4337
 
     def _stat_refresh(self):
         """filerec/fileplay stat + espace disque (RE ghidra_utrack_files.md)."""
