@@ -2,8 +2,10 @@
 
 ## 1. Classes de messages CCP/CHAI (decomp_uremote)
 
-Chaque  ctor appelle le registrateur avec son class ID.
-Pattern:  = request/commande,  = reply, autres = events.
+Chaque `CCPMessage_*::vftable` ctor appelle le registrateur avec son class ID.
+Pattern: `0x1004xxxx` = request/commande, `0x1002xxxx` = reply, autres = events.
+La classe `Generic` est un conteneur fourre-tout (ses IDs sont des ID de
+sous-messages, pas un seul op-code).
 
 ```
 APP_Generic	['0x10003700']
@@ -189,5 +191,5 @@ track_name
 uTrack24
 uTrackX32```
 
-Prochaines étapes: pour chaque class ID -> structure du payload via 
+Prochaines étapes: pour chaque class ID -> structure du payload via `rea decompile`
 sur les ctors; IOCTLs -> dispatcher dans decomp_usb_sys (IofCompleteRequest sites).
