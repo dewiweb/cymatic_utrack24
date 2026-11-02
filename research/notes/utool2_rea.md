@@ -66,3 +66,10 @@
 - Types song : chaines `multitrack`, `multitrackplaylist` (ids dans exports)
 - Stack : **JUCE** (WasapiClasses, SessionSelector) + **r8brain-free-src** (SRC resample embarque) + `MyAudioFormatWriter::Create`
 - WAV export : metadonnees EBUCore XML (ISRC) injectees
+
+## Serialiseurs localises (adresses uTool2.exe)
+- `FUN_005406f0` (4989 B) : serialiseur `song.set` — contient xref `ns0:SongProject`
+- `FUN_00551b30` (4768 B) : resolution chemins projet/device (.play/.playlistprj/#PLAYLISTS)
+- `FUN_00595b20` (1255 B) : walker export (appelle FUN_005955a0 par song)
+- `FUN_005955a0` : logique export par-item (new/modified, cumul tailles)
+- `FUN_005bd870` : mappeur dossiers device (Music/Recording/MultiTrack/#PLAYLISTS)
