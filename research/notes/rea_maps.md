@@ -343,3 +343,10 @@ getCurrentSyncSource 0x80892900
 getSampleRate 0x808928c0
 getChannelProperties 0x80892810,0x80892864,0x80892980
 ```
+
+## 8. Stack UI driver (tous managed .NET Framework)
+
+Mixerpanel.exe + CControlKnob.dll, PushButton.dll, VUMeter.dll, Fader.dll,
+MatrixLib.dll, FlatTabControl.dll = 100% CIL -> decompilables en C# integral
+(ilspy/dnSpy). Seuls BebobDriverInterface.dll, utrack24_asio*.dll,
+utrack24_usb*.sys et uTrack24MixerLauncher.exe sont natifs.
