@@ -131,12 +131,110 @@ class UTrack24:
         """what: fader|pan|mute"""
         return self.cmd(f'mixer set {ch} {what} {value}')
 
+    # ---------- CnE / systeme ----------
+    def get_ex(self, path: str, mode: str = '') -> str:
+        """get [-e|-b|-s] <path> : -e type etendu, -b binaire, -s string."""
+        return self.cmd(f'get {mode} {path}'.replace('  ', ' '))
+
+    def ls_tree(self, path: str = '', mode: str = '') -> str:
+        """ls sds dir: -r recursif, -e type etendu, -b binaire, -v name+value."""
+        return self.cmd(f'ls {mode} {path}'.replace('  ', ' '))
+
+    def cd(self, path: str) -> str:
+        return self.cmd('cd ' + path)
+
+    def pwd(self) -> str:
+        return self.cmd('pwd')
+
+    def showtree(self, path: str = '', opts: str = '') -> str:
+        return self.cmd(f'showtree {path} {opts}'.strip())
+
+    def bat(self, name: str) -> str:
+        """Execute un batch leaf (max recursion 5)."""
+        return self.cmd('bat ' + name)
+
+    # ---------- memoire brute (debug) ----------
+    def rd(self, addr: int, count: int = 1, mode: str = '') -> str:
+        """rd <addr> <count> [b|h|a] — memoire physique (addr=VA runtime)."""
+        return self.cmd(f'rd 0x{addr:x} {count} {mode}'.strip(), 1.0)
+
+    def wr(self, addr: int, value: int, mode: str = '') -> str:
+        """wr <addr> <value> [b|h] — ecriture memoire physique brute."""
+        return self.cmd(f'wr 0x{addr:x} 0x{value:x} {mode}'.strip(), 1.0)
+
+    def persparam(self, *args) -> str:
+        """persparam rd|wr|wrb|clr|check|reset — params persistants flash."""
+        return self.cmd('persparam ' + ' '.join(map(str, args)), 1.5)
+
+    # ---------- app commands (ghidra_utrack_map.md) ----------
+    def samplerate(self, *args) -> str:
+        return self.cmd('samplerate ' + ' '.join(map(str, args)))
+
+    def sync(self, *args) -> str:
+        return self.cmd('sync ' + ' '.join(map(str, args)))
+
+    def channelmode(self, mode) -> str:
+        return self._chk(self.cmd(f'channelmode {mode}'))
+
+    def inputselect(self, *args) -> str:
+        return self.cmd('inputselect ' + ' '.join(map(str, args)))
+
+    def dsp(self, *args) -> str:
+        return self.cmd('dsp ' + ' '.join(map(str, args)))
+
+    def audiolan(self, *args) -> str:
+        return self.cmd('audiolan ' + ' '.join(map(str, args)))
+
+    def cpsync(self) -> str:
+        return self.cmd('cpsync')
+
+    def perf(self) -> str:
+        return self.cmd('perf')
+
+    def wavefile(self, path: str) -> str:
+        return self.cmd('wavefile ' + path, 2.0)
+
+    # ---------- file dir ops (FAH) ----------
+    def file_dir(self, *args) -> str:
+        """file dir open|close|read|create|free."""
+        return self.cmd('file dir ' + ' '.join(map(str, args)), 1.5)
+
+    def file_dir_create(self, path: str) -> str:
+        return self.file_dir('create', path)
+
+    def file_dir_free(self) -> str:
+        return self.file_dir('free')
+
+    # ---------- systeme ----------
+    def sys(self, *args) -> str:
+        """sys ver|reset|reboot|restart|clock|flash|memdump…"""
+        return self.cmd('sys ' + ' '.join(map(str, args)), 2.0)
+
+    def sys_ver(self) -> str:
+        return self.sys('ver')
+
+    def reboot(self, mode: str = 'reboot') -> str:
+        """sys reboot (soft) | sys reset (hard) | sys restart [in update mode]."""
+        return self.sys(mode)
+
     # ---------- filesystem ----------
     def fs(self, *args) -> str:
         return self.cmd('fs ' + ' '.join(map(str, args)))
 
     def fs_ls(self, path: str = '') -> str:
         return self.fs('ls', path)
+
+    def fs_mkdir(self, path: str) -> str:
+        """fs mkdir <path> — verifie live (sortie silencieuse)."""
+        return self.cmd('fs mkdir ' + path, 1.5)
+
+    def fs_rename(self, old: str, new: str) -> str:
+        """fs rename <old> <new> — chemins complets, fichiers+dossiers."""
+        return self.cmd(f'fs rename {old} {new}', 1.5)
+
+    def fs_rm(self, path: str) -> str:
+        """fs rm <path> — supprime fichier ou dossier vide."""
+        return self.cmd('fs rm ' + path, 1.5)
 
     # ---------- recordings (read-only) ----------
     def reset_line(self):
