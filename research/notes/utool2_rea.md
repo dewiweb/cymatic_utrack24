@@ -30,3 +30,8 @@
 ## Formats confirmes
 - stereo playlists -> `Recording/`, multitrack -> `MultiTrack/`, musique libre -> `Music/`
 - RTTI : `PlaylistContentList/Item`, `ProjectExplorerItem_Song` (type via FUN_006f6dd6)
+
+## Entrees export (suite)
+- `FUN_00593a60` : scan/preview export — calcule octets manquants @+0x2760, capacite disque @+0x1850 (+0x20000000 garde), met a jour les boutons export ; mode post/pre-fader flag @+0x2080&2
+- `FUN_005979c0` : 2e point d'entree, meme walker
+- Writer `.play` binaire : TOUJOURS a localiser — probablement dans le chemin CreateFileW pendant l'export, ou dans FUN_005955a0 cote fichier
