@@ -59,3 +59,10 @@
 `playlist_name`, `project_type`, `version`, `timestamp`,
 `start_mode`, `start_mode_delay`,
 `song_projects` > `song_project` > `song_project_name`, `project_file_location`
+
+## Media/disque
+- **FAT32** requis (string @0x74860c/0x748db0) ; `_TempTake` = dossier temporaire
+- Registre : `DontAskForDiskFormatConfirmation`, `ShowOnlyTakes`
+- Types song : chaines `multitrack`, `multitrackplaylist` (ids dans exports)
+- Stack : **JUCE** (WasapiClasses, SessionSelector) + **r8brain-free-src** (SRC resample embarque) + `MyAudioFormatWriter::Create`
+- WAV export : metadonnees EBUCore XML (ISRC) injectees
