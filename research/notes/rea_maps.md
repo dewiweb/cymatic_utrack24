@@ -196,7 +196,7 @@ sur les ctors; IOCTLs -> dispatcher dans decomp_usb_sys (IofCompleteRequest site
 
 ## 4. IOCTL dispatch kernel (decomp_usb_sys/FUN_00017614)
 
-IOCTL -> handler interne du driver  :
+IOCTL -> handler interne du driver utrack24_usb_x64.sys :
 ```
 0x80892888 ?
 0x808924c8 FUN_00016344
