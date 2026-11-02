@@ -556,3 +556,12 @@ Wire: class_id u32 LE (obj+0x10) | u16 (obj+0x14) | bloc_id 10B
 Deserialize verifie >=0xf octets restants. => la trame 0x100037c8:
 c8370010 | 1e00(=field14) | bloc 10B | puis records enchaines dans
 la meme trame ef51 (multi-decl par trame, noms inclus dans payload).
+
+## 24. Format fil des Generic param (0x10002381 = ecriture/set)
+
+vftable 0x5ea308; Serialize FUN_0058e350 / Deserialize FUN_0058e410.
+Layout 20 octets: class_id u32 | tag u16 (obj+0x14) | flag u8 (obj+0x24)
+| pad u8(0) | param_id u64 (obj+0x18) | value u32 (obj+0x20).
+Vu en capture: 81230010|1e00|03|22|0500000000000000|... = param_id 5,
+tag 0x1e(30=type valeur: string/texte?), flag 3. 90230010|0800|0100...
+= classe 0x10002390 tag 8 flag 1. GetStreamSize [8]retourne 0x14=20B.
