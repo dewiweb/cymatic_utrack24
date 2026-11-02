@@ -431,3 +431,9 @@ sample rate), cf section 7.
 uTRACKX32: 2905 (build 20151008, 2243584B), 3865 (20170216, 2242560B),
 5000 (20181022, 2319360B). Header: BcOd | ver32(1) | build16B |
 0200 0000 | release_no32 @0x1c (0x0b59=2905, 0x0f19=3865, 0x1388=5000).
+
+## 18. deviceUpgrade_64.exe (updater 3124)
+
+MFC CDeviceUpgradeApp/CDeviceUpgradeDlg -> appelle BCOUFWDL_* (variante USB
+du flash, pas reseau): EnumerateDevices+GetSerialNumber, OpenDevice,
+StartDownload, GetDownloadStatus. Enum via InterfaceGuidUSB_%02d.
