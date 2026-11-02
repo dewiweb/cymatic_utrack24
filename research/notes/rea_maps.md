@@ -396,3 +396,11 @@ d enumeration (0x10022301 GetDeviceInfoReply x53, 0x10002381 x50,
 0x10024220 LM_GetVNMInfoReply x1, 0x10042301 request x1),
 0x10=25 trames sans class id (hello/keepalive), 0x22/0x25=variantes ack
 du msg 0x100037c8.
+
+## 14. Decodes complementaires (.bin captures)
+
+after_play (87260B): 86x 0x100037c8 (flag23 broadcast membres), 33x keepalive
+0x10, msgs 0x20: 0x10002381 x17, 0x10004221 x12, 0x10004230 x11, 0x10002390 x3
+transport_check (94980B): idem — 94x 0x100037c8, 34x keepalive, 0x10002381 x16
+prop_enum (14916B): 15x 0x100037c8 + 0x10004230/0x10002381/0x10002390 x1
+enum.bin: vide. => 0x100037c8 = broadcast periodique de la liste membres VNM.
