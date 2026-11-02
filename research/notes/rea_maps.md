@@ -751,3 +751,31 @@ n a simplement pas fait de fonction a cette adresse. Decode:
   e0247fc4 op r7,...
   e1570006 cmp  /  c5837000 strgt r7,[r3]   PEAK-TRACK store-if-greater
 => confirme doc: gain Q16 + peak-detect par paire, kernels ARM.
+
+## 38. AudioLAN fw4078 — plongee profonde
+
+Shell RTOS restreint (vs host): seulement blocks/free/index/reset/sem/
+sleep/test/timer. Pas de debug watchpoint/call/load => surface reduite.
+
+Commandes/features carte (strings+corpus):
+  sync(0x33b20,0x37868,0x6a7fc,0xc8fec,0x18acb8) sync audio/PTP
+  ptp(0x37758,0xc8f78) PTP grandmaster/slave
+  warp(0x6fc3c,0x85fdc,0x14c508) moteur DSP WARP (SuluModule)
+  pll(0xc2a08,0x22a428) horloge PLL
+  stream(0x22a298,0x22a4fc,0x22aed8) gestion streams RTP
+  gpio(0x1706b8,0x1aea10,0x1aeab8) GPIO carte
+  spi(0x75ce0)+uart(0x75ce4) transports ARC host<->carte
+  codec(0x26c838) codec audio
+  flash(0x1906d4) update persistante
+  sip(0x1a7f48,0x1a86fc) UA SIP (port 5060)
+  igmp(0x18cxxx) gestion groupes multicast
+  ARC(0xb709e,0x138011,0x1fdc59,0x237e8b,0x23892b,0x240228) interne
+    host<->carte (SPI/UART + UDP 0x227d4d zone sds://)
+
+CnE carte (28): ARC/{DeviceInfo,SPI,UART,UDP}, Bonjour,
+  BridgeStreaming/RavennaConfiguration, CopperLan/{Midi}, DSP,
+  Global/{ManufacturerName,ModelName,WebIconPath}, RavennaConfiguration
+  {InputDelay1xFS/2xFS/4xFS,OutputDelay1xFS/2xFS/4xFS}, SAP
+  {AnnouncementEnabled,BrowsingEnabled,MulticastAddress,Port,
+   SessionTimeoutSeconds}, SIP
+Codecs RTP: AM824, AM824CU, FlexDelay, FlexDelayL16, L24, L16
