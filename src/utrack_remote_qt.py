@@ -185,7 +185,7 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         self.gb_tr=QGroupBox('Transport');self.gb_tr.setObjectName('transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
-        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AES67 (AudioLAN)');self.tabs.addTab(self._matrix(),'Matrice')
+        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AES67 (AudioLAN)');self.tabs.addTab(self._matrix(),'Matrice');self.tabs.addTab(self._aoip(),'AoIP')
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
         self.overlay=QWidget(root);self.overlay.setObjectName('overlay')
         ov=QVBoxLayout(self.overlay);ov.addStretch(2)
@@ -721,6 +721,136 @@ class Win(QMainWindow):
             except Exception as e:self._take_err=e
         threading.Thread(target=run,daemon=True).start()
 
+    # ---------------------------------------------------------------- AoIP
+    def _aoip(self):
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
+        hb=QHBoxLayout()
+        self.btn_aoip=QPushButton('Rafraîchir');self.btn_aoip.clicked.connect(self._aoip_refresh);hb.addWidget(self.btn_aoip)
+        self.aoip_info=QLabel('—',objectName='info');hb.addWidget(self.aoip_info);hb.addStretch(1);v.addLayout(hb)
+        row=QHBoxLayout();row.setSpacing(10)
+        gs=QGroupBox('Streams découverts');gv=QVBoxLayout(gs)
+        self.aoip_streams=QListWidget();self.aoip_streams.setToolTip('Streams RAVENNA/SAP vus par la carte')
+        gv.addWidget(self.aoip_streams)
+        self.btn_aoip_bridge=QPushButton('Bridge → sorties');self.btn_aoip_bridge.clicked.connect(self._aoip_bridge);gv.addWidget(self.btn_aoip_bridge)
+        row.addWidget(gs,2)
+        gc=QGroupBox('Enregistrer AoIP → take');gcv=QVBoxLayout(gc)
+        from PySide6.QtWidgets import QLineEdit
+        self.aoip_rec_name=QLineEdit('AoIP_take')
+        gcv.addWidget(QLabel('Nom de la prise :'));gcv.addWidget(self.aoip_rec_name)
+        hr=QHBoxLayout()
+        self.btn_aoip_rec=QPushButton('● REC AoIP');self.btn_aoip_rec.setObjectName('rec');self.btn_aoip_rec.clicked.connect(self._aoip_rec);hr.addWidget(self.btn_aoip_rec)
+        self.btn_aoip_stoprec=QPushButton('■ Stop');self.btn_aoip_stoprec.clicked.connect(lambda:self._aoip_telcmd(('filerec','stop')));hr.addWidget(self.btn_aoip_stoprec)
+        gcv.addLayout(hr);row.addWidget(gc,1)
+        gp=QGroupBox('take → AES67');gpv=QVBoxLayout(gp)
+        self.aoip_play_take=QLineEdit()
+        gpv.addWidget(QLabel('Prise à lire :'));gpv.addWidget(self.aoip_play_take)
+        hp=QHBoxLayout()
+        self.btn_aoip_play=QPushButton('▶ PLAY');self.btn_aoip_play.setObjectName('play');self.btn_aoip_play.clicked.connect(self._aoip_play);hp.addWidget(self.btn_aoip_play)
+        self.btn_aoip_stopplay=QPushButton('■ Stop');self.btn_aoip_stopplay.clicked.connect(lambda:self._aoip_telcmd(('fileplay','stop')));hp.addWidget(self.btn_aoip_stopplay)
+        gpv.addLayout(hp);row.addWidget(gp,1)
+        v.addLayout(row,3)
+        gpc=QGroupBox('PC — capture / sender de test');pcv=QHBoxLayout(gpc)
+        pcv.addWidget(QLabel('mcast :'));self.aoip_mcast=QLineEdit('239.0.0.1');pcv.addWidget(self.aoip_mcast)
+        pcv.addWidget(QLabel('port :'));self.aoip_port=QLineEdit('5004');pcv.addWidget(self.aoip_port)
+        self.btn_aoip_cap=QPushButton('Capturer → WAV (5s)');self.btn_aoip_cap.clicked.connect(self._aoip_capture);pcv.addWidget(self.btn_aoip_cap)
+        pcv.addSpacing(16)
+        pcv.addWidget(QLabel('Hz :'));self.aoip_freq=QLineEdit('1000');pcv.addWidget(self.aoip_freq)
+        self.btn_aoip_send=QPushButton('Sender sinus');self.btn_aoip_send.clicked.connect(self._aoip_send);pcv.addWidget(self.btn_aoip_send)
+        self.btn_aoip_sstop=QPushButton('Stop');self.btn_aoip_sstop.clicked.connect(lambda:setattr(self,'_aoip_sender_stop',True));pcv.addWidget(self.btn_aoip_sstop)
+        pcv.addStretch(1);v.addWidget(gpc)
+        self.aoip_status=QLabel('—',objectName='info');v.addWidget(self.aoip_status)
+        return w
+
+    def _aoip_refresh(self):
+        self.btn_aoip.setEnabled(False);self.statusBar().showMessage('AoIP…')
+        def run():
+            try:
+                if self.alan is None:
+                    from audiolan_api import AudioLan
+                    self.alan=AudioLan()
+                self._aoip_data=(self.alan.status(),self.alan.discovered_streams())
+            except Exception as e:self._aoip_data=e
+        threading.Thread(target=run,daemon=True).start()
+
+    def _fill_aoip(self,data):
+        st,streams=data
+        ST={0:'inactive',1:'listening',2:'bound',3:'warn',4:'Tx ok',5:'Rx',12:'sync err',13:'time step',14:'SR?',15:'PTP?'}
+        self.aoip_streams.clear()
+        for s in streams:
+            n=s.get('name') or s.get('stream_name') or str(s)
+            it=s if isinstance(s,str) else n
+            self.aoip_streams.addItem(str(it))
+        nrx=sum(1 for o in st.get('ArchwaveAES67',{}).get('outputs',[]) if o.get('status'))
+        self.aoip_status.setText('%d streams découverts · %d outputs actifs'%(len(streams),nrx))
+
+    def _aoip_bridge(self):
+        it=self.aoip_streams.currentItem()
+        if not it:return
+        name=it.text().split('/')[-2] if '/' in it.text() else it.text()
+        def run():
+            try:self.alan.route_all(name);self._aoip_data=('ok',)
+            except Exception as e:self._aoip_data=e
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('bridge → %s'%name)
+
+    def _aoip_telcmd(self,args):
+        def run():
+            try:
+                with self._tlock:
+                    if self.tel is None:return
+                    getattr(self.tel,args[0])(*args[1:])
+            except Exception:self._aoip_data=Exception('telcmd %s'%args[0])
+        threading.Thread(target=run,daemon=True).start()
+
+    def _aoip_rec(self):
+        name=self.aoip_rec_name.text().strip() or 'AoIP_take'
+        def run():
+            try:
+                with self._tlock:
+                    if self.tel is None:return
+                    self.tel.inputselect('all','digital')
+                    self.tel.filerec('configure',0,name,24,0,24,8,4096,48000,'autostart')
+            except Exception:self._aoip_data=Exception('rec')
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('REC AoIP → %s'%name)
+
+    def _aoip_play(self):
+        take=self.aoip_play_take.text().strip() or (self._loaded or '')
+        if not take:return
+        def run():
+            try:
+                with self._tlock:
+                    if self.tel is None:return
+                    srcs=self.alan.sources().get('ArchwaveAES67',{}).get('sources',[])
+                    for s in srcs:s['streamEnable']=True
+                    self.alan.set_sources(srcs)
+                    self.tel.fileplay('configure',0,take,0,50,8,4096,4,48000,'autostart')
+            except Exception:self._aoip_data=Exception('play')
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('PLAY %s → AES67'%take)
+
+    def _aoip_capture(self):
+        mcast=self.aoip_mcast.text();port=int(self.aoip_port.text() or 5004)
+        self.btn_aoip_cap.setEnabled(False);self.statusBar().showMessage('capture 5s…')
+        def run():
+            try:
+                from aes67_receiver import recv_stream
+                r=recv_stream(mcast,port,'capture_%d.wav'%int(time.time()),8,5.0,'',48000)
+                self._aoip_capres=r
+            except Exception as e:self._aoip_capres=e
+            finally:self._aoip_data=('cap',)
+        threading.Thread(target=run,daemon=True).start()
+
+    def _aoip_send(self):
+        mcast=self.aoip_mcast.text();freq=self.aoip_freq.text()
+        def run():
+            try:
+                import subprocess,sys,os
+                self._aoip_sender=subprocess.Popen([sys.executable,os.path.join(os.path.dirname(__file__),'fake_aes67_sender.py'),'--addr',mcast,'--freq',freq])
+            except Exception as e:self._aoip_sender=e
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('sender → %s'%mcast)
+
     def _refresh(self):
         if self._conn=='ok':
             self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
@@ -754,6 +884,10 @@ class Win(QMainWindow):
             d,self._alan_data=self._alan_data,None;self.btn_alan.setEnabled(True)
             if isinstance(d,Exception):self.statusBar().showMessage('Erreur AudioLAN : %s'%d);self._alan_update_apply()
             else:self._fill_alan(d)
+        if getattr(self,'_aoip_data',None) is not None:
+            d,self._aoip_data=self._aoip_data,None;self.btn_aoip.setEnabled(True)
+            if isinstance(d,Exception):self.statusBar().showMessage('AoIP : %s'%d)
+            else:self._fill_aoip(d)
         if self._take_err is not None:
             e,self._take_err=self._take_err,None;self.btn_ref.setEnabled(True);self.btn_ren.setEnabled(True);self.btn_del.setEnabled(True)
             QMessageBox.warning(self,'Prises','Erreur : %s'%e)
