@@ -1,5 +1,6 @@
 """Session CHAI interactive — rejoue init + repond aux sondes du VNM pour rester adopte."""
 import socket,time,sys,os,struct,threading
+from chai_proto import CID, CID_BY_ID, pack_generic, unpack_generic, parse_announce_records, record_param_name
 SEQ_FILE='research/assets/cap/init_seq_fresh.txt'
 
 def cksum(data):
@@ -12,6 +13,21 @@ def frame(msg,flags=0xb):
     """ef51 | u16 LE (flags<<12 | len) | payload | cksum (a LE, b LE)."""
     head=b'\xef\x51'+struct.pack('<H',(flags<<12)|len(msg))
     return head+msg+cksum(head+msg)
+
+def send_param(s, param_id, value, tag=0x1e, flag=0, cid=None):
+    """Envoie un write param 20B (format CCPMessage_Generic, rea_maps §24/28)."""
+    s.sendall(frame(pack_generic(cid or CID['SM_Signal'], param_id, value, tag, flag)))
+
+def describe(body):
+    """Decode lisible d'un body: class_id + champs Generic ou records announce."""
+    if len(body) < 4: return '?'
+    cid = struct.unpack_from('<I', body, 0)[0]
+    name = CID_BY_ID.get(cid, hex(cid))
+    if cid == CID['MEMBER_BROADCAST']:
+        recs = parse_announce_records(body)
+        return f'{name} ({len(recs)} records: ' + ','.join(record_param_name(r['payload']) for r in recs[:6]) + ')'
+    g = unpack_generic(body)
+    return f'{name} {g}' if g else name
 
 def parse(buf):
     """Decoupe buf en (flags,payload,ok) ; retourne (frames, reste)."""
@@ -53,6 +69,8 @@ def run(host='127.0.0.1',port=55000,seq_file=None):
                     if fl==2 and body[:4]==b'\x00\x01\xc4\x23':
                         resp=bytearray(body);resp[2:4]=b'\x44\x23'  # c423->4423
                         s.sendall(frame(bytes(resp)))
+                    elif ok and fl==2:
+                        print('<<',describe(body))
                 if time.time()-last_ka>0.4:
                     s.sendall(bytes.fromhex('ef5100a02d4ee686'));last_ka=time.time()
         except Exception as e:
