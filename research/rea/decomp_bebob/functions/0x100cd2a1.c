@@ -1,0 +1,30 @@
+// rea decompile_all
+// name: AfxImageList_Create
+// address: 0x100cd2a1
+// body: available
+// range: 0x100cd2a1-0x100cd2c7 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* Library Function - Single Match
+    struct _IMAGELIST * __stdcall AfxImageList_Create(int,int,unsigned int,int,int)
+   
+   Library: Visual Studio 2010 Release */
+
+_IMAGELIST * AfxImageList_Create(int param_1,int param_2,uint param_3,int param_4,int param_5)
+
+{
+  AFX_MODULE_STATE *pAVar1;
+  _IMAGELIST *p_Var2;
+  
+  pAVar1 = AfxGetModuleState();
+  p_Var2 = CComCtlWrapper::_ImageList_Create
+                     ((CComCtlWrapper *)**(undefined4 **)(pAVar1 + 0x78),param_1,param_2,param_3,
+                      param_4,param_5);
+  return p_Var2;
+}
+

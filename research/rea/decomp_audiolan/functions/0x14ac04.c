@@ -1,0 +1,86 @@
+// rea decompile_all
+// name: FUN_0014ac04
+// address: 0x14ac04
+// body: available
+// range: 0x14ac04-0x14ac87 inclusive
+// range: 0x14ae30-0x14ae3b inclusive
+// range: 0x14ae94-0x14ae9f inclusive
+// non_contiguous: true
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: dc47711df08874f4cf3d1d83bbc653d5d7e81a6923a356173f8ed1dbb4060c20
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Headerless raw-binary analysis uses the caller-supplied architecture and entry address; file offset 0 is mapped at that address. Headers are not discovered from file bytes.; Little-endian generic Ghidra languages are used for x86, x86_64, arm, arm64, and NMOS 6502; m68k uses the big-endian 68000 default language, which decodes the 68040 superset. Big-endian ARM, Thumb-only, Cortex-M, 65C02, 65816, separate 68020/68030/CPU32/ColdFire variants, and other processor variants are unsupported in this increment.; Static analysis does not emulate reset vectors, memory-mapped I/O, or firmware boot sequences.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Control flow encountered bad instruction data */
+
+undefined4 FUN_0014ac04(int param_1)
+
+{
+  int iVar1;
+  int iVar2;
+  
+  iVar1 = FUN_0016046c(param_1,*DAT_0014aea0);
+  if (iVar1 != 0) {
+    if (*(int *)(iVar1 + 0x24) != 0) {
+      iVar2 = FUN_00003a1c(*(undefined4 *)(iVar1 + 0x14),*(int *)(iVar1 + 0x24));
+      if (iVar2 < 1) {
+        return 0;
+      }
+      switch(*(uint *)(*(int *)(param_1 + 4) + *(int *)(iVar1 + 0x10) + 4) & 0xff) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+      case 4:
+      case 7:
+      case 8:
+      case 10:
+      case 0xc:
+      case 0x10:
+      case 0x11:
+      case 0x12:
+      case 0x13:
+      case 0x14:
+      case 0x15:
+      case 0x16:
+      case 0x17:
+      case 0x18:
+      case 0x19:
+      case 0x1a:
+      case 0x1b:
+      case 0x1c:
+      case 0x1d:
+      case 0x1e:
+      case 0x1f:
+      case 0x20:
+      case 0x21:
+      case 0x22:
+      case 0x23:
+      case 0x24:
+      case 0x25:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 5:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 6:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 9:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xb:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      case 0xd:
+      case 0xe:
+      case 0xf:
+                    /* WARNING: Bad instruction - Truncating control flow here */
+        halt_baddata();
+      }
+    }
+  }
+  return 0xffffff8b;
+}
+

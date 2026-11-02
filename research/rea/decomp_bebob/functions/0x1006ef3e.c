@@ -1,0 +1,71 @@
+// rea decompile_all
+// name: CMFCMenuBar::GetFloatPopupDirection
+// address: 0x1006ef3e
+// body: available
+// range: 0x1006ef3e-0x1006efd4 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x1006ef8f to 0x10009068 FUN_10009068 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* Library Function - Single Match
+    public: int __thiscall CMFCMenuBar::GetFloatPopupDirection(class CMFCToolBarMenuButton *)
+   
+   Library: Visual Studio 2010 Release */
+
+int __thiscall CMFCMenuBar::GetFloatPopupDirection(CMFCMenuBar *this,CMFCToolBarMenuButton *param_1)
+
+{
+  int *piVar1;
+  CMFCToolBarMenuButton *pCVar2;
+  __POSITION *p_Var3;
+  int iVar4;
+  undefined4 *puVar5;
+  undefined4 *puVar6;
+  int iVar7;
+  
+  p_Var3 = CObList::Find((CObList *)(this + 0xbc8),(CObject *)param_1,(__POSITION *)0x0);
+  if ((p_Var3 != (__POSITION *)0x0) && (iVar4 = (**(code **)(*(int *)this + 0x16c))(), iVar4 != 0))
+  {
+    puVar5 = *(undefined4 **)(this + 0xbcc);
+    puVar6 = puVar5;
+    while (puVar6 != (undefined4 *)0x0) {
+      if (puVar6 == (undefined4 *)0x0) {
+LAB_1006ef8f:
+                    /* WARNING: Subroutine does not return */
+        FUN_10009068();
+      }
+      piVar1 = puVar6 + 2;
+      puVar6 = (undefined4 *)*puVar6;
+      if (*(int *)(*piVar1 + 0x10) != 0) {
+        iVar4 = 0;
+        do {
+          iVar7 = 0;
+          do {
+            if (puVar5 == (undefined4 *)0x0) {
+              return -1;
+            }
+            if (puVar5 == (undefined4 *)0x0) goto LAB_1006ef8f;
+            pCVar2 = (CMFCToolBarMenuButton *)puVar5[2];
+            puVar5 = (undefined4 *)*puVar5;
+            if (param_1 == pCVar2) {
+              if (*(int *)(pCVar2 + 0x10) != 0) {
+                return 3;
+              }
+              if (iVar7 != 0) {
+                return (iVar4 == 0) + 1;
+              }
+              return 4;
+            }
+            iVar7 = iVar7 + 1;
+          } while (*(int *)(pCVar2 + 0x10) == 0);
+          iVar4 = iVar4 + 1;
+        } while( true );
+      }
+    }
+  }
+  return -1;
+}
+

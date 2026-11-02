@@ -1,0 +1,54 @@
+// rea decompile_all
+// name: CMFCControlRenderer::FillInterior
+// address: 0x100b1a8d
+// body: available
+// range: 0x100b1a8d-0x100b1b6d inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* Library Function - Single Match
+    public: virtual void __thiscall CMFCControlRenderer::FillInterior(class CDC *,class CRect,enum
+   CMFCToolBarImages::ImageAlignHorz,enum CMFCToolBarImages::ImageAlignVert,unsigned int,unsigned
+   char)
+   
+   Library: Visual Studio 2010 Release */
+
+void __thiscall
+CMFCControlRenderer::FillInterior
+          (CMFCControlRenderer *this,undefined4 param_1,undefined4 param_3,undefined4 param_4,
+          undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,int param_9,
+          undefined4 param_10)
+
+{
+  BOOL BVar1;
+  tagRECT local_18;
+  uint local_8;
+  
+  local_8 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  BVar1 = IsRectEmpty((RECT *)(this + 0x148));
+  if (BVar1 == 0) {
+    local_18.left = ((RECT *)(this + 0x148))->left;
+    local_18.top = *(LONG *)(this + 0x14c);
+    local_18.right = *(LONG *)(this + 0x150);
+    local_18.bottom = *(LONG *)(this + 0x154);
+    if (*(int *)(this + 0x160) != 0) {
+      local_18.left = (*(int *)(this + 0x120) - *(int *)(this + 0x150)) - *(int *)(this + 0x118);
+      local_18.right = (*(int *)(this + 0x150) - *(int *)(this + 0x148)) + local_18.left;
+    }
+    OffsetRect(&local_18,*(int *)(this + 0x118),*(int *)(this + 0x11c));
+    if (*(int *)(this + 8) == 1) {
+      OffsetRect(&local_18,0,(*(int *)(this + 0x124) - *(int *)(this + 0x11c)) * param_9);
+      param_9 = 0;
+    }
+    CMFCToolBarImages::DrawEx
+              ((CMFCToolBarImages *)(this + 4),param_1,param_3,param_4,param_5,param_6,param_9,
+               param_7,param_8,local_18.left,local_18.top,local_18.right,local_18.bottom,param_10);
+  }
+  __security_check_cookie(local_8 ^ (uint)&stack0xfffffffc);
+  return;
+}
+

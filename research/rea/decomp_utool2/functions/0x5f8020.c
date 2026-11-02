@@ -1,0 +1,192 @@
+// rea decompile_all
+// name: FUN_005f8020
+// address: 0x5f8020
+// body: available
+// range: 0x5f8020-0x5f869b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e1ad533d4cc0333c2136fe0894217de2d61feea098240326e78633f9e4ddcbf9
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB uTool2.pdb (GUID 68172065-e825-46ab-8f91-aa0fc99e9bf1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_005f8020(void)
+
+{
+  int iVar1;
+  int iVar2;
+  int iVar3;
+  int iVar4;
+  int iVar5;
+  int iVar6;
+  int iVar7;
+  int iVar8;
+  int iVar9;
+  int iVar10;
+  int iVar11;
+  int iVar12;
+  int iVar13;
+  int iVar14;
+  int iVar15;
+  int iVar16;
+  int *in_ECX;
+  uint uVar17;
+  int *in_EDX;
+  uint uVar18;
+  uint uVar19;
+  uint uVar20;
+  uint uVar21;
+  uint uVar22;
+  
+  uVar18 = in_ECX[3];
+  uVar20 = in_ECX[2];
+  iVar1 = *in_EDX;
+  uVar17 = *in_ECX + -0x28955b88 + ((uVar18 ^ uVar20) & in_ECX[1] ^ uVar18) + iVar1;
+  uVar17 = (uVar17 * 0x80 | uVar17 >> 0x19) + in_ECX[1];
+  iVar2 = in_EDX[1];
+  uVar18 = uVar18 + 0xe8c7b756 + ((uVar20 ^ in_ECX[1]) & uVar17 ^ uVar20) + iVar2;
+  iVar3 = in_EDX[2];
+  uVar19 = (uVar18 * 0x1000 | uVar18 >> 0x14) + uVar17;
+  uVar18 = uVar20 + 0x242070db + ((in_ECX[1] ^ uVar17) & uVar19 ^ in_ECX[1]) + iVar3;
+  iVar4 = in_EDX[3];
+  uVar21 = (uVar18 >> 0xf | uVar18 * 0x20000) + uVar19;
+  uVar18 = in_ECX[1] + -0x3e423112 + ((uVar19 ^ uVar17) & uVar21 ^ uVar17) + iVar4;
+  uVar22 = (uVar18 >> 10 | uVar18 * 0x400000) + uVar21;
+  iVar5 = in_EDX[4];
+  uVar17 = uVar17 + ((uVar19 ^ uVar21) & uVar22 ^ uVar19) + 0xf57c0faf + in_EDX[4];
+  iVar6 = in_EDX[5];
+  uVar18 = (uVar17 * 0x80 | uVar17 >> 0x19) + uVar22;
+  uVar19 = uVar19 + ((uVar21 ^ uVar22) & uVar18 ^ uVar21) + 0x4787c62a + in_EDX[5];
+  iVar7 = in_EDX[6];
+  uVar20 = (uVar19 * 0x1000 | uVar19 >> 0x14) + uVar18;
+  uVar21 = uVar21 + ((uVar22 ^ uVar18) & uVar20 ^ uVar22) + 0xa8304613 + in_EDX[6];
+  iVar8 = in_EDX[7];
+  uVar19 = (uVar21 >> 0xf | uVar21 * 0x20000) + uVar20;
+  uVar22 = uVar22 + ((uVar20 ^ uVar18) & uVar19 ^ uVar18) + 0xfd469501 + in_EDX[7];
+  iVar9 = in_EDX[8];
+  uVar21 = (uVar22 >> 10 | uVar22 * 0x400000) + uVar19;
+  iVar10 = in_EDX[9];
+  uVar18 = uVar18 + ((uVar20 ^ uVar19) & uVar21 ^ uVar20) + 0x698098d8 + in_EDX[8];
+  uVar18 = (uVar18 * 0x80 | uVar18 >> 0x19) + uVar21;
+  uVar20 = uVar20 + 0x8b44f7af + ((uVar19 ^ uVar21) & uVar18 ^ uVar19) + iVar10;
+  uVar17 = (uVar20 * 0x1000 | uVar20 >> 0x14) + uVar18;
+  iVar11 = in_EDX[10];
+  uVar19 = uVar19 + (((uVar21 ^ uVar18) & uVar17 ^ uVar21) - 0xa44f) + in_EDX[10];
+  iVar12 = in_EDX[0xb];
+  uVar19 = (uVar19 >> 0xf | uVar19 * 0x20000) + uVar17;
+  iVar13 = in_EDX[0xc];
+  uVar21 = uVar21 + ((uVar17 ^ uVar18) & uVar19 ^ uVar18) + 0x895cd7be + in_EDX[0xb];
+  uVar21 = (uVar21 >> 10 | uVar21 * 0x400000) + uVar19;
+  uVar18 = uVar18 + 0x6b901122 + ((uVar17 ^ uVar19) & uVar21 ^ uVar17) + iVar13;
+  uVar20 = (uVar18 * 0x80 | uVar18 >> 0x19) + uVar21;
+  iVar14 = in_EDX[0xd];
+  uVar18 = uVar17 + 0xfd987193 + ((uVar19 ^ uVar21) & uVar20 ^ uVar19) + in_EDX[0xd];
+  iVar15 = in_EDX[0xe];
+  uVar17 = (uVar18 * 0x1000 | uVar18 >> 0x14) + uVar20;
+  uVar18 = uVar19 + 0xa679438e + ((uVar21 ^ uVar20) & uVar17 ^ uVar21) + iVar15;
+  uVar19 = (uVar18 >> 0xf | uVar18 * 0x20000) + uVar17;
+  iVar16 = in_EDX[0xf];
+  uVar18 = uVar21 + 0x49b40821 + ((uVar17 ^ uVar20) & uVar19 ^ uVar20) + iVar16;
+  uVar18 = (uVar18 >> 10 | uVar18 * 0x400000) + uVar19;
+  uVar20 = uVar20 + ((uVar19 ^ uVar18) & uVar17 ^ uVar19) + 0xf61e2562 + iVar2;
+  uVar20 = (uVar20 * 0x20 | uVar20 >> 0x1b) + uVar18;
+  uVar17 = uVar17 + ((uVar18 ^ uVar20) & uVar19 ^ uVar18) + 0xc040b340 + iVar7;
+  uVar17 = (uVar17 * 0x200 | uVar17 >> 0x17) + uVar20;
+  uVar19 = uVar19 + ((uVar17 ^ uVar20) & uVar18 ^ uVar20) + 0x265e5a51 + iVar12;
+  uVar19 = (uVar19 * 0x4000 | uVar19 >> 0x12) + uVar17;
+  uVar18 = uVar18 + ((uVar17 ^ uVar19) & uVar20 ^ uVar17) + 0xe9b6c7aa + iVar1;
+  uVar18 = (uVar18 >> 0xc | uVar18 * 0x100000) + uVar19;
+  uVar20 = uVar20 + ((uVar19 ^ uVar18) & uVar17 ^ uVar19) + 0xd62f105d + iVar6;
+  uVar20 = (uVar20 * 0x20 | uVar20 >> 0x1b) + uVar18;
+  uVar17 = uVar17 + ((uVar18 ^ uVar20) & uVar19 ^ uVar18) + 0x2441453 + iVar11;
+  uVar17 = (uVar17 * 0x200 | uVar17 >> 0x17) + uVar20;
+  uVar19 = uVar19 + ((uVar17 ^ uVar20) & uVar18 ^ uVar20) + 0xd8a1e681 + iVar16;
+  uVar19 = (uVar19 * 0x4000 | uVar19 >> 0x12) + uVar17;
+  uVar18 = uVar18 + ((uVar17 ^ uVar19) & uVar20 ^ uVar17) + 0xe7d3fbc8 + iVar5;
+  uVar18 = (uVar18 >> 0xc | uVar18 * 0x100000) + uVar19;
+  uVar20 = uVar20 + ((uVar19 ^ uVar18) & uVar17 ^ uVar19) + 0x21e1cde6 + iVar10;
+  uVar20 = (uVar20 * 0x20 | uVar20 >> 0x1b) + uVar18;
+  uVar17 = uVar17 + 0xc33707d6 + ((uVar18 ^ uVar20) & uVar19 ^ uVar18) + iVar15;
+  uVar17 = (uVar17 * 0x200 | uVar17 >> 0x17) + uVar20;
+  uVar19 = uVar19 + ((uVar17 ^ uVar20) & uVar18 ^ uVar20) + 0xf4d50d87 + iVar4;
+  uVar21 = (uVar19 * 0x4000 | uVar19 >> 0x12) + uVar17;
+  uVar18 = uVar18 + ((uVar17 ^ uVar21) & uVar20 ^ uVar17) + 0x455a14ed + iVar9;
+  uVar18 = (uVar18 >> 0xc | uVar18 * 0x100000) + uVar21;
+  uVar20 = uVar20 + 0xa9e3e905 + ((uVar21 ^ uVar18) & uVar17 ^ uVar21) + iVar14;
+  uVar19 = (uVar20 * 0x20 | uVar20 >> 0x1b) + uVar18;
+  uVar20 = uVar17 + 0xfcefa3f8 + ((uVar18 ^ uVar19) & uVar21 ^ uVar18) + iVar3;
+  uVar22 = (uVar20 * 0x200 | uVar20 >> 0x17) + uVar19;
+  uVar20 = uVar21 + 0x676f02d9 + ((uVar22 ^ uVar19) & uVar18 ^ uVar19) + iVar8;
+  uVar20 = (uVar20 * 0x4000 | uVar20 >> 0x12) + uVar22;
+  uVar18 = uVar18 + 0x8d2a4c8a + ((uVar22 ^ uVar20) & uVar19 ^ uVar22) + iVar13;
+  uVar18 = (uVar18 >> 0xc | uVar18 * 0x100000) + uVar20;
+  uVar19 = uVar19 + ((uVar22 ^ uVar20 ^ uVar18) - 0x5c6be) + iVar6;
+  uVar17 = (uVar19 * 0x10 | uVar19 >> 0x1c) + uVar18;
+  uVar22 = uVar22 + (uVar20 ^ uVar18 ^ uVar17) + 0x8771f681 + iVar9;
+  uVar19 = (uVar22 * 0x800 | uVar22 >> 0x15) + uVar17;
+  uVar20 = uVar20 + (uVar19 ^ uVar18 ^ uVar17) + 0x6d9d6122 + iVar12;
+  uVar20 = (uVar20 * 0x10000 | uVar20 >> 0x10) + uVar19;
+  uVar18 = uVar18 + (uVar19 ^ uVar20 ^ uVar17) + 0xfde5380c + iVar15;
+  uVar18 = (uVar18 >> 9 | uVar18 * 0x800000) + uVar20;
+  uVar17 = uVar17 + (uVar19 ^ uVar20 ^ uVar18) + 0xa4beea44 + iVar2;
+  uVar17 = (uVar17 * 0x10 | uVar17 >> 0x1c) + uVar18;
+  uVar19 = uVar19 + (uVar20 ^ uVar18 ^ uVar17) + 0x4bdecfa9 + iVar5;
+  uVar21 = (uVar19 * 0x800 | uVar19 >> 0x15) + uVar17;
+  uVar20 = uVar20 + (uVar21 ^ uVar18 ^ uVar17) + 0xf6bb4b60 + iVar8;
+  uVar20 = (uVar20 * 0x10000 | uVar20 >> 0x10) + uVar21;
+  uVar18 = uVar18 + (uVar21 ^ uVar20 ^ uVar17) + 0xbebfbc70 + iVar11;
+  uVar18 = (uVar18 >> 9 | uVar18 * 0x800000) + uVar20;
+  uVar17 = uVar17 + (uVar21 ^ uVar20 ^ uVar18) + 0x289b7ec6 + iVar14;
+  uVar19 = (uVar17 * 0x10 | uVar17 >> 0x1c) + uVar18;
+  uVar21 = uVar21 + (uVar20 ^ uVar18 ^ uVar19) + 0xeaa127fa + iVar1;
+  uVar21 = (uVar21 * 0x800 | uVar21 >> 0x15) + uVar19;
+  uVar20 = uVar20 + (uVar21 ^ uVar18 ^ uVar19) + 0xd4ef3085 + iVar4;
+  uVar17 = (uVar20 * 0x10000 | uVar20 >> 0x10) + uVar21;
+  uVar18 = uVar18 + (uVar21 ^ uVar17 ^ uVar19) + 0x4881d05 + iVar7;
+  uVar20 = (uVar18 >> 9 | uVar18 * 0x800000) + uVar17;
+  uVar18 = (uVar21 ^ uVar17 ^ uVar20) + iVar10 + uVar19 + 0xd9d4d039;
+  uVar18 = (uVar18 * 0x10 | uVar18 >> 0x1c) + uVar20;
+  uVar19 = uVar21 + 0xe6db99e5 + (uVar17 ^ uVar20 ^ uVar18) + iVar13;
+  uVar19 = (uVar19 * 0x800 | uVar19 >> 0x15) + uVar18;
+  uVar17 = (uVar19 ^ uVar20 ^ uVar18) + 0x1fa27cf8 + iVar16 + uVar17;
+  uVar21 = (uVar17 * 0x10000 | uVar17 >> 0x10) + uVar19;
+  uVar20 = uVar20 + (uVar19 ^ uVar21 ^ uVar18) + 0xc4ac5665 + iVar3;
+  uVar20 = (uVar20 >> 9 | uVar20 * 0x800000) + uVar21;
+  uVar18 = uVar18 + ((~uVar19 | uVar20) ^ uVar21) + 0xf4292244 + iVar1;
+  uVar18 = (uVar18 * 0x40 | uVar18 >> 0x1a) + uVar20;
+  uVar19 = uVar19 + ((~uVar21 | uVar18) ^ uVar20) + 0x432aff97 + iVar8;
+  uVar17 = (uVar19 * 0x400 | uVar19 >> 0x16) + uVar18;
+  uVar21 = uVar21 + ((~uVar20 | uVar17) ^ uVar18) + 0xab9423a7 + iVar15;
+  uVar19 = (uVar21 * 0x8000 | uVar21 >> 0x11) + uVar17;
+  uVar20 = uVar20 + ((~uVar18 | uVar19) ^ uVar17) + 0xfc93a039 + iVar6;
+  uVar20 = (uVar20 >> 0xb | uVar20 * 0x200000) + uVar19;
+  uVar18 = uVar18 + ((~uVar17 | uVar20) ^ uVar19) + 0x655b59c3 + iVar13;
+  uVar18 = (uVar18 * 0x40 | uVar18 >> 0x1a) + uVar20;
+  uVar17 = uVar17 + ((~uVar19 | uVar18) ^ uVar20) + 0x8f0ccc92 + iVar4;
+  uVar17 = (uVar17 * 0x400 | uVar17 >> 0x16) + uVar18;
+  uVar19 = uVar19 + (((~uVar20 | uVar17) ^ uVar18) - 0x100b83) + iVar11;
+  uVar21 = (uVar19 * 0x8000 | uVar19 >> 0x11) + uVar17;
+  uVar20 = uVar20 + ((~uVar18 | uVar21) ^ uVar17) + 0x85845dd1 + iVar2;
+  uVar20 = (uVar20 >> 0xb | uVar20 * 0x200000) + uVar21;
+  uVar18 = uVar18 + ((~uVar17 | uVar20) ^ uVar21) + 0x6fa87e4f + iVar9;
+  uVar18 = (uVar18 * 0x40 | uVar18 >> 0x1a) + uVar20;
+  uVar17 = uVar17 + ((~uVar21 | uVar18) ^ uVar20) + 0xfe2ce6e0 + iVar16;
+  uVar19 = (uVar17 * 0x400 | uVar17 >> 0x16) + uVar18;
+  uVar17 = uVar21 + 0xa3014314 + ((~uVar20 | uVar19) ^ uVar18) + iVar7;
+  uVar17 = (uVar17 * 0x8000 | uVar17 >> 0x11) + uVar19;
+  uVar20 = uVar20 + ((~uVar18 | uVar17) ^ uVar19) + 0x4e0811a1 + iVar14;
+  uVar20 = (uVar20 >> 0xb | uVar20 * 0x200000) + uVar17;
+  uVar18 = uVar18 + 0xf7537e82 + ((~uVar19 | uVar20) ^ uVar17) + iVar5;
+  uVar21 = (uVar18 * 0x40 | uVar18 >> 0x1a) + uVar20;
+  uVar19 = uVar19 + ((~uVar17 | uVar21) ^ uVar20) + 0xbd3af235 + iVar12;
+  uVar19 = (uVar19 * 0x400 | uVar19 >> 0x16) + uVar21;
+  uVar18 = uVar17 + 0x2ad7d2bb + ((~uVar20 | uVar19) ^ uVar21) + iVar3;
+  *in_ECX = *in_ECX + uVar21;
+  uVar17 = (uVar18 * 0x8000 | uVar18 >> 0x11) + uVar19;
+  in_ECX[2] = in_ECX[2] + uVar17;
+  uVar18 = uVar20 + 0xeb86d391 + ((~uVar21 | uVar17) ^ uVar19) + iVar10;
+  in_ECX[1] = in_ECX[1] + (uVar18 >> 0xb | uVar18 * 0x200000) + uVar17;
+  in_ECX[3] = in_ECX[3] + uVar19;
+  return;
+}
+

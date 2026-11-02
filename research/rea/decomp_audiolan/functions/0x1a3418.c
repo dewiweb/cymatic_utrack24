@@ -1,0 +1,95 @@
+// rea decompile_all
+// name: FUN_001a3418
+// address: 0x1a3418
+// body: available
+// range: 0x1a3418-0x1a3505 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: dc47711df08874f4cf3d1d83bbc653d5d7e81a6923a356173f8ed1dbb4060c20
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Headerless raw-binary analysis uses the caller-supplied architecture and entry address; file offset 0 is mapped at that address. Headers are not discovered from file bytes.; Little-endian generic Ghidra languages are used for x86, x86_64, arm, arm64, and NMOS 6502; m68k uses the big-endian 68000 default language, which decodes the 68040 superset. Big-endian ARM, Thumb-only, Cortex-M, 65C02, 65816, separate 68020/68030/CPU32/ColdFire variants, and other processor variants are unsupported in this increment.; Static analysis does not emulate reset vectors, memory-mapped I/O, or firmware boot sequences.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+int FUN_001a3418(int *param_1,undefined4 *param_2)
+
+{
+  undefined4 *puVar1;
+  int *piVar2;
+  int iVar3;
+  int iVar4;
+  undefined4 uVar5;
+  code *pcVar6;
+  undefined4 local_1c;
+  int *local_18;
+  
+  *param_2 = 0;
+  if (param_1 == (int *)0x0) {
+    return -2;
+  }
+  if ((code *)*DAT_001a3508 == entry) {
+    piVar2 = (int *)FUN_0019b388(0x10);
+  }
+  else {
+    piVar2 = (int *)(*(code *)*DAT_001a3508)(0x10);
+  }
+  if (piVar2 != (int *)0x0) {
+    *piVar2 = 0;
+    piVar2[1] = 0;
+    FUN_001a4c50();
+    if (*param_1 != 0) {
+      iVar3 = FUN_001a6f50();
+      *piVar2 = iVar3;
+    }
+    if (param_1[1] != 0) {
+      iVar3 = FUN_001a6f50();
+      piVar2[1] = iVar3;
+    }
+    iVar3 = 0;
+    local_18 = param_1 + 2;
+    while( true ) {
+      iVar4 = FUN_001a4bc4(local_18,iVar3);
+      if (iVar4 != 0) {
+        *param_2 = piVar2;
+        return 0;
+      }
+      uVar5 = FUN_001a4bdc(local_18,iVar3);
+      iVar4 = FUN_001a7b30(uVar5,&local_1c);
+      puVar1 = DAT_001a350c;
+      if (iVar4 != 0) break;
+      FUN_001a4a80(piVar2 + 2,local_1c,0xffffffff);
+      iVar3 = iVar3 + 1;
+    }
+    if (piVar2 != (int *)0x0) {
+      if (*piVar2 != 0) {
+        if ((code *)*DAT_001a350c == entry) {
+          FUN_0018a280();
+        }
+        else {
+          (*(code *)*DAT_001a350c)();
+        }
+      }
+      if (piVar2[1] != 0) {
+        pcVar6 = (code *)*puVar1;
+        if (pcVar6 == entry) {
+          FUN_0018a280();
+        }
+        else {
+          (*pcVar6)();
+        }
+      }
+      FUN_001a7bd8(piVar2 + 2);
+      *piVar2 = 0;
+      piVar2[1] = 0;
+      pcVar6 = (code *)*puVar1;
+      if (pcVar6 == entry) {
+        FUN_0018a280(piVar2);
+      }
+      else {
+        (*pcVar6)(piVar2);
+      }
+    }
+    return iVar4;
+  }
+  return -4;
+}
+

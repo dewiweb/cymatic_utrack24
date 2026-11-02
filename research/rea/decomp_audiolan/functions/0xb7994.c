@@ -1,0 +1,69 @@
+// rea decompile_all
+// name: FUN_000b7994
+// address: 0xb7994
+// body: available
+// range: 0xb7994-0xb7a73 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: dc47711df08874f4cf3d1d83bbc653d5d7e81a6923a356173f8ed1dbb4060c20
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Headerless raw-binary analysis uses the caller-supplied architecture and entry address; file offset 0 is mapped at that address. Headers are not discovered from file bytes.; Little-endian generic Ghidra languages are used for x86, x86_64, arm, arm64, and NMOS 6502; m68k uses the big-endian 68000 default language, which decodes the 68040 superset. Big-endian ARM, Thumb-only, Cortex-M, 65C02, 65816, separate 68020/68030/CPU32/ColdFire variants, and other processor variants are unsupported in this increment.; Static analysis does not emulate reset vectors, memory-mapped I/O, or firmware boot sequences.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+uint FUN_000b7994(int *param_1,undefined4 param_2)
+
+{
+  byte bVar1;
+  undefined4 uVar2;
+  undefined4 uVar3;
+  int *piVar4;
+  int iVar5;
+  byte *pbVar6;
+  code *pcVar7;
+  uint uVar8;
+  undefined4 local_50;
+  int *local_4c;
+  code *pcStack_48;
+  uint uStack_44;
+  undefined1 local_40;
+  undefined4 local_3c;
+  undefined4 local_38 [7];
+  byte local_1c [4];
+  
+  pcVar7 = (code *)*DAT_000b7a74;
+  uVar8 = DAT_000b7a74[1];
+  piVar4 = (int *)FUN_0017b3e4();
+  uVar3 = DAT_000b7a7c;
+  uVar2 = DAT_000b7a78;
+  if (piVar4 != param_1 + 1) {
+    local_50 = DAT_000b7a78;
+    local_40 = (undefined1)param_2;
+    local_3c = DAT_000b7a7c;
+    local_38[0] = 0;
+    local_4c = param_1;
+    pcStack_48 = pcVar7;
+    uStack_44 = uVar8;
+    FUN_0017a1c4(local_38,DAT_000b7a80,0,0);
+    thunk_EXT_FUN_00400100(local_38);
+    (**(code **)(*param_1 + 0x2c))(param_1,&local_50,0xffffffff);
+    iVar5 = thunk_EXT_FUN_004001ec(local_38,0xffffffff);
+    if (iVar5 == 0) {
+      pbVar6 = local_1c;
+    }
+    else {
+      pbVar6 = (byte *)0x0;
+    }
+    bVar1 = *pbVar6;
+    local_3c = uVar3;
+    local_50 = uVar2;
+    FUN_0017a254(local_38);
+    return (uint)bVar1;
+  }
+  param_1 = (int *)((int)param_1 + ((int)uVar8 >> 1));
+  if ((uVar8 & 1) != 0) {
+    pcVar7 = *(code **)(pcVar7 + *param_1);
+  }
+  uVar8 = (*pcVar7)(param_1,param_2);
+  return uVar8;
+}
+

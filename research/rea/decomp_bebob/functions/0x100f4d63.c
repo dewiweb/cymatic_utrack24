@@ -1,0 +1,79 @@
+// rea decompile_all
+// name: CCellObj::DrawSelected
+// address: 0x100f4d63
+// body: available
+// range: 0x100f4d63-0x100f4f04 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: __EH_prolog3_GS replaced with injection: EH_prolog3 */
+/* Library Function - Single Match
+    private: void __thiscall CCellObj::DrawSelected(class CDC *)
+   
+   Library: Visual Studio 2010 Release */
+
+void __thiscall CCellObj::DrawSelected(CCellObj *this,CDC *param_1)
+
+{
+  HGDIOBJ pvVar1;
+  CGdiObject *pCVar2;
+  HRGN pHVar3;
+  undefined **local_c4;
+  undefined4 local_c0;
+  CGdiObject *local_bc;
+  undefined **local_b8;
+  undefined4 local_b4;
+  undefined **local_b0;
+  undefined4 local_ac;
+  CDC *local_a8;
+  tagPOINT local_a4 [6];
+  tagPOINT local_74 [6];
+  tagPOINT local_44 [7];
+  int local_8;
+  undefined4 uStack_4;
+  
+  uStack_4 = 0xb8;
+  local_8 = 0x100f4d72;
+  local_a8 = param_1;
+  pvVar1 = GetStockObject(0);
+  pCVar2 = CGdiObject::FromHandle(pvVar1);
+  pvVar1 = GetStockObject(4);
+  local_bc = CGdiObject::FromHandle(pvVar1);
+  local_b4 = 0;
+  local_b8 = CRgn::vftable;
+  local_ac = 0;
+  local_b0 = CRgn::vftable;
+  local_c0 = 0;
+  local_c4 = CRgn::vftable;
+  local_8._0_1_ = 2;
+  local_8._1_3_ = 0;
+  GetPoints(this,*(int *)(this + 0x3c),*(int *)(this + 0x40) + -1,*(int *)(this + 0x44) + 2,local_a4
+           );
+  pHVar3 = CreatePolygonRgn(local_a4,6,1);
+  CMenu::Attach((CMenu *)&local_b0,(HMENU__ *)pHVar3);
+  CDC::FrameRgn(local_a8,(CRgn *)&local_b0,(CBrush *)pCVar2,2,2);
+  GetPoints(this,*(int *)(this + 0x3c),*(int *)(this + 0x40),*(int *)(this + 0x44) + 2,local_74);
+  pHVar3 = CreatePolygonRgn(local_74,6,1);
+  CMenu::Attach((CMenu *)&local_c4,(HMENU__ *)pHVar3);
+  CDC::FrameRgn(local_a8,(CRgn *)&local_c4,(CBrush *)local_bc,1,1);
+  GetPoints(this,*(int *)(this + 0x3c),*(int *)(this + 0x40),*(int *)(this + 0x44) + -1,local_44);
+  pHVar3 = CreatePolygonRgn(local_44,6,1);
+  CMenu::Attach((CMenu *)&local_b8,(HMENU__ *)pHVar3);
+  CDC::FrameRgn(local_a8,(CRgn *)&local_b8,(CBrush *)local_bc,1,1);
+  local_8._0_1_ = 1;
+  local_c4 = CRgn::vftable;
+  CImageList::~CImageList((CImageList *)&local_c4);
+  local_8 = (uint)local_8._1_3_ << 8;
+  local_b0 = CRgn::vftable;
+  CImageList::~CImageList((CImageList *)&local_b0);
+  local_8 = 0xffffffff;
+  local_b8 = CRgn::vftable;
+  CImageList::~CImageList((CImageList *)&local_b8);
+  FUN_100f90cf();
+  return;
+}
+

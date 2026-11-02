@@ -1,0 +1,49 @@
+// rea decompile_all
+// name: FUN_10007dd0
+// address: 0x10007dd0
+// body: available
+// range: 0x10007dd0-0x10007e6b inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x10007e0f to 0x10001000 FUN_10001000 (external=false, thunk=false, hasNoReturn=true); fallthrough is excluded by Ghidra's flow model. This records Ghidra's FunctionManager flag, not an independent verification that the callee cannot return.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+int * __thiscall FUN_10007dd0(void *this,LPCSTR param_1)
+
+{
+  uint uVar1;
+  undefined **ppuVar2;
+  int iVar3;
+  HMODULE pHVar4;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_1010e938;
+  local_10 = ExceptionList;
+  uVar1 = DAT_10163564 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  ppuVar2 = FUN_1000ad47();
+  if (ppuVar2 == (undefined **)0x0) {
+                    /* WARNING: Subroutine does not return */
+    FUN_10001000((undefined4 *)0x80004005);
+  }
+  iVar3 = (**(code **)(*ppuVar2 + 0xc))(uVar1);
+  *(int *)this = iVar3 + 0x10;
+  local_8 = 0;
+  if ((param_1 == (LPCSTR)0x0) || (((uint)param_1 & 0xffff0000) != 0)) {
+    FUN_10006450(this,param_1);
+  }
+  else {
+    pHVar4 = (HMODULE)FUN_1000ac62();
+    if (pHVar4 != (HMODULE)0x0) {
+      FUN_10006200(this,pHVar4,(uint)param_1 & 0xffff);
+    }
+  }
+  ExceptionList = local_10;
+  return this;
+}
+

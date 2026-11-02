@@ -1,0 +1,37 @@
+// rea decompile_all
+// name: CThemeHelper::GetProc
+// address: 0x100d33f7
+// body: available
+// range: 0x100d33f7-0x100d344a inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* WARNING: Function: __EH_prolog3 replaced with injection: EH_prolog3 */
+/* WARNING: Function: __EH_epilog3 replaced with injection: EH_epilog3 */
+/* Library Function - Single Match
+    private: static void * __cdecl CThemeHelper::GetProc(char const *,void *)
+   
+   Library: Visual Studio 2010 Release */
+
+void * __cdecl CThemeHelper::GetProc(char *param_1,void *param_2)
+
+{
+  FARPROC pFVar1;
+  
+  if ((DAT_101696a4 & 1) == 0) {
+    DAT_101696a4 = DAT_101696a4 | 1;
+    DAT_101696a0 = AfxCtxLoadLibraryW(L"UxTheme.dll");
+  }
+  if (DAT_101696a0 != (HMODULE)0x0) {
+    pFVar1 = GetProcAddress(DAT_101696a0,param_1);
+    if (pFVar1 != (FARPROC)0x0) {
+      param_2 = pFVar1;
+    }
+  }
+  return param_2;
+}
+

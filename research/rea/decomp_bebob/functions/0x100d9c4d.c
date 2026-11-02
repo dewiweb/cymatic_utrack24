@@ -1,0 +1,48 @@
+// rea decompile_all
+// name: CPreviewView::CalcPageDisplaySize
+// address: 0x100d9c4d
+// body: available
+// range: 0x100d9c4d-0x100d9cda inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e763201e522a4b123fb330eede09834c44ddf2bb90702e50eea219801be95539
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB BebobDriverInterface.pdb (GUID 5d64f97b-6aff-43bd-a8e2-d8877626c9d1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+/* Library Function - Single Match
+    protected: class CSize __thiscall CPreviewView::CalcPageDisplaySize(void)
+   
+   Library: Visual Studio 2010 Release */
+
+CSize * __thiscall CPreviewView::CalcPageDisplaySize(CPreviewView *this)
+
+{
+  short sVar1;
+  int iVar2;
+  CSize *in_stack_00000004;
+  int local_c [2];
+  
+  *(undefined4 *)in_stack_00000004 = 0;
+  *(undefined4 *)(in_stack_00000004 + 4) = 0;
+  local_c[0] = 0;
+  local_c[1] = 0;
+  CScrollView::GetTrueClientSize((CScrollView *)this,in_stack_00000004,(CSize *)local_c);
+  if (*(int *)(this + 0x130) == 0) {
+    sVar1 = *(short *)(*(int *)(**(int **)(this + 0x158) + 0x94) + 0x1e);
+    if ((sVar1 != -1) && (sVar1 != *(short *)(*(int *)(**(int **)(this + 0x158) + 0x94) + 0x1c))) {
+      *(int *)in_stack_00000004 = *(int *)in_stack_00000004 - local_c[0];
+    }
+  }
+  *(int *)(this + 0x140) = (*(int *)in_stack_00000004 + -8) / 2;
+  if (*(int *)(this + 0x13c) == 2) {
+    iVar2 = (*(int *)in_stack_00000004 + -0x18) / 2;
+  }
+  else {
+    iVar2 = *(int *)in_stack_00000004 + -0x10;
+  }
+  *(int *)(in_stack_00000004 + 4) = *(int *)(in_stack_00000004 + 4) + -0x10;
+  *(int *)in_stack_00000004 = iVar2;
+  return in_stack_00000004;
+}
+

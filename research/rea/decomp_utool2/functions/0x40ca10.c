@@ -1,0 +1,72 @@
+// rea decompile_all
+// name: FUN_0040ca10
+// address: 0x40ca10
+// body: available
+// range: 0x40ca10-0x40cb19 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e1ad533d4cc0333c2136fe0894217de2d61feea098240326e78633f9e4ddcbf9
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; The Ghidra Program references PDB uTool2.pdb (GUID 68172065-e825-46ab-8f91-aa0fc99e9bf1, age (hex) 1, signature unknown, version RSDS); Ghidra reports load state unknown. Original names and types may be missing; an empty name search does not prove a procedure is absent. Use list_procedures and address-based analysis to inspect recovered functions. REA does not admit a caller-selected PDB companion.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_0040ca10(undefined8 *param_1,undefined4 param_2,int *param_3)
+
+{
+  int *piVar1;
+  int iVar2;
+  int *piVar3;
+  int *in_ECX;
+  undefined1 auStack_30 [4];
+  undefined4 uStack_2c;
+  undefined **ppuStack_28;
+  undefined4 uStack_24;
+  uint uStack_20;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  local_8 = 0xffffffff;
+  puStack_c = &LAB_006fc732;
+  local_10 = ExceptionList;
+  uStack_20 = DAT_00c76070 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  ppuStack_28 = &PTR_DAT_00c7ed68;
+  uStack_2c = 0x40ca45;
+  FUN_006e8060();
+  piVar1 = in_ECX + 0x2b;
+  *piVar1 = (int)juce::ListBoxModel::vftable;
+  *in_ECX = (int)MyAudioDeviceSettingsPanel::ChannelSelectorListBox::vftable;
+  in_ECX[0x1c] = (int)MyAudioDeviceSettingsPanel::ChannelSelectorListBox::vftable;
+  *piVar1 = (int)MyAudioDeviceSettingsPanel::ChannelSelectorListBox::vftable;
+  *(undefined8 *)(in_ECX + 0x2c) = *param_1;
+  in_ECX[0x2e] = *(int *)(param_1 + 1);
+  in_ECX[0x2f] = 0;
+  iVar2 = *param_3;
+  in_ECX[0x30] = iVar2;
+  piVar3 = (int *)(iVar2 + -8);
+  if (piVar3 != &DAT_00bfe124) {
+    LOCK();
+    *piVar3 = *piVar3 + 1;
+    UNLOCK();
+  }
+  in_ECX[0x31] = 0;
+  in_ECX[0x32] = 0;
+  in_ECX[0x33] = 0;
+  local_8 = 3;
+  uStack_24 = 0x40cace;
+  FUN_0040cb20();
+  if ((int *)in_ECX[0x1e] != piVar1) {
+    in_ECX[0x1e] = (int)piVar1;
+    FUN_006e6400(auStack_30);
+    FUN_006ce9f0(1);
+    uStack_24 = 0x40caf1;
+    FUN_006e7e60();
+  }
+  in_ECX[0x25] = 1;
+  uStack_24 = 0x40cb05;
+  (**(code **)(*in_ECX + 0x84))();
+  ExceptionList = local_10;
+  return;
+}
+
