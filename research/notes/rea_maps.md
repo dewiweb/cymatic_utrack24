@@ -673,3 +673,11 @@ Absent du binaire uRemote — classe instanciee uniquement cote VNM
 (member-record broadcast). uRemote le lit via le parseur generique
 (base CCPMessage sans ctor nomme). Son format TLV <type u16|len u16|
 payload> est decode en section 21.
+
+## 31. Transport = write param standard (0x10002361 SM_D_RecordingControl)
+
+Ctor 0x5874a0 -> vftable 0x5ea308 (meme Generic family). Le controle
+record/play/stop = un write param 20B: param_id = noeud du tree
+(les noms Idle/Play-Pause/On de announce_controls.tsv sont ces
+selecteurs), value = action. Pas de message transport special —
+tout passe par le format unique. Le tree VNM porte tout.
