@@ -681,3 +681,11 @@ record/play/stop = un write param 20B: param_id = noeud du tree
 (les noms Idle/Play-Pause/On de announce_controls.tsv sont ces
 selecteurs), value = action. Pas de message transport special —
 tout passe par le format unique. Le tree VNM porte tout.
+
+## 32. Groupe file SDS (ops texte, pas de transfert binaire)
+
+file open/read/write/dir/create/move/remove/seek/tell/size/stat/info/free
+/close/print — outputs texte: "file size done: %u bytes", "file info",
+"file created: %ls", erreurs "file open failed with %d". Pas de chemin
+binaire brut => transfert de fichiers = autre canal (FTP/HTTP/uTool USB).
+Le .set upload/update via /api/fileupload (REST, section 9).
