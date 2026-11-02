@@ -689,3 +689,10 @@ file open/read/write/dir/create/move/remove/seek/tell/size/stat/info/free
 "file created: %ls", erreurs "file open failed with %d". Pas de chemin
 binaire brut => transfert de fichiers = autre canal (FTP/HTTP/uTool USB).
 Le .set upload/update via /api/fileupload (REST, section 9).
+
+## 33. Writers uTool2 playlist
+
+FUN_005501d0 / FUN_005581e0 (refs playlist_project) — pas de tags XML
+inline; noms construits via le writer XML generique (s_profile = suffix
+de fichier .play?). "Autoplay" = playlist speciale autoplay.play.
+Le writer song.set (FUN_005406f0, doc WSL) reste le format principal.
