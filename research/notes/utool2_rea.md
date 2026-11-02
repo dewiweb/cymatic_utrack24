@@ -16,3 +16,17 @@
 - Types : "Multitrack Playlists" vs "Stereo Playlists" (devices cibles differents — "song type not matching target device")
 - "Playlist rejected (missing Song)" : validation refs
 - "Export only new content and any modified song settings and playlist files." : export differentiel
+
+## Schema .playlistprj (XML)
+`ns0:playlist_project` > `playlist_name`, `song_projects` > `song_project` > `song_project_name`,
+`track_count`, `song_name`, `song_type`, `markers` > `marker`. Dir librairie = `PlaylistLib`.
+
+## Chaine export (device)
+- `FUN_00595b20` (export walker) <- `FUN_00593a60`, `FUN_005979c0` (2 points d'entree export)
+- `FUN_005955a0` (par song) : decide nouveau/modifie (types 1-4), cumule octets @param_7/10 — export differentiel
+- `FUN_00551b30` (4.7K) : resolution chemins projet (.play/.playlistprj/#PLAYLISTS) — PAS le serialiseur binaire
+- `.play` = fichier binaire device (dans `#PLAYLISTS/`); le serialiseur reste a identifier (suivre les writers dans l'export)
+
+## Formats confirmes
+- stereo playlists -> `Recording/`, multitrack -> `MultiTrack/`, musique libre -> `Music/`
+- RTTI : `PlaylistContentList/Item`, `ProjectExplorerItem_Song` (type via FUN_006f6dd6)
