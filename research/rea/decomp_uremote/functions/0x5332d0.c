@@ -1,0 +1,53 @@
+// rea decompile_all
+// name: FUN_005332d0
+// address: 0x5332d0
+// body: available
+// range: 0x5332d0-0x5333ef inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e1ad533d4cc0333c2136fe0894217de2d61feea098240326e78633f9e4ddcbf9
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+undefined4 *
+FUN_005332d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined1 param_4)
+
+{
+  int iVar1;
+  int in_ECX;
+  undefined4 *local_24;
+  
+  *(undefined2 *)(in_ECX + 0x4c) = 0x10c0;
+  *(undefined4 *)(in_ECX + 0x48) = 0;
+  local_24 = (undefined4 *)FUN_005af82d(0x28);
+  if (local_24 == (undefined4 *)0x0) {
+    local_24 = (undefined4 *)0x0;
+  }
+  else {
+    *local_24 = CPNS::ISerializable::vftable;
+    local_24[1] = CPG::CPListItem<CPG::CCPMessage_Generic>::vftable;
+    local_24[2] = 0;
+    local_24[3] = 0;
+    *local_24 = CPG::CCPMessage_Generic::vftable;
+    local_24[1] = CPG::CCPMessage_Generic::vftable;
+    local_24[4] = 0x10041031;
+    *local_24 = CPG::CCPMessage_NCM_NetworkLatencyReply::vftable;
+    local_24[1] = CPG::CCPMessage_NCM_NetworkLatencyReply::vftable;
+    local_24[6] = param_1;
+    local_24[7] = param_2;
+    local_24[8] = param_3;
+    *(undefined1 *)(local_24 + 9) = param_4;
+  }
+  if (local_24 != (undefined4 *)0x0) {
+    iVar1 = FUN_0052f740(local_24);
+    if (iVar1 == 0) {
+      return local_24;
+    }
+    if (local_24 != (undefined4 *)0x0) {
+      (**(code **)*local_24)(1);
+    }
+  }
+  return (undefined4 *)0x0;
+}
+

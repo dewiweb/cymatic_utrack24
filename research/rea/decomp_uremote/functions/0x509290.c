@@ -1,0 +1,277 @@
+// rea decompile_all
+// name: FUN_00509290
+// address: 0x509290
+// body: available
+// range: 0x509290-0x50a1c6 inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e1ad533d4cc0333c2136fe0894217de2d61feea098240326e78633f9e4ddcbf9
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_00509290(undefined4 param_1,undefined4 param_2,int param_3)
+
+{
+  undefined4 uVar1;
+  HANDLE pvVar2;
+  BOOL BVar3;
+  undefined4 *in_ECX;
+  undefined4 *local_14c;
+  char local_118 [260];
+  uint local_14;
+  void *local_10;
+  undefined1 *puStack_c;
+  undefined4 local_8;
+  
+  puStack_c = &LAB_005ceb3a;
+  local_10 = ExceptionList;
+  local_14 = DAT_00955fd4 ^ (uint)&stack0xfffffffc;
+  ExceptionList = &local_10;
+  if (param_3 != 0) {
+    in_ECX[3] = &DAT_005e8f0c;
+    in_ECX[0x2d7] = CPNS::ICHAI::vftable;
+  }
+  *in_ECX = CPG::IThreadNotificationHandler::vftable;
+  in_ECX[1] = CPG::ITaskManagerHandler::vftable;
+  in_ECX[2] = CPG::IMessageLinkCHAINotificationHandler::vftable;
+  local_8._1_3_ = 0;
+  local_8._0_1_ = 3;
+  *in_ECX = CPCHAI::CCHAICore::vftable;
+  in_ECX[1] = CPCHAI::CCHAICore::vftable;
+  in_ECX[2] = CPCHAI::CCHAICore::vftable;
+  *(undefined ***)((int)in_ECX + *(int *)(in_ECX[3] + 4) + 0xc) = CPCHAI::CCHAICore::vftable;
+  *(int *)((int)in_ECX + *(int *)(in_ECX[3] + 4) + 8) = *(int *)(in_ECX[3] + 4) + -0xb50;
+  in_ECX[5] = param_1;
+  in_ECX[0xd] = "CHAICore";
+  FUN_005157a0(local_14);
+  in_ECX[6] = 0;
+  InitializeCriticalSection((LPCRITICAL_SECTION)(in_ECX + 7));
+  local_8._0_1_ = 4;
+  in_ECX[0x1c] = param_2;
+  FUN_005017d0();
+  local_8._0_1_ = 5;
+  FUN_0052def0();
+  local_8._0_1_ = 6;
+  *(undefined1 *)((int)in_ECX + 0xad) = 1;
+  *(undefined1 *)((int)in_ECX + 0xae) = 1;
+  *(undefined1 *)((int)in_ECX + 0xaf) = 1;
+  *(undefined2 *)(in_ECX + 0x2c) = 0;
+  uVar1 = FUN_00514fd0();
+  in_ECX[0x2d] = uVar1;
+  FUN_005017d0();
+  local_8._0_1_ = 7;
+  in_ECX[0x30] = 0;
+  in_ECX[0x31] = 0x32;
+  in_ECX[0x32] = 0;
+  in_ECX[0x33] = 0;
+  FUN_005017d0();
+  in_ECX[0x36] = 0;
+  *(undefined2 *)(in_ECX + 0x38) = 0;
+  in_ECX[0x37] = 0;
+  *(undefined2 *)(in_ECX + 0x39) = 0;
+  *(undefined2 *)(in_ECX + 0x3b) = 0;
+  in_ECX[0x3a] = 0;
+  local_8._0_1_ = 10;
+  in_ECX[0x3c] = 0;
+  in_ECX[0x3d] = 0;
+  in_ECX[0x3e] = 0;
+  *(undefined2 *)(in_ECX + 0x3f) = 1;
+  *(undefined2 *)((int)in_ECX + 0xfe) = 1;
+  FUN_00506310();
+  local_8._0_1_ = 0xb;
+  FUN_005017d0();
+  local_8._0_1_ = 0xc;
+  in_ECX[0x46] = 0;
+  in_ECX[0x47] = 2;
+  in_ECX[0x48] = 0;
+  FUN_0052cf60();
+  local_8._0_1_ = 0xd;
+  FUN_005017d0();
+  local_8._0_1_ = 0xe;
+  FUN_005017d0();
+  local_8._0_1_ = 0xf;
+  FUN_005017d0();
+  local_8._0_1_ = 0x10;
+  FUN_0052ccb0(in_ECX);
+  local_8._0_1_ = 0x11;
+  in_ECX[0xef] = "CHAICore";
+  FUN_005157a0();
+  pvVar2 = CreateEventA((LPSECURITY_ATTRIBUTES)0x0,0,0,(LPCSTR)0x0);
+  in_ECX[0xee] = pvVar2;
+  local_8._0_1_ = 0x12;
+  if (in_ECX == (undefined4 *)0x0) {
+    local_14c = (undefined4 *)0x0;
+  }
+  else {
+    local_14c = in_ECX + 1;
+  }
+  FUN_0052c4a0(local_14c);
+  local_8._0_1_ = 0x13;
+  FUN_00529dd0(in_ECX);
+  local_8._0_1_ = 0x14;
+  FUN_00528ab0();
+  local_8._0_1_ = 0x15;
+  FUN_00528040(in_ECX);
+  local_8._0_1_ = 0x16;
+  FUN_00523eb0(in_ECX);
+  local_8._0_1_ = 0x17;
+  FUN_00523650(in_ECX);
+  local_8._0_1_ = 0x18;
+  FUN_00521a10(in_ECX);
+  local_8._0_1_ = 0x19;
+  FUN_005211d0(in_ECX);
+  local_8._0_1_ = 0x1a;
+  FUN_0051f6c0();
+  local_8._0_1_ = 0x1b;
+  FUN_00519ae0();
+  local_8._0_1_ = 0x1c;
+  FUN_005171d0(in_ECX);
+  local_8._0_1_ = 0x1d;
+  FUN_00515cb0();
+  local_8._0_1_ = 0x1e;
+  FUN_00508190(in_ECX);
+  local_8._0_1_ = 0x1f;
+  FUN_00512520(in_ECX + 0x2c2,"ICHAI_NotificationHandler");
+  in_ECX[0x2c8] = CPCHAI::NotificationManager_CHAI::vftable;
+  local_8._0_1_ = 0x20;
+  FUN_0052e740(in_ECX);
+  FUN_00515a50();
+  local_8 = CONCAT31(local_8._1_3_,0x21);
+  *(undefined1 *)(in_ECX + 0x2b) = 0;
+  in_ECX[0x4d] = 0;
+  *(undefined1 *)(in_ECX + 0x4e) = 0;
+  *(undefined2 *)(in_ECX + 0x54) = 0;
+  *(undefined2 *)(in_ECX + 0x57) = 0;
+  in_ECX[0x5c] = 5;
+  DAT_0095c938 = 0;
+  BVar3 = QueryPerformanceFrequency((LARGE_INTEGER *)&DAT_0095c940);
+  if (BVar3 != 0) {
+    DAT_0095c938 = 1;
+  }
+  FUN_005063e0();
+  uVar1 = FUN_0052e6e0();
+  FUN_0052e3e0(uVar1);
+  in_ECX[0x46] = 0;
+  in_ECX[0x4a] = 0;
+  in_ECX[0x4b] = 0;
+  in_ECX[0x4c] = 0;
+  OutputDebugStringA("Footprint report:\n");
+  _sprintf(local_118,"CAppInternalControlMessage: %i\n",0x110);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"AppEventMessage: %i\n",0xbc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CAppMIDISysex: %i\n",0x1ac);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"AppModifierMessage: %i\n",0xc4);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"AppSelectorMessage: %i\n",0xbc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"AppTextMessage: %i\n",0xc4);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"BaseAppMessage: %i\n",0x98);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"BaseLocalDevice: %i\n",0x194);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CCHAICore: %i\n",0xb60);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CCHAIDevice: %i\n",0x14);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CCHAIObject: %i\n",0x5c);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CCHAIPort: %i\n",0xb0);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CCP2MIDILocalDevice: %i\n",0x208);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CDestinationItem: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CDestinationCollection: %i\n",0x14);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CSourceItem: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CSourceCollection: %i\n",0xc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CDeviceIDSourceCollection: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CDeviceIDDestinationCollection: %i\n",0xc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CDeviceManager: %i\n",0x44);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CFlowControlOutgoingCollectionItem: %i\n",0x24);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CFlowControlOutgoingCollection: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CFlowControlIncomingCollectionItemKey: %i\n",0x18);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CFlowControlIncomingCollectionItem: %i\n",0x28);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CFlowControlIncomingCollection: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CFlowControl: %i\n",0x24);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CHybridMIDILocalDevice: %i\n",0x208);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"Input: %i\n",0x138);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CLocalDevice: %i\n",0x1a0);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"MIDI2CPLocalDevice: %i\n",0x208);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CMIDITranslator: %i\n",0x68);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"Output: %i\n",0x15c);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"Pipe: %i\n",0x118);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"RemoteDevice: %i\n",0x108);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"SectionNameItem: %i\n",0x28);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"SectionNameCollection: %i\n",0xc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CSharedDisplayClientLocalDevice: %i\n",0x1b8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CSharedDisplayLocalDevice: %i\n",0x1bc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"SmartConnectSourceManager: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"SmartConnectTargetManager: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CTimer: %i\n",0x88);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CTimerCollection: %i\n",0x20);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CGlobalTimerItem: %i\n",0x14);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CGlobalTimer: %i\n",0x20);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CWatchers: %i\n",0x2c);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CParameter: %i\n",0x94);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CController: %i\n",0x174);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CIndexList: %i\n",0x7c);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CSelectorItemList: %i\n",0x80);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::UTF8String: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::DeviceID: %i\n",0xc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::Endpoint: %i\n",0x10);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::ParameterID: %i\n",8);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::SectionID: %i\n",0x10);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::Value: %i\n",0xc);
+  OutputDebugStringA(local_118);
+  _sprintf(local_118,"CPNS::SelectorItem: %i\n",8);
+  OutputDebugStringA(local_118);
+  local_8 = 0xffffffff;
+  ExceptionList = local_10;
+  __security_check_cookie(local_14 ^ (uint)&stack0xfffffffc);
+  return;
+}
+

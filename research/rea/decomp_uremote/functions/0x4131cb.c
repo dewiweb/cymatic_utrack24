@@ -1,0 +1,36 @@
+// rea decompile_all
+// name: FUN_004131cb
+// address: 0x4131cb
+// body: available
+// range: 0x4131cb-0x41320e inclusive
+// non_contiguous: false
+// provider: Ghidra 12.1.4 (ghidra)
+// analysis_profile: e1ad533d4cc0333c2136fe0894217de2d61feea098240326e78633f9e4ddcbf9
+// limitations: The session serves operations only after Ghidra reports default auto-analysis complete; incomplete analysis does not expose partial results.; The imported Program and temporary project are ephemeral and deleted on close. Annotation operations edit session database metadata; original executable bytes are never written.; Cancelling an active Ghidra request terminates its ephemeral database and discards session annotations. The selected target remains open; the next provider query imports the original artifact again.; Default-space addresses use lowercase 0x-prefixed hexadecimal; other address spaces use <percent-encoded-space>:0x<hex>.; Ghidra Listing reports a terminal call at 0x41320a to 0x413175 FUN_00413175 (external=false, thunk=false, hasNoReturn=false); fallthrough is excluded by Ghidra's flow model. The reason for the terminal flow is not established by this observation.; Pseudocode is Ghidra decompiler output, not original source and not text-equivalent to Hopper output.; External functions and functions without an analyzable body return null; other decompiler failures remain explicit.
+// pseudocode: provider-specific; not original source
+
+
+void FUN_004131cb(int param_1)
+
+{
+  int iVar1;
+  int in_ECX;
+  int *in_EDX;
+  
+  if (in_EDX[3] < in_ECX) {
+    in_ECX = in_EDX[3];
+  }
+  iVar1 = in_EDX[2];
+  if (in_ECX < iVar1) {
+    in_ECX = iVar1 + -1;
+  }
+  in_EDX[8] = 0;
+  in_EDX[9] = 0;
+  *in_EDX = in_ECX - iVar1;
+  in_EDX[1] = param_1 - in_EDX[4];
+  in_EDX[10] = 0;
+  in_EDX[0x12] = param_1 << 8;
+  FUN_00413175();
+  return;
+}
+
