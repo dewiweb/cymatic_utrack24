@@ -73,3 +73,6 @@
 - `FUN_00595b20` (1255 B) : walker export (appelle FUN_005955a0 par song)
 - `FUN_005955a0` : logique export par-item (new/modified, cumul tailles)
 - `FUN_005bd870` : mappeur dossiers device (Music/Recording/MultiTrack/#PLAYLISTS)
+
+## Serialiseur song.set (FUN_005406f0) — structure
+Builder DOM : `FUN_00634c10`=create elem, `FUN_0061a340`=append child, `FUN_006104a0`=text/value, `FUN_005bde60`/`FUN_005bdc20`=formatters (version?), `FUN_00633ba0`=attrib. ~90 creates: racine SongProject -> version/timestamp -> song_name/song_type -> sampling_rate/resolution/duration/total_sample_count/sync_units/midi -> tracks(track*) -> markers(marker*) -> monitor/mixer. Valeur `-` (0x2d) pour champs vides. song_type codes 1/2/3 (multitrack/stereo/playlist?). Ordre exact = cf dump ev_0e820b79.
