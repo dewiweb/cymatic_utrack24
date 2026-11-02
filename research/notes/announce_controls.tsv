@@ -1,0 +1,23 @@
+# param_id -> noms annonces (pcvnm announce, cpm_audiolan.log)
+0x100000	; "`~; *`V; 0 (0 usec); 0@.`; 0`R`; 26:10:28:12:52:8; 2`.; Off; Off0; Offb; Offk; Z`f"; b`>#; glN
+0x100002	; Off; Offe; Offi
+0x100004	; uT24 channels 1-8 (49-00-30))`; uT24 channels 1-8 (49-00-30)I`; uT24 channels 9-16 (49-00-30)`
+0x100010	
+0x100020	
+0x100040	-11 ms; -1dB; 16-bit; 255.255.255.0 ; 255.255.255.0`
+0x100111	Channel 1; Channel 1e; Channel 9
+0x100121	receiver; receiverI`; receiveriv
+0x100200	; 44.1 kHz; 48 kHz
+0x100400	; 1-2; 1-20; 1-2b; 1-2k; 100.000 ms; 109.090 ms; 109.090 ms!]; 44.1 kHz
+0x100600	OnUU; OnUU2; OnUUA; OnUUs; Play-Pause
+0x102000	Offb
+0x103030	4800
+0x103034	5004
+0x103037	00-07-F5-FF-FE-49-00-307
+0x103132	Take0012
+0x10487a	44.1 kHz
+0x107231	transmitter1
+0x107232	transmitter2
+0x109000	Off
+0x10b000	Off; Offk
+0x10ff7f	Off; Off0; Offe; Offo
