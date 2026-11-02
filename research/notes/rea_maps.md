@@ -709,3 +709,15 @@ Verifications live sur les sessions ouvertes:
   zone param_id u64 du format generique)
 - FUN_000cd164 (fw) = enregistrement mixer: FUN_0007f01c("mixer",
   help, handler, 1) -> FUN_001a7b9c — confirme ghidra_utrack_map.md
+
+## 35. Table commandes statiques RTOS (0x1dfxxx-0x1e1xxx)
+
+Groupes sys/os/test: ~50 cmds dont couche debug bas niveau:
+  memoire: memscan, memscanraw, memdump, mchk, mlctest, mseg, mtype, malloc, free
+  exec: call, load, running, th(threads), sem(semaphores), evt(events),
+        flg(flags), q, timer, timestamp, shell, sleep, standby, suspend
+  debug: watchpoints, event_callback, underflow, unhandled, ip_hdr,
+         blocks, byte, dump, index, ports, statistics, address, select
+  systeme: clock, flash, reboot, reset, restart (+restart in update mode),
+        uartcfg, ver, av, if stat, lpm, mode, test
+=> shell de debug RTOS complet expose via telnet (device non authentifie!)
