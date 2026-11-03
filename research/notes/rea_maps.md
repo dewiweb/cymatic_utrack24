@@ -868,3 +868,14 @@ FUN_002341f4/FUN_002341cc (26B) = wrappers map-dispatch:
 dispatch-objet generique (meme CCPMessage/factory que le reste).
 Pas de codec uTS separe — les champs (44) sont serialises par le
 serializer de classe (vftable slot 9, comme Generic/LM_*).
+
+## 46. SyncCL — classe listener + FSM complete
+
+RTTI 0x2d091a: '22uTrack24SyncCLListener' (classe listener dediee).
+FSM strings 0x297f28-0x2980fc (enter/cancel/finish/rebuild/leave/becomeSlave).
+Handlers OnCHAI_*: Notification (CNT_*), DeviceDeclaration (type),
+  DeviceDiscarded (reason -> slaveChanged/masterChanged/exitedGroupForming),
+  Timer (resend RebuildGroupQuery).
+States nommes: SM_Master, SS_GroupForming_Master, SS_GroupRebuild_Master.
+=> uTS msgs = objets CCP (vtable serialize), champs doc 43/44.
+   class_ids non localises (ctors probablement Thumb).
