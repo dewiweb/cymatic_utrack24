@@ -830,3 +830,18 @@ FUN_000014c0 wrapper + FUN_000014e4 compute (audiolan fw, ARM):
    Hypotheses restantes: CRC sectoriel NAND, ou signature/MAC
    via SHA204 (crypto chip — pas un CRC du tout).
 Table @rt 0x40f72c, init flag 0x40f724.
+
+## 43. uTS_Msg_* — champs messages (strings fw4218)
+
+Format TRACE des handlers (champs ordre reel probable):
+  Commun: state=%d mode=%d groupid=%u index=%u connected=%c
+  GroupForming/Cancel/BecomeSlave/Leave/Exit: champs communs
+  BecameSlave: + masterId=%u deviceIndex=%u
+  RebuildGroupQuery: + masterAvailable=%c (et Notify: Resp=%c
+    deviceID=%u uSlaveIndex=%u masterName=%s)
+  RebuildGroupResponse: champs communs (+ groupRebuildFailed/slaveChanged)
+Notifies: enteredGroupForming/exitedGroupForming/slaveChanged/
+  becameSlave/groupDisolved/masterChanged/groupRebuildQuery|Failed.
+Handlers OnCHAI_* (Declaration/Discarded/Notification/Timer).
+Strings @0x298154-0x29860c (etats) + 0x8d7a2-0x8e554 (notifies).
+Wire format exact = serializer uTS a localiser (meme pattern CCP).
