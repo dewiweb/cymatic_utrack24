@@ -142,6 +142,12 @@ QMessageBox{background:#15171b}
 class Dial(QDial):
     def mouseDoubleClickEvent(self,e):self.setValue(0x8000)
 
+class _Combo(QComboBox):
+    """Combo qui ignore la molette quand il n'a pas le focus —
+    evite de changer la valeur en scrollant la page autour."""
+    def wheelEvent(self,e):
+        e.ignore() if not self.hasFocus() else super().wheelEvent(e)
+
 from PySide6.QtWidgets import QDialog,QDialogButtonBox,QLineEdit
 
 class ConnectDialog(QDialog):
@@ -392,7 +398,7 @@ class Win(QMainWindow):
         g2=QGroupBox('Réglages');gr=QGridLayout();gr.setSpacing(8);self.cmb={}
         for i,ctrl in enumerate((0xb000,0xb001,0xb102,0xb103,0xb104,0xb203,0xb204,0xb205)):
             gr.addWidget(QLabel(self.COMBO_LABEL[ctrl],objectName='dim'),i//2,(i%2)*2)
-            cb=QComboBox()
+            cb=_Combo()
             for val,lab in SETTINGS[ctrl]:cb.addItem(lab,val)
             cb.activated.connect(lambda i,c=ctrl,b=cb:self._set_ask(c,b.itemData(i)))
             self.cmb[ctrl]=cb;gr.addWidget(cb,i//2,(i%2)*2+1)
@@ -599,7 +605,7 @@ class Win(QMainWindow):
             nm.setFixedWidth(130);nm.setToolTip(nm.text());hl.addWidget(nm)
             sl2=QLabel(SS.get(st,'—') if st is not None else '—');sl2.setObjectName('routeStat')
             sl2.setProperty('st',cls);sl2.setFixedWidth(150);hl.addWidget(sl2)
-            cb=QComboBox();cb.addItems(choices);cb.setMinimumWidth(200)
+            cb=_Combo();cb.addItems(choices);cb.setMinimumWidth(200)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
             if cur and ix<0:cb.addItem(cur);ix=cb.count()-1  # stream hors-ligne : garder la valeur
@@ -884,13 +890,13 @@ class Win(QMainWindow):
     def _usb_group(self):
         gus=QGroupBox('Carte son USB (UAC2) — routage E/S');us=QHBoxLayout(gus)
         us.addWidget(QLabel('Mode :'))
-        self.aoip_cm=QComboBox();self.aoip_cm.addItems(['24In/26Out','24In/2Out','8In/26Out','8In/10Out'])
+        self.aoip_cm=_Combo();self.aoip_cm.addItems(['24In/26Out','24In/2Out','8In/26Out','8In/10Out'])
         self.aoip_cm.setToolTip('channelmode — layout des flux USB (inverses/out de l appareil)')
         us.addWidget(self.aoip_cm)
         self.btn_aoip_cm=QPushButton('Appliquer');self.btn_aoip_cm.clicked.connect(self._aoip_cm_apply);us.addWidget(self.btn_aoip_cm)
         us.addSpacing(16)
         us.addWidget(QLabel('Source entrées :'))
-        self.aoip_src=QComboBox();self.aoip_src.addItems(['analog','digital (AoIP)'])
+        self.aoip_src=_Combo();self.aoip_src.addItems(['analog','digital (AoIP)'])
         self.aoip_src.setToolTip('inputselect — analog = entrées physiques, digital = carte AudioLAN (AES67)')
         us.addWidget(self.aoip_src)
         self.btn_aoip_src=QPushButton('Appliquer');self.btn_aoip_src.clicked.connect(self._aoip_src_apply);us.addWidget(self.btn_aoip_src)
@@ -1016,7 +1022,7 @@ class Win(QMainWindow):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
         row=QHBoxLayout();row.setSpacing(10)
         g1=QGroupBox('Sync multi-unités');g1v=QVBoxLayout(g1)
-        self.f_sync=QComboBox();self.f_sync.addItems(['Master','Slave','Standalone']);g1v.addWidget(self.f_sync)
+        self.f_sync=_Combo();self.f_sync.addItems(['Master','Slave','Standalone']);g1v.addWidget(self.f_sync)
         b=QPushButton('Appliquer mode');b.clicked.connect(lambda:self._feat('sync','mode',self.f_sync.currentText()));g1v.addWidget(b)
         self.f_gid=QLineEdit();self.f_gid.setPlaceholderText('GroupId');g1v.addWidget(self.f_gid)
         b=QPushButton('Set GroupId');b.clicked.connect(lambda:self._feat('sync','group_id',self.f_gid.text()));g1v.addWidget(b)
