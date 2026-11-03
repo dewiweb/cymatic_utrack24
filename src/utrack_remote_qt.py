@@ -683,31 +683,35 @@ class Win(QMainWindow):
             it=self.route_grid.takeAt(0)
             if it.widget():it.widget().deleteLater()
         self._route_boxes=[]
-        n=len(self._alan_out);nrows=max(1,(n+1)//2)  # 2 colonnes de 12
+        n=len(self._alan_out);cols=max(1,min(4,n));per=-(-n//cols)
         for i,o in enumerate(self._alan_out):
-            row=QFrame();row.setObjectName('routeRow')
-            hl=QHBoxLayout(row);hl.setContentsMargins(8,4,8,4);hl.setSpacing(8)
-            chip=QLabel('%02d'%(i+1));chip.setObjectName('chNum');chip.setAlignment(Qt.AlignCenter);chip.setFixedWidth(34)
-            hl.addWidget(chip)
             st=stat.get(i);cls=CLS.get(st,'idle')
+            card=QGroupBox('Channel %d'%(i+1));cv=QVBoxLayout(card);cv.setSpacing(4)
+            top=QHBoxLayout()
             led=QFrame();led.setObjectName('led');led.setFixedSize(10,10);led.setProperty('st',cls)
             led.setToolTip('streamStatus : %s'%(SS.get(st,'inconnu') if st is not None else 'non lu'))
-            hl.addWidget(led,0,Qt.AlignVCenter)
+            top.addWidget(led)
             nm=QLabel(o.get('name') or 'Output %d'%(i+1));nm.setObjectName('routeName')
-            nm.setFixedWidth(130);nm.setToolTip(nm.text());hl.addWidget(nm)
+            nm.setToolTip(nm.text());top.addWidget(nm,1)
             sl2=QLabel(SS.get(st,'—') if st is not None else '—');sl2.setObjectName('routeStat')
-            sl2.setProperty('st',cls);sl2.setFixedWidth(150);hl.addWidget(sl2)
-            cb=_Combo();cb.addItems(choices);cb.setMinimumWidth(200)
+            sl2.setProperty('st',cls);top.addWidget(sl2);cv.addLayout(top)
+            cb=_Combo();cb.addItems(choices)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
-            if cur and ix<0:cb.addItem(cur);ix=cb.count()-1  # stream hors-ligne : garder la valeur
+            if cur and ix<0:cb.addItem(cur);ix=cb.count()-1  # stream hors-ligne : garder
             cb.blockSignals(True);cb.setCurrentIndex(ix if ix>=0 else 0);cb.blockSignals(False)
             cb.setProperty('loaded',cb.currentText());cb.setProperty('dirty',False)
-            cb.currentIndexChanged.connect(lambda _i,c=cb,r=row:self._alan_route_changed(c,r))
-            if o.get('manualSDP'):cb.setToolTip('manualSDP actif — Appliquer ecrira streamPath')
-            hl.addWidget(cb,1)
-            self.route_grid.addWidget(row,i%nrows,i//nrows)
-            self._route_boxes.append((cb,o))
+            cb.currentIndexChanged.connect(lambda _i,c=cb,r=card:self._alan_route_changed(c,r))
+            cv.addWidget(cb)
+            sub=QHBoxLayout();sub.addWidget(QLabel('canal',objectName='dim'))
+            sch=QSpinBox();sch.setRange(1,64)
+            sch.setValue(int(o.get('streamChannel') or o.get('channel') or 1))
+            sub.addWidget(sch)
+            sdp=QCheckBox('manual SDP');sdp.setChecked(bool(o.get('manualSDP')));sdp.setEnabled(False)
+            sdp.setToolTip('indicateur — le SDP manuel n est pas modelise')
+            sub.addWidget(sdp);sub.addStretch(1);cv.addLayout(sub)
+            self.route_grid.addWidget(card,(i%per),(i//per))
+            self._route_boxes.append((cb,sch,o))
         self._alan_update_apply()
         self.statusBar().showMessage('AudioLAN : %d sources, %d sorties'%(len(self._alan_src),len(self._alan_out)))
 
@@ -763,12 +767,14 @@ class Win(QMainWindow):
                 try:t[k]=int(w.text())
                 except ValueError:continue
             else:t[k]=w.text()
-        for cb,o in getattr(self,'_route_boxes',[]):
+        for cb,sch,o in getattr(self,'_route_boxes',[]):
             t=idmap.get(id(o))
             if t is None:continue
             p=cb.currentText()
             t['streamPath']='' if p=='—' else p
             t['manualSDP']=''  # unsubscribe = les deux vides ; subscribe = manualSDP vide
+            for kk in ('streamChannel','channel'):
+                if kk in t:t[kk]=sch.value()
         if QMessageBox.question(self,'AudioLAN','Appliquer les modifications sur la carte ?')!=QMessageBox.Yes:return
         self.btn_alan_apply.setEnabled(False);self.statusBar().showMessage('Écriture AudioLAN…')
         def run():

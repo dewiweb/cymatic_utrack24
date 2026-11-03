@@ -168,10 +168,12 @@ class DemoAlan:
     def sw_versions(self):
         return {'firmware': '4078', 'fpga': '1.2', 'driver': '6.19'}
     def stream_list(self):
-        return {'streams': [{'name': 'FOH_Main_L', 'channels': 2, 'addr': '239.10.0.1'},
-                            {'name': 'Mon_Wedges', 'channels': 4, 'addr': '239.10.0.4'}]}
+        return {'ArchwaveAES67':{'streams': [
+            {'name':'FOH_Main','channelCount':8,'addr':'239.10.0.1'},
+            {'name':'Mon_Wedges','channelCount':4,'addr':'239.10.0.4'},
+            {'name':'Stage_A','channelCount':24,'addr':'239.10.1.0'}]}}
     def discovered_streams(self):
-        return ['FOH_Main_L (239.10.0.1)', 'Mon_Wedges (239.10.0.4)',
+        return ['FOH_Main (239.10.0.1)', 'Mon_Wedges (239.10.0.4)',
                 'Stage_A_24ch (239.10.1.0)']
     def device_list(self):
         return {'devices': [{'name': 'uTrack24', 'id': '34b96e2e'}]}
@@ -181,7 +183,14 @@ class DemoAlan:
              'multicastPort':5004,'RTPTTL':32,'automaticConfigEnabled':True,'SIPusername':''},
             {'name':'Stage_A','streamEnable':False,'multicastAddress':'239.10.1.0',
              'multicastPort':5004,'RTPTTL':32,'automaticConfigEnabled':False,'SIPusername':'u24'}]}}
-    def outputs(self): return {'outputs': [{'ch': i, 'src': 'aes67'} for i in range(24)]}
+    def outputs(self):
+        outs=[]
+        names={0:'FOH_Main/1',2:'FOH_Main/2',7:'Stage_A/4'}
+        for i in range(24):
+            outs.append({'name':'Out %d'%(i+1),'streamPath':names.get(i,''),
+                         'streamChannel':(i%8)+1,'channel':(i%8)+1,
+                         'manualSDP':'','status':10 if i in names else 4})
+        return {'ArchwaveAES67':{'outputs':outs}}
     def general(self):
         return {'ArchwaveAES67': {'config': {
             'name':'uT24 AudioLAN','DHCPenable':False,
