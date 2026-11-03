@@ -845,3 +845,17 @@ Notifies: enteredGroupForming/exitedGroupForming/slaveChanged/
 Handlers OnCHAI_* (Declaration/Discarded/Notification/Timer).
 Strings @0x298154-0x29860c (etats) + 0x8d7a2-0x8e554 (notifies).
 Wire format exact = serializer uTS a localiser (meme pattern CCP).
+
+## 44. SyncCL objet — layout (FUN_00090408 dump status)
+
+Offsets objet sync (param_1):
+  +0x1c  mode byte (1=Master, 0=Slave)
+  +0x1d  state index (table d etats)
+  +0x28  MasterID (u32)
+  +0x50  liste slaves (count via FUN_0022e4a0)
+  +0x74  DeviceIndex (u8)
+  +0x82  connected (u8)
+  +0x84  sous-objet dispatch (FUN_002341f4/FUN_002341cc = send/post)
+Champs slave (FUN_0023cff0 indexe, FUN_001b9ed0/eb8/ec4):
+  Name(s), ID(u), Index(u), Available(bool)
+Handlers: OnCHAI_Notification FUN_0008c488 (trace CNT_*).
