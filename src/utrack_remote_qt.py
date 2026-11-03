@@ -416,8 +416,49 @@ class Win(QMainWindow):
         for i,(ctrl,label) in enumerate(((0xb004,'IP'),(0xb005,'Masque'),(0xb002,'Date'),(0xb206,'b206'))):
             gr2.addWidget(QLabel(label,objectName='dim'),i//2,(i%2)*2)
             l=QLabel('—');self.ro[ctrl]=l;gr2.addWidget(l,i//2,(i%2)*2+1)
-        g.setLayout(gr2);v.addWidget(g);v.addStretch(1)
+        g.setLayout(gr2);v.addWidget(g)
+        gd=QGroupBox('Mode de fonctionnement (DeviceMode)');gdv=QHBoxLayout(gd)
+        self.dm=_Combo();self.dm.addItem('Recorder',0);self.dm.addItem('Player',1);self.dm.addItem('Recorder+Player',2)
+        self.dm.setToolTip('cne/AppSettings/Global/DeviceMode — 0=recorder ; changement = reboot')
+        gdv.addWidget(self.dm)
+        b=QPushButton('Lire');b.clicked.connect(self._dm_read);gdv.addWidget(b)
+        b2=QPushButton('Appliquer');b2.setObjectName('rec');b2.clicked.connect(self._dm_write);gdv.addWidget(b2)
+        gdv.addWidget(QLabel('⚠ reboot après changement',objectName='info'))
+        gdv.addStretch(1);v.addWidget(gd);v.addStretch(1)
         return w
+
+    def _dm_read(self):
+        def run():
+            try:
+                with self._tlock:
+                    r=self.tel.get('cne/AppSettings/Global/DeviceMode') if self.tel else None
+                self._dm_res=r
+            except Exception as e:self._dm_res=e
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('Lecture DeviceMode…')
+        QTimer.singleShot(800,lambda:self._dm_show())
+
+    def _dm_show(self):
+        r=getattr(self,'_dm_res',None)
+        if isinstance(r,Exception):self.statusBar().showMessage('DeviceMode : %s'%r);return
+        if r is None:return
+        try:
+            v=int(str(r).strip());i=self.dm.findData(v)
+            if i>=0:self.dm.setCurrentIndex(i)
+            self.statusBar().showMessage('DeviceMode = %d'%v)
+        except ValueError:self.statusBar().showMessage('DeviceMode : %s'%r)
+
+    def _dm_write(self):
+        v=self.dm.currentData()
+        if QMessageBox.question(self,'DeviceMode','Changer le mode → le device redémarrera. Continuer ?')!=QMessageBox.Yes:return
+        def run():
+            try:
+                with self._tlock:
+                    r=self.tel.set('cne/AppSettings/Global/DeviceMode',v) if self.tel else None
+                self._dm_res=r
+            except Exception as e:self._dm_res=e
+        threading.Thread(target=run,daemon=True).start()
+        self.statusBar().showMessage('Ecriture DeviceMode=%d — reboot attendu'%v)
 
     def _system(self):
         """Onglet Système = Réglages (0xb0xx) + Fonctions+ — scroll."""
