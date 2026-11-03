@@ -885,3 +885,378 @@ States nommes: SM_Master, SS_GroupForming_Master, SS_GroupRebuild_Master.
 Commande SDS 'versulu' @0x2a1bec (fw4218) — le point d entree de la
 mise a jour firmware de l host (BCOFWDL reseau + mode update).
 Pas de strings fwdl explicites dans le binaire (nom interne autre).
+
+## 49. file write/upload handlers (Thumb decoded) — ARM en fait !
+
+CORRECTION : les handlers `file` ne sont PAS Thumb — ce sont du code
+**ARM 32-bit** (prologue `e92d4ff0 stmdb`). Ghidra n'a pas pu les analyser
+("Context register change conflicts", TMode conflict — les zones sont
+marquees OBJ/BSS). Decode manuel des words depuis le .bcd
+(offsets fichier, base 0 ; rt = file + 0x60005F84).
+
+### `file read` handler @0x1499b4 (ARM, ~0x150 B + litpool)
+
+- `bytes = strtol(argv[0])`, clamp a 0x80000 (512 KiB), defaut 0x40
+- option `-a` : boucle ReadFile jusqu'a short-read (lit TOUT le fichier)
+- buffer = **FUN_001b01c4(nbytes,1) — malloc PAR APPEL** ("large buffer"
+  alloc ; echec -> "ERROR: System out of memory allocating buffer in
+  file read"), memset, puis job :
+- `FUN_00123544(job@sp+0xc, queue/alloc, handle_lo, handle_hi,
+  [buf, nbytes, 0])` = ctor **FileAccessJob_ReadFile**
+- soumission : `FAH = FUN_000cbaf0(); (*FAH->vt[8])(FAH, job, 0, tag)`
+  (blocant) ; resultats : octets lus dans job+0x24, rc dans job+0x12
+- sortie : "Read failed (RC = %d)" / "Total %u bytes have been read:"
+- `file print` @0x14aa80 = meme mecanique + dump hex via formats
+  "%6u: ", "%02X", "%c" (literal pool @0x14ae20-0x14ae74)
+- **Pas de staging buffer persistant** : le malloc est fait a chaque
+  commande et libere — la notion "FAH staging buffer" des notes
+  anterieures est FAUSSE (utrack_telnet.py `_fah_buffer_probe`).
+
+### `file write` handler @0x14aca0 (ARM, ~0x1d8 B + litpool 0x14ae7c+)
+
+Usage firmware : `write <bytes> {<count>} {<buffer_offset>}`
+Decode du prologue (strtol x3) :
+
+    bytes   = strtol(argv[0]); clamp <= 0x80000 ; si 0 -> 0x40
+    count   = argc>1 ? strtol(argv[1]) : 1 ; si 0 -> 1 ; clamp <= 0x20000
+    buf_off = argc>2 ? strtol(argv[2]) : 0 ; clamp <= 3   (offset 0..3 !)
+
+    r8 = bytes + buf_off
+    r6 = FUN_001f01c4(r8, 1)            ; malloc workbuf (fail -> ret 4)
+    ; boucle arriere [1355096-1355156] : and r1,r4,r7 / sub r1,r6,r1 /
+    ;   ldrb[r1,#1] / orr r0,r0,counter / str r0_prev+1,[r1,#-2]!
+    ;   => GENERATEUR DE PATTERN (rampe auto-referentielle),
+    ;      remplit le workbuf de donnees de test. buf_off = offset
+    ;      de desalignement 0..3 pour tester ecritures non alignees.
+    do { x = FUN_0001b800(&lock, &sp+0x30, 0) } while (!x)
+        ; lock = lit @1355372 = rt 0x6040650c (objet BSS)
+    r0 = r6 + buf_off                  ; src = workbuf + off
+    stm sp!, {r0, r4}                  ; args job : src, nbytes
+    r9 = lit @1355376 = rt 0x60406040  ; -> handle pair stockee en BSS
+    r1 = lit @1355380 = rt 0x604064fc  ; -> queue/name obj
+    ldm r9!, {r2, r3}                  ; r2,r3 = handle fichier ouvert
+    FUN_0012c838(sp+8, r1, r2, r3, src, bytes)   ; ctor WriteFile job
+    r7 = 0                             ; compteur de jobs
+  loop (x count) :
+    FAH = FUN_000cbaf0()               ; singleton FileAccessHandler
+    (*FAH->vt[0])(FAH)                 ; queue getter
+    si queue==0 -> echec
+    FUN_0012c7bc(sp+8, r1, handle, ...) ; ctor WriteFile (boucle)
+    submit blocant -> litb job+0x11 (done), job+0x12 (rc)
+    r7++, accumulate r0 -> r8 ; tant que r7 != r5 (count)
+    r1 = r0!=0 ? "succeeded" : "failed"   (addne pc,#0x30 / addeq #0x38)
+    str r7,[sp]
+    FUN_00002898("Write %s: Return code %d, %u bytes written with %u jobs",
+                 r1, rc, total, jobs)
+    free(buf) ; return 0
+
+- Job result fields : done flag @job+0x11, rc @job+0x12, bytes @job+0x24
+  (meme layout que les jobs lus dans FUN_00127fac, c2_evt.txt).
+- Les deux ctors sont ceux du WaveFileEncoder (rec3.txt) : FUN_0012c7bc
+  et FUN_0012c838 = builders **FileAccessJob_WriteFile** (src=buffer CPU,
+  count=bytes, handle=paire stockee dans l'objet commande).
+
+### VERDICT : `file write` N'EST PAS un chemin d'upload
+
+C'est un **benchmark/stress d'ecriture** : il genere un motif dans un
+buffer malloc (offset de desalignement 0-3 pour tester les cas limites),
+puis soumet `count` jobs WriteFile de `bytes` octets au fichier ouvert
+via `file open <f> wo`. La sortie "Write succeeded: Return code 0,
+%u bytes written with %u jobs" = mesure de debit (miroir de
+"Read %s: Return code %d, %u bytes read with %u jobs").
+Les donnees ecrites sont synthétiques — **aucun moyen d'injecter un
+contenu arbitraire** : pas de staging buffer persistant entre commandes,
+pas de lecture du buffer depuis le shell.
+
+### Chemins d'upload reels identifies dans fw4218
+
+- `wr <addr> <val> [b|h]` ecrit la MEMOIRE, mais rien ne transfere la
+  memoire vers le FS (file write ne lit pas de buffer externe) ->
+  l'hypothese `wr`+staging de src/utrack_telnet.py:428 est MORTE.
+- `persparam wrb <name> <hex-str>` / `wrbs` : ecrit un blob binaire
+  (format `0xafc9f0`) dans un parametre persistant (flash config) —
+  c'est le seul canal "donnees arbitraires -> stockage" du SDS, mais
+  il cible les persparams, pas les fichiers du volume USB.
+- xmodem : "CLCDDumpScreen: start xmodem reception now. Size = %d"
+  (reception xmodem existe pour le dump LCD — a explorer comme canal).
+- `versulu` : update firmware (BCOFWDL) = ecriture flash, pas fichiers.
+- Le vrai chemin de depot de fichiers reste : USB host mass-storage
+  (FAT), uTool2, ou endpoint HTTP /api/fileupload cote AES67.
+
+### Adresses cles
+
+| quoi | file | rt |
+|---|---|---|
+| file read handler | 0x1499b4 | 0x60150938 |
+| file print handler | 0x14aa80 | 0x60150A04 |
+| file write handler | 0x14aca0 | 0x60150C24 |
+| FUN_0014ac04 (helper print) | 0x14ac04 | |
+| lock object do-while | — | 0x6040650C |
+| handle pair BSS (ldm) | — | 0x60406040 |
+| queue/name lit (job arg2) | — | 0x604064FC |
+| tag/timeout lit | — | 0x7530 (30000) |
+| FUN_0012c838 WriteFile ctor | 0x12c838 | |
+| FUN_0012c7bc WriteFile ctor | 0x12c7bc | |
+| FUN_00123544 ReadFile ctor | 0x123544 | |
+| FUN_001f01c4 malloc | 0x1f01c4 | |
+| FUN_001b01c4 large-buf alloc | 0x1b01c4 | |
+| FUN_0001b800 lock/alloc | 0x1b800 | |
+| FUN_000cbaf0 FAH singleton | 0xcbaf0 | |
+| strtol | 0x32fc | |
+| printf | 0x2898 | |
+| "Write %s: Return code..." | 0x14ae90 | |
+| "succeeded"/"failed" | 0x14ae7c/0x14ae88 | |
+
+### Usage client (benchmark seulement)
+
+    file open /MultiTrack/Take/t.bin wo
+    file write 65536        # 1 job de 64 KiB de motif genere
+    file write 65536 10     # 10 jobs -> 640 KiB, affiche "Write succeeded: ... %u jobs"
+    file write 65536 10 3   # meme, source desalignee +3 (edge-case)
+    file close
+-> Utile pour tester le debit d'ecriture, PAS pour uploader du contenu.
+   Pour l'upload : pas de commande SDS file->disk ; envisager
+   `persparam wrb` (flash), xmodem (a confirmer), ou hors-SDS
+   (MSC host / HTTP / uTool2).
+
+## 48. scanBCD CRC coverage (Thumb decoded)
+
+scanBCD localise et decode (fw4218 decomp `research/rea/decomp_fw4218/
+functions/0x117484.c` = FUN_00117484, ARM, non-contiguous 0x117484-
+0x1181f7 — les gaps sont les pools/strings embarques dans le texte).
+Equivalent audiolan = fonction ARM @file 0xC642C (push {r4-r11,lr}),
+region code+strings+pools 0xC5xxx-0xC7xxx.
+
+CORRECTION BASE: le module FirmwareUpdateHandler mappe VA = file +
+0x60005F84 (PAS +0x60000000 — ca vaut pour les DEUX images). Preuve:
+pool dword 0x602A29D8 (fw4218) -> file 0x29CA54 = debut exact de
+"ERROR: FirmwareUpdateHandler::scanBCD: HWID mismatch". Pools audiolan
+@0xC6xxx stockent 0x60239xxx -> strings rodata file 0x233xxx (set-B)
+et 0x6040xxxx (BSS). Les strings "set-A" embarquees dans le code sont
+referees par ADR (add/sub rd,pc) — d'ou l'absence de pools/xrefs.
+
+CRC routine = zlib CRC32 reflechi poly 0xEDB88320, etat init 0xFFFFFFFF:
+fw4218 FUN_00176c50 (wrapper: state=0xFFFFFFFF -> FUN_00176c74 update,
+retourne l'etat) ; audiolan wrapper 0x14c0, update 0x14e4, table 0x1458.
+
+Formules decodees (param_1 = pointeur image BcOd, param_2 = taille) :
+
+  en-tete : save dword bcd[0x2c]; zero bcd[0x2c..0x2f];
+            crc = crc32(bcd[0 : 0x70])   (0xb0 si bcd[0x28]==2 && param_4)
+            vs dword@0x2c -> "CRC error in header" (str@file 0x1177B8), ret 0xb
+  image   : start = bcd + u32@0x30 ; len = u32@0x38 ;
+            borne : bcd+param_2 < start+len -> "Bad image size", ret 10
+            crc = crc32(start,len) vs u32@0x3c
+            -> "CRC error in image" (str@file 0x118030), ret 0xb
+
+Champs : utrack24 @0x30=0x7C @0x38=0x2EA578 @0x3c=0xCAC6DBEA
+         @0x2c=0xE33CC0B0 ; audiolan @0x30=0x80 @0x38=0x270A38
+         @0x3c=0x404EAF12 @0x2c=0xBFA0CE46.
+=> le CRC image couvre marker 0xaaaa5555 + table slots + code
+   (offset @0x30 = 0x7C/0x80, PAS 0x94 — c'est pourquoi les ~30
+   essais precedents a partir de 0x94 echouaient).
+
+VALIDATION : crc bash maison verifie sur "123456789" -> 0xCBF43926.
+   A tester en python (state vs zlib-final selon retour du wrapper) :
+
+     zlib.crc32(d[0x7C:0x7C+0x2EA578])          == 0xCAC6DBEA ?   (fw4218 image)
+     zlib.crc32(d[0x7C:0x7C+0x2EA578])^0xFFFFFFFF == 0xCAC6DBEA ? (si stored=state)
+     zlib.crc32(d[0x80:0x80+0x270A38])          == 0x404EAF12 ?   (audiolan image)
+     hdr = bytearray(d[:0x70]); hdr[0x2c:0x30]=b'\0'*4
+     zlib.crc32(hdr)              == 0xE33CC0B0 ? (fw4218 header)
+     zlib.crc32(hdr)              == 0xBFA0CE46 ? (audiolan header)
+
+   Note: checks manuels bash (transcription 112B) : fw4218 header
+   donne zlib=0xE3403C70 vs 0xE33CC0B0 et audiolan 0xBFACC246 vs
+   0xBFA0CE46 — NON concordants => soit transcription erronée, soit
+   variante (double-zeroing, autre range, stored=state). A recalculer
+   en python AVANT de figer la formule header. La formule image
+   (offset @0x30 + len @0x38 vs @0x3c) est lue directement du decomp,
+   haute confiance — verifier aussi stored-vs-state.
+   slot crcs @0x94+ non couverts par scanBCD (verifie bootloader?).
+
+## 50. uTS_Msg wire format (fw4218, decode pools + corpus decomp)
+
+CORRECTION premisse : les uTS_Msg_* ne sont PAS des classes CCPMessage
+(0x10xxxxxx + Serialize vtable). Ce sont des **messages de donnees
+entite CHAI** (link-layer directed/broadcast messaging) envoyes par
+l'objet entite du SyncCL (SyncCL+0x68, cree par AddLocalDevice vt+0xb4).
+Meme canal TCP ef51 que le reste du trafic CHAI — famille "member
+directed message" (cf. uremote_textwrite.md : enveloppe type 0x3784 +
+TLVs). Pas de vtable Serialize par type : serialisation generique dans
+la couche lien CHAI. AUCUNE trace uTS dans les captures (single-device).
+
+### Send API (2e vtable de l'entite, adjust this par *vtable-0x1ec)
+
+Slots de l'interface lien (objet SyncCL+0x68) :
+  +0xc8 query own 10B addr | +0xec create msg | +0x44 get msg header
+  +0x1a4 sendTo(unicast) | +0x1a8 broadcast | +0xb8/+0xbc et
+  +0x19c/+0x1a0 register/unregister listeners | +0x114 timer (1000ms,
+  resend RebuildGroupQuery, doc 36).
+
+Unicast  : sendTo(this, dest10B, A, B, msgId, f6, f7, name, aux [,f10])
+Broadcast: bcast(this, A, B, msgId, f4, f5, name, aux)
+dest10B = adresse entite CHAI {u16 grpLo, u16 grpHi, u32 memberId,
+  u16 tail} — copiee par FUN_001726d4/172728 depuis SyncCL+0x5c
+  (adresse propre, lue a l'init via +0xc8 ; le memberId u32@+4 est
+  swappe vers le slave cible pour l'unicast, FUN_8d04c/8b578).
+Constantes ROM recurrentes (base VA = file+0x60005F84, cf. §48) :
+  broadcasts/master->slaves : A=0x00003c75, B=0x00003234,
+    aux=0x60414BDC (objet RAM, cf. infra), name-src=0x60403B34 (RAM obj,
+    FUN_001beccc lit {u32@0 si +6!=0} = pointeur nom).
+  slave->master (FUN_8b860) : DATs decodent 0x60414BDC / 0xE8BD87F0 /
+    0xEB8ED028 — les 2 derniers SUSPECTS (ressemblent a du code ARM ;
+    verifier que ce ne sont pas des restes d'epilogue mal etiquetes).
+  interpretation la plus probable : (A,B) = paire (channelId,dataId)
+  ou (outer,inner) TLV type du canal lien uTS ; 0x3c75/0x3234 n'ont pas
+  ete vus sur le fil (a valider par capture 2 devices).
+
+### msgId (arg5) — mapping provisionnel (evidence = contexte d'appel)
+
+  1 broadcast : fin de finishGroupForming (FUN_8c7ac tail) +
+    FUN_8c100 (state 2/4) -> GroupForming announce ?
+  2 FUN_8b234 state1->3, msg cree via +0xec(arg=1) -> RebuildGroupQuery?
+  3 per-slave finishGroupForming FUN_8c7ac (f6=slaveIndex, f7=slaveCount)
+    -> BecomeSlave ?
+  4 slave(mode2)->master FUN_8af00 (state0/3) -> LeaveGroup
+  5 broadcast->slaves FUN_90938 + mode->0 + clear liste -> ExitGroup/
+    CancelGroupForming
+  6 master->slave, f6=deviceIndex u16, f7=flag, name=masterName :
+    FUN_8b578 (boucle slaves enterGroupForming, index=i+1) +
+    FUN_8d04c (reponse a requete) -> BecameSlave
+    {masterId=senderId header, deviceIndex, masterName}
+  Manquants dans le corpus : CancelGroupForming, RebuildGroupResponse
+    (msgIds 0/7/8 probables ; ctors/dispatch Thumb non decompiles).
+  NB : memes helpers 8b860/8bc04 utilises avec msgIds 0x1xx (vers
+  slaves) / 0x2xx (vers master) par des wrappers voisins — famille de
+  messages membre plus large (SDS/link) partageant le helper ; les
+  ids 1-6 sont le namespace uTS.
+
+### Champs recus (header 8B, u16-oriented)
+
+Handler FUN_8c9d0 (param_3 = ushort* raw fields) et msgObj vt+0x44
+(FUN_8d04c remplit {u16,u16,u32}) :
+  +0 u16 groupAddrLo | +2 u16 groupAddrHi | +4 u32 senderMemberId
+  (verifies contre SyncCL+0x5c/0x5e = groupid, et id slave/deviceID).
+Champs par msgId (args f6/f7 = paires u16 souvent ; cf. wrappers qui
+passent param_2>>16 et param_2&0xffff) : index u16, flag/count u32,
+name string optionnel (BecameSlave: deviceIndex+masterName ;
+RebuildGroupQuery: Resp/deviceID/uSlaveIndex/masterName per TRACE).
+
+### SyncCL objet — layout confirme (dump FUN_90408)
+
+  +0x1c mode u8 (1=Master,2=Slave,0=Standalone) +0x1d state u8
+  +0x20 own-entity obj (ID via FUN_1b9eb8=obj+8) +0x28 MasterID u32
+  +0x2d flag | +0x50 liste slaves {ID u32@8, Index FUN_1b9edc, flags
+  +0xd/+0xe, handle+0x14, Name FUN_1b9ed0/22d49c}
+  +0x5c own entity addr 10B | +0x68 CHAI entity | +0x6c data-link obj
+  (+0x154 resolve addr) | +0x70 timer | +0x74 deviceIndex u8
+  +0x75 ? +0x76 slave_count u8 | +0x80/0x81 u8 | +0x82 connected u8
+  +0x84 map listeners (uTrack24SyncCLListener, RTTI 0x2d091a).
+
+### Dispatch entrant
+
+Thunks adjust -0xc (vtable du sous-objet SyncCL+0xc enregistre sur le
+data-link via +100) : 0x1c1cf0->8c488 OnCHAI_Notification (CNT_*),
+0x1c1d20->8c9d0 (FSM msg A : groupid match + switch state — case0
+master: slave par devID -> slaveChanged ; case0 slave: own-id ->
+enteredGroupForming ; case2: rebuild liste ; case5/1: own-id ->
+retour standalone), 0x1c1d50->8d04c (handler B : recoit requete ->
+repond msgId6 index+1), 0x1c1d80->90374 (vide).
+
+### Fonctions FSM decodees (corpus decomp_fw4218)
+
+FUN_8af00 = dispatcher "send current FSM msg" (trace state/mode/
+  groupid/index/connected) ; FUN_8b578 = enterGroupForming (build
+  liste slaves depuis IDs CnE + resolve addr + msgId6 par slave,
+  state->4) ; FUN_8c7ac = finishGroupForming (msgId3/slave + msgId1
+  bcast, mode->1, masterID=ownID, deviceIndex=0) ; FUN_90938 =
+  cancel/exit (msgId5 bcast + reset) ; FUN_8c100 (msgId1 bcast,
+  state2/4->0) ; FUN_8b234 (state1->msgId2->3) ; FUN_8d04c (reply
+  msgId6) ; FUN_8c9d0 (FSM reception) ; FUN_8b410 (rebuild liste).
+FSM Thumb a ~0x297f28 non decompilee (strings 0x297f28-0x2988xx =
+VA 0x6029DExx — meme region : DAT_8d24c=0x6029E634 -> "OnCHAI_
+DeviceDeclaration type=%d Send mode=SM_Master slave[%u]=%u").
+
+### Joindre un groupe (client 3e partie) — sequence deduite
+
+1. Devenir membre VNM (AddLocalDevice, member id u32) comme le reste
+   du protocole CHAI ; avoir son deviceID dans la config maitre
+   (CnE Sync/Slave_1..3_Id -> liste slaves FUN_8b578).
+2. Ecouter les messages lien-entite du maitre sur la paire
+   (0x3c75,0x3234) ; l'adresse dest = adresse entite 10B du groupe
+   (memberId du maitre).
+3. Traiter msgId6 BecameSlave {deviceIndex, masterName} -> etat
+   slave ; repondre par le chemin slave->master (constantes a
+   confirmer) ; RebuildGroupQuery (msgId2?) exige une reponse
+   {Resp,deviceID,uSlaveIndex,masterName}.
+4. groupid = les 4 premiers octets de l'adresse entite maitre
+   (u16+u16) ; verifier a la reception.
+Residus a confirmer par capture 2 devices ou desassemblage du post()
+CHAI : layout exact de l'enveloppe (tags TLV), semantique
+channel/dataId, ids complets 0-8, constants slave->master.
+
+## 51. text param write format (TLV 4437 / CAppTextMessage)
+
+Resolu (details: uremote_textwrite.md). L'ecriture texte (controles c3:
+0xd001-3 locate/loop, 0xc001 chdir, 0xb002 horloge, 0xb004/0xb005 IP,
+0xf060, d011+, c011+) est un 3e TLV app-message dans le message membre
+`8437` (0x3784), produit par `CPCHAI::CAppTextMessage` (RTTI c8d418,
+type interne 0x8206, class-index 4).
+
+Chaine uRemote: vtbl+0x17c du member -> thunk FUN_0048fb72 ->
+FUN_00682a40 -> FUN_0064de20 (msg+0x4c=0x3784, +0x48=member+0xe0) ->
+serialize FUN_0064b6a0 -> FUN_00634680(len+0x16, classIdx=4, flags).
+Index TLV (0x3740|idx) dans 8437: 1=event 4137, 2=numerique 4237 (32B),
+3=liste 4337 (22B), 4=texte 4437 (var), 8/9=interne 4837/4937.
+NB: 0x3744 sert AUSSI de type de message externe device->client
+(announce) — espace partage ; en TLV interieur de 8437 = ecriture texte.
+
+Serialize CAppTextMessage (FUN_0064b6a0, verifie dump ur_appmsg.txt):
+  p[0]=msg+0x78 (u16 flags=0) ; p[1]=msg+0x7a ; p[2..9]=msg+0x7c..0x8a ;
+  p[10]=msg+0x92 (strlen) ; memcpy(p+11, msg+0x8c, strlen).
+
+Layout fil (TLV a l'interieur de 8437, N=strlen) :
+```
+4437 0010 <N+0x1e:u16> <N+0x16:u16> | 0000 | ctrl u16 LE | 0000 x16 | N u16 | ASCII
+```
+- header TLV 8B : type `44 37` (=u16 LE 0x3744), const `10 00`,
+  puis paire longueurs {content+8, content} (pattern identique aux
+  ecritures capturees : `4337 0010 1e00 1600`, `4237 0010 2800 2000`).
+- content = 0x16+N octets : u16@0=0, u16@2=ctrl, u16@4..19=8 zeros,
+  u16@20=strlen, string ASCII @22 (pas de NUL, pas de pad).
+- sous-session : meme SUB_OFFS (18,34) du header 8437, node(ctrl)
+  0xf->0 0xe->1 0xd->2 0xc->3 0xb->4. (Aligner le record a 4B si
+  plusieurs TLVs chaines — le walker fait (L+3)&~3.)
+
+Parseur device (fw4218, preuve croisee) : thunk FUN_001c3cb4 (listener
+texte, slot +0x0c) -> FUN_000abbc8(param_2=param ctrl, param_3=msg).
+ctrl via vt+0x34 -> FUN_001bece0 = u16 @+4. Texte via vt+0xc4
+(=ITextMessage::GetText) -> struct {ptr@0, cap u16@4, len u16@6},
+FUN_001be9f0 rend le char*. Traitement: 0xd001 -> strtol base10 ->
+FUN_0013e404 (locate) ; 0xd002/3 -> FUN_0013e49c/47c (loop) ;
+0xc001 -> FUN_0013eab8 (chdir, chaine litterale) ; 0xb002 -> split ':'
+6 champs -> FUN_00092aa8 (horloge) ; 0xb004/5 -> IP (FUN_000aab74) ;
+0xf060 -> FUN_000ab2b8. (DAT_000ac0c8 = 0xd001.)
+
+Exemple : ecrire "00:01:00" (N=8) a 0xd001 (node 2) — trame complete :
+```
+00018437000000000e0002000697271600000200000001000e00010034b96e2e0000020001000000
+4437001026001e00000001d00000000000000000000000000000000000080030303a30313a3030
+```
+(header 8437 40B = prefixe CTRL_TEMPLATE, node 2 deja aux SUB_OFFS ;
+TLV 38B : content=0x1e, +8=0x26 ; ctrl 01d0=0xd001 ; strlen 0800 ;
+ASCII `30 30 3a 30 31 3a 30 30`.)
+
+ATTENTION semantique : le device fait strtol(base 10) sur 0xd001 — la
+valeur reelle d'un locate = nombre d'echantillons en decimal ASCII
+(uRemote : FUN_00624830 = itoa). "00:01:00" n'est qu'un exemple de
+framing (parse -> 0). Chaine ':' reelle = 0xb002 (horloge Y:M:D:h:m:s).
+
+BUGS src/utrack_control.py::text_msg (signales, non corriges) :
+1. `struct.pack('<HHHHH',0x4437,...)` -> octets `37 44` = TLV "3744" ;
+   il faut la valeur u16 0x3744 (octets `44 37`).
+2. `m=bytearray(CTRL_TEMPLATE)` copie les 72B incluant l'ancien record
+   4337 (ctrl d000 val 4 = PLAY !) au lieu de CTRL_TEMPLATE[:40] ->
+   chaque ecriture texte envoie aussi un play. (num_msg utilise bien
+   [:40].) A corriger avant test hardware du text().

@@ -62,9 +62,9 @@ def text_msg(ctrl,s,sub=None):
     Pour controles c3 : d001-3 locate/loop, c001 chdir, b002/4/5, f060."""
     if sub is None:sub=node(ctrl)
     s=str(s).encode('ascii')
-    m=bytearray(CTRL_TEMPLATE)  # meme prefixe 8437 que ctrl/num
+    m=bytearray(CTRL_TEMPLATE[:40])  # enveloppe 8437 seule (pas le record d000!)
     for o in SUB_OFFS:struct.pack_into('<H',m,o,sub)
-    body=struct.pack('<HHHHH',0x4437,0x0010,len(s)+0x1e,len(s)+0x16,0)
+    body=struct.pack('<HHHHH',0x3744,0x0010,len(s)+0x1e,len(s)+0x16,0)
     body+=struct.pack('<H',ctrl)+b'\x00'*16+struct.pack('<H',len(s))+s
     return bytes(m)+body
 
