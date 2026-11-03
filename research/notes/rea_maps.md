@@ -795,3 +795,13 @@ Chemins config/endpoints non-documentés extraits du fw:
   /Streaming, /TTL, /Port, /Mode, /PTP, /ADAT, /AVP, /USB
   /Shell/cne/Shell/ — shell SDS carte (confirme console :23)
 => carte plus riche: crypto-auth SHA204, SPDIF, debug /Exchange.
+
+## 40. BcOd CRC — routine table identifiee (audiolan fw)
+
+FUN_00001458 (decompile REA) = builder de table CRC32 reflected standard
+(poly DAT_000014b8=0xedb88320, table DAT_000014bc):
+  for i in 0..255: v=i; for 8: v = poly^(v>>1) if v&1 else v>>1; table[i]=v
+=> CRC32 reflected zlib-compatible. MAIS le compute caller (scanBCD)
+est Thumb non-analyse => plage/init/xorout inconnus.
+Testes sans match: zlib toutes plages/pads/byte-swap/msb/adler/fletcher/
+champ-zero. A faire: decompile Thumb de scanBCD ou routine PC (BCOFWDL).
