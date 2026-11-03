@@ -9,7 +9,7 @@ from PySide6.QtWidgets import (QApplication,QMainWindow,QWidget,QTabWidget,
 
 sys.path.insert(0,os.path.dirname(__file__))
 from utrack_control import UTrackControl,SETTINGS,att_raw,att_db,ms_raw,ms_val
-TEL_HOST='192.168.10.198'
+from app_config import load as cfg_load, save as cfg_save
 
 DARK = """
 /* uTrack24 Remote — theme "console studio" : gris/bleus profonds, accent #3fa7ff */
@@ -24,6 +24,7 @@ QFrame#stripBus{background:#1c222b;border:1px solid #3d5f80;border-top:2px solid
 QGroupBox{background:#1d2128;border:1px solid #2f353f;border-radius:8px;margin-top:16px;padding:16px 10px 10px 10px;font-weight:600}
 QGroupBox::title{subcontrol-origin:margin;subcontrol-position:top left;left:12px;padding:0 8px;color:#8b94a1}
 QGroupBox:disabled{color:#545b66}
+QLabel#timecode{font-family:'Consolas','Monospace';font-size:15pt;font-weight:700;color:#7fd4a8;padding:2px 12px;background:#10141a;border:1px solid #2f353f;border-radius:6px}
 
 /* ---- routage AES67 : ligne de canal, led d'etat, modifications ---- */
 QFrame#routeRow{background:#181c22;border:1px solid #262c35;border-radius:6px}
@@ -141,6 +142,60 @@ QMessageBox{background:#15171b}
 class Dial(QDial):
     def mouseDoubleClickEvent(self,e):self.setValue(0x8000)
 
+from PySide6.QtWidgets import QDialog,QDialogButtonBox,QLineEdit
+
+class ConnectDialog(QDialog):
+    """Saisie manuelle + autodiscovery des IPs uTrack24 / AudioLAN."""
+    def __init__(self,parent=None,host='',card=''):
+        super().__init__(parent)
+        self.setWindowTitle('Connexion — appareils')
+        self.setMinimumWidth(520)
+        v=QVBoxLayout(self);v.setSpacing(10)
+        v.addWidget(QLabel('Adresses des appareils (manuel ou Découvrir) :',objectName='info'))
+        gr=QGridLayout();gr.setSpacing(8)
+        gr.addWidget(QLabel('uTrack24 :'),0,0)
+        self.h=QLineEdit(host);self.h.setPlaceholderText('ex. 192.168.10.198');gr.addWidget(self.h,0,1)
+        gr.addWidget(QLabel('AudioLAN :'),1,0)
+        self.c=QLineEdit(card);self.c.setPlaceholderText('ex. 192.168.10.175 (vide = même que uTrack)');gr.addWidget(self.c,1,1)
+        v.addLayout(gr)
+        self.found=QListWidget();self.found.setFixedHeight(110);self.found.setVisible(False)
+        v.addWidget(self.found)
+        self.btn_scan=QPushButton('Découvrir sur le réseau…');self.btn_scan.clicked.connect(self._scan)
+        v.addWidget(self.btn_scan,0,Qt.AlignLeft)
+        self.scan_lbl=QLabel('',objectName='info');v.addWidget(self.scan_lbl)
+        bb=QDialogButtonBox(QDialogButtonBox.Ok|QDialogButtonBox.Cancel)
+        bb.accepted.connect(self.accept);bb.rejected.connect(self.reject);v.addWidget(bb)
+        self._devs=[]
+
+    def _scan(self):
+        self.btn_scan.setEnabled(False);self.scan_lbl.setText('scan…')
+        self._scan_running=True
+        def run():
+            try:
+                from device_discovery import find_devices,pick
+                self._devs=find_devices();self._pick=pick(self._devs)
+            except Exception as e:self._devs=e
+            self._scan_running=False
+        threading.Thread(target=run,daemon=True).start()
+        self._wt=QTimer(self);self._wt.timeout.connect(self._scan_done);self._wt.start(200)
+
+    def _scan_done(self):
+        if getattr(self,'_scan_running',True):return
+        self._wt.stop();self.btn_scan.setEnabled(True)
+        d=self._devs
+        if isinstance(d,Exception):self.scan_lbl.setText('erreur : %s'%d);return
+        self.found.clear();self.found.setVisible(True)
+        for e in d:
+            self.found.addItem('%s  %s  ports %s'%(e['ip'],e['role'],','.join(map(str,e['ports']))))
+        self.found.itemActivated.connect(lambda it:self.h.setText(it.text().split()[0]))
+        host,card=getattr(self,'_pick',('',''))
+        if host:self.h.setText(host)
+        if card:self.c.setText(card)
+        self.scan_lbl.setText('%d hôte(s)'%len(d))
+
+    def host(self):return self.h.text().strip()
+    def card(self):return self.c.text().strip() or self.h.text().strip()
+
 def _bs(w,v):
     w.blockSignals(True);w.setValue(v);w.blockSignals(False)
 
@@ -149,10 +204,11 @@ def _fmt(e):
     return e[1] if e[1] else (str(e[0]) if e[0] is not None else '—')
 
 class Win(QMainWindow):
-    def __init__(self,u=None,connected=False,tel=None):
+    def __init__(self,u=None,connected=False,tel=None,host='',card=''):
         super().__init__()
-        self.setWindowTitle('uTrack24 Remote');self.resize(1500,700)
-        self.u=u or UTrackControl();self._pend={};self._conn=None
+        self.host=host or '127.0.0.1';self.card=card or self.host
+        self.setWindowTitle(f'uTrack24 Remote — {self.host}');self.resize(1500,700)
+        self.u=u or UTrackControl(self.host);self._pend={};self._conn=None
         self.tel=tel;self._takes_data=None;self._reclog=None;self._loaded=None;self._take_err=None
         self.alan=None;self._alan_data=None;self._matrix_state=[None]*24
         self._meters={};self._meters_ts=0;self._tlock=threading.Lock()
@@ -165,7 +221,9 @@ class Win(QMainWindow):
             l=QLabel('%s : —'%name);l.setObjectName('err' if ctrl==0xf060 else 'chip')
             self.hdr[ctrl]=(l,name);h.addWidget(l)
         h.addSpacing(6);self.hdr_status=QLabel('—');self.hdr_status.setObjectName('statePill');h.addWidget(self.hdr_status)
-        h.addStretch(1);v.addWidget(hd)
+        h.addStretch(1)
+        self.tc=QLabel('—');self.tc.setObjectName('timecode');h.addWidget(self.tc)
+        v.addWidget(hd)
         tr=QHBoxLayout();tr.setSpacing(10)
         for label,fn,oid in (('|◄','prev','prev'),('►|','next','next'),('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec'),('SAVE','save','save')):
             b=QPushButton(label);b.setObjectName(oid);b.setMinimumHeight(38)
@@ -185,7 +243,12 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         self.gb_tr=QGroupBox('Transport');self.gb_tr.setObjectName('transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
-        self.tabs.addTab(self._mixer(),'Mixer');self.tabs.addTab(self._settings(),'Réglages');self.tabs.addTab(self._takes(),'Prises');self.tabs.addTab(self._audiolan(),'AES67 (AudioLAN)');self.tabs.addTab(self._matrix(),'Matrice');self.tabs.addTab(self._aoip(),'AoIP');self.tabs.addTab(self._features(),'Fonctions+')
+        self.tabs.addTab(self._mixer(),'Console');self.tabs.addTab(self._takes(),'Prises & Fichiers');self.tabs.addTab(self._routing(),'Routage');self.tabs.addTab(self._aoip(),'AoIP');self.tabs.addTab(self._audiolan(),'AudioLAN');self.tabs.addTab(self._system(),'Système')
+        mb=self.menuBar()
+        mc=mb.addMenu('&Appareil')
+        a=mc.addAction('Changer d’appareil…');a.triggered.connect(self._change_device)
+        mc.addAction(f'uTrack24 : {self.host}').setEnabled(False)
+        mc.addAction(f'AudioLAN : {self.card}').setEnabled(False)
         self.gb_tr.setEnabled(connected);self.tabs.setEnabled(connected)
         self.overlay=QWidget(root);self.overlay.setObjectName('overlay')
         ov=QVBoxLayout(self.overlay);ov.addStretch(2)
@@ -203,6 +266,31 @@ class Win(QMainWindow):
         self.rate=QTimer(self);self.rate.timeout.connect(self._flush);self.rate.start(40)
         if connected:self.statusBar().showMessage('Connecté — %d contrôles'%len(self.u.state));self._conn='done'
         else:self._connect_async()
+
+    def _change_device(self):
+        d=ConnectDialog(self,self.host,self.card)
+        if d.exec()!=QDialog.Accepted:return
+        cfg=cfg_load();cfg['utrack_host']=d.host();cfg['card_host']=d.card();cfg_save(cfg)
+        QApplication.exit(17)   # relance propre via main()
+
+    def _fill_tc(self,st):
+        """Timecode pro : f003=freq, f006=restant(ech), f040=date/pos."""
+        import re
+        def num(e):
+            if not e:return None
+            for v in (e[0],e[1]):
+                m=re.search(r'(\d+)',str(v or ''))
+                if m:return int(m.group(1))
+            return None
+        fs=num(st.get(0xf003))
+        rem=num(st.get(0xf006))
+        pos=num(st.get(0xf040))
+        def fmt(smpl):
+            if fs and smpl is not None:
+                t=smpl/fs;h=int(t//3600);m=int(t%3600//60);s=t%60
+                return f'{h:02d}:{m:02d}:{s:06.3f}'
+            return str(smpl) if smpl is not None else '—'
+        self.tc.setText(f'{fmt(pos)}  ·  reste {fmt(rem)}' if fs else f'pos {pos} · reste {rem}')
 
     def _connect_async(self):
         self.statusBar().showMessage('Connexion…')
@@ -305,6 +393,14 @@ class Win(QMainWindow):
         g.setLayout(gr2);v.addWidget(g);v.addStretch(1)
         return w
 
+    def _system(self):
+        """Onglet Système = Réglages (0xb0xx) + Fonctions+ — scroll."""
+        sc=QScrollArea();sc.setWidgetResizable(True)
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(0,0,0,0);v.setSpacing(0)
+        v.addWidget(self._settings());v.addWidget(self._features());v.addStretch(1)
+        sc.setWidget(w)
+        return sc
+
     def _takes(self):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
         hb=QHBoxLayout()
@@ -374,7 +470,7 @@ class Win(QMainWindow):
             try:
                 if self.alan is None:
                     from audiolan_api import AudioLan
-                    self.alan=AudioLan()
+                    self.alan=AudioLan(self.card)
                 self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list())
             except Exception as e:self._alan_data=e
         threading.Thread(target=run,daemon=True).start()
@@ -563,7 +659,7 @@ class Win(QMainWindow):
             except Exception as e:self._alan_data=e
         threading.Thread(target=run,daemon=True).start()
 
-    def _matrix(self):
+    def _routing(self):
         w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(10)
         v.addWidget(QLabel("Source des entrées — état lu en live via CopperLan 0xf050 ; écriture SDS inputselect",objectName='info'))
         self.mcells=[];self.mbtns=[]
@@ -582,14 +678,16 @@ class Win(QMainWindow):
             grd.addWidget(gb,0,blk)
         v.addLayout(grd)
         self.mleg=QLabel("vert = analogique · bleu = digital (AES67) — état réel lu en live via 0xf050",objectName='info')
-        v.addWidget(self.mleg);v.addStretch(1)
+        v.addWidget(self.mleg)
+        v.addWidget(self._usb_group())
+        v.addStretch(1)
         return w
 
     def _matrix_set(self,blk,mode):
         if not self.tel:
             try:
                 from utrack_telnet import UTrack24 as Tel
-                self.tel=Tel(TEL_HOST)
+                self.tel=Tel(self.host)
             except Exception as e:self.statusBar().showMessage('Erreur telnet : %s'%e);return
         if QMessageBox.question(self,'Matrice','Basculer les canaux %d-%d en %s ?'%(blk*8+1,blk*8+8,mode))!=QMessageBox.Yes:return
         self.statusBar().showMessage('inputselect %d %s…'%(blk+1,mode))
@@ -611,7 +709,7 @@ class Win(QMainWindow):
             try:
                 if self.tel is None:
                     from utrack_telnet import UTrack24 as Tel
-                    self.tel=Tel(TEL_HOST)
+                    self.tel=Tel(self.host)
                 with self._tlock:out=self.tel.cmd('mixer querylevels',1.5)
                 import re
                 d={int(n):min(65535,int(v,16)>>7) for n,v in re.findall(r'CH (\d+): (0x[0-9a-fA-F]+)',out)}
@@ -640,7 +738,7 @@ class Win(QMainWindow):
             try:
                 if self.tel is None:
                     from utrack_telnet import UTrack24 as Tel
-                    self.tel=Tel(TEL_HOST)
+                    self.tel=Tel(self.host)
                 with self._tlock:self._takes_data=self.tel.takes()
             except OSError as e:self._takes_data=e;self.tel=None  # socket morte : reconnexion au prochain essai
             except Exception as e:self._takes_data=e
@@ -656,7 +754,7 @@ class Win(QMainWindow):
             try:
                 if self.tel is None:
                     from utrack_telnet import UTrack24 as Tel
-                    self.tel=Tel(TEL_HOST)
+                    self.tel=Tel(self.host)
                 with self._tlock:self._reclog=self.tel.read_file('/MultiTrack/%s/reclog.txt'%t['name']).decode('latin-1').replace('\r\n','\n')
             except OSError as e:self._reclog='Erreur : %s'%e;self.tel=None
             except Exception as e:self._reclog='Erreur : %s'%e
@@ -676,7 +774,7 @@ class Win(QMainWindow):
             try:
                 if self.tel is None:
                     from utrack_telnet import UTrack24 as Tel
-                    self.tel=Tel(TEL_HOST)
+                    self.tel=Tel(self.host)
                 with self._tlock:
                     out=(self.tel.filerec('stat') or '')+'\n'+(self.tel.fileplay('stat') or '')+'\n'+(self.tel.cmd('file dir free') or '')
                 self._stat_txt='\n'.join(l.strip() for l in out.splitlines() if l.strip() and '###' not in l)[:300]
@@ -760,6 +858,10 @@ class Win(QMainWindow):
         self.btn_aoip_send=QPushButton('Sender sinus');self.btn_aoip_send.clicked.connect(self._aoip_send);pcv.addWidget(self.btn_aoip_send)
         self.btn_aoip_sstop=QPushButton('Stop');self.btn_aoip_sstop.clicked.connect(lambda:setattr(self,'_aoip_sender_stop',True));pcv.addWidget(self.btn_aoip_sstop)
         pcv.addStretch(1);v.addWidget(gpc)
+        self.aoip_status=QLabel('—',objectName='info');v.addWidget(self.aoip_status)
+        return w
+
+    def _usb_group(self):
         gus=QGroupBox('Carte son USB (UAC2) — routage E/S');us=QHBoxLayout(gus)
         us.addWidget(QLabel('Mode :'))
         self.aoip_cm=QComboBox();self.aoip_cm.addItems(['24In/26Out','24In/2Out','8In/26Out','8In/10Out'])
@@ -774,9 +876,8 @@ class Win(QMainWindow):
         self.btn_aoip_src=QPushButton('Appliquer');self.btn_aoip_src.clicked.connect(self._aoip_src_apply);us.addWidget(self.btn_aoip_src)
         us.addSpacing(16)
         self.btn_aoip_usbstat=QPushButton('Statut USB');self.btn_aoip_usbstat.clicked.connect(self._aoip_usbstat);us.addWidget(self.btn_aoip_usbstat)
-        us.addStretch(1);v.addWidget(gus)
-        self.aoip_status=QLabel('—',objectName='info');v.addWidget(self.aoip_status)
-        return w
+        us.addStretch(1)
+        return gus
 
     def _aoip_refresh(self):
         self.btn_aoip.setEnabled(False);self.statusBar().showMessage('AoIP…')
@@ -784,7 +885,7 @@ class Win(QMainWindow):
             try:
                 if self.alan is None:
                     from audiolan_api import AudioLan
-                    self.alan=AudioLan()
+                    self.alan=AudioLan(self.card)
                 self._aoip_data=(self.alan.status(),self.alan.discovered_streams())
             except Exception as e:self._aoip_data=e
         threading.Thread(target=run,daemon=True).start()
@@ -1001,6 +1102,7 @@ class Win(QMainWindow):
         e=st.get(0xc000) or st.get(0xf000)
         if e and e[1]:self._loaded=e[1].split('/')[-1]
         for ctrl,(l,name) in self.hdr.items():l.setText('%s : %s'%(name,_fmt(st.get(ctrl))))
+        self._fill_tc(st)
         # chip Err en rouge quand un code erreur est remonté (0xf060)
         err=st.get(0xf060);on=bool(err and (err[1] or err[0]));el=self.hdr[0xf060][0]
         if bool(el.property('on'))!=on:
@@ -1030,7 +1132,11 @@ class Win(QMainWindow):
             e=st.get(0xd070+ch)
             if e and e[0] is not None:
                 if not s['f'].isSliderDown():_bs(s['f'],e[0])
-                s['raw'].setText('brut %04x'%e[0])
+                try:
+                    from mixer_math import peak_to_dbfs
+                    mv=s['m'].value()
+                    s['raw'].setText('%.0fdB %04x'%(peak_to_dbfs(mv) if mv else -99,e[0]))
+                except Exception:s['raw'].setText('brut %04x'%e[0])
             e=st.get(0xd030+ch)
             if e and e[0] is not None and s['M'].isChecked()!=(e[0]==1):
                 s['M'].blockSignals(True);s['M'].setChecked(e[0]==1);s['M'].blockSignals(False)
@@ -1063,10 +1169,19 @@ class Win(QMainWindow):
         self.u and self.u.close();self.tel and self.tel.close();e.accept()
 
 def main():
-    out=subprocess.run(['tasklist','/FI','IMAGENAME eq uRemote.exe'],capture_output=True,text=True).stdout
     app=QApplication(sys.argv);app.setStyleSheet(DARK)
-    if 'uRemote' in out:
-        QMessageBox.warning(None,'uTrack24 Remote','uRemote est en cours — les deux ne peuvent pas tourner (même identité CopperLan).');return
-    Win().show();sys.exit(app.exec())
+    if sys.platform=='win32':
+        out=subprocess.run(['tasklist','/FI','IMAGENAME eq uRemote.exe'],capture_output=True,text=True).stdout
+        if 'uRemote' in out:
+            QMessageBox.warning(None,'uTrack24 Remote','uRemote est en cours — les deux ne peuvent pas tourner (même identité CopperLan).');return
+    cfg=cfg_load()
+    while True:
+        d=ConnectDialog(None,cfg.get('utrack_host',''),cfg.get('card_host',''))
+        if d.exec()!=QDialog.Accepted:return
+        host,card=d.host(),d.card()
+        cfg['utrack_host']=host;cfg['card_host']=card;cfg_save(cfg)
+        w=Win(host=host,card=card);w.show()
+        rc=app.exec()
+        if rc!=17:return   # 17 = changer d'appareil
 
 if __name__=='__main__':main()
