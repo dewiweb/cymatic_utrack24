@@ -1853,3 +1853,19 @@ Syntaxe COMPLETE (help inline @file 0x2A02A8) :
 | flash cmd record | 0x1E0F18 | handler field 0x60086A5C |
 | persparam desc | 0x2A0294 | handler Thumb ~0x7E5xx |
 | LCDDumpScreen xmodem | 0x2010D | strings |
+
+## 60. flash handler FUN_000b9ea8 — decode complet (REA direct)
+
+Syntaxe (fw4218, ARM):
+  flash read <off> <size>      -> hexdump + ascii (chunks 0x400)
+  flash transmit <off> <size>  -> envoie flash via XMODEM (vt+0xc)
+  flash receive <off> <size>   -> erase+unlock+XMODEM recv->write flash
+                                  PAS DE PLANCHER OFFSET (!)
+  flash erase <off> <size>     -> off>=0x40000 requis (prot. region basse)
+  flash pattern <off> <size> [large] [seed] -> off>=0x40000
+  (verify suite tronquee)
+Limites: size<=0x400000 (4 MiB). XModem obj=0x490B alloue, vt slots
++4 delete / +8 receive / +0c transmit.
+SECURITE: erase/pattern exigent off>=0x40000 (bootloader 256KB prot) MAIS
+flash receive NA PAS ce plancher -> ecrit partout dont bootloader.
+La zone <0x40000 = bootloader (protection implicite par les autres cmds).
