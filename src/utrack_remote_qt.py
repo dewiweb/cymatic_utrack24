@@ -1190,6 +1190,11 @@ class Win(QMainWindow):
 
 def main():
     app=QApplication(sys.argv);app.setStyleSheet(DARK)
+    if '--demo' in sys.argv:
+        from demo_device import DemoControl,DemoTel,DemoAlan
+        w=Win(u=DemoControl(),connected=True,tel=DemoTel(),
+              host='demo',card='demo');w.alan=DemoAlan();w.show()
+        sys.exit(app.exec())
     if sys.platform=='win32':
         out=subprocess.run(['tasklist','/FI','IMAGENAME eq uRemote.exe'],capture_output=True,text=True).stdout
         if 'uRemote' in out:
