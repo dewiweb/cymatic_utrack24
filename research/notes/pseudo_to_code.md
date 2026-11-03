@@ -143,4 +143,14 @@ Toutes les commandes extraites des handlers decompilés → méthodes réelles.
 
 - **✅ Codé + testé** : frame CHAI, checksum, codec 20B, CID table, conversions fader/ms, SDS ~80 méthodes, `.set` round-trip, SDP parse, status decode, REST carte, update chain (squelette)
 - **◐ Codé à valider live** : send_param, announce TLV (regex fallback), meter parse, RTSP session, AES67 rx/tx, file write upload stub, sync CnE, file ops sur device
-- **⧗ Spec connue, pas de code** : pan-law software mixer, BcOd parseur, ARC stack, uTS wire format, USB-IOCTL, BCOFWDL
+- **⧗ Spec connue, pas de code** : uTS wire format, USB-IOCTL, BCOFWDL, CRC BcOd custom
+
+## Modules ajoutes depuis la map
+
+| Module | Traduit | Statut |
+|---|---|---|
+| `bcd_file.py` | header BcOd (magic/ver/date/rev/product/keepBoot/image_size/name), slot entries {id,flag,load,hwid,crc} | ✅ testé fw4218+fw4078 (CRC custom a deriver de scanBCD) |
+| `arc_proto.py` | frame {id,cmd,lenBE16,pl,ck} sum==0xFF, ack {id,0xFF,~ck}, COBS, wrap_udp | ✅ round-trip teste |
+| `mixer_math.py` | record 6B, fader→lin, constant-power pan, coeff triple u16, peak→dBFS | ✅ |
+| `mixer_math` parseurs | querylevels→(ch,raw,dB), mixer get/stat, engine stat, reclog, showtree→dict, ls, dir read, inputselect, op_status decode | ✅ |
+
