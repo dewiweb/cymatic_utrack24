@@ -222,7 +222,7 @@ class Win(QMainWindow):
             self.hdr[ctrl]=(l,name);h.addWidget(l)
         h.addSpacing(6);self.hdr_status=QLabel('—');self.hdr_status.setObjectName('statePill');h.addWidget(self.hdr_status)
         h.addStretch(1)
-        self.tc=QLabel('—');self.tc.setObjectName('timecode');h.addWidget(self.tc)
+        self.tc=QLabel('pos --:--:-- · reste --:--:--');self.tc.setObjectName('timecode');h.addWidget(self.tc)
         v.addWidget(hd)
         tr=QHBoxLayout();tr.setSpacing(10)
         for label,fn,oid in (('|◄','prev','prev'),('►|','next','next'),('PLAY','play','play'),('STOP','stop','stop'),('REC','rec','rec'),('SAVE','save','save')):
@@ -310,6 +310,7 @@ class Win(QMainWindow):
     def _mixer(self):
         sc=QScrollArea();sc.setWidgetResizable(True)
         row=QWidget();h=QHBoxLayout(row);h.setSpacing(8);h.setContentsMargins(10,10,10,10);self.strips=[]
+        h.addWidget(self._db_ruler(140),0,Qt.AlignTop)
         for ch in range(26):
             w=QFrame();w.setObjectName('stripBus' if ch>=24 else 'strip');w.setFixedWidth(82)
             s=QVBoxLayout(w);s.setSpacing(4);s.setContentsMargins(6,8,6,8)
@@ -333,6 +334,25 @@ class Win(QMainWindow):
             self.strips.append({'m':m,'f':f,'p':p,'raw':raw,'M':mb,'S':sb})
             h.addWidget(w)
         h.addStretch(1);sc.setWidget(row);return sc
+
+    def _db_ruler(self,height):
+        """Regle dBFS a gauche de la console — aligne avec les meters 132px."""
+        class Ruler(QWidget):
+            def paintEvent(self,e):
+                from PySide6.QtGui import QPainter,QPen,QColor,QFont
+                p=QPainter(self);p.setPen(QColor('#8b94a1'))
+                p.setFont(QFont('Segoe UI',7))
+                y0=16  # haut aligne sur le meter (label CH + marge ~16px)
+                mh=132
+                import math
+                for db in (0,-12,-24,-48,-96):
+                    frac=1.0-10**(db/20)
+                    y=y0+mh*frac
+                    p.drawLine(0,int(y),8,int(y))
+                    p.drawText(10,int(y)+3,f'{db if db else "0"}')
+                p.end()
+        r=Ruler();r.setFixedSize(34,160)
+        return r
 
     def _mark(self,kind,ch,v):self._pend[(kind,ch)]=v
 
