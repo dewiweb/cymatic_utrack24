@@ -859,3 +859,12 @@ Offsets objet sync (param_1):
 Champs slave (FUN_0023cff0 indexe, FUN_001b9ed0/eb8/ec4):
   Name(s), ID(u), Index(u), Available(bool)
 Handlers: OnCHAI_Notification FUN_0008c488 (trace CNT_*).
+
+## 45. uTS send helpers — dispatch map (pas codec dedie)
+
+FUN_002341f4/FUN_002341cc (26B) = wrappers map-dispatch:
+  FUN_00212724(&stack,param_1) -> FUN_00209300(&stack2,&stack) -> *puVar1
+=> les messages uTS sont des objets C++ postes via la couche
+dispatch-objet generique (meme CCPMessage/factory que le reste).
+Pas de codec uTS separe — les champs (44) sont serialises par le
+serializer de classe (vftable slot 9, comme Generic/LM_*).
