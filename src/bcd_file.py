@@ -13,7 +13,7 @@ Layout extrait REA (hexdumps fw4218 + fw4078, slot CRCs @0x94 doc):
   0x28  u32               KeepBootloader flag (=1)
   0x2c  u32               header CRC32 (crc of d[0:0x70], this field zeroed)
   0x30  u32               image data offset (0x7c/0x80 — incl marker+slots)
-  0x34  u32               const 0x4a0080
+  0x34  u32               target flash address (0x4a0080 = sector+offset)
   0x38  u32               image data size (file - header)
   0x3c  u32               image CRC32 (crc of d[img_off:+img_size])
   0x40  u32               const 0x35ff80
@@ -51,7 +51,7 @@ def parse_bytes(d):
         'keep_bootloader': u32(d, 0x28),
         'header_crc': u32(d, 0x2c),
         'image_offset': u32(d, 0x30),
-        'const_4a0080': u32(d, 0x34),
+        'target_addr': u32(d, 0x34),
         'image_size': u32(d, 0x38),
         'image_crc': u32(d, 0x3c),
         'const_35ff80': u32(d, 0x40),
