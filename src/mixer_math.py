@@ -133,3 +133,66 @@ def parse_reclog(out: str):
         if m and m.group(3):
             rows.append({'ts': m.group(1), 'level': m.group(2), 'text': m.group(3)})
     return rows
+
+
+def parse_showtree(out: str):
+    """`showtree` -> arbre CnE indent -> dict imbrique."""
+    root = {}
+    stack = [(0, root)]
+    for l in out.splitlines():
+        if not l.strip():
+            continue
+        depth = (len(l) - len(l.lstrip())) // 2
+        node = {}
+        while stack and stack[-1][0] >= depth:
+            stack.pop()
+        stack[-1][1][l.strip().rstrip(':')] = node
+        stack.append((depth, node))
+    return root
+
+
+def parse_ls_entry(out: str):
+    """`ls` d'un noeud CnE -> {nom: valeur}."""
+    d = {}
+    for l in out.splitlines():
+        if ':' in l:
+            k, v = l.split(':', 1)
+            d[k.strip()] = v.strip()
+    return d
+
+
+def parse_dir_read(out: str):
+    """`file dir read` -> entrees (nom, taille, attributs)."""
+    rows = []
+    for l in out.splitlines():
+        m = _re.match(r'\s*(\S+)\s+(\d+)\s*(.*)', l)
+        if m:
+            rows.append({'name': m.group(1), 'size': int(m.group(2)),
+                         'attr': m.group(3).strip()})
+    return rows
+
+
+def parse_inputselect(out: str):
+    """`inputselect` nu -> masque analog/digital par bloc."""
+    d = {}
+    m = _re.search(r'0[bB]([01]+)', out)
+    if m:
+        for i, b in enumerate(reversed(m.group(1))):
+            d[f'block{i}'] = 'digital' if b == '0' else 'analog'
+    m2 = _re.findall(r'(analog|digital)', out.lower())
+    if m2:
+        for i, v in enumerate(m2):
+            d[f'block{i}'] = v
+    return d
+
+
+def parse_op_status(v: int):
+    """Mot status CHAI 0xf050 -> dict decode (ghidra_utrack_dsp status word)."""
+    return {'sync_lock': bool(v & 1),
+            'input_select': (v >> 1) & 7,
+            'channelmode': (v >> 4) & 3,
+            'board_id': (v >> 8) & 7}
+
+
+MODE_NAMES = {0: '24In/26Out', 1: '24In/2Out', 2: '8In/26Out', 3: '8In/10Out'}
+BOARD_NAMES = {0: 'none', 1: 'MADI', 2: 'ADAT', 3: 'AudioLAN'}

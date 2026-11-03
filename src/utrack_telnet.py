@@ -151,6 +151,29 @@ class UTrack24:
         from mixer_math import parse_engine_stat
         return parse_engine_stat(self.cmd(('filerec' if rec else 'fileplay') + ' stat', 2.0))
 
+    def tree(self, path: str = ''):
+        """`showtree` -> dict imbrique de l'arbre CnE."""
+        from mixer_math import parse_showtree
+        return parse_showtree(self.cmd('showtree' + (' ' + path if path else ''), 5.0))
+
+    def cne_ls(self, path: str):
+        """`ls <path>` -> {nom: valeur}."""
+        from mixer_math import parse_ls_entry
+        return parse_ls_entry(self.cmd(f'ls {path}', 1.5))
+
+    def dir_read(self, path: str):
+        """`file dir open/read/close <path>` -> entrees repertoire."""
+        from mixer_math import parse_dir_read
+        self.file_dir('open', path)
+        out = self.file_dir('read')
+        self.file_dir('close')
+        return parse_dir_read(out)
+
+    def inputselect_status(self):
+        """`inputselect` nu -> {blockN: analog|digital}."""
+        from mixer_math import parse_inputselect
+        return parse_inputselect(self.cmd('inputselect', 1.0))
+
     def reclog_parsed(self, take: str):
         """reclog.txt d'une prise -> entrees (ts, niveau, texte)."""
         from mixer_math import parse_reclog
