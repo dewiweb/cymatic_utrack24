@@ -817,3 +817,16 @@ capture' device_model.md):
   (scanBCD, Thumb) toujours inconnus apres ~15 variantes testees.
 => text write = implemente dans utrack_control.text() (0xd001 etc)
    mais jamais observe sur le fil — format a valider live.
+
+## 42. BcOd CRC — routine compute decodee (bytes + analyse manuelle)
+
+FUN_000014c0 wrapper + FUN_000014e4 compute (audiolan fw, ARM):
+  table_init() (FUN_00001458)
+  crc=0xFFFFFFFF
+  for i<len: crc = table[(b[i]^crc)&0xff] ^ (crc>>8)   # zlib standard
+  return ~crc                                        # xorout 0xFFFFFFFF
+=> math = zlib.crc32 classique. La PLAGE reste inconnue:
+   pas img/hdr/tout/pads/skips/bswap/zeros (~25 variantes).
+   Hypotheses restantes: CRC sectoriel NAND, ou signature/MAC
+   via SHA204 (crypto chip — pas un CRC du tout).
+Table @rt 0x40f72c, init flag 0x40f724.
