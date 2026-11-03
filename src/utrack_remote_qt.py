@@ -153,7 +153,8 @@ class _Combo(QComboBox):
     def wheelEvent(self,e):
         e.ignore() if not self.hasFocus() else super().wheelEvent(e)
 
-from PySide6.QtWidgets import QDialog,QDialogButtonBox,QLineEdit
+from PySide6.QtWidgets import QDialog,QDialogButtonBox,QLineEdit,QFileDialog
+from PySide6.QtGui import QColor
 
 class ConnectDialog(QDialog):
     """Saisie manuelle + autodiscovery des IPs uTrack24 / AudioLAN."""
@@ -254,7 +255,7 @@ class Win(QMainWindow):
         self.mk.clicked.connect(lambda:self.u and self.u.marker());tr.addWidget(self.mk)
         self.gb_tr=QGroupBox('Transport');self.gb_tr.setObjectName('transport');self.gb_tr.setLayout(tr);v.addWidget(self.gb_tr)
         self.tabs=QTabWidget();v.addWidget(self.tabs)
-        self.tabs.addTab(self._mixer(),'Console');self.tabs.addTab(self._takes(),'Prises & Fichiers');self.tabs.addTab(self._routing(),'Routage');self.tabs.addTab(self._aoip(),'AoIP');self.tabs.addTab(self._audiolan(),'AudioLAN');self.tabs.addTab(self._system(),'Système')
+        self.tabs.addTab(self._mixer(),'Console');self.tabs.addTab(self._takes(),'Prises & Fichiers');self.tabs.addTab(self._routing(),'Routage');self.tabs.addTab(self._aoip(),'AoIP');self.tabs.addTab(self._audiolan(),'AudioLAN');self.tabs.addTab(self._system(),'Système');self.tabs.addTab(self._tests(),'Tests RE')
         mb=self.menuBar()
         mc=mb.addMenu('&Appareil')
         a=mc.addAction('Changer d’appareil…');a.triggered.connect(self._change_device)
@@ -464,6 +465,136 @@ class Win(QMainWindow):
             except Exception as e:self._dm_res=e
         threading.Thread(target=run,daemon=True).start()
         self.statusBar().showMessage('Ecriture DeviceMode=%d — reboot attendu'%v)
+
+    def _tests(self):
+        """Onglet Tests RE — checklist live_device integree a la session."""
+        w=QWidget();v=QVBoxLayout(w);v.setContentsMargins(12,12,12,12);v.setSpacing(8)
+        hb=QHBoxLayout()
+        self.btn_tall=QPushButton('Tout lancer (lecture seule)');self.btn_tall.clicked.connect(lambda:self._test_run(False));hb.addWidget(self.btn_tall)
+        self.btn_tsel=QPushButton('Lancer sélection');self.btn_tsel.clicked.connect(lambda:self._test_run(True));hb.addWidget(self.btn_tsel)
+        self.chk_danger=QCheckBox('⚠ autoriser écritures');self.chk_danger.setToolTip('stages 5-6 : mixer_set, text write, lecture flash');hb.addWidget(self.chk_danger)
+        self.btn_tsave=QPushButton('Exporter rapport');self.btn_tsave.clicked.connect(self._test_export);hb.addWidget(self.btn_tsave)
+        hb.addStretch(1);v.addLayout(hb)
+        split=QHBoxLayout();split.setSpacing(10)
+        self.tlist=QTreeWidget();self.tlist.setHeaderLabels(['Tests']);self.tlist.setMaximumWidth(340)
+        for stage,names in self._test_specs():
+            it=QTreeWidgetItem(self.tlist,[stage]);it.setFlags(it.flags()|Qt.ItemIsUserCheckable)
+            it.setCheckState(0,Qt.Checked);it.setExpanded(False)
+            for name,fn,dgr in names:
+                c=QTreeWidgetItem(it,[name+('  ⚠' if dgr else '')])
+                c.setFlags(c.flags()|Qt.ItemIsUserCheckable)
+                c.setCheckState(0,Qt.Unchecked if dgr else Qt.Checked)
+        split.addWidget(self.tlist,1)
+        right=QVBoxLayout()
+        self.tres=QTreeWidget();self.tres.setHeaderLabels(['Test','Résultat','Détail'])
+        self.tres.setColumnWidth(0,260);self.tres.setColumnWidth(1,70)
+        right.addWidget(self.tres);split.addLayout(right,3);v.addLayout(split)
+        return w
+
+    def _test_specs(self):
+        """(stage,[(nom,fn,danger)]) — fn()->(ok,detail)."""
+        def sds(c,wait=1.0):
+            with self._tlock:
+                return self.tel.cmd(c,wait) if self.tel else '—'
+        def get(p):
+            with self._tlock:
+                return self.tel.get(p) if self.tel else None
+        import socket
+        def port(h,p,t=1.2):
+            try:s=socket.create_connection((h,p),t);s.close();return True
+            except OSError:return False
+        ok=lambda r:bool(r and str(r).strip())
+        return [
+        ('0 — Connectivité',[
+            ('SDS :23',lambda:(port(self.host,23),'port 23'),False),
+            ('CHAI :55000',lambda:(port(self.host,55000),'port 55000'),False),
+            ('Card HTTP :80',lambda:(port(self.card,80),'port 80'),False),
+            ('Card RTSP :554',lambda:(port(self.card,554),'port 554'),False)]),
+        ('1 — SDS lecture',[
+            ('versulu',lambda:(ok(sds('versulu')),sds('versulu')[:80]),False),
+            ('pwd',lambda:(ok(sds('pwd')),sds('pwd')),False),
+            ('samplerate',lambda:(ok(sds('samplerate')),sds('samplerate')),False),
+            ('cpsync',lambda:(ok(sds('cpsync')),sds('cpsync')),False),
+            ('mixer stat',lambda:(ok(sds('mixer stat')),sds('mixer stat')[:80]),False),
+            ('inputselect stat',lambda:(ok(sds('inputselect stat')),sds('inputselect stat')[:80]),False)]),
+        ('2 — Session CHAI',[
+            ('alive',lambda:(bool(self.u and self.u.alive),'alive'),False),
+            ('state>50 ctrls',lambda:(self.u and len(self.u.state)>50,'%d ctrls'%len(self.u.state)),False),
+            ('status 0xf050',lambda:(self.u and self.u.op_status() is not None,'0x%x'%self.u.op_status()),False)]),
+        ('3 — Fichiers/prises',[
+            ('ls racine',lambda:(ok(sds('ls')),sds('ls')[:80]),False),
+            ('takes',lambda:(self.tel and len(self.tel.takes())>=0,'%d takes'%len(self.tel.takes())),False)]),
+        ('4 — AudioLAN',[
+            ('sw_versions',lambda:(self.alan and ok(self.alan.sw_versions()),'versions'),False),
+            ('stream_list',lambda:(self.alan and self.alan.stream_list() is not None,'streams'),False),
+            ('general',lambda:(self.alan and self.alan.general() is not None,'general'),False)]),
+        ('5 — Écritures ⚠',[
+            ('mixer_set fader',lambda:(ok(sds('mixer set 0 fader -10')),'set+restore'),True),
+            ('text d001=0',lambda:(self.u and self.u.text(0xd001,'0') or True,'locate 0'),True),
+            ('channelmode stat',lambda:(ok(sds('channelmode')),sds('channelmode')),True)]),
+        ('6 — Flash read-only ⚠',[
+            ('rd 0x40000',lambda:(ok(sds('rd 0x40000 4')),sds('rd 0x40000 4')),True)]),
+        ('7 — RTOS diag',[
+            ('threads',lambda:(ok(sds('threads')),sds('threads')[:70]),False),
+            ('free',lambda:(ok(sds('free')),sds('free')[:70]),False),
+            ('sem',lambda:(ok(sds('sem')),sds('sem')[:70]),False)]),
+        ('8 — CnE extensions RE',[
+            ('Sync/Mode',lambda:(get('cne/AppSettings/Sync/Mode') is not None,str(get('cne/AppSettings/Sync/Mode'))),False),
+            ('Midi/Enabled',lambda:(get('cne/AppSettings/CopperLan/Midi/Enabled') is not None,'midi'),False),
+            ('InterfaceAsInput',lambda:(get('cne/AppSettings/AudioLan/InterfaceAsInput') is not None,'aol-in'),False),
+            ('PreRecording',lambda:(get('cne/AppSettings/Recording/PreRecording') is not None,'prerec'),False)]),
+        ('9 — Validation RE',[
+            ('querylevels format',lambda:('CH' in sds('mixer querylevels',1.5),'parse ok'),False),
+            ('reclog',lambda:(ok(sds('reclog')),'reclog'),False),
+            ('hidden /SHA204',lambda:(self.alan and self.alan.get('/SHA204') is not None,'SHA204'),False),
+            ('hidden /SPDIF',lambda:(self.alan and self.alan.get('/SPDIF') is not None,'SPDIF'),False)]),
+        ]
+
+    def _test_run(self,selected):
+        specs=[]
+        if selected:
+            for i in range(self.tlist.topLevelItemCount()):
+                it=self.tlist.topLevelItem(i)
+                for j in range(it.childCount()):
+                    c=it.child(j)
+                    if c.checkState(0)==Qt.Checked:
+                        specs.append((it.text(0),c.text(0)))
+        else:
+            for stage,names in self._test_specs():
+                specs+=[(stage,n+'  ⚠' if d else n) for n,_,d in names if not d]
+        self.tres.clear();self._test_queue=list(specs);self._test_results=[]
+        for stage,name in specs:
+            pass  # construit index fn
+        def run():
+            fmap={}
+            for stage,names in self._test_specs():
+                for n,fn,d in names:fmap[n+'  ⚠' if d else n]=fn
+            for stage,name in specs:
+                if not self.chk_danger.isChecked() and name.endswith('⚠'):
+                    self._test_results.append((name,'SKIP','écriture — cocher ⚠'));continue
+                try:
+                    ok,det=fmap[name.replace('  ⚠','')]()
+                    self._test_results.append((name,'PASS' if ok else 'FAIL',str(det)[:120]))
+                except Exception as e:
+                    self._test_results.append((name,'FAIL',str(e)[:120]))
+        self._test_results=[];threading.Thread(target=run,daemon=True).start()
+        self._test_seen=0
+
+    def _test_poll(self):
+        for r in self._test_results[self._test_seen:]:
+            it=QTreeWidgetItem([r[0],r[1],r[2]])
+            it.setForeground(1,{'PASS':QColor('#7fd4a8'),'FAIL':QColor('#ff7b72'),'SKIP':QColor('#8b94a1')}.get(r[1],QColor('#dde2e8')))
+            self.tres.addTopLevelItem(it)
+        self._test_seen=len(self._test_results)
+
+    def _test_export(self):
+        import json,time
+        p=QFileDialog.getSaveFileName(self,'Rapport','test_report.json','JSON (*.json)')[0]
+        if p:
+            json.dump({'host':self.host,'card':self.card,'when':time.ctime(),
+                       'results':[{'test':r[0],'result':r[1],'detail':r[2]} for r in self._test_results]},
+                      open(p,'w'),indent=1)
+            self.statusBar().showMessage('Rapport → '+p)
 
     def _system(self):
         """Onglet Système = Réglages (0xb0xx) + Fonctions+ — scroll."""
@@ -1251,6 +1382,7 @@ class Win(QMainWindow):
             if hasattr(self,'f_aoip_card'):
                 for g in self.f_aoip_card:
                     g.setEnabled(bd_id==3)
+        if hasattr(self,'_test_results'):self._test_poll()
         if self.u and hasattr(self.u,'ensure_alive'):self.u.ensure_alive()
         self._meters_tick()
         for ch,s in enumerate(self.strips):
