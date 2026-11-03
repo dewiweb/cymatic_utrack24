@@ -805,3 +805,15 @@ FUN_00001458 (decompile REA) = builder de table CRC32 reflected standard
 est Thumb non-analyse => plage/init/xorout inconnus.
 Testes sans match: zlib toutes plages/pads/byte-swap/msb/adler/fletcher/
 champ-zero. A faire: decompile Thumb de scanBCD ou routine PC (BCOFWDL).
+
+## 41. uRemote re-verif (session REA #2) — text write format
+
+Recherche du writer texte (0xd001 locate/0xc001 chdir — 'format fil non
+capture' device_model.md):
+- class_id 0x10003744 et TLV 0x3744/0x8437-like: 0 match dans le PE
+- scanBCD (audiolan): strings PC-relatifs, xrefs vides — handler Thumb
+- BcOd CRC: FUN_00001458 = builder table CRC32 reflected standard
+  (poly 0xedb88320) — zlib-compatible. Couverture/init du caller
+  (scanBCD, Thumb) toujours inconnus apres ~15 variantes testees.
+=> text write = implemente dans utrack_control.text() (0xd001 etc)
+   mais jamais observe sur le fil — format a valider live.
