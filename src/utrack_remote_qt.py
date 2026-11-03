@@ -523,11 +523,11 @@ class Win(QMainWindow):
         self.route_grid.setSpacing(6);self.route_grid.setHorizontalSpacing(14)
         self.route_grid.setColumnStretch(0,1);self.route_grid.setColumnStretch(1,1)
         sc.setWidget(scw);gg.addWidget(sc);v.addWidget(gb,3)
-        gbc=QGroupBox('Configuration AudioLAN — sources · réseau · système · streams');cv=QVBoxLayout(gbc)
-        self.atree=QTreeWidget();self.atree.setHeaderLabels(['Élément','Détail'])
-        self.atree.setAlternatingRowColors(True);self.atree.setSelectionMode(QTreeWidget.SingleSelection)
-        self.atree.itemChanged.connect(self._alan_tree_dirty)
-        cv.addWidget(self.atree);v.addWidget(gbc,2)
+        gbc=QGroupBox('Configuration AudioLAN — sections calquées sur la webui native');cv=QVBoxLayout(gbc)
+        sc=QScrollArea();sc.setWidgetResizable(True)
+        self.acfg_w=QWidget();self.acfg_l=QVBoxLayout(self.acfg_w)
+        self.acfg_l.setContentsMargins(4,4,4,4);self.acfg_l.setSpacing(8)
+        sc.setWidget(self.acfg_w);cv.addWidget(sc);v.addWidget(gbc,2)
         self._tree_dirty=False
         return w
 
@@ -538,77 +538,127 @@ class Win(QMainWindow):
                 if self.alan is None:
                     from audiolan_api import AudioLan
                     self.alan=AudioLan(self.card)
-                self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list())
+                hid={}
+                for p in self.ALAN_HIDDEN:
+                    try:hid[p]=self.alan.get(p)
+                    except Exception as e:hid[p]=e
+                self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list(),self.alan.parameter_strings(),hid)
             except Exception as e:self._alan_data=e
         threading.Thread(target=run,daemon=True).start()
 
+    # Endpoints REST caches de la carte (REA §39) — sondes lecture seule
+    ALAN_HIDDEN=['/SHA204','/SPDIF','/SDRamCfg','/Exchange/samir','/SlaveOnly',
+                 '/Shell/cne/Shell/','/USB/EP1/Rx/FifoSize']
+
+    # Schéma déclaratif calqué sur les sections de la webui Angular native.
+    # kind: str|num|bool|enum:<table>|ro (':ro' suffixe = lecture seule)
+    ALAN_SECTIONS=[
+        ('Audio',[
+            ('Mode audio','audioMode','enum:audioModes'),
+            ('Sample rate','samplingRate','enum:samplingRates:ro'),
+            ('Résolution','resolution','enum:resolutions:ro'),
+            ('Syntonized','syntonizedMode','bool'),
+            ('Receiver delay (samples)','playoutDelay.delayInSamples','num')]),
+        ('Réseau',[
+            ('Nom du device','name','str'),('DHCP','DHCPenable','bool'),
+            ('IP statique','IPaddress','str'),('Masque statique','IPmask','str'),
+            ('Passerelle statique','IPgateway','str'),
+            ('DNS 1','IPDNS1','str'),('DNS 2','IPDNS2','str'),
+            ('IP actuelle','currentIPaddress','str:ro'),
+            ('Masque actuel','currentIPmask','str:ro'),
+            ('Passerelle actuelle','currentIPgateway','str:ro')]),
+        ('PTP',[
+            ('Domain','PTP.domain','num'),
+            ('Preferred master','PTP.preferredMaster','bool'),
+            ('Slave only','PTP.slaveOnly','bool')]),
+        ('SAP',[
+            ('Session Announcement','SAP.SessionAnnouncementEnabled','bool'),
+            ('Browsing','SAP.BrowsingEnabled','bool'),
+            ('Adresse multicast','SAP.MulticastAddress','str'),
+            ('Port','SAP.Port','num'),
+            ('Session timeout','SAP.SessionTimeout','num')]),
+        ('SIP',[
+            ('Serveur','SIPreceivers.SIPserver','str'),
+            ('Utilisateur','SIPreceivers.SIPusername','str'),
+            ('Mot de passe','SIPreceivers.SIPpassword','str')])]
+
+    def _alan_resolve(self,cfg,path):
+        """'PTP.domain' -> (dict,key) ; cree les sous-dicts editables."""
+        parts=path.split('.');d=cfg
+        for p in parts[:-1]:d=d.setdefault(p,{})
+        return d,parts[-1]
+
+    def _mark_dirty(self):
+        self._tree_dirty=True
+
     def _fill_alan(self,data):
-        g,src,out,sl=data
-        self.atree.blockSignals(True)
-        self.atree.clear();self._edit_items=[]
+        g,src,out,sl,ps,hid=data
         cfg=g.get('ArchwaveAES67',{}).get('config',{})
-        self.alan_info.setText('%s — %s'%(cfg.get('name','?'),cfg.get('currentIPaddress','?')))
         self._alan_cfg=cfg
-        g1=QTreeWidgetItem(['Réseau',''])
-        def leaf(par,lab,d,k,kind='str',ro=False):
-            v=d.get(k,'—');it=QTreeWidgetItem(par,[lab,('' if v is None else str(v))])
-            if ro:return it
-            it.setFlags(it.flags()|(Qt.ItemIsUserCheckable if kind=='bool' else Qt.ItemIsEditable))
+        enums=ps.get('parameter_strings',ps) if isinstance(ps,dict) else {}
+        while self.acfg_l.count():
+            it=self.acfg_l.takeAt(0)
+            if it.widget():it.widget().deleteLater()
+        self._edit_items=[]
+        def row_widget(lab,parent_l,d,k,kind):
+            ro=kind.endswith(':ro');kind=kind[:-3] if ro else kind
+            hl=QHBoxLayout();hl.addWidget(QLabel(lab,objectName='dim'),1)
+            v=d.get(k,'\u2014')
             if kind=='bool':
-                it.setCheckState(1,Qt.Checked if v else Qt.Unchecked);it.setText(1,'')
-            self._edit_items.append((it,d,k,kind));return it
-        leaf(g1,'DHCP',cfg,'DHCPenable','bool')
-        leaf(g1,'IP',cfg,'currentIPaddress',ro=True)
-        leaf(g1,'Masque',cfg,'currentIPmask',ro=True)
-        leaf(g1,'Passerelle',cfg,'currentIPgateway',ro=True)
-        leaf(g1,'IP statique',cfg,'IPaddress')
-        leaf(g1,'Masque statique',cfg,'IPmask')
-        leaf(g1,'Passerelle statique',cfg,'IPgateway')
-        leaf(g1,'Nom',cfg,'name')
-        leaf(g1,'DNS 1',cfg,'IPDNS1');leaf(g1,'DNS 2',cfg,'IPDNS2')
-        leaf(g1,'Sample rate',cfg,'samplingRate','str',ro=True)
-        leaf(g1,'Résolution',cfg,'resolution','str',ro=True)
-        amod=leaf(g1,'Mode audio (index)',cfg,'audioMode','str')
-        amod.setToolTip(1,'index dans parameter_strings.audioModes (ex 1="24CH InOut") — nb de flux in/out AES67')
-        leaf(g1,'Syntonized',cfg,'syntonizedMode','bool')
-        pd=cfg.get('playoutDelay') or {}
-        leaf(g1,'Playout delay (samples)',pd,'delayInSamples')
-        ptp=cfg.get('PTP') or {}
-        leaf(g1,'PTP domain',ptp,'domain')
-        leaf(g1,'PTP preferred master',ptp,'preferredMaster','bool')
-        leaf(g1,'PTP slave only',ptp,'slaveOnly','bool')
-        self._alan_cfg['playoutDelay']=pd;self._alan_cfg['PTP']=ptp
-        sap=cfg.get('SAP') or {}
-        leaf(g1,'SAP annonces',sap,'SessionAnnouncementEnabled','bool')
-        leaf(g1,'SAP browsing',sap,'BrowsingEnabled','bool')
-        self._alan_cfg['SAP']=sap
-        self.atree.addTopLevelItem(g1);g1.setExpanded(False)
-        g0=QTreeWidgetItem(['Système',''])
+                w=QCheckBox();w.setChecked(bool(v));w.setEnabled(not ro)
+                w.toggled.connect(lambda *_:self._mark_dirty());hl.addWidget(w,2)
+            elif kind.startswith('enum:'):
+                w=_Combo();tab=kind[5:];kind='enum'
+                for e in enums.get(tab,[]):
+                    w.addItem(e.get('displayString','?'),e.get('index'))
+                i=w.findData(v);w.setCurrentIndex(max(0,i));w.setEnabled(not ro)
+                w.activated.connect(lambda *_:self._mark_dirty());hl.addWidget(w,2)
+            else:
+                w=QLineEdit('' if v is None else str(v));w.setReadOnly(ro)
+                w.editingFinished.connect(lambda:self._mark_dirty());hl.addWidget(w,2)
+            if not ro:self._edit_items.append((w,d,k,kind))
+            parent_l.addLayout(hl)
+        for title,rows in self.ALAN_SECTIONS:
+            gb=QGroupBox(title);gv=QVBoxLayout(gb);gv.setSpacing(6)
+            for lab,path,kind in rows:
+                d,k=self._alan_resolve(cfg,path)
+                row_widget(lab,gv,d,k,kind)
+            self.acfg_l.addWidget(gb)
+        self._alan_src=src.get('ArchwaveAES67',{}).get('sources',[])
+        if self._alan_src:
+            gb=QGroupBox('Sources (audio \u2192 r\u00e9seau)');gv=QVBoxLayout(gb);gv.setSpacing(6)
+            for s in self._alan_src:
+                gv.addWidget(QLabel(s.get('name','?'),objectName='chip'))
+                for lab,k,kind in (('Activ\u00e9','streamEnable','bool'),
+                                   ('Config auto','automaticConfigEnabled','bool'),
+                                   ('Multicast','multicastAddress','str'),
+                                   ('Port','multicastPort','num'),
+                                   ('RTP TTL','RTPTTL','num'),
+                                   ('SIP user','SIPusername','str')):
+                    row_widget(lab,gv,s,k,kind)
+            self.acfg_l.addWidget(gb)
         try:
+            gb=QGroupBox('Système');gv=QVBoxLayout(gb);gv.setSpacing(2)
             sv=self.alan.sw_versions().get('ArchwaveVER',{})
             for k,v in sv.items():
-                if isinstance(v,dict):QTreeWidgetItem(g0,[k,v.get('version','—')])
-            dl=self.alan.device_list().get('ArchwaveAES67',{}).get('devices',[])
-            for d in dl:QTreeWidgetItem(g0,['Device',d.get('hostname','?')+' @ '+d.get('IPaddress','?')])
+                if isinstance(v,dict):
+                    gv.addWidget(QLabel('%s : %s'%(k,v.get('version','—')),objectName='info'))
+            for d in self.alan.device_list().get('ArchwaveAES67',{}).get('devices',[]):
+                gv.addWidget(QLabel('Device : %s @ %s'%(d.get('hostname','?'),d.get('IPaddress','?')),objectName='info'))
+            self.acfg_l.addWidget(gb)
         except Exception:pass
-        self.atree.addTopLevelItem(g0);g0.setExpanded(False)
-        g2=QTreeWidgetItem(['Sources (audio → réseau)',''])
-        self._alan_src=src.get('ArchwaveAES67',{}).get('sources',[])
-        for s in self._alan_src:
-            it=QTreeWidgetItem(g2,[s.get('name','?'),''])
-            it.setFlags(it.flags()|Qt.ItemIsEditable)
-            self._edit_items.append((it,s,'name','text0'))
-            leaf(it,'Activé',s,'streamEnable','bool')
-            leaf(it,'Config auto',s,'automaticConfigEnabled','bool')
-            leaf(it,'Multicast',s,'multicastAddress')
-            leaf(it,'RTP TTL',s,'RTPTTL')
-            leaf(it,'SIP user',s,'SIPusername')
-        self.atree.addTopLevelItem(g2);g2.setExpanded(False)
-        g4=QTreeWidgetItem(['Streams actifs',''])
-        for s in sl.get('ArchwaveAES67',{}).get('streams',[]):
-            QTreeWidgetItem(g4,[str(s)[:80],''])
-        self.atree.addTopLevelItem(g4);g4.setExpanded(False)
-        self.atree.blockSignals(False)
+        if hid:
+            gb=QGroupBox('RE — surfaces cachées (endpoints internes)');gv=QVBoxLayout(gb);gv.setSpacing(2)
+            for p,r in hid.items():
+                s=('ERR '+str(r)) if isinstance(r,Exception) else str(r)
+                gv.addWidget(QLabel(p+' : '+s[:100],objectName='info'))
+            self.acfg_l.addWidget(gb)
+        sl_list=sl.get('ArchwaveAES67',{}).get('streams',[])
+        if sl_list:
+            gb=QGroupBox('Streams actifs (d\u00e9couverts)');gv=QVBoxLayout(gb);gv.setSpacing(2)
+            for s in sl_list:gv.addWidget(QLabel(str(s)[:110],objectName='info'))
+            self.acfg_l.addWidget(gb)
+        self.acfg_l.addStretch(1)
         self._tree_dirty=False
         self._alan_out=out.get('ArchwaveAES67',{}).get('outputs',[])
         streams=sl.get('ArchwaveAES67',{}).get('streams',[])
@@ -704,14 +754,15 @@ class Win(QMainWindow):
         idmap.update({id(a):b for a,b in zip(self._alan_out,out)});idmap[id(self._alan_cfg)]=cfg
         for sub in ('playoutDelay','PTP','SAP'):  # sous-dicts editables
             if isinstance(self._alan_cfg.get(sub),dict):idmap[id(self._alan_cfg[sub])]=cfg[sub]
-        for it,d,k,kind in self._edit_items:
+        for w,d,k,kind in self._edit_items:
             t=idmap.get(id(d))
             if t is None:continue
-            if kind=='bool':t[k]=it.checkState(1)==Qt.Checked
-            elif kind=='text0':t[k]=it.text(0)
-            else:
-                v=it.text(1)
-                t[k]=int(v) if isinstance(d.get(k),int) and v.lstrip('-').isdigit() else v
+            if kind=='bool':t[k]=w.isChecked()
+            elif kind=='enum':t[k]=w.currentData()
+            elif kind=='num':
+                try:t[k]=int(w.text())
+                except ValueError:continue
+            else:t[k]=w.text()
         for cb,o in getattr(self,'_route_boxes',[]):
             t=idmap.get(id(o))
             if t is None:continue
@@ -723,7 +774,7 @@ class Win(QMainWindow):
         def run():
             try:
                 self.alan.set_sources(src);self.alan.set_general(cfg);self.alan.set_outputs(out)
-                self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list())
+                self._alan_data=(self.alan.general(),self.alan.sources(),self.alan.outputs(),self.alan.stream_list(),self.alan.parameter_strings(),{})
             except Exception as e:self._alan_data=e
         threading.Thread(target=run,daemon=True).start()
 
@@ -1242,6 +1293,9 @@ def main():
         from demo_device import DemoControl,DemoTel,DemoAlan
         w=Win(u=DemoControl(),connected=True,tel=DemoTel(),
               host='demo',card='demo');w.alan=DemoAlan();w.show()
+        QTimer.singleShot(400,w._alan_refresh)
+        QTimer.singleShot(500,w._takes_refresh)
+        QTimer.singleShot(600,w._stat_refresh)
         sys.exit(app.exec())
     if sys.platform=='win32':
         out=subprocess.run(['tasklist','/FI','IMAGENAME eq uRemote.exe'],capture_output=True,text=True).stdout

@@ -62,7 +62,7 @@ class DemoControl:
                     self.state[0xf006] = (max(0, r), str(max(0, r)), t)
 
     def op_status(self):
-        return 0x30111   # cm=24In/26Out, board=AudioLAN(3), lock
+        return (0<<4)|(3<<8)|0x111   # cm=24In/26Out, board=AudioLAN(3), lock
     def input_select(self):
         return [0, 0, 1]   # ch1-8 analog, 9-16 analog, 17-24 digital
     def meters_peak(self):
@@ -175,10 +175,41 @@ class DemoAlan:
                 'Stage_A_24ch (239.10.1.0)']
     def device_list(self):
         return {'devices': [{'name': 'uTrack24', 'id': '34b96e2e'}]}
-    def sources(self): return {'sources': ['analog', 'aes67']}
+    def sources(self):
+        return {'ArchwaveAES67': {'sources': [
+            {'name':'FOH_Main','streamEnable':True,'multicastAddress':'239.10.0.1',
+             'multicastPort':5004,'RTPTTL':32,'automaticConfigEnabled':True,'SIPusername':''},
+            {'name':'Stage_A','streamEnable':False,'multicastAddress':'239.10.1.0',
+             'multicastPort':5004,'RTPTTL':32,'automaticConfigEnabled':False,'SIPusername':'u24'}]}}
     def outputs(self): return {'outputs': [{'ch': i, 'src': 'aes67'} for i in range(24)]}
-    def general(self): return {'name': 'uT24 AudioLAN', 'dhcp': True}
-    def parameter_strings(self): return {'params': {}}
+    def general(self):
+        return {'ArchwaveAES67': {'config': {
+            'name':'uT24 AudioLAN','DHCPenable':False,
+            'IPaddress':'192.168.10.175','IPmask':'255.255.255.0','IPgateway':'192.168.10.1',
+            'currentIPaddress':'192.168.10.175','currentIPmask':'255.255.255.0','currentIPgateway':'192.168.10.1',
+            'IPDNS1':'8.8.8.8','IPDNS2':'',
+            'audioMode':1,'samplingRate':2,'resolution':24,'syntonizedMode':True,
+            'playoutDelay':{'delayInSamples':4800},
+            'PTP':{'domain':0,'preferredMaster':False,'slaveOnly':True},
+            'SAP':{'SessionAnnouncementEnabled':True,'BrowsingEnabled':True,
+                   'MulticastAddress':'239.10.9.9','Port':9875,'SessionTimeout':60},
+            'SIPreceivers':{'SIPserver':'','SIPusername':'','SIPpassword':''}}}}
+    def parameter_strings(self):
+        return {'parameter_strings': {
+            'audioModes':[{'displayString':'8CH InOut','index':0},
+                          {'displayString':'24CH InOut','index':1},
+                          {'displayString':'24CH In / 2CH Out','index':2}],
+            'samplingRates':[{'displayString':'44.1 kHz','index':1},{'displayString':'48 kHz','index':2}],
+            'resolutions':[{'displayString':'16-bit','index':16},{'displayString':'24-bit','index':24}]}}
+    def get(self,path):
+        fake={'/SHA204':{'chip':'ATECC508A','locked':True},
+              '/SPDIF':{'enabled':False,'rate':48000},
+              '/SDRamCfg':{'size':'128MB','speed':'166MHz'},
+              '/Exchange/samir':{'state':'idle'},
+              '/SlaveOnly':{'value':True},
+              '/Shell/cne/Shell/':{'prompt':'cne>'},
+              '/USB/EP1/Rx/FifoSize':{'bytes':1024}}
+        return fake.get(path,{'path':path,'status':'n/a'})
     def route_all(self, *a, **k): return True
     def set_general(self, *a, **k): return True
     def set_outputs(self, *a, **k): return True
