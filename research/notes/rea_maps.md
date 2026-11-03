@@ -1260,3 +1260,596 @@ BUGS src/utrack_control.py::text_msg (signales, non corriges) :
    4337 (ctrl d000 val 4 = PLAY !) au lieu de CTRL_TEMPLATE[:40] ->
    chaque ecriture texte envoie aussi un play. (num_msg utilise bien
    [:40].) A corriger avant test hardware du text().
+
+## 54. uTool2 command surface
+
+VERDICT D'ENSEMBLE : uTool2 n'envoie AUCUNE commande au device. Pas de
+socket, pas de CHAI/CopperLan, pas de telnet SDS, pas de DeviceIoControl
+— grep exhaustif du corpus (23422 fns) : zero `socket|connect|recv|
+sendto|WSA`, zero `copperlan|CHAI|CPCHAI`, zero `versulu|filerec|
+fileplay|reclog|format`. Le seul reseau = InternetOpenW "juce"
+(FUN_00457eb0, news utoolnews.xml + crash-report POST
+dropbox wsreport.php) et ShellExecuteW (liens site/forum/manuel).
+uTool2 travaille UNIQUEMENT sur le disque USB FAT32 monte sur le PC
+(GetDriveTypeA FUN_005b50c0/5b69e0, GetVolumeInformationA FUN_005b6c80,
+filtre "FAT32" FUN_00448730 dans la liste de drives FUN_005ae320).
+Toute la "command surface" = fichiers poses sur le volume que le device
+relit ensuite. API disque : CreateDirectoryW (0x612880), MoveFileW
+(rename, 0x6129a0/0x6331e0), CopyFileW (0x6129e0/0x62d1b0),
+RemoveDirectoryW+DeleteFileW (0x635980, recursif -> "Delete Folder" /
+"Please erase all content" FUN_00553860).
+
+### Firmware update — ABSENT de uTool2
+
+- Aucun .bcd/BcOd/ArchwaveBCD dans le binaire (grep `BcOd`=0 hits,
+  `bcd`=0). Le bouton "Check for driver and firmware update"
+  (FUN_005adb00:140, PanelSupportComponent) ouvre juste le site web
+  cymatic via ShellExecuteW.
+- L'update firmware reste : .bcd copie a la main sur le disque
+  (le device scanne au boot / `versulu` SDS host-side, cf. §47).
+
+### Format / partition — ABSENT
+
+- Pas de SHFormatDrive/FormatEx. uTool2 exige un volume DEJA FAT32
+  (sinon absent de la liste cible). "Erase" = delete recursif de
+  fichiers, pas un format bas niveau.
+
+### Arborescence device ecrite (FUN_005bd870, mappeur dossiers)
+
+device_type (FUN_005bcea0) : 1=LP-16, 2=LR-16, 3=uTrack24, 4=uTrackX32
+(detecte via la chaine stockee par cible — champs target_device des
+XML / choix utilisateur "Device type ?" FUN_005050b0 ; volume label lu
+par GetVolumeInformationA FUN_005b6c80).
+
+| item type | uTrack24 (case 3/4) | stereo (case 2) | libre |
+|---|---|---|---|
+| 1 | Music | Music | Music |
+| 2 | MultiTrack | Recording | — |
+| 3/4 | Music / MultiTrack | Music / Recording | — |
+| 5 | #PLAYLISTS | #PLAYLISTS | — |
+
+### Playlists — fichier `.play` XML (PAS de SDS, PAS de .playlistprj)
+
+- Serialiseur FUN_00555a70 (decomp_utool2 0x555a70.c). Ecrit dans
+  `#PLAYLISTS/<name>.play` ; defaut "New Playlist.play" (FUN_005581e0) ;
+  auto-playlist = `autoplay.play` a la racine #PLAYLISTS (FUN_005501d0,
+  node "Autoplay", exige fw>=3427).
+- Le `.playlistprj` (ns0:playlist_project) reste un projet PC dans
+  PlaylistLib — jamais envoye au device.
+- Schema .play (DATs resolus RVA=file+0xE00, table @file 0x33D9E0) :
+
+```xml
+<playlist>
+  <version>2.0.062</version><timestamp/><creator>cymatic audio uTool</creator>
+  <playlistname/><target_device>uTrack24|uTrackX32</target_device>
+  <song>                               <!-- 1 par morceau -->
+    <name>...</name><location>...</location><duration>...</duration>
+    <pause_mode><mode>..</mode><time>INT</time></pause_mode>
+  </song>
+</playlist>
+```
+  (ordre reel du code : name, location, duration, puis pause_mode
+  contenant mode+time ; `time` = itoa(item+0xc).)
+
+### Takes / songs — dossiers + `<Take>.set` XML + WAV
+
+- Export ecrit `<dir>/<TakeName>/` : WAV copies (CopyFileW) + fichier
+  `<TakeName>.set` pour uTrack24/uTrackX32 (FUN_005bd790 : types 1/2 =
+  nom fixe "song.set", types 3/4 = nom du morceau).
+- song.set serialiseurs : FUN_0055a260 (variante riche uTrack24) et
+  FUN_00558f10 (variante simple). Root `<song_settings>` ; champs dans
+  l'ordre : version, timestamp, creator, target_device, song_name,
+  validationcode?, sync_device? (si sync units), playback_type,
+  channel_count, sampling_rate, resolution, total_sample_count,
+  midi_file/midi_length/midi_length_samples/midi_offset ("-"=vide,
+  DAT_0073efbc/efa8/ef64), wave_file_count,
+  `<wave_file_switches><switch/></wave_file_switches>`,
+  `<channels><channel id="N">` avec output_level, output_mute,
+  output_channel, track_name, monitor_volume, monitor_mute,
+  monitor_pan `</channel></channels>`,
+  puis `<marker><global_time_in_samples/><file_number/>
+  <local_time_in_samples/></marker>`*.
+  Verifie : identique au Take0012.set ecrit par le device
+  (creator "cymatic audio uTrack24").
+- `_TempTake` = dossier temporaire de prise relu a l'import
+  (FUN_0055e400) ; existence via FUN_0045e0d0 sur dir.
+- Ops take = filesystem : rename=MoveFileW, delete=RemoveDirectoryW
+  recursif ("Warning: Multiple files will be deleted... Playlists with
+  reference to deleted songs will turn invalid"), copy=CopyFileW.
+- `sessions.xml` a la racine (FUN_005a95a0) :
+  `<ns0:sessiontree xmlns:ns0=".../sessiontree/1.0"><ns0:version/>`
+  `<ns0:items><ns0:item name=".." date=".."/></ns0:items>`
+  (attribs DAT_0074801c="name", DAT_00748024="date").
+- WAV exportes : metadonnee EBUCore XML ISRC injectee (FUN_005cfde0) ;
+  resample via r8brain embarque ; splitter stereo/mono via
+  wave_file_switches.
+- mixerpreset : `<ns0:mixerpreset>` (ns .../mixerpreset/1.0) avec
+  ns0:name, ns0:pre, ns0:channels>ns0:channel (FUN_00512000) —
+  embarque dans les settings du morceau.
+
+### Settings device — ABSENT
+
+Aucun canal vers channelmode/inputselect/sync/etc. Les seuls reglages
+que uTool2 influence sont ceux du song.set/.play ci-dessus (niveaux,
+mutes, pans, pause_mode, playback_type, sync_device "Standalone"/_Slave
+— "Redundant mode: One separate song is created for every synchronized
+unit"). Les vrais reglages device restent en flash (persparams/CnE) et
+ne sont modifiables que par SDS/CHAI (uRemote) ou l'UI du device.
+"AudioSettings"/"TargetDeviceConfiguration" = config PC/locale JUCE,
+pas device.
+
+### Sync multi-unites (export)
+
+Pas de protocole : uTool2 exporte le meme contenu sur N disques etiquetes
+("_Slave" suffixe, "Target song Disk Unit", warning "label the hard
+disks and plug them into the proper uTrack24 unit", batch en
+'Force Overwrite'). sync_device dans song.set porte le role.
+
+### Adresses cles (uTool2.exe, RVA=file+0xE00 pour .rdata chaines)
+
+| quoi | adresse |
+|---|---|
+| serialiseur .play | FUN_00555a70 |
+| serialiseur song.set (uT24) | FUN_0055a260 |
+| serialiseur song.set (simple) | FUN_00558f10 |
+| serialiseur songprj ns0:SongProject | FUN_005406f0 |
+| sessions.xml writer | FUN_005a95a0 |
+| mixerpreset | FUN_00512000 |
+| mappeur dossiers | FUN_005bd870 |
+| nom fichier .set | FUN_005bd790 |
+| node autoplay.play | FUN_005501d0 |
+| defaut "New Playlist.play" | FUN_005581e0 |
+| device-type code/name | FUN_005bce00 / FUN_005bcea0 |
+| volume/drive enum | FUN_005b6c80 / FUN_005ae320 |
+| export walker | FUN_00595b20 / FUN_005955a0 / FUN_00593a60 / FUN_005979c0 |
+| resolution chemins projet | FUN_00551b30 |
+| delete recursif "erase all" | FUN_00553860 |
+| support panel (lien update) | FUN_005adb00 |
+
+## 55. announce records + meter push (fw4218, chaine complete)
+
+### Builders device-side (corpus decomp_fw4218)
+
+- FUN_000a5dfc (0xa5dfc.c) = init du controleur CHAI (`uTrackCopperLan`,
+  singleton via FUN_000aa570 -> "uTrackCopperLan::getReference"). Appelle
+  FUN_000a6464 puis remplit toutes les valeurs initiales (~40 callbacks
+  FUN_000aaXXX/ecrivent les champs +0x5xx de l'objet controleur).
+- FUN_000a6464 (0xa6464.c, ~5.6KB non-contig) = BUILDER DU CONTROL TREE.
+  Sequence : `entity = member->vt[+0xb4](1,name,...)` (AddLocalDevice) ;
+  `entityAdj = entity + *(*entity -0x1ec)` ; vt+0xe4 (set flags) et
+  vt+0xb8 (register listener local_14+0x11c). Sous-objets crees via
+  member vt+0xa4 (listes statiques numerotees : 5=transport "Action",
+  1/2/3/4/7/9/0xb/0xc = enum providers) et vt+0xa8 (listes dynamiques,
+  arg=1 : canaux playback, markers, playlist, exit-playlist).
+- Sessions (= nodes) creees par `entityAdj->vt[+0x138](0,"<name>",DAT)` :
+  +0x248 "KA Status" (node 0, ids 0xf0xx), +0x2c0 "Meters" (node 1,
+  0xe000..0xe019), +0x32c "KA Controls" (node 2, 0xd0xx), +0x4c8 "Files"
+  (node 3, 0xc0xx), +settings (node 4, 0xb0xx). Apres chaque session :
+  `session->vt[+0x4c](local_14+0x120)` = abonne le listener du
+  controleur (thunks FUN_001c3d3c -> getter FUN_000adab0,
+  FUN_001c3d0c -> setter FUN_000ace70). "Files" a aussi vt+0x34
+  (local_14+0x124, handler texte chdir/locate, cf. §51).
+- Controles ajoutes par 3 slots session :
+  `vt+0x84`(name, ctrl, x, kind, fmt1, fmt2) = valeur simple
+    (arg5 kind: 0=texte courant, 1=etat, 2=rec, 3=playlist, 4=datetime,
+    5=op-status, 6=error-code, 7=action, 8=cursor, 9=liste-dyn);
+  `vt+0x80`(name, ctrl, 0, listObj, itemCount, fmt1, fmt2) = liste ;
+  `vt+0x7c`(name, ctrl, 0, def=0x8000, scaleObj, unitStr, obj2, x, idx,
+    u16f1, u16f2) = numerique (meters "-12dB", pans "Right", faders).
+- Enregistrements per-voie (24x, boucle i<0x18) : Solo ctrl 0xd010+i,
+  Mute 0xd030+i, Pan 0xd050+i (def 0x8000=centre), Fader 0xd070+i ;
+  handles stockes +0x344/+0x3a4/+0x404/+0x464. Meters : boucle i<0x1a,
+  "Meter %d" (FUN_00171d94/171cdc string+itoa), ctrl 0xe000+i, handles
+  +0x2c4+i*4, def 0x8000, unit "-12dB". ATTENTION : dans le decomp,
+  `(uint)(local_15c + 0x3404)` est de l'ARITHMETIQUE POINTEUR =
+  i + 0xd010 directement (0x3404*4) — pas de transform d'id ; les ids
+  annonces = ids ecriture (confirmes par les handlers).
+
+### Wire : enveloppe announce (verifie cpm_audiolan.log)
+
+```
+<msg 4437: member directed, device -> client>
+4437 <hdr ~40B: src=34b96e2e dst=69727160, sub-sessions>
+  repeter: c837 0010 <totLen u16LE> <contentLen u16LE> <record>
+  (totLen = contentLen + 8 ; padding a 4B APRES le payload, contenu
+   variable — vu 0000/4960/0010/ff7f : octets non-significatifs)
+```
+Le `1e 00` de §21 est donc totLen, pas un "type" ; le type est le 1er
+octet du record.
+
+### Record controle (decode sur device_model_raw.txt, ~300 records)
+
+```
++0  u8   type : c1=numerique, c2=liste/bouton, c3=texte, c9=marqueur
++1  u8   0x00
++2  u16  node (session : 0 status / 1 meters / 2 controls / 3 files / 4 settings)
++4  u16  kind : 1 (c1), 2 (c2), 4 (c3)
++6  u16  ctrl (f0xx/e0xx/d0xx/c0xx/b0xx — le haut-octet redonde le node)
++8  u32  flags : 0x00400000 (lecture), 0x00600000 (r/w usuel),
+         0x00200000 (etats membres VNM), 0x00000000 (texte c3)
++12 u16  value (c1/c2 : valeur courante / index selectionne)
+         | u16 text-len (c3, suivi du texte ASCII)
++14 u16  label-len (c2) puis label ASCII | (c1) voir ci-dessous
+```
+
+c1 (numerique, 24B fixes + label optionnel) :
+  `+12 u16 value | +14 u16 def (0x8000 centre pan) | +16..+23 4xu16
+   reserved=0 | +24 u16 label-len | +26 label ASCII | pad4`
+  (b201: `c1 00 0400 0100 01b2 00006000 76f7` +10x00 +`0400"-1dB"0000`
+   => value 0xf776 = (dB+30)*0xffff/30, formule §device_model confirmee)
+c2 (liste) : `+12 u16 sel-index | +14 u16 label-len | label | pad4`
+  (label = libelle de l'item SELECTIONNE, ex "Int. Clock", "Play-Pause")
+c3 (texte) : `+12 u16 text-len | texte | pad4`
+c9 (7B vu) : `c9 00 <u16 a> <u16 b>` — 1x par groupe de session
+  (node0: a=0x19,b=1 ; node3: a=0x16,b=0x0b) — probablement marqueur
+  fin-de-session/compteur ; semantique exacte a confirmer.
+Meme format pour les PROPRIETES MEMBRES VNM (ctrls 0x1010 "Idle"/"Off",
+0x1020 nom groupe, 0x0502 IP, 0x0503 port, 0x1011+i noms canaux AES67)
+— le serializer est generique CHAI (member-record broadcast 0x100037c8
+utilise les memes records c1/c2/c3 dans TLVs c837 ; le contenu differe).
+Cote uRemote : FUN_005a0660 dispatch +0x78=type (c1->vt+0x48 numerique,
+c2->vt+0x4c liste {index@+0x7e,flags@+0x82}, c3->vt+0x50 texte {len@+0x7c}).
+
+### Handlers valeur (device)
+
+- FUN_000adab0 (getter, thunk listener 0x1c3d3c) : dispatch par ctrl.
+  Meters 0xe000..0xe019 : lit u32 @+0x6d8+(ctrl-0xe000)*4, envoie
+  `&0xffff` via FUN_00172530+vt+0x4c PUIS EFFACE le peak (peak-hold
+  read-and-clear). Faders 0xd070+i @+0x740 u16 ; pans 0xd050+i @+0x770
+  (FUN_00172530 arg=1 = mapping pan) ; mutes 0xd030+i @+0x7a0 ; solos
+  0xd010+i @+0x7d0. b0xx settings @+0x578.., b310/b320/b330 blocs
+  @+0x5c0/+0x5e0/+0x5f0 (listes AES67).
+- FUN_000ace70 (setter, thunk 0x1c3d0c) : meme dispatch ; solo 0xd010
+  -> FUN_0006a654/6a6d4 ; mute 0xd030 -> toggle +0x7a0 puis rebuild
+  record mixeur (FUN_001282fc + FUN_00069f60) ; 0xd008 -> set +0x846
+  (dirty RemoteDisplay) ; transport/settings via FUN_00093xxx etc.
+- Valeur ecrite lue `*(u16*)(param_3+4)` ; ctrl via FUN_001bece0 (u16@+4
+  du msg — meme accesseur que le parseur texte §51).
+
+### Meter PUSH (device -> client)
+
+- FUN_000aacb0 (0xaacb0.c) = glue PeakMeters->CHAI : vector u32 du
+  service (meme type que querylevels : valid FUN_001b49d0, count
+  FUN_001bd0b0 clamp 0x1a=26, ptr FUN_001448fc), chaque valeur
+  `>> 0xf` -> tableau 26, puis FUN_000b00bc(getReference(),vals,count).
+- FUN_000b00bc (0xb00bc.c) = EMETTEUR : pour i<count (max 26) :
+  peak-hold `store[i]=max(store[i], new[i])` @+0x6d8+i*4, puis
+  `meterCtrl[i]->vt[+0x5c](0, store[i]&0xffff)` (set+notify) ; enfin
+  `metersSession->vt[+0x98]()` = FLUSH batch. => valeur fil = u16
+  `(peak_u32>>15)&0xffff` : lineaire, 0xffff = full-scale si peak
+  aligne MSB 32-bit. ATTENTION : le vecteur SDS affiche des valeurs
+  type 0x000099FF (bas-peuple) — si le service livre des valeurs
+  low-aligned, le >>15 produit ~1 ; a verifier live (le wire reel =
+  blocs 16B e0xx, cf. infra) — le doute est sur la representation du
+  u32, pas sur le u16 emis.
+- Wire (notes copperlan_vnm_findings + ce schema) : le flush emet un
+  message membre dirige `4437` contenant des blocs 16B par metre
+  (e000..e018/19 observes en capture uRemote : flux ~10Hz). Les pushes
+  uni-controle confirmes = TLV `4337 0010 1e00 1600 | 0000 | ctrl u16 |
+  16B | value u16@20` (settings b0xx dans cpm_audiolan.log, src
+  34b96e2e). Le flush 26-meters = meme famille : probablement un TLV
+  4237/conteneur avec les 26 blocs 16B `{ctrl e0xx + value u16 + pad}`
+  (format exact du bloc non capture par nos logs — a valider).
+- Trigger : PAS d'abonnement explicite par controle cote device — le
+  service PeakMeters (HSCI, "PeakMeters::setChannelCount" erreur si
+  absent) pousse periodiquement ; FUN_000aacb0 est le callback. Le
+  gate abonne/non est dans l'objet session CHAI (vt+0x5c notify ne
+  serialise que s'il y a des abonnes). Cote client uRemote :
+  subscriptions = messages `c437` (0x37c4, emis par FUN_0064dfe0/
+  0064e1b0) + `5423` group-subs — souscrire a la session "Meters"
+  (node 1) ou au member suffit a recevoir le flux 4437.
+
+### `mixer querylevels` SDS (verifie FUN_000ccb58, ghidra_mixer.txt)
+
+Handler @0xccb58 : arg `querylevels` -> FUN_00144908(vec,0x18),
+FUN_000f67c0(service, vec) via vt+0x84 ; si ok :
+```
+Level meters:
+CH 00: 0x000099FF
+CH 01: 0x00007DFF
+... (une ligne par metre, count = taille du vecteur, <=26)
+```
+Format exact : `CH %02d: 0x%08x` (s_000ccdf4) — u32 hex 8 digits,
+index decimal 2 digits. Erreurs : "Query not processed!",
+"Level meters are invalid!". `mixer stat` imprime les memes u32 mais
+4 par ligne (`  CH %02d:\t0x%08X` x4, section "Level Meters:",
+valeurs observees 0x0000xxxx) + "Monitor fader Value: 0x%08X" /
+"Bus fader Value: 0x%08X". parse_querylevels (src/mixer_math.py:79)
+regex `CH\s*(\d+):\s*0x([0-9a-fA-F]+)` = CORRECT pour querylevels
+(1 valeur/ligne) mais ne capture que la 1re colonne sur `mixer stat`
+(7/26 valeurs — caveat, pas un bug demande). Valeur = u32 peak brut
+du service (mixer_math.py le traite comme sample MSB-aligned ->
+peak_to_dbfs ok si la hauteur est dans les bits hauts ; coherence
+avec >>15 du push CHAI a confirmer live).
+
+## 52. uTS_Msg wire format — confirmed
+
+Re-decomp complete de la famille uTS (corpus ARM decomp_fw4218). Les
+pools n'ont pas pu etre relus dans cette session (pas d'exec) — la map
+msgId->type ci-dessous est deduite des roles FSM + directions +
+arite des payloads + ordre enum ; confiance haute mais a valider par
+capture 2 devices.
+
+### msgId -> type (arg5 du send lien-entite)
+
+| msgId | type | direction | payload fields | emetteur (preuve) |
+|---|---|---|---|---|
+| 0 | GroupForming | master -> bcast | name | FUN_8bf20 -> FUN_8be44 (enterGroupForming "open") |
+| 1 | CancelGroupForming | master -> bcast | name | FUN_8c100 (abort, state2/4->0) ; FUN_8c7ac tail (close session) |
+| 2 | BecomeSlave | slave -> master | own name | FUN_8b234 (becomeSlave, state1->3) |
+| 3 | BecameSlave | master -> slave | deviceIndex u16 (f6), slaveCount u16 (f7), masterName | FUN_8c7ac finishGroupForming |
+| 4 | LeaveGroup | slave -> master | — | FUN_8af00 (state0/mode2 -> standalone ; state3 re-send -> state1) |
+| 5 | ExitGroup | master -> slave | name | FUN_90938 (dissolve/abort -> chaque slave) |
+| 6 | RebuildGroupQuery | master -> slave | uSlaveIndex u16 (f6), flag u16 (f7: 0=forming, 1=re-announce), masterName | FUN_8b578 enterGroupForming (config path) ; FUN_8d04c (DeviceDeclaration resend flag=1) ; timer resend |
+| 7 | RebuildGroupResponse | slave -> master | {Resp, deviceID, uSlaveIndex, masterName} per TRACE | wrapper 8b860-family a DAT-id — NON localise |
+
+Preuves : msgId = index dans l'enum uTS_Msg (ordre des strings
+fw4218 GroupForming/CancelGroupForming/BecomeSlave/BecameSlave/
+LeaveGroup/ExitGroup/RebuildGroupQuery/RebuildGroupResponse = 0..7) ;
+FUN_00090db8 borne `param_1 <= 7` sur une table a 8 entrees + liste
+d'ids enregistres (DAT_90e0c/90e10) = la table de validite uTS ->
+les ids sont exactement 0..7, pas d'id 8. Directions imposees par
+les notifies TRACE : BecameSlave -> notify becameSlave (slave-side,
+donc m->s) ; BecomeSlave -> slaveChanged (master-side, s->m) ;
+ExitGroup -> groupDisolved (s) ; LeaveGroup -> slaveChanged (m) ;
+GroupForming -> enteredGroupForming ; CancelGroupForming ->
+exitedGroupForming ; RebuildGroupQuery -> masterChanged (s) /
+groupRebuildQuery {Resp,deviceID,uSlaveIndex,masterName} ;
+RebuildGroupResponse -> slaveChanged / groupRebuildFailed (m).
+
+CORRECTIONS vs §50 : msgId1 != GroupForming (c'est
+CancelGroupForming, emis a la cloture de session — abort ET fin
+normale, les deux ferment l'etat group-forming) ; msgId6 =
+RebuildGroupQuery (pas BecameSlave) ; msgId3 = BecameSlave
+(l'assignation finale {index,count,masterName}) ; msgId0 =
+GroupForming existe (bcast a l'ouverture).
+
+### API d'envoi (vtable secondaire de l'entite, adjust -0x1ec)
+
+```
+sendTo_unicast (vt+0x1a4):
+  (this2, dest10B{u16 grpLo,u16 grpHi,u32 memberId,u16 tail},
+   A, B, msgId, f6, f7, name, aux [, arg10])
+send_broadcast (vt+0x1a8):
+  (this2, A, B, msgId, f4, f5, name, aux)
+```
+- dest10B copie depuis SyncCL+0x5c (adresse entite propre, lue via
+  vt+0xc8 a l'init FUN_8adf8) ; le memberId u32@+4 est remplace par
+  l'id du destinataire (FUN_1b9eb8 = obj+8 ; maitre = objet +0x20
+  pour un slave).
+- A=0x00003c75, B=0x00003234 (decode §50 ; probablement paire
+  {channel/linkDataId, dataTypeId} du canal lien uTS ; octets fil
+  supposes `75 3c`/`34 32` si u16 LE — non vu en capture).
+- name = char* nom propre de l'emetteur (extrait par FUN_1beccc :
+  {ptr@0, u16@4, flag@6} ; source = msg cree par vt+0xec(type=1)
+  ou objet Name statique 0x60403B34).
+- aux = objet RAM 0x60414BDC (options/cookie envoi) ; arg10 =
+  handle du slave (uniquement FUN_8c7ac — probablement cookie de
+  transaction/handle entite destinataire).
+- Slave->master : constantes des helpers 8b860/8bc04 presumees
+  identiques (les valeurs 0xE8BD87F0/0xEB8ED028 de §50 = lecture
+  erronee d'un pool — ce sont des encodings ARM, pas des donnees).
+
+### Dispatch entrant
+
+Trois interfaces listener (FUN_8adf8) :
+- dataLink(+0x6c).vt+0x64 <- SyncCL+0xc = LISTENER EVENEMENTS DEVICE
+  (pas les uTS !) : thunk 0x1c1cf0 = OnNotification (FUN_8c488,
+  CNT_Connected/Disconnected/NetworkChanged/NetworkStable, param_3=
+  code) ; 0x1c1d20 = OnDeviceDiscarded (FUN_8c9d0, param_3 = adresse
+  entite du device {grpLo,grpHi,memberId}, param_4 = reason ;
+  switch sur state+mode : slave disparu -> slaveChanged, maitre
+  disparu -> masterChanged/retour standalone) ; 0x1c1d50 =
+  OnDeviceDeclaration (FUN_8d04c, param_3 = type, param_4 = obj msg
+  vt+0x44 = header {u16,u16,u32} ; slave inconnu/re-declare ->
+  renvoi msgId6) ; 0x1c1d80 = vide (FUN_90374).
+- entity.vt+0xb8 <- SyncCL+4 et entity.vt+0x19c <- SyncCL+0 =
+  listeners des messages lien (uTS + famille 0x1xx) ; handlers dans
+  la region FSM non decompilee (Thumb ~0x8d2xx-0x903xx) — ce sont
+  eux qui impriment les "SyncMsg:uTS_Msg_*" et notifient la map
+  +0x84 (slots notifies : +0x10 exitedGroupForming, +0x14, +0x20,
+  +0x24, +0x28 slaveChanged).
+- dataLink.vt+0x114 -> timer 1000ms (SyncCL+8, FUN_8adf8:40-42) =
+  retransmission msgId6 RebuildGroupQuery vers les slaves sans
+  reponse (flags +0xd/+0xe, deadline +0x14 via FUN_1d06b8).
+Pas de transaction id dans les champs fil : correlation par
+memberId source + flags pending.
+
+### Enveloppe fil
+
+Message lien-entite CHAI sur le meme transport que le reste
+(CPOETH dirige / canal TCP ef51 via VNM). Contenu cote recepteur :
+header 8B {u16 groupAddrLo, u16 groupAddrHi, u32 senderMemberId}
+(getter msg vt+0x44) + champs {f6 u16, f7 u16, name ASCII}.
+groupid = les 4 premiers octets de l'adresse entite (+0x5c/0x5e).
+Format exact de l'enveloppe exterieure = post() vt+0x1a4 de la
+couche lien (implementation CHAI generique, hors corpus uTS) —
+famille "directed data" ; a capturer 2 devices ou decompiler le
+vtable de l'entite (objet cree par AddLocalDevice vt+0xb4).
+
+### FSM (chaine UI FUN_10ef64 verifiee)
+
+- enterGroupForming : FUN_8bf20(count) = variante decouverte —
+  bcast GroupForming(0), state->2 (SS_GroupForming_Master, liste
+  reservee a count) ; FUN_8b578(list) = variante configuree (CnE
+  Slave_1..3_Id, FUN_e5a90) — msgId6/slave, state->4.
+- becomeSlave : FUN_8b234 — slave envoie BecomeSlave(2) ->
+  state3 (attente).
+- finishGroupForming : FUN_8c28c -> FUN_8c7ac (state2) —
+  BecameSlave(3)/slave {index,count,name} + CancelGroupForming(1)
+  bcast, mode->1 Master, masterID=ownID(+0x60), deviceIndex=0.
+- cancelGroupForming : FUN_8c100 — CancelGroupForming(1) bcast,
+  state->0, reset +0x20.
+- leaveGroup : FUN_8af00 — slave LeaveGroup(4) -> standalone ;
+  master -> FUN_90938 ExitGroup(5)/slave + reset.
+- rebuild : state2 (SS_GroupRebuild_Master) via FUN_8bf20 ;
+  slave state3 (SS_GroupRebuild_Slave) ; re-annonce passive
+  FUN_8d04c (DeviceDeclaration -> msgId6 flag=1).
+- msgIds 0x100/0x104/0x108/0x110/0x200 + ~12 DAT-ids (wrappers
+  FUN_8bc04 master->slaves / FUN_8b860 slave->master mode2&&state0)
+  = famille runtime sync (commandes transport/playlist/etat
+  "onMaster*"), canal identique, namespace distinct des uTS.
+
+### Sequence de join (client 3e partie)
+
+1. Membre CHAI avec entite locale ; adresse 10B connue ; ecouter le
+   canal lien (0x3c75,0x3234) sur les broadcasts + unicast vers
+   son memberId.
+2. Chemin A (decouverte) : recevoir GroupForming(0) du master
+   (senderMemberId = master) -> envoyer BecomeSlave(2) unicast vers
+   le master {name = nom propre} -> attendre BecameSlave(3)
+   {deviceIndex, slaveCount, masterName} -> mode slave, masterID =
+   sender, groupe = groupAddr du header.
+   Chemin B (provisionne) : recevoir RebuildGroupQuery(6)
+   {monIndex, flag, masterName} -> repondre RebuildGroupResponse
+   (id 7) -> BecameSlave(3).
+3. Quitter : LeaveGroup(4) -> master ; sortie maitre : ExitGroup(5)
+   ou CancelGroupForming(1) bcast -> standalone.
+
+### Restes ouverts
+
+- id exact de RebuildGroupResponse (7 presume ; wrappers 8b860
+  candidats : FUN_8d25c/8c334/8c370/8c04c/8cebc/8bb0c/8c6e8 — pools
+  non lus).
+- semantique exacte (A,B) et de aux/arg10 ; octets fil du post()
+  lien (+0x1a4) ; confirmation capture 2 devices requise.
+
+## 53. versulu/xmodem/persparam handlers
+
+### Modele SDS decode (dispatch reel, corpus fw4218)
+
+- Objet commande (BSS, cree lazy) : {vtable@0, name_ptr@+4,
+  help/usage ptrs @+8/+C, flag@+10, 10 paires {key,value} @+0x14..+0x5C,
+  guard-once @+0x58}.
+- Registration : FUN_001c70ac(obj, init_fn, tag) empile un noeud
+  {next,obj,init_fn,tag} sur la liste FUN_000040f8 ;
+  FUN_001c7120(tag) la consomme : `init_fn(obj)`. tag=0x60008000 pour
+  le module SDS/SuluModule.
+- Arbre : FUN_000625c8 = 200 noeuds x 0x14B {obj,parent,next_sibling,
+  children,flags} ; insertion FUN_00062514 (match name=*(obj+4)) ;
+  attach FUN_001a7b9c(obj,parent_name).
+- Resolver chemin : FUN_001b2168 consomme argv[i] vs *(node_obj+4).
+- EXEC : FUN_001b1b38 (interpreteur ligne, quotes/; geres) appelle
+  `(**vt + 8)(obj, argv+consumed, argc-consumed, eol_char)`.
+  eol_char = 0xd ou le separateur.
+- Table RTOS statique (§35) : records de 5 dwords {vtable_ptr,
+  handler_fn, obj1, obj2, name_ptr} + name CStr inline + help CStr
+  inline. Exemples decodes (offsets fichier) :
+  - lpm    @0x1E0ECx : h=0x60078E28->0x72EA4, o=0x60405870/0x60496C78
+  - flash  @0x1E0F18 : h=0x60086A5C->0x80AD8 (thunk Thumb non
+    decompilee -> appelle FUN_000b9ea8), o=0x604058E4/0x60496E80,
+    name_str=0x602B4380, "flash"+help inline
+  - mlctest@0x1E0320 : {vt=0x602D98A8, 0x6007F16C->0x791E8*,
+    o=0x60405974/0x6049757C, name=0x602B31B8} "mlctest"+
+    "do malloc and perf test" (*0x791E8=0x791ec.c imprime la liste
+    des semaphores — l'appariement champ/handler reste a confirmer)
+
+### `versulu` — commande VERSION (pas update firmware !)
+
+- nom "versulu" @file 0x2a1bec ; help = "print chip version
+  information" @file 0x2a1bcc (exactement name-0x20).
+  => CORRECTION §47 : `versulu` = "VERsion SULU", requete de version
+  chip/module. AUCUN .bcd, aucun reboot bootloader, aucun handshake
+  reseau dans son exec.
+- Descripteur statique @file 0x2A1BAC : {0x602EC8D1(Thumb->0x2E694D),
+  0x602EC575(->0x2E65F1), 0, 0x600514DC(->0x4B558), 0x3C, 1,
+  0x602EC8DA(->0x2E6956), self=0x602A7B30} + "print chip version
+  information\0" + "versulu\0".
+- Objet runtime @BSS 0x60496BC4, init lazy par FUN_00044fdc
+  (file 0x44fdc) : vtable=0x602DA1D8 (file 0x2D4254), name, help,
+  10 slots de paires {key,value} mis a 0.
+- Semantique : les paires sont remplies par 6 appelants de
+  FUN_00044fdc (0x745f0, 0x76170, 0x764e0, 0xcf6dc, 0xdbcec,
+  0x1ce1d4) = code d'init HW qui enregistre des couples {champ,
+  valeur} de version/revision chip (FUN_000745f0 ecrit des regs MMIO
+  0x26000000/0xb4000000 puis depose une paire). `versulu` imprime ce
+  registre cle/valeur = "chip version information".
+- Exec : dispatch vt+8 -> 0x6020904C -> file 0x2030C8 (stub ARM :
+  ldr r2,[pc+0x48] / ldr r0 / mov r0,#4 / blx Thumb ~0x600B5Fxx ;
+  Ghidra le lit {FUN_001ac2d4,FUN_001eecc8} — lecture douteuse).
+  Autres slots non-nuls : +C->0x203094 (stub->Thumb ~0x600B5F38,
+  args petits ints 4/5/8 = print helper), +0x20->0x2030D8 (litteraux
+  0x602E46D0/0x602E3FF8 = tables), +0x34->0x203120.
+- Syntaxe effective : `versulu` (nu) -> imprime versions ; c'est le
+  seul usage attendu. LE canal firmware-update n'est PAS versulu.
+
+### `flash` — chemin XMODEM reel (upload/download FLASH !)
+
+Handler FUN_000b9ea8 (ARM decompile, file 0xb9ea8) — sub-commandes
+(argv[0] matchees via FUN_00003d18, args strtol FUN_000032fc) :
+
+    flash read <off> <size>      hexdump flash (FUN_001dabd8), 32B/ligne hex+ASCII
+    flash transmit <off> <size>  envoie flash->hote par XMODEM (size<=0x400000)
+    flash receive <off> <size>   EFFACE puis RECOIT XMODEM -> flash @off (size<=0x400000)
+    flash erase <off> <size>     efface ; off>=0x40000, size<=0x400000 sinon refuse
+    flash pattern <off> <size> [v <val>|<val>]  motif rampe ou u32 fixe -> flash write
+    flash verify <off> <size> [<val>]  re-lit + compte erreurs (off>=0x40000)
+
+Sequence receive : "Erasing flash %u bytes from offset %u" ->
+FUN_001da98c(add r/w area) -> FUN_001dac54(unlock) ->
+FUN_001da9b4(erase) -> "Start (Send File) via XModem now..." ->
+sleep 1000ms -> objet XModem malloc(0x490) vtable _DAT_000ba20c ->
+vt+8 (receive) alimente par FUN_001dba80 (console IO).
+Transmit : "Start X-Modem now..." -> meme objet, vt+0xC (send).
+=> `flash receive` est LE chemin d'ecriture flash par SDS
+   (le payload XMODEM arrive sur le port console/telnet).
+NB : erase/pattern/verify imposent off>=0x40000 ; receive/transmit
+ne verifient PAS l'offset bas (verifier soi-meme).
+
+Autre xmodem : "CLCDDumpScreen: start xmodem reception now. Size=%d"
+@file 0x2010D (+ "xmodemTransmit failed"/"there is no lcd service")
+= service dump ecran LCD interne (reception via xmodem, declenchee
+par le service LCD — pas un canal upload utilisateur).
+
+### `persparam` — store parametres persistants
+
+Syntaxe COMPLETE (help inline @file 0x2A02A8) :
+
+    persparam rd <name>             read integer   (name = 4 chars)
+    persparam rds <name>            read string    (name = 4 chars)
+    persparam rdss <name>           read string    (name libre)
+    persparam wr <name> <value>     write integer  (name = 4 chars)
+    persparam wrs <name> <value>    write string   (name = 4 chars)
+    persparam wrss <name> <value>   write string   (name libre)
+    persparam wrb <name> <hex-str>  write BINAIRE  (name=4 chars, hex "0xafc9f0")
+    persparam wrbs <name> <hex-str> write BINAIRE  (name libre, hex)
+    persparam clr <name>            clear integer  (4 chars)
+    persparam clrs <name>           clear string   (4 chars)
+    persparam check                 check + update default parameters
+    persparam reset                 reset parameters to default
+
+- Descripteur @file 0x2A0294 : {ptr 0x602EC852->file 0x2E68CE,
+  str 0x602A5C04} + "persparam" + help ci-dessus.
+- Handler = code Thumb NON decompile (gap 0x7e5a4-0x7ea23) — les
+  strings sub-cmd "rdss"/"clrs"/"wrbs" sont embarquees a
+  0x7E8C8/0x7E8D4/0x7E8F0 (refs ADR). Semantique wrb/wrbs : parse
+  hex-str -> blob -> parametre nomme du store persistant (config
+  flash). Limite de taille non verifiable statiquement (pas de
+  decomp) ; c'est le seul canal SDS "donnees arbitraires->stockage"
+  confirme (mais cible = persparams, pas fichiers USB).
+
+### `load`/`mlctest`/`rd`/`wr`/`bat`
+
+- `mlctest` : record table ci-dessus, "do malloc and perf test"
+  (malloc + perf benchmark ; pas un canal upload).
+- `load`, `rd`, `wr`, `bat` : presents dans la liste §35 de la table
+  RTOS statique (0x1dfxxx-0x1e1xxx) ; handlers non epingles cette
+  session (region contient aussi `restart in update mode`, `reboot`,
+  `call`, `memdump`, `memscan`, `malloc`, `free` — surface debug
+  RTOS complete non authentifiee via telnet SDS).
+
+### Adresses cles
+
+| quoi | file | note |
+|---|---|---|
+| SDS interpreter (exec vt+8) | 0x1b1b38 | (obj,argv,argc,eol) |
+| resolver chemin | 0x1b2168 | match *(obj+4) |
+| registration list push | 0x1c70ac | node{next,obj,init,tag} |
+| list consume | 0x1c7120 | appelle init(obj) |
+| versulu pair-filler/init | 0x44fdc | obj@BSS 0x60496BC4 |
+| versulu vtable | 0x2D4254 | +8->0x2030C8 exec |
+| flash handler (xmodem) | 0xb9ea8 | wrapper 0x80AD8 |
+| XModem obj vtable | 0xba20c | alloc 0x490 |
+| flash cmd record | 0x1E0F18 | handler field 0x60086A5C |
+| persparam desc | 0x2A0294 | handler Thumb ~0x7E5xx |
+| LCDDumpScreen xmodem | 0x2010D | strings |
