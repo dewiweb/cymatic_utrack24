@@ -1854,6 +1854,379 @@ Syntaxe COMPLETE (help inline @file 0x2A02A8) :
 | persparam desc | 0x2A0294 | handler Thumb ~0x7E5xx |
 | LCDDumpScreen xmodem | 0x2010D | strings |
 
+## 59. BcOd slots + flash layout (scanBCD -> doUpdate decode complet)
+
+Decode croise : scanBCD FUN_00117484 (0x117484.c), doUpdate FUN_00118208
+(0x118208.c — le vrai programmateur flash), MetaInfo builder FUN_00115bcc,
+sector lookup FUN_00116c8c, partition reader FUN_001194f4/FUN_00119224,
+MetaInfo scanner FUN_00118ff8, SDS `flash` FUN_000b9ea8 (primitives driver).
+Caller upstream : USBDFU FUN_00120ba0 -> scanBCD -> FUN_00116d0c (dispatch
+async job, worker ptr DAT_00116e00 -> doUpdate).
+
+### A. Slot table du FICHIER (image payload @imgOff)
+
+```
+img+0x00  u32  0xaaaa5555   image marker
+img+0x04  slot entries {id, flag, load_addr, hwid, crc} x N (5 u32 chacun)
+          flag 0xa5a5a5a5 = entree valide ; fin quand flag != a5a5a5a5
+          (le code ARM suit directement — pas de sentinel deadbeef avant code)
+img+0x18  ARM stub: ea000008 B +0x20 -> img+0x40 (saute le descripteur embarque)
+img+0x20  boot descriptor: {dram_load=0x8000, marker=0xdeadbeef,
+          payload_size, payload_crc}   (audiolan: 5 u32 avec a5a5a5a5 en tete)
+img+0x40  entry code
+```
+
+utrack24 fw4218 : slot = {id=1, a5a5a5a5, load=0x40e000, hwid=0x2e6,
+crc=0x1ed6249c} ; embedded {0x8000, deadbeef, 0x2e8578, 0x96928a50}.
+audiolan 4078 : {1, a5a5a5a5, 0x40e000, 0x2e6, crc} + {a5a5a5a5?, 0x8000,
+deadbeef, 0x26ea38, crc} — meme load/hwid -> meme famille de board/SoC.
+
+**Champs slot** (consommes par la chaine de boot, PAS par scanBCD) :
+- id : index/role du payload dans le package (1 = image principale @0x30)
+- load_addr : adresse DRAM d'exec du payload (0x40e000 — addr physique
+  pre-MMU ; le code runtime remappe a 0x60xxxxxx)
+- hwid : id/masque hardware cible (0x2e6, identique uTrack/audiolan)
+- crc : crc32 de la region decrite par l'entree (non verifiable ici —
+  voir couverture ci-dessous)
+
+### B. Couverture des CRC — qui verifie quoi
+
+Trois CRC distincts, trois zones :
+
+1. **BCD header @0x2c** : crc32(d[0:0x70], champ @0x2c zeroe) — verifie
+   par scanBCD. (0xb0 si bcd[0x28]==2 && param_4 → header etendu,
+   FUN_001b3964 parse les champs @0x70+.)
+2. **BCD image @0x3c** : crc32(d[imgOff : imgOff+imgSize]) = marker+slots+
+   stub+code+tail — verifie par scanBCD. utrack24 : [0x7c:+0x2ea578].
+3. **Embedded boot descriptor crc (0x96928a50)** : couvre
+   image[0x2000 .. 0x2ea578) — PREUVE ARITHMETIQUE : 0x2000 + 0x2e8578 =
+   0x2ea578 = imgSize. Le premier 0x2000 = stub SPL charge en SRAM par le
+   ROM loader (non couvert par ce crc) ; le SPL lit son descripteur
+   @img+0x20, copie image[0x2000..fin] vers DRAM@0x8000 et verifie ce
+   crc32 — donc TOUT sauf le premier 0x2000 est charge.
+   (=> le blob CnE @file 0x2e8bfb reste dans la zone chargee.)
+4. **slot crc (0x1ed6249c)** ≠ embedded crc -> region differente,
+   bootloader-domain (bootloader pas dans le corpus ; candidat : crc de
+   la region [load_addr..] du slot ou de l'image entiere chargee).
+   NON verifie par le firmware applicatif.
+
+NB : les MetaInfo records in-flash portent leur propre {size@+0x24,
+crc@+0x28} = copie des champs BCD @0x38/@0x3c — doUpdate re-verifie
+contre la flash APRES ecriture (voir F).
+
+### C. MetaInfo record (0x38 B) — le vrai "slot" en flash
+
+Construit par FUN_00115bcc, ecrit AU DEBUT DU SECTEUR flash, payload a
+offset >= +0x38 (check "expected >= sector+0x38") :
+
+```
++0x00  char[8]  build date   (bcd+0x08)
++0x08  char[8]  build time   (bcd+0x10)
++0x10  u32      sections     (bcd+0x18)
++0x14  u32      revision     (bcd+0x1c)
++0x18  u32      ROLE         1=bootloader/BSL  2=application  4=config
++0x1c  u32      flash span   (secteurEnd - secteurStart + 1)
++0x20  u32      payload start (addr absolue)
++0x24  u32      payload size
++0x28  u32      payload crc32
++0x2c  u32      VALID MARKER = 0x7f   (invalidation -> ecrit 0x3f)
++0x30  char[8]  "_MetaInfo"  (DAT_00115d3c)
+```
+
+Detection : FUN_00118ff8(obj, role, buf, &addr) itere les secteurs
+(FUN_001dab58 = count, FUN_001daa88 = bounds), lit 0x38 B au debut de
+chaque secteur, match {role==arg, marker==0x7f, name=="_MetaInfo"}.
+=> c'est CE mecanisme que le bootloader utilise pour choisir l'image,
+et que FUN_00118e04 utilise pour lire la version installee (role 2).
+
+### D. Regions flash — decision tree de scanBCD
+
+Primitives driver (meme sequence partout) :
+`addR/W=FUN_001da98c -> unlock=FUN_001dac54 -> erase=FUN_001da9b4 ->
+write=FUN_001dacc8 -> read=FUN_001dabd8 ; addr->secteur=FUN_001daad8,
+secteur->bounds=FUN_001daa88, count=FUN_001dab58, capacity=FUN_001dab98`.
+SDS `flash` refuse off<0x40000 -> **0x0..0x40000 (256K) protege**
+(1st-stage boot + BSL "Bootloader Second Level partition").
+
+Partitions nommees (strings UserResourceRetrieverServiceImpl) :
+"Application", "Bootloader Second Level", "Resource Pages" ; table lue
+par FUN_00119224 (entrees flash "partition-%d", idx1=bootloader,
+idx2=application ; param_2<9).
+
+Carte (globales RAM = pools non resolus ; roles certains) :
+
+```
+0x000000..0x040000   1st-stage bootloader  [PROTEGE — SDS refuse]
+Bootloader Second Level (partition idx1)  — FUN_001194f4(obj,1)
+Application partition (idx2) = "Current image"  — FUN_001194f4(obj,2)
+  {base=+0xc, size=+0x10, end=+0x14}   string "Current image: %x-%x"
+Alternate app image area = *DAT_00117d9c + 2 * *_DAT_00117d60
+User configuration region = *DAT_00117d9c .. +*DAT_00118200
+Factory space = *DAT_001181f8   (< user config base)
+```
+
+Arbre de decision scanBCD (ret codes) :
+
+1. hdr CRC -> 0xb | HWID(FUN_001db900) vs u16@0x20 -> 9
+2. rev@0x1c!=0 -> downgrade gate : FUN_001da8f8 (SW courant), cfg
+   "MinDowngradeSWVersion"(FUN_0004fe40), cfg disable-downgrade
+   (FUN_00049558), version installee via MetaInfo role2 (FUN_00118e04)
+   -> refuse = 10
+3. image1 @0x30 : borne + CRC @0x3c -> 10 / 0xb
+4. partition info app(2) sinon bootloader(1) -> 8 ; flag +0x88 =
+   "seul partition bootloader trouvee"
+5. new image range = secteurs de [bcd@0x34 .. +size) — bcd@0x34 est
+   l'ADRESSE FLASH CIBLE (utrack24 0x4a0080 — PAS une constante,
+   corriger bcd_file.py "const_4a0080")
+6. **KeepBootloader config (CnE FirmwareUpdate/KeepBootloader) set ?**
+   - OUI -> "Keep bootloader" : si newStart == altBase -> role=1
+     "Program image as bootloader" ; sinon exige partition idx1 et
+     newStart >= bootEnd (sinon 8 "Bootloader overlaps application")
+     -> role=2 "Program image according to BCD"
+   - NON -> si new range chevauche current app -> relocation a
+     altBase (sector-aligne) "Alternate new image" ; si toujours
+     chevauchant -> 5 "Images overlap"
+7. -> MetaInfo#1 @param_3 : role, span, start, size=@0x38, crc=@0x3c
+8. image2 @0x50 :
+   - @0x58==0 -> mode JSON : size=@0x64, doit finir par NUL (sinon
+     "JSON script is not null terminated") -> {off,size} @+0x74/+0x78
+   - sinon -> factory config : flashStart=*DAT_001181f8 doit etre >=
+     son secteur+0x38 ("Invalid factory space start address"), fin
+     < userConfig secteurStart sinon 5 "Factory overlaps user
+     configuration" -> MetaInfo#2 @param_3+0x38, role=4
+9. ret 1
+
+Ret : 1=OK 5=secteur/overlap 8=partition info 9=HWID 10=size/downgrade
+0xb=CRC. Buffer out = 2x MetaInfo 0x38 + ranges +{0x7c/0x80 cur,
+0x8c/0x90 new, 0x94 payloadOff, 0x98/0x9c factory, 0xa0 factOff,
+0xa4/0xa8 userCfg}.
+
+### E. doUpdate (FUN_00118208) — sequence reelle, safety-critical
+
+Pour image1 (param_4+0x70 = bcd offset != 0) :
+
+1. addR/W [newStart..newEnd] -> unlock+erase **par secteur** ->
+   **blank check** : relecture chunks 0x800, chaque byte doit etre 0xFF
+   sinon "Blank check failed" rc6 -> "Could not read flash for blank
+   check"
+2. program : FUN_001dacc8 chunks a la taille du secteur restant,
+   progress % -> obj+0x915 ; "Programming %u bytes at 0x%08X"
+3. **CRC verify** : relecture 0x800-chunks -> FUN_00176c74 (state
+   0xFFFFFFFF), compare ~state vs MetaInfo.crc (+0x28) -> rc8
+   "New application CRC check failed" -> "Checking CRC"/"OK"
+4. **write MetaInfo** 0x38B @newStart (secteur) -> relecture+memcmp -> rc8
+5. **invalidate current** : si flag+0x88==0 && role==2 &&
+   curStart !in [newStart..newEnd] -> ecrit u32 0x3f @curStart+0x2c
+   = flip marker 0x7f->0x3f ("Invalidating current application")
+   sinon "Don't invalidate current image"
+
+Pour image2 : si +0x78!=0 -> FUN_00115d40 = doExecuteJSON (commandes
+configSetString/configAddString/configRemove/setPersParam). Sinon :
+**erase user config** [+0xa4..+0xa8], ecrit payload factory @a4+a0 +
+MetaInfo role4 @a4 (= copie factory dans user space = reset defaults) ;
+puis **erase factory** [+0x98..+0x9c], ecrit payload @98+a0, CRC verify
+vs +0x60, MetaInfo#2 @+0x98 + memcmp.
+
+rc via obj+0x114 : 1=OK 6=add/unlock/erase/blank 7=write 8=CRC/meta.
+Progress % via obj+0x915. Upload path : SDS `flash receive` (XMODEM) +
+USBDFU handler FUN_00120ba0 -> async FUN_00116d0c.
+
+### F. Bootloader vs program — ce qui les distingue
+
+- **Role dans MetaInfo** (+0x18) : 1 vs 2 — c'est le champ que le
+  bootloader lit pour demarrer (marker 0x7f = valide, 0x3f = invalide).
+- **KeepBootloader** : flag BCD @0x28 (=1 normal, =2 header etendu 0xb0)
+  gouverne la taille du header ; la DECISION keep vient de la config CnE
+  `FirmwareUpdate/KeepBootloader` lue par FUN_00049558, pas du flag BCD.
+- **product_id @0x20** (0x43/0x49) : filtre HWID par scanBCD (u16).
+- **slot id** : index du payload dans le package, pas le role flash.
+- Nouveau role=1 possible seulement si le BCD vise exactement altBase
+  (adresse de la zone bootloader/BSL ciblee par le package).
+
+## 57. host firmware update path
+
+Le mecanisme d'update host est LOCALISE — module **FirmwareUpdateHandler**
+(FWUH, singleton FUN_00115ad4) + pipeline scan→program entierement decode.
+Ce n'est ni versulu ni uTool2 : c'est **USB DFU (update mode)** +
+**fichier .bcd sur media** + SDS `flash receive` (brut).
+
+### Declencheurs (3 confirmes + 1 probable)
+
+1. **USB DFU "update mode"** — canal principal (= BCOUFWDL /
+   deviceUpgrade_64.exe cote PC, §11/§18) :
+   - `DFURunTimeCommandHandler` (ctor FUN_00130620, embarque dans le
+     modele USB normal via FUN_00088bc0, lit `cfg_USB_DFU_WillDetach`) :
+     sa dispatch FUN_001306e4(param_1, cmd) — cmd==1 → FUN_0013079c ;
+     cmd==2 → ret 1 ("supported"). Appele par l'init app
+     FUN_000f5eb4 (`FUN_001306e4(param_1+0x490, FUN_001b5d7c())`).
+   - **FUN_0013079c = selecteur de mode USB** : imprime "Custom flags
+     are 0x%08x" (*_DAT_00130c74) ; si **bit1 (0x2) des custom flags**
+     → "Update mode" → alloue 0x2c + **FUN_00120cf0** =
+     USBDFUDownloadHandler ctor (embed FWUH, timeouts 1000) +
+     **FUN_00120758** init ; sinon modele USB normal
+     ("Default model"/"96kHz model" via FUN_00114f64 USBModelDynamic).
+     => `restart in update mode` (SDS) positionne ce flag, reboot, et
+     l'app re-enumerate en DFU au lieu de l'audio.
+   - **FUN_00120758** (DFU init) : malloc buffer **0x400000**
+     (fallback 0x300000/0x200000 — 0x2EA578 ~3MB tient dans 4MB) @obj+0x20,
+     taille @+0x24 ; DeviceInfo via FUN_000f4648 (`cfg_USB_DeviceInfo` :
+     "Archwave AG, Switzerland"/ProductName persparam, VID/PID
+     persparam, serial DIWH, bcdDevice = rev slot 2) ; cree **"DFU
+     Device"** FUN_001ac168 (DFU_Timer, `cfg_USB_DFU_WillDetach`),
+     ajoute **"DFU Interface"** FUN_001ab3ac, enregistre via
+     USBStackService (FUN_000b4840 "USBStackService").
+   - **FUN_001209bc = ecriture bloc DFU** : seq check @+0x1e, borne vs
+     buffer @+0x24, memcpy @+0x28 offset → le .bcd entier va en RAM.
+   - **FUN_00120ba0 = download-complete** : si flag @+0x1c : clear,
+     ctor result 0xAC (FUN_000ce0b8x2), **scanBCD(buf@+0x20, len@+0x28,
+     res, 1)** ; si ret==1 → FUN_00116d0c = job program (vt+0x2c
+     submit, status=2/3). Sinon ret statut DFU.
+   - **FUN_00120acc = getStatus** : mappe FWUH+0x114 (switch 0..0xb)
+     → DFU err 0xe.
+2. **Fichier .bcd sur media** — **FUN_000bf9a8** (methode de la classe
+   storage/CDrive — memes methodes que delete-dir FUN_000bf8ec,
+   dummy.txt FUN_000bfcb4, disk-probe FUN_000bdabc ; objet {path@+4,
+   queue@0x58}) : OpenFile job (FUN_00123418) → FileInfo job
+   (FUN_0013782c) → **memcmp nom/magic vs DAT_000bfca8** (probable
+   "BcOd" ou ".bcd") → ReadFile job FUN_00123544 (lit TOUT via FAH,
+   alloc FUN_0012c504) → ctor result FUN_000d70e8 → **FUN_00116a00 =
+   scanBCD→handler+0x114** ; si 1 → **FUN_00116d0c program job**.
+   Declencheur = dispatch virtuel (hors corpus) — probablement
+   **UIState_FirmwareUpdate** (menu front-panel existe, cf.
+   ghidra_utrack_map.md §5) ou scan media au boot ("copier le .bcd sur
+   le disque" = flow documente §54).
+3. **`flash receive <off> <size>` XMODEM** (§53) — ecriture flash
+   brute, SANS plancher d'offset (erase/pattern/verify exigent
+   off>=0x40000 ; receive/transmit non). **Peut ecrire une image
+   valide** : il faut (a) ecrire le payload a son adresse cible
+   (BCD +0x34), (b) ecrire une entree MetaInfo 0x38B forgee a la base
+   de la region (format decode ci-dessous), (c) invalider l'ancienne
+   entree (0x7f→0x3f a +0x2c). MAIS aucun des controles scanBCD (HWID,
+   version/downgrade, CRC) n'est applique, et off<0x40000 permet
+   d'ecraser le BSL → risque de brick reel. Chemin manuel, pas le
+   design.
+4. **Reseau (BCOFWDL) — probable, non epingle** : l'app enregistre un
+   service "archwave" sur le serveur "http"/"tcp" embarque
+   (FUN_000f5eb4 → vt+0x34(s__http/_tcp, s__archwave,0,0) ; WebServer
+   ctor FUN_001b08ac, 6 workers). FUN_000d4b4c fabrique le doc JSON
+   **{ArchwaveVER:{version:{bootloader:rev1, application:rev2}}}**
+   (revs lues via FUN_0011a068/FUN_00118e04 slots 1 et 2) = la reponse
+   GetDeviceInfo/GetVersion du BCOFWDL. Le endpoint download qui
+   remplit le buffer et appelle scanBCD n'est pas decompile (Thumb
+   non analyse, ou handler data-only) ; FUN_00129968 = ctor d'une
+   classe message embarquant FWUH a +0x80 (candidat).
+   uRemote : RIEN (corpus = VNM/CopperLan seulement). uTool2 : rien
+   (self-update "Downloading upgrade" seulement, §54).
+
+### Pipeline scanBCD (FUN_00117484) — champs BCD confirmes
+
+Header BcOd (param_1=image, param_2=len, param_3=result 0xAC, p4=flag):
+- +0x1c u32 version (policy : `cfg_Config_MinDowngradeSWVersion` +
+  `cfg_Config_DisableDowngradeSWVersion` + courant FUN_001da8f8 ; ret 0xa)
+- +0x20 u16 HWID vs `FUN_001db900("DIWH")` persparam → ret 9
+- +0x28 u8 : ==2 → header etendu 0xb0 (+FUN_001b3964 sur +0x70), sinon 0x70
+- +0x2c u32 CRC32(header) (zeroe avant calcul, restaure apres) → ret 0xb
+- +0x30 off payload1 | +0x34 **adresse flash cible absolue** | +0x38 size |
+  +0x3c CRC32 payload → ret 0xb ; bounds vs param_2 → ret 0xa
+- +0x50 off payload2 (0=aucun) | +0x58 size (0 → taille=+0x64, **script**)
+  | +0x5c CRC | +0x64 len script
+- payload2 : si size!=0 → image brute → region "resource" (entree type 4) ;
+  si size==0 → **document JSON "ArchwaveBCD"** NUL-termine →
+  **FUN_00115d40** parse {version, commands:[{cmd, parameters:[..]}]} et
+  dispatche chaque commande via table 4 entrees DAT_001169f4
+  {name,fn,this-adj} → methodes du FWUH (script post-install !).
+- Region alloc : FUN_0011a068 = gestionnaire flash ; **FUN_001194f4(mgr,
+  type, out)** alloue une region libre — type 2 (app) d'abord, fallback
+  type 1 (BSL) ; out = {base, size, end, slotId}. result+0x84 =
+  capacite alignee 0xfffffff ; result+0x88 = (slotId==1) = "cible BSL"
+  (KeepBootloader) ; result+0x94 = delta cible−base region.
+- `*DAT_00117d9c + *_DAT_00117d60*2` = base region + 2x taille = borne
+  slot miroir (l'autre moitie du couple A/B) — verifie
+  non-chevauchement des deux entrees.
+
+### Layout flash = REPERTOIRE MetaInfo (pas juste A/B fixe)
+
+- Table de regions flash : entrees de **0x38 octets** en tete de chaque
+  region image. Trouveur **FUN_00118ff8(mgr, type, buf, &addr)** :
+  itere les blocs (FUN_001dab58 count, FUN_001daa88 bounds), lit 0x38B
+  a chaque base, match si `u32@0x18==type && u8@0x2c==0x7f &&
+  memcmp(@0x30,"MetaInfo",8)==0`. Type : **1=BSL (bootloader), 2=Main
+  app** (preuve : doc JSON versions FUN_000d4b4c "BSL Firmware
+  revision"/"Main Firmware revision"), **4=aux/resource** (payload2) ;
+  idx <8 nommes via table _DAT_00119e74 ; idx >=8 = **"B_Resource%u"**
+  (FUN_00119224 alloue des blocs libres descendants pour resources).
+- Builder entree **FUN_00115bcc(dst, image, type, span, p5,p6,p7)** :
+  {name[8]@0 <- image+8, name2[8]@8 <- image+0x10, u32@0x10 <-
+  image+0x18, u32@0x14 <- image+0x1c (version), u32@0x18=type,
+  u32@0x1c=span, u32@0x20=imgCRC, u32@0x24=imgSize, u32@0x28=imgStart,
+  u8@0x2c=0x7f, "MetaInfo"@0x30}.
+- Programmeur **FUN_00118208** (le corps du job FUN_00116d0c, vtable
+  job DAT_00116e00) : add-rw-area FUN_001da98c → unlock FUN_001dac54 →
+  erase FUN_001da9b4 → verifie erased=0xFF (param_1+0x115 buf, 0x800
+  chunks) → write FUN_001dacc8 (progress % → FWUH+0x915) → relit +
+  CRC32 FUN_00176c74 vs expected → **ecrit l'entree MetaInfo EN
+  DERNIER** a la base region (commit) → relit + memcmp 0x38 → si
+  app (type2) et pas KeepBootloader : **invalide l'entree soeur** :
+  ecrit u32 0x3f a (soeur+0x2c) — bit "active" retire (0x7f→0x3f).
+  Erreurs → FWUH+0x114 : 1 ok, 5 region, 6 erase/unlock, 7 write,
+  8 verify/commit, 9 HWID, 0xa downgrade, 0xb CRC.
+- Boot : le BSL lit le repertoire → boote l'entree type2 valide (0x7f)
+  la plus recente — coherence avec "Current image/New image" audiolan
+  et le chooser "BMC update Method M1/M2/M3/S1/P1/P2" FUN_0002ada8.
+- Marker 0xaaaa5555 @file 0x7c = sig interne du payload (2nd-stage
+  header, inclus dans le CRC image @0x30) — pas un champs scanBCD.
+
+### Etat FWUH (lisible par DFU getStatus + probablement CHAI)
+
++0x114 u8 status (enum ci-dessus) ; +0x915 u8 progress 0..100 ;
++0x45 u8 sub-state (2=programming,3=submit-fail). Job program 0xcc :
+{vt DAT_00116e00, fwuh, cbdata x2, imgPtr, imgSize, scanResult 0xac,
+cb, cbArg}.
+
+### Adresses cles (file offsets fw4218)
+
+| quoi | addr |
+|---|---|
+| FWUH singleton | FUN_00115ad4 |
+| scanBCD | FUN_00117484 |
+| program/job body | FUN_00118208 |
+| program job submit | FUN_00116d0c (vt+0x2c) |
+| scanBCD wrapper→+0x114 | FUN_00116a00 |
+| scan-result ctor (0xAC) | FUN_000d70e8 |
+| MetaInfo entry builder | FUN_00115bcc |
+| MetaInfo entry finder | FUN_00118ff8 |
+| flash mgr singleton | FUN_0011a068 |
+| region alloc (type 1/2) | FUN_001194f4 |
+| resource region alloc | FUN_00119224 / FUN_00119ce8 |
+| flash block bounds | FUN_00116c8c |
+| sector bounds (same) | FUN_001daad8/0x1daa88 |
+| JSON manifest parser | FUN_00115d40 (tbl DAT_001169f4) |
+| USB mode selector (flag!) | FUN_0013079c — `*_DAT_00130c74` bit1 |
+| DFU runtime cmd handler | FUN_00130620 ctor / FUN_001306e4 dispatch |
+| DFU handler ctor/init | FUN_00120cf0 / FUN_00120758 |
+| DFU block write | FUN_001209bc |
+| DFU download-complete | FUN_00120ba0 |
+| DFU getStatus | FUN_00120acc |
+| DFU device ctor | FUN_001ac168 ("DFU Device"/"DFU_Timer") |
+| DFU iface add | FUN_001ab3ac ("DFU_Interface") |
+| USB DeviceInfo cfg | FUN_000f4648 (cfg_USB_DeviceInfo) |
+| file→flash update | FUN_000bf9a8 (cmp DAT_000bfca8) |
+| versions JSON (BCOFWDL?) | FUN_000d4b4c (ArchwaveVER) |
+| WebServer ctor | FUN_001b08ac ("_http_/_tcp_" svc) |
+| app init caller | FUN_000f5eb4 (svc "archwave" + DFU cmd) |
+| CRC32 zlib | FUN_00176c50 wrapper / FUN_00176c74 |
+| flash prims | FUN_001da98c rw-area / 0x1dac54 unlock / 0x1da9b4 erase / 0x1dabd8 read / 0x1dacc8 write |
+
+### Reste a faire
+
+- Trouver le declencheur exact de FUN_000bf9a8 (vtable — prob.
+  UIState_FirmwareUpdate ou media-scan) et l'endpoint BCOFWDL
+  (handler "archwave" tcp — non decompile / data-only).
+- `load`/`bat` handlers toujours non epingles (builtins shell KnOS ;
+  `bat` = script SDS ; aucun n'appelle scanBCD — pas le canal update).
+- La source des "custom flags" *_DAT_00130c74 (probable persparam ou
+  flag retenu ecrit par `restart in update mode` / DFU_DETACH).
+
 ## 60. flash handler FUN_000b9ea8 — decode complet (REA direct)
 
 Syntaxe (fw4218, ARM):
@@ -1869,3 +2242,314 @@ Limites: size<=0x400000 (4 MiB). XModem obj=0x490B alloue, vt slots
 SECURITE: erase/pattern exigent off>=0x40000 (bootloader 256KB prot) MAIS
 flash receive NA PAS ce plancher -> ecrit partout dont bootloader.
 La zone <0x40000 = bootloader (protection implicite par les autres cmds).
+
+## 56. uRemote outbound message inventory
+
+Inventaire COMPLET des classes de messages construites par uRemote.exe
+(corpus decomp_uremote, filenames = VA). Deux couches :
+
+- **enveloppe** : methode d'un objet-fabrique qui pose `env+0x4c = type fil
+  u16` et `env+0x48 = member-id dest` (0 = bcast/VNM), puis cree un
+  CCPMessage_* via factory `FUN_005af82d(sizeHint)` + ctor `FUN_0057/58xxxx`,
+  et enfile via `FUN_0052f740`. Fil : `0100 <len> 0001 <type>` (type = octets
+  swappes de +0x4c, ex. +0x4c=0x3784 -> `8437`).
+- **message membre** : `env+0x4c = 0x3784` (`8437`) ou `0x37c4` (`c437`),
+  `env+0x48 = member+0xd8` ; app-msgs internes via `FUN_0056af60(member,flags,
+  kind,sub?)` = ctor **CAppInternalControlMessage** (type 0x82ff, kind byte @
+  +0x1e, bit0x80 du kind = flag) ; app-msgs valeur via ctors
+  CAppEventMessage `0x547a00` / CAppModifierMessage `0x548d50` /
+  CAppSelectorMessage `0x549f00` / CAppTextMessage `0x54af90`.
+  Flush/serialize : `FUN_00566970` (+0xdc) et `FUN_00571930` (+0xe4) posent
+  type = `0x3784 | (ackReq?0x20:0)` — le bit 0x20 = demande d'ack.
+
+### Famille 0x10 — NCM lien/reseau (`c010` ack/reply, `d010` req)
+
+| builder VA | fil | classe interne (class id) | role |
+|---|---|---|---|
+| 0x532880 | d010 | NCM_WhereIsDeviceIDRequest 0x10041001 | resolve member |
+| 0x532970 | c010 | NCM_WhereIsDeviceIDReply 0x10021001 | reponse |
+| 0x532a60 | d010 | NCM_Ping 0x10001002 | ping |
+| 0x532b50 | d010 | NCM_NetworkModified 0x10001003 | notif topo |
+| 0x532c40/2d30/2e20/2f00 | d010 | NCM_Duplicate Check/DeviceExists/Restart/Fixed_Mismatch 0x10001012-15 | resolution doublon |
+| 0x532fe0 | d010 | NCM_DevicePresenceRequest 0x10041020 | presence |
+| 0x5330c0 | c010 | NCM_DevicePresenceReply 0x10021021 | reponse |
+| 0x5331b0 | c010 | NCM_NetworkLatencyRequest 0x10041030 | latence |
+| 0x5332d0 | c010 | NCM_NetworkLatencyReply 0x10041031 | reponse |
+| 0x532770 | (type var) | HM_Warning 0x10006301 | warning |
+| 0x532680 | 445b | Diag_Timing 0x10045b01 | timing diag (si env+0x4e==0) |
+
+### Famille 0x42 — LM member/VNM (`c842` decls, `d842` nego/notifs, `4842` VNMTray req, `4442` replies)
+
+| builder VA | fil | classe interne | role |
+|---|---|---|---|
+| 0x5333f0 | c842 | LM_RootDeviceDuplicateResolutionRequest 0x10044201 | adoption |
+| 0x5334e0 | c842 | LM_RootDeviceDuplicateResolutionReply 0x10024202 | reponse |
+| 0x5335d0/0x5336e0 | c842 | LM_DeviceDeclaredOrModified 0x10004200/0x10004203 (FUN_0057ca10 arg 3/4) | declaration membre |
+| 0x5337f0 | c842 | LM_DeviceRemoved 0x10004205 | retrait |
+| 0x5338e0 | c842 | LM_DeviceIdentityChanged 0x10004206 | identite |
+| 0x5339d0 | c842 | LM_DeviceLostOrNotFound 0x10004207 | perte |
+| 0x533bb0 | c842 | LM_SubDeviceDeclared 0x10004208 | sous-device (containers) |
+| 0x534e10 | c842 | LM_SetGlobalClockTime 0x10004240 | horloge |
+| 0x534f00 | c842 | LM_VerifyKey_Request 0x100042e0 | cle licence |
+| 0x534ff0 | c842 | LM_VerifyKey_Reply 0x100042e1 | reponse cle |
+| 0x533ac0 | d842 | LM_DeviceLostOrNotFound 0x10004207 | perte |
+| 0x533cd0 | d842 | LM_GlobalSynchronizedClock 0x10004221 | sync horloge |
+| 0x533fc0 | d842 | LM_NetworkModified 0x10004222 | notif reseau |
+| 0x534190 | d842 | LM_TransportFlowControl 0x10004230 | flow ctrl |
+| 0x5340a0 | 4842 | LM_SetFitness 0x100042f6 | fitness |
+| 0x534280/4470/4660 | 4842 | VNMTray Get/Add/RemEthInterfaceRequest 0x100442f0-f2 | interfaces |
+| 0x534860 | 4842 | LM_VNMTray_ResetStatistics 0x100042f3 | stats |
+| 0x534940/4b30 | 4842 | GetStatistics/GetFitnessRequest 0x100442f4/f5 | stats/fitness |
+| 0x534d20 | 4842 | LM_VNMTray_SetTCPIPPort 0x100042f7 | port |
+| 0x534370/4560/4750 | 4442 | VNMTray GetIfs/Add/Rem Reply 0x100242f0-f2 | reponses VNM |
+| 0x534a30/4c20 | 4442 | GetStatistics/GetFitnessReply 0x100242f4/f5 | reponses |
+| 0x533ec0 | 4442 | LM_GetVNMInfoReply 0x10024220 | info VNM |
+
+### Famille 0x23 — SM session/service
+
+| builder VA | fil | classe interne | role |
+|---|---|---|---|
+| 0x537300 | d023 | SM_MachineNeighbourhoodRequest 0x10042331 | voisinage |
+| 0x5350f0 | c423 | SM_ServiceDevice 0x10002390 | service device |
+| 0x536770 | c423 | SM_D_RecordingControl 0x10002361 | rec control |
+| 0x537400 | c423 | SM_MachineNeighbourhoodReply 0x10022331 | reponse |
+| 0x537600 | c423 | SM_SetGlobalClockTime 0x10002340 | horloge SM |
+| 0x5351e0/5310/5440 | d423 | SM_DeviceDeclarationXXX 0x100023f0/f1/f4 (FUN_00582240 sub f0/f1/f4) | decls device |
+| 0x535570 | d423 | SM_DeviceIdentityChanged 0x100023f3 | identite |
+| 0x535670 | d423 | SM_DeviceDiscarded 0x100023f2 | perte |
+| 0x536680 | d423 | SM_B_RecordingControl 0x10002360 | rec bcast |
+| 0x5359b0/5b10/5c70/5d80 | 4023 | SM_DeviceEnumeration Find{First,Last,Next,Prev}Request | enumeration |
+| 0x5360d0 | 4023 | SM_FilteredDeviceSearchRequest 0x10042300\|sub | recherche |
+| 0x5370d0 | 4023 | SM_MachineInformationRequest 0x10042320 | info machine |
+| 0x5358a0 | 4423 | SM_GetDeviceInfoReply 0x10022301 | reponse |
+| 0x535e90/5fd0 | 4423 | DeviceEnumerationReply/DoneReply 0x10022314/315 | enum |
+| 0x536230/6370 | 4423 | FilteredDeviceSearchReply/DoneReply 0x10022319/31a | recherche |
+| 0x536470 | 4423 | SM_Remote_Destination 0x10002351 | remote |
+| 0x536580 | 4423 | SM_Remote_GenericChange 0x10002352 | remote |
+| 0x536cb0/6da0 | 4423 | SM_Signal 0x10002380 (FUN_00588860 arg1=1) | poll signal |
+| 0x536fd0 | 4423 | SM_D_AssignController 0x10002391 | assign ctrl |
+| 0x536870/6990 | 4423 | SM_D_CollectSetupData Req/Reply 0x10042370/0x10022370 | backup setup |
+| 0x536aa0/6ba0 | 4423 | SM_D_RestoreSetupData Req/Reply 0x10042371/0x10022371 | restore setup |
+| 0x5371e0 | 4423 | SM_MachineInformationReply 0x10022320 | info |
+| 0x537500 | 4423 | SM_Learn 0x10002392 | learn |
+| 0x536ec0 | 5423 | SM_Signal 0x10002381 (FUN_00588860 arg1=0) | **subscribe groupes** |
+| 0x535770 | 8423 | SM_GetDeviceInfoRequest 0x10042301 | **sync props init** (TLV `0123 0410` vus = cette classe) |
+
+Generiques : `FUN_00532410` = APP_Generic 0x10003700 + low-byte patche
+(param + flags 0x80/0x40) ; `FUN_00532540` = APP_Generic_Reply 0x10023700 +
+tag u16 — la base des TLVs `4137`..`4637` (writes/queries) dans `8437`.
+
+### Famille 0x37 — message membre dirige
+
+| builder VA | fil | kind interne | role |
+|---|---|---|---|
+| 0x56b240 | c437 | 0x06 | **subscribe notifications membre** (meters/etats) |
+| 0x56b4b0 | c437 | 0x45 (+byte arg) | unsubscribe/option |
+| 0x56b5f0 | 8437 | 0x83 {u32@+0x7c} | invoke interne (wrap ecritures async) |
+| 0x56b880 | 8437 | 0x84 {u32,u8,u32} | invoke avec arg |
+| 0x56bb40 | 8437 | 0x85 {3xu16} | invoke |
+| 0x56bc70/6bdf0 | 8437 | 0x87/0x88 {4xu16} | invoke |
+| 0x56bf70 | 8437 | 0x4a {4xu16} | invoke |
+
+Autres kinds CAppInternalControlMessage construits (wrappers 0x56b370-
+0x56d060, 0x56ffa0, 0x59ae30, 0x59b320, 0x5a7500, 0x5ab870, 0x5abc20,
+0x56db60) : 0, 2, 0x10, 0x44, 0x46, 0x47, 0x50, 0x60, 0x61, 0x81, 0xc0,
+0xc1, 0xc2, 0xc3, 0xc8, 0xc9, 0xf0-f4 — set/get RPC interne, TLVs
+`4837`/`4937` a l'interieur de `8437`.
+
+Valeurs (meme flux `8437`) : TLV `4137` event 18B | `4237` numerique 32B
+(ctrl@2, val@20) | `4337` selecteur 22B | `4437` texte 0x16+N — serializer
+FUN_00634680(len,classIdx 1-4,flags). Slots vtable du membre (obj @+0x114) :
++0x15c = numerique (ctrl,0,u32,u64), +0x16c = selecteur (ctrl,0,val,0),
++0x174 = texte (ctrl,0,str).
+
+### Ecritures controle prouvees (call sites)
+
+transport `d000` (+0x16c) ; locate/loops `d001-3` (+0x174) ; playlist
+`d008`, vue `d009` (+0x16c) ; solo `d010+ch`/mute `d030+ch` (+0x16c val=2
+toggle) ; pan `d050+ch`/fader `d070+ch` (+0x15c) ; fichiers `c002/3/4` +
+select `c010` (+0x16c) ; chdir `c001` (+0x174) ; settings `b000-b302`
+(+0x16c) ; `b201/2` (+0x15c) ; erreur `f060` (+0x174). Requetes de
+contenu de liste : appel obj+0x110 `vt+0xac`(5, &DAT_0095c888, 0xffff,
+{id u16,kind=2}, member?, 0) avec id in {0xc002,0xc003,0xc004,0xd008,
+0xf00a} (FUN_0045e42b/0x45e625) = enumeration des items d'un controle
+(listes dynamiques : contenu renvoye par announce `c837`).
+
+### Fichiers via CHAI — verdict
+
+Navigation seulement : writes selecteur `c002` (remonter/quitter, +flag),
+`c003` (entrer/selectionner item), `c004`, `c010` (charger fichier/take) ;
+texte `c001` = chdir. Contenu des dossiers = records announce `c837`
+(c0xx listes dynamiques + textes `c011+`). AUCUNE classe de transfert de
+fichier dans l'inventaire : les donnees de fichier NE passent PAS par
+CHAI (SDS fileplay/filerec ou uTool2/USB pour le contenu).
+
+### Takes via CHAI — verdict
+
+Aucune creation/rename/delete de take par CHAI : seules selection/charge
+(`c010`, playlist `d008`), navigation dossier (`c002-c004`, `c001`),
+position (`d001-3` texte) et noms marqueurs (`d011+` texte). Le cycle de
+vie des takes = filesystem (uTool2 §54) / SDS, pas CHAI. MarkerListPanel/
+ProgressBarPanel/TransportKeys n'ecrivent que `d001-3` (+0x174) et
+`d000/8/9` (+0x16c).
+
+### Meter subscribe
+
+Pas d'abonnement par vu-metre. Deux envois uRemote : (a) `c437` membre
+avec kind interne `0x06` (FUN_0056b240) puis `0x45`+flag (FUN_0056b4b0) =
+subscribe/unsubscribe notifications membre/session ; (b) `5423` SM_Signal
+`0x10002381` (builder 0x536ec0, champs internes 5xu16 @+0x18..+0x20 + 2
+refs objet = groupe/member). Ensuite le device pousse `4437` dirige avec
+blocs metres `e0xx` (~10 Hz) + announce `c837` des valeurs controle.
+
+### Ordre d'ouverture de session (FUN_0045ba5d + captures clean_130604)
+
+1. UDP broadcast `VNMSRCH` -> `VNMINFO` -> TCP :55000 (FUN_00626b90).
+2. hello `ef510180 01000000 <rand4B>` -> `ef510000 <rand>` accepte.
+3. `ichai->vt+0xb4` AddLocalDevice(2,0,1,0, 0x6800000, "uTrack24 Remote")
+   -> SetName "uRemote" -> 5 containers type 0x4000000
+   Status/Meters/Controllers/Files/Settings (vt+0xe4) -> emis en `c842`
+   (LM_DeviceDeclaredOrModified 0x10004200/03 + LM_SubDeviceDeclared 0x4208,
+   ~3 trames). Membre id 0x69727160 stable cote client.
+4. Negociation : repondre aux `d842` du VNM (VerifyKey/dup-resolution/
+   SmartConnect) : LM_VerifyKey_Reply 0x100042e1,
+   LM_RootDeviceDuplicateResolutionReply 0x10024202, NCM_Ping/Presence
+   `d010`/`c010` — sinon coupure ~1-2 s.
+5. `5423` SM_Signal(0x10002381) = abonnements groupes.
+6. Rafale ~50 `8423` SM_GetDeviceInfoRequest(0x10042301) = sync props init.
+7. `c437` abonnements membre (kinds 0x06/0x45).
+8. Regime etabli : polls `4423`/`c423` (SM_Signal 0x2380, ServiceDevice
+   0x2390, D_RecordingControl 0x2361) + announce `c837` + push `4437`.
+
+## 58. uTS + transport-sync family
+
+Pools relues dans le binaire (file offsets = adresses decomp). Toutes
+les confirmations ci-dessous proviennent des constantes ROM.
+
+### Constantes d'enveloppe (A,B,aux) — CONFIRMEES
+
+- FUN_8b860 (slave->master) pool @0x8b928/0x8b92c/0x8b930 =
+  aux=0x60414BDC / B=0x00003234 / A=0x00003C75.
+- FUN_8bc04 (master->slaves) pool @0x8bcf8/0x8bcfc/0x8bd00 =
+  aux=0x60414BDC / B=0x00003234 / A=0x00003C75.
+- MEME triplet dans les 2 sens (les valeurs "suspectes" 0xE8BD87F0/
+  0xE28DD028 du §50 etaient l'epilogue de la fn precedente a -8/-4).
+- name-src = 0x60403B34 (obj nom propre statique) quand le payload n'a
+  pas de champ nom ; sinon nom copie via FUN_22d168+FUN_171ddc+beccc.
+- (A,B) = constantes ROM litterales, identiques pour uTS (0-7) et la
+  famille 0x1xx/0x2xx => UNE SEULE paire de canal/type sur l'entite
+  lien (probablement {classId,subType} ou {channelId,dataId} u32 ;
+  octets fil `75 3c`/`34 32` si u16 LE — a confirmer par capture).
+- post() = vcall entite vt+0x1a4 (sendTo)/+0x1a8 (bcast) sur
+  SyncCL+0x68 = l'entite CHAI principale du device (FUN_a6464:1300 :
+  entity = *(obj+0x134) passee a FUN_8adf8). Implementation generique
+  CHAI hors corpus uTS ; meme transport ef51/VNM. Pas de post()
+  supplementaire : le message {header8B + f6 + f7 + name} part tel
+  quel en "directed data".
+
+### msgId-7 RebuildGroupResponse — EPINGLE (negative)
+
+Les 7 candidats decodent TOUS en ids 0x2xx (famille ack, voir table) :
+  8d25c=0x20e, 8c334=0x203, 8c370=0x205, 8c04c=0x207, 8cebc=0x20d,
+  8bb0c=0x209, 8c6e8=0x201. AUCUN n'est msgId 7.
+=> RebuildGroupResponse(7) est emis INLINE par le handler FSM slave
+dans la zone Thumb non-decompilee 0x8d294-0x90373 (comme msgIds 2/4/6
+emis directement par FUN_8b234/8af00/8d04c via sendTo litteral).
+Bornage FUN_90db8 `id<=7` + table DAT_90e0c confirme l'id 7 existe.
+Champs probables : {f6=u16 Resp/uSlaveIndex, name=masterName} ;
+deviceID = senderMemberId du header 8B (gratuit).
+
+### Famille transport 0x1xx (master->slave via FUN_8bc04, unicast a
+chaque slave de +0x50 ; ids = enum sequentiel, PAS x4)
+
+| id | wrapper | payload fil | evenement (preuve) |
+|---|---|---|---|
+| 0x100 | FUN_8c0c4 | u32 (f6=hi,f7=lo) | onMasterSyncSampleCounter — callers FUN_e5d68/FUN_10a3a0 : isoGetSampleCounter()+2 ; le slave fixe via FUN_134048 (comme handler e7048) |
+| 0x101 | FUN_8b9d0 | name="%u\n%u\n%u\n%u\n%u\n%u" (6 champs) | onMasterCurrentTime — FUN_e7b1c : 2x3-tuples FUN_176e14/176e40 ; handler FUN_1c20d8 6xu8 -> FUN_1772d0/1772fc |
+| 0x102 | FUN_8bdc8 | f6=FUN_6604(rate,100) u16, f7=resolution, name=takeName | onMasterPrepareRecording — FUN_e786c "prepareRecordingAsMaster" |
+| 0x103 | FUN_8bee0 | u32 startSample | onMasterStartRecordingAt — FUN_e634c "startRecordingAsMaster" (now+preRoll) |
+| 0x104 | FUN_908fc | u32 samplePos | onMasterAddMarker — FUN_d34d0 (evt UI 0x3f) |
+| 0x105 | FUN_8bb88 | f6=u16 scaled(FUN_6604 x,100), f7=u16 (SongLength?), name=SongName | onMasterPreparePlayback — FUN_e6a64 "preparePlaybackAsMaster" ; 2e caller FUN_10a404 (f7=nonzero) |
+| 0x106 | FUN_8bd48 | u32 pos=now+offset | StopRecordingAt OU StopPlaybackAt — FUN_a01d0/FUN_84574 : pos=now+preRoll(DAT+0x1c), ordonnance via FUN_176b78+timer |
+| 0x107 | FUN_8bd88 | u32 pos=now+2*periode | Stop/Pause — FUN_d2c20 (bc410(+0x14,7)) |
+| 0x108 | FUN_8c088 | u32 pos=now+periode | onMasterSwitchRecordingAt — FUN_d2c78 poste evt local 0x4e = meme code que handler slave e6fdc |
+| 0x109 | FUN_8ba44 | u32 + own name | ? (appele depuis zone Thumb — UnloadPlaylist/Pause ?) |
+| 0x10a | FUN_8bb48 | u32 + own name | ? (Thumb) |
+| 0x10b | FUN_8b518 | name only (playlist name) | onMasterLoadPlaylist — callers FUN_e7b1c (autoplay), FUN_106678 (evt 0x1f "Song Loaded", FUN_1b56e4=playlist name). FUN_8b518 = fn fusionnee par Ghidra (son vrai msgId non lisible — candidat 0x10b/0x10c) |
+| 0x10d | FUN_8bd04 | u32 songIndex | onMasterChangeNextPlaylistSong — FUN_e7b1c (*DAT_000e7f7c = index courant) |
+| 0x10e | FUN_8ce78 | u32 *(obj+0x24)=position | onMasterStopPlaybackAt ou PausePlaybackAt — FUN_109a4c (mode==1 + sequence stop FUN_835e4/84a18/84b88) |
+| 0x10f | FUN_8c74c | name only (from name-obj) | LoadPlaylist variante OU StartRecInRecording(takeName) — pas de caller ARM (Thumb) |
+| 0x110 | FUN_8b998 | u16 | onMasterSetPreRecFlag ? — FUN_e7b1c broadcast FUN_1b6f0c(settings) |
+| 0x111 | FUN_8c990 | u16 | onMasterSetPlaybackMode ou ChannelCountChanged — FUN_be04c (FUN_f65ec=setter, bcast param), FUN_e2da8 "becameMaster" (FUN_1b5a3c), FUN_e7b1c (FUN_1b557c) |
+
+### Famille ack 0x2xx (slave->master via FUN_8b860 ; mode2&&state0 requis)
+
+| id | wrapper | payload | ack de / contexte |
+|---|---|---|---|
+| 0x200 | FUN_8b934 (et FUN_8b534 -> helper FUN_8b460 groupe) | f6=u8 flag@+0x80, f7=u8 flag@+0x81, own name | annonce etat membre dedupliquee (+0x80/+0x81 caches) ; caller FUN_8211c (mode==2 : flags via FUN_1b2744/1b2774) -> famille onSlaveChannelCountChanged/state-report ; bidirectionnel (FUN_8b460 = variante broadcast a la liste) |
+| 0x201 | FUN_8c6e8 | f6=result(0/1), name=takeName | onSlavePrepareRecordingAck <- FUN_e6b68 onMasterPrepareRecording ("Preparing Recording"/"No Disk Space") ; strings : {slaveIndex,reply,newTakeName} |
+| 0x203 | FUN_8c334 | f6=result(0/1) | onSlavePreparePlaybackAck <- FUN_e65a0 (verif playlist "+0x1c==songIndex", "does not exist in Slave") + FUN_e3254 (evt 0xc fini) |
+| 0x205 | FUN_8c370 | f6=result | onSlaveStopRecordingAtAck ? <- FUN_d31d8 "Exiting Recording State" (mode==2) |
+| 0x207 | FUN_8c04c | f6=result | ? — aucun caller ARM (invoque depuis Thumb : StartRecordingAtAck/SwitchRecordingAtAck) |
+| 0x209 | FUN_8bb0c | f6=result | ack <- FUN_e59b0 onMasterLoadPlaylist (succes=1) |
+| 0x20d | FUN_8cebc | f6=result | onSlaveStartRecInRecordingAck ? <- FUN_d22c4 "Next Take prepared" (evt 0x15) |
+| 0x20e | FUN_8d25c | aucun champ + own name | notify "slave state changed" <- FUN_1391ec (post changement samplerate), FUN_11e434 (post format USB), seulement si FUN_bc47c(!=0) |
+
+Ids 0x2xx manquants (0x202/0x204/0x206/0x208/0x20a-0x20c) : non vus
+dans le corpus ARM — envoyes depuis la zone Thumb (autres acks
+StartRecordingAt/StopPlaybackAt/StartPlaybackAt/SwitchRecordingAt).
+
+### Vtable listener sync (-0x9c, thunks 0x1c1f78-0x1c27fc)
+
+Le listener du player implemente LES DEUX sens : onMaster* (applique
+cote slave) + onSlave*Ack (consomme cote master) + notifies FSM uTS.
+Handlers nommes (TRACE/evt FUN_1a48f0) : e47a4 AddMarker->0x3f ;
+e59b0 LoadPlaylist->ack0x209 ; e5cf8 SetPreRecFlag->FUN_b800c ;
+e6094 StopPlaybackAt->0x4b ; e60f8 UnloadPlaylist->0xb ;
+e68ac SetPlaybackMode->FUN_b6634 ; e69fc StopRecordingAt->0x4a ;
+e6b68 PrepareRecording->ack0x201 ; e6fdc SwitchRecordingAt->0x4e ;
+e7048 SyncSampleCounter->FUN_134048 ; e753c StartRecInRecording->0x2c ;
+e76d4 ChangeNextPlaylistSong->FUN_946e4 ; 1c20d8 CurrentTime(6xu8) ;
+e65a0 PreparePlayback(verif index)->ack0x203 ; e7294
+onSlaveChannelCountChanged ; e7168 onSlaveStartPlaybackAtAck ;
+e2c0c becameSlave / e2da8 becameMaster / e5274 exitedGroupForming /
+e3100 groupDisolved / e52c0 groupRebuildFailed (notifies FSM).
+~15 slots anonymes (e6148..e774c, 3 args) = autres ack receivers
+{slaveIndex,result[,name]} + Start/Pause playback handlers.
+
+### CnE -> sync (chemin configure, FUN_e5a90)
+
+Appele depuis FUN_e7b1c quand mode==1 && *DAT_000e5bb4==0 &&
+FUN_1b4efc(syncCL)!=0 (gate = Sync/GroupId configure/non-zero) :
+lit FUN_6d8f8(syncState,i) i=0..2 = Slave_1..3_Id CnE (memberIds),
+empile liste -> FUN_8b578(this,list) = enterGroupForming configuree
+(msgId6 RebuildGroupQuery par slave, state->4). *DAT_000e5bb4=1
+(guard once). FUN_6d9b8(state,idx,id) dans e2da8 re-enregistre
+{Index,ID} des slaves apres becameMaster. => mapping : Sync/GroupId
+-> enable+identite groupe ; Slave_i_Id -> memberIds liste +0x50.
+
+### Sequence join + miroir (client 3e partie)
+
+1. Membre CHAI, entite locale ; ecouter canal (0x3c75,0x3234) bcast +
+   unicast (memberId propre dans dest10B).
+2. uTS : GroupForming(0)/RebuildGroupQuery(6) -> repondre BecomeSlave(2)
+   ou RebuildGroupResponse(7) -> BecameSlave(3){deviceIndex,slaveCount,
+   masterName} -> mode slave, masterID=sender, groupid=grpLo/grpHi.
+3. Miroir transport : appliquer chaque onMaster* localement puis ack
+   0x2xx correspondant ; le compteur echantillon se cale via 0x100
+   (counter+2) puis timecode continu via 0x101 ; positions (0x103-
+   0x108/0x10e) = echantillons absolus ; les msgs "name" portent
+   playlist/takeName ; etat membre = 0x200 flags dedupliques.
+4. Sortie : LeaveGroup(4) -> master ; master dissout : ExitGroup(5)
+   unicast ou CancelGroupForming(1) bcast -> standalone.
+
+### Restes ouverts
+
+- msgId-7 : adresse exacte du sendTo dans la zone Thumb 0x8d294-
+  0x90373 ; champs fil exacts (Resp/deviceID/uSlaveIndex packing).
+- 0x106/0x107/0x10e : attribution exacte StopRecordingAt/StopPlaybackAt/
+  PausePlaybackAt ; 0x109/0x10a/0x10b/0x10c : UnloadPlaylist/
+  StartRecInRecording/StartPlaybackAt ; 0x111 : SetPlaybackMode vs
+  ChannelCountChanged.
+- Semantique (A,B) + octets fil exacts post() vt+0x1a4 ; arg10=
+  slave-handle (FUN_8c7ac seul) ; capture 2 devices requise.
