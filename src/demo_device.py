@@ -141,6 +141,16 @@ class DemoTel:
     def dir_read(self, p='.'): return self.cmd('ls')
     def tree(self, p=''): return self.cmd('ls cne')
     def showtree(self, p='', o=''): return self.cmd('showtree')
+    def takes(self):
+        return [{'name':'Take0001','date':'2026-10-30',
+                 'wave':{'sample_rate':48000,'bits':24,'channels':24},
+                 'duration':5420.0},
+                {'name':'Take0012','date':'2026-11-02',
+                 'wave':{'sample_rate':48000,'bits':24,'channels':24},
+                 'duration':6209.0,'markers_s':[12.4,764.0]},
+                {'name':'AoIP_take','date':'2026-11-03',
+                 'wave':{'sample_rate':48000,'bits':24,'channels':8},
+                 'duration':58.2}]
     def file_up(self): return self.cmd('cd ..')
     def file_root(self): return self.cmd('cd /')
     def reclog_parsed(self, t): return {'take': t, 'lines': RECLOG.splitlines()}

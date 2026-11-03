@@ -24,6 +24,11 @@ QFrame#stripBus{background:#1c222b;border:1px solid #3d5f80;border-top:2px solid
 QGroupBox{background:#1d2128;border:1px solid #2f353f;border-radius:8px;margin-top:16px;padding:16px 10px 10px 10px;font-weight:600}
 QGroupBox::title{subcontrol-origin:margin;subcontrol-position:top left;left:12px;padding:0 8px;color:#8b94a1}
 QGroupBox:disabled{color:#545b66}
+QLabel#routeStat{border-radius:8px;padding:1px 10px;font-weight:600;font-size:8.5pt}
+QLabel#routeStat[st="ok"]{background:#1e5c3f;color:#bff0d4}
+QLabel#routeStat[st="warn"]{background:#6b4d15;color:#ffe2a8}
+QLabel#routeStat[st="err"]{background:#6b2a25;color:#ffc5bd}
+QLabel#routeStat[st="idle"]{background:#2a2f38;color:#8b94a1}
 QLabel#timecode{font-family:'Consolas','Monospace';font-size:15pt;font-weight:700;color:#7fd4a8;padding:2px 12px;background:#10141a;border:1px solid #2f353f;border-radius:6px}
 
 /* ---- routage AES67 : ligne de canal, led d'etat, modifications ---- */
@@ -686,7 +691,8 @@ class Win(QMainWindow):
         n=len(self._alan_out);cols=max(1,min(4,n));per=-(-n//cols)
         for i,o in enumerate(self._alan_out):
             st=stat.get(i);cls=CLS.get(st,'idle')
-            card=QGroupBox('Channel %d'%(i+1));cv=QVBoxLayout(card);cv.setSpacing(4)
+            card=QGroupBox('Channel %d'%(i+1));cv=QVBoxLayout(card);cv.setSpacing(6)
+            cv.setContentsMargins(10,18,10,10)
             top=QHBoxLayout()
             led=QFrame();led.setObjectName('led');led.setFixedSize(10,10);led.setProperty('st',cls)
             led.setToolTip('streamStatus : %s'%(SS.get(st,'inconnu') if st is not None else 'non lu'))
@@ -695,6 +701,7 @@ class Win(QMainWindow):
             nm.setToolTip(nm.text());top.addWidget(nm,1)
             sl2=QLabel(SS.get(st,'—') if st is not None else '—');sl2.setObjectName('routeStat')
             sl2.setProperty('st',cls);top.addWidget(sl2);cv.addLayout(top)
+            cv.addWidget(QLabel('Source stream',objectName='dim'))
             cb=_Combo();cb.addItems(choices)
             cur=o.get('streamPath') or ''
             ix=cb.findText(cur)
@@ -725,7 +732,7 @@ class Win(QMainWindow):
         self._tree_dirty=True;self._alan_update_apply()
 
     def _alan_update_apply(self):
-        n=sum(1 for cb,_ in getattr(self,'_route_boxes',[]) if cb.property('dirty'))
+        n=sum(1 for cb,*_ in getattr(self,'_route_boxes',[]) if cb.property('dirty'))
         if getattr(self,'_tree_dirty',False):n+=1
         self.btn_alan_apply.setEnabled(bool(n))
         self.alan_dirty.setText('%d modification%s en attente'%(n,'s' if n>1 else '') if n else '')
