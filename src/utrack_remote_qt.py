@@ -568,7 +568,8 @@ class Win(QMainWindow):
         leaf(g1,'DNS 1',cfg,'IPDNS1');leaf(g1,'DNS 2',cfg,'IPDNS2')
         leaf(g1,'Sample rate',cfg,'samplingRate','str',ro=True)
         leaf(g1,'Résolution',cfg,'resolution','str',ro=True)
-        leaf(g1,'Mode audio',cfg,'audioMode','str',ro=True)
+        amod=leaf(g1,'Mode audio (index)',cfg,'audioMode','str')
+        amod.setToolTip(1,'index dans parameter_strings.audioModes (ex 1="24CH InOut") — nb de flux in/out AES67')
         leaf(g1,'Syntonized',cfg,'syntonizedMode','bool')
         pd=cfg.get('playoutDelay') or {}
         leaf(g1,'Playout delay (samples)',pd,'delayInSamples')
