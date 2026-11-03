@@ -70,3 +70,66 @@ def peak_to_dbfs(peak: int) -> float:
 def meter_row(peaks):
     """26 u32 -> [(ch, dBFS)]."""
     return [(i, peak_to_dbfs(p)) for i, p in enumerate(peaks)]
+
+
+# ---------------------------------------------------- parseurs sortie SDS
+import re as _re
+
+
+def parse_querylevels(out: str):
+    """`mixer querylevels` -> 'CH %02d: 0x%08x' -> [(ch, raw, dBFS)]."""
+    rows = []
+    for m in _re.finditer(r'CH\s*(\d+):\s*0x([0-9a-fA-F]+)', out):
+        raw = int(m.group(2), 16)
+        rows.append((int(m.group(1)), raw, peak_to_dbfs(raw)))
+    return rows
+
+
+def parse_mixer_get(out: str):
+    """`mixer get <ch>` -> 'Fader %f dB (mute %s) / Pan %d'."""
+    m = _re.search(r'Fader\s+(-?[\d.]+)\s*dB\s*\(mute\s+(\w+)\)\s*/\s*Pan\s+(-?\d+)', out)
+    if not m:
+        return None
+    return {'fader_db': float(m.group(1)), 'mute': m.group(2) == 'on',
+            'pan': int(m.group(3))}
+
+
+def parse_mixer_stat(out: str):
+    """`mixer stat` -> faders + mon/bus + meters bruts."""
+    chans = {}
+    for m in _re.finditer(r'CH(\d+)\s*=>\s*(-?[\d.]+)\s*dB', out):
+        chans[int(m.group(1))] = float(m.group(2))
+    mon = _re.search(r'Monitor fader\s+(-?[\d.]+)', out)
+    bus = _re.search(r'Bus fader\s+(-?[\d.]+)', out)
+    return {'channels': chans,
+            'monitor': float(mon.group(1)) if mon else None,
+            'bus': float(bus.group(1)) if bus else None,
+            'meters': [raw for _, raw, _ in parse_querylevels(out)]}
+
+
+def parse_engine_stat(out: str):
+    """`filerec stat`/`fileplay stat` -> cycle/file/samples/dropouts/errors."""
+    keys = {'cycle': 'cycle', 'current file': 'file',
+            'samples': 'samples', 'next-file sample': 'next_file_samples',
+            'max file size': 'max_file_size', 'dropouts': 'dropouts',
+            'write errors': 'write_errors'}
+    d = {}
+    for l in out.splitlines():
+        for k, v in keys.items():
+            m = _re.match(rf'.*{re.escape(k)}\s*[:=]\s*(\S+)', l, _re.I)
+            if m:
+                try:
+                    d[v] = int(m.group(1))
+                except ValueError:
+                    d[v] = m.group(1)
+    return d
+
+
+def parse_reclog(out: str):
+    """reclog.txt -> entrees (timestamp, niveau, texte)."""
+    rows = []
+    for l in out.splitlines():
+        m = _re.match(r'\[?([\d:.]+)\]?\s*(INF|WRN|ERR|DBG)?\s*[:\-]?\s*(.*)', l, _re.I)
+        if m and m.group(3):
+            rows.append({'ts': m.group(1), 'level': m.group(2), 'text': m.group(3)})
+    return rows

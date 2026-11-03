@@ -131,6 +131,32 @@ class UTrack24:
         """what: fader|pan|mute"""
         return self.cmd(f'mixer set {ch} {what} {value}')
 
+    def meters_db(self):
+        """`mixer querylevels` -> [(ch, raw, dBFS)] via mixer_math."""
+        from mixer_math import parse_querylevels
+        return parse_querylevels(self.cmd('mixer querylevels', 1.5))
+
+    def mixer_get(self, ch: int):
+        """`mixer get <ch>` -> {fader_db, mute, pan}."""
+        from mixer_math import parse_mixer_get
+        return parse_mixer_get(self.cmd(f'mixer get {ch}', 1.0))
+
+    def mixer_stat(self):
+        """`mixer stat` -> {channels, monitor, bus, meters}."""
+        from mixer_math import parse_mixer_stat
+        return parse_mixer_stat(self.cmd('mixer stat', 2.0))
+
+    def engine_stat(self, rec: bool = True):
+        """`filerec stat`/`fileplay stat` -> {cycle, file, samples, dropouts...}."""
+        from mixer_math import parse_engine_stat
+        return parse_engine_stat(self.cmd(('filerec' if rec else 'fileplay') + ' stat', 2.0))
+
+    def reclog_parsed(self, take: str):
+        """reclog.txt d'une prise -> entrees (ts, niveau, texte)."""
+        from mixer_math import parse_reclog
+        raw = self.read_file(f'/MultiTrack/{take}/reclog.txt')
+        return parse_reclog(raw.decode('latin-1').replace('\r\n', '\n'))
+
     # ---------- CnE / systeme ----------
     def get_ex(self, path: str, mode: str = '') -> str:
         """get [-e|-b|-s] <path> : -e type etendu, -b binaire, -s string."""
