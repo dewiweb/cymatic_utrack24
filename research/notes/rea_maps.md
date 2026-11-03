@@ -879,3 +879,9 @@ Handlers OnCHAI_*: Notification (CNT_*), DeviceDeclaration (type),
 States nommes: SM_Master, SS_GroupForming_Master, SS_GroupRebuild_Master.
 => uTS msgs = objets CCP (vtable serialize), champs doc 43/44.
    class_ids non localises (ctors probablement Thumb).
+
+## 47. versulu — update firmware host par SDS
+
+Commande SDS 'versulu' @0x2a1bec (fw4218) — le point d entree de la
+mise a jour firmware de l host (BCOFWDL reseau + mode update).
+Pas de strings fwdl explicites dans le binaire (nom interne autre).
